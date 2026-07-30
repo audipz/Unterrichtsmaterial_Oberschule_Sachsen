@@ -1,0 +1,47 @@
+{
+  "bestellungen.csv": {
+    "rows": 220,
+    "encoding": "UTF-8 with BOM",
+    "delimiter": ";"
+  },
+  "bibliothek.csv": {
+    "rows": 180,
+    "encoding": "UTF-8 with BOM",
+    "delimiter": ";"
+  },
+  "fehlermeldungen.csv": {
+    "rows": 160,
+    "encoding": "UTF-8 with BOM",
+    "delimiter": ";"
+  },
+  "lager.csv": {
+    "rows": 16,
+    "encoding": "UTF-8 with BOM",
+    "delimiter": ";"
+  },
+  "mensa_verkauf.csv": {
+    "rows": 150,
+    "encoding": "UTF-8 with BOM",
+    "delimiter": ";"
+  },
+  "netzwerk_logs.csv": {
+    "rows": 500,
+    "encoding": "UTF-8 with BOM",
+    "delimiter": ";"
+  },
+  "schuelerprojekte.csv": {
+    "rows": 8,
+    "encoding": "UTF-8 with BOM",
+    "delimiter": ";"
+  },
+  "sensor_luftfeuchte.csv": {
+    "rows": 1008,
+    "encoding": "UTF-8 with BOM",
+    "delimiter": ";"
+  },
+  "sensor_temperatur.csv": {
+    "rows": 1008,
+    "encoding": "UTF-8 with BOM",
+    "delimiter": ";"
+  }
+}

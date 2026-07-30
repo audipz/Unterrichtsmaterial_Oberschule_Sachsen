@@ -1,0 +1,221 @@
+﻿bestellnummer;bestelldatum;artikelnummer;artikel;kategorie;menge;einzelpreis_eur;gesamtpreis_eur;lieferant;lieferdatum;status
+B-2026-0001;14.03.2026;A2003;Laugenstange;Backwaren;5;0,44;2,20;Bäckerei Morgenrot;18.03.2026;geliefert
+B-2026-0002;21.02.2026;A1002;Apfelschorle 0,5 l;Getränke;60;0,58;34,80;SachsenGetränke GmbH;25.02.2026;geliefert
+B-2026-0003;26.01.2026;A4003;Textmarker gelb;Schreibwaren;15;0,48;7,20;Bürobedarf Elbtal;29.01.2026;geliefert
+B-2026-0004;06.03.2026;A3001;Apfel regional;Obst;100;0,28;28,00;Frischehof Meißen;07.03.2026;geliefert
+B-2026-0005;10.05.2026;A1003;Orangensaft 0,33 l;Getränke;30;0,64;19,20;SachsenGetränke GmbH;14.05.2026;geliefert
+B-2026-0006;25.05.2026;A5003;Maus kabelgebunden;Technik;5;5,30;26,50;IT-Service Lausitz;26.05.2026;geliefert
+B-2026-0007;09.02.2026;A2001;Vollkornbrötchen;Backwaren;15;0,31;4,65;Bäckerei Morgenrot;14.02.2026;geliefert
+B-2026-0008;08.02.2026;A5003;Maus kabelgebunden;Technik;20;5,30;106,00;IT-Service Lausitz;13.02.2026;geliefert
+B-2026-0009;12.05.2026;A1003;Orangensaft 0,33 l;Getränke;80;0,64;51,20;SachsenGetränke GmbH;13.05.2026;geliefert
+B-2026-0010;29.03.2026;A4003;Textmarker gelb;Schreibwaren;30;0,48;14,40;Bürobedarf Elbtal;01.04.2026;teilgeliefert
+B-2026-0011;05.06.2026;A3002;Banane Fairtrade;Obst;5;0,34;1,70;Frischehof Meißen;10.06.2026;geliefert
+B-2026-0012;20.03.2026;A3003;Birne regional;Obst;15;0,36;5,40;Frischehof Meißen;25.03.2026;teilgeliefert
+B-2026-0013;06.03.2026;A4004;Bleistift HB;Schreibwaren;30;0,16;4,80;Bürobedarf Elbtal;13.03.2026;geliefert
+B-2026-0014;17.04.2026;A3003;Birne regional;Obst;100;0,36;36,00;Frischehof Meißen;18.04.2026;geliefert
+B-2026-0015;19.06.2026;A5002;Patchkabel 2 m;Technik;15;1,85;27,75;IT-Service Lausitz;24.06.2026;geliefert
+B-2026-0016;05.02.2026;A2001;Vollkornbrötchen;Backwaren;100;0,31;31,00;Bäckerei Morgenrot;10.02.2026;geliefert
+B-2026-0017;08.01.2026;A5003;Maus kabelgebunden;Technik;40;5,30;212,00;IT-Service Lausitz;15.01.2026;geliefert
+B-2026-0018;15.04.2026;A2001;Vollkornbrötchen;Backwaren;40;0,31;12,40;Bäckerei Morgenrot;17.04.2026;geliefert
+B-2026-0019;20.03.2026;A4002;Kugelschreiber blau;Schreibwaren;15;0,22;3,30;Bürobedarf Elbtal;;offen
+B-2026-0020;12.06.2026;A4004;Bleistift HB;Schreibwaren;100;0,16;16,00;Bürobedarf Elbtal;15.06.2026;geliefert
+B-2026-0021;02.02.2026;A2001;Vollkornbrötchen;Backwaren;5;0,31;1,55;Bäckerei Morgenrot;05.02.2026;geliefert
+B-2026-0022;07.04.2026;A4001;Collegeblock A4 kariert;Schreibwaren;12;1,15;13,80;Bürobedarf Elbtal;11.04.2026;geliefert
+B-2026-0023;19.01.2026;A4002;Kugelschreiber blau;Schreibwaren;10;0,22;2,20;Bürobedarf Elbtal;21.01.2026;geliefert
+B-2026-0024;04.03.2026;A1001;Mineralwasser 0,5 l;Getränke;100;0,42;42,00;SachsenGetränke GmbH;07.03.2026;storniert
+B-2026-0025;03.05.2026;A2001;Vollkornbrötchen;Backwaren;100;0,31;31,00;Bäckerei Morgenrot;06.05.2026;geliefert
+B-2026-0026;31.01.2026;A3002;Banane Fairtrade;Obst;20;0,34;6,80;Frischehof Meißen;04.02.2026;geliefert
+B-2026-0027;07.03.2026;A2001;Vollkornbrötchen;Backwaren;60;0,31;18,60;Bäckerei Morgenrot;;offen
+B-2026-0028;22.01.2026;A1002;Apfelschorle 0,5 l;Getränke;30;0,58;17,40;SachsenGetränke GmbH;27.01.2026;geliefert
+B-2026-0029;09.03.2026;A4002;Kugelschreiber blau;Schreibwaren;30;0,22;6,60;Bürobedarf Elbtal;11.03.2026;teilgeliefert
+B-2026-0030;22.06.2026;A5001;USB-Stick 32 GB;Technik;10;4,90;49,00;IT-Service Lausitz;25.06.2026;geliefert
+B-2026-0031;17.05.2026;A5003;Maus kabelgebunden;Technik;50;5,30;265,00;IT-Service Lausitz;19.05.2026;geliefert
+B-2026-0032;22.03.2026;A5003;Maus kabelgebunden;Technik;60;5,30;318,00;IT-Service Lausitz;25.03.2026;geliefert
+B-2026-0033;20.02.2026;A4003;Textmarker gelb;Schreibwaren;24;0,48;11,52;Bürobedarf Elbtal;27.02.2026;geliefert
+B-2026-0034;21.05.2026;A2003;Laugenstange;Backwaren;40;0,44;17,60;Bäckerei Morgenrot;23.05.2026;geliefert
+B-2026-0035;04.06.2026;A2002;Käsebrötchen;Backwaren;10;0,82;8,20;Bäckerei Morgenrot;09.06.2026;geliefert
+B-2026-0036;28.02.2026;A4004;Bleistift HB;Schreibwaren;100;0,16;16,00;Bürobedarf Elbtal;05.03.2026;geliefert
+B-2026-0037;06.04.2026;A1003;Orangensaft 0,33 l;Getränke;40;0,64;25,60;SachsenGetränke GmbH;09.04.2026;geliefert
+B-2026-0038;25.04.2026;A5001;USB-Stick 32 GB;Technik;24;4,90;117,60;IT-Service Lausitz;29.04.2026;geliefert
+B-2026-0039;14.01.2026;A1001;Mineralwasser 0,5 l;Getränke;5;0,42;2,10;SachsenGetränke GmbH;15.01.2026;geliefert
+B-2026-0040;23.01.2026;A5002;Patchkabel 2 m;Technik;15;1,85;27,75;IT-Service Lausitz;24.01.2026;geliefert
+B-2026-0041;18.01.2026;A2002;Käsebrötchen;Backwaren;24;0,82;19,68;Bäckerei Morgenrot;20.01.2026;geliefert
+B-2026-0042;29.05.2026;A1001;Mineralwasser 0,5 l;Getränke;30;0,42;12,60;SachsenGetränke GmbH;03.06.2026;storniert
+B-2026-0043;07.04.2026;A4004;Bleistift HB;Schreibwaren;60;0,16;9,60;Bürobedarf Elbtal;12.04.2026;geliefert
+B-2026-0044;25.05.2026;A5003;Maus kabelgebunden;Technik;12;5,30;63,60;IT-Service Lausitz;30.05.2026;geliefert
+B-2026-0045;12.03.2026;A3003;Birne regional;Obst;50;0,36;18,00;Frischehof Meißen;17.03.2026;geliefert
+B-2026-0046;06.02.2026;A1001;Mineralwasser 0,5 l;Getränke;80;0,42;33,60;SachsenGetränke GmbH;10.02.2026;geliefert
+B-2026-0047;29.01.2026;A4004;Bleistift HB;Schreibwaren;40;0,16;6,40;Bürobedarf Elbtal;;offen
+B-2026-0048;03.04.2026;A1003;Orangensaft 0,33 l;Getränke;30;0,64;19,20;SachsenGetränke GmbH;04.04.2026;geliefert
+B-2026-0049;27.05.2026;A5002;Patchkabel 2 m;Technik;15;1,85;27,75;IT-Service Lausitz;03.06.2026;geliefert
+B-2026-0050;10.02.2026;A5003;Maus kabelgebunden;Technik;20;5,30;106,00;IT-Service Lausitz;11.02.2026;geliefert
+B-2026-0051;12.04.2026;A4003;Textmarker gelb;Schreibwaren;24;0,48;11,52;Bürobedarf Elbtal;;offen
+B-2026-0052;29.01.2026;A4003;Textmarker gelb;Schreibwaren;24;0,48;11,52;Bürobedarf Elbtal;30.01.2026;geliefert
+B-2026-0053;19.04.2026;A4002;Kugelschreiber blau;Schreibwaren;100;0,22;22,00;Bürobedarf Elbtal;23.04.2026;geliefert
+B-2026-0054;28.05.2026;A3001;Apfel regional;Obst;40;0,28;11,20;Frischehof Meißen;29.05.2026;geliefert
+B-2026-0055;06.02.2026;A2003;Laugenstange;Backwaren;5;0,44;2,20;Bäckerei Morgenrot;11.02.2026;geliefert
+B-2026-0056;24.03.2026;A4004;Bleistift HB;Schreibwaren;5;0,16;0,80;Bürobedarf Elbtal;25.03.2026;geliefert
+B-2026-0057;31.05.2026;A1001;Mineralwasser 0,5 l;Getränke;30;0,42;12,60;SachsenGetränke GmbH;01.06.2026;geliefert
+B-2026-0058;27.01.2026;A3003;Birne regional;Obst;10;0,36;3,60;Frischehof Meißen;03.02.2026;geliefert
+B-2026-0059;20.04.2026;A5001;USB-Stick 32 GB;Technik;40;4,90;196,00;IT-Service Lausitz;22.04.2026;geliefert
+B-2026-0060;09.01.2026;A5001;USB-Stick 32 GB;Technik;100;4,90;490,00;IT-Service Lausitz;10.01.2026;geliefert
+B-2026-0061;11.02.2026;A2001;Vollkornbrötchen;Backwaren;20;0,31;6,20;Bäckerei Morgenrot;;offen
+B-2026-0062;04.05.2026;A5003;Maus kabelgebunden;Technik;10;5,30;53,00;IT-Service Lausitz;07.05.2026;geliefert
+B-2026-0063;05.03.2026;A4004;Bleistift HB;Schreibwaren;50;0,16;8,00;Bürobedarf Elbtal;08.03.2026;geliefert
+B-2026-0064;08.01.2026;A1002;Apfelschorle 0,5 l;Getränke;24;0,58;13,92;SachsenGetränke GmbH;;offen
+B-2026-0065;13.05.2026;A4004;Bleistift HB;Schreibwaren;50;0,16;8,00;Bürobedarf Elbtal;18.05.2026;geliefert
+B-2026-0066;12.05.2026;A2002;Käsebrötchen;Backwaren;60;0,82;49,20;Bäckerei Morgenrot;19.05.2026;geliefert
+B-2026-0067;20.03.2026;A4004;Bleistift HB;Schreibwaren;10;0,16;1,60;Bürobedarf Elbtal;22.03.2026;geliefert
+B-2026-0068;05.03.2026;A3001;Apfel regional;Obst;80;0,28;22,40;Frischehof Meißen;12.03.2026;geliefert
+B-2026-0069;30.03.2026;A2002;Käsebrötchen;Backwaren;30;0,82;24,60;Bäckerei Morgenrot;01.04.2026;geliefert
+B-2026-0070;09.02.2026;A1002;Apfelschorle 0,5 l;Getränke;100;0,58;58,00;SachsenGetränke GmbH;11.02.2026;geliefert
+B-2026-0071;20.02.2026;A2002;Käsebrötchen;Backwaren;50;0,82;41,00;Bäckerei Morgenrot;24.02.2026;geliefert
+B-2026-0072;24.01.2026;A4003;Textmarker gelb;Schreibwaren;24;0,48;11,52;Bürobedarf Elbtal;27.01.2026;geliefert
+B-2026-0073;06.02.2026;A3002;Banane Fairtrade;Obst;50;0,34;17,00;Frischehof Meißen;13.02.2026;geliefert
+B-2026-0074;19.06.2026;A1002;Apfelschorle 0,5 l;Getränke;24;0,58;13,92;SachsenGetränke GmbH;20.06.2026;geliefert
+B-2026-0075;22.06.2026;A4003;Textmarker gelb;Schreibwaren;5;0,48;2,40;Bürobedarf Elbtal;25.06.2026;geliefert
+B-2026-0076;10.01.2026;A1001;Mineralwasser 0,5 l;Getränke;5;0,42;2,10;SachsenGetränke GmbH;15.01.2026;geliefert
+B-2026-0077;04.05.2026;A2002;Käsebrötchen;Backwaren;12;0,82;9,84;Bäckerei Morgenrot;;offen
+B-2026-0078;09.01.2026;A3002;Banane Fairtrade;Obst;10;0,34;3,40;Frischehof Meißen;11.01.2026;geliefert
+B-2026-0079;21.04.2026;A4003;Textmarker gelb;Schreibwaren;5;0,48;2,40;Bürobedarf Elbtal;;offen
+B-2026-0080;23.04.2026;A1003;Orangensaft 0,33 l;Getränke;10;0,64;6,40;SachsenGetränke GmbH;24.04.2026;geliefert
+B-2026-0081;01.04.2026;A4002;Kugelschreiber blau;Schreibwaren;100;0,22;22,00;Bürobedarf Elbtal;03.04.2026;geliefert
+B-2026-0082;04.05.2026;A4004;Bleistift HB;Schreibwaren;24;0,16;3,84;Bürobedarf Elbtal;11.05.2026;geliefert
+B-2026-0083;04.02.2026;A5003;Maus kabelgebunden;Technik;15;5,30;79,50;IT-Service Lausitz;06.02.2026;geliefert
+B-2026-0084;07.05.2026;A5003;Maus kabelgebunden;Technik;24;5,30;127,20;IT-Service Lausitz;;offen
+B-2026-0085;06.06.2026;A1001;Mineralwasser 0,5 l;Getränke;5;0,42;2,10;SachsenGetränke GmbH;13.06.2026;geliefert
+B-2026-0086;20.01.2026;A4002;Kugelschreiber blau;Schreibwaren;10;0,22;2,20;Bürobedarf Elbtal;24.01.2026;geliefert
+B-2026-0087;02.05.2026;A2002;Käsebrötchen;Backwaren;50;0,82;41,00;Bäckerei Morgenrot;;offen
+B-2026-0088;14.02.2026;A3002;Banane Fairtrade;Obst;10;0,34;3,40;Frischehof Meißen;19.02.2026;geliefert
+B-2026-0089;04.05.2026;A2002;Käsebrötchen;Backwaren;15;0,82;12,30;Bäckerei Morgenrot;09.05.2026;geliefert
+B-2026-0090;09.06.2026;A4002;Kugelschreiber blau;Schreibwaren;50;0,22;11,00;Bürobedarf Elbtal;16.06.2026;geliefert
+B-2026-0091;05.05.2026;A1001;Mineralwasser 0,5 l;Getränke;20;0,42;8,40;SachsenGetränke GmbH;09.05.2026;geliefert
+B-2026-0092;18.06.2026;A3003;Birne regional;Obst;24;0,36;8,64;Frischehof Meißen;21.06.2026;geliefert
+B-2026-0093;23.02.2026;A4003;Textmarker gelb;Schreibwaren;50;0,48;24,00;Bürobedarf Elbtal;26.02.2026;geliefert
+B-2026-0094;11.02.2026;A3001;Apfel regional;Obst;40;0,28;11,20;Frischehof Meißen;16.02.2026;geliefert
+B-2026-0095;10.02.2026;A1003;Orangensaft 0,33 l;Getränke;5;0,64;3,20;SachsenGetränke GmbH;14.02.2026;geliefert
+B-2026-0096;30.05.2026;A4003;Textmarker gelb;Schreibwaren;30;0,48;14,40;Bürobedarf Elbtal;31.05.2026;geliefert
+B-2026-0097;29.05.2026;A5001;USB-Stick 32 GB;Technik;60;4,90;294,00;IT-Service Lausitz;05.06.2026;teilgeliefert
+B-2026-0098;06.03.2026;A3002;Banane Fairtrade;Obst;50;0,34;17,00;Frischehof Meißen;09.03.2026;geliefert
+B-2026-0099;25.01.2026;A4003;Textmarker gelb;Schreibwaren;24;0,48;11,52;Bürobedarf Elbtal;29.01.2026;geliefert
+B-2026-0100;06.06.2026;A1002;Apfelschorle 0,5 l;Getränke;40;0,58;23,20;SachsenGetränke GmbH;13.06.2026;geliefert
+B-2026-0101;08.01.2026;A1003;Orangensaft 0,33 l;Getränke;5;0,64;3,20;SachsenGetränke GmbH;09.01.2026;geliefert
+B-2026-0102;29.04.2026;A3002;Banane Fairtrade;Obst;10;0,34;3,40;Frischehof Meißen;02.05.2026;geliefert
+B-2026-0103;30.01.2026;A1001;Mineralwasser 0,5 l;Getränke;80;0,42;33,60;SachsenGetränke GmbH;31.01.2026;geliefert
+B-2026-0104;25.05.2026;A2003;Laugenstange;Backwaren;5;0,44;2,20;Bäckerei Morgenrot;29.05.2026;geliefert
+B-2026-0105;18.05.2026;A2003;Laugenstange;Backwaren;10;0,44;4,40;Bäckerei Morgenrot;22.05.2026;teilgeliefert
+B-2026-0106;26.05.2026;A4001;Collegeblock A4 kariert;Schreibwaren;12;1,15;13,80;Bürobedarf Elbtal;27.05.2026;geliefert
+B-2026-0107;12.04.2026;A3001;Apfel regional;Obst;50;0,28;14,00;Frischehof Meißen;;offen
+B-2026-0108;12.06.2026;A4003;Textmarker gelb;Schreibwaren;12;0,48;5,76;Bürobedarf Elbtal;14.06.2026;geliefert
+B-2026-0109;09.02.2026;A1001;Mineralwasser 0,5 l;Getränke;20;0,42;8,40;SachsenGetränke GmbH;11.02.2026;geliefert
+B-2026-0110;19.06.2026;A1001;Mineralwasser 0,5 l;Getränke;30;0,42;12,60;SachsenGetränke GmbH;22.06.2026;geliefert
+B-2026-0111;28.03.2026;A4002;Kugelschreiber blau;Schreibwaren;100;0,22;22,00;Bürobedarf Elbtal;04.04.2026;geliefert
+B-2026-0112;18.01.2026;A3001;Apfel regional;Obst;20;0,28;5,60;Frischehof Meißen;20.01.2026;geliefert
+B-2026-0113;06.06.2026;A4003;Textmarker gelb;Schreibwaren;40;0,48;19,20;Bürobedarf Elbtal;13.06.2026;geliefert
+B-2026-0114;25.04.2026;A4003;Textmarker gelb;Schreibwaren;60;0,48;28,80;Bürobedarf Elbtal;26.04.2026;geliefert
+B-2026-0115;01.04.2026;A1002;Apfelschorle 0,5 l;Getränke;15;0,58;8,70;SachsenGetränke GmbH;04.04.2026;geliefert
+B-2026-0116;29.03.2026;A3003;Birne regional;Obst;10;0,36;3,60;Frischehof Meißen;03.04.2026;geliefert
+B-2026-0117;06.05.2026;A1003;Orangensaft 0,33 l;Getränke;30;0,64;19,20;SachsenGetränke GmbH;13.05.2026;geliefert
+B-2026-0118;03.02.2026;A4002;Kugelschreiber blau;Schreibwaren;15;0,22;3,30;Bürobedarf Elbtal;04.02.2026;geliefert
+B-2026-0119;28.01.2026;A3001;Apfel regional;Obst;15;0,28;4,20;Frischehof Meißen;30.01.2026;geliefert
+B-2026-0120;20.06.2026;A3003;Birne regional;Obst;12;0,36;4,32;Frischehof Meißen;;offen
+B-2026-0121;04.05.2026;A4003;Textmarker gelb;Schreibwaren;40;0,48;19,20;Bürobedarf Elbtal;11.05.2026;geliefert
+B-2026-0122;23.04.2026;A2001;Vollkornbrötchen;Backwaren;20;0,31;6,20;Bäckerei Morgenrot;27.04.2026;storniert
+B-2026-0123;10.04.2026;A4004;Bleistift HB;Schreibwaren;5;0,16;0,80;Bürobedarf Elbtal;14.04.2026;geliefert
+B-2026-0124;14.01.2026;A4001;Collegeblock A4 kariert;Schreibwaren;12;1,15;13,80;Bürobedarf Elbtal;17.01.2026;storniert
+B-2026-0125;24.05.2026;A4002;Kugelschreiber blau;Schreibwaren;100;0,22;22,00;Bürobedarf Elbtal;26.05.2026;geliefert
+B-2026-0126;25.01.2026;A1001;Mineralwasser 0,5 l;Getränke;20;0,42;8,40;SachsenGetränke GmbH;01.02.2026;geliefert
+B-2026-0127;10.04.2026;A4003;Textmarker gelb;Schreibwaren;100;0,48;48,00;Bürobedarf Elbtal;13.04.2026;geliefert
+B-2026-0128;06.05.2026;A1003;Orangensaft 0,33 l;Getränke;40;0,64;25,60;SachsenGetränke GmbH;11.05.2026;geliefert
+B-2026-0129;19.03.2026;A4002;Kugelschreiber blau;Schreibwaren;12;0,22;2,64;Bürobedarf Elbtal;20.03.2026;geliefert
+B-2026-0130;17.05.2026;A3003;Birne regional;Obst;20;0,36;7,20;Frischehof Meißen;22.05.2026;geliefert
+B-2026-0131;02.05.2026;A3003;Birne regional;Obst;30;0,36;10,80;Frischehof Meißen;05.05.2026;geliefert
+B-2026-0132;13.04.2026;A3002;Banane Fairtrade;Obst;60;0,34;20,40;Frischehof Meißen;17.04.2026;geliefert
+B-2026-0133;12.01.2026;A4002;Kugelschreiber blau;Schreibwaren;5;0,22;1,10;Bürobedarf Elbtal;16.01.2026;geliefert
+B-2026-0134;25.02.2026;A1002;Apfelschorle 0,5 l;Getränke;15;0,58;8,70;SachsenGetränke GmbH;02.03.2026;geliefert
+B-2026-0135;25.01.2026;A1001;Mineralwasser 0,5 l;Getränke;100;0,42;42,00;SachsenGetränke GmbH;26.01.2026;geliefert
+B-2026-0136;28.03.2026;A4002;Kugelschreiber blau;Schreibwaren;20;0,22;4,40;Bürobedarf Elbtal;02.04.2026;geliefert
+B-2026-0137;30.05.2026;A1002;Apfelschorle 0,5 l;Getränke;100;0,58;58,00;SachsenGetränke GmbH;01.06.2026;geliefert
+B-2026-0138;17.03.2026;A2002;Käsebrötchen;Backwaren;5;0,82;4,10;Bäckerei Morgenrot;24.03.2026;geliefert
+B-2026-0139;13.02.2026;A1002;Apfelschorle 0,5 l;Getränke;10;0,58;5,80;SachsenGetränke GmbH;14.02.2026;geliefert
+B-2026-0140;10.05.2026;A5002;Patchkabel 2 m;Technik;60;1,85;111,00;IT-Service Lausitz;14.05.2026;geliefert
+B-2026-0141;14.06.2026;A2003;Laugenstange;Backwaren;5;0,44;2,20;Bäckerei Morgenrot;21.06.2026;geliefert
+B-2026-0142;18.06.2026;A5002;Patchkabel 2 m;Technik;80;1,85;148,00;IT-Service Lausitz;21.06.2026;geliefert
+B-2026-0143;10.03.2026;A4003;Textmarker gelb;Schreibwaren;15;0,48;7,20;Bürobedarf Elbtal;12.03.2026;geliefert
+B-2026-0144;04.02.2026;A2003;Laugenstange;Backwaren;20;0,44;8,80;Bäckerei Morgenrot;05.02.2026;geliefert
+B-2026-0145;15.01.2026;A3001;Apfel regional;Obst;24;0,28;6,72;Frischehof Meißen;19.01.2026;teilgeliefert
+B-2026-0146;28.01.2026;A5002;Patchkabel 2 m;Technik;10;1,85;18,50;IT-Service Lausitz;01.02.2026;geliefert
+B-2026-0147;14.06.2026;A1003;Orangensaft 0,33 l;Getränke;15;0,64;9,60;SachsenGetränke GmbH;16.06.2026;geliefert
+B-2026-0148;18.06.2026;A1003;Orangensaft 0,33 l;Getränke;5;0,64;3,20;SachsenGetränke GmbH;20.06.2026;geliefert
+B-2026-0149;12.04.2026;A2001;Vollkornbrötchen;Backwaren;10;0,31;3,10;Bäckerei Morgenrot;16.04.2026;geliefert
+B-2026-0150;25.05.2026;A1002;Apfelschorle 0,5 l;Getränke;10;0,58;5,80;SachsenGetränke GmbH;26.05.2026;geliefert
+B-2026-0151;27.05.2026;A1002;Apfelschorle 0,5 l;Getränke;12;0,58;6,96;SachsenGetränke GmbH;28.05.2026;geliefert
+B-2026-0152;01.05.2026;A2002;Käsebrötchen;Backwaren;12;0,82;9,84;Bäckerei Morgenrot;06.05.2026;geliefert
+B-2026-0153;13.01.2026;A2002;Käsebrötchen;Backwaren;15;0,82;12,30;Bäckerei Morgenrot;17.01.2026;geliefert
+B-2026-0154;04.05.2026;A5003;Maus kabelgebunden;Technik;30;5,30;159,00;IT-Service Lausitz;07.05.2026;geliefert
+B-2026-0155;26.03.2026;A2003;Laugenstange;Backwaren;20;0,44;8,80;Bäckerei Morgenrot;30.03.2026;geliefert
+B-2026-0156;24.04.2026;A3001;Apfel regional;Obst;30;0,28;8,40;Frischehof Meißen;28.04.2026;geliefert
+B-2026-0157;04.06.2026;A5002;Patchkabel 2 m;Technik;50;1,85;92,50;IT-Service Lausitz;09.06.2026;geliefert
+B-2026-0158;01.02.2026;A1002;Apfelschorle 0,5 l;Getränke;15;0,58;8,70;SachsenGetränke GmbH;06.02.2026;geliefert
+B-2026-0159;16.05.2026;A4002;Kugelschreiber blau;Schreibwaren;15;0,22;3,30;Bürobedarf Elbtal;18.05.2026;geliefert
+B-2026-0160;23.04.2026;A5003;Maus kabelgebunden;Technik;40;5,30;212,00;IT-Service Lausitz;25.04.2026;geliefert
+B-2026-0161;15.06.2026;A5003;Maus kabelgebunden;Technik;80;5,30;424,00;IT-Service Lausitz;22.06.2026;geliefert
+B-2026-0162;12.04.2026;A4002;Kugelschreiber blau;Schreibwaren;24;0,22;5,28;Bürobedarf Elbtal;13.04.2026;geliefert
+B-2026-0163;25.01.2026;A1002;Apfelschorle 0,5 l;Getränke;30;0,58;17,40;SachsenGetränke GmbH;29.01.2026;geliefert
+B-2026-0164;16.06.2026;A4001;Collegeblock A4 kariert;Schreibwaren;5;1,15;5,75;Bürobedarf Elbtal;23.06.2026;geliefert
+B-2026-0165;29.04.2026;A1001;Mineralwasser 0,5 l;Getränke;15;0,42;6,30;SachsenGetränke GmbH;03.05.2026;storniert
+B-2026-0166;02.05.2026;A3002;Banane Fairtrade;Obst;15;0,34;5,10;Frischehof Meißen;09.05.2026;geliefert
+B-2026-0167;02.05.2026;A1001;Mineralwasser 0,5 l;Getränke;50;0,42;21,00;SachsenGetränke GmbH;;offen
+B-2026-0168;18.01.2026;A2003;Laugenstange;Backwaren;20;0,44;8,80;Bäckerei Morgenrot;19.01.2026;geliefert
+B-2026-0169;10.02.2026;A2002;Käsebrötchen;Backwaren;40;0,82;32,80;Bäckerei Morgenrot;11.02.2026;geliefert
+B-2026-0170;20.01.2026;A1002;Apfelschorle 0,5 l;Getränke;5;0,58;2,90;SachsenGetränke GmbH;27.01.2026;geliefert
+B-2026-0171;28.04.2026;A1001;Mineralwasser 0,5 l;Getränke;20;0,42;8,40;SachsenGetränke GmbH;03.05.2026;geliefert
+B-2026-0172;08.03.2026;A1001;Mineralwasser 0,5 l;Getränke;24;0,42;10,08;SachsenGetränke GmbH;10.03.2026;geliefert
+B-2026-0173;20.04.2026;A3002;Banane Fairtrade;Obst;10;0,34;3,40;Frischehof Meißen;22.04.2026;geliefert
+B-2026-0174;15.01.2026;A2003;Laugenstange;Backwaren;10;0,44;4,40;Bäckerei Morgenrot;19.01.2026;geliefert
+B-2026-0175;02.02.2026;A4004;Bleistift HB;Schreibwaren;15;0,16;2,40;Bürobedarf Elbtal;03.02.2026;geliefert
+B-2026-0176;01.03.2026;A5003;Maus kabelgebunden;Technik;24;5,30;127,20;IT-Service Lausitz;04.03.2026;geliefert
+B-2026-0177;17.04.2026;A4001;Collegeblock A4 kariert;Schreibwaren;10;1,15;11,50;Bürobedarf Elbtal;19.04.2026;geliefert
+B-2026-0178;07.04.2026;A1001;Mineralwasser 0,5 l;Getränke;50;0,42;21,00;SachsenGetränke GmbH;14.04.2026;geliefert
+B-2026-0179;22.05.2026;A4002;Kugelschreiber blau;Schreibwaren;80;0,22;17,60;Bürobedarf Elbtal;23.05.2026;geliefert
+B-2026-0180;06.05.2026;A1002;Apfelschorle 0,5 l;Getränke;10;0,58;5,80;SachsenGetränke GmbH;10.05.2026;geliefert
+B-2026-0181;25.02.2026;A4004;Bleistift HB;Schreibwaren;40;0,16;6,40;Bürobedarf Elbtal;01.03.2026;geliefert
+B-2026-0182;01.04.2026;A1003;Orangensaft 0,33 l;Getränke;20;0,64;12,80;SachsenGetränke GmbH;06.04.2026;geliefert
+B-2026-0183;03.03.2026;A2002;Käsebrötchen;Backwaren;24;0,82;19,68;Bäckerei Morgenrot;05.03.2026;geliefert
+B-2026-0184;29.03.2026;A2001;Vollkornbrötchen;Backwaren;100;0,31;31,00;Bäckerei Morgenrot;01.04.2026;geliefert
+B-2026-0185;11.04.2026;A5002;Patchkabel 2 m;Technik;60;1,85;111,00;IT-Service Lausitz;15.04.2026;geliefert
+B-2026-0186;05.06.2026;A4001;Collegeblock A4 kariert;Schreibwaren;50;1,15;57,50;Bürobedarf Elbtal;;offen
+B-2026-0187;07.03.2026;A4003;Textmarker gelb;Schreibwaren;5;0,48;2,40;Bürobedarf Elbtal;11.03.2026;geliefert
+B-2026-0188;13.03.2026;A5003;Maus kabelgebunden;Technik;100;5,30;530,00;IT-Service Lausitz;17.03.2026;geliefert
+B-2026-0189;22.03.2026;A3003;Birne regional;Obst;12;0,36;4,32;Frischehof Meißen;29.03.2026;geliefert
+B-2026-0190;31.03.2026;A2003;Laugenstange;Backwaren;10;0,44;4,40;Bäckerei Morgenrot;02.04.2026;geliefert
+B-2026-0191;26.05.2026;A1001;Mineralwasser 0,5 l;Getränke;20;0,42;8,40;SachsenGetränke GmbH;29.05.2026;geliefert
+B-2026-0192;08.05.2026;A4002;Kugelschreiber blau;Schreibwaren;50;0,22;11,00;Bürobedarf Elbtal;09.05.2026;geliefert
+B-2026-0193;18.02.2026;A4004;Bleistift HB;Schreibwaren;50;0,16;8,00;Bürobedarf Elbtal;21.02.2026;geliefert
+B-2026-0194;31.01.2026;A1001;Mineralwasser 0,5 l;Getränke;10;0,42;4,20;SachsenGetränke GmbH;04.02.2026;geliefert
+B-2026-0195;04.05.2026;A5001;USB-Stick 32 GB;Technik;40;4,90;196,00;IT-Service Lausitz;08.05.2026;geliefert
+B-2026-0196;27.05.2026;A4004;Bleistift HB;Schreibwaren;5;0,16;0,80;Bürobedarf Elbtal;03.06.2026;storniert
+B-2026-0197;03.06.2026;A3001;Apfel regional;Obst;5;0,28;1,40;Frischehof Meißen;05.06.2026;geliefert
+B-2026-0198;10.05.2026;A3003;Birne regional;Obst;24;0,36;8,64;Frischehof Meißen;14.05.2026;geliefert
+B-2026-0199;20.03.2026;A4002;Kugelschreiber blau;Schreibwaren;30;0,22;6,60;Bürobedarf Elbtal;24.03.2026;geliefert
+B-2026-0200;26.03.2026;A3002;Banane Fairtrade;Obst;12;0,34;4,08;Frischehof Meißen;28.03.2026;geliefert
+B-2026-0201;02.06.2026;A2001;Vollkornbrötchen;Backwaren;50;0,31;15,50;Bäckerei Morgenrot;03.06.2026;geliefert
+B-2026-0202;11.03.2026;A2002;Käsebrötchen;Backwaren;20;0,82;16,40;Bäckerei Morgenrot;12.03.2026;geliefert
+B-2026-0203;13.02.2026;A2002;Käsebrötchen;Backwaren;5;0,82;4,10;Bäckerei Morgenrot;17.02.2026;geliefert
+B-2026-0204;21.01.2026;A4002;Kugelschreiber blau;Schreibwaren;60;0,22;13,20;Bürobedarf Elbtal;;offen
+B-2026-0205;14.01.2026;A4002;Kugelschreiber blau;Schreibwaren;20;0,22;4,40;Bürobedarf Elbtal;16.01.2026;geliefert
+B-2026-0206;08.06.2026;A4002;Kugelschreiber blau;Schreibwaren;20;0,22;4,40;Bürobedarf Elbtal;09.06.2026;geliefert
+B-2026-0207;08.03.2026;A3002;Banane Fairtrade;Obst;20;0,34;6,80;Frischehof Meißen;;offen
+B-2026-0208;05.04.2026;A2003;Laugenstange;Backwaren;24;0,44;10,56;Bäckerei Morgenrot;06.04.2026;geliefert
+B-2026-0209;12.04.2026;A1001;Mineralwasser 0,5 l;Getränke;5;0,42;2,10;SachsenGetränke GmbH;15.04.2026;geliefert
+B-2026-0210;17.01.2026;A2003;Laugenstange;Backwaren;15;0,44;6,60;Bäckerei Morgenrot;19.01.2026;geliefert
+B-2026-0211;08.01.2026;A3002;Banane Fairtrade;Obst;10;0,34;3,40;Frischehof Meißen;09.01.2026;geliefert
+B-2026-0212;18.05.2026;A2002;Käsebrötchen;Backwaren;12;0,82;9,84;Bäckerei Morgenrot;25.05.2026;teilgeliefert
+B-2026-0213;23.04.2026;A3003;Birne regional;Obst;100;0,36;36,00;Frischehof Meißen;27.04.2026;geliefert
+B-2026-0214;17.02.2026;A4001;Collegeblock A4 kariert;Schreibwaren;20;1,15;23,00;Bürobedarf Elbtal;24.02.2026;geliefert
+B-2026-0215;19.02.2026;A1003;Orangensaft 0,33 l;Getränke;40;0,64;25,60;SachsenGetränke GmbH;21.02.2026;geliefert
+B-2026-0216;14.02.2026;A2002;Käsebrötchen;Backwaren;12;0,82;9,84;Bäckerei Morgenrot;16.02.2026;geliefert
+B-2026-0217;25.04.2026;A2003;Laugenstange;Backwaren;50;0,44;22,00;Bäckerei Morgenrot;27.04.2026;geliefert
+B-2026-0218;28.05.2026;A3003;Birne regional;Obst;24;0,36;8,64;Frischehof Meißen;01.06.2026;geliefert
+B-2026-0219;17.05.2026;A2002;Käsebrötchen;Backwaren;100;0,82;82,00;Bäckerei Morgenrot;22.05.2026;geliefert
+B-2026-0220;27.01.2026;A3003;Birne regional;Obst;15;0,36;5,40;Frischehof Meißen;29.01.2026;geliefert

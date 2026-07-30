@@ -1,0 +1,161 @@
+﻿fehler_id;datum;uhrzeit;system;fehlercode;beschreibung;prioritaet;ort;status;loesungsdauer_min;zustaendig
+F-0001;10.06.2026;07:23;Schulportal;E101;Anmeldung fehlgeschlagen;mittel;Raum 214;in Bearbeitung;;externer Support
+F-0002;01.04.2026;01:25;Dateiserver;E502;Dienst antwortet nicht;hoch;Raum 214;gelöst;5;Hausmeister
+F-0003;28.06.2026;01:13;Dateiserver;E411;Speicherplatz knapp;mittel;Lehrerzimmer;offen;;externer Support
+F-0004;30.04.2026;04:46;Druckserver;E305;Druckauftrag abgebrochen;niedrig;Lehrerzimmer;gelöst;15;IT-AG
+F-0005;25.05.2026;06:02;Druckserver;E607;Update ausstehend;niedrig;Bibliothek;gelöst;45;IT-AG
+F-0006;03.03.2026;19:05;Dateiserver;E502;Dienst antwortet nicht;hoch;Lehrerzimmer;gelöst;20;Hausmeister
+F-0007;14.05.2026;10:36;WLAN;E502;Dienst antwortet nicht;hoch;Raum 214;gelöst;20;Hausmeister
+F-0008;16.05.2026;22:33;Beamersteuerung;E607;Update ausstehend;niedrig;Sekretariat;gelöst;10;Systembetreuung
+F-0009;16.05.2026;21:44;Raum-PC;E607;Update ausstehend;niedrig;Serverraum;offen;;Hausmeister
+F-0010;18.03.2026;10:06;Beamersteuerung;E305;Druckauftrag abgebrochen;niedrig;Sekretariat;in Bearbeitung;;Hausmeister
+F-0011;12.03.2026;04:06;Raum-PC;E411;Speicherplatz knapp;mittel;Bibliothek;gelöst;15;Systembetreuung
+F-0012;07.05.2026;06:38;Raum-PC;E411;Speicherplatz knapp;mittel;Serverraum;gelöst;120;externer Support
+F-0013;21.04.2026;01:34;Raum-PC;E305;Druckauftrag abgebrochen;niedrig;Raum 101;gelöst;45;Systembetreuung
+F-0014;26.05.2026;06:05;Raum-PC;E411;Speicherplatz knapp;mittel;Raum 101;gelöst;20;Systembetreuung
+F-0015;22.04.2026;15:03;Druckserver;E203;Netzwerk nicht erreichbar;hoch;Lehrerzimmer;gelöst;180;Systembetreuung
+F-0016;06.05.2026;18:52;WLAN;E502;Dienst antwortet nicht;hoch;Sekretariat;gelöst;120;IT-AG
+F-0017;01.04.2026;19:32;Beamersteuerung;E203;Netzwerk nicht erreichbar;hoch;Bibliothek;gelöst;180;externer Support
+F-0018;20.03.2026;03:29;Druckserver;E502;Dienst antwortet nicht;hoch;Raum 101;in Bearbeitung;;Systembetreuung
+F-0019;14.06.2026;02:57;WLAN;E305;Druckauftrag abgebrochen;niedrig;Lehrerzimmer;gelöst;15;Hausmeister
+F-0020;24.05.2026;20:23;WLAN;E305;Druckauftrag abgebrochen;niedrig;Bibliothek;gelöst;180;Systembetreuung
+F-0021;04.04.2026;04:01;Schulportal;E411;Speicherplatz knapp;mittel;Lehrerzimmer;gelöst;20;Systembetreuung
+F-0022;23.03.2026;06:01;Raum-PC;E101;Anmeldung fehlgeschlagen;mittel;Raum 101;gelöst;180;IT-AG
+F-0023;22.06.2026;14:43;Beamersteuerung;E101;Anmeldung fehlgeschlagen;mittel;Raum 101;offen;;IT-AG
+F-0024;03.06.2026;06:30;Beamersteuerung;E607;Update ausstehend;niedrig;Sekretariat;gelöst;15;IT-AG
+F-0025;07.04.2026;01:33;WLAN;E203;Netzwerk nicht erreichbar;hoch;Sekretariat;in Bearbeitung;;externer Support
+F-0026;22.04.2026;15:57;Dateiserver;E607;Update ausstehend;niedrig;Lehrerzimmer;gelöst;15;Systembetreuung
+F-0027;23.06.2026;22:03;WLAN;E502;Dienst antwortet nicht;hoch;Serverraum;gelöst;20;Hausmeister
+F-0028;08.03.2026;04:11;Schulportal;E502;Dienst antwortet nicht;hoch;Raum 214;gelöst;60;IT-AG
+F-0029;20.05.2026;05:38;Beamersteuerung;E305;Druckauftrag abgebrochen;niedrig;Serverraum;offen;;externer Support
+F-0030;13.03.2026;11:22;Raum-PC;E502;Dienst antwortet nicht;hoch;Raum 101;gelöst;60;Systembetreuung
+F-0031;15.05.2026;00:45;Beamersteuerung;E411;Speicherplatz knapp;mittel;Raum 101;gelöst;90;IT-AG
+F-0032;08.03.2026;00:50;Raum-PC;E305;Druckauftrag abgebrochen;niedrig;Sekretariat;gelöst;30;externer Support
+F-0033;23.05.2026;23:00;Druckserver;E411;Speicherplatz knapp;mittel;Raum 101;in Bearbeitung;;IT-AG
+F-0034;19.06.2026;20:46;Dateiserver;E101;Anmeldung fehlgeschlagen;mittel;Raum 101;gelöst;20;IT-AG
+F-0035;05.06.2026;21:26;WLAN;E607;Update ausstehend;niedrig;Raum 214;in Bearbeitung;;Systembetreuung
+F-0036;12.04.2026;13:02;Beamersteuerung;E203;Netzwerk nicht erreichbar;hoch;Sekretariat;gelöst;120;Systembetreuung
+F-0037;31.05.2026;03:36;WLAN;E101;Anmeldung fehlgeschlagen;mittel;Bibliothek;gelöst;180;Hausmeister
+F-0038;14.06.2026;19:41;Dateiserver;E502;Dienst antwortet nicht;hoch;Lehrerzimmer;gelöst;120;Systembetreuung
+F-0039;09.03.2026;12:11;Raum-PC;E411;Speicherplatz knapp;mittel;Raum 101;gelöst;180;externer Support
+F-0040;10.03.2026;17:29;Beamersteuerung;E502;Dienst antwortet nicht;hoch;Raum 101;gelöst;45;Hausmeister
+F-0041;17.05.2026;12:35;WLAN;E203;Netzwerk nicht erreichbar;hoch;Lehrerzimmer;offen;;Hausmeister
+F-0042;27.03.2026;11:33;Beamersteuerung;E411;Speicherplatz knapp;mittel;Sekretariat;offen;;IT-AG
+F-0043;31.05.2026;05:08;WLAN;E607;Update ausstehend;niedrig;Bibliothek;gelöst;45;IT-AG
+F-0044;08.05.2026;15:46;Dateiserver;E502;Dienst antwortet nicht;hoch;Sekretariat;gelöst;30;IT-AG
+F-0045;18.06.2026;22:19;Schulportal;E203;Netzwerk nicht erreichbar;hoch;Raum 214;in Bearbeitung;;Systembetreuung
+F-0046;17.04.2026;15:48;Beamersteuerung;E203;Netzwerk nicht erreichbar;hoch;Raum 214;gelöst;30;IT-AG
+F-0047;13.03.2026;11:37;Schulportal;E203;Netzwerk nicht erreichbar;hoch;Sekretariat;gelöst;5;IT-AG
+F-0048;09.06.2026;04:59;Dateiserver;E502;Dienst antwortet nicht;hoch;Lehrerzimmer;gelöst;5;externer Support
+F-0049;16.03.2026;09:31;WLAN;E502;Dienst antwortet nicht;hoch;Raum 101;in Bearbeitung;;IT-AG
+F-0050;13.06.2026;18:21;Schulportal;E607;Update ausstehend;niedrig;Raum 101;gelöst;60;Hausmeister
+F-0051;15.06.2026;05:54;Raum-PC;E411;Speicherplatz knapp;mittel;Serverraum;gelöst;120;IT-AG
+F-0052;09.06.2026;16:38;Raum-PC;E101;Anmeldung fehlgeschlagen;mittel;Lehrerzimmer;gelöst;180;externer Support
+F-0053;22.05.2026;14:03;Dateiserver;E305;Druckauftrag abgebrochen;niedrig;Raum 101;gelöst;15;Systembetreuung
+F-0054;10.06.2026;07:08;Schulportal;E305;Druckauftrag abgebrochen;niedrig;Serverraum;gelöst;180;Systembetreuung
+F-0055;12.04.2026;23:02;Raum-PC;E502;Dienst antwortet nicht;hoch;Lehrerzimmer;in Bearbeitung;;Hausmeister
+F-0056;28.06.2026;15:09;Beamersteuerung;E305;Druckauftrag abgebrochen;niedrig;Sekretariat;gelöst;45;Systembetreuung
+F-0057;23.04.2026;00:19;Beamersteuerung;E502;Dienst antwortet nicht;hoch;Lehrerzimmer;in Bearbeitung;;Hausmeister
+F-0058;22.03.2026;07:45;Dateiserver;E411;Speicherplatz knapp;mittel;Sekretariat;gelöst;15;Systembetreuung
+F-0059;26.03.2026;07:24;Beamersteuerung;E101;Anmeldung fehlgeschlagen;mittel;Raum 101;gelöst;20;Systembetreuung
+F-0060;07.06.2026;08:31;Dateiserver;E607;Update ausstehend;niedrig;Lehrerzimmer;gelöst;10;externer Support
+F-0061;06.05.2026;12:17;Druckserver;E502;Dienst antwortet nicht;hoch;Bibliothek;gelöst;15;externer Support
+F-0062;28.05.2026;05:44;Schulportal;E411;Speicherplatz knapp;mittel;Serverraum;gelöst;30;IT-AG
+F-0063;11.05.2026;10:55;Dateiserver;E411;Speicherplatz knapp;mittel;Bibliothek;gelöst;90;Hausmeister
+F-0064;26.03.2026;01:05;Beamersteuerung;E607;Update ausstehend;niedrig;Sekretariat;offen;;Hausmeister
+F-0065;13.05.2026;17:25;Raum-PC;E411;Speicherplatz knapp;mittel;Serverraum;in Bearbeitung;;IT-AG
+F-0066;22.03.2026;11:22;Dateiserver;E411;Speicherplatz knapp;mittel;Raum 214;gelöst;5;Systembetreuung
+F-0067;21.03.2026;15:44;Schulportal;E305;Druckauftrag abgebrochen;niedrig;Raum 214;gelöst;60;IT-AG
+F-0068;08.05.2026;00:05;Beamersteuerung;E203;Netzwerk nicht erreichbar;hoch;Raum 101;gelöst;45;IT-AG
+F-0069;01.06.2026;10:55;Raum-PC;E502;Dienst antwortet nicht;hoch;Serverraum;gelöst;5;Hausmeister
+F-0070;10.03.2026;13:46;Raum-PC;E101;Anmeldung fehlgeschlagen;mittel;Sekretariat;offen;;externer Support
+F-0071;15.05.2026;05:29;Druckserver;E305;Druckauftrag abgebrochen;niedrig;Bibliothek;gelöst;30;IT-AG
+F-0072;01.03.2026;06:28;Beamersteuerung;E502;Dienst antwortet nicht;hoch;Sekretariat;offen;;Systembetreuung
+F-0073;30.05.2026;18:31;Beamersteuerung;E411;Speicherplatz knapp;mittel;Raum 101;gelöst;10;Hausmeister
+F-0074;03.06.2026;03:41;Raum-PC;E502;Dienst antwortet nicht;hoch;Raum 214;in Bearbeitung;;IT-AG
+F-0075;06.04.2026;22:32;Schulportal;E203;Netzwerk nicht erreichbar;hoch;Raum 101;gelöst;45;Systembetreuung
+F-0076;28.06.2026;06:19;Beamersteuerung;E411;Speicherplatz knapp;mittel;Raum 214;gelöst;120;IT-AG
+F-0077;31.05.2026;14:07;WLAN;E411;Speicherplatz knapp;mittel;Raum 214;gelöst;120;externer Support
+F-0078;05.06.2026;12:24;Dateiserver;E607;Update ausstehend;niedrig;Sekretariat;gelöst;15;Hausmeister
+F-0079;01.03.2026;02:49;Dateiserver;E101;Anmeldung fehlgeschlagen;mittel;Sekretariat;gelöst;20;Systembetreuung
+F-0080;09.05.2026;09:03;Raum-PC;E607;Update ausstehend;niedrig;Serverraum;gelöst;45;IT-AG
+F-0081;05.06.2026;18:23;Druckserver;E203;Netzwerk nicht erreichbar;hoch;Sekretariat;gelöst;180;Hausmeister
+F-0082;06.03.2026;22:38;Raum-PC;E607;Update ausstehend;niedrig;Serverraum;gelöst;30;Hausmeister
+F-0083;19.05.2026;02:08;Druckserver;E411;Speicherplatz knapp;mittel;Lehrerzimmer;gelöst;20;Hausmeister
+F-0084;30.04.2026;10:30;Beamersteuerung;E411;Speicherplatz knapp;mittel;Raum 214;gelöst;45;IT-AG
+F-0085;04.06.2026;13:12;WLAN;E203;Netzwerk nicht erreichbar;hoch;Bibliothek;gelöst;60;Systembetreuung
+F-0086;01.05.2026;11:55;Druckserver;E411;Speicherplatz knapp;mittel;Raum 214;gelöst;5;externer Support
+F-0087;16.04.2026;09:43;Druckserver;E607;Update ausstehend;niedrig;Raum 214;offen;;externer Support
+F-0088;15.03.2026;17:08;Druckserver;E305;Druckauftrag abgebrochen;niedrig;Lehrerzimmer;gelöst;20;Hausmeister
+F-0089;02.04.2026;11:32;Beamersteuerung;E101;Anmeldung fehlgeschlagen;mittel;Serverraum;gelöst;120;externer Support
+F-0090;18.04.2026;05:29;Schulportal;E101;Anmeldung fehlgeschlagen;mittel;Raum 101;in Bearbeitung;;Systembetreuung
+F-0091;24.05.2026;00:20;Raum-PC;E305;Druckauftrag abgebrochen;niedrig;Bibliothek;gelöst;180;externer Support
+F-0092;08.04.2026;01:00;Druckserver;E203;Netzwerk nicht erreichbar;hoch;Serverraum;gelöst;10;externer Support
+F-0093;19.04.2026;14:14;Schulportal;E411;Speicherplatz knapp;mittel;Raum 101;gelöst;15;Systembetreuung
+F-0094;01.03.2026;07:38;Druckserver;E411;Speicherplatz knapp;mittel;Lehrerzimmer;gelöst;5;Systembetreuung
+F-0095;13.04.2026;03:06;Raum-PC;E607;Update ausstehend;niedrig;Lehrerzimmer;gelöst;5;Systembetreuung
+F-0096;13.05.2026;16:18;Druckserver;E607;Update ausstehend;niedrig;Sekretariat;gelöst;60;externer Support
+F-0097;15.06.2026;12:51;Druckserver;E502;Dienst antwortet nicht;hoch;Raum 101;gelöst;10;Systembetreuung
+F-0098;16.03.2026;07:13;Raum-PC;E203;Netzwerk nicht erreichbar;hoch;Serverraum;gelöst;15;Hausmeister
+F-0099;21.04.2026;21:54;Raum-PC;E203;Netzwerk nicht erreichbar;hoch;Raum 101;gelöst;90;IT-AG
+F-0100;16.04.2026;02:26;Raum-PC;E411;Speicherplatz knapp;mittel;Raum 214;in Bearbeitung;;Systembetreuung
+F-0101;24.06.2026;16:27;Dateiserver;E305;Druckauftrag abgebrochen;niedrig;Raum 214;gelöst;15;Hausmeister
+F-0102;13.04.2026;13:38;Schulportal;E411;Speicherplatz knapp;mittel;Sekretariat;in Bearbeitung;;Hausmeister
+F-0103;23.05.2026;05:29;WLAN;E101;Anmeldung fehlgeschlagen;mittel;Lehrerzimmer;gelöst;60;Hausmeister
+F-0104;18.04.2026;18:44;Dateiserver;E203;Netzwerk nicht erreichbar;hoch;Serverraum;gelöst;15;Hausmeister
+F-0105;15.05.2026;17:41;Schulportal;E203;Netzwerk nicht erreichbar;hoch;Raum 214;in Bearbeitung;;externer Support
+F-0106;07.05.2026;07:17;WLAN;E502;Dienst antwortet nicht;hoch;Sekretariat;gelöst;15;Hausmeister
+F-0107;26.06.2026;02:12;Druckserver;E203;Netzwerk nicht erreichbar;hoch;Raum 214;offen;;IT-AG
+F-0108;23.06.2026;16:40;Beamersteuerung;E203;Netzwerk nicht erreichbar;hoch;Raum 101;gelöst;5;Systembetreuung
+F-0109;19.03.2026;05:41;WLAN;E203;Netzwerk nicht erreichbar;hoch;Raum 214;gelöst;120;IT-AG
+F-0110;07.05.2026;06:35;Raum-PC;E607;Update ausstehend;niedrig;Bibliothek;gelöst;120;Systembetreuung
+F-0111;09.05.2026;15:00;Beamersteuerung;E607;Update ausstehend;niedrig;Raum 214;gelöst;90;IT-AG
+F-0112;04.05.2026;01:32;Raum-PC;E101;Anmeldung fehlgeschlagen;mittel;Bibliothek;gelöst;180;Systembetreuung
+F-0113;22.03.2026;02:38;Beamersteuerung;E305;Druckauftrag abgebrochen;niedrig;Lehrerzimmer;gelöst;5;Hausmeister
+F-0114;03.05.2026;08:15;Beamersteuerung;E101;Anmeldung fehlgeschlagen;mittel;Lehrerzimmer;in Bearbeitung;;Systembetreuung
+F-0115;09.03.2026;17:28;WLAN;E411;Speicherplatz knapp;mittel;Serverraum;in Bearbeitung;;Hausmeister
+F-0116;01.03.2026;00:10;WLAN;E305;Druckauftrag abgebrochen;niedrig;Raum 214;gelöst;60;Hausmeister
+F-0117;07.06.2026;01:54;Druckserver;E502;Dienst antwortet nicht;hoch;Lehrerzimmer;gelöst;20;Systembetreuung
+F-0118;01.05.2026;23:36;Beamersteuerung;E101;Anmeldung fehlgeschlagen;mittel;Serverraum;gelöst;20;IT-AG
+F-0119;15.06.2026;11:20;Raum-PC;E502;Dienst antwortet nicht;hoch;Raum 214;in Bearbeitung;;Systembetreuung
+F-0120;14.03.2026;14:12;WLAN;E411;Speicherplatz knapp;mittel;Serverraum;gelöst;90;Hausmeister
+F-0121;13.05.2026;02:20;WLAN;E411;Speicherplatz knapp;mittel;Bibliothek;gelöst;15;externer Support
+F-0122;14.05.2026;17:36;Dateiserver;E607;Update ausstehend;niedrig;Sekretariat;gelöst;180;Systembetreuung
+F-0123;16.04.2026;14:22;Druckserver;E101;Anmeldung fehlgeschlagen;mittel;Raum 101;in Bearbeitung;;Systembetreuung
+F-0124;16.06.2026;13:52;Dateiserver;E203;Netzwerk nicht erreichbar;hoch;Serverraum;in Bearbeitung;;externer Support
+F-0125;30.03.2026;23:54;Druckserver;E502;Dienst antwortet nicht;hoch;Raum 214;gelöst;5;Systembetreuung
+F-0126;23.06.2026;16:40;Raum-PC;E411;Speicherplatz knapp;mittel;Sekretariat;gelöst;15;Hausmeister
+F-0127;14.05.2026;19:31;WLAN;E203;Netzwerk nicht erreichbar;hoch;Sekretariat;gelöst;60;IT-AG
+F-0128;29.04.2026;16:31;Beamersteuerung;E411;Speicherplatz knapp;mittel;Lehrerzimmer;gelöst;30;Hausmeister
+F-0129;11.06.2026;06:55;Dateiserver;E203;Netzwerk nicht erreichbar;hoch;Lehrerzimmer;gelöst;5;externer Support
+F-0130;18.04.2026;21:58;WLAN;E502;Dienst antwortet nicht;hoch;Raum 214;gelöst;5;Systembetreuung
+F-0131;12.03.2026;17:33;WLAN;E305;Druckauftrag abgebrochen;niedrig;Serverraum;in Bearbeitung;;Systembetreuung
+F-0132;21.06.2026;12:03;Dateiserver;E411;Speicherplatz knapp;mittel;Sekretariat;offen;;Hausmeister
+F-0133;21.03.2026;21:40;Beamersteuerung;E502;Dienst antwortet nicht;hoch;Sekretariat;gelöst;30;Systembetreuung
+F-0134;07.06.2026;17:38;Dateiserver;E502;Dienst antwortet nicht;hoch;Bibliothek;gelöst;30;externer Support
+F-0135;16.06.2026;12:44;Schulportal;E607;Update ausstehend;niedrig;Raum 101;gelöst;60;externer Support
+F-0136;07.06.2026;15:57;Druckserver;E502;Dienst antwortet nicht;hoch;Raum 101;gelöst;20;Systembetreuung
+F-0137;23.03.2026;19:04;Raum-PC;E607;Update ausstehend;niedrig;Raum 101;gelöst;30;externer Support
+F-0138;18.05.2026;01:14;Dateiserver;E411;Speicherplatz knapp;mittel;Raum 101;in Bearbeitung;;externer Support
+F-0139;23.03.2026;14:03;WLAN;E101;Anmeldung fehlgeschlagen;mittel;Sekretariat;gelöst;45;externer Support
+F-0140;15.06.2026;15:35;Beamersteuerung;E607;Update ausstehend;niedrig;Sekretariat;in Bearbeitung;;IT-AG
+F-0141;14.05.2026;13:09;Druckserver;E305;Druckauftrag abgebrochen;niedrig;Raum 101;gelöst;60;Systembetreuung
+F-0142;27.05.2026;20:49;Raum-PC;E101;Anmeldung fehlgeschlagen;mittel;Sekretariat;gelöst;90;IT-AG
+F-0143;20.03.2026;19:24;Raum-PC;E203;Netzwerk nicht erreichbar;hoch;Raum 101;gelöst;10;Hausmeister
+F-0144;09.06.2026;01:51;Schulportal;E607;Update ausstehend;niedrig;Sekretariat;gelöst;30;Systembetreuung
+F-0145;17.06.2026;07:16;Beamersteuerung;E101;Anmeldung fehlgeschlagen;mittel;Raum 101;gelöst;60;externer Support
+F-0146;18.03.2026;02:12;Schulportal;E101;Anmeldung fehlgeschlagen;mittel;Sekretariat;gelöst;60;Hausmeister
+F-0147;27.04.2026;12:59;WLAN;E305;Druckauftrag abgebrochen;niedrig;Raum 214;gelöst;30;Systembetreuung
+F-0148;12.05.2026;20:10;Beamersteuerung;E607;Update ausstehend;niedrig;Sekretariat;gelöst;30;externer Support
+F-0149;22.04.2026;20:25;Schulportal;E502;Dienst antwortet nicht;hoch;Raum 214;offen;;Hausmeister
+F-0150;10.05.2026;18:52;Beamersteuerung;E607;Update ausstehend;niedrig;Raum 214;gelöst;20;IT-AG
+F-0151;07.05.2026;22:40;Dateiserver;E305;Druckauftrag abgebrochen;niedrig;Lehrerzimmer;gelöst;30;externer Support
+F-0152;12.05.2026;07:12;Raum-PC;E305;Druckauftrag abgebrochen;niedrig;Bibliothek;in Bearbeitung;;IT-AG
+F-0153;21.03.2026;14:55;Raum-PC;E101;Anmeldung fehlgeschlagen;mittel;Bibliothek;gelöst;10;externer Support
+F-0154;14.03.2026;10:30;Dateiserver;E502;Dienst antwortet nicht;hoch;Raum 101;gelöst;10;IT-AG
+F-0155;03.06.2026;17:52;WLAN;E502;Dienst antwortet nicht;hoch;Lehrerzimmer;gelöst;90;externer Support
+F-0156;03.04.2026;20:31;Schulportal;E101;Anmeldung fehlgeschlagen;mittel;Sekretariat;gelöst;5;externer Support
+F-0157;03.06.2026;02:08;Druckserver;E607;Update ausstehend;niedrig;Raum 101;gelöst;15;externer Support
+F-0158;23.04.2026;16:45;Schulportal;E607;Update ausstehend;niedrig;Lehrerzimmer;offen;;Systembetreuung
+F-0159;24.05.2026;01:23;WLAN;E502;Dienst antwortet nicht;hoch;Serverraum;gelöst;30;IT-AG
+F-0160;01.06.2026;06:18;Dateiserver;E607;Update ausstehend;niedrig;Sekretariat;gelöst;10;externer Support

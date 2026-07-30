@@ -1,0 +1,151 @@
+﻿verkaufs_id;datum;wochentag;menue_id;gericht;kategorie;verkaufte_portionen;reste_portionen;preis_eur;umsatz_eur;wetter
+V0001;23.02.2026;Montag;M09;Käsespätzle mit Salat;vegetarisch;49;4;3,60;176,40;sonnig
+V0002;23.02.2026;Montag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;44;6;3,40;149,60;sonnig
+V0003;23.02.2026;Montag;M05;Fischfilet mit Kartoffelpüree;Fisch;30;7;3,90;117,00;sonnig
+V0004;24.02.2026;Dienstag;M08;Rindergulasch mit Nudeln;Fleisch;44;2;4,10;180,40;regnerisch
+V0005;24.02.2026;Dienstag;M05;Fischfilet mit Kartoffelpüree;Fisch;21;0;3,90;81,90;regnerisch
+V0006;24.02.2026;Dienstag;M10;Falafel-Teller;vegan;20;2;3,80;76,00;regnerisch
+V0007;25.02.2026;Mittwoch;M08;Rindergulasch mit Nudeln;Fleisch;39;0;4,10;159,90;regnerisch
+V0008;25.02.2026;Mittwoch;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;44;3;3,80;167,20;regnerisch
+V0009;25.02.2026;Mittwoch;M10;Falafel-Teller;vegan;35;1;3,80;133,00;regnerisch
+V0010;26.02.2026;Donnerstag;M06;Gemüseburger mit Ofenkartoffeln;vegetarisch;41;3;3,70;151,70;regnerisch
+V0011;26.02.2026;Donnerstag;M07;Chili sin Carne;vegan;33;2;3,40;112,20;regnerisch
+V0012;26.02.2026;Donnerstag;M01;Spaghetti mit Tomatensoße;vegetarisch;31;1;3,20;99,20;regnerisch
+V0013;27.02.2026;Freitag;M10;Falafel-Teller;vegan;33;4;3,80;125,40;kalt
+V0014;27.02.2026;Freitag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;40;4;3,80;152,00;kalt
+V0015;27.02.2026;Freitag;M01;Spaghetti mit Tomatensoße;vegetarisch;37;1;3,20;118,40;kalt
+V0016;02.03.2026;Montag;M08;Rindergulasch mit Nudeln;Fleisch;48;2;4,10;196,80;kalt
+V0017;02.03.2026;Montag;M05;Fischfilet mit Kartoffelpüree;Fisch;30;2;3,90;117,00;kalt
+V0018;02.03.2026;Montag;M01;Spaghetti mit Tomatensoße;vegetarisch;45;1;3,20;144,00;kalt
+V0019;03.03.2026;Dienstag;M08;Rindergulasch mit Nudeln;Fleisch;30;3;4,10;123,00;bewölkt
+V0020;03.03.2026;Dienstag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;30;0;3,80;114,00;bewölkt
+V0021;03.03.2026;Dienstag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;53;3;3,40;180,20;bewölkt
+V0022;04.03.2026;Mittwoch;M09;Käsespätzle mit Salat;vegetarisch;47;5;3,60;169,20;regnerisch
+V0023;04.03.2026;Mittwoch;M06;Gemüseburger mit Ofenkartoffeln;vegetarisch;62;4;3,70;229,40;regnerisch
+V0024;04.03.2026;Mittwoch;M04;Linsencurry mit Fladenbrot;vegan;29;3;3,50;101,50;regnerisch
+V0025;05.03.2026;Donnerstag;M08;Rindergulasch mit Nudeln;Fleisch;47;5;4,10;192,70;kalt
+V0026;05.03.2026;Donnerstag;M09;Käsespätzle mit Salat;vegetarisch;32;0;3,60;115,20;kalt
+V0027;05.03.2026;Donnerstag;M10;Falafel-Teller;vegan;39;0;3,80;148,20;kalt
+V0028;06.03.2026;Freitag;M05;Fischfilet mit Kartoffelpüree;Fisch;26;0;3,90;101,40;bewölkt
+V0029;06.03.2026;Freitag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;36;6;3,80;136,80;bewölkt
+V0030;06.03.2026;Freitag;M04;Linsencurry mit Fladenbrot;vegan;40;4;3,50;140,00;bewölkt
+V0031;09.03.2026;Montag;M07;Chili sin Carne;vegan;38;2;3,40;129,20;kalt
+V0032;09.03.2026;Montag;M10;Falafel-Teller;vegan;30;5;3,80;114,00;kalt
+V0033;09.03.2026;Montag;M06;Gemüseburger mit Ofenkartoffeln;vegetarisch;52;2;3,70;192,40;kalt
+V0034;10.03.2026;Dienstag;M08;Rindergulasch mit Nudeln;Fleisch;36;0;4,10;147,60;regnerisch
+V0035;10.03.2026;Dienstag;M05;Fischfilet mit Kartoffelpüree;Fisch;34;1;3,90;132,60;regnerisch
+V0036;10.03.2026;Dienstag;M01;Spaghetti mit Tomatensoße;vegetarisch;52;5;3,20;166,40;regnerisch
+V0037;11.03.2026;Mittwoch;M09;Käsespätzle mit Salat;vegetarisch;45;2;3,60;162,00;sonnig
+V0038;11.03.2026;Mittwoch;M08;Rindergulasch mit Nudeln;Fleisch;48;1;4,10;196,80;sonnig
+V0039;11.03.2026;Mittwoch;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;39;3;3,40;132,60;sonnig
+V0040;12.03.2026;Donnerstag;M10;Falafel-Teller;vegan;18;1;3,80;68,40;regnerisch
+V0041;12.03.2026;Donnerstag;M09;Käsespätzle mit Salat;vegetarisch;65;1;3,60;234,00;regnerisch
+V0042;12.03.2026;Donnerstag;M07;Chili sin Carne;vegan;43;0;3,40;146,20;regnerisch
+V0043;13.03.2026;Freitag;M04;Linsencurry mit Fladenbrot;vegan;39;6;3,50;136,50;bewölkt
+V0044;13.03.2026;Freitag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;54;3;3,80;205,20;bewölkt
+V0045;13.03.2026;Freitag;M08;Rindergulasch mit Nudeln;Fleisch;34;0;4,10;139,40;bewölkt
+V0046;16.03.2026;Montag;M01;Spaghetti mit Tomatensoße;vegetarisch;43;1;3,20;137,60;kalt
+V0047;16.03.2026;Montag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;46;1;3,40;156,40;kalt
+V0048;16.03.2026;Montag;M07;Chili sin Carne;vegan;41;1;3,40;139,40;kalt
+V0049;17.03.2026;Dienstag;M09;Käsespätzle mit Salat;vegetarisch;48;3;3,60;172,80;bewölkt
+V0050;17.03.2026;Dienstag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;47;4;3,80;178,60;bewölkt
+V0051;17.03.2026;Dienstag;M07;Chili sin Carne;vegan;44;2;3,40;149,60;bewölkt
+V0052;18.03.2026;Mittwoch;M08;Rindergulasch mit Nudeln;Fleisch;29;1;4,10;118,90;sonnig
+V0053;18.03.2026;Mittwoch;M09;Käsespätzle mit Salat;vegetarisch;52;0;3,60;187,20;sonnig
+V0054;18.03.2026;Mittwoch;M10;Falafel-Teller;vegan;28;1;3,80;106,40;sonnig
+V0055;19.03.2026;Donnerstag;M09;Käsespätzle mit Salat;vegetarisch;53;0;3,60;190,80;kalt
+V0056;19.03.2026;Donnerstag;M01;Spaghetti mit Tomatensoße;vegetarisch;55;1;3,20;176,00;kalt
+V0057;19.03.2026;Donnerstag;M05;Fischfilet mit Kartoffelpüree;Fisch;23;0;3,90;89,70;kalt
+V0058;20.03.2026;Freitag;M01;Spaghetti mit Tomatensoße;vegetarisch;44;1;3,20;140,80;kalt
+V0059;20.03.2026;Freitag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;53;0;3,40;180,20;kalt
+V0060;20.03.2026;Freitag;M05;Fischfilet mit Kartoffelpüree;Fisch;38;0;3,90;148,20;kalt
+V0061;23.03.2026;Montag;M08;Rindergulasch mit Nudeln;Fleisch;51;2;4,10;209,10;regnerisch
+V0062;23.03.2026;Montag;M10;Falafel-Teller;vegan;38;2;3,80;144,40;regnerisch
+V0063;23.03.2026;Montag;M06;Gemüseburger mit Ofenkartoffeln;vegetarisch;62;4;3,70;229,40;regnerisch
+V0064;24.03.2026;Dienstag;M09;Käsespätzle mit Salat;vegetarisch;47;1;3,60;169,20;bewölkt
+V0065;24.03.2026;Dienstag;M10;Falafel-Teller;vegan;35;0;3,80;133,00;bewölkt
+V0066;24.03.2026;Dienstag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;47;0;3,40;159,80;bewölkt
+V0067;25.03.2026;Mittwoch;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;41;1;3,80;155,80;sonnig
+V0068;25.03.2026;Mittwoch;M01;Spaghetti mit Tomatensoße;vegetarisch;38;3;3,20;121,60;sonnig
+V0069;25.03.2026;Mittwoch;M10;Falafel-Teller;vegan;36;0;3,80;136,80;sonnig
+V0070;26.03.2026;Donnerstag;M10;Falafel-Teller;vegan;45;5;3,80;171,00;bewölkt
+V0071;26.03.2026;Donnerstag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;51;2;3,40;173,40;bewölkt
+V0072;26.03.2026;Donnerstag;M04;Linsencurry mit Fladenbrot;vegan;36;5;3,50;126,00;bewölkt
+V0073;27.03.2026;Freitag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;51;5;3,40;173,40;regnerisch
+V0074;27.03.2026;Freitag;M05;Fischfilet mit Kartoffelpüree;Fisch;18;0;3,90;70,20;regnerisch
+V0075;27.03.2026;Freitag;M09;Käsespätzle mit Salat;vegetarisch;49;3;3,60;176,40;regnerisch
+V0076;30.03.2026;Montag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;38;3;3,80;144,40;kalt
+V0077;30.03.2026;Montag;M07;Chili sin Carne;vegan;32;0;3,40;108,80;kalt
+V0078;30.03.2026;Montag;M04;Linsencurry mit Fladenbrot;vegan;20;2;3,50;70,00;kalt
+V0079;31.03.2026;Dienstag;M05;Fischfilet mit Kartoffelpüree;Fisch;21;0;3,90;81,90;kalt
+V0080;31.03.2026;Dienstag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;33;3;3,80;125,40;kalt
+V0081;31.03.2026;Dienstag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;60;2;3,40;204,00;kalt
+V0082;01.04.2026;Mittwoch;M09;Käsespätzle mit Salat;vegetarisch;47;0;3,60;169,20;kalt
+V0083;01.04.2026;Mittwoch;M01;Spaghetti mit Tomatensoße;vegetarisch;43;2;3,20;137,60;kalt
+V0084;01.04.2026;Mittwoch;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;27;3;3,80;102,60;kalt
+V0085;02.04.2026;Donnerstag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;41;1;3,80;155,80;bewölkt
+V0086;02.04.2026;Donnerstag;M08;Rindergulasch mit Nudeln;Fleisch;33;0;4,10;135,30;bewölkt
+V0087;02.04.2026;Donnerstag;M07;Chili sin Carne;vegan;31;0;3,40;105,40;bewölkt
+V0088;03.04.2026;Freitag;M07;Chili sin Carne;vegan;37;1;3,40;125,80;bewölkt
+V0089;03.04.2026;Freitag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;41;0;3,80;155,80;bewölkt
+V0090;03.04.2026;Freitag;M06;Gemüseburger mit Ofenkartoffeln;vegetarisch;44;3;3,70;162,80;bewölkt
+V0091;06.04.2026;Montag;M06;Gemüseburger mit Ofenkartoffeln;vegetarisch;47;3;3,70;173,90;bewölkt
+V0092;06.04.2026;Montag;M01;Spaghetti mit Tomatensoße;vegetarisch;45;2;3,20;144,00;bewölkt
+V0093;06.04.2026;Montag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;42;0;3,40;142,80;bewölkt
+V0094;07.04.2026;Dienstag;M09;Käsespätzle mit Salat;vegetarisch;48;0;3,60;172,80;regnerisch
+V0095;07.04.2026;Dienstag;M08;Rindergulasch mit Nudeln;Fleisch;47;3;4,10;192,70;regnerisch
+V0096;07.04.2026;Dienstag;M10;Falafel-Teller;vegan;31;2;3,80;117,80;regnerisch
+V0097;08.04.2026;Mittwoch;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;40;4;3,80;152,00;kalt
+V0098;08.04.2026;Mittwoch;M08;Rindergulasch mit Nudeln;Fleisch;41;3;4,10;168,10;kalt
+V0099;08.04.2026;Mittwoch;M04;Linsencurry mit Fladenbrot;vegan;23;0;3,50;80,50;kalt
+V0100;09.04.2026;Donnerstag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;37;4;3,80;140,60;sonnig
+V0101;09.04.2026;Donnerstag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;51;0;3,40;173,40;sonnig
+V0102;09.04.2026;Donnerstag;M07;Chili sin Carne;vegan;35;0;3,40;119,00;sonnig
+V0103;10.04.2026;Freitag;M09;Käsespätzle mit Salat;vegetarisch;50;4;3,60;180,00;kalt
+V0104;10.04.2026;Freitag;M10;Falafel-Teller;vegan;34;1;3,80;129,20;kalt
+V0105;10.04.2026;Freitag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;33;0;3,40;112,20;kalt
+V0106;13.04.2026;Montag;M06;Gemüseburger mit Ofenkartoffeln;vegetarisch;44;4;3,70;162,80;sonnig
+V0107;13.04.2026;Montag;M04;Linsencurry mit Fladenbrot;vegan;29;0;3,50;101,50;sonnig
+V0108;13.04.2026;Montag;M10;Falafel-Teller;vegan;27;3;3,80;102,60;sonnig
+V0109;14.04.2026;Dienstag;M09;Käsespätzle mit Salat;vegetarisch;46;4;3,60;165,60;regnerisch
+V0110;14.04.2026;Dienstag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;41;4;3,40;139,40;regnerisch
+V0111;14.04.2026;Dienstag;M05;Fischfilet mit Kartoffelpüree;Fisch;45;1;3,90;175,50;regnerisch
+V0112;15.04.2026;Mittwoch;M10;Falafel-Teller;vegan;15;2;3,80;57,00;regnerisch
+V0113;15.04.2026;Mittwoch;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;38;2;3,80;144,40;regnerisch
+V0114;15.04.2026;Mittwoch;M06;Gemüseburger mit Ofenkartoffeln;vegetarisch;52;3;3,70;192,40;regnerisch
+V0115;16.04.2026;Donnerstag;M01;Spaghetti mit Tomatensoße;vegetarisch;37;0;3,20;118,40;sonnig
+V0116;16.04.2026;Donnerstag;M08;Rindergulasch mit Nudeln;Fleisch;45;3;4,10;184,50;sonnig
+V0117;16.04.2026;Donnerstag;M05;Fischfilet mit Kartoffelpüree;Fisch;35;0;3,90;136,50;sonnig
+V0118;17.04.2026;Freitag;M01;Spaghetti mit Tomatensoße;vegetarisch;52;0;3,20;166,40;sonnig
+V0119;17.04.2026;Freitag;M10;Falafel-Teller;vegan;28;0;3,80;106,40;sonnig
+V0120;17.04.2026;Freitag;M04;Linsencurry mit Fladenbrot;vegan;30;5;3,50;105,00;sonnig
+V0121;20.04.2026;Montag;M09;Käsespätzle mit Salat;vegetarisch;50;5;3,60;180,00;sonnig
+V0122;20.04.2026;Montag;M08;Rindergulasch mit Nudeln;Fleisch;40;1;4,10;164,00;sonnig
+V0123;20.04.2026;Montag;M05;Fischfilet mit Kartoffelpüree;Fisch;27;2;3,90;105,30;sonnig
+V0124;21.04.2026;Dienstag;M05;Fischfilet mit Kartoffelpüree;Fisch;38;6;3,90;148,20;bewölkt
+V0125;21.04.2026;Dienstag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;45;8;3,40;153,00;bewölkt
+V0126;21.04.2026;Dienstag;M10;Falafel-Teller;vegan;31;2;3,80;117,80;bewölkt
+V0127;22.04.2026;Mittwoch;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;62;5;3,40;210,80;bewölkt
+V0128;22.04.2026;Mittwoch;M07;Chili sin Carne;vegan;27;1;3,40;91,80;bewölkt
+V0129;22.04.2026;Mittwoch;M10;Falafel-Teller;vegan;23;0;3,80;87,40;bewölkt
+V0130;23.04.2026;Donnerstag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;37;0;3,40;125,80;kalt
+V0131;23.04.2026;Donnerstag;M01;Spaghetti mit Tomatensoße;vegetarisch;55;5;3,20;176,00;kalt
+V0132;23.04.2026;Donnerstag;M08;Rindergulasch mit Nudeln;Fleisch;42;0;4,10;172,20;kalt
+V0133;24.04.2026;Freitag;M01;Spaghetti mit Tomatensoße;vegetarisch;56;4;3,20;179,20;kalt
+V0134;24.04.2026;Freitag;M04;Linsencurry mit Fladenbrot;vegan;23;0;3,50;80,50;kalt
+V0135;24.04.2026;Freitag;M09;Käsespätzle mit Salat;vegetarisch;39;3;3,60;140,40;kalt
+V0136;27.04.2026;Montag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;39;0;3,40;132,60;kalt
+V0137;27.04.2026;Montag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;46;2;3,80;174,80;kalt
+V0138;27.04.2026;Montag;M01;Spaghetti mit Tomatensoße;vegetarisch;57;4;3,20;182,40;kalt
+V0139;28.04.2026;Dienstag;M09;Käsespätzle mit Salat;vegetarisch;34;2;3,60;122,40;bewölkt
+V0140;28.04.2026;Dienstag;M01;Spaghetti mit Tomatensoße;vegetarisch;47;6;3,20;150,40;bewölkt
+V0141;28.04.2026;Dienstag;M10;Falafel-Teller;vegan;37;3;3,80;140,60;bewölkt
+V0142;29.04.2026;Mittwoch;M07;Chili sin Carne;vegan;36;0;3,40;122,40;sonnig
+V0143;29.04.2026;Mittwoch;M08;Rindergulasch mit Nudeln;Fleisch;54;1;4,10;221,40;sonnig
+V0144;29.04.2026;Mittwoch;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;39;0;3,40;132,60;sonnig
+V0145;30.04.2026;Donnerstag;M02;Kartoffel-Gemüse-Auflauf;vegetarisch;49;6;3,40;166,60;kalt
+V0146;30.04.2026;Donnerstag;M05;Fischfilet mit Kartoffelpüree;Fisch;27;1;3,90;105,30;kalt
+V0147;30.04.2026;Donnerstag;M04;Linsencurry mit Fladenbrot;vegan;22;2;3,50;77,00;kalt
+V0148;01.05.2026;Freitag;M05;Fischfilet mit Kartoffelpüree;Fisch;46;5;3,90;179,40;sonnig
+V0149;01.05.2026;Freitag;M10;Falafel-Teller;vegan;31;0;3,80;117,80;sonnig
+V0150;01.05.2026;Freitag;M03;Hähnchengeschnetzeltes mit Reis;Fleisch;51;0;3,80;193,80;sonnig

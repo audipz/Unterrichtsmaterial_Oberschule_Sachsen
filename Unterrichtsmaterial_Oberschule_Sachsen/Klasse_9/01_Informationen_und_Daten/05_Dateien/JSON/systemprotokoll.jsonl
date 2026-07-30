@@ -1,0 +1,80 @@
+{"ereignis_id": "E-0001", "zeitpunkt": "2026-09-14T08:00:00+02:00", "stufe": "INFO", "komponente": "Datenbank", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0002", "zeitpunkt": "2026-09-14T08:30:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0003", "zeitpunkt": "2026-09-14T09:00:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0004", "zeitpunkt": "2026-09-14T09:30:00+02:00", "stufe": "WARNUNG", "komponente": "Benutzerverwaltung", "meldung": "Pflichtfeld automatisch ergänzt"}
+{"ereignis_id": "E-0005", "zeitpunkt": "2026-09-14T10:00:00+02:00", "stufe": "INFO", "komponente": "Export", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0006", "zeitpunkt": "2026-09-14T10:30:00+02:00", "stufe": "INFO", "komponente": "Export", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0007", "zeitpunkt": "2026-09-14T11:00:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0008", "zeitpunkt": "2026-09-14T11:30:00+02:00", "stufe": "INFO", "komponente": "Datenbank", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0009", "zeitpunkt": "2026-09-14T12:00:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0010", "zeitpunkt": "2026-09-14T12:30:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0011", "zeitpunkt": "2026-09-14T13:00:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0012", "zeitpunkt": "2026-09-14T13:30:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0013", "zeitpunkt": "2026-09-15T08:00:00+02:00", "stufe": "INFO", "komponente": "Datenbank", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0014", "zeitpunkt": "2026-09-15T08:30:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0015", "zeitpunkt": "2026-09-15T09:00:00+02:00", "stufe": "WARNUNG", "komponente": "Export", "meldung": "Pflichtfeld automatisch ergänzt"}
+{"ereignis_id": "E-0016", "zeitpunkt": "2026-09-15T09:30:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0017", "zeitpunkt": "2026-09-15T10:00:00+02:00", "stufe": "INFO", "komponente": "Datenbank", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0018", "zeitpunkt": "2026-09-15T10:30:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0019", "zeitpunkt": "2026-09-15T11:00:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0020", "zeitpunkt": "2026-09-15T11:30:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0021", "zeitpunkt": "2026-09-15T12:00:00+02:00", "stufe": "WARNUNG", "komponente": "Datenbank", "meldung": "Veraltetes Format erkannt"}
+{"ereignis_id": "E-0022", "zeitpunkt": "2026-09-15T12:30:00+02:00", "stufe": "WARNUNG", "komponente": "Datenbank", "meldung": "Veraltetes Format erkannt"}
+{"ereignis_id": "E-0023", "zeitpunkt": "2026-09-15T13:00:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0024", "zeitpunkt": "2026-09-15T13:30:00+02:00", "stufe": "WARNUNG", "komponente": "Benutzerverwaltung", "meldung": "Veraltetes Format erkannt"}
+{"ereignis_id": "E-0025", "zeitpunkt": "2026-09-16T08:00:00+02:00", "stufe": "WARNUNG", "komponente": "Datenbank", "meldung": "Veraltetes Format erkannt"}
+{"ereignis_id": "E-0026", "zeitpunkt": "2026-09-16T08:30:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0027", "zeitpunkt": "2026-09-16T09:00:00+02:00", "stufe": "WARNUNG", "komponente": "Dateiimport", "meldung": "Antwortzeit erhöht"}
+{"ereignis_id": "E-0028", "zeitpunkt": "2026-09-16T09:30:00+02:00", "stufe": "INFO", "komponente": "Datenbank", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0029", "zeitpunkt": "2026-09-16T10:00:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0030", "zeitpunkt": "2026-09-16T10:30:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0031", "zeitpunkt": "2026-09-16T11:00:00+02:00", "stufe": "INFO", "komponente": "Datenbank", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0032", "zeitpunkt": "2026-09-16T11:30:00+02:00", "stufe": "WARNUNG", "komponente": "Datenbank", "meldung": "Pflichtfeld automatisch ergänzt"}
+{"ereignis_id": "E-0033", "zeitpunkt": "2026-09-16T12:00:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0034", "zeitpunkt": "2026-09-16T12:30:00+02:00", "stufe": "INFO", "komponente": "Datenbank", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0035", "zeitpunkt": "2026-09-16T13:00:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0036", "zeitpunkt": "2026-09-16T13:30:00+02:00", "stufe": "INFO", "komponente": "Datenbank", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0037", "zeitpunkt": "2026-09-17T08:00:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0038", "zeitpunkt": "2026-09-17T08:30:00+02:00", "stufe": "WARNUNG", "komponente": "Dateiimport", "meldung": "Pflichtfeld automatisch ergänzt"}
+{"ereignis_id": "E-0039", "zeitpunkt": "2026-09-17T09:00:00+02:00", "stufe": "WARNUNG", "komponente": "Export", "meldung": "Veraltetes Format erkannt"}
+{"ereignis_id": "E-0040", "zeitpunkt": "2026-09-17T09:30:00+02:00", "stufe": "INFO", "komponente": "Export", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0041", "zeitpunkt": "2026-09-17T10:00:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0042", "zeitpunkt": "2026-09-17T10:30:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0043", "zeitpunkt": "2026-09-17T11:00:00+02:00", "stufe": "INFO", "komponente": "Export", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0044", "zeitpunkt": "2026-09-17T11:30:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0045", "zeitpunkt": "2026-09-17T12:00:00+02:00", "stufe": "INFO", "komponente": "Datenbank", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0046", "zeitpunkt": "2026-09-17T12:30:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0047", "zeitpunkt": "2026-09-17T13:00:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0048", "zeitpunkt": "2026-09-17T13:30:00+02:00", "stufe": "WARNUNG", "komponente": "Dateiimport", "meldung": "Pflichtfeld automatisch ergänzt"}
+{"ereignis_id": "E-0049", "zeitpunkt": "2026-09-18T08:00:00+02:00", "stufe": "FEHLER", "komponente": "Dateiimport", "meldung": "Verbindung unterbrochen"}
+{"ereignis_id": "E-0050", "zeitpunkt": "2026-09-18T08:30:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0051", "zeitpunkt": "2026-09-18T09:00:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0052", "zeitpunkt": "2026-09-18T09:30:00+02:00", "stufe": "INFO", "komponente": "Export", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0053", "zeitpunkt": "2026-09-18T10:00:00+02:00", "stufe": "INFO", "komponente": "Datenbank", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0054", "zeitpunkt": "2026-09-18T10:30:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0055", "zeitpunkt": "2026-09-18T11:00:00+02:00", "stufe": "WARNUNG", "komponente": "Benutzerverwaltung", "meldung": "Antwortzeit erhöht"}
+{"ereignis_id": "E-0056", "zeitpunkt": "2026-09-18T11:30:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0057", "zeitpunkt": "2026-09-18T12:00:00+02:00", "stufe": "INFO", "komponente": "Export", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0058", "zeitpunkt": "2026-09-18T12:30:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0059", "zeitpunkt": "2026-09-18T13:00:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0060", "zeitpunkt": "2026-09-18T13:30:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0061", "zeitpunkt": "2026-09-19T08:00:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0062", "zeitpunkt": "2026-09-19T08:30:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0063", "zeitpunkt": "2026-09-19T09:00:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0064", "zeitpunkt": "2026-09-19T09:30:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0065", "zeitpunkt": "2026-09-19T10:00:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0066", "zeitpunkt": "2026-09-19T10:30:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0067", "zeitpunkt": "2026-09-19T11:00:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0068", "zeitpunkt": "2026-09-19T11:30:00+02:00", "stufe": "INFO", "komponente": "Benutzerverwaltung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0069", "zeitpunkt": "2026-09-19T12:00:00+02:00", "stufe": "WARNUNG", "komponente": "Benutzerverwaltung", "meldung": "Antwortzeit erhöht"}
+{"ereignis_id": "E-0070", "zeitpunkt": "2026-09-19T12:30:00+02:00", "stufe": "INFO", "komponente": "Datenbank", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0071", "zeitpunkt": "2026-09-19T13:00:00+02:00", "stufe": "WARNUNG", "komponente": "Dateiimport", "meldung": "Pflichtfeld automatisch ergänzt"}
+{"ereignis_id": "E-0072", "zeitpunkt": "2026-09-19T13:30:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0073", "zeitpunkt": "2026-09-20T08:00:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Verbindung hergestellt"}
+{"ereignis_id": "E-0074", "zeitpunkt": "2026-09-20T08:30:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0075", "zeitpunkt": "2026-09-20T09:00:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Vorgang erfolgreich abgeschlossen"}
+{"ereignis_id": "E-0076", "zeitpunkt": "2026-09-20T09:30:00+02:00", "stufe": "FEHLER", "komponente": "Datenbank", "meldung": "Verbindung unterbrochen"}
+{"ereignis_id": "E-0077", "zeitpunkt": "2026-09-20T10:00:00+02:00", "stufe": "INFO", "komponente": "Dateiimport", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0078", "zeitpunkt": "2026-09-20T10:30:00+02:00", "stufe": "INFO", "komponente": "Anmeldung", "meldung": "Datensatz gespeichert"}
+{"ereignis_id": "E-0079", "zeitpunkt": "2026-09-20T11:00:00+02:00", "stufe": "WARNUNG", "komponente": "Dateiimport", "meldung": "Veraltetes Format erkannt"}
+{"ereignis_id": "E-0080", "zeitpunkt": "2026-09-20T11:30:00+02:00", "stufe": "WARNUNG", "komponente": "Dateiimport", "meldung": "Veraltetes Format erkannt"}

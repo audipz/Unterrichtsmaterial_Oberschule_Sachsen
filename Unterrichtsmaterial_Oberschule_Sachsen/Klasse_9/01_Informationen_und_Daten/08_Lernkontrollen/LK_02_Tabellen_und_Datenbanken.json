@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "id": "lk-02",
+  "titel": "Tabellen und Datenbanken",
+  "fach": "Informatik",
+  "klassenstufe": 9,
+  "bundesland": "Sachsen",
+  "lerngebiet": "Informationen und Daten",
+  "bearbeitungszeit_minuten": 15,
+  "maximalzeit_minuten": 20,
+  "gesamtpunkte": 11,
+  "aufgaben": [
+    {
+      "id": "lk-02-a01",
+      "nummer": 1,
+      "typ": "zuordnung",
+      "aufgabenstellung": "Ordne Datensatz, Feld, Wert und Tabelle ihren Bedeutungen zu.",
+      "punkte": 4,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Datensatz → eine Zeile zu einem Fall"
+        },
+        {
+          "id": "b",
+          "text": "Feld → ein Merkmal"
+        },
+        {
+          "id": "c",
+          "text": "Wert → konkrete Ausprägung"
+        },
+        {
+          "id": "d",
+          "text": "Tabelle → gleichartig strukturierte Datensätze"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Alle Zuordnungen sind korrekt.",
+        "richtige_optionen": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "lk-02-a02",
+      "nummer": 2,
+      "typ": "single_choice",
+      "aufgabenstellung": "Welche Tabellenstruktur ist sinnvoll?",
+      "punkte": 1,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Jede Spalte enthält wechselnde Inhalte"
+        },
+        {
+          "id": "b",
+          "text": "Jede Zeile beschreibt einen Stand"
+        },
+        {
+          "id": "c",
+          "text": "Überschriften fehlen"
+        },
+        {
+          "id": "d",
+          "text": "Mehrere Werte stehen ungekennzeichnet in einer Zelle"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Eine Zeile beschreibt einen Datensatz.",
+        "richtige_optionen": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "lk-02-a03",
+      "nummer": 3,
+      "typ": "kurzantwort",
+      "aufgabenstellung": "Nenne einen Vorteil einer Datenbank gegenüber einer ungeordneten Liste.",
+      "punkte": 2,
+      "loesung": {
+        "musterantwort": "Gezieltes Suchen, konsistente Struktur, Verknüpfung oder weniger Wiederholungen.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    },
+    {
+      "id": "lk-02-a04",
+      "nummer": 4,
+      "typ": "tabelle",
+      "aufgabenstellung": "Gib passende Spalten für Standname, Kategorie, Strombedarf und Ansprechpartner an.",
+      "punkte": 4,
+      "loesung": {
+        "musterantwort": "Standname | Kategorie | Strombedarf_W | Ansprechpartner",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    }
+  ],
+  "bewertung": {
+    "notenschluessel_prozent": [
+      {
+        "note": 1,
+        "ab_prozent": 92
+      },
+      {
+        "note": 2,
+        "ab_prozent": 81
+      },
+      {
+        "note": 3,
+        "ab_prozent": 67
+      },
+      {
+        "note": 4,
+        "ab_prozent": 50
+      },
+      {
+        "note": 5,
+        "ab_prozent": 30
+      },
+      {
+        "note": 6,
+        "ab_prozent": 0
+      }
+    ],
+    "hinweis": "Verbindlich sind die schulischen Festlegungen."
+  }
+}

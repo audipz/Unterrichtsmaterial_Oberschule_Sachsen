@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="260">
+<rect x="40" y="40" width="180" height="120" fill="white" stroke="black"/>
+<text x="55" y="65">Besucher</text><text x="55" y="90">PK besucher_id</text>
+<rect x="330" y="40" width="180" height="120" fill="white" stroke="black"/>
+<text x="345" y="65">Tickets</text><text x="345" y="90">PK ticket_id</text><text x="345" y="115">FK besucher_id</text>
+<line x1="220" y1="100" x2="330" y2="100" stroke="black"/>
+<text x="250" y="90">1 : n</text>
+</svg>

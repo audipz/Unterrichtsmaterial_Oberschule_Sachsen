@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="360" viewBox="0 0 1040 360">
+<rect width="1040" height="360" fill="white"/>
+<text x="35" y="45" font-size="26" font-family="sans-serif">Vereinfachter Weg einer Internetanfrage</text>
+<rect x="40" y="120" width="160" height="90" rx="10" fill="white" stroke="black" stroke-width="2"/>
+<text x="80" y="170" font-size="23" font-family="sans-serif">Endgerät</text>
+<rect x="270" y="120" width="160" height="90" rx="10" fill="white" stroke="black" stroke-width="2"/>
+<text x="320" y="170" font-size="23" font-family="sans-serif">Router</text>
+<ellipse cx="555" cy="165" rx="90" ry="65" fill="white" stroke="black" stroke-width="2"/>
+<text x="505" y="172" font-size="23" font-family="sans-serif">Internet</text>
+<rect x="680" y="120" width="150" height="90" rx="10" fill="white" stroke="black" stroke-width="2"/>
+<text x="722" y="170" font-size="23" font-family="sans-serif">DNS</text>
+<rect x="880" y="120" width="130" height="90" rx="10" fill="white" stroke="black" stroke-width="2"/>
+<text x="907" y="170" font-size="23" font-family="sans-serif">Server</text>
+<g stroke="black" stroke-width="2">
+<line x1="200" y1="165" x2="270" y2="165"/><line x1="430" y1="165" x2="465" y2="165"/>
+<line x1="645" y1="145" x2="680" y2="145"/><line x1="830" y1="165" x2="880" y2="165"/>
+</g>
+<text x="235" y="145" font-size="16" font-family="sans-serif">WLAN/LAN</text>
+<text x="680" y="95" font-size="18" font-family="sans-serif">Namensauflösung</text>
+<text x="40" y="285" font-size="20" font-family="sans-serif">DNS liefert die IP-Adresse; anschließend wird die Anfrage an den Zielserver übertragen.</text>
+</svg>

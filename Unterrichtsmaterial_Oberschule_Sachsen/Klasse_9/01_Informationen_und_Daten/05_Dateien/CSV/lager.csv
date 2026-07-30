@@ -1,0 +1,17 @@
+﻿artikelnummer;artikel;kategorie;bestand;mindestbestand;maximalbestand;nachbestellen;lieferant;einkaufspreis_eur;verkaufspreis_eur;lagerort
+A1001;Mineralwasser 0,5 l;Getränke;23;20;80;nein;SachsenGetränke GmbH;0,42;0,79;Regal C
+A1002;Apfelschorle 0,5 l;Getränke;98;30;120;nein;SachsenGetränke GmbH;0,58;1,10;Techniklager
+A1003;Orangensaft 0,33 l;Getränke;70;25;150;nein;SachsenGetränke GmbH;0,64;1,25;Regal C
+A2001;Vollkornbrötchen;Backwaren;65;30;120;nein;Bäckerei Morgenrot;0,31;0,65;Regal C
+A2002;Käsebrötchen;Backwaren;49;10;50;nein;Bäckerei Morgenrot;0,82;1,60;Regal A
+A2003;Laugenstange;Backwaren;38;20;100;nein;Bäckerei Morgenrot;0,44;0,95;Regal A
+A3001;Apfel regional;Obst;36;15;75;nein;Frischehof Meißen;0,28;0,55;Techniklager
+A3002;Banane Fairtrade;Obst;42;20;120;nein;Frischehof Meißen;0,34;0,65;Regal B
+A3003;Birne regional;Obst;129;20;120;nein;Frischehof Meißen;0,36;0,70;Techniklager
+A4001;Collegeblock A4 kariert;Schreibwaren;21;25;125;ja;Bürobedarf Elbtal;1,15;2,20;Regal A
+A4002;Kugelschreiber blau;Schreibwaren;56;10;50;nein;Bürobedarf Elbtal;0,22;0,60;Techniklager
+A4003;Textmarker gelb;Schreibwaren;22;10;60;nein;Bürobedarf Elbtal;0,48;1,10;Regal B
+A4004;Bleistift HB;Schreibwaren;3;20;80;ja;Bürobedarf Elbtal;0,16;0,45;Kühlraum
+A5001;USB-Stick 32 GB;Technik;83;25;100;nein;IT-Service Lausitz;4,90;8,90;Techniklager
+A5002;Patchkabel 2 m;Technik;1;10;50;ja;IT-Service Lausitz;1,85;3,80;Regal C
+A5003;Maus kabelgebunden;Technik;53;10;40;nein;IT-Service Lausitz;5,30;9,90;Techniklager

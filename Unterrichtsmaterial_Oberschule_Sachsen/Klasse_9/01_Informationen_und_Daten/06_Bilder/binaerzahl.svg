@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="140">
+<text x="20" y="30" font-size="22">Dezimal 13 = Binär 1101</text>
+<rect x="20" y="60" width="80" height="50" fill="white" stroke="black"/><text x="52" y="92">8</text>
+<rect x="100" y="60" width="80" height="50" fill="white" stroke="black"/><text x="132" y="92">4</text>
+<rect x="180" y="60" width="80" height="50" fill="white" stroke="black"/><text x="212" y="92">2</text>
+<rect x="260" y="60" width="80" height="50" fill="white" stroke="black"/><text x="292" y="92">1</text>
+<text x="40" y="130">1</text><text x="120" y="130">1</text><text x="200" y="130">0</text><text x="280" y="130">1</text></svg>

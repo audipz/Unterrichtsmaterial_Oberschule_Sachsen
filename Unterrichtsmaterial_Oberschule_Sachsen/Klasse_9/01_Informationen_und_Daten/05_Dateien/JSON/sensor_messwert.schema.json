@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SensorMesswert",
+  "type": "object",
+  "required": [
+    "sensor_id",
+    "zeitpunkt",
+    "temperatur_c",
+    "luftfeuchte_prozent",
+    "co2_ppm",
+    "fenster_offen"
+  ],
+  "properties": {
+    "sensor_id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9-]+$"
+    },
+    "zeitpunkt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "temperatur_c": {
+      "type": "number",
+      "minimum": -30,
+      "maximum": 60
+    },
+    "luftfeuchte_prozent": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "co2_ppm": {
+      "type": "integer",
+      "minimum": 300,
+      "maximum": 5000
+    },
+    "fenster_offen": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

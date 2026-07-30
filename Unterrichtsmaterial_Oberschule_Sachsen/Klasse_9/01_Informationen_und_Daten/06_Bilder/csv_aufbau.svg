@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="220">
+<rect x="30" y="30" width="640" height="140" fill="white" stroke="black"/>
+<line x1="30" y1="70" x2="670" y2="70" stroke="black"/>
+<line x1="240" y1="30" x2="240" y2="170" stroke="black"/>
+<line x1="450" y1="30" x2="450" y2="170" stroke="black"/>
+<text x="50" y="55">Name</text><text x="280" y="55">Ort</text><text x="500" y="55">Alter</text>
+<text x="50" y="100">Anna</text><text x="280" y="100">Dresden</text><text x="500" y="100">15</text>
+<text x="50" y="140">Ben</text><text x="280" y="140">Pirna</text><text x="500" y="140">16</text>
+</svg>

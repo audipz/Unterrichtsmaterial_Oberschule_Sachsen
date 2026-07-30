@@ -1,0 +1,7 @@
+{
+  "delimiter": ",",
+  "encoding": "UTF-8 with BOM",
+  "header": true,
+  "decimal_separator": ",",
+  "date_format": "ISO-8601 where applicable"
+}

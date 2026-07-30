@@ -1,0 +1,82 @@
+[
+  {
+    "id": "S01",
+    "titel": "Lehrpläne und Arbeitsmaterialien",
+    "herausgeber": "Sächsisches Staatsministerium für Kultus",
+    "url": "https://www.schule.sachsen.de/lehrplaene-und-arbeitsmaterialien-6025.html",
+    "typ": "Lehrplanportal",
+    "abgerufen": "2026-07-30"
+  },
+  {
+    "id": "S02",
+    "titel": "Lehrplan Oberschule Informatik",
+    "herausgeber": "Schulportal Sachsen",
+    "url": "https://www.schulportal.sachsen.de/lplandb/lehrplan/514",
+    "typ": "Lehrplan",
+    "abgerufen": "2026-07-30"
+  },
+  {
+    "id": "S03",
+    "titel": "Introducing JSON",
+    "herausgeber": "JSON.org",
+    "url": "https://json.org/",
+    "typ": "Spezifikation/Einführung",
+    "abgerufen": "2026-07-30"
+  },
+  {
+    "id": "S04",
+    "titel": "JSON Schema Draft 2020-12",
+    "herausgeber": "JSON Schema",
+    "url": "https://json-schema.org/draft/2020-12",
+    "typ": "Spezifikation",
+    "abgerufen": "2026-07-30"
+  },
+  {
+    "id": "S05",
+    "titel": "SQLite Documentation",
+    "herausgeber": "SQLite Project",
+    "url": "https://sqlite.org/docs.html",
+    "typ": "Dokumentation",
+    "abgerufen": "2026-07-30"
+  },
+  {
+    "id": "S06",
+    "titel": "SQLite Foreign Key Support",
+    "herausgeber": "SQLite Project",
+    "url": "https://sqlite.org/foreignkeys.html",
+    "typ": "Dokumentation",
+    "abgerufen": "2026-07-30"
+  },
+  {
+    "id": "S07",
+    "titel": "Opening and Saving Text CSV Files",
+    "herausgeber": "LibreOffice",
+    "url": "https://help.libreoffice.org/latest/en-US/text/scalc/guide/csv_files.html",
+    "typ": "Softwarehilfe",
+    "abgerufen": "2026-07-30"
+  },
+  {
+    "id": "S08",
+    "titel": "Attribution 4.0 International – Legal Code",
+    "herausgeber": "Creative Commons",
+    "url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+    "typ": "Lizenz",
+    "abgerufen": "2026-07-30"
+  },
+  {
+    "id": "S09",
+    "titel": "DB Browser for SQLite",
+    "herausgeber": "DB4S Project",
+    "url": "https://sqlitebrowser.org/",
+    "typ": "Software",
+    "abgerufen": "2026-07-30"
+  },
+  {
+    "id": "S10",
+    "titel": "sqlite3 — DB-API 2.0 interface",
+    "herausgeber": "Python Software Foundation",
+    "url": "https://docs.python.org/3/library/sqlite3.html",
+    "typ": "Dokumentation",
+    "abgerufen": "2026-07-30"
+  }
+]

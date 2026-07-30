@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "id": "lk-01",
+  "titel": "Informationen und Entscheidungen",
+  "fach": "Informatik",
+  "klassenstufe": 9,
+  "bundesland": "Sachsen",
+  "lerngebiet": "Informationen und Daten",
+  "bearbeitungszeit_minuten": 15,
+  "maximalzeit_minuten": 20,
+  "gesamtpunkte": 10,
+  "aufgaben": [
+    {
+      "id": "lk-01-a01",
+      "nummer": 1,
+      "typ": "single_choice",
+      "aufgabenstellung": "Welche Information ist für die Auswahl eines Veranstaltungsraums besonders wichtig?",
+      "punkte": 1,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Lieblingsfarbe des Hausmeisters"
+        },
+        {
+          "id": "b",
+          "text": "Maximal zugelassene Personenzahl"
+        },
+        {
+          "id": "c",
+          "text": "Vorname der ersten Besucherin"
+        },
+        {
+          "id": "d",
+          "text": "Farbe der Eintrittskarten"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Die maximal zugelassene Personenzahl ist sicherheits- und planungsrelevant.",
+        "richtige_optionen": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "lk-01-a02",
+      "nummer": 2,
+      "typ": "multiple_choice",
+      "aufgabenstellung": "Welche Merkmale sprechen für eine zuverlässige Informationsquelle?",
+      "punkte": 3,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Autor oder Institution ist erkennbar"
+        },
+        {
+          "id": "b",
+          "text": "Aussagen werden belegt"
+        },
+        {
+          "id": "c",
+          "text": "Die Seite enthält viele Bilder"
+        },
+        {
+          "id": "d",
+          "text": "Das Veröffentlichungsdatum ist angegeben"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Urheberschaft, Belege und Aktualität sind prüfbar.",
+        "richtige_optionen": [
+          "a",
+          "b",
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "lk-01-a03",
+      "nummer": 3,
+      "typ": "kurzantwort",
+      "aufgabenstellung": "Nenne zwei Informationen, die vor der Auswahl eines Essensstands benötigt werden.",
+      "punkte": 2,
+      "loesung": {
+        "musterantwort": "Zum Beispiel Preis, Angebot, Allergene, Strombedarf oder Stellfläche.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    },
+    {
+      "id": "lk-01-a04",
+      "nummer": 4,
+      "typ": "freitext",
+      "aufgabenstellung": "Begründe, warum eine Entscheidungsmatrix unterstützt, aber nicht automatisch entscheidet.",
+      "punkte": 4,
+      "loesung": {
+        "musterantwort": "Sie macht Kriterien und Bewertungen transparent; Auswahl und Verantwortung bleiben beim Menschen.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    }
+  ],
+  "bewertung": {
+    "notenschluessel_prozent": [
+      {
+        "note": 1,
+        "ab_prozent": 92
+      },
+      {
+        "note": 2,
+        "ab_prozent": 81
+      },
+      {
+        "note": 3,
+        "ab_prozent": 67
+      },
+      {
+        "note": 4,
+        "ab_prozent": 50
+      },
+      {
+        "note": 5,
+        "ab_prozent": 30
+      },
+      {
+        "note": 6,
+        "ab_prozent": 0
+      }
+    ],
+    "hinweis": "Verbindlich sind die schulischen Festlegungen."
+  }
+}

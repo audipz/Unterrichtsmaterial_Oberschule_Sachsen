@@ -1,0 +1,16 @@
+﻿id,wert,hinweis
+001,"24,5",gültiger Temperaturwert
+002,25.1,uneinheitliches Dezimaltrennzeichen
+003,,fehlender Messwert
+004,vierundzwanzig,Zahl als Text
+005,"24,5 °C",Einheit im Wertefeld
+006,-99,unplausibler Ausreißer
+007,"24,5",Duplikat zu Datensatz 001
+008," 23,8 ",führende und nachgestellte Leerzeichen
+009,"23,7",gültiger Temperaturwert
+010,NULL,fehlender Wert als Text
+011,"23,6",gültiger Temperaturwert
+012,"230,0",vermutlicher Tippfehler
+013,"23,4",gültiger Temperaturwert
+014,"23,,2",ungültiges Zahlenformat
+015,"22,9",gültiger Temperaturwert

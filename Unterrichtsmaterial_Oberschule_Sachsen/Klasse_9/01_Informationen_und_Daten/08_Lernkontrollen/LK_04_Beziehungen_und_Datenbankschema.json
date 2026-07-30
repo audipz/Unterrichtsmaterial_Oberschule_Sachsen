@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "id": "lk-04",
+  "titel": "Beziehungen und Datenbankschema",
+  "fach": "Informatik",
+  "klassenstufe": 9,
+  "bundesland": "Sachsen",
+  "lerngebiet": "Informationen und Daten",
+  "bearbeitungszeit_minuten": 15,
+  "maximalzeit_minuten": 20,
+  "gesamtpunkte": 10,
+  "aufgaben": [
+    {
+      "id": "lk-04-a01",
+      "nummer": 1,
+      "typ": "single_choice",
+      "aufgabenstellung": "Wo steht bei einer 1:n-Beziehung normalerweise der Fremdschlüssel?",
+      "punkte": 1,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Auf der 1-Seite"
+        },
+        {
+          "id": "b",
+          "text": "Auf der n-Seite"
+        },
+        {
+          "id": "c",
+          "text": "In keiner Tabelle"
+        },
+        {
+          "id": "d",
+          "text": "Immer in beiden Tabellen"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Der Fremdschlüssel steht auf der n-Seite.",
+        "richtige_optionen": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "lk-04-a02",
+      "nummer": 2,
+      "typ": "kurzantwort",
+      "aufgabenstellung": "Erkläre die Aufgabe eines Fremdschlüssels.",
+      "punkte": 2,
+      "loesung": {
+        "musterantwort": "Er verweist auf den Primärschlüssel einer anderen Tabelle.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    },
+    {
+      "id": "lk-04-a03",
+      "nummer": 3,
+      "typ": "zuordnung",
+      "aufgabenstellung": "Ordne Primär- und Fremdschlüssel zu.",
+      "punkte": 3,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Raum.Raum_ID → Primärschlüssel"
+        },
+        {
+          "id": "b",
+          "text": "Programmpunkt.Programmpunkt_ID → Primärschlüssel"
+        },
+        {
+          "id": "c",
+          "text": "Programmpunkt.Raum_ID → Fremdschlüssel"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Alle Zuordnungen sind korrekt.",
+        "richtige_optionen": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "lk-04-a04",
+      "nummer": 4,
+      "typ": "freitext",
+      "aufgabenstellung": "Warum sollten Raumdaten nicht bei jedem Programmpunkt wiederholt werden?",
+      "punkte": 4,
+      "loesung": {
+        "musterantwort": "Wiederholungen erhöhen Aufwand und Fehlergefahr; eine Raumtabelle speichert sie einmal.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    }
+  ],
+  "bewertung": {
+    "notenschluessel_prozent": [
+      {
+        "note": 1,
+        "ab_prozent": 92
+      },
+      {
+        "note": 2,
+        "ab_prozent": 81
+      },
+      {
+        "note": 3,
+        "ab_prozent": 67
+      },
+      {
+        "note": 4,
+        "ab_prozent": 50
+      },
+      {
+        "note": 5,
+        "ab_prozent": 30
+      },
+      {
+        "note": 6,
+        "ab_prozent": 0
+      }
+    ],
+    "hinweis": "Verbindlich sind die schulischen Festlegungen."
+  }
+}

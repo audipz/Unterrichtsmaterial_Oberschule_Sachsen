@@ -1,0 +1,38 @@
+{
+  "veranstaltung": {
+    "id": "SF-2026",
+    "titel": "Schulfestival 2026",
+    "datum": "2026-09-19",
+    "ort": {
+      "name": "Oberschule Am Stadtpark",
+      "strasse": "Parkstraße 12",
+      "plz": "01069",
+      "stadt": "Dresden"
+    },
+    "programm": [
+      {
+        "beginn": "10:00",
+        "ende": "11:00",
+        "titel": "Robotik-Show",
+        "raum": "Informatikraum"
+      },
+      {
+        "beginn": "11:30",
+        "ende": "12:30",
+        "titel": "Science Slam",
+        "raum": "Aula"
+      },
+      {
+        "beginn": "14:00",
+        "ende": "16:00",
+        "titel": "Schülerband-Festival",
+        "raum": "Schulhof"
+      }
+    ],
+    "kontakt": {
+      "name": "Festivalteam",
+      "email": "festival@oberschule-beispiel.de"
+    },
+    "eintritt_frei": true
+  }
+}

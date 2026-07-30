@@ -1,0 +1,22 @@
+{
+  "database": "festival.db",
+  "created": "2026-07-30",
+  "tables": {
+    "raeume": 8,
+    "veranstaltungen": 12,
+    "besucher": 120,
+    "tickets": 240,
+    "helfer": 24,
+    "anmeldungen": 72,
+    "artikel": 10,
+    "verkaeufe": 274
+  },
+  "views": [
+    "veranstaltung_auslastung",
+    "umsatz_nach_artikel",
+    "helfer_einsaetze"
+  ],
+  "foreign_key_errors": 0,
+  "fictional_data": true,
+  "encoding": "UTF-8"
+}

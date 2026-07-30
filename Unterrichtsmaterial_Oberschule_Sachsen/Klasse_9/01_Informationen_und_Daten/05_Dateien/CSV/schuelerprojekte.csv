@@ -1,0 +1,9 @@
+﻿projekt_id;projekttitel;themenfeld;teamgroesse;klasse;betreuung;startdatum;enddatum;budget_eur;ausgaben_eur;fortschritt_prozent;status_ampel
+P01;Schulhof-Sensorik;Umwelt und Sensoren;4;9b;Herr Kühn;11.02.2026;28.04.2026;250;162,16;75;rot
+P02;Digitale Schülerzeitung;Webentwicklung;4;9b;Frau Berger;09.02.2026;18.04.2026;150;84,32;60;gelb
+P03;Bibliotheks-App;Datenbanken;5;9c;Frau Berger;10.02.2026;27.03.2026;200;153,61;80;grün
+P04;Lernspiel Bruchrechnung;Programmierung;6;9c;Frau Berger;13.02.2026;11.04.2026;125;108,95;85;grün
+P05;WLAN-Ausleuchtung;Netzwerke;5;9a;Frau Seidel;12.02.2026;20.04.2026;50;28,45;95;rot
+P06;Mensa-Dashboard;Datenanalyse;6;9b;Frau Seidel;07.02.2026;11.04.2026;125;88,04;95;grün
+P07;3D-Modell Schulgebäude;Mediengestaltung;3;9a;Herr Kühn;05.02.2026;22.04.2026;200;187,81;90;rot
+P08;Robotik-Parcours;Robotik;4;9b;Herr Kühn;14.02.2026;05.05.2026;150;136,03;80;rot

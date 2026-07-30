@@ -1,0 +1,118 @@
+[
+  {
+    "projekt_id": "P-001",
+    "titel": "Energiespar-App",
+    "team": [
+      "Mira",
+      "Jonas",
+      "Elif"
+    ],
+    "klasse": "9a",
+    "thema": "Nachhaltigkeit",
+    "status": "in Arbeit",
+    "fortschritt_prozent": 65,
+    "abgabe": "2026-10-16",
+    "bewertung": null
+  },
+  {
+    "projekt_id": "P-002",
+    "titel": "Schulweg-Analyse",
+    "team": [
+      "Ben",
+      "Clara"
+    ],
+    "klasse": "9b",
+    "thema": "Datenanalyse",
+    "status": "abgeschlossen",
+    "fortschritt_prozent": 100,
+    "abgabe": "2026-09-30",
+    "bewertung": 13
+  },
+  {
+    "projekt_id": "P-003",
+    "titel": "Mensa-Dashboard",
+    "team": [
+      "Anna",
+      "David",
+      "Noah"
+    ],
+    "klasse": "9a",
+    "thema": "Visualisierung",
+    "status": "in Arbeit",
+    "fortschritt_prozent": 80,
+    "abgabe": "2026-10-16",
+    "bewertung": null
+  },
+  {
+    "projekt_id": "P-004",
+    "titel": "Bibliothekskatalog",
+    "team": [
+      "Greta",
+      "Paul"
+    ],
+    "klasse": "9c",
+    "thema": "Datenbanken",
+    "status": "abgeschlossen",
+    "fortschritt_prozent": 100,
+    "abgabe": "2026-09-30",
+    "bewertung": 12
+  },
+  {
+    "projekt_id": "P-005",
+    "titel": "Wetterstation",
+    "team": [
+      "Samir",
+      "Tessa",
+      "Leon"
+    ],
+    "klasse": "9b",
+    "thema": "Sensorik",
+    "status": "in Arbeit",
+    "fortschritt_prozent": 55,
+    "abgabe": "2026-10-23",
+    "bewertung": null
+  },
+  {
+    "projekt_id": "P-006",
+    "titel": "Pausenhof-Umfrage",
+    "team": [
+      "Ida",
+      "Yusuf"
+    ],
+    "klasse": "9c",
+    "thema": "Umfragen",
+    "status": "geplant",
+    "fortschritt_prozent": 20,
+    "abgabe": "2026-10-30",
+    "bewertung": null
+  },
+  {
+    "projekt_id": "P-007",
+    "titel": "Netzwerkmonitor",
+    "team": [
+      "Felix",
+      "Romy"
+    ],
+    "klasse": "9a",
+    "thema": "Netzwerke",
+    "status": "in Arbeit",
+    "fortschritt_prozent": 70,
+    "abgabe": "2026-10-23",
+    "bewertung": null
+  },
+  {
+    "projekt_id": "P-008",
+    "titel": "Barrierefreiheits-Check",
+    "team": [
+      "Klara",
+      "Hannes",
+      "Olivia"
+    ],
+    "klasse": "9b",
+    "thema": "Web",
+    "status": "abgeschlossen",
+    "fortschritt_prozent": 100,
+    "abgabe": "2026-09-30",
+    "bewertung": 14
+  }
+]

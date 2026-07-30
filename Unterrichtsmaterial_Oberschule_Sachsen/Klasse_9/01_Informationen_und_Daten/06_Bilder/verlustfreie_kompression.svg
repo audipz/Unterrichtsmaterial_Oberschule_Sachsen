@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="390" viewBox="0 0 980 390">
+<rect width="980" height="390" fill="white"/>
+<text x="35" y="45" font-size="26" font-family="sans-serif">Verlustfreie Kompression mit Lauflängencodierung</text>
+<text x="40" y="100" font-size="22" font-family="sans-serif">Original:</text>
+<g font-family="monospace" font-size="28">
+<text x="180" y="100">AAAAABBBCCCCCCDD</text>
+</g>
+<line x1="430" y1="125" x2="430" y2="220" stroke="black" stroke-width="2"/>
+<polygon points="423,210 430,220 437,210" fill="black"/>
+<text x="300" y="255" font-size="22" font-family="sans-serif">Komprimiert:</text>
+<text x="475" y="255" font-size="30" font-family="monospace">5A3B6C2D</text>
+<line x1="600" y1="280" x2="600" y2="330" stroke="black" stroke-width="2"/>
+<text x="40" y="340" font-size="20" font-family="sans-serif">Die Originaldaten lassen sich vollständig wiederherstellen. Es gehen keine Informationen verloren.</text>
+</svg>

@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "id": "lk-05",
+  "titel": "Suchen Filtern und Sortieren",
+  "fach": "Informatik",
+  "klassenstufe": 9,
+  "bundesland": "Sachsen",
+  "lerngebiet": "Informationen und Daten",
+  "bearbeitungszeit_minuten": 15,
+  "maximalzeit_minuten": 20,
+  "gesamtpunkte": 10,
+  "aufgaben": [
+    {
+      "id": "lk-05-a01",
+      "nummer": 1,
+      "typ": "single_choice",
+      "aufgabenstellung": "Welcher Filter findet Stände mit höchstens 1000 W?",
+      "punkte": 1,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Strombedarf > 1000"
+        },
+        {
+          "id": "b",
+          "text": "Strombedarf <= 1000"
+        },
+        {
+          "id": "c",
+          "text": "Strombedarf = 1000"
+        },
+        {
+          "id": "d",
+          "text": "Strombedarf != 1000"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Höchstens bedeutet kleiner oder gleich.",
+        "richtige_optionen": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "lk-05-a02",
+      "nummer": 2,
+      "typ": "multiple_choice",
+      "aufgabenstellung": "Welche Datensätze erfüllen Kategorie = Essen UND vegan = ja?",
+      "punkte": 2,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Essensstand, vegan"
+        },
+        {
+          "id": "b",
+          "text": "Essensstand, nicht vegan"
+        },
+        {
+          "id": "c",
+          "text": "Getränkestand, vegan"
+        },
+        {
+          "id": "d",
+          "text": "Essensstand, vegan und 800 W"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Beide Bedingungen müssen gelten.",
+        "richtige_optionen": [
+          "a",
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "lk-05-a03",
+      "nummer": 3,
+      "typ": "kurzantwort",
+      "aufgabenstellung": "Beschreibe den Unterschied zwischen UND und ODER.",
+      "punkte": 3,
+      "loesung": {
+        "musterantwort": "UND verlangt alle Bedingungen; ODER mindestens eine.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    },
+    {
+      "id": "lk-05-a04",
+      "nummer": 4,
+      "typ": "reihenfolge",
+      "aufgabenstellung": "Ordne: Ziel klären, Bedingungen formulieren, Treffer prüfen, Ergebnis sortieren.",
+      "punkte": 4,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Ziel klären"
+        },
+        {
+          "id": "b",
+          "text": "Bedingungen formulieren"
+        },
+        {
+          "id": "c",
+          "text": "Treffer prüfen"
+        },
+        {
+          "id": "d",
+          "text": "Ergebnis sortieren"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Die Reihenfolge entspricht einer planvollen Abfrage.",
+        "richtige_optionen": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      }
+    }
+  ],
+  "bewertung": {
+    "notenschluessel_prozent": [
+      {
+        "note": 1,
+        "ab_prozent": 92
+      },
+      {
+        "note": 2,
+        "ab_prozent": 81
+      },
+      {
+        "note": 3,
+        "ab_prozent": 67
+      },
+      {
+        "note": 4,
+        "ab_prozent": 50
+      },
+      {
+        "note": 5,
+        "ab_prozent": 30
+      },
+      {
+        "note": 6,
+        "ab_prozent": 0
+      }
+    ],
+    "hinweis": "Verbindlich sind die schulischen Festlegungen."
+  }
+}

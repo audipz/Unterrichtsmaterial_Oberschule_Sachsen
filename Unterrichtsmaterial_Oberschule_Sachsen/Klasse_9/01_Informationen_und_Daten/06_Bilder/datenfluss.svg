@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220">
+<rect x="20" y="70" width="120" height="60" fill="#fff" stroke="#000"/>
+<text x="38" y="105" font-size="18">Eingabe</text>
+<rect x="250" y="70" width="120" height="60" fill="#fff" stroke="#000"/>
+<text x="270" y="105" font-size="18">Verarbeitung</text>
+<rect x="500" y="70" width="120" height="60" fill="#fff" stroke="#000"/>
+<text x="535" y="105" font-size="18">Ausgabe</text>
+<line x1="140" y1="100" x2="250" y2="100" stroke="#000" marker-end="url(#a)"/>
+<line x1="370" y1="100" x2="500" y2="100" stroke="#000" marker-end="url(#a)"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6z"/></marker></defs>
+</svg>

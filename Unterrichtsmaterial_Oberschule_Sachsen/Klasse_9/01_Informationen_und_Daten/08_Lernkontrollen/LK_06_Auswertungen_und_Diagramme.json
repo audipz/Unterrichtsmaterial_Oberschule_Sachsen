@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "id": "lk-06",
+  "titel": "Auswertungen und Diagramme",
+  "fach": "Informatik",
+  "klassenstufe": 9,
+  "bundesland": "Sachsen",
+  "lerngebiet": "Informationen und Daten",
+  "bearbeitungszeit_minuten": 15,
+  "maximalzeit_minuten": 20,
+  "gesamtpunkte": 9,
+  "aufgaben": [
+    {
+      "id": "lk-06-a01",
+      "nummer": 1,
+      "typ": "single_choice",
+      "aufgabenstellung": "Welches Diagramm eignet sich zum Vergleich verschiedener Programmpunkte?",
+      "punkte": 1,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Säulendiagramm"
+        },
+        {
+          "id": "b",
+          "text": "Liniendiagramm ohne Zeitbezug"
+        },
+        {
+          "id": "c",
+          "text": "Kreisdiagramm mit 20 Segmenten"
+        },
+        {
+          "id": "d",
+          "text": "Wortwolke"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Säulen vergleichen Kategorien übersichtlich.",
+        "richtige_optionen": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "lk-06-a02",
+      "nummer": 2,
+      "typ": "multiple_choice",
+      "aufgabenstellung": "Woran erkennst du ein möglicherweise irreführendes Diagramm?",
+      "punkte": 3,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Abgeschnittene Achse"
+        },
+        {
+          "id": "b",
+          "text": "Unklare Einheit"
+        },
+        {
+          "id": "c",
+          "text": "Quelle fehlt"
+        },
+        {
+          "id": "d",
+          "text": "Eindeutige Beschriftung"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Achse, Einheit und Quelle müssen geprüft werden.",
+        "richtige_optionen": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "lk-06-a03",
+      "nummer": 3,
+      "typ": "kurzantwort",
+      "aufgabenstellung": "Nenne zwei Kennzahlen aus Besucherzahlen.",
+      "punkte": 2,
+      "loesung": {
+        "musterantwort": "Summe, Durchschnitt, Minimum, Maximum oder Anzahl.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    },
+    {
+      "id": "lk-06-a04",
+      "nummer": 4,
+      "typ": "freitext",
+      "aufgabenstellung": "Ein Diagramm zeigt nur die erfolgreichsten drei Stände. Erkläre das Problem.",
+      "punkte": 3,
+      "loesung": {
+        "musterantwort": "Die Auswahl ist unvollständig und kann den Gesamteindruck verzerren.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    }
+  ],
+  "bewertung": {
+    "notenschluessel_prozent": [
+      {
+        "note": 1,
+        "ab_prozent": 92
+      },
+      {
+        "note": 2,
+        "ab_prozent": 81
+      },
+      {
+        "note": 3,
+        "ab_prozent": 67
+      },
+      {
+        "note": 4,
+        "ab_prozent": 50
+      },
+      {
+        "note": 5,
+        "ab_prozent": 30
+      },
+      {
+        "note": 6,
+        "ab_prozent": 0
+      }
+    ],
+    "hinweis": "Verbindlich sind die schulischen Festlegungen."
+  }
+}

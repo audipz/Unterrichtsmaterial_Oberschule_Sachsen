@@ -1,0 +1,18 @@
+{
+  "paket": "05_Dateien_Dokumentation_und_Vorlagen",
+  "erstellt_am": "2026-07-30",
+  "zielpfad": "Klasse_9/01_Informationen_und_Daten/05_Dateien/",
+  "lizenz": "CC BY 4.0",
+  "dateien": [
+    "CHECKLISTE_QUALITAET.md",
+    "DATEIFORMATE.md",
+    "IMPORTANLEITUNG.md",
+    "LIZENZ.md",
+    "PAKETUEBERSICHT.md",
+    "README.md",
+    "UNTERRICHTSHINWEISE.md",
+    "VORLAGE_DATENSATZBESCHREIBUNG.md",
+    "manifest.json"
+  ],
+  "status": "vollständig"
+}

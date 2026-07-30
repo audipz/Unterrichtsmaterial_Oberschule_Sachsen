@@ -1,0 +1,18 @@
+{
+  "paket": "06_Bilder_SVG_Paket_Teil3",
+  "erstellt_am": "2026-07-30",
+  "format": "SVG",
+  "lizenz": "CC BY 4.0",
+  "dateien": [
+    "README.md",
+    "ascii_unicode.svg",
+    "client_server.svg",
+    "datenqualitaet.svg",
+    "er_diagramm_festival.svg",
+    "internet_weg.svg",
+    "normalisierung.svg",
+    "qr_barcode_prinzip.svg",
+    "verlustfreie_kompression.svg"
+  ],
+  "status": "vollständig"
+}

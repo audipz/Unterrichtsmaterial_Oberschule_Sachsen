@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "id": "lk-03",
+  "titel": "Klassen Objekte und Schlüssel",
+  "fach": "Informatik",
+  "klassenstufe": 9,
+  "bundesland": "Sachsen",
+  "lerngebiet": "Informationen und Daten",
+  "bearbeitungszeit_minuten": 15,
+  "maximalzeit_minuten": 20,
+  "gesamtpunkte": 11,
+  "aufgaben": [
+    {
+      "id": "lk-03-a01",
+      "nummer": 1,
+      "typ": "zuordnung",
+      "aufgabenstellung": "Ordne Klasse, Objekt, Attribut und Attributwert zu.",
+      "punkte": 4,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Klasse → Stand"
+        },
+        {
+          "id": "b",
+          "text": "Objekt → Stand S17"
+        },
+        {
+          "id": "c",
+          "text": "Attribut → Kategorie"
+        },
+        {
+          "id": "d",
+          "text": "Attributwert → Getränke"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Alle Zuordnungen sind korrekt.",
+        "richtige_optionen": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      }
+    },
+    {
+      "id": "lk-03-a02",
+      "nummer": 2,
+      "typ": "single_choice",
+      "aufgabenstellung": "Welches Feld eignet sich am besten als Primärschlüssel?",
+      "punkte": 1,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Standname"
+        },
+        {
+          "id": "b",
+          "text": "Stand_ID"
+        },
+        {
+          "id": "c",
+          "text": "Kategorie"
+        },
+        {
+          "id": "d",
+          "text": "Ansprechpartner"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Eine stabile eindeutige ID ist geeignet.",
+        "richtige_optionen": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "lk-03-a03",
+      "nummer": 3,
+      "typ": "kurzantwort",
+      "aufgabenstellung": "Erkläre den Unterschied zwischen Klasse und Objekt.",
+      "punkte": 3,
+      "loesung": {
+        "musterantwort": "Eine Klasse beschreibt gemeinsame Merkmale; ein Objekt ist ein konkretes Exemplar.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    },
+    {
+      "id": "lk-03-a04",
+      "nummer": 4,
+      "typ": "freitext",
+      "aufgabenstellung": "Warum ist ein Standname als Primärschlüssel problematisch?",
+      "punkte": 3,
+      "loesung": {
+        "musterantwort": "Namen können doppelt vorkommen oder geändert werden.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    }
+  ],
+  "bewertung": {
+    "notenschluessel_prozent": [
+      {
+        "note": 1,
+        "ab_prozent": 92
+      },
+      {
+        "note": 2,
+        "ab_prozent": 81
+      },
+      {
+        "note": 3,
+        "ab_prozent": 67
+      },
+      {
+        "note": 4,
+        "ab_prozent": 50
+      },
+      {
+        "note": 5,
+        "ab_prozent": 30
+      },
+      {
+        "note": 6,
+        "ab_prozent": 0
+      }
+    ],
+    "hinweis": "Verbindlich sind die schulischen Festlegungen."
+  }
+}

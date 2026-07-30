@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "id": "lk-07",
+  "titel": "Big Data und künstliche Intelligenz",
+  "fach": "Informatik",
+  "klassenstufe": 9,
+  "bundesland": "Sachsen",
+  "lerngebiet": "Informationen und Daten",
+  "bearbeitungszeit_minuten": 15,
+  "maximalzeit_minuten": 20,
+  "gesamtpunkte": 10,
+  "aufgaben": [
+    {
+      "id": "lk-07-a01",
+      "nummer": 1,
+      "typ": "multiple_choice",
+      "aufgabenstellung": "Welche Merkmale werden häufig mit Big Data verbunden?",
+      "punkte": 3,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "große Datenmenge"
+        },
+        {
+          "id": "b",
+          "text": "hohe Entstehungsgeschwindigkeit"
+        },
+        {
+          "id": "c",
+          "text": "unterschiedliche Datenarten"
+        },
+        {
+          "id": "d",
+          "text": "immer fehlerfreie Daten"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Umfang, Geschwindigkeit und Vielfalt sind typische Merkmale.",
+        "richtige_optionen": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "lk-07-a02",
+      "nummer": 2,
+      "typ": "single_choice",
+      "aufgabenstellung": "Was beeinflusst die Ergebnisse eines lernenden Systems besonders?",
+      "punkte": 1,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Trainingsdaten"
+        },
+        {
+          "id": "b",
+          "text": "Gehäusefarbe"
+        },
+        {
+          "id": "c",
+          "text": "Dateiname"
+        },
+        {
+          "id": "d",
+          "text": "Position der Tastatur"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Muster werden aus Trainingsdaten gelernt.",
+        "richtige_optionen": [
+          "a"
+        ]
+      }
+    },
+    {
+      "id": "lk-07-a03",
+      "nummer": 3,
+      "typ": "kurzantwort",
+      "aufgabenstellung": "Erkläre die Aufgabe von Testdaten.",
+      "punkte": 2,
+      "loesung": {
+        "musterantwort": "Sie prüfen die Übertragbarkeit auf unbekannte Beispiele.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    },
+    {
+      "id": "lk-07-a04",
+      "nummer": 4,
+      "typ": "freitext",
+      "aufgabenstellung": "Nenne eine Chance und ein Risiko von KI bei der Festivalplanung.",
+      "punkte": 4,
+      "loesung": {
+        "musterantwort": "Chance: Unterstützung; Risiko: falsche oder verzerrte Ergebnisse bzw. Datenschutzprobleme.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    }
+  ],
+  "bewertung": {
+    "notenschluessel_prozent": [
+      {
+        "note": 1,
+        "ab_prozent": 92
+      },
+      {
+        "note": 2,
+        "ab_prozent": 81
+      },
+      {
+        "note": 3,
+        "ab_prozent": 67
+      },
+      {
+        "note": 4,
+        "ab_prozent": 50
+      },
+      {
+        "note": 5,
+        "ab_prozent": 30
+      },
+      {
+        "note": 6,
+        "ab_prozent": 0
+      }
+    ],
+    "hinweis": "Verbindlich sind die schulischen Festlegungen."
+  }
+}

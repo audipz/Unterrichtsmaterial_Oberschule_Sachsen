@@ -1,0 +1,13 @@
+{
+  "erstellt_am": "2026-07-30",
+  "pruefungen": {
+    "json_dateien_lesbar": true,
+    "projektanzahl": 8,
+    "messwertanzahl": 35,
+    "protokollanzahl": 80,
+    "projekt_ids_eindeutig": true,
+    "fortschritt_im_bereich": true,
+    "sensorwerte_plausibel": true
+  },
+  "alle_pruefungen_bestanden": true
+}

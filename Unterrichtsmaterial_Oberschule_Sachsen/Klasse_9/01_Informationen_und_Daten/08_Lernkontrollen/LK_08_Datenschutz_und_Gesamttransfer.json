@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "id": "lk-08",
+  "titel": "Datenschutz und Gesamttransfer",
+  "fach": "Informatik",
+  "klassenstufe": 9,
+  "bundesland": "Sachsen",
+  "lerngebiet": "Informationen und Daten",
+  "bearbeitungszeit_minuten": 15,
+  "maximalzeit_minuten": 20,
+  "gesamtpunkte": 11,
+  "aufgaben": [
+    {
+      "id": "lk-08-a01",
+      "nummer": 1,
+      "typ": "multiple_choice",
+      "aufgabenstellung": "Welche Maßnahmen entsprechen der Datenminimierung?",
+      "punkte": 2,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Nur benötigte Daten erheben"
+        },
+        {
+          "id": "b",
+          "text": "Geburtsdatum ohne Zweck speichern"
+        },
+        {
+          "id": "c",
+          "text": "Daten nach dem Zweck löschen"
+        },
+        {
+          "id": "d",
+          "text": "Zugriff für alle öffnen"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Nur notwendige Daten und angemessene Speicherdauer.",
+        "richtige_optionen": [
+          "a",
+          "c"
+        ]
+      }
+    },
+    {
+      "id": "lk-08-a02",
+      "nummer": 2,
+      "typ": "single_choice",
+      "aufgabenstellung": "Welche Angabe ist personenbezogen?",
+      "punkte": 1,
+      "optionen": [
+        {
+          "id": "a",
+          "text": "Raumgröße"
+        },
+        {
+          "id": "b",
+          "text": "E-Mail-Adresse einer Helferin"
+        },
+        {
+          "id": "c",
+          "text": "Anzahl Stühle"
+        },
+        {
+          "id": "d",
+          "text": "Beginn des Konzerts"
+        }
+      ],
+      "loesung": {
+        "musterantwort": "Eine E-Mail-Adresse ist einer Person zuordenbar.",
+        "richtige_optionen": [
+          "b"
+        ]
+      }
+    },
+    {
+      "id": "lk-08-a03",
+      "nummer": 3,
+      "typ": "kurzantwort",
+      "aufgabenstellung": "Nenne zwei Schutzmaßnahmen für eine Helferliste.",
+      "punkte": 2,
+      "loesung": {
+        "musterantwort": "Zugriff beschränken, sichere Speicherung, wenige Felder, Löschfrist.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    },
+    {
+      "id": "lk-08-a04",
+      "nummer": 4,
+      "typ": "freitext",
+      "aufgabenstellung": "Entwirf zwei verbundene Tabellen mit Schlüsseln für die Festivalplanung.",
+      "punkte": 6,
+      "loesung": {
+        "musterantwort": "Beispiel: Raum(Raum_ID, Name) und Programmpunkt(Punkt_ID, Titel, Raum_ID), Beziehung 1:n.",
+        "bewertungshinweis": "Fachlich gleichwertige Formulierungen sind anzuerkennen; Teilpunkte sind möglich."
+      }
+    }
+  ],
+  "bewertung": {
+    "notenschluessel_prozent": [
+      {
+        "note": 1,
+        "ab_prozent": 92
+      },
+      {
+        "note": 2,
+        "ab_prozent": 81
+      },
+      {
+        "note": 3,
+        "ab_prozent": 67
+      },
+      {
+        "note": 4,
+        "ab_prozent": 50
+      },
+      {
+        "note": 5,
+        "ab_prozent": 30
+      },
+      {
+        "note": 6,
+        "ab_prozent": 0
+      }
+    ],
+    "hinweis": "Verbindlich sind die schulischen Festlegungen."
+  }
+}

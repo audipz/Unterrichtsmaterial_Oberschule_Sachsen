@@ -1,0 +1,18 @@
+{
+  "paket": "07_Quellen",
+  "zielpfad": "Klasse_9/01_Informationen_und_Daten/07_Quellen/",
+  "erstellt_am": "2026-07-30",
+  "onlinequellen": 10,
+  "lizenz_eigene_inhalte": "CC BY 4.0",
+  "status": "vollständig",
+  "dateien": [
+    "BILDNACHWEISE.md",
+    "LIZENZ_UND_NUTZUNG.md",
+    "PRUEFLISTE_NEUE_QUELLEN.md",
+    "QUELLENVERZEICHNIS.md",
+    "README.md",
+    "SOFTWARE_UND_WERKZEUGE.md",
+    "manifest.json",
+    "quellen.json"
+  ]
+}

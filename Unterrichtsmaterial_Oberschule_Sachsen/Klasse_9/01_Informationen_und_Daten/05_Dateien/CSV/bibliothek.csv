@@ -1,0 +1,181 @@
+﻿ausleih_id;schueler_id;vorname;nachname;klasse;isbn;titel;verlag;genre;ausleihdatum;faellig_am;rueckgabe_am;ueberfaellig
+AUS-0001;S113;Yara;König;9c;978-3-551-55741-3;Tschick;Rowohlt;Roman;31.03.2026;21.04.2026;;ja
+AUS-0002;S107;Ida;Schmitt;10a;978-3-499-21798-1;Das Parfum;Diogenes;Roman;19.04.2026;10.05.2026;30.05.2026;ja
+AUS-0003;S033;Jonas;Neumann;9b;978-3-446-46503-8;Python für Einsteiger;Hanser;Programmierung;15.03.2026;05.04.2026;12.04.2026;ja
+AUS-0004;S111;Milan;Zimmermann;10a;978-3-499-21798-1;Das Parfum;Diogenes;Roman;03.02.2026;24.02.2026;24.02.2026;nein
+AUS-0005;S019;Oskar;Vogel;9a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;21.04.2026;12.05.2026;17.05.2026;ja
+AUS-0006;S060;Tom;Hartmann;9a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;27.05.2026;17.06.2026;;ja
+AUS-0007;S060;Anna;Schulze;9b;978-3-551-31925-7;Momo;Thienemann;Klassiker;18.01.2026;08.02.2026;20.02.2026;ja
+AUS-0008;S050;Rami;Richter;9b;978-3-551-55741-3;Tschick;Rowohlt;Roman;18.05.2026;08.06.2026;;ja
+AUS-0009;S024;Nora;Bauer;10a;978-3-551-55741-3;Tschick;Rowohlt;Roman;11.05.2026;01.06.2026;19.06.2026;ja
+AUS-0010;S104;Yara;Krause;10a;978-3-499-21798-1;Das Parfum;Diogenes;Roman;23.04.2026;14.05.2026;18.05.2026;ja
+AUS-0011;S068;Ida;Zimmermann;10a;978-3-401-60300-0;Blackout;Arena;Jugendbuch;06.03.2026;27.03.2026;01.04.2026;ja
+AUS-0012;S069;Oskar;Schulze;10a;978-3-551-31925-7;Momo;Thienemann;Klassiker;18.01.2026;08.02.2026;27.02.2026;ja
+AUS-0013;S036;Elif;Hartmann;9c;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;08.06.2026;29.06.2026;29.06.2026;nein
+AUS-0014;S115;Clara;Jung;9b;978-3-551-55741-3;Tschick;Rowohlt;Roman;24.01.2026;14.02.2026;03.03.2026;ja
+AUS-0015;S064;Yara;Jung;9a;978-3-551-55741-3;Tschick;Rowohlt;Roman;20.05.2026;10.06.2026;02.06.2026;nein
+AUS-0016;S117;Yara;Wolf;9a;978-3-551-55741-3;Tschick;Rowohlt;Roman;16.01.2026;06.02.2026;09.02.2026;ja
+AUS-0017;S007;David;Schulze;10a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;08.03.2026;29.03.2026;26.03.2026;nein
+AUS-0018;S107;Greta;Bauer;9a;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;02.03.2026;23.03.2026;18.03.2026;nein
+AUS-0019;S063;Hannes;Richter;10a;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;09.06.2026;30.06.2026;27.06.2026;nein
+AUS-0020;S032;Anna;Jung;9b;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;17.04.2026;08.05.2026;25.05.2026;ja
+AUS-0021;S104;Tom;Wolf;9c;978-3-401-60300-0;Blackout;Arena;Jugendbuch;12.04.2026;03.05.2026;01.05.2026;nein
+AUS-0022;S086;Jonas;Scholz;9b;978-3-551-31925-7;Momo;Thienemann;Klassiker;29.05.2026;19.06.2026;28.06.2026;ja
+AUS-0023;S020;Rami;Werner;9b;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;01.02.2026;22.02.2026;20.02.2026;nein
+AUS-0024;S036;David;Scholz;9c;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;21.01.2026;11.02.2026;10.02.2026;nein
+AUS-0025;S066;Zoe;Hartmann;9b;978-3-551-31925-7;Momo;Thienemann;Klassiker;01.02.2026;22.02.2026;20.02.2026;nein
+AUS-0026;S040;Elif;König;10a;978-3-551-55741-3;Tschick;Rowohlt;Roman;02.02.2026;23.02.2026;11.03.2026;ja
+AUS-0027;S074;Ida;Hartmann;9b;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;25.03.2026;15.04.2026;;ja
+AUS-0028;S001;Tom;Schulze;9a;978-3-401-60300-0;Blackout;Arena;Jugendbuch;21.04.2026;12.05.2026;29.05.2026;ja
+AUS-0029;S097;Jonas;Scholz;9a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;08.05.2026;29.05.2026;;ja
+AUS-0030;S073;Felix;Schmitt;10a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;07.04.2026;28.04.2026;05.05.2026;ja
+AUS-0031;S051;Ida;Richter;9a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;07.03.2026;28.03.2026;;ja
+AUS-0032;S040;Hannes;Neumann;9c;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;22.04.2026;13.05.2026;14.05.2026;ja
+AUS-0033;S086;Elif;Jung;10a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;15.02.2026;08.03.2026;17.03.2026;ja
+AUS-0034;S002;Nora;Lehmann;9b;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;10.04.2026;01.05.2026;06.05.2026;ja
+AUS-0035;S013;Ida;Scholz;9b;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;13.04.2026;04.05.2026;;ja
+AUS-0036;S054;Sofia;Schmitt;9b;978-3-551-31925-7;Momo;Thienemann;Klassiker;27.04.2026;18.05.2026;03.06.2026;ja
+AUS-0037;S027;Felix;Schmitt;10a;978-3-499-21798-1;Das Parfum;Diogenes;Roman;24.01.2026;14.02.2026;08.02.2026;nein
+AUS-0038;S004;Tom;Lehmann;9c;978-3-499-21798-1;Das Parfum;Diogenes;Roman;28.01.2026;18.02.2026;12.02.2026;nein
+AUS-0039;S109;David;Bauer;9b;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;08.03.2026;29.03.2026;14.04.2026;ja
+AUS-0040;S089;Lea;Zimmermann;9b;978-3-446-46503-8;Python für Einsteiger;Hanser;Programmierung;07.06.2026;28.06.2026;02.07.2026;ja
+AUS-0041;S055;Tom;Richter;10a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;02.05.2026;23.05.2026;;ja
+AUS-0042;S109;David;Schmitt;9a;978-3-499-21798-1;Das Parfum;Diogenes;Roman;24.04.2026;15.05.2026;30.05.2026;ja
+AUS-0043;S025;Lea;Hartmann;9a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;08.05.2026;29.05.2026;22.05.2026;nein
+AUS-0044;S113;Paula;Zimmermann;9c;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;05.03.2026;26.03.2026;06.04.2026;ja
+AUS-0045;S007;Nora;Vogel;10a;978-3-499-21798-1;Das Parfum;Diogenes;Roman;20.02.2026;13.03.2026;10.03.2026;nein
+AUS-0046;S044;David;Hartmann;9c;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;12.03.2026;02.04.2026;31.03.2026;nein
+AUS-0047;S044;Anna;Zimmermann;10a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;02.02.2026;23.02.2026;17.02.2026;nein
+AUS-0048;S100;Anna;Hartmann;9b;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;08.06.2026;29.06.2026;21.06.2026;nein
+AUS-0049;S055;Nora;Vogel;9c;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;01.06.2026;22.06.2026;;ja
+AUS-0050;S119;Ida;Neumann;10a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;28.01.2026;18.02.2026;24.02.2026;ja
+AUS-0051;S043;Anna;Neumann;9b;978-3-446-46503-8;Python für Einsteiger;Hanser;Programmierung;08.05.2026;29.05.2026;22.05.2026;nein
+AUS-0052;S001;Milan;Krause;10a;978-3-499-21798-1;Das Parfum;Diogenes;Roman;11.04.2026;02.05.2026;09.05.2026;ja
+AUS-0053;S063;Felix;Schmitt;9c;978-3-499-21798-1;Das Parfum;Diogenes;Roman;30.04.2026;21.05.2026;22.05.2026;ja
+AUS-0054;S012;Ben;Schmitt;9b;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;06.04.2026;27.04.2026;28.04.2026;ja
+AUS-0055;S075;Sofia;Hartmann;9a;978-3-446-46503-8;Python für Einsteiger;Hanser;Programmierung;25.05.2026;15.06.2026;;ja
+AUS-0056;S056;Greta;Richter;9b;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;22.01.2026;12.02.2026;;ja
+AUS-0057;S085;Elif;König;9c;978-3-551-55741-3;Tschick;Rowohlt;Roman;08.04.2026;29.04.2026;29.04.2026;nein
+AUS-0058;S021;Nora;Schulze;9b;978-3-551-31925-7;Momo;Thienemann;Klassiker;04.02.2026;25.02.2026;11.03.2026;ja
+AUS-0059;S066;Sofia;Lehmann;9b;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;04.03.2026;25.03.2026;22.03.2026;nein
+AUS-0060;S003;Elif;Lehmann;9b;978-3-551-55741-3;Tschick;Rowohlt;Roman;25.03.2026;15.04.2026;12.04.2026;nein
+AUS-0061;S099;Rami;Schulze;9c;978-3-499-21798-1;Das Parfum;Diogenes;Roman;13.02.2026;06.03.2026;17.03.2026;ja
+AUS-0062;S098;Lea;Krause;9b;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;13.05.2026;03.06.2026;22.06.2026;ja
+AUS-0063;S024;Elif;Krause;10a;978-3-401-60300-0;Blackout;Arena;Jugendbuch;09.05.2026;30.05.2026;27.05.2026;nein
+AUS-0064;S087;Oskar;Krause;9c;978-3-401-60300-0;Blackout;Arena;Jugendbuch;14.02.2026;07.03.2026;01.03.2026;nein
+AUS-0065;S015;Hannes;Lehmann;9a;978-3-551-31925-7;Momo;Thienemann;Klassiker;28.03.2026;18.04.2026;;ja
+AUS-0066;S090;Felix;Neumann;9c;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;01.02.2026;22.02.2026;;ja
+AUS-0067;S006;Clara;Jung;9b;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;01.05.2026;22.05.2026;17.05.2026;nein
+AUS-0068;S095;Felix;Zimmermann;9a;978-3-401-60300-0;Blackout;Arena;Jugendbuch;26.02.2026;19.03.2026;04.04.2026;ja
+AUS-0069;S081;Felix;Schmitt;9a;978-3-551-31925-7;Momo;Thienemann;Klassiker;12.04.2026;03.05.2026;30.04.2026;nein
+AUS-0070;S102;Nora;Jung;9b;978-3-446-46503-8;Python für Einsteiger;Hanser;Programmierung;14.02.2026;07.03.2026;15.03.2026;ja
+AUS-0071;S015;Paula;Schmitt;9a;978-3-551-31925-7;Momo;Thienemann;Klassiker;21.02.2026;14.03.2026;29.03.2026;ja
+AUS-0072;S094;David;Vogel;10a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;30.01.2026;20.02.2026;06.03.2026;ja
+AUS-0073;S038;Hannes;Scholz;10a;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;20.01.2026;10.02.2026;23.02.2026;ja
+AUS-0074;S017;Felix;Richter;9c;978-3-551-55741-3;Tschick;Rowohlt;Roman;08.02.2026;01.03.2026;02.03.2026;ja
+AUS-0075;S077;Tom;Jung;9c;978-3-499-21798-1;Das Parfum;Diogenes;Roman;17.03.2026;07.04.2026;30.03.2026;nein
+AUS-0076;S002;Paula;Schulze;9a;978-3-551-31925-7;Momo;Thienemann;Klassiker;11.02.2026;04.03.2026;;ja
+AUS-0077;S043;Zoe;Zimmermann;9c;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;06.04.2026;27.04.2026;19.04.2026;nein
+AUS-0078;S002;Nora;Werner;9a;978-3-401-60300-0;Blackout;Arena;Jugendbuch;29.03.2026;19.04.2026;18.04.2026;nein
+AUS-0079;S039;Rami;Scholz;9b;978-3-499-21798-1;Das Parfum;Diogenes;Roman;21.05.2026;11.06.2026;15.06.2026;ja
+AUS-0080;S046;Felix;Zimmermann;9b;978-3-401-60300-0;Blackout;Arena;Jugendbuch;14.05.2026;04.06.2026;13.06.2026;ja
+AUS-0081;S008;Greta;Lehmann;9b;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;08.04.2026;29.04.2026;02.05.2026;ja
+AUS-0082;S030;Sofia;Vogel;9b;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;28.03.2026;18.04.2026;25.04.2026;ja
+AUS-0083;S069;Ida;Hartmann;9a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;13.05.2026;03.06.2026;;ja
+AUS-0084;S090;Rami;Scholz;9c;978-3-446-46503-8;Python für Einsteiger;Hanser;Programmierung;10.05.2026;31.05.2026;11.06.2026;ja
+AUS-0085;S084;Yara;Wolf;9c;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;22.04.2026;13.05.2026;;ja
+AUS-0086;S102;Oskar;Zimmermann;9a;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;10.04.2026;01.05.2026;01.05.2026;nein
+AUS-0087;S026;Clara;Schulze;9b;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;20.04.2026;11.05.2026;30.05.2026;ja
+AUS-0088;S037;Anna;König;9b;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;14.01.2026;04.02.2026;;ja
+AUS-0089;S079;Lea;Vogel;9c;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;19.03.2026;09.04.2026;13.04.2026;ja
+AUS-0090;S046;Sofia;König;9c;978-3-551-31925-7;Momo;Thienemann;Klassiker;25.05.2026;15.06.2026;22.06.2026;ja
+AUS-0091;S051;Oskar;Hartmann;10a;978-3-551-55741-3;Tschick;Rowohlt;Roman;27.04.2026;18.05.2026;24.05.2026;ja
+AUS-0092;S085;Greta;Scholz;9c;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;04.03.2026;25.03.2026;30.03.2026;ja
+AUS-0093;S088;Yara;Werner;9b;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;20.04.2026;11.05.2026;05.05.2026;nein
+AUS-0094;S018;Yara;Zimmermann;9b;978-3-401-60300-0;Blackout;Arena;Jugendbuch;09.02.2026;02.03.2026;15.03.2026;ja
+AUS-0095;S043;Anna;Schmitt;9a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;15.01.2026;05.02.2026;23.02.2026;ja
+AUS-0096;S090;Greta;Jung;9b;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;02.06.2026;23.06.2026;09.07.2026;ja
+AUS-0097;S110;Elif;König;9a;978-3-551-31925-7;Momo;Thienemann;Klassiker;08.03.2026;29.03.2026;27.03.2026;nein
+AUS-0098;S084;Ben;König;9b;978-3-401-60300-0;Blackout;Arena;Jugendbuch;28.03.2026;18.04.2026;12.04.2026;nein
+AUS-0099;S087;Oskar;Neumann;9a;978-3-499-21798-1;Das Parfum;Diogenes;Roman;16.04.2026;07.05.2026;25.05.2026;ja
+AUS-0100;S077;Rami;Hartmann;10a;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;17.04.2026;08.05.2026;20.05.2026;ja
+AUS-0101;S046;Lea;Richter;9b;978-3-499-21798-1;Das Parfum;Diogenes;Roman;25.05.2026;15.06.2026;21.06.2026;ja
+AUS-0102;S012;Zoe;König;9b;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;29.05.2026;19.06.2026;04.07.2026;ja
+AUS-0103;S083;Hannes;Richter;9a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;26.03.2026;16.04.2026;29.04.2026;ja
+AUS-0104;S085;Rami;Bauer;9a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;29.04.2026;20.05.2026;18.05.2026;nein
+AUS-0105;S038;Nora;Hartmann;9b;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;29.05.2026;19.06.2026;06.07.2026;ja
+AUS-0106;S021;Oskar;Wolf;9c;978-3-551-31925-7;Momo;Thienemann;Klassiker;17.01.2026;07.02.2026;;ja
+AUS-0107;S097;Sofia;Lehmann;10a;978-3-446-46503-8;Python für Einsteiger;Hanser;Programmierung;17.02.2026;10.03.2026;27.03.2026;ja
+AUS-0108;S064;Rami;Vogel;9b;978-3-401-60300-0;Blackout;Arena;Jugendbuch;28.05.2026;18.06.2026;19.06.2026;ja
+AUS-0109;S065;Hannes;Schulze;9b;978-3-499-21798-1;Das Parfum;Diogenes;Roman;14.05.2026;04.06.2026;21.06.2026;ja
+AUS-0110;S014;Tom;Jung;10a;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;29.03.2026;19.04.2026;09.05.2026;ja
+AUS-0111;S093;Rami;Lehmann;9c;978-3-446-46503-8;Python für Einsteiger;Hanser;Programmierung;25.05.2026;15.06.2026;24.06.2026;ja
+AUS-0112;S030;Clara;Schmitt;10a;978-3-446-46503-8;Python für Einsteiger;Hanser;Programmierung;11.04.2026;02.05.2026;;ja
+AUS-0113;S057;Clara;Wolf;9c;978-3-446-46503-8;Python für Einsteiger;Hanser;Programmierung;04.02.2026;25.02.2026;28.02.2026;ja
+AUS-0114;S034;Felix;Schmitt;10a;978-3-499-21798-1;Das Parfum;Diogenes;Roman;25.03.2026;15.04.2026;30.04.2026;ja
+AUS-0115;S109;Zoe;Bauer;9b;978-3-551-55741-3;Tschick;Rowohlt;Roman;05.05.2026;26.05.2026;18.05.2026;nein
+AUS-0116;S084;Lea;Vogel;9b;978-3-551-31925-7;Momo;Thienemann;Klassiker;24.04.2026;15.05.2026;17.05.2026;ja
+AUS-0117;S001;Ida;Zimmermann;10a;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;30.01.2026;20.02.2026;12.03.2026;ja
+AUS-0118;S089;Yara;Jung;9b;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;06.04.2026;27.04.2026;01.05.2026;ja
+AUS-0119;S041;David;Werner;9a;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;03.04.2026;24.04.2026;18.04.2026;nein
+AUS-0120;S085;Clara;Jung;9a;978-3-401-60300-0;Blackout;Arena;Jugendbuch;23.05.2026;13.06.2026;16.06.2026;ja
+AUS-0121;S036;Zoe;Krause;10a;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;09.03.2026;30.03.2026;;ja
+AUS-0122;S004;Tom;Lehmann;9c;978-3-499-21798-1;Das Parfum;Diogenes;Roman;22.05.2026;12.06.2026;23.06.2026;ja
+AUS-0123;S091;Sofia;Zimmermann;10a;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;20.02.2026;13.03.2026;09.03.2026;nein
+AUS-0124;S050;Elif;Schmitt;9a;978-3-551-31925-7;Momo;Thienemann;Klassiker;22.02.2026;15.03.2026;18.03.2026;ja
+AUS-0125;S016;Jonas;Scholz;9c;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;27.05.2026;17.06.2026;14.06.2026;nein
+AUS-0126;S103;David;Schulze;9a;978-3-551-55741-3;Tschick;Rowohlt;Roman;18.05.2026;08.06.2026;;ja
+AUS-0127;S092;Milan;Neumann;9a;978-3-499-21798-1;Das Parfum;Diogenes;Roman;12.04.2026;03.05.2026;06.05.2026;ja
+AUS-0128;S016;Rami;Neumann;9c;978-3-551-55741-3;Tschick;Rowohlt;Roman;20.01.2026;10.02.2026;28.02.2026;ja
+AUS-0129;S103;Zoe;Bauer;9c;978-3-499-21798-1;Das Parfum;Diogenes;Roman;05.05.2026;26.05.2026;04.06.2026;ja
+AUS-0130;S057;Zoe;Zimmermann;9c;978-3-499-21798-1;Das Parfum;Diogenes;Roman;26.05.2026;16.06.2026;03.07.2026;ja
+AUS-0131;S116;Paula;Hartmann;9b;978-3-551-31925-7;Momo;Thienemann;Klassiker;10.05.2026;31.05.2026;;ja
+AUS-0132;S117;Elif;Wolf;9a;978-3-499-21798-1;Das Parfum;Diogenes;Roman;23.01.2026;13.02.2026;04.03.2026;ja
+AUS-0133;S119;Clara;Bauer;10a;978-3-401-60300-0;Blackout;Arena;Jugendbuch;21.02.2026;14.03.2026;21.03.2026;ja
+AUS-0134;S020;Clara;Schmitt;9a;978-3-551-55741-3;Tschick;Rowohlt;Roman;25.03.2026;15.04.2026;;ja
+AUS-0135;S015;Yara;Schmitt;9c;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;11.06.2026;02.07.2026;17.07.2026;ja
+AUS-0136;S028;Clara;Richter;9b;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;02.06.2026;23.06.2026;06.07.2026;ja
+AUS-0137;S065;Ida;Schulze;10a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;19.05.2026;09.06.2026;11.06.2026;ja
+AUS-0138;S096;Rami;Werner;9b;978-3-551-55741-3;Tschick;Rowohlt;Roman;20.02.2026;13.03.2026;17.03.2026;ja
+AUS-0139;S004;Jonas;Werner;9a;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;18.05.2026;08.06.2026;;ja
+AUS-0140;S059;Greta;Scholz;9a;978-3-551-31925-7;Momo;Thienemann;Klassiker;09.03.2026;30.03.2026;06.04.2026;ja
+AUS-0141;S034;Paula;Krause;9c;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;28.04.2026;19.05.2026;11.05.2026;nein
+AUS-0142;S105;Oskar;Wolf;9c;978-3-551-55741-3;Tschick;Rowohlt;Roman;16.04.2026;07.05.2026;;ja
+AUS-0143;S102;Ben;Lehmann;10a;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;28.01.2026;18.02.2026;10.02.2026;nein
+AUS-0144;S045;Ida;Vogel;9c;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;28.05.2026;18.06.2026;13.06.2026;nein
+AUS-0145;S109;Ben;Vogel;10a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;19.04.2026;10.05.2026;13.05.2026;ja
+AUS-0146;S081;Clara;Lehmann;9c;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;25.01.2026;15.02.2026;05.03.2026;ja
+AUS-0147;S034;Jonas;Zimmermann;9a;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;15.05.2026;05.06.2026;;ja
+AUS-0148;S103;Milan;Hartmann;9a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;14.05.2026;04.06.2026;18.06.2026;ja
+AUS-0149;S005;Rami;Lehmann;9c;978-3-499-21798-1;Das Parfum;Diogenes;Roman;21.01.2026;11.02.2026;;ja
+AUS-0150;S009;Sofia;Lehmann;9c;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;06.04.2026;27.04.2026;15.05.2026;ja
+AUS-0151;S039;Clara;Wolf;9b;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;03.04.2026;24.04.2026;30.04.2026;ja
+AUS-0152;S015;Nora;Neumann;10a;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;18.03.2026;08.04.2026;27.04.2026;ja
+AUS-0153;S087;Yara;Krause;9a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;07.05.2026;28.05.2026;29.05.2026;ja
+AUS-0154;S050;Ben;Werner;9a;978-3-401-60300-0;Blackout;Arena;Jugendbuch;10.04.2026;01.05.2026;05.05.2026;ja
+AUS-0155;S050;Sofia;Richter;9c;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;08.06.2026;29.06.2026;15.07.2026;ja
+AUS-0156;S012;Ida;Jung;9b;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;12.02.2026;05.03.2026;19.03.2026;ja
+AUS-0157;S034;Nora;Scholz;9c;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;12.04.2026;03.05.2026;29.04.2026;nein
+AUS-0158;S047;Ida;Jung;9c;978-3-12-735020-2;Netzwerke kompakt;Klett;Informatik;29.03.2026;19.04.2026;16.04.2026;nein
+AUS-0159;S017;Ida;Werner;10a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;30.01.2026;20.02.2026;;ja
+AUS-0160;S053;Greta;Hartmann;10a;978-3-551-55741-3;Tschick;Rowohlt;Roman;20.02.2026;13.03.2026;19.03.2026;ja
+AUS-0161;S003;Sofia;Hartmann;10a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;11.05.2026;01.06.2026;20.06.2026;ja
+AUS-0162;S002;Elif;Jung;10a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;27.02.2026;20.03.2026;20.03.2026;nein
+AUS-0163;S093;Ben;Bauer;9b;978-3-551-31925-7;Momo;Thienemann;Klassiker;07.04.2026;28.04.2026;02.05.2026;ja
+AUS-0164;S063;Lea;Schmitt;9c;978-3-499-21798-1;Das Parfum;Diogenes;Roman;10.02.2026;03.03.2026;17.03.2026;ja
+AUS-0165;S026;Hannes;Vogel;9b;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;24.02.2026;17.03.2026;29.03.2026;ja
+AUS-0166;S016;Ben;Schulze;9b;978-3-551-55741-3;Tschick;Rowohlt;Roman;13.01.2026;03.02.2026;09.02.2026;ja
+AUS-0167;S087;Ben;Krause;9c;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;26.03.2026;16.04.2026;06.05.2026;ja
+AUS-0168;S088;Sofia;Hartmann;9b;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;20.02.2026;13.03.2026;15.03.2026;ja
+AUS-0169;S016;Clara;Jung;9a;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;21.01.2026;11.02.2026;19.02.2026;ja
+AUS-0170;S039;Nora;Wolf;9a;978-3-551-55741-3;Tschick;Rowohlt;Roman;10.03.2026;31.03.2026;;ja
+AUS-0171;S081;Clara;Zimmermann;9b;978-3-12-735010-3;Informatik entdecken;Cornelsen;Informatik;05.02.2026;26.02.2026;10.03.2026;ja
+AUS-0172;S019;Rami;Richter;9c;978-3-446-46503-8;Python für Einsteiger;Hanser;Programmierung;29.04.2026;20.05.2026;13.05.2026;nein
+AUS-0173;S088;Ben;Vogel;9a;978-3-401-60300-0;Blackout;Arena;Jugendbuch;21.05.2026;11.06.2026;18.06.2026;ja
+AUS-0174;S004;Felix;Bauer;10a;978-3-551-31925-7;Momo;Thienemann;Klassiker;05.06.2026;26.06.2026;02.07.2026;ja
+AUS-0175;S097;Nora;Neumann;9a;978-3-551-55741-3;Tschick;Rowohlt;Roman;16.03.2026;06.04.2026;04.04.2026;nein
+AUS-0176;S013;Milan;Scholz;9b;978-3-86680-192-8;Sachsen entdecken;Sutton;Regionalgeschichte;27.02.2026;20.03.2026;;ja
+AUS-0177;S107;Anna;Vogel;10a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;04.03.2026;25.03.2026;17.03.2026;nein
+AUS-0178;S117;Yara;Wolf;9c;978-3-551-55741-3;Tschick;Rowohlt;Roman;09.03.2026;30.03.2026;;ja
+AUS-0179;S087;Paula;Jung;10a;978-3-8362-8450-8;Datenbanken verstehen;Rheinwerk;Datenbanken;16.01.2026;06.02.2026;29.01.2026;nein
+AUS-0180;S008;Tom;Wolf;9a;978-3-423-65012-9;Die Welle;dtv;Jugendbuch;09.06.2026;30.06.2026;19.07.2026;ja

@@ -1,0 +1,38 @@
+[
+  {
+    "fall": "ungueltige_projekt_id",
+    "daten": {
+      "projekt_id": "Projekt-1",
+      "titel": "Testprojekt",
+      "team": [
+        "Anna",
+        "Ben"
+      ],
+      "klasse": "9a",
+      "thema": "Test",
+      "status": "geplant",
+      "fortschritt_prozent": 10,
+      "abgabe": "2026-11-01",
+      "bewertung": null
+    },
+    "erwarteter_fehler": "projekt_id entspricht nicht dem Muster P-000"
+  },
+  {
+    "fall": "fortschritt_zu_gross",
+    "daten": {
+      "projekt_id": "P-099",
+      "titel": "Testprojekt",
+      "team": [
+        "Anna",
+        "Ben"
+      ],
+      "klasse": "9a",
+      "thema": "Test",
+      "status": "in Arbeit",
+      "fortschritt_prozent": 140,
+      "abgabe": "2026-11-01",
+      "bewertung": null
+    },
+    "erwarteter_fehler": "fortschritt_prozent muss zwischen 0 und 100 liegen"
+  }
+]

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="340" viewBox="0 0 920 340">
+<rect width="920" height="340" fill="white"/>
+<text x="35" y="45" font-size="26" font-family="sans-serif">Zeichencodierung: Zeichen → Codepunkt → Binärdarstellung</text>
+<rect x="40" y="90" width="170" height="120" fill="white" stroke="black" stroke-width="2"/>
+<text x="100" y="155" font-size="54" font-family="sans-serif">A</text>
+<rect x="270" y="90" width="240" height="120" fill="white" stroke="black" stroke-width="2"/>
+<text x="310" y="140" font-size="24" font-family="sans-serif">Unicode: U+0041</text>
+<text x="310" y="180" font-size="22" font-family="sans-serif">Dezimal: 65</text>
+<rect x="570" y="90" width="300" height="120" fill="white" stroke="black" stroke-width="2"/>
+<text x="625" y="160" font-size="28" font-family="monospace">01000001</text>
+<line x1="210" y1="150" x2="270" y2="150" stroke="black" stroke-width="2"/>
+<polygon points="260,143 270,150 260,157" fill="black"/>
+<line x1="510" y1="150" x2="570" y2="150" stroke="black" stroke-width="2"/>
+<polygon points="560,143 570,150 560,157" fill="black"/>
+<text x="40" y="275" font-size="20" font-family="sans-serif">ASCII umfasst 128 Grundzeichen. Unicode beschreibt wesentlich mehr Schriftsysteme und Symbole.</text>
+</svg>

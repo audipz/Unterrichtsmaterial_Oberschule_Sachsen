@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180">
+<text x="20" y="30" font-size="20">Dateiformate</text>
+<rect x="20" y="60" width="120" height="60" fill="white" stroke="black"/><text x="55" y="95">CSV</text>
+<rect x="180" y="60" width="120" height="60" fill="white" stroke="black"/><text x="210" y="95">XLSX</text>
+<rect x="340" y="60" width="120" height="60" fill="white" stroke="black"/><text x="365" y="95">JSON</text>
+<rect x="500" y="60" width="120" height="60" fill="white" stroke="black"/><text x="515" y="95">SQLite</text>
+</svg>
