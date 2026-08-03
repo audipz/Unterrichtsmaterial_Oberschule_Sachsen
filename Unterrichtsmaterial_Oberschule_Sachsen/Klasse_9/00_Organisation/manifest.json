@@ -1,0 +1,14 @@
+{
+  "paket": "Dokumentation",
+  "version": "0.1",
+  "status": "Grundlagen",
+  "dateien": [
+    "ABBILDUNGSSTANDARD.md",
+    "AUFGABENSTANDARD.md",
+    "CONTRIBUTING.md",
+    "LIZENZ.md",
+    "README.md",
+    "SCHREIBREGELN.md",
+    "STYLEGUIDE.md"
+  ]
+}

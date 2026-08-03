@@ -1,0 +1,24 @@
+# Datenschutz
+
+Digitale Medien gehören zum Alltag.
+
+Dabei entstehen ständig Daten.
+
+Nicht alle Daten dürfen veröffentlicht oder weitergegeben werden.
+
+Dieses Kapitel erklärt die wichtigsten Grundlagen des Datenschutzes für den Informatikunterricht.
+
+---
+
+## Inhalte
+
+| Datei | Inhalt |
+|--------|--------|
+| 01_Was_ist_Datenschutz.md | Grundlagen |
+| 02_Persoenliche_Daten.md | Arten von Daten |
+| 03_Passwoerter.md | Sichere Passwörter |
+| 04_Datensicherheit.md | Geräte schützen |
+| 05_Soziale_Netzwerke.md | Datenschutz im Alltag |
+| 06_DSGVO.md | Datenschutz in Europa |
+| 07_Weiterlernen.md | Weitere Informationen |
+| 08_Quellen.md | Quellen |	
