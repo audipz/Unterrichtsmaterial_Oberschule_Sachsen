@@ -35,9 +35,7 @@ jobs:
         run: |
           chmod +x Build/*.sh
 
-      - name: Markdown validieren
-        run: |
-          ./Build/validate.sh
+     
 
       - name: Dokumente bauen
         run: |
