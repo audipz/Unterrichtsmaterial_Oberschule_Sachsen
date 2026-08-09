@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="430" viewBox="0 0 800 430">
+  <style>
+    text { font-family: sans-serif; font-size: 21px; }
+    .box { fill: white; stroke: black; stroke-width: 2; rx: 10; }
+    .arrow { fill: none; stroke: black; stroke-width: 2; marker-end: url(#a); }
+  </style>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z"/>
+    </marker>
+  </defs>
+  <rect class="box" x="300" y="30" width="200" height="60"/>
+  <text x="400" y="68" text-anchor="middle">Entwickeln</text>
+  <rect class="box" x="560" y="180" width="160" height="60"/>
+  <text x="640" y="218" text-anchor="middle">Testen</text>
+  <rect class="box" x="300" y="325" width="200" height="60"/>
+  <text x="400" y="363" text-anchor="middle">Verbessern</text>
+  <rect class="box" x="70" y="180" width="160" height="60"/>
+  <text x="150" y="218" text-anchor="middle">Analysieren</text>
+  <path class="arrow" d="M500,60 C600,70 650,110 650,175"/>
+  <path class="arrow" d="M640,240 C620,310 550,350 505,355"/>
+  <path class="arrow" d="M300,355 C210,345 150,300 150,245"/>
+  <path class="arrow" d="M150,180 C160,100 240,60 295,60"/>
+</svg>
