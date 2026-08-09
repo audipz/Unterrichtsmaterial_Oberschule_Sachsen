@@ -9,20 +9,11 @@ TEMPLATE_ROOT="$REPO_ROOT/Build/templates"
 FILTER_ROOT="$REPO_ROOT/Build/filters"
 AREA="${1:-}"
 
-if ! command -v pandoc >/dev/null 2>&1; then
-  echo "Pandoc wurde nicht gefunden." >&2
-  exit 1
-fi
+command -v pandoc >/dev/null 2>&1 || { echo "Pandoc fehlt." >&2; exit 1; }
 
 SOURCE_BASE="$SOURCE_ROOT"
-if [[ -n "$AREA" ]]; then
-  SOURCE_BASE="$SOURCE_ROOT/$AREA"
-fi
-
-if [[ ! -d "$SOURCE_BASE" ]]; then
-  echo "Bereich nicht gefunden: $SOURCE_BASE" >&2
-  exit 1
-fi
+[[ -n "$AREA" ]] && SOURCE_BASE="$SOURCE_ROOT/$AREA"
+[[ -d "$SOURCE_BASE" ]] || { echo "Bereich nicht gefunden: $SOURCE_BASE" >&2; exit 1; }
 
 rm -rf "$OUTPUT_ROOT" "$WORK_ROOT"
 mkdir -p "$OUTPUT_ROOT" "$WORK_ROOT"
@@ -44,49 +35,29 @@ find_class() {
       return
     fi
   done
-  printf ''
-}
-
-git_version() {
-  local tag
-  tag="$(git -C "$REPO_ROOT" describe --tags --always --dirty 2>/dev/null || true)"
-  [[ -n "$tag" ]] && printf '%s' "$tag" || printf 'unversioniert'
 }
 
 build_dir() {
   local dir="$1"
   local md_files=()
-  local file
-
-  while IFS= read -r file; do
-    md_files+=("$file")
-  done < <(find "$dir" -maxdepth 1 -type f -name '*.md' ! -name 'README.md' -print | sort)
-
+  while IFS= read -r file; do md_files+=("$file"); done < <(
+    find "$dir" -maxdepth 1 -type f -name '*.md' ! -name 'README.md' -print | sort
+  )
   [[ "${#md_files[@]}" -gt 0 ]] || return 0
 
   local relative="${dir#$SOURCE_ROOT/}"
-  local parent name out_dir safe combined
-  local class_no topic part title subtitle version build_date
-
+  local parent name out_dir safe combined class_no topic part title subtitle version build_date
   parent="$(dirname "$relative")"
   name="$(basename "$relative")"
-
-  if [[ "$parent" == "." ]]; then
-    out_dir="$OUTPUT_ROOT"
-  else
-    out_dir="$OUTPUT_ROOT/$parent"
-  fi
+  out_dir="$OUTPUT_ROOT"
+  [[ "$parent" != "." ]] && out_dir="$OUTPUT_ROOT/$parent"
   mkdir -p "$out_dir"
 
   safe="$(printf '%s' "$relative" | tr '/\\:*?"<>|' '_')"
   combined="$WORK_ROOT/$safe.md"
   : > "$combined"
 
-  # README becomes the introductory first chapter, if present.
-  if [[ -f "$dir/README.md" ]]; then
-    cat "$dir/README.md" >> "$combined"
-    printf '\n\n' >> "$combined"
-  fi
+  [[ -f "$dir/README.md" ]] && { cat "$dir/README.md" >> "$combined"; printf '\n\n' >> "$combined"; }
 
   for file in "${md_files[@]}"; do
     cat "$file" >> "$combined"
@@ -95,71 +66,44 @@ build_dir() {
 
   class_no="$(find_class "$relative")"
   part="$(humanize "$name")"
-
-  if [[ "$parent" != "." ]]; then
-    topic="$(humanize "$(basename "$parent")")"
-  else
-    topic="$part"
-  fi
-
-  # For a typical Werkteil (01_Arbeitsheft etc.), the parent is the topic.
+  topic="$part"
+  [[ "$parent" != "." ]] && topic="$(humanize "$(basename "$parent")")"
   title="$topic"
   subtitle="$part"
-  if [[ -n "$class_no" ]]; then
-    subtitle="Informatik - Klasse $class_no - $part"
-  fi
+  [[ -n "$class_no" ]] && subtitle="Informatik · Klasse $class_no · $part"
 
-  version="$(git_version)"
+  version="$(git -C "$REPO_ROOT" describe --tags --always --dirty 2>/dev/null || echo unversioniert)"
   build_date="$(date +%d.%m.%Y)"
 
   echo "BUILD $relative"
 
-  # DOCX: title metadata appears before TOC. In reference.docx the
-  # TOC Heading style starts a new page, creating a true title page.
   pandoc "$combined" \
-    --from markdown \
-    --to docx \
-    --standalone \
-    --toc \
-    --toc-depth=2 \
+    --from markdown --to docx --standalone --toc --toc-depth=2 \
     --reference-doc="$TEMPLATE_ROOT/reference.docx" \
     --lua-filter="$FILTER_ROOT/pagebreak.lua" \
     --metadata "title=$title" \
     --metadata "subtitle=$subtitle" \
     --metadata "author=Unterrichtsmaterial Oberschule Sachsen" \
-    --metadata "date=Version $version - Build $build_date" \
+    --metadata "date=Version $version · Build $build_date" \
     --metadata "lang=de-DE" \
-    --metadata "toc-title=Inhaltsverzeichnis" \
     --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" \
     --output "$out_dir/$name.docx"
 
-  # HTML
   pandoc "$combined" \
-    --from markdown \
-    --to html5 \
-    --standalone \
-    --toc \
-    --toc-depth=2 \
+    --from markdown --to html5 --standalone --toc --toc-depth=2 \
     --lua-filter="$FILTER_ROOT/pagebreak.lua" \
-    --css="$TEMPLATE_ROOT/publishing.css" \
-    --embed-resources \
+    --css="$TEMPLATE_ROOT/publishing.css" --embed-resources \
     --metadata "title=$title" \
     --metadata "subtitle=$subtitle" \
     --metadata "author=Unterrichtsmaterial Oberschule Sachsen" \
-    --metadata "date=Version $version - Build $build_date" \
+    --metadata "date=Version $version · Build $build_date" \
     --metadata "lang=de-DE" \
-    --metadata "toc-title=Inhaltsverzeichnis" \
     --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" \
     --output "$out_dir/$name.html"
 
-  # PDF
   if command -v xelatex >/dev/null 2>&1; then
     pandoc "$combined" \
-      --from markdown \
-      --to pdf \
-      --standalone \
-      --toc \
-      --toc-depth=2 \
+      --from markdown --to pdf --standalone --toc --toc-depth=2 \
       --lua-filter="$FILTER_ROOT/pagebreak.lua" \
       --pdf-engine=xelatex \
       --variable=classoption:titlepage \
@@ -169,26 +113,16 @@ build_dir() {
       --metadata "title=$title" \
       --metadata "subtitle=$subtitle" \
       --metadata "author=Unterrichtsmaterial Oberschule Sachsen" \
-      --metadata "date=Version $version - Build $build_date" \
+      --metadata "date=Version $version · Build $build_date" \
       --metadata "lang=de-DE" \
-      --metadata "toc-title=Inhaltsverzeichnis" \
       --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" \
-      --output "$out_dir/$name.pdf" || {
-        echo "WARNUNG: PDF-Build fehlgeschlagen: $relative" >&2
-      }
-  else
-    echo "INFO: xelatex nicht vorhanden – PDF übersprungen: $relative"
+      --output "$out_dir/$name.pdf" || echo "WARNUNG: PDF fehlgeschlagen: $relative" >&2
   fi
 }
 
-while IFS= read -r -d '' dir; do
-  build_dir "$dir"
-done < <(find "$SOURCE_BASE" -type d -print0)
+while IFS= read -r -d '' dir; do build_dir "$dir"; done < <(find "$SOURCE_BASE" -type d -print0)
 
 python3 "$REPO_ROOT/Build/generate_index.py"
-
 rm -rf "$WORK_ROOT"
 
-echo
-echo "Build abgeschlossen."
-echo "Ausgabe: $OUTPUT_ROOT"
+echo "Build abgeschlossen: $OUTPUT_ROOT"
