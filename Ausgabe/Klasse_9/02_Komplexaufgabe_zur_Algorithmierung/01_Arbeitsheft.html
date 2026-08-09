@@ -2,13 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Klasse_9_02_Komplexaufgabe_zur_Algorithmierung_01_Arbeitsheft</title>
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     html {
       color: #1a1a1a;
       background-color: #fdfdfd;
@@ -41,6 +38,7 @@
       body {
         background-color: transparent;
         color: black;
+        font-size: 12pt;
       }
       p, h2, h3 {
         orphans: 3;
@@ -60,10 +58,6 @@
       color: #1a1a1a;
     }
     img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -90,7 +84,6 @@
       color: #606060;
     }
     code {
-      white-space: pre-wrap;
       font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
       font-size: 85%;
       margin: 0;
@@ -110,8 +103,8 @@
      overflow: visible;
     }
     hr {
+      background-color: #1a1a1a;
       border: none;
-      border-top: 1px solid #1a1a1a;
       height: 1px;
       margin: 1em 0;
     }
@@ -154,13 +147,10 @@
     #TOC a:not(:hover) {
       text-decoration: none;
     }
+    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -173,9 +163,8 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -902,25 +891,25 @@ aus?</h2>
 <p>Ergänzt die Tabelle.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Beobachtung</th>
 <th>Was sollte eine gute Anleitung können?</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Manche Angaben waren ungenau.</td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>Einige Schritte fehlten.</td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Die Reihenfolge war nicht sinnvoll.</td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>Manche Anweisungen konnten nicht ausgeführt werden.</td>
 <td></td>
 </tr>
@@ -972,25 +961,25 @@ aus?</h2>
 <p>Ordnet die folgenden Aussagen einer Eigenschaft zu.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Aussage</th>
 <th>Eigenschaft</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>„Gib etwas Zucker dazu.“</td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>„Backe den Kuchen.“ (Es fehlt das Rezept.)</td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>„Setze den Deckel auf.“ bevor das Glas gefüllt wurde.</td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>„Hole den Regenbogen.“</td>
 <td></td>
 </tr>
@@ -1079,29 +1068,29 @@ einzelnen Schritt nachzudenken.</p>
 <p>Ordne die Aussagen zu.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Aussage</th>
 <th style="text-align: center;">Mensch</th>
 <th style="text-align: center;">Computer</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Kann fehlende Informationen ergänzen.</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Führt Anweisungen genau aus.</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Erkennt oft, was gemeint ist.</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Benötigt eindeutige Anweisungen.</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
@@ -1126,17 +1115,17 @@ einer <strong>Programmiersprache</strong> auf.</p>
 <col style="width: 47%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Scratch</th>
 <th>Python</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Programme werden aus Blöcken zusammengesetzt.</td>
 <td>Programme werden als Text geschrieben.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Gut geeignet für den Einstieg.</td>
 <td>Weit verbreitete Programmiersprache.</td>
 </tr>
@@ -1281,21 +1270,21 @@ Vergleich</h2>
 <col style="width: 47%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Scratch</th>
 <th>Python</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Programmblöcke</td>
 <td>Text</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Blöcke werden zusammengesetzt.</td>
 <td>Anweisungen werden geschrieben.</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Beide beschreiben einen Algorithmus.</td>
 <td>Beide beschreiben einen Algorithmus.</td>
 </tr>
@@ -1841,7 +1830,7 @@ vergleichen</h2>
 <p>Ich kann …</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Aussage</th>
 <th style="text-align: center;">😊</th>
 <th style="text-align: center;">😐</th>
@@ -1849,37 +1838,37 @@ vergleichen</h2>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>einen Algorithmus erkennen</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 </tr>
-<tr>
+<tr class="even">
 <td>einen Algorithmus entwickeln</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Fehler in Algorithmen finden</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Algorithmen verbessern</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Algorithmen in Scratch darstellen</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Algorithmen in Python darstellen</td>
 <td style="text-align: center;">☐</td>
 <td style="text-align: center;">☐</td>
@@ -1961,29 +1950,29 @@ Berufe</strong>. Ihr dürft sie während des Projekts wechseln.</p>
 Rollenverteilung</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Aufgabe</th>
 <th>Verantwortlich</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Planung</td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>Umsetzung</td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Test</td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>Dokumentation</td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Präsentation</td>
 <td></td>
 </tr>
@@ -2158,34 +2147,34 @@ desto einfacher lässt sich eine passende Lösung entwickeln.</p>
 <h2 id="ideen-vergleichen">2. Ideen vergleichen</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Kriterium</th>
 <th style="text-align: center;">Idee A</th>
 <th style="text-align: center;">Idee B</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>erfüllt die Muss-Anforderungen</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr>
+<tr class="even">
 <td>verständlich</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>im Zeitrahmen umsetzbar</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr>
+<tr class="even">
 <td>gut testbar</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>gut erweiterbar</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -2238,7 +2227,7 @@ Aufgaben zerlegen</h2>
 zerlegt werden.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: right;">Nr.</th>
 <th>Teilaufgabe</th>
 <th>Verantwortlich</th>
@@ -2246,31 +2235,31 @@ zerlegt werden.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">1</td>
 <td></td>
 <td></td>
 <td>offen</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">2</td>
 <td></td>
 <td></td>
 <td>offen</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">3</td>
 <td></td>
 <td></td>
 <td>offen</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">4</td>
 <td></td>
 <td></td>
 <td>offen</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">5</td>
 <td></td>
 <td></td>
@@ -2340,29 +2329,29 @@ nächste Änderung</code></pre>
 <p>Dokumentiert wichtige Änderungen.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Version</th>
 <th>Änderung</th>
 <th>Ergebnis des Tests</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>0.1</td>
 <td></td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>0.2</td>
 <td></td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>0.3</td>
 <td></td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td>0.4</td>
 <td></td>
 <td></td>
@@ -2439,14 +2428,14 @@ aktualisiert.</label></li>
 <h3 id="beispiel">Beispiel</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Eingabe/Aktion</th>
 <th>Erwartetes Ergebnis</th>
 <th>Tatsächliches Ergebnis</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Start</td>
 <td>Begrüßung erscheint</td>
 <td>Begrüßung erscheint</td>
@@ -2464,7 +2453,7 @@ aktualisiert.</label></li>
 <col style="width: 27%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: right;">Nr.</th>
 <th>Eingabe/Aktion</th>
 <th>Erwartetes Ergebnis</th>
@@ -2473,35 +2462,35 @@ aktualisiert.</label></li>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">1</td>
 <td></td>
 <td></td>
 <td></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">2</td>
 <td></td>
 <td></td>
 <td></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">3</td>
 <td></td>
 <td></td>
 <td></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">4</td>
 <td></td>
 <td></td>
 <td></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">5</td>
 <td></td>
 <td></td>
@@ -2515,7 +2504,7 @@ aktualisiert.</label></li>
 <p>Geht eure Muss-Anforderungen aus der Problemanalyse durch.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Anforderung</th>
 <th style="text-align: center;">erfüllt</th>
 <th style="text-align: center;">teilweise</th>
@@ -2523,19 +2512,19 @@ aktualisiert.</label></li>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>1</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr>
+<tr class="even">
 <td>2</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>3</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -2571,24 +2560,24 @@ fehlerhaft.</p>
 verbessert werden.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Fehler</th>
 <th>Priorität</th>
 <th>Änderung</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr>
+<tr class="even">
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr>
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>
