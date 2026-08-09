@@ -1,0 +1,7 @@
+# Kapitelname
+
+## Lernziele
+
+## Inhalte
+
+## Werkteile
