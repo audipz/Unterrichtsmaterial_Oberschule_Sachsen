@@ -2,13 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Klasse_9_02_Komplexaufgabe_zur_Algorithmierung_09_Lernkontrollen</title>
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     html {
       color: #1a1a1a;
       background-color: #fdfdfd;
@@ -41,6 +38,7 @@
       body {
         background-color: transparent;
         color: black;
+        font-size: 12pt;
       }
       p, h2, h3 {
         orphans: 3;
@@ -60,10 +58,6 @@
       color: #1a1a1a;
     }
     img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -90,7 +84,6 @@
       color: #606060;
     }
     code {
-      white-space: pre-wrap;
       font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
       font-size: 85%;
       margin: 0;
@@ -110,8 +103,8 @@
      overflow: visible;
     }
     hr {
+      background-color: #1a1a1a;
       border: none;
-      border-top: 1px solid #1a1a1a;
       height: 1px;
       margin: 1em 0;
     }
@@ -154,13 +147,10 @@
     #TOC a:not(:hover) {
       text-decoration: none;
     }
+    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -230,23 +220,23 @@ Anforderungen</h2>
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Niveau</th>
 <th>Beschreibung</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>3 – sicher</td>
 <td>Problem klar beschrieben; Muss-Anforderungen vollständig und
 überprüfbar</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2 – teilweise</td>
 <td>Problem grundsätzlich verständlich; einzelne Anforderungen
 unklar</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>1 – noch unsicher</td>
 <td>Problem oder Anforderungen bleiben wesentlich unklar</td>
 </tr>
@@ -261,22 +251,22 @@ unklar</td>
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Niveau</th>
 <th>Beschreibung</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>3 – sicher</td>
 <td>nachvollziehbarer Lösungsweg; Projekt sinnvoll zerlegt; Version 1
 realistisch</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2 – teilweise</td>
 <td>Grundidee sinnvoll; Planung mit Lücken</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>1 – noch unsicher</td>
 <td>Umsetzung weitgehend ohne erkennbaren Plan</td>
 </tr>
@@ -291,22 +281,22 @@ realistisch</td>
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Niveau</th>
 <th>Beschreibung</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>3 – sicher</td>
 <td>Kernlösung funktioniert und entspricht weitgehend dem Entwurf</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2 – teilweise</td>
 <td>Kernidee erkennbar; einzelne wesentliche Funktionen fehlen oder sind
 fehlerhaft</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>1 – noch unsicher</td>
 <td>keine ausreichend funktionsfähige Kernlösung</td>
 </tr>
@@ -321,22 +311,22 @@ fehlerhaft</td>
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Niveau</th>
 <th>Beschreibung</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>3 – sicher</td>
 <td>mehrere sinnvolle Testfälle; Fehler systematisch analysiert;
 Verbesserung nachvollziehbar</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2 – teilweise</td>
 <td>Tests vorhanden, aber nicht vollständig systematisch</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>1 – noch unsicher</td>
 <td>kaum nachvollziehbare Tests oder Verbesserungen</td>
 </tr>
@@ -351,22 +341,22 @@ Verbesserung nachvollziehbar</td>
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Niveau</th>
 <th>Beschreibung</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>3 – sicher</td>
 <td>Problem, Entscheidungen, Umsetzung, Tests und Ergebnis
 nachvollziehbar dokumentiert</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2 – teilweise</td>
 <td>wesentliche Inhalte vorhanden, einzelne Lücken</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>1 – noch unsicher</td>
 <td>Dokumentation beschreibt den Entwicklungsprozess kaum</td>
 </tr>
@@ -381,22 +371,22 @@ nachvollziehbar dokumentiert</td>
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Niveau</th>
 <th>Beschreibung</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>3 – sicher</td>
 <td>Ergebnis verständlich demonstriert; wichtige Entscheidungen und
 Lernfortschritte reflektiert</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2 – teilweise</td>
 <td>Ergebnis vorgestellt; Reflexion bleibt teilweise allgemein</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>1 – noch unsicher</td>
 <td>Präsentation oder Reflexion nur sehr eingeschränkt
 nachvollziehbar</td>
@@ -412,22 +402,22 @@ nachvollziehbar</td>
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Niveau</th>
 <th>Beschreibung</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>3 – sicher</td>
 <td>Aufgaben sinnvoll verteilt; Absprachen und gegenseitige
 Unterstützung erkennbar</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2 – teilweise</td>
 <td>Zusammenarbeit grundsätzlich vorhanden, aber unausgewogen</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>1 – noch unsicher</td>
 <td>geringe oder kaum nachvollziehbare Zusammenarbeit</td>
 </tr>

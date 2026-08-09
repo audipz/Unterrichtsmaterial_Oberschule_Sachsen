@@ -2,13 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Grundlagen_Markdown</title>
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     html {
       color: #1a1a1a;
       background-color: #fdfdfd;
@@ -41,6 +38,7 @@
       body {
         background-color: transparent;
         color: black;
+        font-size: 12pt;
       }
       p, h2, h3 {
         orphans: 3;
@@ -60,10 +58,6 @@
       color: #1a1a1a;
     }
     img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -90,7 +84,6 @@
       color: #606060;
     }
     code {
-      white-space: pre-wrap;
       font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
       font-size: 85%;
       margin: 0;
@@ -110,8 +103,8 @@
      overflow: visible;
     }
     hr {
+      background-color: #1a1a1a;
       border: none;
-      border-top: 1px solid #1a1a1a;
       height: 1px;
       margin: 1em 0;
     }
@@ -154,13 +147,10 @@
     #TOC a:not(:hover) {
       text-decoration: none;
     }
+    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -173,9 +163,8 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -319,49 +308,49 @@ Textverarbeitungsprogramme zu verwenden.</p>
 <h2 id="inhalte">Inhalte</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Datei</th>
 <th>Inhalt</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>01_Was_ist_Markdown.md</td>
 <td>Grundlagen</td>
 </tr>
-<tr>
+<tr class="even">
 <td>02_Ueberschriften.md</td>
 <td>Überschriften</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>03_Formatierungen.md</td>
 <td>Fett, Kursiv und Code</td>
 </tr>
-<tr>
+<tr class="even">
 <td>04_Listen.md</td>
 <td>Listen</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>05_Tabellen.md</td>
 <td>Tabellen</td>
 </tr>
-<tr>
+<tr class="even">
 <td>06_Bilder_und_Links.md</td>
 <td>Bilder und Verweise</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>07_Code.md</td>
 <td>Quellcode</td>
 </tr>
-<tr>
+<tr class="even">
 <td>08_GitHub_Markdown.md</td>
 <td>GitHub-Erweiterungen</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>09_CheatSheet.md</td>
 <td>Übersicht</td>
 </tr>
-<tr>
+<tr class="even">
 <td>10_Quellen.md</td>
 <td>Quellen</td>
 </tr>
@@ -453,17 +442,17 @@ Textverarbeitungsprogramme zu verwenden.</p>
 <h2 id="ergebnis">Ergebnis</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Sprache</th>
 <th>Typ</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Python</td>
 <td>Text</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Scratch</td>
 <td>Blöcke</td>
 </tr>
@@ -529,49 +518,49 @@ class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href=
 <h1 id="markdown-cheat-sheet">Markdown Cheat Sheet</h1>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Funktion</th>
 <th>Markdown</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Überschrift</td>
 <td>#</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Fett</td>
 <td><strong>Text</strong></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Kursiv</td>
 <td><em>Text</em></td>
 </tr>
-<tr>
+<tr class="even">
 <td>Code</td>
 <td><code>Code</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Liste</td>
 <td>-</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Nummerierung</td>
 <td>1.</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Link</td>
 <td><a href="URL">Text</a></td>
 </tr>
-<tr>
+<tr class="even">
 <td>Bild</td>
 <td><img src="Bild" alt="Text" /></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Tabelle</td>
 <td>| |</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Codeblock</td>
 <td>```</td>
 </tr>

@@ -2,13 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Klasse_9_01_Informationen_und_Daten_02_Lehrerband</title>
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     html {
       color: #1a1a1a;
       background-color: #fdfdfd;
@@ -41,6 +38,7 @@
       body {
         background-color: transparent;
         color: black;
+        font-size: 12pt;
       }
       p, h2, h3 {
         orphans: 3;
@@ -60,10 +58,6 @@
       color: #1a1a1a;
     }
     img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -90,7 +84,6 @@
       color: #606060;
     }
     code {
-      white-space: pre-wrap;
       font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
       font-size: 85%;
       margin: 0;
@@ -110,8 +103,8 @@
      overflow: visible;
     }
     hr {
+      background-color: #1a1a1a;
       border: none;
-      border-top: 1px solid #1a1a1a;
       height: 1px;
       margin: 1em 0;
     }
@@ -154,13 +147,10 @@
     #TOC a:not(:hover) {
       text-decoration: none;
     }
+    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -5855,21 +5845,21 @@ Arbeitsheftes.</p>
 <p>Gemeinsam wird festgehalten:</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Objektorientierung</th>
 <th>Datenbank</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Klasse</td>
 <td>Tabelle</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Attribut</td>
 <td>Spalte</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Objekt</td>
 <td>Datensatz (Zeile)</td>
 </tr>
@@ -6126,24 +6116,24 @@ Identifikation.</li>
 <p>Beispiel</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Bandname</th>
 <th>Musikrichtung</th>
 <th style="text-align: right;">Mitglieder</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Skyline</td>
 <td>Rock</td>
 <td style="text-align: right;">5</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Skyline</td>
 <td>Pop</td>
 <td style="text-align: right;">4</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Fire Beats</td>
 <td>Hip-Hop</td>
 <td style="text-align: right;">6</td>
@@ -6416,7 +6406,7 @@ Primärschlüssel.</li>
 <p>Beispiel</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: right;">Band-ID</th>
 <th>Bandname</th>
 <th>Musikrichtung</th>
@@ -6424,19 +6414,19 @@ Primärschlüssel.</li>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">101</td>
 <td>Skyline</td>
 <td>Rock</td>
 <td style="text-align: right;">5</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">102</td>
 <td>Skyline</td>
 <td>Pop</td>
 <td style="text-align: right;">4</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">103</td>
 <td>Fire Beats</td>
 <td>Hip-Hop</td>
@@ -6742,7 +6732,7 @@ großen Tabelle.</li>
 <p>Die Lehrkraft bereitet zunächst eine einzige Tabelle vor.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Auftritt</th>
 <th>Bandname</th>
 <th>Musikrichtung</th>
@@ -6752,7 +6742,7 @@ großen Tabelle.</li>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>1</td>
 <td>Echo Pulse</td>
 <td>Rock</td>
@@ -6760,7 +6750,7 @@ großen Tabelle.</li>
 <td>A</td>
 <td>18:00</td>
 </tr>
-<tr>
+<tr class="even">
 <td>2</td>
 <td>Echo Pulse</td>
 <td>Rock</td>
@@ -6768,7 +6758,7 @@ großen Tabelle.</li>
 <td>B</td>
 <td>21:00</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>3</td>
 <td>Skyline</td>
 <td>Pop</td>
@@ -7058,17 +7048,17 @@ passt.</li>
 <p><strong>Band</strong></p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: right;">Band-ID</th>
 <th>Name</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">101</td>
 <td>Echo Pulse</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">102</td>
 <td>Skyline</td>
 </tr>
@@ -7077,24 +7067,24 @@ passt.</li>
 <p><strong>Auftritt</strong></p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: right;">Auftritt-ID</th>
 <th style="text-align: right;">Band-ID</th>
 <th>Bühne</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">101</td>
 <td>A</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">101</td>
 <td>B</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">102</td>
 <td>A</td>
@@ -7175,21 +7165,21 @@ beschreiben.</p>
 <p>Beispiele</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Beziehung</th>
 <th>Art</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Band – Auftritt</td>
 <td>Eins-zu-viele</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Schülerin oder Schüler – Spind</td>
 <td>Eins-zu-eins</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Musikerin oder Musiker – Band</td>
 <td>Viele-zu-viele</td>
 </tr>
@@ -7675,7 +7665,7 @@ beantworten.</li>
 <p>Die Lehrkraft bereitet eine einfache Festivaltabelle vor.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: right;">Band-ID</th>
 <th>Bandname</th>
 <th>Musikrichtung</th>
@@ -7684,28 +7674,28 @@ beantworten.</li>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">101</td>
 <td>Echo Pulse</td>
 <td>Rock</td>
 <td>A</td>
 <td>18:00</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">102</td>
 <td>Skyline</td>
 <td>Pop</td>
 <td>B</td>
 <td>19:30</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">103</td>
 <td>Fire Beats</td>
 <td>Hip-Hop</td>
 <td>A</td>
 <td>20:15</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">104</td>
 <td>Northern Lights</td>
 <td>Indie</td>
@@ -7974,7 +7964,7 @@ folgenden Stunden systematisch aufgebaut wird.</p>
 <p>Die Lehrkraft bereitet eine bekannte Tabelle vor.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: right;">Band-ID</th>
 <th>Bandname</th>
 <th>Musikrichtung</th>
@@ -7983,28 +7973,28 @@ folgenden Stunden systematisch aufgebaut wird.</p>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">101</td>
 <td>Echo Pulse</td>
 <td>Rock</td>
 <td>A</td>
 <td>18:00</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">102</td>
 <td>Skyline</td>
 <td>Pop</td>
 <td>B</td>
 <td>19:30</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">103</td>
 <td>Fire Beats</td>
 <td>Hip-Hop</td>
 <td>A</td>
 <td>20:15</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">104</td>
 <td>Northern Lights</td>
 <td>Indie</td>
@@ -8279,7 +8269,7 @@ beantwortet.</li>
 <p>Die Lehrkraft bereitet eine Beispieltabelle vor.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: right;">Band-ID</th>
 <th>Bandname</th>
 <th>Musikrichtung</th>
@@ -8288,35 +8278,35 @@ beantwortet.</li>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">101</td>
 <td>Echo Pulse</td>
 <td>Rock</td>
 <td>A</td>
 <td>18:00</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">102</td>
 <td>Skyline</td>
 <td>Pop</td>
 <td>B</td>
 <td>19:30</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">103</td>
 <td>Fire Beats</td>
 <td>Hip-Hop</td>
 <td>A</td>
 <td>20:15</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">104</td>
 <td>Northern Lights</td>
 <td>Indie</td>
 <td>C</td>
 <td>21:00</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">105</td>
 <td>Thunder</td>
 <td>Rock</td>
@@ -8375,17 +8365,17 @@ gesuchten Datensätze.</strong></p>
 <p>Anschließend erfolgt die bewusste Abgrenzung zur Suche.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Suche</th>
 <th>Filter</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>bekannter Datensatz</td>
 <td>bekannte Eigenschaft</td>
 </tr>
-<tr>
+<tr class="even">
 <td>meist ein Treffer</td>
 <td>oft mehrere Treffer</td>
 </tr>
@@ -8599,7 +8589,7 @@ unterstützt.</li>
 <p>Die Lehrkraft bereitet folgende Tabelle vor.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: right;">Band-ID</th>
 <th>Bandname</th>
 <th>Musikrichtung</th>
@@ -8608,35 +8598,35 @@ unterstützt.</li>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">103</td>
 <td>Fire Beats</td>
 <td>Hip-Hop</td>
 <td>A</td>
 <td>20:15</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">101</td>
 <td>Echo Pulse</td>
 <td>Rock</td>
 <td>A</td>
 <td>18:00</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">105</td>
 <td>Thunder</td>
 <td>Rock</td>
 <td>B</td>
 <td>22:00</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">104</td>
 <td>Northern Lights</td>
 <td>Indie</td>
 <td>C</td>
 <td>21:00</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">102</td>
 <td>Skyline</td>
 <td>Pop</td>
@@ -8817,21 +8807,21 @@ Reihenfolgen.</p>
 drei wichtigsten Werkzeuge zur Informationsgewinnung abgeschlossen.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Werkzeug</th>
 <th>Ziel</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Suchen</td>
 <td>Einen bekannten Datensatz finden</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Filtern</td>
 <td>Passende Datensätze auswählen</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Sortieren</td>
 <td>Reihenfolge der Datensätze ändern</td>
 </tr>
@@ -8947,7 +8937,7 @@ löst.</li>
 <p>Die Lehrkraft bereitet eine bekannte Festivaltabelle vor.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: right;">Band-ID</th>
 <th>Bandname</th>
 <th>Musikrichtung</th>
@@ -8956,35 +8946,35 @@ löst.</li>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">101</td>
 <td>Echo Pulse</td>
 <td>Rock</td>
 <td>A</td>
 <td>18:00</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">102</td>
 <td>Skyline</td>
 <td>Pop</td>
 <td>B</td>
 <td>19:30</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">103</td>
 <td>Fire Beats</td>
 <td>Hip-Hop</td>
 <td>A</td>
 <td>20:15</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: right;">104</td>
 <td>Northern Lights</td>
 <td>Indie</td>
 <td>C</td>
 <td>21:00</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: right;">105</td>
 <td>Thunder</td>
 <td>Rock</td>
@@ -9021,33 +9011,33 @@ Arbeitsheft.</p>
 <p>Beispiele</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Fragestellung</th>
 <th>Werkzeug</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Wann spielt Skyline?</td>
 <td>Suche</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Zeige alle Rockbands.</td>
 <td>Filter</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Ordne nach Bandname.</td>
 <td>Sortieren</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Zeige alle Bands auf Bühne A.</td>
 <td>Filter</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Finde Band-ID 104.</td>
 <td>Suche</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Sortiere nach Uhrzeit.</td>
 <td>Sortieren</td>
 </tr>
@@ -9305,29 +9295,29 @@ werden.</p>
 <p>Die Lehrkraft bereitet eine einfache Datenauswertung vor.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Band</th>
 <th style="text-align: right;">Besucher</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Echo Pulse</td>
 <td style="text-align: right;">420</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Skyline</td>
 <td style="text-align: right;">350</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Fire Beats</td>
 <td style="text-align: right;">510</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Northern Lights</td>
 <td style="text-align: right;">180</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Thunder</td>
 <td style="text-align: right;">470</td>
 </tr>
@@ -9610,25 +9600,25 @@ vor.</p>
 <p>Beispieldaten</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Musikrichtung</th>
 <th style="text-align: right;">Besucher</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Rock</td>
 <td style="text-align: right;">890</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Pop</td>
 <td style="text-align: right;">350</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Hip-Hop</td>
 <td style="text-align: right;">510</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Indie</td>
 <td style="text-align: right;">180</td>
 </tr>
@@ -9685,21 +9675,21 @@ entwickelt?</li>
 <p>Gemeinsam wird eine Übersicht erstellt.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Diagramm</th>
 <th>Besonders geeignet für</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Balken- oder Säulendiagramm</td>
 <td>Werte vergleichen</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Kreisdiagramm</td>
 <td>Anteile eines Ganzen darstellen</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Liniendiagramm</td>
 <td>Entwicklungen im Zeitverlauf zeigen</td>
 </tr>
@@ -10957,29 +10947,29 @@ Arbeitsheft.</p>
 <col style="width: 52%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Aufgabe</th>
 <th>Beispiele</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Sprache verstehen oder erzeugen</td>
 <td>Sprachassistent, Übersetzung, Texterstellung</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Bilder erkennen</td>
 <td>Foto-App, Gesichtserkennung, Bilderkennung</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Empfehlungen geben</td>
 <td>Musik, Filme, Produkte</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Vorhersagen treffen</td>
 <td>Wetter, Verkehr, Wartung</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Texte oder Bilder erzeugen</td>
 <td>Textgeneratoren, Bildgeneratoren</td>
 </tr>
@@ -11594,29 +11584,29 @@ zu.</p>
 <p>Beispiele</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Maßnahme</th>
 <th>Gehört zu</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Starkes Passwort</td>
 <td>Datensicherheit</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Zustimmung zur Datennutzung</td>
 <td>Datenschutz</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Datensicherung (Backup)</td>
 <td>Datensicherheit</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Zugriff nur für Berechtigte</td>
 <td>Datenschutz und Datensicherheit</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Verschlüsselung</td>
 <td>Datensicherheit</td>
 </tr>
