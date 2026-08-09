@@ -100,3 +100,6 @@ ehthumbs.db
 
 manifest.json
 Neue Datei
+
+# Generierte Build-Artefakte
+/Ausgabe/
