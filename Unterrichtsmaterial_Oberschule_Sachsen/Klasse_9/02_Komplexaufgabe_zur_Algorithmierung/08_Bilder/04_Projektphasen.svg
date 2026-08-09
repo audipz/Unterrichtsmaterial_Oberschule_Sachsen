@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z"/></marker></defs>
+<style>text{font-family:sans-serif;font-size:20px}.box{fill:white;stroke:black;stroke-width:2}.arrow{stroke:black;stroke-width:2;marker-end:url(#a)}</style>
+<g>
+<rect class="box" x="20" y="80" width="140" height="65" rx="10"/><text x="90" y="118" text-anchor="middle">Analyse</text>
+<line class="arrow" x1="160" y1="112" x2="190" y2="112"/>
+<rect class="box" x="195" y="80" width="140" height="65" rx="10"/><text x="265" y="118" text-anchor="middle">Entwurf</text>
+<line class="arrow" x1="335" y1="112" x2="365" y2="112"/>
+<rect class="box" x="370" y="80" width="140" height="65" rx="10"/><text x="440" y="118" text-anchor="middle">Umsetzung</text>
+<line class="arrow" x1="510" y1="112" x2="540" y2="112"/>
+<rect class="box" x="545" y="80" width="140" height="65" rx="10"/><text x="615" y="118" text-anchor="middle">Test</text>
+<line class="arrow" x1="685" y1="112" x2="715" y2="112"/>
+<rect class="box" x="720" y="80" width="160" height="65" rx="10"/><text x="800" y="118" text-anchor="middle">Verbesserung</text>
+<line class="arrow" x1="880" y1="112" x2="910" y2="112"/>
+<rect class="box" x="915" y="80" width="120" height="65" rx="10"/><text x="975" y="118" text-anchor="middle">Doku</text>
+<line class="arrow" x1="1035" y1="112" x2="1065" y2="112"/>
+<rect class="box" x="1070" y="80" width="110" height="65" rx="10"/><text x="1125" y="118" text-anchor="middle">Präs.</text>
+</g>
+</svg>
