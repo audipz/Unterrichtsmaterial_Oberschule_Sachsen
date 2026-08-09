@@ -4,7 +4,9 @@
 
 Dieser Bereich unterstützt die Vorbereitung und Durchführung der **Komplexaufgabe zur Algorithmierung**.
 
-Der sächsische Lehrplan sieht dafür einen Zeitrichtwert von **12 Unterrichtsstunden** vor. Im Mittelpunkt stehen die Phasen der Projektarbeit und die selbstständige Lösung einer einfachen Problemstellung in Partner- oder Teamarbeit.
+Der Lernbereich umfasst eine selbstständige, projektorientierte Problemlösung in Partner- oder Teamarbeit.
+
+Im Mittelpunkt stehen nicht einzelne Befehle einer Programmiersprache, sondern der gesamte Problemlöseprozess.
 
 ## Lehrplanbezug
 
@@ -36,15 +38,62 @@ Verbesserung
 Dokumentation
       ↓
 Präsentation
+      ↓
+Reflexion
 ```
 
-## Einordnung der vorhandenen Materialien
+## Einordnung der algorithmischen Grundlagen
 
-Die vorhandenen Materialien zu linearen Algorithmen dienen als **Aktivierung und Wiederholung** des algorithmischen Vorwissens aus Klassenstufe 8.
+Die Materialien zu linearen Algorithmen dienen als Aktivierung und Wiederholung des algorithmischen Vorwissens.
 
-Sie können je nach Lerngruppe vollständig, verkürzt oder nur als Nachschlage- und Übungsmaterial genutzt werden.
+Sie können je nach Lerngruppe
 
-Die Programmiersprachen Scratch und Python sind Werkzeuge zur Umsetzung. Die Problemlösung und der Algorithmus sind grundsätzlich sprachunabhängig.
+- vollständig bearbeitet,
+- verkürzt eingesetzt,
+- als Übung genutzt oder
+- nur als Nachschlagewerk bereitgestellt
+
+werden.
+
+Scratch und Python sind mögliche Werkzeuge zur Umsetzung.
+
+> **Die Programmiersprache ist ein Werkzeug. Die eigentliche Kompetenz besteht im systematischen Lösen von Problemen.**
+
+## Projektphase
+
+Die eigentliche Komplexaufgabe umfasst:
+
+1. Projektstart
+2. Problemanalyse
+3. Anforderungen
+4. Lösungsentwurf und Planung
+5. Umsetzung
+6. Test
+7. Verbesserung
+8. Dokumentation
+9. Präsentation
+10. Reflexion
+
+Die Schülerinnen und Schüler arbeiten dabei **iterativ und inkrementell**.
+
+### Iterativ
+
+Eine Lösung wird wiederholt getestet und verbessert.
+
+```text
+Entwurf
+  ↓
+Test
+  ↓
+Bewertung
+  ↓
+Verbesserung
+  └──────↺
+```
+
+### Inkrementell
+
+Eine zunächst kleine funktionsfähige Lösung wird schrittweise erweitert.
 
 ## Werkteile
 
@@ -52,24 +101,77 @@ Die Programmiersprachen Scratch und Python sind Werkzeuge zur Umsetzung. Die Pro
 01_Arbeitsheft/
 02_Lehrerband/
 03_Material/
+04_Loesungen/
+05_Praesentationen/
+06_Dateien/
 07_Quellen/
+08_Bilder/
+09_Lernkontrollen/
 ```
 
-Weitere Werkteile werden schrittweise ergänzt.
+### Arbeitsheft
+
+Lernweg für Schülerinnen und Schüler.
+
+### Lehrerband
+
+Didaktische Hinweise, Unterrichtsbegleitung, Lösungen und Bewertungshinweise.
+
+### Material
+
+Zusätzliche Karten, Vorlagen, Checklisten und Projektmaterialien.
+
+### Lösungen
+
+Mögliche Lösungswege und Erwartungshorizonte.
+
+### Präsentationen
+
+Unterrichtsbegleitende Folienquellen.
+
+### Dateien
+
+Beispielprogramme und Projektvorlagen.
+
+### Quellen
+
+Fachliche und didaktische Quellen.
+
+### Bilder
+
+Versionierbare SVG-Grafiken und weitere Medien.
+
+### Lernkontrollen
+
+Lernstandsdiagnosen und Bewertungsmaterialien.
+
+Technische JSON-Dateien werden im Unterordner
+
+```text
+09_Lernkontrollen/json/
+```
+
+abgelegt.
 
 ## Didaktische Leitidee
 
-Die Schülerinnen und Schüler sollen nicht lediglich fertige Programme nachbauen. Sie sollen lernen,
+Die Schülerinnen und Schüler sollen nicht lediglich fertige Programme nachbauen.
+
+Sie sollen lernen,
 
 1. eine Problemstellung zu verstehen,
 2. Anforderungen zu formulieren,
-3. einen Lösungsweg zu planen,
-4. einen Algorithmus zu entwickeln,
-5. eine geeignete Umsetzung zu wählen,
-6. ihre Lösung zu testen,
-7. Fehler und Schwächen zu erkennen,
-8. die Lösung iterativ und inkrementell zu verbessern,
-9. ihre Arbeit nachvollziehbar zu dokumentieren und
-10. das Ergebnis zu präsentieren.
+3. unterschiedliche Lösungsideen zu entwickeln,
+4. einen Lösungsweg zu planen,
+5. einen Algorithmus zu formulieren,
+6. eine geeignete Umsetzung zu wählen,
+7. ihre Lösung schrittweise umzusetzen,
+8. systematisch zu testen,
+9. Fehler und Schwächen zu erkennen,
+10. die Lösung zu verbessern,
+11. ihre Arbeit nachvollziehbar zu dokumentieren und
+12. das Ergebnis zu präsentieren und zu reflektieren.
 
-> **Die Programmiersprache ist ein Werkzeug. Die eigentliche Kompetenz besteht im systematischen Lösen von Problemen.**
+## Qualitätsgrundsatz
+
+> Eine kleine, funktionierende, getestete und nachvollziehbar dokumentierte Lösung ist besser als ein großes, unfertiges Projekt.
