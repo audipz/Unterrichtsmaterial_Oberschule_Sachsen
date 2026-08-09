@@ -1,0 +1,4 @@
+# Build-Arbeitsverzeichnis
+.build/
+
+# Ausgabe wird absichtlich versioniert und deshalb NICHT ignoriert.

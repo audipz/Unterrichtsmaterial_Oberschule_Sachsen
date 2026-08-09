@@ -1,0 +1,58 @@
+name: Build Unterrichtsmaterialien
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "Ausgabe/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-main
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pandoc installieren
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
+      - name: Skripte ausführbar machen
+        run: |
+          chmod +x Build/*.sh
+
+      - name: Markdown validieren
+        run: |
+          ./Build/validate.sh
+
+      - name: Dokumente bauen
+        run: |
+          ./Build/build.sh
+
+      - name: Build-Ausgabe committen
+        run: |
+          if git diff --quiet -- Ausgabe && git diff --cached --quiet -- Ausgabe; then
+            echo "Keine Änderungen in Ausgabe."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add Ausgabe
+          git commit -m "build(output): generierte Dokumente aktualisiert [skip ci]"
+          git push
