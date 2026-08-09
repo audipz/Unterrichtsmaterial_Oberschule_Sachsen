@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Grundlagen_Markdown</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#markdown" id="toc-markdown">Markdown</a>
+<ul>
+<li><a href="#inhalte" id="toc-inhalte">Inhalte</a></li>
+</ul></li>
+<li><a href="#was-ist-markdown" id="toc-was-ist-markdown">Was ist
+Markdown?</a>
+<ul>
+<li><a href="#vorteile" id="toc-vorteile">Vorteile</a></li>
+<li><a href="#merke" id="toc-merke">Merke</a></li>
+</ul></li>
+<li><a href="#überschriften" id="toc-überschriften">Überschriften</a>
+<ul>
+<li><a href="#beispiele" id="toc-beispiele">Beispiele</a></li>
+<li><a href="#empfehlung" id="toc-empfehlung">Empfehlung</a></li>
+</ul></li>
+<li><a href="#formatierungen" id="toc-formatierungen">Formatierungen</a>
+<ul>
+<li><a href="#fett" id="toc-fett">Fett</a></li>
+<li><a href="#kursiv" id="toc-kursiv">Kursiv</a></li>
+<li><a href="#code" id="toc-code">Code</a></li>
+<li><a href="#codeblock" id="toc-codeblock">Codeblock</a></li>
+<li><a href="#merke-1" id="toc-merke-1">Merke</a></li>
+</ul></li>
+<li><a href="#listen" id="toc-listen">Listen</a>
+<ul>
+<li><a href="#aufzählung" id="toc-aufzählung">Aufzählung</a></li>
+<li><a href="#nummerierung" id="toc-nummerierung">Nummerierung</a></li>
+<li><a href="#empfehlung-1" id="toc-empfehlung-1">Empfehlung</a></li>
+</ul></li>
+<li><a href="#tabellen" id="toc-tabellen">Tabellen</a>
+<ul>
+<li><a href="#ergebnis" id="toc-ergebnis">Ergebnis</a></li>
+<li><a href="#merke-2" id="toc-merke-2">Merke</a></li>
+</ul></li>
+<li><a href="#bilder-und-links" id="toc-bilder-und-links">Bilder und
+Links</a>
+<ul>
+<li><a href="#link" id="toc-link">Link</a></li>
+<li><a href="#markdown-link"
+id="toc-markdown-link">Markdown-Link</a></li>
+<li><a href="#bild" id="toc-bild">Bild</a></li>
+<li><a href="#merke-3" id="toc-merke-3">Merke</a></li>
+</ul></li>
+<li><a href="#quellcode" id="toc-quellcode">Quellcode</a>
+<ul>
+<li><a href="#python" id="toc-python">Python</a></li>
+<li><a href="#java" id="toc-java">Java</a></li>
+<li><a href="#html" id="toc-html">HTML</a></li>
+<li><a href="#merke-4" id="toc-merke-4">Merke</a></li>
+</ul></li>
+<li><a href="#github-markdown" id="toc-github-markdown">GitHub
+Markdown</a>
+<ul>
+<li><a href="#aufgabenlisten"
+id="toc-aufgabenlisten">Aufgabenlisten</a></li>
+<li><a href="#tabellen-1" id="toc-tabellen-1">Tabellen</a></li>
+<li><a href="#emojis" id="toc-emojis">Emojis</a></li>
+<li><a href="#hinweise" id="toc-hinweise">Hinweise</a></li>
+<li><a href="#merke-5" id="toc-merke-5">Merke</a></li>
+</ul></li>
+<li><a href="#markdown-cheat-sheet"
+id="toc-markdown-cheat-sheet">Markdown Cheat Sheet</a>
+<ul>
+<li><a href="#tipp" id="toc-tipp">Tipp</a></li>
+</ul></li>
+<li><a href="#quellen" id="toc-quellen">Quellen</a></li>
+</ul>
+</nav>
+<h1 id="markdown">Markdown</h1>
+<p>Markdown ist eine einfache Auszeichnungssprache.</p>
+<p>Mit Markdown können Dokumente geschrieben werden, ohne komplizierte
+Textverarbeitungsprogramme zu verwenden.</p>
+<p>Dieses Lehrwerk wird vollständig in Markdown entwickelt.</p>
+<hr />
+<h2 id="inhalte">Inhalte</h2>
+<table>
+<thead>
+<tr>
+<th>Datei</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01_Was_ist_Markdown.md</td>
+<td>Grundlagen</td>
+</tr>
+<tr>
+<td>02_Ueberschriften.md</td>
+<td>Überschriften</td>
+</tr>
+<tr>
+<td>03_Formatierungen.md</td>
+<td>Fett, Kursiv und Code</td>
+</tr>
+<tr>
+<td>04_Listen.md</td>
+<td>Listen</td>
+</tr>
+<tr>
+<td>05_Tabellen.md</td>
+<td>Tabellen</td>
+</tr>
+<tr>
+<td>06_Bilder_und_Links.md</td>
+<td>Bilder und Verweise</td>
+</tr>
+<tr>
+<td>07_Code.md</td>
+<td>Quellcode</td>
+</tr>
+<tr>
+<td>08_GitHub_Markdown.md</td>
+<td>GitHub-Erweiterungen</td>
+</tr>
+<tr>
+<td>09_CheatSheet.md</td>
+<td>Übersicht</td>
+</tr>
+<tr>
+<td>10_Quellen.md</td>
+<td>Quellen</td>
+</tr>
+</tbody>
+</table>
+<h1 id="was-ist-markdown">Was ist Markdown?</h1>
+<p>Markdown ist eine leicht lesbare Auszeichnungssprache.</p>
+<p>Sie wird verwendet für</p>
+<ul>
+<li>Dokumentationen</li>
+<li>Webseiten</li>
+<li>Wikis</li>
+<li>Lehrwerke</li>
+<li>README-Dateien</li>
+</ul>
+<hr />
+<h2 id="vorteile">Vorteile</h2>
+<ul>
+<li>leicht zu lernen</li>
+<li>plattformunabhängig</li>
+<li>gut lesbar</li>
+<li>ideal für GitHub</li>
+</ul>
+<hr />
+<h2 id="merke">Merke</h2>
+<p>Markdown beschreibt Inhalte.</p>
+<p>Nicht das Aussehen.</p>
+<h1 id="überschriften">Überschriften</h1>
+<p>Markdown verwendet das Zeichen</p>
+<pre><code>#</code></pre>
+<hr />
+<h2 id="beispiele">Beispiele</h2>
+<pre><code># Überschrift 1
+
+## Überschrift 2
+
+### Überschrift 3</code></pre>
+<hr />
+<h2 id="empfehlung">Empfehlung</h2>
+<p>Pro Dokument</p>
+<p>nur eine</p>
+<pre><code># Überschrift</code></pre>
+<p>verwenden.</p>
+<p>Weitere Gliederungen erfolgen mit</p>
+<pre><code>##
+
+###</code></pre>
+<h1 id="formatierungen">Formatierungen</h1>
+<h2 id="fett">Fett</h2>
+<pre><code>**Text**</code></pre>
+<p>Ergebnis</p>
+<p><strong>Text</strong></p>
+<hr />
+<h2 id="kursiv">Kursiv</h2>
+<pre><code>*Text*</code></pre>
+<p>Ergebnis</p>
+<p><em>Text</em></p>
+<hr />
+<h2 id="code">Code</h2>
+<pre><code>`print()`</code></pre>
+<p>Ergebnis</p>
+<p><code>print()</code></p>
+<hr />
+<h2 id="codeblock">Codeblock</h2>
+<p>print(“Hallo”)</p>
+<hr />
+<h2 id="merke-1">Merke</h2>
+<p>Code sollte immer als Code formatiert werden.</p>
+<h1 id="listen">Listen</h1>
+<h2 id="aufzählung">Aufzählung</h2>
+<pre><code>- Apfel
+- Birne
+- Banane</code></pre>
+<hr />
+<h2 id="nummerierung">Nummerierung</h2>
+<pre><code>1. Start
+2. Bearbeiten
+3. Ende</code></pre>
+<hr />
+<h2 id="empfehlung-1">Empfehlung</h2>
+<p>Listen erhöhen die Lesbarkeit.</p>
+<h1 id="tabellen">Tabellen</h1>
+<p>Beispiel</p>
+<pre><code>| Sprache | Typ |
+|----------|-----|
+| Python | Text |
+| Scratch | Blöcke |</code></pre>
+<hr />
+<h2 id="ergebnis">Ergebnis</h2>
+<table>
+<thead>
+<tr>
+<th>Sprache</th>
+<th>Typ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>Scratch</td>
+<td>Blöcke</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="merke-2">Merke</h2>
+<p>Tabellen eignen sich gut für Vergleiche.</p>
+<h1 id="bilder-und-links">Bilder und Links</h1>
+<h2 id="link">Link</h2>
+<pre><code>https://example.org</code></pre>
+<hr />
+<h2 id="markdown-link">Markdown-Link</h2>
+<pre><code>[OpenAI](https://openai.com)</code></pre>
+<hr />
+<h2 id="bild">Bild</h2>
+<pre><code>![Beschreibung](bild.png)</code></pre>
+<hr />
+<h2 id="merke-3">Merke</h2>
+<p>Jedes Bild benötigt eine Beschreibung.</p>
+<h1 id="quellcode">Quellcode</h1>
+<p>Markdown unterstützt viele Programmiersprachen.</p>
+<hr />
+<h2 id="python">Python</h2>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo&quot;</span>)</span></code></pre></div>
+<hr />
+<h2 id="java">Java</h2>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span><span class="st">&quot;Hallo&quot;</span><span class="op">);</span></span></code></pre></div>
+<hr />
+<h2 id="html">HTML</h2>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Hallo<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span></code></pre></div>
+<hr />
+<h2 id="merke-4">Merke</h2>
+<p>Die Programmiersprache sollte angegeben werden.</p>
+<h1 id="github-markdown">GitHub Markdown</h1>
+<p>GitHub erweitert Markdown um zusätzliche Funktionen.</p>
+<hr />
+<h2 id="aufgabenlisten">Aufgabenlisten</h2>
+<pre><code>- [ ] offen
+
+- [x] erledigt</code></pre>
+<hr />
+<h2 id="tabellen-1">Tabellen</h2>
+<p>werden automatisch formatiert.</p>
+<hr />
+<h2 id="emojis">Emojis</h2>
+<pre><code>:smile:</code></pre>
+<p>🙂</p>
+<hr />
+<h2 id="hinweise">Hinweise</h2>
+<p>GitHub unterstützt außerdem</p>
+<ul>
+<li>Syntaxhervorhebung</li>
+<li>automatische Inhaltsverzeichnisse</li>
+<li>Verlinkungen zwischen Dateien</li>
+</ul>
+<hr />
+<h2 id="merke-5">Merke</h2>
+<p>GitHub erweitert Markdown sinnvoll.</p>
+<h1 id="markdown-cheat-sheet">Markdown Cheat Sheet</h1>
+<table>
+<thead>
+<tr>
+<th>Funktion</th>
+<th>Markdown</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Überschrift</td>
+<td>#</td>
+</tr>
+<tr>
+<td>Fett</td>
+<td><strong>Text</strong></td>
+</tr>
+<tr>
+<td>Kursiv</td>
+<td><em>Text</em></td>
+</tr>
+<tr>
+<td>Code</td>
+<td><code>Code</code></td>
+</tr>
+<tr>
+<td>Liste</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Nummerierung</td>
+<td>1.</td>
+</tr>
+<tr>
+<td>Link</td>
+<td><a href="URL">Text</a></td>
+</tr>
+<tr>
+<td>Bild</td>
+<td><img src="Bild" alt="Text" /></td>
+</tr>
+<tr>
+<td>Tabelle</td>
+<td>| |</td>
+</tr>
+<tr>
+<td>Codeblock</td>
+<td>```</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tipp">Tipp</h2>
+<p>Lerne zunächst nur</p>
+<ul>
+<li>Überschriften</li>
+<li>Listen</li>
+<li>Codeblöcke</li>
+</ul>
+<p>Den Rest lernst du mit der Zeit.</p>
+<h1 id="quellen">Quellen</h1>
+<p>Markdown Guide</p>
+<p>https://www.markdownguide.org</p>
+<hr />
+<p>GitHub Docs</p>
+<p>https://docs.github.com</p>
+<hr />
+<p>CommonMark</p>
+<p>https://commonmark.org</p>
+<hr />
+<p>GitHub Flavored Markdown</p>
+<p>https://github.github.com/gfm/</p>
+</body>
+</html>

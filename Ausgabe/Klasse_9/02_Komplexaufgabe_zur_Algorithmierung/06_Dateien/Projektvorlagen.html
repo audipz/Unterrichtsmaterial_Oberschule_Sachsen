@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Klasse_9_02_Komplexaufgabe_zur_Algorithmierung_06_Dateien_Projektvorlagen</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#projektvorlagen"
+id="toc-projektvorlagen">Projektvorlagen</a></li>
+<li><a href="#entwicklungsprotokoll"
+id="toc-entwicklungsprotokoll">Entwicklungsprotokoll</a></li>
+<li><a href="#projektdokumentation"
+id="toc-projektdokumentation">Projektdokumentation</a>
+<ul>
+<li><a href="#problem-und-ziel" id="toc-problem-und-ziel">1. Problem und
+Ziel</a></li>
+<li><a href="#anforderungen" id="toc-anforderungen">2. Anforderungen</a>
+<ul>
+<li><a href="#muss" id="toc-muss">Muss</a></li>
+<li><a href="#kann" id="toc-kann">Kann</a></li>
+</ul></li>
+<li><a href="#lösungsentwurf" id="toc-lösungsentwurf">3.
+Lösungsentwurf</a></li>
+<li><a href="#verwendete-werkzeuge" id="toc-verwendete-werkzeuge">4.
+Verwendete Werkzeuge</a></li>
+<li><a href="#umsetzung" id="toc-umsetzung">5. Umsetzung</a></li>
+<li><a href="#tests" id="toc-tests">6. Tests</a></li>
+<li><a href="#wichtige-verbesserungen"
+id="toc-wichtige-verbesserungen">7. Wichtige Verbesserungen</a></li>
+<li><a href="#ergebnis" id="toc-ergebnis">8. Ergebnis</a></li>
+<li><a href="#zusammenarbeit" id="toc-zusammenarbeit">9.
+Zusammenarbeit</a></li>
+<li><a href="#reflexion" id="toc-reflexion">10. Reflexion</a></li>
+<li><a href="#quellen" id="toc-quellen">11. Quellen</a></li>
+</ul></li>
+<li><a href="#projektplan" id="toc-projektplan">Projektplan</a>
+<ul>
+<li><a href="#projekt" id="toc-projekt">Projekt</a></li>
+<li><a href="#team" id="toc-team">Team</a></li>
+<li><a href="#problem" id="toc-problem">Problem</a></li>
+<li><a href="#ziel" id="toc-ziel">Ziel</a></li>
+<li><a href="#muss-anforderungen"
+id="toc-muss-anforderungen">Muss-Anforderungen</a></li>
+<li><a href="#kann-anforderungen"
+id="toc-kann-anforderungen">Kann-Anforderungen</a></li>
+<li><a href="#gewählter-lösungsansatz"
+id="toc-gewählter-lösungsansatz">Gewählter Lösungsansatz</a></li>
+<li><a href="#version-1" id="toc-version-1">Version 1</a></li>
+<li><a href="#teilaufgaben" id="toc-teilaufgaben">Teilaufgaben</a></li>
+</ul></li>
+<li><a href="#testprotokoll" id="toc-testprotokoll">Testprotokoll</a>
+<ul>
+<li><a href="#gefundene-fehler" id="toc-gefundene-fehler">Gefundene
+Fehler</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="projektvorlagen">Projektvorlagen</h1>
+<p>Diese Vorlagen können für die Komplexaufgabe kopiert und pro Team
+ausgefüllt werden.</p>
+<ul>
+<li><code>Projektplan.md</code></li>
+<li><code>Entwicklungsprotokoll.md</code></li>
+<li><code>Testprotokoll.md</code></li>
+<li><code>Projektdokumentation.md</code></li>
+</ul>
+<p>Die Dateien sind bewusst in Markdown gehalten und können direkt mit
+Git versioniert werden.</p>
+<h1 id="entwicklungsprotokoll">Entwicklungsprotokoll</h1>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Datum</th>
+<th>Änderung</th>
+<th>Test / Ergebnis</th>
+<th>nächster Schritt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0.2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="projektdokumentation">Projektdokumentation</h1>
+<h2 id="problem-und-ziel">1. Problem und Ziel</h2>
+<h2 id="anforderungen">2. Anforderungen</h2>
+<h3 id="muss">Muss</h3>
+<h3 id="kann">Kann</h3>
+<h2 id="lösungsentwurf">3. Lösungsentwurf</h2>
+<h2 id="verwendete-werkzeuge">4. Verwendete Werkzeuge</h2>
+<h2 id="umsetzung">5. Umsetzung</h2>
+<h2 id="tests">6. Tests</h2>
+<h2 id="wichtige-verbesserungen">7. Wichtige Verbesserungen</h2>
+<h2 id="ergebnis">8. Ergebnis</h2>
+<h2 id="zusammenarbeit">9. Zusammenarbeit</h2>
+<h2 id="reflexion">10. Reflexion</h2>
+<h2 id="quellen">11. Quellen</h2>
+
+<h1 id="projektplan">Projektplan</h1>
+<h2 id="projekt">Projekt</h2>
+<h2 id="team">Team</h2>
+<h2 id="problem">Problem</h2>
+<h2 id="ziel">Ziel</h2>
+<h2 id="muss-anforderungen">Muss-Anforderungen</h2>
+<ol type="1">
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<h2 id="kann-anforderungen">Kann-Anforderungen</h2>
+<ol type="1">
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<h2 id="gewählter-lösungsansatz">Gewählter Lösungsansatz</h2>
+<h2 id="version-1">Version 1</h2>
+<h2 id="teilaufgaben">Teilaufgaben</h2>
+<table>
+<thead>
+<tr>
+<th>Aufgabe</th>
+<th>Verantwortlich</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td>offen</td>
+</tr>
+</tbody>
+</table>
+<h1 id="testprotokoll">Testprotokoll</h1>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: right;">Nr.</th>
+<th>Ausgangslage</th>
+<th>Eingabe / Aktion</th>
+<th>Erwartetes Ergebnis</th>
+<th>Tatsächliches Ergebnis</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="gefundene-fehler">Gefundene Fehler</h2>
+<table>
+<thead>
+<tr>
+<th>Fehler</th>
+<th>Priorität</th>
+<th>Änderung</th>
+<th>Nachtest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Grundlagen_Dateiverwaltung</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#dateiverwaltung"
+id="toc-dateiverwaltung">Dateiverwaltung</a>
+<ul>
+<li><a href="#inhalte" id="toc-inhalte">Inhalte</a></li>
+</ul></li>
+<li><a href="#dateien" id="toc-dateien">Dateien</a>
+<ul>
+<li><a href="#beispiele" id="toc-beispiele">Beispiele</a></li>
+<li><a href="#beispiele-für-dateien"
+id="toc-beispiele-für-dateien">Beispiele für Dateien</a></li>
+<li><a href="#merke" id="toc-merke">Merke</a></li>
+</ul></li>
+<li><a href="#ordner" id="toc-ordner">Ordner</a>
+<ul>
+<li><a href="#beispiel" id="toc-beispiel">Beispiel</a></li>
+<li><a href="#vorteile" id="toc-vorteile">Vorteile</a></li>
+<li><a href="#merke-1" id="toc-merke-1">Merke</a></li>
+</ul></li>
+<li><a href="#dateinamen" id="toc-dateinamen">Dateinamen</a>
+<ul>
+<li><a href="#gut" id="toc-gut">Gut</a></li>
+<li><a href="#ungünstig" id="toc-ungünstig">Ungünstig</a></li>
+<li><a href="#empfehlungen" id="toc-empfehlungen">Empfehlungen</a></li>
+<li><a href="#merke-2" id="toc-merke-2">Merke</a></li>
+</ul></li>
+<li><a href="#dateiendungen" id="toc-dateiendungen">Dateiendungen</a>
+<ul>
+<li><a href="#merke-3" id="toc-merke-3">Merke</a></li>
+</ul></li>
+<li><a href="#speichern" id="toc-speichern">Speichern</a>
+<ul>
+<li><a href="#vorgehensweise"
+id="toc-vorgehensweise">Vorgehensweise</a></li>
+<li><a href="#tipp" id="toc-tipp">Tipp</a></li>
+<li><a href="#merke-4" id="toc-merke-4">Merke</a></li>
+</ul></li>
+<li><a href="#backup" id="toc-backup">Backup</a>
+<ul>
+<li><a href="#warum" id="toc-warum">Warum?</a></li>
+<li><a href="#möglichkeiten"
+id="toc-möglichkeiten">Möglichkeiten</a></li>
+<li><a href="#regel" id="toc-regel">3-2-1-Regel</a></li>
+<li><a href="#merke-5" id="toc-merke-5">Merke</a></li>
+</ul></li>
+<li><a href="#weiterlernen" id="toc-weiterlernen">Weiterlernen</a></li>
+<li><a href="#quellen" id="toc-quellen">Quellen</a></li>
+</ul>
+</nav>
+<h1 id="dateiverwaltung">Dateiverwaltung</h1>
+<p>Computer speichern Informationen in Dateien und Ordnern.</p>
+<p>Wer Dateien gut organisiert, findet Informationen schneller wieder
+und vermeidet Datenverlust.</p>
+<p>Dieses Kapitel vermittelt grundlegende Kenntnisse zum Umgang mit
+Dateien und Ordnern.</p>
+<hr />
+<h2 id="inhalte">Inhalte</h2>
+<table>
+<thead>
+<tr>
+<th>Datei</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01_Dateien.md</td>
+<td>Was sind Dateien?</td>
+</tr>
+<tr>
+<td>02_Ordner.md</td>
+<td>Ordner strukturieren</td>
+</tr>
+<tr>
+<td>03_Dateinamen.md</td>
+<td>Sinnvolle Dateinamen</td>
+</tr>
+<tr>
+<td>04_Dateiendungen.md</td>
+<td>Dateitypen</td>
+</tr>
+<tr>
+<td>05_Speichern.md</td>
+<td>Dateien speichern</td>
+</tr>
+<tr>
+<td>06_Backup.md</td>
+<td>Datensicherung</td>
+</tr>
+<tr>
+<td>07_Weiterlernen.md</td>
+<td>Weitere Informationen</td>
+</tr>
+<tr>
+<td>08_Quellen.md</td>
+<td>Quellen</td>
+</tr>
+</tbody>
+</table>
+<h1 id="dateien">Dateien</h1>
+<p>Eine Datei speichert Informationen.</p>
+<p>Jede Datei besitzt</p>
+<ul>
+<li>einen Namen,</li>
+<li>eine Dateiendung,</li>
+<li>einen Speicherort.</li>
+</ul>
+<hr />
+<h2 id="beispiele">Beispiele</h2>
+<ul>
+<li>Texte</li>
+<li>Bilder</li>
+<li>Musik</li>
+<li>Videos</li>
+<li>Programme</li>
+</ul>
+<hr />
+<h2 id="beispiele-für-dateien">Beispiele für Dateien</h2>
+<pre><code>Hausaufgabe.docx
+
+Ferien.jpg
+
+Programm.py
+
+Projekt.sb3</code></pre>
+<hr />
+<h2 id="merke">Merke</h2>
+<p>Eine Datei enthält Informationen.</p>
+<h1 id="ordner">Ordner</h1>
+<p>Ordner helfen dabei,</p>
+<p>Dateien übersichtlich zu speichern.</p>
+<hr />
+<h2 id="beispiel">Beispiel</h2>
+<pre><code>Informatik/
+
+├── Arbeitsheft/
+
+├── Projekte/
+
+├── Bilder/
+
+└── Programme/</code></pre>
+<hr />
+<h2 id="vorteile">Vorteile</h2>
+<ul>
+<li><p>bessere Übersicht</p></li>
+<li><p>schnelleres Finden</p></li>
+<li><p>weniger Fehler</p></li>
+</ul>
+<hr />
+<h2 id="merke-1">Merke</h2>
+<p>Ein guter Ordner spart Zeit.</p>
+<h1 id="dateinamen">Dateinamen</h1>
+<p>Ein guter Dateiname beschreibt den Inhalt.</p>
+<hr />
+<h2 id="gut">Gut</h2>
+<pre><code>Algorithmus_Kakao.md
+
+Python_Uebung_03.py
+
+Schulfest_Planung.docx</code></pre>
+<hr />
+<h2 id="ungünstig">Ungünstig</h2>
+<pre><code>Neu.docx
+
+Test2.docx
+
+abc.txt</code></pre>
+<hr />
+<h2 id="empfehlungen">Empfehlungen</h2>
+<ul>
+<li>keine Sonderzeichen</li>
+<li>keine Leerzeichen</li>
+<li>kurze Namen</li>
+<li>aussagekräftige Namen</li>
+</ul>
+<hr />
+<h2 id="merke-2">Merke</h2>
+<p>Dateinamen sollten auch nach mehreren Monaten verständlich sein.</p>
+<h1 id="dateiendungen">Dateiendungen</h1>
+<p>Die Dateiendung beschreibt den Dateityp.</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Endung</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.txt</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>.md</td>
+<td>Markdown</td>
+</tr>
+<tr>
+<td>.docx</td>
+<td>Word</td>
+</tr>
+<tr>
+<td>.pdf</td>
+<td>PDF</td>
+</tr>
+<tr>
+<td>.png</td>
+<td>Bild</td>
+</tr>
+<tr>
+<td>.jpg</td>
+<td>Bild</td>
+</tr>
+<tr>
+<td>.py</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>.sb3</td>
+<td>Scratch</td>
+</tr>
+<tr>
+<td>.xlsx</td>
+<td>Excel</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="merke-3">Merke</h2>
+<p>Die Dateiendung gehört zum Dateinamen.</p>
+<h1 id="speichern">Speichern</h1>
+<p>Speichere deine Arbeit regelmäßig.</p>
+<hr />
+<h2 id="vorgehensweise">Vorgehensweise</h2>
+<ol type="1">
+<li><p>Speicherort auswählen.</p></li>
+<li><p>Dateinamen vergeben.</p></li>
+<li><p>Speichern.</p></li>
+</ol>
+<hr />
+<h2 id="tipp">Tipp</h2>
+<p>Lege für jedes Unterrichtsfach einen eigenen Ordner an.</p>
+<hr />
+<h2 id="merke-4">Merke</h2>
+<p>Nicht gespeicherte Änderungen gehen verloren.</p>
+<h1 id="backup">Backup</h1>
+<p>Ein Backup ist eine Sicherheitskopie.</p>
+<hr />
+<h2 id="warum">Warum?</h2>
+<p>Computer können</p>
+<ul>
+<li>ausfallen,</li>
+<li>gestohlen werden,</li>
+<li>beschädigt werden.</li>
+</ul>
+<hr />
+<h2 id="möglichkeiten">Möglichkeiten</h2>
+<ul>
+<li><p>USB-Stick</p></li>
+<li><p>externe Festplatte</p></li>
+<li><p>Schulserver</p></li>
+<li><p>Cloudspeicher</p></li>
+</ul>
+<hr />
+<h2 id="regel">3-2-1-Regel</h2>
+<p>Eine bewährte Strategie:</p>
+<ul>
+<li>3 Kopien</li>
+<li>2 verschiedene Speichermedien</li>
+<li>1 Kopie an einem anderen Ort</li>
+</ul>
+<hr />
+<h2 id="merke-5">Merke</h2>
+<p>Ein Backup schützt vor Datenverlust.</p>
+<h1 id="weiterlernen">Weiterlernen</h1>
+<p>Empfehlungen</p>
+<ul>
+<li><p>BSI</p></li>
+<li><p>Internet-ABC</p></li>
+<li><p>klicksafe</p></li>
+</ul>
+<p>Informiere dich über</p>
+<ul>
+<li><p>Dateiverwaltung</p></li>
+<li><p>Datensicherung</p></li>
+<li><p>Cloudspeicher</p></li>
+<li><p>Backupstrategien</p></li>
+</ul>
+<h1 id="quellen">Quellen</h1>
+<p>Bundesamt für Sicherheit in der Informationstechnik</p>
+<p>https://www.bsi.bund.de</p>
+<hr />
+<p>Internet-ABC</p>
+<p>https://www.internet-abc.de</p>
+<hr />
+<p>klicksafe</p>
+<p>https://www.klicksafe.de</p>
+</body>
+</html>

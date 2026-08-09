@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Klasse_9_02_Komplexaufgabe_zur_Algorithmierung_04_Loesungen</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#lösungen" id="toc-lösungen">Lösungen</a></li>
+<li><a href="#lösungen-zum-arbeitsheft"
+id="toc-lösungen-zum-arbeitsheft">Lösungen zum Arbeitsheft</a>
+<ul>
+<li><a href="#einstieg" id="toc-einstieg">00 Einstieg</a>
+<ul>
+<li><a href="#kakao-anleitung"
+id="toc-kakao-anleitung">Kakao-Anleitung</a></li>
+</ul></li>
+<li><a href="#entdecken" id="toc-entdecken">01 Entdecken</a></li>
+<li><a href="#erarbeiten" id="toc-erarbeiten">02 Erarbeiten</a>
+<ul>
+<li><a href="#eigenschaften-guter-algorithmen"
+id="toc-eigenschaften-guter-algorithmen">Eigenschaften guter
+Algorithmen</a></li>
+<li><a href="#zuordnung" id="toc-zuordnung">Zuordnung</a></li>
+</ul></li>
+<li><a href="#merke" id="toc-merke">03 Merke</a></li>
+<li><a href="#beispiele" id="toc-beispiele">04 Beispiele</a>
+<ul>
+<li><a href="#zähneputzen" id="toc-zähneputzen">Zähneputzen</a></li>
+<li><a href="#ampel-überqueren" id="toc-ampel-überqueren">Ampel
+überqueren</a></li>
+<li><a href="#schulranzen-packen"
+id="toc-schulranzen-packen">Schulranzen packen</a></li>
+<li><a href="#mach-dich-fertig.-beeile-dich.-tu-das-richtige."
+id="toc-mach-dich-fertig.-beeile-dich.-tu-das-richtige.">„Mach dich
+fertig. Beeile dich. Tu das Richtige.“</a></li>
+</ul></li>
+<li><a href="#alltag-und-computer" id="toc-alltag-und-computer">05
+Alltag und Computer</a>
+<ul>
+<li><a href="#mensch-oder-computer" id="toc-mensch-oder-computer">Mensch
+oder Computer</a></li>
+</ul></li>
+<li><a href="#scratch-howto" id="toc-scratch-howto">06 Scratch
+HowTo</a></li>
+<li><a href="#python-howto" id="toc-python-howto">07 Python
+HowTo</a></li>
+<li><a href="#übungen" id="toc-übungen">08 Übungen</a>
+<ul>
+<li><a href="#aufgabe-1" id="toc-aufgabe-1">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2" id="toc-aufgabe-2">Aufgabe 2</a></li>
+<li><a href="#aufgabe-3" id="toc-aufgabe-3">Aufgabe 3</a></li>
+<li><a href="#aufgabe-4" id="toc-aufgabe-4">Aufgabe 4</a></li>
+<li><a href="#aufgabe-5" id="toc-aufgabe-5">Aufgabe 5</a></li>
+<li><a href="#aufgabe-6" id="toc-aufgabe-6">Aufgabe 6</a></li>
+<li><a href="#aufgabe-8" id="toc-aufgabe-8">Aufgabe 8</a></li>
+<li><a href="#aufgabe-9" id="toc-aufgabe-9">Aufgabe 9</a></li>
+<li><a href="#aufgabe-10" id="toc-aufgabe-10">Aufgabe 10</a></li>
+<li><a href="#plus-effizienz" id="toc-plus-effizienz">Plus –
+Effizienz</a></li>
+</ul></li>
+<li><a href="#transfer" id="toc-transfer">09 Transfer</a></li>
+<li><a href="#projekt" id="toc-projekt">10 Projekt</a></li>
+<li><a href="#reflexion" id="toc-reflexion">11 Reflexion</a></li>
+<li><a href="#kompetenzcheck" id="toc-kompetenzcheck">12
+Kompetenzcheck</a>
+<ul>
+<li><a href="#aufgabe-1-1" id="toc-aufgabe-1-1">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2-1" id="toc-aufgabe-2-1">Aufgabe 2</a></li>
+<li><a href="#aufgabe-3-1" id="toc-aufgabe-3-1">Aufgabe 3</a></li>
+<li><a href="#aufgabe-4-1" id="toc-aufgabe-4-1">Aufgabe 4</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#lösungshinweise-zur-projektphase"
+id="toc-lösungshinweise-zur-projektphase">Lösungshinweise zur
+Projektphase</a>
+<ul>
+<li><a href="#vorbemerkung" id="toc-vorbemerkung">Vorbemerkung</a></li>
+<li><a href="#projektstart" id="toc-projektstart">13 Projektstart</a>
+<ul>
+<li><a href="#warnzeichen" id="toc-warnzeichen">Warnzeichen</a></li>
+</ul></li>
+<li><a href="#problemanalyse" id="toc-problemanalyse">14
+Problemanalyse</a>
+<ul>
+<li><a href="#gute-problemformulierung"
+id="toc-gute-problemformulierung">Gute Problemformulierung</a></li>
+<li><a href="#zu-ungenau" id="toc-zu-ungenau">Zu ungenau</a></li>
+<li><a href="#gute-muss-anforderungen"
+id="toc-gute-muss-anforderungen">Gute Muss-Anforderungen</a></li>
+<li><a href="#gute-kann-anforderungen"
+id="toc-gute-kann-anforderungen">Gute Kann-Anforderungen</a></li>
+<li><a href="#bewertung" id="toc-bewertung">Bewertung</a></li>
+</ul></li>
+<li><a href="#lösungsentwurf-und-planung"
+id="toc-lösungsentwurf-und-planung">15 Lösungsentwurf und Planung</a>
+<ul>
+<li><a href="#idee-a" id="toc-idee-a">Idee A</a></li>
+<li><a href="#idee-b" id="toc-idee-b">Idee B</a></li>
+</ul></li>
+<li><a href="#umsetzung" id="toc-umsetzung">16 Umsetzung</a></li>
+<li><a href="#testen-und-verbessern" id="toc-testen-und-verbessern">17
+Testen und Verbessern</a>
+<ul>
+<li><a href="#beispieltest" id="toc-beispieltest">Beispieltest</a></li>
+<li><a href="#mindeststandard"
+id="toc-mindeststandard">Mindeststandard</a></li>
+</ul></li>
+<li><a href="#dokumentation" id="toc-dokumentation">18
+Dokumentation</a></li>
+<li><a href="#präsentation-und-reflexion"
+id="toc-präsentation-und-reflexion">19 Präsentation und
+Reflexion</a></li>
+<li><a href="#gesamtbewertung"
+id="toc-gesamtbewertung">Gesamtbewertung</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="lösungen">Lösungen</h1>
+<p>Dieser Ordner enthält Lösungshinweise und mögliche Musterlösungen zum
+Arbeitsheft.</p>
+<p>Bei offenen Aufgaben sind die Lösungen als <strong>Beispiele</strong>
+zu verstehen. Andere fachlich korrekte und nachvollziehbar begründete
+Lösungen sind ausdrücklich möglich.</p>
+<h1 id="lösungen-zum-arbeitsheft">Lösungen zum Arbeitsheft</h1>
+<h2 id="einstieg">00 Einstieg</h2>
+<h3 id="kakao-anleitung">Kakao-Anleitung</h3>
+<p>Typische Rückfragen von KAI:</p>
+<ul>
+<li>Welche Milch?</li>
+<li>Wie viel Milch?</li>
+<li>Wie viel Kakaopulver?</li>
+<li>Welcher Becher?</li>
+<li>Womit soll umgerührt werden?</li>
+<li>Wie lange soll umgerührt werden?</li>
+<li>Soll die Milch warm oder kalt sein?</li>
+</ul>
+<p>Kernaussage:</p>
+<p>Menschen ergänzen fehlende Informationen häufig aus Erfahrung. Ein
+Computer kann dies nur, wenn entsprechende Regeln oder Daten vorgesehen
+sind.</p>
+<hr />
+<h2 id="entdecken">01 Entdecken</h2>
+<p>Typische Probleme der fehlerhaften Anleitung:</p>
+<ul>
+<li>falsche Reihenfolge,</li>
+<li>fehlende Voraussetzungen,</li>
+<li>ungenaue Mengen,</li>
+<li>nicht eindeutig beschriebene Handlungsschritte.</li>
+</ul>
+<p>Eine mögliche Verbesserung:</p>
+<ol type="1">
+<li>Stelle einen leeren Becher auf den Tisch.</li>
+<li>Fülle 250 ml Milch in den Becher.</li>
+<li>Gib zwei gestrichene Teelöffel Kakaopulver hinzu.</li>
+<li>Rühre 20 Sekunden mit einem Löffel um.</li>
+</ol>
+<hr />
+<h2 id="erarbeiten">02 Erarbeiten</h2>
+<h3 id="eigenschaften-guter-algorithmen">Eigenschaften guter
+Algorithmen</h3>
+<ul>
+<li><strong>eindeutig:</strong> Jede Anweisung lässt möglichst nur eine
+sinnvolle Interpretation zu.</li>
+<li><strong>vollständig:</strong> Alle für die Lösung notwendigen
+Schritte und Informationen sind vorhanden.</li>
+<li><strong>richtige Reihenfolge:</strong> Die Handlungsschritte bauen
+logisch aufeinander auf.</li>
+<li><strong>ausführbar:</strong> Jeder einzelne Schritt kann vom
+vorgesehenen Ausführenden tatsächlich durchgeführt werden.</li>
+</ul>
+<h3 id="zuordnung">Zuordnung</h3>
+<p>„Gib etwas Zucker dazu.“</p>
+<p>→ nicht eindeutig</p>
+<p>„Backe den Kuchen.“ ohne weitere Anweisungen</p>
+<p>→ nicht vollständig</p>
+<p>„Setze den Deckel auf.“ bevor das Gefäß gefüllt wurde</p>
+<p>→ falsche Reihenfolge</p>
+<p>„Hole den Regenbogen.“</p>
+<p>→ nicht ausführbar</p>
+<hr />
+<h2 id="merke">03 Merke</h2>
+<p>Merksatz:</p>
+<blockquote>
+<p>Ein Algorithmus ist eine eindeutige, vollständige und ausführbare
+Folge von Handlungsschritten zur Lösung eines Problems.</p>
+</blockquote>
+<p>Die Handlungsschritte müssen in einer sinnvollen Reihenfolge
+stehen.</p>
+<hr />
+<h2 id="beispiele">04 Beispiele</h2>
+<h3 id="zähneputzen">Zähneputzen</h3>
+<p>Grundsätzlich als Algorithmus geeignet, wenn notwendige Schritte
+eindeutig und vollständig beschrieben werden.</p>
+<h3 id="ampel-überqueren">Ampel überqueren</h3>
+<p>Die einfache lineare Version funktioniert nur für eine entsprechend
+vereinfachte Situation. In der Realität hängt der Ablauf von Bedingungen
+ab. Dies ist eine gute Überleitung zu Verzweigungen.</p>
+<h3 id="schulranzen-packen">Schulranzen packen</h3>
+<p>Die Beschreibung ist nur dann vollständig, wenn eindeutig feststeht,
+welche Materialien benötigt werden.</p>
+<h3 id="mach-dich-fertig.-beeile-dich.-tu-das-richtige.">„Mach dich
+fertig. Beeile dich. Tu das Richtige.“</h3>
+<p>Kein geeigneter Algorithmus:</p>
+<ul>
+<li>mehrdeutig,</li>
+<li>nicht operationalisiert,</li>
+<li>nicht eindeutig ausführbar.</li>
+</ul>
+<hr />
+<h2 id="alltag-und-computer">05 Alltag und Computer</h2>
+<h3 id="mensch-oder-computer">Mensch oder Computer</h3>
+<p>„Kann fehlende Informationen ergänzen.“</p>
+<p>→ eher Mensch</p>
+<p>„Führt beschriebene Anweisungen exakt aus.“</p>
+<p>→ Computer</p>
+<p>„Erkennt aus Erfahrung häufig, was gemeint ist.“</p>
+<p>→ Mensch</p>
+<p>„Benötigt explizit beschriebene Regeln.“</p>
+<p>→ Computer</p>
+<p>Wichtig:</p>
+<p>Moderne KI-Systeme können ebenfalls plausible Ergänzungen erzeugen.
+Das ändert jedoch nicht die grundlegende didaktische Aussage: Ein
+klassisches Programm arbeitet nach den vorgesehenen Daten, Regeln und
+Algorithmen.</p>
+<hr />
+<h2 id="scratch-howto">06 Scratch HowTo</h2>
+<p>Erwartetes Minimalprogramm:</p>
+<pre class="text"><code>Wenn grüne Flagge angeklickt
+sage [Willkommen auf unserem Schulfest!]</code></pre>
+<p>Mögliche Erweiterung:</p>
+<pre class="text"><code>Wenn grüne Flagge angeklickt
+sage [Willkommen auf unserem Schulfest!] für 2 Sekunden
+sage [Ich bin KAI.] für 2 Sekunden</code></pre>
+<hr />
+<h2 id="python-howto">07 Python HowTo</h2>
+<p>Minimalprogramm:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Willkommen auf unserem Schulfest!&quot;</span>)</span></code></pre></div>
+<p>Erweiterung:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Willkommen auf unserem Schulfest!&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Ich bin KAI.&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Viel Spaß!&quot;</span>)</span></code></pre></div>
+<hr />
+<h2 id="übungen">08 Übungen</h2>
+<h3 id="aufgabe-1">Aufgabe 1</h3>
+<p>A: Algorithmus</p>
+<p>B: kein geeigneter Algorithmus; die Schritte sind nicht eindeutig
+ausführbar.</p>
+<p>C: Algorithmus</p>
+<h3 id="aufgabe-2">Aufgabe 2</h3>
+<p>Mögliche Probleme:</p>
+<ul>
+<li>Umrühren erfolgt vor dem Bereitstellen der Zutaten.</li>
+<li>Der Becher wird zu spät genannt.</li>
+<li>Reihenfolge ist ungeeignet.</li>
+<li>Informationen können fehlen.</li>
+</ul>
+<h3 id="aufgabe-3">Aufgabe 3</h3>
+<p>Mögliche Reihenfolge:</p>
+<ol type="1">
+<li>Starte den Computer.</li>
+<li>Schalte den Monitor ein.</li>
+<li>Melde dich mit deinem Benutzerkonto an.</li>
+<li>Öffne die benötigte Anwendung.</li>
+<li>Bearbeite die Aufgabe.</li>
+</ol>
+<p>Je nach Hardware kann das Einschalten des Monitors auch vor dem Start
+des Computers erfolgen. Wichtig ist die begründete Entscheidung.</p>
+<h3 id="aufgabe-4">Aufgabe 4</h3>
+<p>Mögliche Ergänzungen:</p>
+<ul>
+<li>Adresse auf den Umschlag schreiben,</li>
+<li>Brief ausreichend frankieren,</li>
+<li>Umschlag verschließen,</li>
+<li>geeigneten Briefkasten aufsuchen.</li>
+</ul>
+<h3 id="aufgabe-5">Aufgabe 5</h3>
+<p>Beispiel A:</p>
+<p>„Nimm das Arbeitsblatt <code>Algorithmus_01</code> vom oberen rechten
+Stapel.“</p>
+<p>Beispiel B:</p>
+<p>„Gehe zur geschlossenen Tür neben der Tafel.“</p>
+<p>Beispiel C:</p>
+<p>„Gib 200 ml Wasser in den Messbecher.“</p>
+<p>Beispiel D:</p>
+<p>„Warte 30 Sekunden.“</p>
+<h3 id="aufgabe-6">Aufgabe 6</h3>
+<p>Eine mögliche Lösung:</p>
+<ol type="1">
+<li>Stelle die leere Trinkflasche unter den Wasserhahn.</li>
+<li>Öffne den Deckel der Trinkflasche.</li>
+<li>Öffne den Wasserhahn.</li>
+<li>Fülle die Flasche bis zur gewünschten Markierung.</li>
+<li>Schließe den Wasserhahn.</li>
+<li>Nimm die Flasche weg.</li>
+<li>Verschließe die Flasche.</li>
+</ol>
+<h3 id="aufgabe-8">Aufgabe 8</h3>
+<p>Algorithmus B ist eindeutiger und vollständiger.</p>
+<p>Algorithmus B ist dennoch nicht automatisch für jede Situation
+optimal. Beispielsweise ist „etwa 2 cm unter den Rand“ weiterhin
+situationsabhängig.</p>
+<h3 id="aufgabe-9">Aufgabe 9</h3>
+<p>Gleich bleibt:</p>
+<ul>
+<li>Problem,</li>
+<li>Reihenfolge,</li>
+<li>beabsichtigte Wirkung.</li>
+</ul>
+<p>Anders ist:</p>
+<ul>
+<li>Syntax bzw. Darstellung,</li>
+<li>Art der Programmbefehle.</li>
+</ul>
+<h3 id="aufgabe-10">Aufgabe 10</h3>
+<p>Wenn KAI exakt ausgeführt hat, liegt der Fehler wahrscheinlich im
+Algorithmus, in den Anforderungen oder in den verwendeten Daten.</p>
+<h3 id="plus-effizienz">Plus – Effizienz</h3>
+<p>Weniger Schritte bedeuten nicht automatisch einen besseren
+Algorithmus.</p>
+<p>Weitere Kriterien:</p>
+<ul>
+<li>Verständlichkeit,</li>
+<li>Korrektheit,</li>
+<li>Robustheit,</li>
+<li>Erweiterbarkeit,</li>
+<li>notwendige Voraussetzungen.</li>
+</ul>
+<hr />
+<h2 id="transfer">09 Transfer</h2>
+<p>Offene Lösungen.</p>
+<p>Bewertungsschwerpunkte:</p>
+<ul>
+<li>nachvollziehbare Problemanalyse,</li>
+<li>sinnvoller Algorithmus,</li>
+<li>Testmöglichkeit,</li>
+<li>begründete Verbesserung.</li>
+</ul>
+<hr />
+<h2 id="projekt">10 Projekt</h2>
+<p>Es existiert keine einzige Musterlösung.</p>
+<p>Wichtig ist der Entwicklungsprozess:</p>
+<ol type="1">
+<li>Problem verstehen,</li>
+<li>Lösung entwerfen,</li>
+<li>Algorithmus beschreiben,</li>
+<li>testen,</li>
+<li>Rückmeldung auswerten,</li>
+<li>verbessern,</li>
+<li>Ergebnis vorstellen.</li>
+</ol>
+<hr />
+<h2 id="reflexion">11 Reflexion</h2>
+<p>Keine Musterlösung.</p>
+<p>Die Antworten dienen der Selbsteinschätzung.</p>
+<hr />
+<h2 id="kompetenzcheck">12 Kompetenzcheck</h2>
+<h3 id="aufgabe-1-1">Aufgabe 1</h3>
+<p>A: Algorithmus</p>
+<p>B: kein geeigneter Algorithmus</p>
+<h3 id="aufgabe-2-1">Aufgabe 2</h3>
+<p>Mindestens zwei nachvollziehbar begründete Probleme.</p>
+<h3 id="aufgabe-3-1">Aufgabe 3</h3>
+<p>Offene Lösung anhand der vier Qualitätsmerkmale bewerten.</p>
+<h3 id="aufgabe-4-1">Aufgabe 4</h3>
+<p>Kernaussage:</p>
+<blockquote>
+<p>Derselbe Algorithmus kann in unterschiedlichen Programmiersprachen
+umgesetzt werden. Die Programmiersprache ist ein Werkzeug zur
+Formulierung bzw. Ausführung der Lösung.</p>
+</blockquote>
+<h1 id="lösungshinweise-zur-projektphase">Lösungshinweise zur
+Projektphase</h1>
+<h2 id="vorbemerkung">Vorbemerkung</h2>
+<p>Die Projektphase besitzt bewusst keine einheitliche Musterlösung.</p>
+<p>Bewertet werden Problemlöseprozess, fachliche Nachvollziehbarkeit und
+die Qualität der Umsetzung.</p>
+<hr />
+<h2 id="projektstart">13 Projektstart</h2>
+<p>Erwartet werden:</p>
+<ul>
+<li>verständliche Problemidee,</li>
+<li>realistisches Ziel,</li>
+<li>Teamorganisation,</li>
+<li>geklärter Speicherort,</li>
+<li>erster Arbeitsplan.</li>
+</ul>
+<h3 id="warnzeichen">Warnzeichen</h3>
+<ul>
+<li>Projektziel lässt sich nicht in wenigen Sätzen erklären.</li>
+<li>Projekt hängt von vielen noch unbekannten Technologien ab.</li>
+<li>Team plant bereits zahlreiche Zusatzfunktionen, aber keine
+Kernfunktion.</li>
+</ul>
+<hr />
+<h2 id="problemanalyse">14 Problemanalyse</h2>
+<h3 id="gute-problemformulierung">Gute Problemformulierung</h3>
+<blockquote>
+<p>Besucher des Schulfestes sollen an einem Computer ein einfaches Quiz
+spielen können.</p>
+</blockquote>
+<h3 id="zu-ungenau">Zu ungenau</h3>
+<blockquote>
+<p>Wir machen ein cooles Spiel.</p>
+</blockquote>
+<h3 id="gute-muss-anforderungen">Gute Muss-Anforderungen</h3>
+<ul>
+<li>Nach dem Start wird eine Frage angezeigt.</li>
+<li>Der Benutzer kann zwischen mindestens drei Antworten wählen.</li>
+<li>Nach der Auswahl wird angezeigt, ob die Antwort richtig war.</li>
+</ul>
+<h3 id="gute-kann-anforderungen">Gute Kann-Anforderungen</h3>
+<ul>
+<li>Punktestand,</li>
+<li>Sound,</li>
+<li>mehrere Schwierigkeitsstufen.</li>
+</ul>
+<h3 id="bewertung">Bewertung</h3>
+<p>Anforderungen sollten möglichst überprüfbar formuliert sein.</p>
+<hr />
+<h2 id="lösungsentwurf-und-planung">15 Lösungsentwurf und Planung</h2>
+<p>Es sollten mindestens zwei Ansätze erkennbar verglichen werden.</p>
+<p>Beispiel Quiz:</p>
+<h3 id="idee-a">Idee A</h3>
+<p>Alle Fragen werden nacheinander in einer festen Reihenfolge
+angezeigt.</p>
+<h3 id="idee-b">Idee B</h3>
+<p>Fragen werden aus einer Sammlung ausgewählt.</p>
+<p>Für eine erste Projektversion kann Idee A sinnvoller sein, weil sie
+weniger technische Komplexität besitzt.</p>
+<p>Ein guter Plan definiert eine kleine erste Version.</p>
+<hr />
+<h2 id="umsetzung">16 Umsetzung</h2>
+<p>Die Lernenden sollen schrittweise arbeiten.</p>
+<p>Ein gutes Entwicklungsprotokoll zeigt nicht jede Tastatureingabe,
+sondern wichtige Zustände.</p>
+<p>Beispiel:</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Änderung</th>
+<th>Testergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>Startbildschirm</td>
+<td>funktioniert</td>
+</tr>
+<tr>
+<td>0.2</td>
+<td>erste Frage</td>
+<td>Antwort wird angezeigt</td>
+</tr>
+<tr>
+<td>0.3</td>
+<td>Auswertung</td>
+<td>Fehler bei falscher Antwort</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td>Bedingung korrigiert</td>
+<td>Test bestanden</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="testen-und-verbessern">17 Testen und Verbessern</h2>
+<h3 id="beispieltest">Beispieltest</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Ausgangslage</th>
+<th>Aktion</th>
+<th>erwartet</th>
+<th>tatsächlich</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frage 1 sichtbar</td>
+<td>richtige Antwort wählen</td>
+<td>„Richtig“</td>
+<td>„Richtig“</td>
+</tr>
+<tr>
+<td>Frage 1 sichtbar</td>
+<td>falsche Antwort wählen</td>
+<td>„Falsch“</td>
+<td>keine Reaktion</td>
+</tr>
+</tbody>
+</table>
+<p>Der zweite Test zeigt einen Fehler.</p>
+<p>Nach einer Änderung muss genau dieser Fall erneut getestet
+werden.</p>
+<h3 id="mindeststandard">Mindeststandard</h3>
+<ul>
+<li>mindestens drei sinnvolle Testfälle,</li>
+<li>Muss-Anforderungen berücksichtigt,</li>
+<li>tatsächliches Ergebnis notiert,</li>
+<li>mindestens eine gezielte Verbesserung.</li>
+</ul>
+<hr />
+<h2 id="dokumentation">18 Dokumentation</h2>
+<p>Eine gute Dokumentation erklärt Zusammenhänge.</p>
+<p>Ungünstig:</p>
+<blockquote>
+<p>Wir haben Scratch benutzt und dann programmiert.</p>
+</blockquote>
+<p>Besser:</p>
+<blockquote>
+<p>Wir entschieden uns für Scratch, weil die benötigten Abläufe mit
+bekannten Blockstrukturen umgesetzt werden konnten. Zunächst
+entwickelten wir nur die Kernfunktion …</p>
+</blockquote>
+<p>Bewertet wird Nachvollziehbarkeit, nicht Seitenzahl.</p>
+<hr />
+<h2 id="präsentation-und-reflexion">19 Präsentation und Reflexion</h2>
+<p>Die Präsentation soll das Ergebnis praktisch zeigen.</p>
+<p>Erwartete Reflexion:</p>
+<ul>
+<li>konkrete Planänderung,</li>
+<li>gefundener Fehler,</li>
+<li>wichtige Verbesserung,</li>
+<li>Erkenntnis über Teamarbeit oder Problemlösung.</li>
+</ul>
+<p>Sehr allgemeine Antworten wie</p>
+<blockquote>
+<p>„Es war gut.“</p>
+</blockquote>
+<p>reichen nicht aus.</p>
+<hr />
+<h2 id="gesamtbewertung">Gesamtbewertung</h2>
+<p>Geeignete Schwerpunkte:</p>
+<ol type="1">
+<li>Problemanalyse und Anforderungen</li>
+<li>Lösungsentwurf</li>
+<li>Umsetzung</li>
+<li>Test und Verbesserung</li>
+<li>Dokumentation</li>
+<li>Präsentation</li>
+<li>Zusammenarbeit und Reflexion</li>
+</ol>
+<p>Nicht die technische Komplexität allein entscheidet über die
+Qualität.</p>
+</body>
+</html>

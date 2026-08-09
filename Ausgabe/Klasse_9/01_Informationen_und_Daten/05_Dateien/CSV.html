@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Klasse_9_01_Informationen_und_Daten_05_Dateien_CSV</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#csv-komplettpaket-informationen-und-daten"
+id="toc-csv-komplettpaket-informationen-und-daten">CSV-Komplettpaket –
+Informationen und Daten</a>
+<ul>
+<li><a href="#technische-konventionen"
+id="toc-technische-konventionen">Technische Konventionen</a></li>
+<li><a href="#enthaltene-dateien" id="toc-enthaltene-dateien">Enthaltene
+Dateien</a></li>
+<li><a href="#konsistenzhinweise"
+id="toc-konsistenzhinweise">Konsistenzhinweise</a></li>
+<li><a href="#beispielaufgaben"
+id="toc-beispielaufgaben">Beispielaufgaben</a></li>
+<li><a href="#lizenz" id="toc-lizenz">Lizenz</a></li>
+</ul></li>
+<li><a href="#bestellungen.csv"
+id="toc-bestellungen.csv">bestellungen.csv</a>
+<ul>
+<li><a href="#spalten" id="toc-spalten">Spalten</a></li>
+<li><a href="#unterrichtseinsatz"
+id="toc-unterrichtseinsatz">Unterrichtseinsatz</a></li>
+</ul></li>
+<li><a href="#fehlerhafte_daten.csv"
+id="toc-fehlerhafte_daten.csv">fehlerhafte_daten.csv</a>
+<ul>
+<li><a href="#enthaltene-fehler" id="toc-enthaltene-fehler">Enthaltene
+Fehler</a></li>
+</ul></li>
+<li><a href="#lager.csv" id="toc-lager.csv">lager.csv</a>
+<ul>
+<li><a href="#unterrichtseinsatz-1"
+id="toc-unterrichtseinsatz-1">Unterrichtseinsatz</a></li>
+</ul></li>
+<li><a href="#messwerte_sensor.csv"
+id="toc-messwerte_sensor.csv">messwerte_sensor.csv</a>
+<ul>
+<li><a href="#unterrichtseinsatz-2"
+id="toc-unterrichtseinsatz-2">Unterrichtseinsatz</a></li>
+</ul></li>
+<li><a href="#netzwerk_logs.csv"
+id="toc-netzwerk_logs.csv">netzwerk_logs.csv</a>
+<ul>
+<li><a href="#unterrichtseinsatz-3"
+id="toc-unterrichtseinsatz-3">Unterrichtseinsatz</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="csv-komplettpaket-informationen-und-daten">CSV-Komplettpaket –
+Informationen und Daten</h1>
+<p>Dieses Paket gehört in:</p>
+<p><code>Klasse_9/01_Informationen_und_Daten/05_Dateien/</code></p>
+<h2 id="technische-konventionen">Technische Konventionen</h2>
+<ul>
+<li>Zeichencodierung: UTF-8 mit BOM</li>
+<li>Trennzeichen: Semikolon</li>
+<li>Dezimaltrennzeichen: Komma</li>
+<li>Datum: TT.MM.JJJJ</li>
+<li>Erste Zeile: eindeutige Spaltennamen</li>
+<li>Personen- und Vorgangsdaten sind vollständig fiktiv.</li>
+</ul>
+<h2 id="enthaltene-dateien">Enthaltene Dateien</h2>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 40%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Datei</th>
+<th style="text-align: right;">Datensätze</th>
+<th>Unterrichtlicher Schwerpunkt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bestellungen.csv</code></td>
+<td style="text-align: right;">220</td>
+<td>Filtern, Sortieren, Summen, Statusauswertung</td>
+</tr>
+<tr>
+<td><code>lager.csv</code></td>
+<td style="text-align: right;">16</td>
+<td>Bedingungen, Mindestbestand, Preisvergleich</td>
+</tr>
+<tr>
+<td><code>mensa_verkauf.csv</code></td>
+<td style="text-align: right;">150</td>
+<td>Gruppieren, Durchschnitt, Umsatz, Diagramme</td>
+</tr>
+<tr>
+<td><code>bibliothek.csv</code></td>
+<td style="text-align: right;">180</td>
+<td>Verknüpfte Attribute, Datumslogik, Datenschutz</td>
+</tr>
+<tr>
+<td><code>sensor_temperatur.csv</code></td>
+<td style="text-align: right;">1008</td>
+<td>Zeitreihen, Extremwerte, Korrelationen</td>
+</tr>
+<tr>
+<td><code>sensor_luftfeuchte.csv</code></td>
+<td style="text-align: right;">1008</td>
+<td>Zusammenführen über Datum/Uhrzeit, Klimaauswertung</td>
+</tr>
+<tr>
+<td><code>netzwerk_logs.csv</code></td>
+<td style="text-align: right;">500</td>
+<td>Logdateien, Protokolle, Auffälligkeiten</td>
+</tr>
+<tr>
+<td><code>fehlermeldungen.csv</code></td>
+<td style="text-align: right;">160</td>
+<td>Häufigkeiten, Prioritäten, Lösungszeiten</td>
+</tr>
+<tr>
+<td><code>schuelerprojekte.csv</code></td>
+<td style="text-align: right;">8</td>
+<td>Projektvergleich, Budget und Fortschritt</td>
+</tr>
+</tbody>
+</table>
+<h2 id="konsistenzhinweise">Konsistenzhinweise</h2>
+<ul>
+<li><code>artikelnummer</code> verbindet <code>bestellungen.csv</code>
+und <code>lager.csv</code>.</li>
+<li><code>datum</code>, <code>uhrzeit</code> und <code>raum</code>
+verbinden die beiden Sensordateien.</li>
+<li>Geldwerte sind als deutsch formatierte Dezimalzahlen
+gespeichert.</li>
+<li>Leere Felder sind fachlich begründet, etwa bei offenen Bestellungen
+oder ungelösten Fehlern.</li>
+</ul>
+<h2 id="beispielaufgaben">Beispielaufgaben</h2>
+<ol type="1">
+<li>Ermittle alle Artikel, deren Bestand unter dem Mindestbestand
+liegt.</li>
+<li>Berechne den Umsatz der Mensa je Menükategorie.</li>
+<li>Untersuche, ob CO₂-Werte und Personenzahl zusammenhängen.</li>
+<li>Bestimme die drei häufigsten blockierten Netzwerkdienste.</li>
+<li>Vergleiche geplantes Budget und tatsächliche Ausgaben der
+Projekte.</li>
+<li>Prüfe, welche Bibliotheksausleihen verspätet zurückgegeben
+wurden.</li>
+</ol>
+<h2 id="lizenz">Lizenz</h2>
+<p>Soweit nicht anders angegeben, steht dieses Datenpaket unter CC BY
+4.0. Die Datensätze wurden eigens für Unterrichtszwecke erzeugt und
+enthalten keine realen personenbezogenen Daten.</p>
+<h1 id="bestellungen.csv">bestellungen.csv</h1>
+<p>Fiktive Bestellungen für ein Schülerfestival.</p>
+<h2 id="spalten">Spalten</h2>
+<ul>
+<li><code>bestellung</code>: eindeutige Bestellnummer</li>
+<li><code>artikel</code>: bestellter Artikel</li>
+<li><code>menge</code>: bestellte Stückzahl</li>
+</ul>
+<h2 id="unterrichtseinsatz">Unterrichtseinsatz</h2>
+<ul>
+<li>Sortieren und Filtern</li>
+<li>Summen und Häufigkeiten</li>
+<li>Vergleich mit <code>lager.csv</code></li>
+<li>Datenbankimport und SQL-Abfragen</li>
+</ul>
+<h1 id="fehlerhafte_daten.csv">fehlerhafte_daten.csv</h1>
+<p>Absichtlich fehlerhafte Messdaten für Übungen zur
+Datenbereinigung.</p>
+<h2 id="enthaltene-fehler">Enthaltene Fehler</h2>
+<ul>
+<li>fehlende Werte</li>
+<li>uneinheitliche Dezimaltrennzeichen</li>
+<li>Tippfehler</li>
+<li>Ausreißer</li>
+<li>Duplikate</li>
+<li>Einheiten im Wertefeld</li>
+</ul>
+<h1 id="lager.csv">lager.csv</h1>
+<p>Fiktiver Lagerbestand passend zu <code>bestellungen.csv</code>.</p>
+<h2 id="unterrichtseinsatz-1">Unterrichtseinsatz</h2>
+<ul>
+<li>Bestellmenge und Bestand vergleichen</li>
+<li>Fehlmengen bestimmen</li>
+<li>Relationen zwischen Tabellen untersuchen</li>
+</ul>
+<h1 id="messwerte_sensor.csv">messwerte_sensor.csv</h1>
+<p>Halbstündliche Temperatur- und Luftfeuchtewerte eines fiktiven
+Sensors.</p>
+<h2 id="unterrichtseinsatz-2">Unterrichtseinsatz</h2>
+<ul>
+<li>Linien- und Säulendiagramme</li>
+<li>Mittelwert, Minimum und Maximum</li>
+<li>Zeitreihen analysieren</li>
+</ul>
+<h1 id="netzwerk_logs.csv">netzwerk_logs.csv</h1>
+<p>Fiktive, altersgerechte Protokolleinträge aus einem Schulnetz.</p>
+<h2 id="unterrichtseinsatz-3">Unterrichtseinsatz</h2>
+<ul>
+<li>Ereignisse sortieren und kategorisieren</li>
+<li>Auffällige Einträge suchen</li>
+<li>Datenschutz und Protokollierung diskutieren</li>
+</ul>
+</body>
+</html>

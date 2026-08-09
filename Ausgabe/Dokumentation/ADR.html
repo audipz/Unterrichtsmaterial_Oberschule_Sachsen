@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Dokumentation_ADR</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#architecture-decision-records-adr"
+id="toc-architecture-decision-records-adr">Architecture Decision Records
+(ADR)</a>
+<ul>
+<li><a href="#statuswerte" id="toc-statuswerte">Statuswerte</a></li>
+<li><a href="#regel" id="toc-regel">Regel</a></li>
+</ul></li>
+<li><a href="#adr-0001-repository-struktur"
+id="toc-adr-0001-repository-struktur">ADR-0001 – Repository-Struktur</a>
+<ul>
+<li><a href="#status" id="toc-status">Status</a></li>
+<li><a href="#kontext" id="toc-kontext">Kontext</a></li>
+<li><a href="#entscheidung" id="toc-entscheidung">Entscheidung</a></li>
+<li><a href="#konsequenzen" id="toc-konsequenzen">Konsequenzen</a>
+<ul>
+<li><a href="#vorteile" id="toc-vorteile">Vorteile</a></li>
+<li><a href="#nachteile" id="toc-nachteile">Nachteile</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#adr-0002-grundlagen-sind-klassenübergreifend"
+id="toc-adr-0002-grundlagen-sind-klassenübergreifend">ADR-0002 –
+Grundlagen sind klassenübergreifend</a>
+<ul>
+<li><a href="#status-1" id="toc-status-1">Status</a></li>
+<li><a href="#kontext-1" id="toc-kontext-1">Kontext</a></li>
+<li><a href="#entscheidung-1"
+id="toc-entscheidung-1">Entscheidung</a></li>
+<li><a href="#konsequenzen-1"
+id="toc-konsequenzen-1">Konsequenzen</a></li>
+</ul></li>
+<li><a href="#adr-0003-arbeitsheft-und-lehrerband-werden-getrennt"
+id="toc-adr-0003-arbeitsheft-und-lehrerband-werden-getrennt">ADR-0003 –
+Arbeitsheft und Lehrerband werden getrennt</a>
+<ul>
+<li><a href="#status-2" id="toc-status-2">Status</a></li>
+<li><a href="#kontext-2" id="toc-kontext-2">Kontext</a></li>
+<li><a href="#entscheidung-2"
+id="toc-entscheidung-2">Entscheidung</a></li>
+<li><a href="#konsequenzen-2"
+id="toc-konsequenzen-2">Konsequenzen</a></li>
+</ul></li>
+<li><a href="#adr-0004-problemorientierte-didaktik"
+id="toc-adr-0004-problemorientierte-didaktik">ADR-0004 –
+Problemorientierte Didaktik</a>
+<ul>
+<li><a href="#status-3" id="toc-status-3">Status</a></li>
+<li><a href="#kontext-3" id="toc-kontext-3">Kontext</a></li>
+<li><a href="#entscheidung-3"
+id="toc-entscheidung-3">Entscheidung</a></li>
+<li><a href="#konsequenzen-3"
+id="toc-konsequenzen-3">Konsequenzen</a></li>
+</ul></li>
+<li><a href="#adr-0005-programmiersprachen-sind-werkzeuge"
+id="toc-adr-0005-programmiersprachen-sind-werkzeuge">ADR-0005 –
+Programmiersprachen sind Werkzeuge</a>
+<ul>
+<li><a href="#status-4" id="toc-status-4">Status</a></li>
+<li><a href="#kontext-4" id="toc-kontext-4">Kontext</a></li>
+<li><a href="#entscheidung-4"
+id="toc-entscheidung-4">Entscheidung</a></li>
+<li><a href="#konsequenzen-4"
+id="toc-konsequenzen-4">Konsequenzen</a></li>
+</ul></li>
+<li><a href="#adr-0006-iterativ-inkrementelles-arbeiten"
+id="toc-adr-0006-iterativ-inkrementelles-arbeiten">ADR-0006 –
+Iterativ-inkrementelles Arbeiten</a>
+<ul>
+<li><a href="#status-5" id="toc-status-5">Status</a></li>
+<li><a href="#kontext-5" id="toc-kontext-5">Kontext</a></li>
+<li><a href="#entscheidung-5"
+id="toc-entscheidung-5">Entscheidung</a></li>
+<li><a href="#konsequenzen-5"
+id="toc-konsequenzen-5">Konsequenzen</a></li>
+</ul></li>
+<li><a href="#adr-0007-kai-als-didaktischer-begleiter"
+id="toc-adr-0007-kai-als-didaktischer-begleiter">ADR-0007 – KAI als
+didaktischer Begleiter</a>
+<ul>
+<li><a href="#status-6" id="toc-status-6">Status</a></li>
+<li><a href="#kontext-6" id="toc-kontext-6">Kontext</a></li>
+<li><a href="#entscheidung-6"
+id="toc-entscheidung-6">Entscheidung</a></li>
+<li><a href="#konsequenzen-6"
+id="toc-konsequenzen-6">Konsequenzen</a></li>
+</ul></li>
+<li><a href="#adr-0008-evas-als-bekanntes-grundmodell"
+id="toc-adr-0008-evas-als-bekanntes-grundmodell">ADR-0008 – EVAS als
+bekanntes Grundmodell</a>
+<ul>
+<li><a href="#status-7" id="toc-status-7">Status</a></li>
+<li><a href="#kontext-7" id="toc-kontext-7">Kontext</a></li>
+<li><a href="#entscheidung-7"
+id="toc-entscheidung-7">Entscheidung</a></li>
+<li><a href="#konsequenzen-7"
+id="toc-konsequenzen-7">Konsequenzen</a></li>
+</ul></li>
+<li><a href="#adr-0009-markdown-und-modulare-dateien"
+id="toc-adr-0009-markdown-und-modulare-dateien">ADR-0009 – Markdown und
+modulare Dateien</a>
+<ul>
+<li><a href="#status-8" id="toc-status-8">Status</a></li>
+<li><a href="#kontext-8" id="toc-kontext-8">Kontext</a></li>
+<li><a href="#entscheidung-8"
+id="toc-entscheidung-8">Entscheidung</a></li>
+<li><a href="#konsequenzen-8"
+id="toc-konsequenzen-8">Konsequenzen</a></li>
+</ul></li>
+<li><a href="#adr-0010-repository-als-single-source-of-truth"
+id="toc-adr-0010-repository-als-single-source-of-truth">ADR-0010 –
+Repository als Single Source of Truth</a>
+<ul>
+<li><a href="#status-9" id="toc-status-9">Status</a></li>
+<li><a href="#kontext-9" id="toc-kontext-9">Kontext</a></li>
+<li><a href="#entscheidung-9"
+id="toc-entscheidung-9">Entscheidung</a></li>
+<li><a href="#konsequenzen-9"
+id="toc-konsequenzen-9">Konsequenzen</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="architecture-decision-records-adr">Architecture Decision Records
+(ADR)</h1>
+<p>Dieser Ordner dokumentiert grundlegende Architekturentscheidungen des
+OER-Lehrwerks.</p>
+<p>ADR-Dokumente erklären nicht nur <strong>was</strong> entschieden
+wurde, sondern auch <strong>warum</strong>.</p>
+<h2 id="statuswerte">Statuswerte</h2>
+<ul>
+<li><code>Vorgeschlagen</code></li>
+<li><code>Akzeptiert</code></li>
+<li><code>Ersetzt</code></li>
+<li><code>Verworfen</code></li>
+</ul>
+<h2 id="regel">Regel</h2>
+<p>Bestehende ADRs werden nicht stillschweigend umgeschrieben. Ändert
+sich eine grundlegende Entscheidung, wird eine neue ADR erstellt und die
+alte als <code>Ersetzt</code> gekennzeichnet.</p>
+<h1 id="adr-0001-repository-struktur">ADR-0001 –
+Repository-Struktur</h1>
+<h2 id="status">Status</h2>
+<p>Akzeptiert</p>
+<h2 id="kontext">Kontext</h2>
+<p>Das Lehrwerk enthält Materialien für mehrere Klassenstufen sowie
+klassenübergreifende Grundlagen. Inhalte müssen schnell auffindbar,
+einzeln austauschbar und unabhängig versionierbar sein.</p>
+<h2 id="entscheidung">Entscheidung</h2>
+<p>Das Repository trennt klassenübergreifende Grundlagen, Klassenstufen,
+Dokumentation, Lizenzen und Vorlagen.</p>
+<p>Grundlegende Werkzeuge und Nachschlageinhalte werden außerhalb der
+Klassenstufen abgelegt, da sie für mehrere Klassenstufen relevant
+sind.</p>
+<p>Lehrplanbezogene Inhalte verbleiben innerhalb der jeweiligen
+Klassenstufe.</p>
+<h2 id="konsequenzen">Konsequenzen</h2>
+<h3 id="vorteile">Vorteile</h3>
+<ul>
+<li>Keine unnötige Duplizierung von Grundlagen.</li>
+<li>Klassenstufen bleiben lehrplannah.</li>
+<li>Materialien können unabhängig gepflegt werden.</li>
+<li>Lehrkräfte finden Werkzeughilfen zentral.</li>
+</ul>
+<h3 id="nachteile">Nachteile</h3>
+<ul>
+<li>Fachkapitel müssen teilweise auf Grundlagen verweisen.</li>
+<li>Querverweise müssen bei Umstrukturierungen geprüft werden.</li>
+</ul>
+<h1 id="adr-0002-grundlagen-sind-klassenübergreifend">ADR-0002 –
+Grundlagen sind klassenübergreifend</h1>
+<h2 id="status-1">Status</h2>
+<p>Akzeptiert</p>
+<h2 id="kontext-1">Kontext</h2>
+<p>Themen wie Scratch, Python, GitHub, Markdown, VS Code, Datenschutz
+oder Dateiverwaltung werden in mehreren Klassenstufen benötigt.</p>
+<h2 id="entscheidung-1">Entscheidung</h2>
+<p>Der Bereich <code>Grundlagen/</code> liegt oberhalb der
+Klassenstufen.</p>
+<p>Aktuell vorgesehene Bereiche sind:</p>
+<ul>
+<li>Computer</li>
+<li>Dateiverwaltung</li>
+<li>Datenschutz</li>
+<li>GitHub</li>
+<li>Glossar</li>
+<li>KI</li>
+<li>Lizenzen</li>
+<li>Markdown</li>
+<li>Python</li>
+<li>Scratch</li>
+<li>VSCode</li>
+</ul>
+<p>Die Grundlagen erklären Werkzeuge und Basiswissen. Lehrplaninhalte
+wie Algorithmierung, Verzweigungen oder Wiederholungen gehören nicht in
+diesen Bereich.</p>
+<h2 id="konsequenzen-1">Konsequenzen</h2>
+<p>Grundlagen können als Nachschlagewerk genutzt werden, ohne
+Unterrichtsinhalte zu duplizieren.</p>
+<p>Fachkapitel konzentrieren sich auf informatische Konzepte und
+verweisen bei Bedarf auf die Grundlagen.</p>
+<h1 id="adr-0003-arbeitsheft-und-lehrerband-werden-getrennt">ADR-0003 –
+Arbeitsheft und Lehrerband werden getrennt</h1>
+<h2 id="status-2">Status</h2>
+<p>Akzeptiert</p>
+<h2 id="kontext-2">Kontext</h2>
+<p>Schülerinnen und Schüler benötigen verständliche Lerntexte und
+Aufgaben. Lehrkräfte benötigen zusätzlich Zeitplanung, Lösungen,
+didaktische Hinweise, Differenzierung und typische
+Fehlvorstellungen.</p>
+<h2 id="entscheidung-2">Entscheidung</h2>
+<p>Arbeitsheft und Lehrerband werden als getrennte Werkteile
+geführt.</p>
+<p>Wo sinnvoll, verwenden beide dieselben oder eindeutig zuordenbare
+Dateinamen.</p>
+<p>Das Arbeitsheft spricht direkt die Lernenden an.</p>
+<p>Der Lehrerband enthält insbesondere:</p>
+<ul>
+<li>Lernziele</li>
+<li>Zeitbedarf</li>
+<li>Sozialform</li>
+<li>Materialien</li>
+<li>Unterrichtsverlauf</li>
+<li>mögliche Schülerantworten</li>
+<li>typische Schwierigkeiten</li>
+<li>Differenzierung</li>
+<li>Lösungen</li>
+<li>Hinweise aus der Unterrichtspraxis</li>
+</ul>
+<h2 id="konsequenzen-2">Konsequenzen</h2>
+<p>Schülertexte bleiben schlank und verständlich.</p>
+<p>Lehrkräfte erhalten zusätzliche Unterstützung, ohne dass diese
+Informationen das Arbeitsheft überladen.</p>
+<h1 id="adr-0004-problemorientierte-didaktik">ADR-0004 –
+Problemorientierte Didaktik</h1>
+<h2 id="status-3">Status</h2>
+<p>Akzeptiert</p>
+<h2 id="kontext-3">Kontext</h2>
+<p>Das Lehrwerk soll nicht primär Programmiersprachen vermitteln,
+sondern systematisches und informatisches Denken fördern.</p>
+<h2 id="entscheidung-3">Entscheidung</h2>
+<p>Neue Inhalte werden möglichst aus einem Problem oder einer konkreten
+Situation entwickelt.</p>
+<p>Die typische Lernbewegung lautet:</p>
+<ol type="1">
+<li>Problem verstehen</li>
+<li>Beobachten und analysieren</li>
+<li>Lösungsideen entwickeln</li>
+<li>Algorithmus formulieren</li>
+<li>Darstellung oder Werkzeug wählen</li>
+<li>Umsetzen</li>
+<li>Testen</li>
+<li>Verbessern</li>
+<li>Reflektieren und übertragen</li>
+</ol>
+<p>Definitionen und Fachbegriffe werden nach Möglichkeit erst
+eingeführt, nachdem die zugrunde liegende Idee verstanden wurde.</p>
+<h2 id="konsequenzen-3">Konsequenzen</h2>
+<p>Das Lehrwerk benötigt weniger reine Syntaxübungen und mehr Aufgaben
+zum Analysieren, Begründen, Testen und Verbessern.</p>
+<p>Der Unterricht bleibt modular: Pflichtinhalte können knapp behandelt
+werden, Zusatzinformationen stehen für Vertiefung bereit.</p>
+<h1 id="adr-0005-programmiersprachen-sind-werkzeuge">ADR-0005 –
+Programmiersprachen sind Werkzeuge</h1>
+<h2 id="status-4">Status</h2>
+<p>Akzeptiert</p>
+<h2 id="kontext-4">Kontext</h2>
+<p>Algorithmen und Problemlösungsstrategien sind nicht an eine bestimmte
+Programmiersprache gebunden.</p>
+<h2 id="entscheidung-4">Entscheidung</h2>
+<p>Das Lehrwerk trennt konsequent zwischen Problem, Algorithmus und
+Umsetzung.</p>
+<p>Programmiersprachen sind Wege zur Umsetzung eines Algorithmus.</p>
+<p>Scratch und Python werden bevorzugt eingesetzt, weil sie
+unterschiedliche Darstellungsformen sichtbar machen:</p>
+<ul>
+<li>Scratch: blockbasiert</li>
+<li>Python: textbasiert</li>
+</ul>
+<p>Die zugrunde liegenden Konzepte sollen so formuliert werden, dass sie
+auch auf andere Sprachen wie BASIC, VBA, Java oder C# übertragbar
+bleiben.</p>
+<h2 id="konsequenzen-4">Konsequenzen</h2>
+<p>Syntax wird nur eingeführt, wenn sie für eine konkrete Lösung
+benötigt wird.</p>
+<p>Formulierungen wie „Lerne Python“ werden möglichst vermieden.
+Stattdessen wird ein Algorithmus „in Python umgesetzt“ oder „mit Python
+dargestellt“.</p>
+<p>Bei späteren Themen wie Objektorientierung kann die Wahl der Sprache
+stärker fachlich relevant werden.</p>
+<h1 id="adr-0006-iterativ-inkrementelles-arbeiten">ADR-0006 –
+Iterativ-inkrementelles Arbeiten</h1>
+<h2 id="status-5">Status</h2>
+<p>Akzeptiert</p>
+<h2 id="kontext-5">Kontext</h2>
+<p>Problemlösungen und Programme entstehen selten im ersten Versuch
+vollständig und fehlerfrei.</p>
+<h2 id="entscheidung-5">Entscheidung</h2>
+<p>Das Lehrwerk vermittelt von Beginn an einen iterativ-inkrementellen
+Entwicklungsprozess.</p>
+<p>Iterativ bedeutet:</p>
+<ul>
+<li>entwickeln</li>
+<li>testen</li>
+<li>analysieren</li>
+<li>verbessern</li>
+<li>erneut testen</li>
+</ul>
+<p>Inkrementell bedeutet:</p>
+<ul>
+<li>mit einer kleinen funktionsfähigen Lösung beginnen</li>
+<li>Funktionen schrittweise ergänzen</li>
+</ul>
+<h2 id="konsequenzen-5">Konsequenzen</h2>
+<p>Fehler werden als Lerngelegenheiten behandelt.</p>
+<p>Aufgaben verlangen regelmäßig, dass Lernende Lösungen testen,
+vergleichen und verbessern.</p>
+<p>Musterlösungen dürfen mehrere sinnvolle Lösungswege zeigen.</p>
+<h1 id="adr-0007-kai-als-didaktischer-begleiter">ADR-0007 – KAI als
+didaktischer Begleiter</h1>
+<h2 id="status-6">Status</h2>
+<p>Akzeptiert</p>
+<h2 id="kontext-6">Kontext</h2>
+<p>Abstrakte Eigenschaften von Computern und Algorithmen sind für
+Lernende leichter verständlich, wenn konsequentes maschinelles Verhalten
+sichtbar gemacht wird.</p>
+<h2 id="entscheidung-6">Entscheidung</h2>
+<p>KAI ist ein wiederkehrender Lernroboter.</p>
+<p>KAI:</p>
+<ul>
+<li>führt Anweisungen exakt aus</li>
+<li>ergänzt keine fehlenden Informationen</li>
+<li>rät nicht</li>
+<li>fragt bei Mehrdeutigkeiten nach</li>
+<li>macht Denkfehler in Anweisungen sichtbar</li>
+</ul>
+<p>KAI wird nur eingesetzt, wenn ein didaktischer Mehrwert besteht.</p>
+<h2 id="konsequenzen-6">Konsequenzen</h2>
+<p>KAI eignet sich besonders für:</p>
+<ul>
+<li>Rollenspiele</li>
+<li>Fehlersuche</li>
+<li>Algorithmen</li>
+<li>Verzweigungen</li>
+<li>Wiederholungen</li>
+<li>Variablen</li>
+<li>Debugging</li>
+</ul>
+<p>KAI ist keine reine Comicfigur und soll nicht kindlich wirken.</p>
+<h1 id="adr-0008-evas-als-bekanntes-grundmodell">ADR-0008 – EVAS als
+bekanntes Grundmodell</h1>
+<h2 id="status-7">Status</h2>
+<p>Akzeptiert</p>
+<h2 id="kontext-7">Kontext</h2>
+<p>Die Lernenden kennen das EVAS-Prinzip bereits aus einer vorherigen
+Klassenstufe.</p>
+<p>EVAS steht für:</p>
+<ul>
+<li>Eingabe</li>
+<li>Verarbeitung</li>
+<li>Ausgabe</li>
+<li>Speicherung</li>
+</ul>
+<h2 id="entscheidung-7">Entscheidung</h2>
+<p>EVAS wird als bekanntes Grundmodell vorausgesetzt und bei Bedarf
+aktiviert.</p>
+<p>Es wird in höheren Klassenstufen nicht jedes Mal vollständig neu
+eingeführt.</p>
+<p>Bei der Algorithmierung liegt der Schwerpunkt insbesondere auf der
+Verarbeitung und den dazugehörigen Algorithmen.</p>
+<h2 id="konsequenzen-7">Konsequenzen</h2>
+<p>Wiederholungen werden reduziert.</p>
+<p>Neue Inhalte werden mit vorhandenem Wissen vernetzt.</p>
+<p>Im Grundlagenbereich steht eine vollständige EVAS-Erklärung als
+Nachschlagewerk zur Verfügung.</p>
+<h1 id="adr-0009-markdown-und-modulare-dateien">ADR-0009 – Markdown und
+modulare Dateien</h1>
+<h2 id="status-8">Status</h2>
+<p>Akzeptiert</p>
+<h2 id="kontext-8">Kontext</h2>
+<p>Das Lehrwerk soll offen, versionsfähig und leicht überarbeitbar
+sein.</p>
+<h2 id="entscheidung-8">Entscheidung</h2>
+<p>Textinhalte werden bevorzugt in Markdown gepflegt.</p>
+<p>Größere Werkteile werden in fachlich sinnvolle Einzeldateien
+aufgeteilt.</p>
+<p>Dateien sollen:</p>
+<ul>
+<li>unabhängig verständlich sein</li>
+<li>klar benannt sein</li>
+<li>gezielt ersetzt werden können</li>
+<li>mit Git sinnvoll diffbar sein</li>
+</ul>
+<h2 id="konsequenzen-8">Konsequenzen</h2>
+<p>Qualitätssicherung kann einzelne Dateien oder Abschnitte austauschen,
+ohne komplette Dokumente neu erzeugen zu müssen.</p>
+<p>Spätere Exporte nach PDF, HTML oder DOCX können automatisiert
+werden.</p>
+<h1 id="adr-0010-repository-als-single-source-of-truth">ADR-0010 –
+Repository als Single Source of Truth</h1>
+<h2 id="status-9">Status</h2>
+<p>Akzeptiert</p>
+<h2 id="kontext-9">Kontext</h2>
+<p>Während der Entwicklung entstehen viele Dateien und Versionen.
+Doppelarbeit und widersprüchliche Strukturen müssen vermieden
+werden.</p>
+<h2 id="entscheidung-9">Entscheidung</h2>
+<p>Der aktuelle Stand auf <code>main</code> ist die verbindliche
+Referenz für die weitere Entwicklung.</p>
+<p>Vor neuen Arbeitspaketen wird geprüft:</p>
+<ul>
+<li>Was existiert bereits?</li>
+<li>Was fehlt?</li>
+<li>Was ist unvollständig?</li>
+<li>Gibt es offensichtliche Inkonsistenzen?</li>
+</ul>
+<p>Neue Inhalte werden nur ergänzt, wenn sie im aktuellen Repository
+fehlen oder bewusst überarbeitet werden sollen.</p>
+<h2 id="konsequenzen-9">Konsequenzen</h2>
+<p>Der Entwicklungsprozess bleibt nachvollziehbar.</p>
+<p>Nach abgeschlossenen Kapiteln wird der aktuelle Stand gepusht.</p>
+<p>Reviews und Qualitätskorrekturen erfolgen auf Basis der vorhandenen
+Markdown-Dateien.</p>
+</body>
+</html>
