@@ -1,0 +1,18 @@
+{
+  "id": "klasse7_lb2_lk_repraesentation_von_daten",
+  "klasse": 7,
+  "lernbereich": "Repräsentation von Daten",
+  "typ": "Leistungskontrolle",
+  "arbeitszeit_minuten": 45,
+  "max_points": 30,
+  "themen": [
+    "Information und Daten",
+    "Darstellungsformen",
+    "Objekte und Attribute",
+    "Klassen",
+    "Anwendersoftware",
+    "Automatisierung",
+    "Urheber- und Persönlichkeitsrechte"
+  ],
+  "solution_file": "01_LK_Repraesentation_von_Daten_Loesung.md"
+}
