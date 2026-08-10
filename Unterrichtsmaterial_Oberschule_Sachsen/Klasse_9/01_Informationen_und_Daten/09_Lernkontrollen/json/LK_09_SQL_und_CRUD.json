@@ -1,0 +1,15 @@
+{
+  "id": "LK_09_SQL_und_CRUD",
+  "klasse": 9,
+  "lernbereich": "Informationen und Daten",
+  "punkte": 20,
+  "themen": [
+    "CREATE TABLE",
+    "CRUD",
+    "UPDATE",
+    "DELETE",
+    "FOREIGN KEY",
+    "UNIQUE",
+    "PRIMARY KEY"
+  ]
+}
