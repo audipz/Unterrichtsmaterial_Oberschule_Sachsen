@@ -1,0 +1,15 @@
+{
+  "id": "01_Kurztest_Projektarbeit_und_Algorithmierung",
+  "klasse": 9,
+  "lernbereich": "Komplexaufgabe zur Algorithmierung",
+  "max_points": 20,
+  "assessment_type": "Kurztest",
+  "topics": [
+    "Projektphasen",
+    "Muss- und Kann-Anforderungen",
+    "Qualitaetskreislauf",
+    "Testfaelle",
+    "Eindeutigkeit von Algorithmen"
+  ],
+  "solution_file": "01_Kurztest_Projektarbeit_und_Algorithmierung_Loesung.md"
+}
