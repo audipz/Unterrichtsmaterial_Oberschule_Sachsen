@@ -1,0 +1,18 @@
+{
+  "id": "klasse7_lb1_lk2_algorithmen_scratch",
+  "klasse": 7,
+  "lernbereich": "Grundlagen der digitalen Welt",
+  "typ": "Leistungskontrolle",
+  "arbeitszeit_minuten": 45,
+  "max_points": 30,
+  "themen": [
+    "Algorithmen",
+    "Sequenz",
+    "Bedingungen",
+    "Schleifen",
+    "Variablen",
+    "Scratch",
+    "Debugging"
+  ],
+  "solution_file": "02_LK_Algorithmen_und_Scratch_Loesung.md"
+}
