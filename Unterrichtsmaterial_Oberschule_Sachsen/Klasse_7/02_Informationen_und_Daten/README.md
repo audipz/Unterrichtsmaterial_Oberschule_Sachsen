@@ -23,4 +23,13 @@ Klasse, Objekt, Attribut, Attributwert und Methode werden in Klasse 7 bewusst gr
 
 ## Leistungsbewertung
 
-Die schriftliche Leistungskontrolle des Lernbereichs wird in einem separaten Abschluss-PR ergänzt. Praktische Medienaufgaben dienen vorrangig dem Üben und Anwenden.
+Zum Lernbereich gehört eine separate **45-Minuten-Leistungskontrolle „Repräsentation von Daten“** mit Musterlösung und Metadaten. Praktische Medienaufgaben dienen vorrangig dem Üben und Anwenden.
+
+## Werkteile
+
+- Arbeitsheft
+- Lehrerband
+- Material
+- Lösungen
+- Präsentationen
+- Leistungskontrolle mit Lösung
