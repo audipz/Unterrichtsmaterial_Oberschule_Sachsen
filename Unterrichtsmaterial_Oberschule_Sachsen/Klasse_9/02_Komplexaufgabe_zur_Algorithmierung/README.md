@@ -4,9 +4,7 @@
 
 Dieser Bereich unterstützt die Vorbereitung und Durchführung der **Komplexaufgabe zur Algorithmierung**.
 
-Der Lernbereich umfasst eine selbstständige, projektorientierte Problemlösung in Partner- oder Teamarbeit.
-
-Im Mittelpunkt stehen nicht einzelne Befehle einer Programmiersprache, sondern der gesamte Problemlöseprozess.
+Der sächsische Lehrplan sieht dafür einen Zeitrichtwert von 12 Unterrichtsstunden vor. Im Mittelpunkt stehen die Phasen der Projektarbeit und die selbstständige Lösung einer einfachen Problemstellung in Partner- oder Teamarbeit.
 
 ## Lehrplanbezug
 
@@ -44,20 +42,13 @@ Reflexion
 
 ## Einordnung der algorithmischen Grundlagen
 
-Die Materialien zu linearen Algorithmen dienen als Aktivierung und Wiederholung des algorithmischen Vorwissens.
+Die Materialien zu linearen Algorithmen dienen als Aktivierung und Wiederholung des algorithmischen Vorwissens aus Klassenstufe 8.
 
-Sie können je nach Lerngruppe
-
-- vollständig bearbeitet,
-- verkürzt eingesetzt,
-- als Übung genutzt oder
-- nur als Nachschlagewerk bereitgestellt
-
-werden.
+Sie können je nach Lerngruppe vollständig, verkürzt oder nur als Nachschlage- und Übungsmaterial genutzt werden.
 
 Scratch und Python sind mögliche Werkzeuge zur Umsetzung.
 
-> **Die Programmiersprache ist ein Werkzeug. Die eigentliche Kompetenz besteht im systematischen Lösen von Problemen.**
+> Die Programmiersprache ist ein Werkzeug. Die eigentliche Kompetenz besteht im systematischen Lösen von Problemen.
 
 ## Projektphase
 
@@ -76,25 +67,6 @@ Die eigentliche Komplexaufgabe umfasst:
 
 Die Schülerinnen und Schüler arbeiten dabei **iterativ und inkrementell**.
 
-### Iterativ
-
-Eine Lösung wird wiederholt getestet und verbessert.
-
-```text
-Entwurf
-  ↓
-Test
-  ↓
-Bewertung
-  ↓
-Verbesserung
-  └──────↺
-```
-
-### Inkrementell
-
-Eine zunächst kleine funktionsfähige Lösung wird schrittweise erweitert.
-
 ## Werkteile
 
 ```text
@@ -109,68 +81,41 @@ Eine zunächst kleine funktionsfähige Lösung wird schrittweise erweitert.
 09_Lernkontrollen/
 ```
 
-### Arbeitsheft
+### 01 Arbeitsheft
 
 Lernweg für Schülerinnen und Schüler.
 
-### Lehrerband
+### 02 Lehrerband
 
-Didaktische Hinweise, Unterrichtsbegleitung, Lösungen und Bewertungshinweise.
+Didaktische Hinweise, Unterrichtsbegleitung und Bewertungshinweise.
 
-### Material
+### 03 Material
 
-Zusätzliche Karten, Vorlagen, Checklisten und Projektmaterialien.
+Projektkarten, Checklisten und ergänzende Arbeitsmaterialien.
 
-### Lösungen
+### 04 Lösungen
 
 Mögliche Lösungswege und Erwartungshorizonte.
 
-### Präsentationen
+### 05 Präsentationen
 
 Unterrichtsbegleitende Folienquellen.
 
-### Dateien
+### 06 Dateien
 
-Beispielprogramme und Projektvorlagen.
+Python-/Scratch-Beispiele und kopierbare Projektvorlagen.
 
-### Quellen
+### 07 Quellen
 
 Fachliche und didaktische Quellen.
 
-### Bilder
+### 08 Bilder
 
-Versionierbare SVG-Grafiken und weitere Medien.
+Versionierbare Grafiken und weitere Medien.
 
-### Lernkontrollen
+### 09 Lernkontrollen
 
 Lernstandsdiagnosen und Bewertungsmaterialien.
-
-Technische JSON-Dateien werden im Unterordner
-
-```text
-09_Lernkontrollen/json/
-```
-
-abgelegt.
-
-## Didaktische Leitidee
-
-Die Schülerinnen und Schüler sollen nicht lediglich fertige Programme nachbauen.
-
-Sie sollen lernen,
-
-1. eine Problemstellung zu verstehen,
-2. Anforderungen zu formulieren,
-3. unterschiedliche Lösungsideen zu entwickeln,
-4. einen Lösungsweg zu planen,
-5. einen Algorithmus zu formulieren,
-6. eine geeignete Umsetzung zu wählen,
-7. ihre Lösung schrittweise umzusetzen,
-8. systematisch zu testen,
-9. Fehler und Schwächen zu erkennen,
-10. die Lösung zu verbessern,
-11. ihre Arbeit nachvollziehbar zu dokumentieren und
-12. das Ergebnis zu präsentieren und zu reflektieren.
 
 ## Qualitätsgrundsatz
 
