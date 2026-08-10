@@ -4,7 +4,7 @@
 
 > **Wie arbeitet ein Computer?**
 
-Der Lernbereich ist für Einzelstunden von 45 Minuten aufgebaut. Jede Stunde beginnt mit einem kurzen Rückblick und einer Leitfrage und endet mit Sicherung und Ausblick.
+Der Lernbereich ist für Einzelstunden von 45 Minuten aufgebaut. Jede Stunde beginnt mit Rückblick und Leitfrage und endet mit Sicherung und Ausblick.
 
 ## Unterrichtsfolge
 
@@ -18,16 +18,12 @@ Der Lernbereich ist für Einzelstunden von 45 Minuten aufgebaut. Jede Stunde beg
 | 05 | Musik im Computer | Abtastrate, Bittiefe, Kanäle, Kompression |
 | 06 | EVAS | Eingabe, Verarbeitung, Ausgabe, Speicherung |
 | 07 | EVAS-Präsentation | benotete Präsentationsleistung |
-| 08 | Was ist ein Algorithmus? | eindeutige Abläufe |
-| 09 | Algorithmen darstellen | Sequenz, Entscheidung, Wiederholung |
-| 10 | Scratch Einstieg | erstes Programm, Ereignisse |
-| 11 | Scratch Eingaben | Tastatur, Fragen, Antworten |
-| 12 | Scratch Bedingungen | wenn / sonst |
-| 13 | Scratch Schleifen | Wiederholungen |
-| 14 | Scratch Variablen | benannte Speicherplätze |
-| 15 | Scratch-Projekt / Kompetenzcheck | planen, programmieren, testen, wiederholen |
+| 08–14 | Algorithmen und Scratch | zusätzliche Vertiefung und Brücke zu Klasse 8 |
+| 15 | Hardware und Software | Komponenten, Betriebssystem, Anwendungen und Werkzeuge |
+| 16 | Speicher und Datenmengen | Prozessor, flüchtig/nichtflüchtig, Bit und Byte |
+| 17 | Dateien, Ordner und Pfade | Dateitypen, Ordnerstruktur, Pfadangaben, Dateioperationen |
 
-Die Dateien sind teilweise thematisch gebündelt, sodass eine Datei mehrere aufeinanderfolgende Einzelstunden unterstützen kann.
+Die Dateien sind teilweise thematisch gebündelt, sodass eine Datei mehrere aufeinanderfolgende Einzelstunden unterstützt.
 
 ## Leistungsbewertung
 
@@ -53,4 +49,4 @@ Die Geschichte der Informatik dient ausschließlich Einstieg und Orientierung un
 
 ## Übergang
 
-Die Klassenstufe 7 legt die Grundlage für Klasse 8: Algorithmen und Programmstrukturen sind bekannt; darauf können Objekt, Attribut, Klasse und Robot Karol aufbauen.
+Die Programmieranteile sind eine bewusst vorgezogene Vertiefung. Der Lernbereich „Repräsentation von Daten“ führt parallel die Begriffe Objekt, Attribut, Klasse und Methode ein. Damit sind die Voraussetzungen für die Vertiefung in Klasse 8 gelegt.
