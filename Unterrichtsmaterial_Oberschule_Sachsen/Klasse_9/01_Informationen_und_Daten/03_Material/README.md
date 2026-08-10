@@ -2,12 +2,29 @@
 
 Dieser Ordner enthält ergänzende Unterrichtsmaterialien zum Lernbereich **Informationen und Daten**.
 
-Hier werden Materialien abgelegt, die weder zum Arbeitsheft noch zum Lehrerband gehören, zum Beispiel:
+Die Materialien unterstützen insbesondere:
 
-- Karten,
-- Vorlagen,
-- Gruppenmaterial,
-- Beobachtungsbögen,
-- Differenzierungsmaterial.
+- Datenmodellierung,
+- Tabellen und Datensätze,
+- Primär- und Fremdschlüssel,
+- SQL und CRUD,
+- Suchen, Filtern und Sortieren,
+- Datenqualität,
+- Datenschutz,
+- Big Data und künstliche Intelligenz.
 
-Der Ordner kann im weiteren Review gezielt ergänzt werden.
+Für grundlegende SQL-Erklärungen wird auf
+
+```text
+Grundlagen/SQL/
+```
+
+verwiesen.
+
+Für die konkrete Arbeit mit SQLite wird auf
+
+```text
+Werkzeuge/SQLite/
+```
+
+verwiesen.
