@@ -18,91 +18,53 @@ SOURCE_BASE="$SOURCE_ROOT"
 rm -rf "$OUTPUT_ROOT" "$WORK_ROOT"
 mkdir -p "$OUTPUT_ROOT" "$WORK_ROOT"
 
-humanize() {
-  local s="$1"
-  s="${s#??_}"
-  s="${s//_/ }"
-  printf '%s' "$s"
-}
-
+humanize() { local s="$1"; s="${s#??_}"; s="${s//_/ }"; printf '%s' "$s"; }
 find_class() {
-  local rel="$1"
-  local segment
+  local rel="$1" segment
   IFS='/' read -r -a parts <<< "$rel"
   for segment in "${parts[@]}"; do
-    if [[ "$segment" =~ ^Klasse_([0-9]+)$ ]]; then
-      printf '%s' "${BASH_REMATCH[1]}"
-      return
-    fi
+    if [[ "$segment" =~ ^Klasse_([0-9]+)$ ]]; then printf '%s' "${BASH_REMATCH[1]}"; return; fi
   done
 }
 
 build_dir() {
-  local dir="$1"
-  local md_files=()
-  while IFS= read -r file; do md_files+=("$file"); done < <(
-    find "$dir" -maxdepth 1 -type f -name '*.md' ! -name 'README.md' -print | sort
-  )
+  local dir="$1" md_files=()
+  while IFS= read -r file; do md_files+=("$file"); done < <(find "$dir" -maxdepth 1 -type f -name '*.md' ! -name 'README.md' -print | sort)
   [[ "${#md_files[@]}" -gt 0 ]] || return 0
 
-  local relative="${dir#$SOURCE_ROOT/}"
-  local parent name out_dir safe combined class_no topic part title subtitle version build_date footer_text footer_tex
-  parent="$(dirname "$relative")"
-  name="$(basename "$relative")"
-  out_dir="$OUTPUT_ROOT"
+  local relative="${dir#$SOURCE_ROOT/}" parent name out_dir safe combined class_no topic part title subtitle version build_date footer_text footer_tex
+  parent="$(dirname "$relative")"; name="$(basename "$relative")"; out_dir="$OUTPUT_ROOT"
   [[ "$parent" != "." ]] && out_dir="$OUTPUT_ROOT/$parent"
   mkdir -p "$out_dir"
-
-  safe="$(printf '%s' "$relative" | tr '/\\:*?"<>|' '_')"
-  combined="$WORK_ROOT/$safe.md"
-  : > "$combined"
-
+  safe="$(printf '%s' "$relative" | tr '/\\:*?"<>|' '_')"; combined="$WORK_ROOT/$safe.md"; : > "$combined"
   [[ -f "$dir/README.md" ]] && { cat "$dir/README.md" >> "$combined"; printf '\n\n' >> "$combined"; }
+  for file in "${md_files[@]}"; do cat "$file" >> "$combined"; printf '\n\n' >> "$combined"; done
 
-  for file in "${md_files[@]}"; do
-    cat "$file" >> "$combined"
-    printf '\n\n' >> "$combined"
-  done
-
-  class_no="$(find_class "$relative")"
-  part="$(humanize "$name")"
-  topic="$part"
+  class_no="$(find_class "$relative")"; part="$(humanize "$name")"; topic="$part"
   [[ "$parent" != "." ]] && topic="$(humanize "$(basename "$parent")")"
-  title="$topic"
-  subtitle="$part"
-  [[ -n "$class_no" ]] && subtitle="Informatik · Klasse $class_no · $part"
-
-  version="$(git -C "$REPO_ROOT" describe --tags --always --dirty 2>/dev/null || echo unversioniert)"
-  build_date="$(date +%d.%m.%Y)"
+  title="$topic"; subtitle="$part"; [[ -n "$class_no" ]] && subtitle="Informatik · Klasse $class_no · $part"
+  version="$(git -C "$REPO_ROOT" describe --tags --always --dirty 2>/dev/null || echo unversioniert)"; build_date="$(date +%d.%m.%Y)"
   footer_text="Unterrichtsmaterial Oberschule Sachsen · Version $version · Build $build_date"
-
   echo "BUILD $relative"
 
-  pandoc "$combined" \
-    --from markdown --to docx --standalone --toc --toc-depth=2 \
-    --reference-doc="$TEMPLATE_ROOT/reference.docx" \
-    --lua-filter="$FILTER_ROOT/pagebreak.lua" \
-    --metadata "title=$title" \
-    --metadata "subtitle=$subtitle" \
-    --metadata "toc-title=Inhaltsverzeichnis" \
-    --metadata "lang=de-DE" \
-    --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" \
-    --output "$out_dir/$name.docx"
+  pandoc "$combined" --from markdown --to docx --standalone --toc --toc-depth=2 --reference-doc="$TEMPLATE_ROOT/reference.docx" --lua-filter="$FILTER_ROOT/pagebreak.lua" --metadata "title=$title" --metadata "subtitle=$subtitle" --metadata "toc-title=Inhaltsverzeichnis" --metadata "lang=de-DE" --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" --output "$out_dir/$name.docx"
+  python3 "$REPO_ROOT/Build/set_docx_footer.py" "$out_dir/$name.docx" --text "$footer_text"
 
-  python3 "$REPO_ROOT/Build/set_docx_footer.py" \
-    "$out_dir/$name.docx" \
-    --text "$footer_text"
+  pandoc "$combined" --from markdown --to html5 --standalone --toc --toc-depth=2 --lua-filter="$FILTER_ROOT/pagebreak.lua" --css="$TEMPLATE_ROOT/publishing.css" --embed-resources --metadata "title=$title" --metadata "subtitle=$subtitle" --metadata "toc-title=Inhaltsverzeichnis" --metadata "lang=de-DE" --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" --output "$out_dir/$name.html"
 
-  pandoc "$combined" \
-    --from markdown --to html5 --standalone --toc --toc-depth=2 \
-    --lua-filter="$FILTER_ROOT/pagebreak.lua" \
-    --css="$TEMPLATE_ROOT/publishing.css" --embed-resources \
-    --metadata "title=$title" \
-    --metadata "subtitle=$subtitle" \
-    --metadata "toc-title=Inhaltsverzeichnis" \
-    --metadata "lang=de-DE" \
-    --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" \
-    --output "$out_dir/$name.html"
+  # Präsentationsordner werden zusätzlich als editierbare PowerPoint-Datei gebaut.
+  # Pandoc übernimmt Überschriften als Folienstruktur sowie Text, Tabellen und lokale Bilder
+  # aus dem Markdown. Bilder werden über den gleichen resource-path wie bei DOCX/PDF aufgelöst.
+  if [[ "$name" == "05_Praesentationen" ]]; then
+    pandoc "$combined" \
+      --from markdown --to pptx --standalone \
+      --slide-level=2 \
+      --metadata "title=$title" \
+      --metadata "subtitle=$subtitle" \
+      --metadata "lang=de-DE" \
+      --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" \
+      --output "$out_dir/$name.pptx" || { echo "FEHLER: PPTX fehlgeschlagen: $relative" >&2; exit 1; }
+  fi
 
   if command -v xelatex >/dev/null 2>&1; then
     footer_tex="$WORK_ROOT/$safe-footer.tex"
@@ -114,28 +76,11 @@ build_dir() {
 \\renewcommand{\\headrulewidth}{0pt}
 \\renewcommand{\\footrulewidth}{0pt}
 EOF
-
-    pandoc "$combined" \
-      --from markdown --to pdf --standalone --toc --toc-depth=2 \
-      --lua-filter="$FILTER_ROOT/pagebreak.lua" \
-      --pdf-engine=xelatex \
-      --include-in-header="$footer_tex" \
-      --variable=classoption:titlepage \
-      --variable=geometry:margin=22mm \
-      --variable=mainfont:"DejaVu Sans" \
-      --variable=monofont:"DejaVu Sans Mono" \
-      --metadata "title=$title" \
-      --metadata "subtitle=$subtitle" \
-      --metadata "toc-title=Inhaltsverzeichnis" \
-      --metadata "lang=de-DE" \
-      --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" \
-      --output "$out_dir/$name.pdf" || echo "WARNUNG: PDF fehlgeschlagen: $relative" >&2
+    pandoc "$combined" --from markdown --to pdf --standalone --toc --toc-depth=2 --lua-filter="$FILTER_ROOT/pagebreak.lua" --pdf-engine=xelatex --include-in-header="$footer_tex" --variable=classoption:titlepage --variable=geometry:margin=22mm --variable=mainfont:"DejaVu Sans" --variable=monofont:"DejaVu Sans Mono" --metadata "title=$title" --metadata "subtitle=$subtitle" --metadata "toc-title=Inhaltsverzeichnis" --metadata "lang=de-DE" --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" --output "$out_dir/$name.pdf" || echo "WARNUNG: PDF fehlgeschlagen: $relative" >&2
   fi
 }
 
 while IFS= read -r -d '' dir; do build_dir "$dir"; done < <(find "$SOURCE_BASE" -type d -print0)
-
 python3 "$REPO_ROOT/Build/generate_index.py"
 rm -rf "$WORK_ROOT"
-
 echo "Build abgeschlossen: $OUTPUT_ROOT"
