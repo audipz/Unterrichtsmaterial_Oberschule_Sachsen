@@ -30,9 +30,6 @@ is_class_7_to_10() {
   [[ "$rel" == Klasse_7/* || "$rel" == Klasse_8/* || "$rel" == Klasse_9/* || "$rel" == Klasse_10/* ]]
 }
 
-# build.sh fasst jeweils einen Quellordner zu EINEM Dokument zusammen.
-# Aus .../01_Arbeitsheft/*.md wird daher .../01_Arbeitsheft.pdf bzw. .docx.
-# Deshalb muss auf den erzeugten Dokumentnamen geprüft werden.
 document_part() {
   local rel="$1"
   local base
@@ -48,7 +45,8 @@ is_student_path() {
   is_class_7_to_10 "$rel" || return 1
   part="$(document_part "$rel")"
 
-  # Schüler: Unterrichtsmaterial, aber keine Arbeiten und keine Lösungen.
+  # Schülerartefakt: ausschließlich Unterrichtsdokumente für Schülerinnen und Schüler.
+  # Keine Leistungskontrollen, Lösungen oder Lehrerunterlagen.
   case "$part" in
     01_Arbeitsheft|03_Material|06_Dateien|08_Bilder) return 0 ;;
     *) return 1 ;;
@@ -61,7 +59,7 @@ is_teacher_path() {
   is_class_7_to_10 "$rel" || return 1
   part="$(document_part "$rel")"
 
-  # Lehrer: Material einschließlich Arbeiten und Lösungen.
+  # Lehrerartefakt: sämtliche für die Unterrichtsdurchführung benötigten Dokumente.
   case "$part" in
     01_Arbeitsheft|02_Lehrerband|03_Material|04_Loesungen|05_Praesentationen|06_Dateien|08_Bilder|09_Lernkontrollen|04_Leistungskontrollen) return 0 ;;
     *) return 1 ;;
@@ -86,41 +84,9 @@ while IFS= read -r -d '' file; do
   fi
 done < <(find "$OUTPUT_ROOT" -type f -print0)
 
-cat > "$SCHUELER_ROOT/README.txt" <<'EOF'
-Schülerunterlagen Informatik Klassen 7–10
+# Keine README-, Audit-, Quellen- oder sonstigen Verwaltungsdateien in den
+# Veröffentlichungsartefakten. Die ZIPs enthalten ausschließlich Unterrichtsdokumente.
 
-Enthalten:
-- Arbeitshefte
-- Arbeits- und Zusatzmaterialien
-- benötigte Begleitdateien und Bildmaterial, sofern als Dokument erzeugt
-
-Nicht enthalten:
-- Leistungskontrollen / Arbeiten
-- Lösungen und Erwartungshorizonte
-- Lehrerband
-- interne Dokumentation und Quellenverwaltung
-EOF
-
-cat > "$LEHRER_ROOT/README.txt" <<'EOF'
-Lehrerunterlagen Informatik Klassen 7–10
-
-Enthalten:
-- Arbeitshefte
-- Lehrerband
-- Materialien und Begleitdateien
-- Lösungen und Erwartungshorizonte
-- Präsentationsunterlagen
-- Leistungskontrollen / Arbeiten
-- Bildmaterial, sofern als Dokument erzeugt
-
-Nicht enthalten:
-- interne Audits
-- Entwicklungsdokumentation
-- Quellenverwaltung
-- technische JSON-Metadaten
-EOF
-
-# Schutz gegen erneut leere ZIP-Artefakte.
 if [[ "$schueler_docs" -eq 0 ]]; then
   echo "FEHLER: Keine Schülerdokumente für das Veröffentlichungsartefakt gefunden." >&2
   exit 1
@@ -131,5 +97,5 @@ if [[ "$lehrer_docs" -eq 0 ]]; then
   exit 1
 fi
 
-echo "Schülerartefakt: $schueler_docs Dokumente + README"
-echo "Lehrerartefakt: $lehrer_docs Dokumente + README"
+echo "Schülerartefakt: $schueler_docs Unterrichtsdokumente"
+echo "Lehrerartefakt: $lehrer_docs Unterrichtsdokumente"
