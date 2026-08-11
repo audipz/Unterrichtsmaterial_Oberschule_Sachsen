@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: build-main
@@ -26,31 +26,35 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Pandoc installieren
+      - name: Build-Werkzeuge installieren
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc
+          sudo apt-get install -y pandoc texlive-xetex fonts-dejavu-core
 
       - name: Skripte ausführbar machen
         run: |
           chmod +x Build/*.sh
 
-     
-
       - name: Dokumente bauen
         run: |
           ./Build/build.sh
 
-      - name: Build-Ausgabe committen
+      - name: Veröffentlichungsartefakte zusammenstellen
         run: |
-          if git diff --quiet -- Ausgabe && git diff --cached --quiet -- Ausgabe; then
-            echo "Keine Änderungen in Ausgabe."
-            exit 0
-          fi
+          ./Build/package_artifacts.sh
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Schülerunterlagen bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: Schuelerunterlagen-Klassen-7-10
+          path: .publish/Schueler
+          if-no-files-found: error
+          retention-days: 30
 
-          git add Ausgabe
-          git commit -m "build(output): generierte Dokumente aktualisiert [skip ci]"
-          git push
+      - name: Lehrerunterlagen bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lehrerunterlagen-Klassen-7-10
+          path: .publish/Lehrer
+          if-no-files-found: error
+          retention-days: 30
