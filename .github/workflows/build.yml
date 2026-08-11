@@ -29,7 +29,12 @@ jobs:
       - name: Build-Werkzeuge installieren
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex fonts-dejavu-core
+          sudo apt-get install -y \
+            pandoc \
+            texlive-xetex \
+            texlive-latex-recommended \
+            fonts-dejavu-core \
+            python3-docx
 
       - name: Skripte ausführbar machen
         run: |
