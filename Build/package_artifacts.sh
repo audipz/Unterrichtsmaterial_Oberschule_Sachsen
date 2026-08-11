@@ -25,25 +25,51 @@ is_document() {
   esac
 }
 
+is_class_7_to_10() {
+  local rel="$1"
+  [[ "$rel" == Klasse_7/* || "$rel" == Klasse_8/* || "$rel" == Klasse_9/* || "$rel" == Klasse_10/* ]]
+}
+
+# build.sh fasst jeweils einen Quellordner zu EINEM Dokument zusammen.
+# Aus .../01_Arbeitsheft/*.md wird daher .../01_Arbeitsheft.pdf bzw. .docx.
+# Deshalb muss auf den erzeugten Dokumentnamen geprüft werden.
+document_part() {
+  local rel="$1"
+  local base
+  base="$(basename "$rel")"
+  base="${base%.pdf}"
+  base="${base%.docx}"
+  printf '%s' "$base"
+}
+
 is_student_path() {
   local rel="$1"
-  [[ "$rel" == Klasse_7/* || "$rel" == Klasse_8/* || "$rel" == Klasse_9/* || "$rel" == Klasse_10/* ]] || return 1
+  local part
+  is_class_7_to_10 "$rel" || return 1
+  part="$(document_part "$rel")"
 
-  case "/$rel/" in
-    */01_Arbeitsheft/*|*/03_Material/*) return 0 ;;
+  # Schüler: Unterrichtsmaterial, aber keine Arbeiten und keine Lösungen.
+  case "$part" in
+    01_Arbeitsheft|03_Material|06_Dateien|08_Bilder) return 0 ;;
     *) return 1 ;;
   esac
 }
 
 is_teacher_path() {
   local rel="$1"
-  [[ "$rel" == Klasse_7/* || "$rel" == Klasse_8/* || "$rel" == Klasse_9/* || "$rel" == Klasse_10/* ]] || return 1
+  local part
+  is_class_7_to_10 "$rel" || return 1
+  part="$(document_part "$rel")"
 
-  case "/$rel/" in
-    */01_Arbeitsheft/*|*/02_Lehrerband/*|*/03_Material/*|*/04_Loesungen/*|*/05_Praesentationen/*|*/09_Lernkontrollen/*|*/04_Leistungskontrollen/*) return 0 ;;
+  # Lehrer: Material einschließlich Arbeiten und Lösungen.
+  case "$part" in
+    01_Arbeitsheft|02_Lehrerband|03_Material|04_Loesungen|05_Praesentationen|06_Dateien|08_Bilder|09_Lernkontrollen|04_Leistungskontrollen) return 0 ;;
     *) return 1 ;;
   esac
 }
+
+schueler_docs=0
+lehrer_docs=0
 
 while IFS= read -r -d '' file; do
   is_document "$file" || continue
@@ -51,39 +77,59 @@ while IFS= read -r -d '' file; do
 
   if is_student_path "$rel"; then
     copy_doc "$file" "$SCHUELER_ROOT"
+    schueler_docs=$((schueler_docs + 1))
   fi
 
   if is_teacher_path "$rel"; then
     copy_doc "$file" "$LEHRER_ROOT"
+    lehrer_docs=$((lehrer_docs + 1))
   fi
 done < <(find "$OUTPUT_ROOT" -type f -print0)
 
 cat > "$SCHUELER_ROOT/README.txt" <<'EOF'
 Schülerunterlagen Informatik Klassen 7–10
 
-Enthalten sind nur für Schülerinnen und Schüler benötigte Dokumente:
+Enthalten:
 - Arbeitshefte
 - Arbeits- und Zusatzmaterialien
+- benötigte Begleitdateien und Bildmaterial, sofern als Dokument erzeugt
 
-Nicht enthalten sind Lösungen, Lehrerhinweise, interne Dokumentation, Quellenverwaltung oder Lernkontroll-Lösungen.
+Nicht enthalten:
+- Leistungskontrollen / Arbeiten
+- Lösungen und Erwartungshorizonte
+- Lehrerband
+- interne Dokumentation und Quellenverwaltung
 EOF
 
 cat > "$LEHRER_ROOT/README.txt" <<'EOF'
 Lehrerunterlagen Informatik Klassen 7–10
 
-Enthalten sind die für den Unterricht benötigten Dokumente:
+Enthalten:
 - Arbeitshefte
 - Lehrerband
-- Materialien
-- Lösungen
+- Materialien und Begleitdateien
+- Lösungen und Erwartungshorizonte
 - Präsentationsunterlagen
-- Leistungskontrollen und Erwartungshorizonte
+- Leistungskontrollen / Arbeiten
+- Bildmaterial, sofern als Dokument erzeugt
 
-Nicht enthalten sind interne Audits, Entwicklungsdokumentation, Quellenverwaltung und technische JSON-Metadaten.
+Nicht enthalten:
+- interne Audits
+- Entwicklungsdokumentation
+- Quellenverwaltung
+- technische JSON-Metadaten
 EOF
 
-schueler_count="$(find "$SCHUELER_ROOT" -type f | wc -l | tr -d ' ')"
-lehrer_count="$(find "$LEHRER_ROOT" -type f | wc -l | tr -d ' ')"
+# Schutz gegen erneut leere ZIP-Artefakte.
+if [[ "$schueler_docs" -eq 0 ]]; then
+  echo "FEHLER: Keine Schülerdokumente für das Veröffentlichungsartefakt gefunden." >&2
+  exit 1
+fi
 
-echo "Schülerartefakt: $schueler_count Dateien"
-echo "Lehrerartefakt: $lehrer_count Dateien"
+if [[ "$lehrer_docs" -eq 0 ]]; then
+  echo "FEHLER: Keine Lehrerdokumente für das Veröffentlichungsartefakt gefunden." >&2
+  exit 1
+fi
+
+echo "Schülerartefakt: $schueler_docs Dokumente + README"
+echo "Lehrerartefakt: $lehrer_docs Dokumente + README"
