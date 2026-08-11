@@ -46,7 +46,7 @@ build_dir() {
   [[ "${#md_files[@]}" -gt 0 ]] || return 0
 
   local relative="${dir#$SOURCE_ROOT/}"
-  local parent name out_dir safe combined class_no topic part title subtitle version build_date
+  local parent name out_dir safe combined class_no topic part title subtitle version build_date footer_text footer_tex
   parent="$(dirname "$relative")"
   name="$(basename "$relative")"
   out_dir="$OUTPUT_ROOT"
@@ -74,6 +74,7 @@ build_dir() {
 
   version="$(git -C "$REPO_ROOT" describe --tags --always --dirty 2>/dev/null || echo unversioniert)"
   build_date="$(date +%d.%m.%Y)"
+  footer_text="Unterrichtsmaterial Oberschule Sachsen · Version $version · Build $build_date"
 
   echo "BUILD $relative"
 
@@ -83,11 +84,14 @@ build_dir() {
     --lua-filter="$FILTER_ROOT/pagebreak.lua" \
     --metadata "title=$title" \
     --metadata "subtitle=$subtitle" \
-    --metadata "author=Unterrichtsmaterial Oberschule Sachsen" \
-    --metadata "date=Version $version · Build $build_date" \
+    --metadata "toc-title=Inhaltsverzeichnis" \
     --metadata "lang=de-DE" \
     --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" \
     --output "$out_dir/$name.docx"
+
+  python3 "$REPO_ROOT/Build/set_docx_footer.py" \
+    "$out_dir/$name.docx" \
+    --text "$footer_text"
 
   pandoc "$combined" \
     --from markdown --to html5 --standalone --toc --toc-depth=2 \
@@ -95,25 +99,34 @@ build_dir() {
     --css="$TEMPLATE_ROOT/publishing.css" --embed-resources \
     --metadata "title=$title" \
     --metadata "subtitle=$subtitle" \
-    --metadata "author=Unterrichtsmaterial Oberschule Sachsen" \
-    --metadata "date=Version $version · Build $build_date" \
+    --metadata "toc-title=Inhaltsverzeichnis" \
     --metadata "lang=de-DE" \
     --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" \
     --output "$out_dir/$name.html"
 
   if command -v xelatex >/dev/null 2>&1; then
+    footer_tex="$WORK_ROOT/$safe-footer.tex"
+    cat > "$footer_tex" <<EOF
+\\usepackage{fancyhdr}
+\\pagestyle{fancy}
+\\fancyhf{}
+\\fancyfoot[C]{\\scriptsize Unterrichtsmaterial Oberschule Sachsen · Version $version · Build $build_date}
+\\renewcommand{\\headrulewidth}{0pt}
+\\renewcommand{\\footrulewidth}{0pt}
+EOF
+
     pandoc "$combined" \
       --from markdown --to pdf --standalone --toc --toc-depth=2 \
       --lua-filter="$FILTER_ROOT/pagebreak.lua" \
       --pdf-engine=xelatex \
+      --include-in-header="$footer_tex" \
       --variable=classoption:titlepage \
       --variable=geometry:margin=22mm \
       --variable=mainfont:"DejaVu Sans" \
       --variable=monofont:"DejaVu Sans Mono" \
       --metadata "title=$title" \
       --metadata "subtitle=$subtitle" \
-      --metadata "author=Unterrichtsmaterial Oberschule Sachsen" \
-      --metadata "date=Version $version · Build $build_date" \
+      --metadata "toc-title=Inhaltsverzeichnis" \
       --metadata "lang=de-DE" \
       --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" \
       --output "$out_dir/$name.pdf" || echo "WARNUNG: PDF fehlgeschlagen: $relative" >&2
