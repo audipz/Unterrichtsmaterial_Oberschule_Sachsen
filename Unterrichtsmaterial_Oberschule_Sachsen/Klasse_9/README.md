@@ -2,9 +2,12 @@
 
 ## Überblick
 
-Die Materialien dieser Klassenstufe orientieren sich am sächsischen Lehrplan für Informatik an der Oberschule.
+Die Materialien orientieren sich am sächsischen Lehrplan Informatik Oberschule 2022. Für Klasse 9 sind verbindlich:
 
-Die Klasse 9 umfasst derzeit folgende Bereiche:
+- **Lernbereich 1: Informationen und Daten – 13 Ustd.**
+- **Lernbereich 2: Komplexaufgabe zur Algorithmierung – 12 Ustd.**
+
+Ergänzend stehen Wahlbereiche zur Verfügung.
 
 ```text
 00_Organisation/
@@ -13,55 +16,55 @@ Die Klasse 9 umfasst derzeit folgende Bereiche:
 03_Wahlbereich_Informatik_und_Automatisierung/
 ```
 
-## Lernbereiche
-
-### 01 – Informationen und Daten
+## Lernbereich 1 – Informationen und Daten
 
 Schwerpunkte:
 
-- Informationen beschaffen und bewerten
-- Daten strukturiert darstellen
-- Tabellen und Datenbanken
-- Klassen, Objekte und Attribute
-- Primär- und Fremdschlüssel
-- Suchen, Filtern und Sortieren
-- Auswertungen und Diagramme
-- Big Data und künstliche Intelligenz
-- Datenschutz
+- große Datensammlungen und ihre Nutzung im Alltag
+- Datenbanksystem als Einheit von Datenbankmanagementsystem und Datenbasis
+- Tabelle, Datensatz und Datenfeld
+- Felddatentypen: Text, Zahl, Datum, Währung und Wahrheitswert
+- einfache Datenmodelle
+- Einfügen, Sortieren, Filtern, Auswerten und Zusammenfassen
+- Interpretation von Abfrageergebnissen
+- Big Data und automatisierte Datenbeschaffung
+- Chancen und Risiken automatisierter Datenverarbeitung
+- Datenschutz, Persönlichkeitsrechte und gesellschaftlicher Umgang mit Daten
 
-### 02 – Komplexaufgabe zur Algorithmierung
+**Hinweis:** Primär- und Fremdschlüssel können zur Vertiefung verwendet werden, sind im Lehrplan 2022 für Klasse 9 jedoch nicht als verbindliche Begriffe ausgewiesen.
+
+## Lernbereich 2 – Komplexaufgabe zur Algorithmierung
 
 Schwerpunkte:
 
+- Definition und Phasen eines Projektes
+- Planung des Projektablaufs
+- Teambildung und Zusammenarbeit
 - Problemanalyse
-- Anforderungen
 - Lösungsentwurf
-- Algorithmierung
 - Umsetzung
-- Test
-- Qualitätskreislauf
+- Test und Verbesserung
 - Dokumentation
 - Präsentation
-- Reflexion
+- Qualitätskreislauf
+- Einsatz von Kommunikations- und Kooperationstools
 
-Die Programmiersprache ist dabei ein Werkzeug. Im Mittelpunkt steht das systematische Lösen eines Problems.
+Die Programmiersprache bzw. Programmierumgebung ist ein Werkzeug. Im Mittelpunkt steht das systematische Lösen einer Problemstellung im Team.
 
-### 03 – Wahlbereich Informatik und Automatisierung
+## Wahlbereich – Informatik und Automatisierung
 
 Schwerpunkte:
 
-- automatisierte Prozesse
+- Möglichkeiten und Grenzen automatisierter Prozesse
 - Bots und soziale Netzwerke
-- Smart Home
-- Sprachassistenten
-- Drohnen und Steuerungen
+- Smarthome und Sprachassistenten
+- Drohnen und technische Steuerungen
 - Datenschutz und Datensicherheit
-- politische Meinungsbildung
-- Möglichkeiten und Grenzen der Automatisierung
+- politische Meinungsbildung und Beeinflussung
 
 ## Einheitliche Werkteilstruktur
 
-Jeder vollständig ausgearbeitete Lernbereich verwendet nach Möglichkeit dieselbe Struktur:
+Vollständig ausgearbeitete Lernbereiche verwenden nach Möglichkeit:
 
 ```text
 01_Arbeitsheft/
@@ -75,37 +78,11 @@ Jeder vollständig ausgearbeitete Lernbereich verwendet nach Möglichkeit diesel
 09_Lernkontrollen/
 ```
 
-Technische JSON-Dateien zu Lernkontrollen liegen in:
-
-```text
-09_Lernkontrollen/json/
-```
-
-## Grundlagen
-
-Klassenübergreifende Grundlagen befinden sich außerhalb der Klassenstufen unter:
-
-```text
-Grundlagen/
-```
-
-Dort stehen unter anderem Nachschlagewerke zu:
-
-- Computer
-- Dateiverwaltung
-- Datenschutz
-- GitHub
-- KI
-- Markdown
-- Python
-- Scratch
-- VS Code
+Technische JSON-Dateien zu Lernkontrollen liegen unter `09_Lernkontrollen/json/`.
 
 ## Arbeitsprinzip
 
-Die Materialien folgen einem problemorientierten und iterativ-inkrementellen Ansatz.
-
-Typischer Ablauf:
+Die Materialien folgen einem problemorientierten und iterativ-inkrementellen Ansatz:
 
 ```text
 Problem verstehen
@@ -125,6 +102,10 @@ dokumentieren
 reflektieren
 ```
 
+## Leistungsbewertung
+
+Schriftliche Leistungskontrollen sollen den tatsächlich behandelten Stoff prüfen. Die Komplexaufgabe kann zusätzlich zur Diagnose, Dokumentation und Reflexion genutzt werden; die konkrete Benotungsform richtet sich nach der schulischen Festlegung.
+
 ## Status
 
-Klasse 9 wird als erste Klassenstufe vollständig ausgearbeitet und anschließend einem gemeinsamen Review unterzogen.
+Klasse 9 ist als ausgearbeitete Klassenstufe vorhanden. Diese Übersicht wurde nach der Fertigstellung von Klasse 7 und 8 auf den aktuellen Lehrplanbezug und die gemeinsame Werkstruktur abgestimmt.
