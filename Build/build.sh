@@ -27,6 +27,17 @@ find_class() {
   done
 }
 
+copy_pptx_masters() {
+  local pptx rel target
+  while IFS= read -r -d '' pptx; do
+    rel="${pptx#$SOURCE_ROOT/}"
+    target="$OUTPUT_ROOT/$rel"
+    mkdir -p "$(dirname "$target")"
+    cp "$pptx" "$target"
+    echo "COPY PPTX MASTER $rel"
+  done < <(find "$SOURCE_BASE" -type f -path '*/05_Praesentationen/*.pptx' -print0)
+}
+
 build_dir() {
   local dir="$1" md_files=()
   while IFS= read -r file; do md_files+=("$file"); done < <(find "$dir" -maxdepth 1 -type f -name '*.md' ! -name 'README.md' -print | sort)
@@ -36,7 +47,7 @@ build_dir() {
   parent="$(dirname "$relative")"; name="$(basename "$relative")"; out_dir="$OUTPUT_ROOT"
   [[ "$parent" != "." ]] && out_dir="$OUTPUT_ROOT/$parent"
   mkdir -p "$out_dir"
-  safe="$(printf '%s' "$relative" | tr '/\\:*?"<>|' '_')"; combined="$WORK_ROOT/$safe.md"; : > "$combined"
+  safe="$(printf '%s' "$relative" | tr '/\\:*?\"<>|' '_')"; combined="$WORK_ROOT/$safe.md"; : > "$combined"
   [[ -f "$dir/README.md" ]] && { cat "$dir/README.md" >> "$combined"; printf '\n\n' >> "$combined"; }
   for file in "${md_files[@]}"; do cat "$file" >> "$combined"; printf '\n\n' >> "$combined"; done
 
@@ -52,19 +63,8 @@ build_dir() {
 
   pandoc "$combined" --from markdown --to html5 --standalone --toc --toc-depth=2 --lua-filter="$FILTER_ROOT/pagebreak.lua" --css="$TEMPLATE_ROOT/publishing.css" --embed-resources --metadata "title=$title" --metadata "subtitle=$subtitle" --metadata "toc-title=Inhaltsverzeichnis" --metadata "lang=de-DE" --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" --output "$out_dir/$name.html"
 
-  # Präsentationsordner werden zusätzlich als editierbare PowerPoint-Datei gebaut.
-  # Pandoc übernimmt Überschriften als Folienstruktur sowie Text, Tabellen und lokale Bilder
-  # aus dem Markdown. Bilder werden über den gleichen resource-path wie bei DOCX/PDF aufgelöst.
-  if [[ "$name" == "05_Praesentationen" ]]; then
-    pandoc "$combined" \
-      --from markdown --to pptx --standalone \
-      --slide-level=2 \
-      --metadata "title=$title" \
-      --metadata "subtitle=$subtitle" \
-      --metadata "lang=de-DE" \
-      --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" \
-      --output "$out_dir/$name.pptx" || { echo "FEHLER: PPTX fehlgeschlagen: $relative" >&2; exit 1; }
-  fi
+  # PPTX werden nicht aus Markdown neu erzeugt. Die gepflegten Masterdateien
+  # enthalten Layout, Visualisierungen und Sprechernotizen und werden unverändert kopiert.
 
   if command -v xelatex >/dev/null 2>&1; then
     footer_tex="$WORK_ROOT/$safe-footer.tex"
@@ -81,6 +81,7 @@ EOF
 }
 
 while IFS= read -r -d '' dir; do build_dir "$dir"; done < <(find "$SOURCE_BASE" -type d -print0)
+copy_pptx_masters
 python3 "$REPO_ROOT/Build/generate_index.py"
 rm -rf "$WORK_ROOT"
 echo "Build abgeschlossen: $OUTPUT_ROOT"
