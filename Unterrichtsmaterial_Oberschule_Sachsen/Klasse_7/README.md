@@ -30,19 +30,20 @@ Die Materialien sind für Einzelstunden von 45 Minuten geplant. Jede Stunde begi
 - Klasse und Methode
 - personenbezogene Daten, Urheberrecht und Quellen
 
-### 3. Zusätzliche Vertiefung: Algorithmen und Scratch
+### 3. Algorithmen und Programmierung
 
-Auf Wunsch des Lehrwerkskonzepts wird Programmierung bereits in Klasse 7 vorbereitet:
+Die Programmiervertiefung besitzt einen eigenen, vollständigen Lernbereich. Alle zugehörigen Unterrichtsdateien liegen unter `03_Algorithmen_und_Programmierung`:
 
 - Sequenz, Entscheidung und Wiederholung
 - Scratch: Ereignisse, Eingaben, Bedingungen, Schleifen und Variablen
 - Übungsprojekt und Kompetenzcheck
+- separate Leistungskontrolle
 
 Diese Inhalte bilden bewusst eine Brücke zu Klasse 8.
 
-### 4. Wahlbereich
+### 4. Wahlbereiche
 
-Ausgearbeitet ist der Wahlbereich **Künstliche Intelligenz** mit zwei Einzelstunden zu KI im Alltag und zur kritischen Prüfung von KI-Ergebnissen.
+Die Wahlbereiche werden jeweils als eigenständige Lernbereiche mit konsistenter Binnenstruktur geführt.
 
 ## Leistungsbewertung
 
@@ -50,7 +51,7 @@ Es stehen mehrere benotbare bzw. schriftlich prüfbare Leistungen zur Verfügung
 
 - benotete EVAS-Präsentation mit Bewertungsraster
 - Leistungskontrolle „Digitale Information und EVAS“
-- Leistungskontrolle „Algorithmen und Scratch“
+- Leistungskontrolle „Algorithmen und Scratch“ im Lernbereich `03_Algorithmen_und_Programmierung`
 - Leistungskontrolle „Repräsentation von Daten“
 
 Die Geschichte der Informatik dient ausschließlich der Orientierung und Motivation. Jahreszahlen und biografische Detailkenntnisse sind **nicht** Gegenstand einer Leistungskontrolle.
