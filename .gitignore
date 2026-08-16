@@ -101,5 +101,9 @@ ehthumbs.db
 manifest.json
 Neue Datei
 
+# --------------------------------------------------
 # Generierte Build-Artefakte
+# --------------------------------------------------
+# Lokal ignorieren. GitHub Actions nimmt Ausgabe/ nach einem erfolgreichen
+# Build gezielt mit `git add -f` in den jeweiligen Branch auf.
 /Ausgabe/
