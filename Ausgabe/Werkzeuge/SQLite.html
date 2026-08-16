@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Werkzeuge</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Werkzeuge</h1>
+<p class="subtitle">SQLite</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#sqlite-werkzeughandbuch" id="toc-sqlite-werkzeughandbuch">SQLite – Werkzeughandbuch</a>
+<ul>
+<li><a href="#inhalte" id="toc-inhalte">Inhalte</a></li>
+</ul></li>
+<li><a href="#was-ist-sqlite" id="toc-was-ist-sqlite">Was ist
+SQLite?</a>
+<ul>
+<li><a href="#eigenschaften" id="toc-eigenschaften">Eigenschaften</a></li>
+<li><a href="#typische-einsatzbereiche" id="toc-typische-einsatzbereiche">Typische Einsatzbereiche</a></li>
+<li><a href="#abgrenzung" id="toc-abgrenzung">Abgrenzung</a></li>
+</ul></li>
+<li><a href="#sqlite-installieren" id="toc-sqlite-installieren">SQLite
+installieren</a>
+<ul>
+<li><a href="#macos" id="toc-macos">macOS</a></li>
+<li><a href="#linux" id="toc-linux">Linux</a></li>
+<li><a href="#windows" id="toc-windows">Windows</a></li>
+<li><a href="#prüfung" id="toc-prüfung">Prüfung</a></li>
+</ul></li>
+<li><a href="#sqlite-cli" id="toc-sqlite-cli">SQLite CLI</a>
+<ul>
+<li><a href="#neue-datenbank-öffnen-oder-anlegen" id="toc-neue-datenbank-öffnen-oder-anlegen">Neue Datenbank öffnen oder
+anlegen</a></li>
+<li><a href="#hilfe" id="toc-hilfe">Hilfe</a></li>
+<li><a href="#tabellen-anzeigen" id="toc-tabellen-anzeigen">Tabellen
+anzeigen</a></li>
+<li><a href="#schema-anzeigen" id="toc-schema-anzeigen">Schema
+anzeigen</a></li>
+<li><a href="#ausgabe-übersichtlicher-darstellen" id="toc-ausgabe-übersichtlicher-darstellen">Ausgabe übersichtlicher
+darstellen</a></li>
+<li><a href="#sqlite-verlassen" id="toc-sqlite-verlassen">SQLite
+verlassen</a></li>
+<li><a href="#merke" id="toc-merke">Merke</a></li>
+</ul></li>
+<li><a href="#datenbank-anlegen" id="toc-datenbank-anlegen">Datenbank
+anlegen</a>
+<ul>
+<li><a href="#cli" id="toc-cli">CLI</a></li>
+<li><a href="#speichern" id="toc-speichern">Speichern</a></li>
+<li><a href="#dateiendungen" id="toc-dateiendungen">Dateiendungen</a></li>
+</ul></li>
+<li><a href="#db-browser-for-sqlite" id="toc-db-browser-for-sqlite">DB
+Browser for SQLite</a>
+<ul>
+<li><a href="#typischer-ablauf" id="toc-typischer-ablauf">Typischer
+Ablauf</a></li>
+<li><a href="#wichtige-bereiche" id="toc-wichtige-bereiche">Wichtige
+Bereiche</a></li>
+<li><a href="#unterrichtshinweis" id="toc-unterrichtshinweis">Unterrichtshinweis</a></li>
+</ul></li>
+<li><a href="#sql-dateien-ausführen" id="toc-sql-dateien-ausführen">SQL-Dateien ausführen</a>
+<ul>
+<li><a href="#cli-1" id="toc-cli-1">CLI</a></li>
+<li><a href="#vorteil" id="toc-vorteil">Vorteil</a></li>
+<li><a href="#empfehlung" id="toc-empfehlung">Empfehlung</a></li>
+</ul></li>
+<li><a href="#fremdschlüssel-in-sqlite" id="toc-fremdschlüssel-in-sqlite">Fremdschlüssel in SQLite</a>
+<ul>
+<li><a href="#aktivieren" id="toc-aktivieren">Aktivieren</a></li>
+<li><a href="#status-prüfen" id="toc-status-prüfen">Status
+prüfen</a></li>
+<li><a href="#beispiel" id="toc-beispiel">Beispiel</a></li>
+<li><a href="#wichtig" id="toc-wichtig">Wichtig</a></li>
+</ul></li>
+<li><a href="#datentypen-und-type-affinity" id="toc-datentypen-und-type-affinity">Datentypen und Type Affinity</a>
+<ul>
+<li><a href="#beispiel-1" id="toc-beispiel-1">Beispiel</a></li>
+<li><a href="#wichtig-1" id="toc-wichtig-1">Wichtig</a></li>
+<li><a href="#strict-tables" id="toc-strict-tables">STRICT
+Tables</a></li>
+</ul></li>
+<li><a href="#integer-primary-key" id="toc-integer-primary-key">INTEGER
+PRIMARY KEY</a>
+<ul>
+<li><a href="#automatische-id" id="toc-automatische-id">Automatische
+ID</a></li>
+<li><a href="#empfehlung-1" id="toc-empfehlung-1">Empfehlung</a></li>
+</ul></li>
+<li><a href="#autoincrement" id="toc-autoincrement">AUTOINCREMENT</a>
+<ul>
+<li><a href="#unterschied" id="toc-unterschied">Unterschied</a></li>
+<li><a href="#konsequenz" id="toc-konsequenz">Konsequenz</a></li>
+<li><a href="#empfehlung-2" id="toc-empfehlung-2">Empfehlung</a></li>
+</ul></li>
+<li><a href="#truncate-table-in-sqlite" id="toc-truncate-table-in-sqlite">TRUNCATE TABLE in SQLite</a>
+<ul>
+<li><a href="#sqlite-variante" id="toc-sqlite-variante">SQLite-Variante</a></li>
+<li><a href="#achtung" id="toc-achtung">Achtung</a></li>
+</ul></li>
+<li><a href="#alter-table-besonderheiten" id="toc-alter-table-besonderheiten">ALTER TABLE – Besonderheiten</a>
+<ul>
+<li><a href="#tabelle-umbenennen" id="toc-tabelle-umbenennen">Tabelle
+umbenennen</a></li>
+<li><a href="#spalte-umbenennen" id="toc-spalte-umbenennen">Spalte
+umbenennen</a></li>
+<li><a href="#spalte-hinzufügen" id="toc-spalte-hinzufügen">Spalte
+hinzufügen</a></li>
+<li><a href="#einschränkung" id="toc-einschränkung">Einschränkung</a></li>
+</ul></li>
+<li><a href="#csv-importieren" id="toc-csv-importieren">CSV
+importieren</a>
+<ul>
+<li><a href="#db-browser-for-sqlite-1" id="toc-db-browser-for-sqlite-1">DB Browser for SQLite</a></li>
+<li><a href="#sqlite-cli-1" id="toc-sqlite-cli-1">SQLite CLI</a></li>
+<li><a href="#wichtig-2" id="toc-wichtig-2">Wichtig</a></li>
+</ul></li>
+<li><a href="#csv-exportieren" id="toc-csv-exportieren">CSV
+exportieren</a>
+<ul>
+<li><a href="#sqlite-cli-2" id="toc-sqlite-cli-2">SQLite CLI</a></li>
+<li><a href="#db-browser-for-sqlite-2" id="toc-db-browser-for-sqlite-2">DB Browser for SQLite</a></li>
+<li><a href="#einsatz" id="toc-einsatz">Einsatz</a></li>
+</ul></li>
+<li><a href="#backup" id="toc-backup">Backup</a>
+<ul>
+<li><a href="#sqlite-cli-3" id="toc-sqlite-cli-3">SQLite CLI</a></li>
+<li><a href="#wiederherstellung" id="toc-wiederherstellung">Wiederherstellung</a></li>
+<li><a href="#empfehlung-3" id="toc-empfehlung-3">Empfehlung</a></li>
+<li><a href="#merke-1" id="toc-merke-1">Merke</a></li>
+</ul></li>
+<li><a href="#transaktionen-in-sqlite" id="toc-transaktionen-in-sqlite">Transaktionen in SQLite</a>
+<ul>
+<li><a href="#bedeutung" id="toc-bedeutung">Bedeutung</a></li>
+</ul></li>
+<li><a href="#indizes-in-sqlite" id="toc-indizes-in-sqlite">Indizes in
+SQLite</a>
+<ul>
+<li><a href="#abfrageplan" id="toc-abfrageplan">Abfrageplan</a></li>
+</ul></li>
+<li><a href="#views-in-sqlite" id="toc-views-in-sqlite">Views in
+SQLite</a>
+<ul>
+<li><a href="#einordnung" id="toc-einordnung">Einordnung</a></li>
+</ul></li>
+<li><a href="#trigger-in-sqlite" id="toc-trigger-in-sqlite">Trigger in
+SQLite</a>
+<ul>
+<li><a href="#einsatzgebiete" id="toc-einsatzgebiete">Einsatzgebiete</a></li>
+<li><a href="#hinweis" id="toc-hinweis">Hinweis</a></li>
+</ul></li>
+<li><a href="#stored-procedures-und-sqlite" id="toc-stored-procedures-und-sqlite">Stored Procedures und SQLite</a>
+<ul>
+<li><a href="#konsequenz-1" id="toc-konsequenz-1">Konsequenz</a></li>
+</ul></li>
+<li><a href="#typische-fehler" id="toc-typische-fehler">Typische
+Fehler</a>
+<ul>
+<li><a href="#no-such-table" id="toc-no-such-table">no such
+table</a></li>
+<li><a href="#no-such-column" id="toc-no-such-column">no such
+column</a></li>
+<li><a href="#unique-constraint-failed" id="toc-unique-constraint-failed">UNIQUE constraint failed</a></li>
+<li><a href="#foreign-key-constraint-failed" id="toc-foreign-key-constraint-failed">FOREIGN KEY constraint
+failed</a></li>
+<li><a href="#database-is-locked" id="toc-database-is-locked">database
+is locked</a></li>
+<li><a href="#syntax-error" id="toc-syntax-error">syntax error</a></li>
+<li><a href="#vorgehen" id="toc-vorgehen">Vorgehen</a></li>
+</ul></li>
+<li><a href="#howto-sqlite-im-unterricht" id="toc-howto-sqlite-im-unterricht">HowTo – SQLite im Unterricht</a>
+<ul>
+<li><a href="#neue-übungsdatenbank" id="toc-neue-übungsdatenbank">Neue
+Übungsdatenbank</a></li>
+<li><a href="#fremdschlüssel-aktivieren" id="toc-fremdschlüssel-aktivieren">Fremdschlüssel aktivieren</a></li>
+<li><a href="#schema-ausführen" id="toc-schema-ausführen">Schema
+ausführen</a></li>
+<li><a href="#tabellen-prüfen" id="toc-tabellen-prüfen">Tabellen
+prüfen</a></li>
+<li><a href="#daten-anzeigen" id="toc-daten-anzeigen">Daten
+anzeigen</a></li>
+<li><a href="#crud-üben" id="toc-crud-üben">CRUD üben</a></li>
+<li><a href="#beenden" id="toc-beenden">Beenden</a></li>
+<li><a href="#empfohlener-lernweg" id="toc-empfohlener-lernweg">Empfohlener Lernweg</a></li>
+</ul></li>
+<li><a href="#sqlite-cheatsheet" id="toc-sqlite-cheatsheet">SQLite
+Cheatsheet</a>
+<ul>
+<li><a href="#start" id="toc-start">Start</a></li>
+<li><a href="#hilfe-1" id="toc-hilfe-1">Hilfe</a></li>
+<li><a href="#tabellen" id="toc-tabellen">Tabellen</a></li>
+<li><a href="#schema" id="toc-schema">Schema</a></li>
+<li><a href="#sql-datei" id="toc-sql-datei">SQL-Datei</a></li>
+<li><a href="#format" id="toc-format">Format</a></li>
+<li><a href="#fremdschlüssel" id="toc-fremdschlüssel">Fremdschlüssel</a></li>
+<li><a href="#backup-1" id="toc-backup-1">Backup</a></li>
+<li><a href="#import-csv" id="toc-import-csv">Import CSV</a></li>
+<li><a href="#beenden-1" id="toc-beenden-1">Beenden</a></li>
+</ul></li>
+<li><a href="#übungen" id="toc-übungen">Übungen</a>
+<ul>
+<li><a href="#datenbank-öffnen" id="toc-datenbank-öffnen">1 – Datenbank
+öffnen</a></li>
+<li><a href="#fremdschlüssel-1" id="toc-fremdschlüssel-1">2 –
+Fremdschlüssel</a></li>
+<li><a href="#schema-1" id="toc-schema-1">3 – Schema</a></li>
+<li><a href="#crud" id="toc-crud">4 – CRUD</a></li>
+<li><a href="#csv" id="toc-csv">5 – CSV</a></li>
+<li><a href="#backup-2" id="toc-backup-2">6 – Backup</a></li>
+<li><a href="#index" id="toc-index">7 – Index</a></li>
+</ul></li>
+<li><a href="#quellen" id="toc-quellen">Quellen</a></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="sqlite-werkzeughandbuch">SQLite – Werkzeughandbuch</h1>
+<p>Dieser Bereich beschreibt den praktischen Einsatz von SQLite.</p>
+<p>Die allgemeinen SQL-Grundlagen befinden sich unter:</p>
+<pre class="text"><code>Grundlagen/SQL/</code></pre>
+<p>Hier geht es ausschließlich um SQLite-spezifische Besonderheiten und
+Werkzeuge.</p>
+<h2 id="inhalte">Inhalte</h2>
+<ul>
+<li>SQLite installieren</li>
+<li>SQLite CLI verwenden</li>
+<li>DB Browser for SQLite verwenden</li>
+<li>Datenbanken anlegen und öffnen</li>
+<li>SQL-Dateien ausführen</li>
+<li>CSV importieren und exportieren</li>
+<li>Backups erstellen</li>
+<li>Fremdschlüssel aktivieren</li>
+<li>Datentypen und Type Affinity</li>
+<li><code>INTEGER PRIMARY KEY</code></li>
+<li><code>AUTOINCREMENT</code></li>
+<li>Besonderheiten bei <code>ALTER TABLE</code></li>
+<li>Ersatz für <code>TRUNCATE TABLE</code></li>
+<li>typische Fehler</li>
+<li>praktische Übungen</li>
+</ul>
+<div class="page-break"></div>
+<h1 id="was-ist-sqlite">Was ist SQLite?</h1>
+<p>SQLite ist ein relationales Datenbanksystem, das ohne separaten
+Datenbankserver arbeitet.</p>
+<p>Eine SQLite-Datenbank besteht typischerweise aus einer einzelnen
+Datei.</p>
+<p>Beispiel:</p>
+<pre class="text"><code>schulverwaltung.db</code></pre>
+<h2 id="eigenschaften">Eigenschaften</h2>
+<p>SQLite ist:</p>
+<ul>
+<li>leichtgewichtig,</li>
+<li>serverlos,</li>
+<li>dateibasiert,</li>
+<li>weit verbreitet,</li>
+<li>gut für lokale Anwendungen und Unterricht geeignet.</li>
+</ul>
+<h2 id="typische-einsatzbereiche">Typische Einsatzbereiche</h2>
+<ul>
+<li>Desktop-Programme</li>
+<li>mobile Apps</li>
+<li>lokale Werkzeuge</li>
+<li>Prototypen</li>
+<li>Tests</li>
+<li>Unterricht</li>
+</ul>
+<h2 id="abgrenzung">Abgrenzung</h2>
+<p>SQLite ist ein konkretes Datenbanksystem.</p>
+<p>SQL ist die Sprache, mit der relationale Datenbanken beschrieben und
+abgefragt werden.</p>
+<blockquote>
+<p>SQL ist der Standard bzw. die Sprache. SQLite ist eine konkrete
+Implementierung.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="sqlite-installieren">SQLite installieren</h1>
+<h2 id="macos">macOS</h2>
+<p>SQLite ist auf vielen macOS-Systemen bereits vorhanden.</p>
+<p>Prüfen:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite3</span> <span class="at">--version</span></span></code></pre></div>
+<p>Falls SQLite nicht vorhanden ist oder eine aktuelle Version benötigt
+wird:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install sqlite</span></code></pre></div>
+<h2 id="linux">Linux</h2>
+<p>Beispiel Debian/Ubuntu:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install sqlite3</span></code></pre></div>
+<h2 id="windows">Windows</h2>
+<p>SQLite kann als Kommandozeilenwerkzeug installiert werden.</p>
+<p>Alternativ kann DB Browser for SQLite verwendet werden.</p>
+<h2 id="prüfung">Prüfung</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite3</span> <span class="at">--version</span></span></code></pre></div>
+<p>Wenn eine Versionsnummer erscheint, ist das Werkzeug verfügbar.</p>
+<div class="page-break"></div>
+<h1 id="sqlite-cli">SQLite CLI</h1>
+<p>Die SQLite-Kommandozeile wird mit <code>sqlite3</code> gestartet.</p>
+<h2 id="neue-datenbank-öffnen-oder-anlegen">Neue Datenbank öffnen oder
+anlegen</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite3</span> schulverwaltung.db</span></code></pre></div>
+<p>Existiert die Datei noch nicht, wird sie beim ersten Speichern
+angelegt.</p>
+<h2 id="hilfe">Hilfe</h2>
+<pre class="text"><code>.help</code></pre>
+<h2 id="tabellen-anzeigen">Tabellen anzeigen</h2>
+<pre class="text"><code>.tables</code></pre>
+<h2 id="schema-anzeigen">Schema anzeigen</h2>
+<pre class="text"><code>.schema</code></pre>
+<h2 id="ausgabe-übersichtlicher-darstellen">Ausgabe übersichtlicher
+darstellen</h2>
+<pre class="text"><code>.headers on
+.mode column</code></pre>
+<h2 id="sqlite-verlassen">SQLite verlassen</h2>
+<pre class="text"><code>.quit</code></pre>
+<h2 id="merke">Merke</h2>
+<p>Befehle, die mit einem Punkt beginnen, sind Befehle der SQLite-CLI
+und <strong>kein SQL</strong>.</p>
+<p>Beispiel:</p>
+<pre class="text"><code>.tables</code></pre>
+<p>ist SQLite-CLI.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> Schueler;</span></code></pre></div>
+<p>ist SQL.</p>
+<div class="page-break"></div>
+<h1 id="datenbank-anlegen">Datenbank anlegen</h1>
+<h2 id="cli">CLI</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite3</span> schule.db</span></code></pre></div>
+<p>Danach kann direkt SQL eingegeben werden.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Klasse (</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    KlasseID <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    Bezeichnung TEXT <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">UNIQUE</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
+<h2 id="speichern">Speichern</h2>
+<p>SQLite schreibt Änderungen grundsätzlich in die Datenbankdatei.</p>
+<p>Die Datei kann danach mit anderen SQLite-Werkzeugen geöffnet
+werden.</p>
+<h2 id="dateiendungen">Dateiendungen</h2>
+<p>Übliche Endungen sind:</p>
+<pre class="text"><code>.db
+.sqlite
+.sqlite3</code></pre>
+<p>Die Endung ändert nicht das Datenbankformat.</p>
+<div class="page-break"></div>
+<h1 id="db-browser-for-sqlite">DB Browser for SQLite</h1>
+<p>DB Browser for SQLite ist eine grafische Oberfläche zur Arbeit mit
+SQLite-Datenbanken.</p>
+<h2 id="typischer-ablauf">Typischer Ablauf</h2>
+<ol type="1">
+<li>Programm starten.</li>
+<li><strong>Neue Datenbank</strong> wählen.</li>
+<li>Speicherort und Dateinamen festlegen.</li>
+<li>Tabellen anlegen oder SQL ausführen.</li>
+<li>Daten kontrollieren.</li>
+<li>Änderungen speichern.</li>
+</ol>
+<h2 id="wichtige-bereiche">Wichtige Bereiche</h2>
+<h3 id="datenbankstruktur">Datenbankstruktur</h3>
+<p>Zeigt:</p>
+<ul>
+<li>Tabellen</li>
+<li>Spalten</li>
+<li>Indizes</li>
+<li>Trigger</li>
+<li>Views</li>
+</ul>
+<h3 id="daten-durchsuchen">Daten durchsuchen</h3>
+<p>Zeigt Datensätze tabellarisch.</p>
+<h3 id="sql-ausführen">SQL ausführen</h3>
+<p>Hier können SQL-Anweisungen geschrieben und ausgeführt werden.</p>
+<h2 id="unterrichtshinweis">Unterrichtshinweis</h2>
+<p>Für den Einstieg ist der SQL-Editor besonders wichtig.</p>
+<p>Die Schülerinnen und Schüler sollen SQL-Befehle bewusst ausführen und
+nicht ausschließlich Tabellen über grafische Dialoge erzeugen.</p>
+<div class="page-break"></div>
+<h1 id="sql-dateien-ausführen">SQL-Dateien ausführen</h1>
+<p>SQL-Befehle können in Dateien gespeichert werden.</p>
+<p>Beispiel:</p>
+<pre class="text"><code>schema.sql</code></pre>
+<h2 id="cli-1">CLI</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite3</span> schule.db <span class="op">&lt;</span> schema.sql</span></code></pre></div>
+<p>Oder innerhalb der SQLite-CLI:</p>
+<pre class="text"><code>.read schema.sql</code></pre>
+<h2 id="vorteil">Vorteil</h2>
+<p>Damit können Datenbanken reproduzierbar aufgebaut werden.</p>
+<p>Ein SQL-Skript kann enthalten:</p>
+<ul>
+<li><code>CREATE TABLE</code></li>
+<li><code>CREATE INDEX</code></li>
+<li><code>INSERT</code></li>
+<li>Beispieldaten</li>
+</ul>
+<h2 id="empfehlung">Empfehlung</h2>
+<p>Datenbankschema und Beispieldaten nach Möglichkeit als SQL-Dateien
+versionieren.</p>
+<div class="page-break"></div>
+<h1 id="fremdschlüssel-in-sqlite">Fremdschlüssel in SQLite</h1>
+<p>SQLite unterstützt Fremdschlüssel.</p>
+<p>Sie müssen jedoch in vielen Nutzungssituationen explizit aktiviert
+werden.</p>
+<h2 id="aktivieren">Aktivieren</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>PRAGMA foreign_keys <span class="op">=</span> <span class="kw">ON</span>;</span></code></pre></div>
+<h2 id="status-prüfen">Status prüfen</h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>PRAGMA foreign_keys;</span></code></pre></div>
+<p>Ergebnis:</p>
+<pre class="text"><code>1</code></pre>
+<p>bedeutet aktiviert.</p>
+<h2 id="beispiel">Beispiel</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Klasse (</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    KlasseID <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    Bezeichnung TEXT <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Schueler (</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    SchuelerID <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    Name TEXT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    KlasseID <span class="dt">INTEGER</span>,</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (KlasseID)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">REFERENCES</span> Klasse(KlasseID)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
+<h2 id="wichtig">Wichtig</h2>
+<blockquote>
+<p>Ein definierter Fremdschlüssel schützt nur dann zuverlässig, wenn die
+Fremdschlüsselprüfung aktiviert ist.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="datentypen-und-type-affinity">Datentypen und Type Affinity</h1>
+<p>SQLite behandelt Datentypen flexibler als viele andere relationale
+Datenbanksysteme.</p>
+<p>SQLite verwendet sogenannte <strong>Type Affinities</strong>.</p>
+<p>Wichtige Gruppen sind:</p>
+<ul>
+<li>INTEGER</li>
+<li>REAL</li>
+<li>TEXT</li>
+<li>BLOB</li>
+<li>NUMERIC</li>
+</ul>
+<h2 id="beispiel-1">Beispiel</h2>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Messwert (</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    MesswertID <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    Wert <span class="dt">REAL</span>,</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    Einheit TEXT</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
+<h2 id="wichtig-1">Wichtig</h2>
+<p>SQLite erzwingt Datentypen in klassischen Tabellen weniger streng als
+viele andere Datenbanksysteme.</p>
+<p>Für Unterricht und Datenqualität gilt trotzdem:</p>
+<blockquote>
+<p>Spalten sollten fachlich passende Datentypen erhalten.</p>
+</blockquote>
+<h2 id="strict-tables">STRICT Tables</h2>
+<p>Neuere SQLite-Versionen unterstützen
+<code>STRICT</code>-Tabellen.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Beispiel (</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ID</span> <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    Name TEXT <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>) STRICT;</span></code></pre></div>
+<p>Damit werden Datentypen strenger kontrolliert.</p>
+<div class="page-break"></div>
+<h1 id="integer-primary-key">INTEGER PRIMARY KEY</h1>
+<p><code>INTEGER PRIMARY KEY</code> besitzt in SQLite eine besondere
+Bedeutung.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Schueler (</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    SchuelerID <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    Name TEXT <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
+<p>Die Spalte wird dabei mit der internen <code>rowid</code>
+verbunden.</p>
+<h2 id="automatische-id">Automatische ID</h2>
+<p>Wird keine ID angegeben, kann SQLite eine passende Ganzzahl
+erzeugen.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> Schueler (Name)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="st">&#39;Mia&#39;</span>);</span></code></pre></div>
+<h2 id="empfehlung-1">Empfehlung</h2>
+<p>Für einfache lokale Datenbanken ist</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span></span></code></pre></div>
+<p>meist ausreichend.</p>
+<p><code>AUTOINCREMENT</code> ist nicht automatisch notwendig.</p>
+<div class="page-break"></div>
+<h1 id="autoincrement">AUTOINCREMENT</h1>
+<p>SQLite unterstützt:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT</span></code></pre></div>
+<p>Beispiel:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Schueler (</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    SchuelerID <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT,</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    Name TEXT <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
+<h2 id="unterschied">Unterschied</h2>
+<p><code>INTEGER PRIMARY KEY</code> kann bereits automatisch neue IDs
+erzeugen.</p>
+<p><code>AUTOINCREMENT</code> verändert die Regel, nach der neue IDs
+vergeben werden, und verhindert insbesondere die Wiederverwendung
+bestimmter bereits vergebener Werte.</p>
+<h2 id="konsequenz">Konsequenz</h2>
+<p><code>AUTOINCREMENT</code> verursacht zusätzlichen
+Verwaltungsaufwand.</p>
+<h2 id="empfehlung-2">Empfehlung</h2>
+<blockquote>
+<p><code>AUTOINCREMENT</code> nur verwenden, wenn die strengere
+ID-Vergabe tatsächlich benötigt wird.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="truncate-table-in-sqlite">TRUNCATE TABLE in SQLite</h1>
+<p>SQLite unterstützt <code>TRUNCATE TABLE</code> nicht.</p>
+<p>Folgendes ist deshalb ungültig:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">TRUNCATE</span> <span class="kw">TABLE</span> Schueler;</span></code></pre></div>
+<h2 id="sqlite-variante">SQLite-Variante</h2>
+<p>Alle Datensätze löschen:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> Schueler;</span></code></pre></div>
+<p>Die Tabelle bleibt bestehen.</p>
+<h2 id="achtung">Achtung</h2>
+<p><code>DELETE FROM</code> und <code>TRUNCATE TABLE</code> sind
+konzeptionell nicht identisch.</p>
+<p>Das SQL-Grundlagenkapitel behandelt die allgemeine Bedeutung von
+<code>TRUNCATE TABLE</code>.</p>
+<p>Dieses Kapitel beschreibt nur die SQLite-spezifische Umsetzung.</p>
+<div class="page-break"></div>
+<h1 id="alter-table-besonderheiten">ALTER TABLE – Besonderheiten</h1>
+<p>SQLite unterstützt wichtige <code>ALTER TABLE</code>-Operationen.</p>
+<p>Beispiele:</p>
+<h2 id="tabelle-umbenennen">Tabelle umbenennen</h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> Schueler</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">RENAME</span> <span class="kw">TO</span> Lernende;</span></code></pre></div>
+<h2 id="spalte-umbenennen">Spalte umbenennen</h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> Schueler</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="kw">RENAME</span> <span class="kw">COLUMN</span> Name <span class="kw">TO</span> Nachname;</span></code></pre></div>
+<h2 id="spalte-hinzufügen">Spalte hinzufügen</h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> Schueler</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="kw">ADD</span> <span class="kw">COLUMN</span> Email TEXT;</span></code></pre></div>
+<h2 id="einschränkung">Einschränkung</h2>
+<p>Komplexe Schemaänderungen können je nach SQLite-Version und
+gewünschter Änderung eine neue Tabelle erfordern.</p>
+<p>Typischer Ablauf:</p>
+<ol type="1">
+<li>neue Tabelle anlegen,</li>
+<li>Daten übertragen,</li>
+<li>alte Tabelle löschen,</li>
+<li>neue Tabelle umbenennen.</li>
+</ol>
+<p>Vor solchen Änderungen immer ein Backup erstellen.</p>
+<div class="page-break"></div>
+<h1 id="csv-importieren">CSV importieren</h1>
+<h2 id="db-browser-for-sqlite-1">DB Browser for SQLite</h2>
+<p>Typischer Ablauf:</p>
+<ol type="1">
+<li>Datenbank öffnen.</li>
+<li>Importfunktion wählen.</li>
+<li>CSV-Datei auswählen.</li>
+<li>Trennzeichen prüfen.</li>
+<li>Spaltennamen prüfen.</li>
+<li>Datentypen prüfen.</li>
+<li>Import durchführen.</li>
+<li>Ergebnis kontrollieren.</li>
+</ol>
+<h2 id="sqlite-cli-1">SQLite CLI</h2>
+<pre class="text"><code>.mode csv
+.import daten.csv Schueler</code></pre>
+<h2 id="wichtig-2">Wichtig</h2>
+<p>Vor dem Import prüfen:</p>
+<ul>
+<li>Zeichencodierung</li>
+<li>Trennzeichen</li>
+<li>Kopfzeile</li>
+<li>Datentypen</li>
+<li>leere Werte</li>
+<li>eindeutige Schlüssel</li>
+</ul>
+<p>Ein erfolgreicher Import bedeutet nicht automatisch, dass die Daten
+fachlich korrekt sind.</p>
+<div class="page-break"></div>
+<h1 id="csv-exportieren">CSV exportieren</h1>
+<h2 id="sqlite-cli-2">SQLite CLI</h2>
+<pre class="text"><code>.headers on
+.mode csv
+.output schueler.csv
+SELECT * FROM Schueler;
+.output stdout</code></pre>
+<h2 id="db-browser-for-sqlite-2">DB Browser for SQLite</h2>
+<p>Abfragen oder Tabellen können über die Exportfunktionen als CSV
+gespeichert werden.</p>
+<h2 id="einsatz">Einsatz</h2>
+<p>CSV eignet sich besonders für:</p>
+<ul>
+<li>Tabellenkalkulation,</li>
+<li>Datenaustausch,</li>
+<li>kleinere Analysen,</li>
+<li>Sicherung einzelner Abfrageergebnisse.</li>
+</ul>
+<div class="page-break"></div>
+<h1 id="backup">Backup</h1>
+<p>Eine SQLite-Datenbank ist häufig nur eine Datei.</p>
+<p>Trotzdem sollte sie nicht beliebig während laufender Schreibzugriffe
+kopiert werden.</p>
+<h2 id="sqlite-cli-3">SQLite CLI</h2>
+<pre class="text"><code>.backup sicherung.db</code></pre>
+<h2 id="wiederherstellung">Wiederherstellung</h2>
+<p>Eine Sicherungsdatei kann anschließend wie jede andere
+SQLite-Datenbank geöffnet werden.</p>
+<h2 id="empfehlung-3">Empfehlung</h2>
+<p>Vor größeren Schemaänderungen:</p>
+<ol type="1">
+<li>Datenbank schließen oder konsistent sichern.</li>
+<li>Backup erzeugen.</li>
+<li>Änderung durchführen.</li>
+<li>Ergebnis prüfen.</li>
+</ol>
+<h2 id="merke-1">Merke</h2>
+<blockquote>
+<p>Eine Änderung ohne Backup ist nur so lange harmlos, bis sie
+schiefgeht.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="transaktionen-in-sqlite">Transaktionen in SQLite</h1>
+<p>SQLite unterstützt Transaktionen.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="cf">BEGIN</span>;</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> Konto</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> Guthaben <span class="op">=</span> Guthaben <span class="op">-</span> <span class="dv">10</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> KontoID <span class="op">=</span> <span class="dv">1</span>;</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> Konto</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> Guthaben <span class="op">=</span> Guthaben <span class="op">+</span> <span class="dv">10</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> KontoID <span class="op">=</span> <span class="dv">2</span>;</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="kw">COMMIT</span>;</span></code></pre></div>
+<p>Bei einem Fehler:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ROLLBACK</span>;</span></code></pre></div>
+<h2 id="bedeutung">Bedeutung</h2>
+<p>Mehrere Änderungen können damit als gemeinsame Einheit behandelt
+werden.</p>
+<p>Transaktionen gehören fachlich zu den SQL-/Datenbankgrundlagen,
+werden hier aber zusätzlich praktisch für SQLite gezeigt.</p>
+<div class="page-break"></div>
+<h1 id="indizes-in-sqlite">Indizes in SQLite</h1>
+<p>Index anlegen:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">INDEX</span> idx_schueler_name</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> Schueler(Name);</span></code></pre></div>
+<p>Indizes anzeigen:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> sqlite_master</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">type</span> <span class="op">=</span> <span class="st">&#39;index&#39;</span>;</span></code></pre></div>
+<p>Index löschen:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">INDEX</span> idx_schueler_name;</span></code></pre></div>
+<h2 id="abfrageplan">Abfrageplan</h2>
+<p>SQLite kann den geplanten Zugriff anzeigen:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">EXPLAIN</span> <span class="kw">QUERY</span> <span class="kw">PLAN</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Name <span class="op">=</span> <span class="st">&#39;Mia&#39;</span>;</span></code></pre></div>
+<p>Das hilft zu erkennen, ob ein Index verwendet wird.</p>
+<div class="page-break"></div>
+<h1 id="views-in-sqlite">Views in SQLite</h1>
+<p>SQLite unterstützt Views.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> SchuelerMitKlasse <span class="kw">AS</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    Schueler.SchuelerID,</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    Schueler.Name,</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    Klasse.Bezeichnung</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> Klasse</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ON</span> Schueler.KlasseID <span class="op">=</span> Klasse.KlasseID;</span></code></pre></div>
+<p>Abfrage:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> SchuelerMitKlasse;</span></code></pre></div>
+<p>Löschen:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">VIEW</span> SchuelerMitKlasse;</span></code></pre></div>
+<h2 id="einordnung">Einordnung</h2>
+<p>Views sind ein fortgeschrittenes Thema.</p>
+<p>Die allgemeinen Konzepte gehören in den SQL-Grundlagenbereich, sobald
+sie dort eingeführt werden.</p>
+<div class="page-break"></div>
+<h1 id="trigger-in-sqlite">Trigger in SQLite</h1>
+<p>SQLite unterstützt Trigger.</p>
+<p>Ein Trigger führt automatisch SQL aus, wenn ein bestimmtes Ereignis
+eintritt.</p>
+<p>Beispiel:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TRIGGER</span> Beispiel</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="kw">AFTER</span> <span class="kw">INSERT</span> <span class="kw">ON</span> Schueler</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="cf">BEGIN</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- weitere SQL-Anweisungen</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="cf">END</span>;</span></code></pre></div>
+<h2 id="einsatzgebiete">Einsatzgebiete</h2>
+<ul>
+<li>Protokollierung</li>
+<li>automatische Folgeänderungen</li>
+<li>zusätzliche Prüfungen</li>
+</ul>
+<h2 id="hinweis">Hinweis</h2>
+<p>Trigger sind ein fortgeschrittenes Thema und sollten erst eingesetzt
+werden, wenn normale SQL-Operationen sicher beherrscht werden.</p>
+<div class="page-break"></div>
+<h1 id="stored-procedures-und-sqlite">Stored Procedures und SQLite</h1>
+<p>SQLite besitzt keine Stored Procedures wie beispielsweise Oracle,
+PostgreSQL oder SQL Server.</p>
+<p>Geschäftslogik wird bei SQLite typischerweise:</p>
+<ul>
+<li>in der Anwendung,</li>
+<li>über Trigger,</li>
+<li>oder über Erweiterungen</li>
+</ul>
+<p>umgesetzt.</p>
+<h2 id="konsequenz-1">Konsequenz</h2>
+<p>Stored Procedures gehören nicht zum SQLite-Unterricht.</p>
+<p>Das allgemeine Konzept kann später unter <code>Grundlagen/SQL</code>
+behandelt werden.</p>
+<div class="page-break"></div>
+<h1 id="typische-fehler">Typische Fehler</h1>
+<h2 id="no-such-table">no such table</h2>
+<pre class="text"><code>no such table: Schueler</code></pre>
+<p>Mögliche Ursache:</p>
+<ul>
+<li>Tabelle nicht angelegt,</li>
+<li>falsche Datenbank geöffnet,</li>
+<li>Schreibfehler.</li>
+</ul>
+<hr />
+<h2 id="no-such-column">no such column</h2>
+<pre class="text"><code>no such column: Klasse</code></pre>
+<p>Spaltennamen prüfen.</p>
+<hr />
+<h2 id="unique-constraint-failed">UNIQUE constraint failed</h2>
+<p>Ein eindeutiger Wert existiert bereits.</p>
+<p>Beispiel:</p>
+<pre class="text"><code>UNIQUE constraint failed: Benutzer.Email</code></pre>
+<hr />
+<h2 id="foreign-key-constraint-failed">FOREIGN KEY constraint
+failed</h2>
+<p>Ein Fremdschlüssel verweist auf einen ungültigen Datensatz oder eine
+Löschoperation verletzt eine Beziehung.</p>
+<hr />
+<h2 id="database-is-locked">database is locked</h2>
+<p>Eine andere Verbindung verwendet die Datenbank gerade für einen
+Schreibzugriff.</p>
+<hr />
+<h2 id="syntax-error">syntax error</h2>
+<p>SQL-Syntax prüfen:</p>
+<ul>
+<li>Komma,</li>
+<li>Klammern,</li>
+<li>Schlüsselwörter,</li>
+<li>Anführungszeichen,</li>
+<li>Semikolon.</li>
+</ul>
+<h2 id="vorgehen">Vorgehen</h2>
+<ol type="1">
+<li>Fehlermeldung vollständig lesen.</li>
+<li>kleinste betroffene SQL-Anweisung isolieren.</li>
+<li>Tabellen- und Spaltennamen prüfen.</li>
+<li>Schema kontrollieren.</li>
+<li>Änderung einzeln testen.</li>
+</ol>
+<div class="page-break"></div>
+<h1 id="howto-sqlite-im-unterricht">HowTo – SQLite im Unterricht</h1>
+<h2 id="neue-übungsdatenbank">Neue Übungsdatenbank</h2>
+<div class="sourceCode" id="cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite3</span> schule.db</span></code></pre></div>
+<h2 id="fremdschlüssel-aktivieren">Fremdschlüssel aktivieren</h2>
+<div class="sourceCode" id="cb54"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>PRAGMA foreign_keys <span class="op">=</span> <span class="kw">ON</span>;</span></code></pre></div>
+<h2 id="schema-ausführen">Schema ausführen</h2>
+<pre class="text"><code>.read Beispiele/schulverwaltung_sqlite.sql</code></pre>
+<h2 id="tabellen-prüfen">Tabellen prüfen</h2>
+<pre class="text"><code>.tables</code></pre>
+<h2 id="daten-anzeigen">Daten anzeigen</h2>
+<div class="sourceCode" id="cb57"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler;</span></code></pre></div>
+<h2 id="crud-üben">CRUD üben</h2>
+<div class="sourceCode" id="cb58"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="op">..</span>.</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">..</span>.</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> <span class="op">..</span>.</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="op">..</span>.</span></code></pre></div>
+<h2 id="beenden">Beenden</h2>
+<pre class="text"><code>.quit</code></pre>
+<h2 id="empfohlener-lernweg">Empfohlener Lernweg</h2>
+<ol type="1">
+<li>Tabelle ansehen.</li>
+<li>SELECT ausführen.</li>
+<li>INSERT ausführen.</li>
+<li>UPDATE ausführen.</li>
+<li>DELETE ausführen.</li>
+<li>neue Tabelle anlegen.</li>
+<li>Fremdschlüssel ergänzen.</li>
+<li>Join ausführen.</li>
+</ol>
+<div class="page-break"></div>
+<h1 id="sqlite-cheatsheet">SQLite Cheatsheet</h1>
+<h2 id="start">Start</h2>
+<div class="sourceCode" id="cb60"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite3</span> datenbank.db</span></code></pre></div>
+<h2 id="hilfe-1">Hilfe</h2>
+<pre class="text"><code>.help</code></pre>
+<h2 id="tabellen">Tabellen</h2>
+<pre class="text"><code>.tables</code></pre>
+<h2 id="schema">Schema</h2>
+<pre class="text"><code>.schema</code></pre>
+<h2 id="sql-datei">SQL-Datei</h2>
+<pre class="text"><code>.read datei.sql</code></pre>
+<h2 id="format">Format</h2>
+<pre class="text"><code>.headers on
+.mode column</code></pre>
+<h2 id="fremdschlüssel">Fremdschlüssel</h2>
+<div class="sourceCode" id="cb66"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>PRAGMA foreign_keys <span class="op">=</span> <span class="kw">ON</span>;</span></code></pre></div>
+<h2 id="backup-1">Backup</h2>
+<pre class="text"><code>.backup sicherung.db</code></pre>
+<h2 id="import-csv">Import CSV</h2>
+<pre class="text"><code>.mode csv
+.import daten.csv Tabelle</code></pre>
+<h2 id="beenden-1">Beenden</h2>
+<pre class="text"><code>.quit</code></pre>
+<div class="page-break"></div>
+<h1 id="übungen">Übungen</h1>
+<h2 id="datenbank-öffnen">1 – Datenbank öffnen</h2>
+<p>Lege eine neue Datenbank <code>schule.db</code> an.</p>
+<hr />
+<h2 id="fremdschlüssel-1">2 – Fremdschlüssel</h2>
+<p>Aktiviere Fremdschlüssel und prüfe den Status.</p>
+<hr />
+<h2 id="schema-1">3 – Schema</h2>
+<p>Führe die Datei <code>Beispiele/schulverwaltung_sqlite.sql</code>
+aus.</p>
+<p>Prüfe anschließend die Tabellen.</p>
+<hr />
+<h2 id="crud">4 – CRUD</h2>
+<p>Füge einen Schüler ein, lies ihn aus, ändere den Namen und lösche den
+Datensatz wieder.</p>
+<hr />
+<h2 id="csv">5 – CSV</h2>
+<p>Exportiere die Tabelle <code>Schueler</code> als CSV.</p>
+<hr />
+<h2 id="backup-2">6 – Backup</h2>
+<p>Erzeuge eine Sicherungskopie der Datenbank.</p>
+<hr />
+<h2 id="index">7 – Index</h2>
+<p>Erzeuge einen Index auf <code>Schueler.Name</code>.</p>
+<p>Vergleiche den Abfrageplan vorher und nachher.</p>
+<div class="page-break"></div>
+<h1 id="quellen">Quellen</h1>
+<p>Für diesen Werkzeugbereich sollte die offizielle SQLite-Dokumentation
+als primäre technische Quelle verwendet werden.</p>
+<p>Insbesondere relevant sind:</p>
+<ul>
+<li>SQLite Language Reference</li>
+<li>SQLite Datatypes</li>
+<li>Foreign Key Support</li>
+<li>AUTOINCREMENT</li>
+<li>Command Line Shell</li>
+<li>Backup API</li>
+<li>STRICT Tables</li>
+</ul>
+<p>Für DB Browser for SQLite sollte die offizielle Projektdokumentation
+verwendet werden.</p>
+<p>Die SQL-Grundkonzepte selbst werden unter <code>Grundlagen/SQL</code>
+dokumentiert.</p>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Grundlagen</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Grundlagen</h1>
+<p class="subtitle">VSCode</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#visual-studio-code" id="toc-visual-studio-code">Visual
+Studio Code</a>
+<ul>
+<li><a href="#inhalte" id="toc-inhalte">Inhalte</a></li>
+</ul></li>
+<li><a href="#was-ist-visual-studio-code" id="toc-was-ist-visual-studio-code">Was ist Visual Studio Code?</a>
+<ul>
+<li><a href="#vorteile" id="toc-vorteile">Vorteile</a></li>
+<li><a href="#merke" id="toc-merke">Merke</a></li>
+</ul></li>
+<li><a href="#installation" id="toc-installation">Installation</a>
+<ul>
+<li><a href="#erste-schritte" id="toc-erste-schritte">Erste
+Schritte</a></li>
+<li><a href="#merke-1" id="toc-merke-1">Merke</a></li>
+</ul></li>
+<li><a href="#die-oberfläche" id="toc-die-oberfläche">Die Oberfläche</a>
+<ul>
+<li><a href="#explorer" id="toc-explorer">Explorer</a></li>
+<li><a href="#editor" id="toc-editor">Editor</a></li>
+<li><a href="#terminal" id="toc-terminal">Terminal</a></li>
+<li><a href="#statusleiste" id="toc-statusleiste">Statusleiste</a></li>
+<li><a href="#merke-2" id="toc-merke-2">Merke</a></li>
+</ul></li>
+<li><a href="#projekte-öffnen" id="toc-projekte-öffnen">Projekte
+öffnen</a>
+<ul>
+<li><a href="#vorteile-1" id="toc-vorteile-1">Vorteile</a></li>
+<li><a href="#empfehlung" id="toc-empfehlung">Empfehlung</a></li>
+<li><a href="#merke-3" id="toc-merke-3">Merke</a></li>
+</ul></li>
+<li><a href="#erweiterungen" id="toc-erweiterungen">Erweiterungen</a>
+<ul>
+<li><a href="#häufig-verwendete-erweiterungen" id="toc-häufig-verwendete-erweiterungen">Häufig verwendete
+Erweiterungen</a></li>
+<li><a href="#installation-1" id="toc-installation-1">Installation</a></li>
+<li><a href="#merke-4" id="toc-merke-4">Merke</a></li>
+</ul></li>
+<li><a href="#python-in-vs-code" id="toc-python-in-vs-code">Python in VS
+Code</a>
+<ul>
+<li><a href="#vorgehen" id="toc-vorgehen">Vorgehen</a></li>
+<li><a href="#beispiel" id="toc-beispiel">Beispiel</a></li>
+<li><a href="#merke-5" id="toc-merke-5">Merke</a></li>
+</ul></li>
+<li><a href="#tipps" id="toc-tipps">Tipps</a>
+<ul>
+<li><a href="#speichern" id="toc-speichern">Speichern</a></li>
+<li><a href="#suchen" id="toc-suchen">Suchen</a></li>
+<li><a href="#ersetzen" id="toc-ersetzen">Ersetzen</a></li>
+<li><a href="#kommentar" id="toc-kommentar">Kommentar</a></li>
+<li><a href="#automatische-einrückung" id="toc-automatische-einrückung">Automatische Einrückung</a></li>
+<li><a href="#merke-6" id="toc-merke-6">Merke</a></li>
+</ul></li>
+<li><a href="#weiterlernen" id="toc-weiterlernen">Weiterlernen</a></li>
+<li><a href="#quellen" id="toc-quellen">Quellen</a></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="visual-studio-code">Visual Studio Code</h1>
+<p>Visual Studio Code (VS Code) ist ein kostenloser
+Quellcode-Editor.</p>
+<p>Er unterstützt viele Programmiersprachen und wird weltweit von
+Entwicklerinnen und Entwicklern verwendet.</p>
+<p>Im Unterricht kann VS Code zum Schreiben von Python-Programmen und
+später auch für Webentwicklung oder Java eingesetzt werden.</p>
+<hr />
+<h2 id="inhalte">Inhalte</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Datei</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>01_Was_ist_VSCode.md</td>
+<td>Einführung</td>
+</tr>
+<tr class="even">
+<td>02_Installation.md</td>
+<td>Installation</td>
+</tr>
+<tr class="odd">
+<td>03_Oberflaeche.md</td>
+<td>Die Benutzeroberfläche</td>
+</tr>
+<tr class="even">
+<td>04_Dateien.md</td>
+<td>Projekte öffnen</td>
+</tr>
+<tr class="odd">
+<td>05_Erweiterungen.md</td>
+<td>Extensions</td>
+</tr>
+<tr class="even">
+<td>06_Python.md</td>
+<td>Python verwenden</td>
+</tr>
+<tr class="odd">
+<td>07_Tipps.md</td>
+<td>Nützliche Funktionen</td>
+</tr>
+<tr class="even">
+<td>08_Weiterlernen.md</td>
+<td>Weitere Informationen</td>
+</tr>
+<tr class="odd">
+<td>09_Quellen.md</td>
+<td>Quellen</td>
+</tr>
+</tbody>
+</table>
+<div class="page-break"></div>
+<h1 id="was-ist-visual-studio-code">Was ist Visual Studio Code?</h1>
+<p>Visual Studio Code ist ein Quellcode-Editor.</p>
+<p>Mit ihm können Programme geschrieben, getestet und verwaltet
+werden.</p>
+<p>VS Code unterstützt viele Programmiersprachen.</p>
+<p>Beispiele</p>
+<ul>
+<li>Python</li>
+<li>Java</li>
+<li>JavaScript</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>C#</li>
+<li>C++</li>
+</ul>
+<hr />
+<h2 id="vorteile">Vorteile</h2>
+<ul>
+<li>kostenlos</li>
+<li>schnell</li>
+<li>viele Erweiterungen</li>
+<li>auf Windows, Linux und macOS verfügbar</li>
+</ul>
+<hr />
+<h2 id="merke">Merke</h2>
+<p>VS Code ist ein Werkzeug zum Entwickeln von Programmen.</p>
+<div class="page-break"></div>
+<h1 id="installation">Installation</h1>
+<p>VS Code kann kostenlos heruntergeladen werden.</p>
+<p>Nach der Installation sollte die deutsche Sprache eingerichtet
+werden.</p>
+<p>Für Python wird zusätzlich die Python-Erweiterung empfohlen.</p>
+<hr />
+<h2 id="erste-schritte">Erste Schritte</h2>
+<ol type="1">
+<li><p>VS Code starten.</p></li>
+<li><p>Ordner öffnen.</p></li>
+<li><p>Neue Datei anlegen.</p></li>
+<li><p>Datei speichern.</p></li>
+</ol>
+<hr />
+<h2 id="merke-1">Merke</h2>
+<p>Arbeite möglichst immer innerhalb eines Projektordners.</p>
+<div class="page-break"></div>
+<h1 id="die-oberfläche">Die Oberfläche</h1>
+<p>VS Code besteht aus mehreren Bereichen.</p>
+<hr />
+<h2 id="explorer">Explorer</h2>
+<p>Zeigt Dateien und Ordner.</p>
+<hr />
+<h2 id="editor">Editor</h2>
+<p>Hier wird der Quellcode geschrieben.</p>
+<hr />
+<h2 id="terminal">Terminal</h2>
+<p>Programme können direkt gestartet werden.</p>
+<hr />
+<h2 id="statusleiste">Statusleiste</h2>
+<p>Zeigt Informationen über</p>
+<ul>
+<li>Programmiersprache</li>
+<li>Einrückung</li>
+<li>Zeilenende</li>
+</ul>
+<hr />
+<h2 id="merke-2">Merke</h2>
+<p>Fast alle Arbeiten beginnen im Explorer.</p>
+<div class="page-break"></div>
+<h1 id="projekte-öffnen">Projekte öffnen</h1>
+<p>Ein Projekt besteht meist aus mehreren Dateien.</p>
+<p>Öffne deshalb immer den gesamten Ordner.</p>
+<hr />
+<h2 id="vorteile-1">Vorteile</h2>
+<ul>
+<li><p>bessere Übersicht</p></li>
+<li><p>alle Dateien sichtbar</p></li>
+<li><p>einfaches Speichern</p></li>
+</ul>
+<hr />
+<h2 id="empfehlung">Empfehlung</h2>
+<p>Lege für jedes Unterrichtsprojekt einen eigenen Ordner an.</p>
+<hr />
+<h2 id="merke-3">Merke</h2>
+<p>Nicht einzelne Dateien öffnen,</p>
+<p>sondern den Projektordner.</p>
+<div class="page-break"></div>
+<h1 id="erweiterungen">Erweiterungen</h1>
+<p>VS Code kann erweitert werden.</p>
+<p>Diese Erweiterungen heißen Extensions.</p>
+<hr />
+<h2 id="häufig-verwendete-erweiterungen">Häufig verwendete
+Erweiterungen</h2>
+<ul>
+<li><p>Python</p></li>
+<li><p>Markdown</p></li>
+<li><p>GitHub Pull Requests</p></li>
+<li><p>GitLens</p></li>
+<li><p>Live Server</p></li>
+</ul>
+<hr />
+<h2 id="installation-1">Installation</h2>
+<p>Links auf</p>
+<p>Erweiterungen</p>
+<p>klicken.</p>
+<p>Gewünschte Erweiterung suchen.</p>
+<p>Installieren.</p>
+<hr />
+<h2 id="merke-4">Merke</h2>
+<p>Installiere nur Erweiterungen,</p>
+<p>die du wirklich benötigst.</p>
+<div class="page-break"></div>
+<h1 id="python-in-vs-code">Python in VS Code</h1>
+<p>Nach der Installation der Python-Erweiterung können Programme direkt
+ausgeführt werden.</p>
+<hr />
+<h2 id="vorgehen">Vorgehen</h2>
+<ol type="1">
+<li><p>Neue Datei anlegen.</p></li>
+<li><p>Als</p></li>
+</ol>
+<pre><code>programm.py</code></pre>
+<p>speichern.</p>
+<ol start="3" type="1">
+<li><p>Programm schreiben.</p></li>
+<li><p>Ausführen.</p></li>
+</ol>
+<hr />
+<h2 id="beispiel">Beispiel</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo Welt!&quot;</span>)</span></code></pre></div>
+<hr />
+<h2 id="merke-5">Merke</h2>
+<p>VS Code erkennt Python-Dateien automatisch.</p>
+<div class="page-break"></div>
+<h1 id="tipps">Tipps</h1>
+<h2 id="speichern">Speichern</h2>
+<pre><code>STRG + S</code></pre>
+<hr />
+<h2 id="suchen">Suchen</h2>
+<pre><code>STRG + F</code></pre>
+<hr />
+<h2 id="ersetzen">Ersetzen</h2>
+<pre><code>STRG + H</code></pre>
+<hr />
+<h2 id="kommentar">Kommentar</h2>
+<p>Python</p>
+<pre><code>#</code></pre>
+<hr />
+<h2 id="automatische-einrückung">Automatische Einrückung</h2>
+<p>VS Code unterstützt dich beim Schreiben von Python.</p>
+<hr />
+<h2 id="merke-6">Merke</h2>
+<p>Lerne die wichtigsten Tastenkombinationen.</p>
+<p>Sie sparen viel Zeit.</p>
+<div class="page-break"></div>
+<h1 id="weiterlernen">Weiterlernen</h1>
+<p>Empfehlungen</p>
+<ul>
+<li><p>VS Code Dokumentation</p></li>
+<li><p>Python Extension</p></li>
+<li><p>GitHub Integration</p></li>
+<li><p>Markdown-Unterstützung</p></li>
+</ul>
+<p>Nutze VS Code regelmäßig.</p>
+<p>Mit jeder Übung wirst du schneller.</p>
+<div class="page-break"></div>
+<h1 id="quellen">Quellen</h1>
+<p>Visual Studio Code</p>
+<p>https://code.visualstudio.com</p>
+<hr />
+<p>VS Code Dokumentation</p>
+<p>https://code.visualstudio.com/docs</p>
+<hr />
+<p>Python Extension</p>
+<p>https://marketplace.visualstudio.com/items?itemName=ms-python.python</p>
+</body>
+</html>

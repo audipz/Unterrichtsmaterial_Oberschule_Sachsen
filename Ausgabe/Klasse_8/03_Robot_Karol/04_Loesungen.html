@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Robot Karol</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Robot Karol</h1>
+<p class="subtitle">Informatik · Klasse 8 · Loesungen</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#lösungen-robot-karol-einstieg" id="toc-lösungen-robot-karol-einstieg">Lösungen – Robot Karol
+Einstieg</a>
+<ul>
+<li><a href="#vorhersage" id="toc-vorhersage">Vorhersage</a></li>
+<li><a href="#rechteck" id="toc-rechteck">Rechteck</a></li>
+<li><a href="#rechtsdrehung" id="toc-rechtsdrehung">Rechtsdrehung</a></li>
+<li><a href="#drei-ziegel" id="toc-drei-ziegel">Drei Ziegel</a></li>
+<li><a href="#quadrat-mit-wiederholung" id="toc-quadrat-mit-wiederholung">Quadrat mit Wiederholung</a></li>
+<li><a href="#ziegelreihe" id="toc-ziegelreihe">Ziegelreihe</a></li>
+</ul></li>
+<li><a href="#lösungen-bedingungen-und-unterprogramme" id="toc-lösungen-bedingungen-und-unterprogramme">Lösungen – Bedingungen
+und Unterprogramme</a>
+<ul>
+<li><a href="#bedingung" id="toc-bedingung">Bedingung</a></li>
+<li><a href="#bis-zur-wand" id="toc-bis-zur-wand">Bis zur Wand</a></li>
+<li><a href="#feste-vs.-bedingte-wiederholung" id="toc-feste-vs.-bedingte-wiederholung">Feste vs. bedingte
+Wiederholung</a></li>
+<li><a href="#rechtsdrehen" id="toc-rechtsdrehen">RechtsDrehen</a></li>
+<li><a href="#rechteck-aus-ziegeln-mögliche-teilprobleme" id="toc-rechteck-aus-ziegeln-mögliche-teilprobleme">Rechteck aus Ziegeln
+– mögliche Teilprobleme</a></li>
+<li><a href="#debugging-reihenfolge" id="toc-debugging-reihenfolge">Debugging-Reihenfolge</a></li>
+</ul></li>
+<li><a href="#lösungen-und-erwartungshorizont-karol-projekt" id="toc-lösungen-und-erwartungshorizont-karol-projekt">Lösungen und
+Erwartungshorizont – Karol-Projekt</a>
+<ul>
+<li><a href="#erwartete-kompetenzen" id="toc-erwartete-kompetenzen">Erwartete Kompetenzen</a></li>
+<li><a href="#beispiel-teilprobleme" id="toc-beispiel-teilprobleme">Beispiel Teilprobleme</a></li>
+<li><a href="#beispiel-testfälle" id="toc-beispiel-testfälle">Beispiel
+Testfälle</a></li>
+<li><a href="#kompetenzcheck-musterantworten" id="toc-kompetenzcheck-musterantworten">Kompetenzcheck –
+Musterantworten</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="lösungen-robot-karol-einstieg">Lösungen – Robot Karol
+Einstieg</h1>
+<h2 id="vorhersage">Vorhersage</h2>
+<p>Nach <code>Schritt, Schritt, LinksDrehen, Schritt</code> steht Karol
+zwei Felder in ursprünglicher Richtung und danach ein Feld links davon;
+seine Blickrichtung ist nach der Linksdrehung um 90° verändert.</p>
+<h2 id="rechteck">Rechteck</h2>
+<p>Eine mögliche Lösung nutzt für jede Seite eine Wiederholung mit 4
+bzw. 2 Schritten und jeweils eine Drehung.</p>
+<h2 id="rechtsdrehung">Rechtsdrehung</h2>
+<p>Dreimal links drehen entspricht einer Rechtsdrehung um 90°.</p>
+<h2 id="drei-ziegel">Drei Ziegel</h2>
+<p>Möglich:
+<code>Hinlegen, Schritt, Hinlegen, Schritt, Hinlegen</code>.</p>
+<h2 id="quadrat-mit-wiederholung">Quadrat mit Wiederholung</h2>
+<pre class="text"><code>wiederhole 4 mal
+    wiederhole 4 mal
+        Schritt
+    endewiederhole
+    LinksDrehen
+endewiederhole</code></pre>
+<h2 id="ziegelreihe">Ziegelreihe</h2>
+<pre class="text"><code>wiederhole 5 mal
+    Hinlegen
+    Schritt
+endewiederhole</code></pre>
+<p>Je nach gewünschter Endposition kann der letzte Schritt außerhalb der
+Wiederholung behandelt werden.</p>
+<div class="page-break"></div>
+<h1 id="lösungen-bedingungen-und-unterprogramme">Lösungen – Bedingungen
+und Unterprogramme</h1>
+<h2 id="bedingung">Bedingung</h2>
+<pre class="text"><code>wenn vorne frei dann
+    Schritt
+sonst
+    LinksDrehen
+endewenn</code></pre>
+<h2 id="bis-zur-wand">Bis zur Wand</h2>
+<pre class="text"><code>solange vorne frei
+    Schritt
+endesolange</code></pre>
+<h2 id="feste-vs.-bedingte-wiederholung">Feste vs. bedingte
+Wiederholung</h2>
+<p>Feste Wiederholung: Anzahl der Durchläufe ist vorher bekannt.
+Bedingte Wiederholung: Anzahl ergibt sich erst während der Ausführung
+aus der Situation.</p>
+<h2 id="rechtsdrehen">RechtsDrehen</h2>
+<p>Dreimal <code>LinksDrehen</code> ergibt eine Rechtsdrehung.</p>
+<h2 id="rechteck-aus-ziegeln-mögliche-teilprobleme">Rechteck aus Ziegeln
+– mögliche Teilprobleme</h2>
+<ul>
+<li>Seite bauen</li>
+<li>Ecke drehen</li>
+<li>Seitenlänge festlegen</li>
+<li>vier Seiten wiederholen</li>
+<li>Ergebnis testen</li>
+</ul>
+<h2 id="debugging-reihenfolge">Debugging-Reihenfolge</h2>
+<ol type="1">
+<li>erwartetes Verhalten festlegen</li>
+<li>Fehler reproduzieren</li>
+<li>Fehlerstelle eingrenzen</li>
+<li>Programm ändern</li>
+<li>erneut testen</li>
+</ol>
+<div class="page-break"></div>
+<h1 id="lösungen-und-erwartungshorizont-karol-projekt">Lösungen und
+Erwartungshorizont – Karol-Projekt</h1>
+<h2 id="erwartete-kompetenzen">Erwartete Kompetenzen</h2>
+<p>Die Schülerinnen und Schüler können:</p>
+<ul>
+<li>Sequenz, Bedingung und Wiederholung unterscheiden,</li>
+<li>feste und bedingte Wiederholungen passend auswählen,</li>
+<li>ein größeres Problem in Teilprobleme zerlegen,</li>
+<li>sinnvolle Testfälle formulieren,</li>
+<li>Fehler anhand beobachteten Verhaltens eingrenzen,</li>
+<li>Objektbegriffe mit Karol verbinden.</li>
+</ul>
+<h2 id="beispiel-teilprobleme">Beispiel Teilprobleme</h2>
+<p>Für „Baue einen rechteckigen Rahmen“:</p>
+<ol type="1">
+<li>Seite bauen</li>
+<li>Ecke erreichen</li>
+<li>drehen</li>
+<li>vier Seiten wiederholen</li>
+<li>Start-/Endzustand prüfen</li>
+</ol>
+<h2 id="beispiel-testfälle">Beispiel Testfälle</h2>
+<ul>
+<li>kleine Welt ohne Hindernis</li>
+<li>andere Seitenlänge</li>
+<li>Welt mit einer absichtlich veränderten Ausgangslage</li>
+</ul>
+<h2 id="kompetenzcheck-musterantworten">Kompetenzcheck –
+Musterantworten</h2>
+<ol type="1">
+<li><strong>Bedingung:</strong> entscheidet anhand einer Wahrheitsfrage
+zwischen Abläufen.</li>
+<li><strong>Wiederholung:</strong> führt einen Block mehrfach aus.</li>
+<li><strong>Unterprogramm:</strong> kapselt eine Teilaufgabe und kann
+wiederverwendet werden.</li>
+<li><strong>Testfall:</strong> definierte Ausgangslage mit erwartetem
+Ergebnis.</li>
+<li><strong>Debugging:</strong> Fehler reproduzieren, eingrenzen, ändern
+und erneut testen.</li>
+</ol>
+</body>
+</html>

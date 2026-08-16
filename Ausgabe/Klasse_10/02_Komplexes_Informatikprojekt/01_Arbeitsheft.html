@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Komplexes Informatikprojekt</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Komplexes Informatikprojekt</h1>
+<p class="subtitle">Informatik · Klasse 10 · Arbeitsheft</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#vom-problem-zum-gemeinsamen-produkt" id="toc-vom-problem-zum-gemeinsamen-produkt">01 – Vom Problem zum
+gemeinsamen Produkt</a>
+<ul>
+<li><a href="#leitfrage" id="toc-leitfrage">Leitfrage</a></li>
+<li><a href="#problem-verstehen" id="toc-problem-verstehen">1. Problem
+verstehen</a></li>
+<li><a href="#teilaufgaben-bilden" id="toc-teilaufgaben-bilden">2.
+Teilaufgaben bilden</a></li>
+<li><a href="#schnittstellen-definieren" id="toc-schnittstellen-definieren">3. Schnittstellen definieren</a></li>
+<li><a href="#planen" id="toc-planen">4. Planen</a></li>
+<li><a href="#kollaborativ-arbeiten" id="toc-kollaborativ-arbeiten">5.
+Kollaborativ arbeiten</a></li>
+<li><a href="#aufgabe-versionschaos" id="toc-aufgabe-versionschaos">Aufgabe – Versionschaos</a></li>
+<li><a href="#in-sprints-arbeiten" id="toc-in-sprints-arbeiten">6. In
+Sprints arbeiten</a></li>
+<li><a href="#integration" id="toc-integration">7. Integration</a></li>
+<li><a href="#dokumentieren" id="toc-dokumentieren">8.
+Dokumentieren</a></li>
+<li><a href="#präsentieren" id="toc-präsentieren">9.
+Präsentieren</a></li>
+<li><a href="#reflektieren" id="toc-reflektieren">10.
+Reflektieren</a></li>
+<li><a href="#das-wichtigste" id="toc-das-wichtigste">Das
+Wichtigste</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="vom-problem-zum-gemeinsamen-produkt">01 – Vom Problem zum
+gemeinsamen Produkt</h1>
+<h2 id="leitfrage">Leitfrage</h2>
+<blockquote>
+<p><strong>Wie organisiert ein Team ein Informatikprojekt, bei dem
+mehrere Teilprodukte am Ende zusammenpassen müssen?</strong></p>
+</blockquote>
+<h2 id="problem-verstehen">1. Problem verstehen</h2>
+<p>Bevor ein Werkzeug geöffnet wird, muss klar sein:</p>
+<ul>
+<li>Welches Problem soll gelöst werden?</li>
+<li>Für wen ist die Lösung gedacht?</li>
+<li>Was soll am Ende funktionieren?</li>
+<li>Woran erkennen wir, dass das Ziel erreicht ist?</li>
+</ul>
+<h3 id="projektsteckbrief">Projektsteckbrief</h3>
+<p><strong>Problem:</strong>
+________________________________________________</p>
+<p><strong>Zielgruppe:</strong>
+_____________________________________________</p>
+<p><strong>Endprodukt:</strong>
+_____________________________________________</p>
+<p><strong>Erfolgskriterien:</strong></p>
+<ol type="1">
+<li><hr /></li>
+<li><hr /></li>
+<li><hr /></li>
+</ol>
+<hr />
+<h2 id="teilaufgaben-bilden">2. Teilaufgaben bilden</h2>
+<p>Ein komplexes Projekt wird in kleinere, bearbeitbare Teilprobleme
+zerlegt.</p>
+<p>Beispiel „Informationswebsite zur Datensicherheit“:</p>
+<ul>
+<li>Team A: Navigation und Seitenstruktur</li>
+<li>Team B: Inhalte zu Passwörtern</li>
+<li>Team C: Inhalte zu Backups</li>
+<li>Team D: Grafiken und Quellen</li>
+</ul>
+<p>Die Teilaufgaben dürfen nicht unabhängig nebeneinander bleiben. Sie
+müssen am Ende zusammengeführt werden.</p>
+<h2 id="schnittstellen-definieren">3. Schnittstellen definieren</h2>
+<p>Eine <strong>Schnittstelle</strong> beschreibt, wie zwei Teilbereiche
+zusammenarbeiten.</p>
+<p>Beispiele:</p>
+<ul>
+<li>gemeinsames Dateiformat</li>
+<li>festgelegte Dateinamen</li>
+<li>Ordnerstruktur</li>
+<li>gleiche Bildgrößen</li>
+<li>Übergabe bestimmter Daten</li>
+<li>vereinbarte Eingaben und Ausgaben eines Programmteils</li>
+</ul>
+<h3 id="schnittstellenkarte">Schnittstellenkarte</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Von Team</th>
+<th>An Team</th>
+<th>Was wird übergeben?</th>
+<th>Format / Regel</th>
+<th>Termin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Merke:</strong> Eine gute Schnittstelle ist eindeutig. Beide
+Seiten müssen wissen, was geliefert und erwartet wird.</p>
+</blockquote>
+<hr />
+<h2 id="planen">4. Planen</h2>
+<h3 id="aufgabenliste">Aufgabenliste</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Aufgabe</th>
+<th>verantwortlich</th>
+<th>bis</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>offen</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>offen</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>offen</td>
+</tr>
+</tbody>
+</table>
+<h3 id="risiken">Risiken</h3>
+<p>Was könnte das Projekt gefährden?</p>
+<ul>
+<li>fehlende Dateien</li>
+<li>unklare Zuständigkeit</li>
+<li>inkompatible Formate</li>
+<li>Zeitverlust</li>
+<li>technische Probleme</li>
+<li>unterschiedliche Versionen</li>
+</ul>
+<p>Formuliert zu zwei Risiken jeweils eine Gegenmaßnahme.</p>
+<hr />
+<h2 id="kollaborativ-arbeiten">5. Kollaborativ arbeiten</h2>
+<p>Gemeinsames Arbeiten bedeutet mehr als Dateien auszutauschen.</p>
+<p>Regeln:</p>
+<ol type="1">
+<li>Änderungen nachvollziehbar benennen.</li>
+<li>Vereinbarte Ordner und Dateinamen verwenden.</li>
+<li>Arbeitsstände regelmäßig sichern.</li>
+<li>Keine fremden Ergebnisse ungeprüft überschreiben.</li>
+<li>Probleme früh melden.</li>
+<li>Quellen direkt dokumentieren.</li>
+</ol>
+<h2 id="aufgabe-versionschaos">Aufgabe – Versionschaos</h2>
+<p>Drei Dateien heißen:</p>
+<pre class="text"><code>projekt_final.docx
+projekt_final_neu.docx
+projekt_final_neu2_wirklichfinal.docx</code></pre>
+<p>Erkläre, warum das problematisch ist, und entwirf eine bessere
+Regel.</p>
+<hr />
+<h2 id="in-sprints-arbeiten">6. In Sprints arbeiten</h2>
+<p>Ein Sprint ist ein kurzer Arbeitsabschnitt mit einem überprüfbaren
+Zwischenziel.</p>
+<h3 id="sprint-1">Sprint 1</h3>
+<p><strong>Ziel:</strong>
+_________________________________________________</p>
+<p><strong>Am Ende muss funktionieren:</strong>
+___________________________</p>
+<h3 id="review">Review</h3>
+<ul>
+<li>Was funktioniert bereits?</li>
+<li>Was fehlt?</li>
+<li>Welche Schnittstelle verursacht Probleme?</li>
+<li>Was ändern wir im nächsten Sprint?</li>
+</ul>
+<h3 id="sprint-2">Sprint 2</h3>
+<p><strong>Ziel:</strong>
+_________________________________________________</p>
+<p><strong>Verbesserungen:</strong>
+_______________________________________</p>
+<hr />
+<h2 id="integration">7. Integration</h2>
+<p>Beim Zusammenführen zeigt sich, ob die Schnittstellen funktioniert
+haben.</p>
+<h3 id="integrationstest">Integrationstest</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>erwartet</th>
+<th>tatsächlich</th>
+<th>bestanden?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Teil A mit B verbinden</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Navigation / Übergabe</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>gemeinsame Darstellung</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Fehlerfall</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Merke:</strong> Einzelne funktionierende Teile ergeben nicht
+automatisch ein funktionierendes Gesamtsystem.</p>
+</blockquote>
+<hr />
+<h2 id="dokumentieren">8. Dokumentieren</h2>
+<p>Eine Projektdokumentation erklärt nicht nur das Ergebnis, sondern
+auch den Weg.</p>
+<p>Sie enthält mindestens:</p>
+<ul>
+<li>Ausgangsproblem und Ziel</li>
+<li>Team- und Aufgabenverteilung</li>
+<li>Planung</li>
+<li>wichtige Entscheidungen</li>
+<li>Schnittstellen</li>
+<li>Tests und Fehler</li>
+<li>Änderungen</li>
+<li>Quellen</li>
+<li>Ergebnis</li>
+<li>Reflexion</li>
+</ul>
+<h2 id="präsentieren">9. Präsentieren</h2>
+<p>Eine gute Präsentation zeigt:</p>
+<ol type="1">
+<li>Problem</li>
+<li>Ziel</li>
+<li>Lösungsweg</li>
+<li>Demonstration</li>
+<li>Schwierigkeiten und Verbesserungen</li>
+<li>Ergebnis und Grenzen</li>
+</ol>
+<h2 id="reflektieren">10. Reflektieren</h2>
+<p>Beantworte einzeln:</p>
+<ul>
+<li>Was war mein wichtigster Beitrag?</li>
+<li>Welche Entscheidung war gut?</li>
+<li>Was würden wir beim nächsten Projekt früher klären?</li>
+<li>Wo hat Zusammenarbeit gut funktioniert?</li>
+<li>Welche technische oder organisatorische Fähigkeit habe ich
+verbessert?</li>
+</ul>
+<h2 id="das-wichtigste">Das Wichtigste</h2>
+<ul>
+<li>komplexe Probleme werden zerlegt,</li>
+<li>Teilgruppen brauchen definierte Schnittstellen,</li>
+<li>Zwischenstände werden integriert und getestet,</li>
+<li>Ergebnisse werden kontinuierlich gesichert,</li>
+<li>Dokumentation und Reflexion gehören zum Projekt.</li>
+</ul>
+</body>
+</html>

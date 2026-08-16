@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Informationen und Daten</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Informationen und Daten</h1>
+<p class="subtitle">Informatik · Klasse 9 · Loesungen</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#lösungen" id="toc-lösungen">Lösungen</a></li>
+<li><a href="#welche-informationen-brauchen-wir" id="toc-welche-informationen-brauchen-wir">01 – Welche Informationen
+brauchen wir?</a></li>
+<li><a href="#hinweise" id="toc-hinweise">Hinweise</a></li>
+<li><a href="#lösung-aufgabe-1" id="toc-lösung-aufgabe-1">Lösung Aufgabe
+1</a>
+<ul>
+<li><a href="#mögliche-benötigte-informationen" id="toc-mögliche-benötigte-informationen">Mögliche benötigte
+Informationen</a></li>
+</ul></li>
+<li><a href="#lösung-aufgabe-2" id="toc-lösung-aufgabe-2">Lösung Aufgabe
+2</a>
+<ul>
+<li><a href="#welche-informationen-sind-besonders-wichtig" id="toc-welche-informationen-sind-besonders-wichtig">Welche
+Informationen sind besonders wichtig?</a></li>
+</ul></li>
+<li><a href="#lösung-aufgabe-3" id="toc-lösung-aufgabe-3">Lösung Aufgabe
+3</a>
+<ul>
+<li><a href="#fehlende-informationen-erkennen" id="toc-fehlende-informationen-erkennen">Fehlende Informationen
+erkennen</a></li>
+</ul></li>
+<li><a href="#erwartete-erkenntnis" id="toc-erwartete-erkenntnis">Erwartete Erkenntnis</a></li>
+<li><a href="#merksatz" id="toc-merksatz">Merksatz</a></li>
+<li><a href="#lösungen-1" id="toc-lösungen-1">Lösungen</a></li>
+<li><a href="#welche-informationen-sind-wichtig" id="toc-welche-informationen-sind-wichtig">02 – Welche Informationen
+sind wichtig?</a></li>
+<li><a href="#hinweise-1" id="toc-hinweise-1">Hinweise</a></li>
+<li><a href="#lösung-aufgabe-1-1" id="toc-lösung-aufgabe-1-1">Lösung
+Aufgabe 1</a>
+<ul>
+<li><a href="#wichtige-und-weniger-wichtige-informationen-unterscheiden" id="toc-wichtige-und-weniger-wichtige-informationen-unterscheiden">Wichtige
+und weniger wichtige Informationen unterscheiden</a></li>
+</ul></li>
+<li><a href="#lösung-aufgabe-2-1" id="toc-lösung-aufgabe-2-1">Lösung
+Aufgabe 2</a>
+<ul>
+<li><a href="#entscheidung-begründen" id="toc-entscheidung-begründen">Entscheidung begründen</a></li>
+</ul></li>
+<li><a href="#lösung-aufgabe-3-1" id="toc-lösung-aufgabe-3-1">Lösung
+Aufgabe 3</a>
+<ul>
+<li><a href="#unwichtige-informationen-erkennen" id="toc-unwichtige-informationen-erkennen">Unwichtige Informationen
+erkennen</a></li>
+</ul></li>
+<li><a href="#erwartete-erkenntnis-1" id="toc-erwartete-erkenntnis-1">Erwartete Erkenntnis</a></li>
+<li><a href="#merksatz-1" id="toc-merksatz-1">Merksatz</a></li>
+<li><a href="#lösung-03-woher-kommen-informationen" id="toc-lösung-03-woher-kommen-informationen">Lösung 03: Woher kommen
+Informationen</a>
+<ul>
+<li><a href="#erwartete-kernaussage" id="toc-erwartete-kernaussage">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen" id="toc-mögliche-lösungen">Mögliche
+Lösungen</a></li>
+<li><a href="#korrekturhinweis" id="toc-korrekturhinweis">Korrekturhinweis</a></li>
+<li><a href="#merksatz-2" id="toc-merksatz-2">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-04-sind-alle-informationen-zuverlässig" id="toc-lösung-04-sind-alle-informationen-zuverlässig">Lösung 04: Sind
+alle Informationen zuverlässig</a>
+<ul>
+<li><a href="#erwartete-kernaussage-1" id="toc-erwartete-kernaussage-1">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-1" id="toc-mögliche-lösungen-1">Mögliche
+Lösungen</a></li>
+<li><a href="#korrekturhinweis-1" id="toc-korrekturhinweis-1">Korrekturhinweis</a></li>
+<li><a href="#merksatz-3" id="toc-merksatz-3">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-05-wie-vergleichen-wir-möglichkeiten" id="toc-lösung-05-wie-vergleichen-wir-möglichkeiten">Lösung 05: Wie
+vergleichen wir Möglichkeiten</a>
+<ul>
+<li><a href="#erwartete-kernaussage-2" id="toc-erwartete-kernaussage-2">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-2" id="toc-mögliche-lösungen-2">Mögliche
+Lösungen</a></li>
+<li><a href="#korrekturhinweis-2" id="toc-korrekturhinweis-2">Korrekturhinweis</a></li>
+<li><a href="#merksatz-4" id="toc-merksatz-4">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-06-entscheiden-mit-einer-entscheidungsmatrix" id="toc-lösung-06-entscheiden-mit-einer-entscheidungsmatrix">Lösung 06:
+Entscheiden mit einer Entscheidungsmatrix</a>
+<ul>
+<li><a href="#erwartete-kernaussage-3" id="toc-erwartete-kernaussage-3">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-3" id="toc-mögliche-lösungen-3">Mögliche
+Lösungen</a></li>
+<li><a href="#korrekturhinweis-3" id="toc-korrekturhinweis-3">Korrekturhinweis</a></li>
+<li><a href="#merksatz-5" id="toc-merksatz-5">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-07-daten-übersichtlich-in-tabellen-darstellen" id="toc-lösung-07-daten-übersichtlich-in-tabellen-darstellen">Lösung 07:
+Daten übersichtlich in Tabellen darstellen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-4" id="toc-erwartete-kernaussage-4">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-4" id="toc-mögliche-lösungen-4">Mögliche
+Lösungen</a></li>
+<li><a href="#korrekturhinweis-4" id="toc-korrekturhinweis-4">Korrekturhinweis</a></li>
+<li><a href="#merksatz-6" id="toc-merksatz-6">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-08-was-ist-ein-datensatz" id="toc-lösung-08-was-ist-ein-datensatz">Lösung 08: Was ist ein
+Datensatz</a>
+<ul>
+<li><a href="#erwartete-kernaussage-5" id="toc-erwartete-kernaussage-5">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-5" id="toc-mögliche-lösungen-5">Mögliche
+Lösungen</a></li>
+<li><a href="#korrekturhinweis-5" id="toc-korrekturhinweis-5">Korrekturhinweis</a></li>
+<li><a href="#merksatz-7" id="toc-merksatz-7">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-09-warum-brauchen-wir-datenbanken" id="toc-lösung-09-warum-brauchen-wir-datenbanken">Lösung 09: Warum
+brauchen wir Datenbanken</a>
+<ul>
+<li><a href="#erwartete-kernaussage-6" id="toc-erwartete-kernaussage-6">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-6" id="toc-mögliche-lösungen-6">Mögliche
+Lösungen</a></li>
+<li><a href="#korrekturhinweis-6" id="toc-korrekturhinweis-6">Korrekturhinweis</a></li>
+<li><a href="#merksatz-8" id="toc-merksatz-8">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-10-von-dingen-zu-klassen" id="toc-lösung-10-von-dingen-zu-klassen">Lösung 10: Von Dingen zu
+Klassen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-7" id="toc-erwartete-kernaussage-7">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-7" id="toc-mögliche-lösungen-7">Mögliche
+Lösungen</a></li>
+<li><a href="#korrekturhinweis-7" id="toc-korrekturhinweis-7">Korrekturhinweis</a></li>
+<li><a href="#merksatz-9" id="toc-merksatz-9">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-11-attribute-beschreiben-eigenschaften" id="toc-lösung-11-attribute-beschreiben-eigenschaften">Lösung 11:
+Attribute beschreiben Eigenschaften</a>
+<ul>
+<li><a href="#erwartete-kernaussage-8" id="toc-erwartete-kernaussage-8">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-8" id="toc-mögliche-lösungen-8">Mögliche
+Lösungen</a></li>
+<li><a href="#korrekturhinweis-8" id="toc-korrekturhinweis-8">Korrekturhinweis</a></li>
+<li><a href="#merksatz-10" id="toc-merksatz-10">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-12-objekte-sind-konkrete-exemplare" id="toc-lösung-12-objekte-sind-konkrete-exemplare">Lösung 12: Objekte
+sind konkrete Exemplare</a>
+<ul>
+<li><a href="#erwartete-kernaussage-9" id="toc-erwartete-kernaussage-9">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-9" id="toc-mögliche-lösungen-9">Mögliche
+Lösungen</a></li>
+<li><a href="#korrekturhinweis-9" id="toc-korrekturhinweis-9">Korrekturhinweis</a></li>
+<li><a href="#merksatz-11" id="toc-merksatz-11">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-13-von-klassen-zu-tabellen" id="toc-lösung-13-von-klassen-zu-tabellen">Lösung 13: Von Klassen zu
+Tabellen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-10" id="toc-erwartete-kernaussage-10">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-10" id="toc-mögliche-lösungen-10">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-10" id="toc-korrekturhinweis-10">Korrekturhinweis</a></li>
+<li><a href="#merksatz-12" id="toc-merksatz-12">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-14-warum-jede-zeile-eindeutig-sein-muss" id="toc-lösung-14-warum-jede-zeile-eindeutig-sein-muss">Lösung 14: Warum
+jede Zeile eindeutig sein muss</a>
+<ul>
+<li><a href="#erwartete-kernaussage-11" id="toc-erwartete-kernaussage-11">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-11" id="toc-mögliche-lösungen-11">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-11" id="toc-korrekturhinweis-11">Korrekturhinweis</a></li>
+<li><a href="#merksatz-13" id="toc-merksatz-13">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-15-der-primärschlüssel" id="toc-lösung-15-der-primärschlüssel">Lösung 15: Der
+Primärschlüssel</a>
+<ul>
+<li><a href="#erwartete-kernaussage-12" id="toc-erwartete-kernaussage-12">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-12" id="toc-mögliche-lösungen-12">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-12" id="toc-korrekturhinweis-12">Korrekturhinweis</a></li>
+<li><a href="#merksatz-14" id="toc-merksatz-14">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-16-mehrere-tabellen-statt-wiederholungen" id="toc-lösung-16-mehrere-tabellen-statt-wiederholungen">Lösung 16:
+Mehrere Tabellen statt Wiederholungen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-13" id="toc-erwartete-kernaussage-13">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-13" id="toc-mögliche-lösungen-13">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-13" id="toc-korrekturhinweis-13">Korrekturhinweis</a></li>
+<li><a href="#merksatz-15" id="toc-merksatz-15">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-17-der-fremdschlüssel" id="toc-lösung-17-der-fremdschlüssel">Lösung 17: Der Fremdschlüssel</a>
+<ul>
+<li><a href="#erwartete-kernaussage-14" id="toc-erwartete-kernaussage-14">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-14" id="toc-mögliche-lösungen-14">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-14" id="toc-korrekturhinweis-14">Korrekturhinweis</a></li>
+<li><a href="#merksatz-16" id="toc-merksatz-16">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-18-beziehungen-zwischen-tabellen" id="toc-lösung-18-beziehungen-zwischen-tabellen">Lösung 18: Beziehungen
+zwischen Tabellen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-15" id="toc-erwartete-kernaussage-15">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-15" id="toc-mögliche-lösungen-15">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-15" id="toc-korrekturhinweis-15">Korrekturhinweis</a></li>
+<li><a href="#merksatz-17" id="toc-merksatz-17">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-19-ein-datenbankschema-lesen" id="toc-lösung-19-ein-datenbankschema-lesen">Lösung 19: Ein
+Datenbankschema lesen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-16" id="toc-erwartete-kernaussage-16">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-16" id="toc-mögliche-lösungen-16">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-16" id="toc-korrekturhinweis-16">Korrekturhinweis</a></li>
+<li><a href="#merksatz-18" id="toc-merksatz-18">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-20-ein-datenbankschema-entwerfen" id="toc-lösung-20-ein-datenbankschema-entwerfen">Lösung 20: Ein
+Datenbankschema entwerfen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-17" id="toc-erwartete-kernaussage-17">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-17" id="toc-mögliche-lösungen-17">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-17" id="toc-korrekturhinweis-17">Korrekturhinweis</a></li>
+<li><a href="#merksatz-19" id="toc-merksatz-19">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-21-datensätze-gezielt-suchen" id="toc-lösung-21-datensätze-gezielt-suchen">Lösung 21: Datensätze
+gezielt suchen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-18" id="toc-erwartete-kernaussage-18">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-18" id="toc-mögliche-lösungen-18">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-18" id="toc-korrekturhinweis-18">Korrekturhinweis</a></li>
+<li><a href="#merksatz-20" id="toc-merksatz-20">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-22-daten-filtern" id="toc-lösung-22-daten-filtern">Lösung 22: Daten filtern</a>
+<ul>
+<li><a href="#erwartete-kernaussage-19" id="toc-erwartete-kernaussage-19">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-19" id="toc-mögliche-lösungen-19">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-19" id="toc-korrekturhinweis-19">Korrekturhinweis</a></li>
+<li><a href="#merksatz-21" id="toc-merksatz-21">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-23-mit-mehreren-bedingungen-filtern" id="toc-lösung-23-mit-mehreren-bedingungen-filtern">Lösung 23: Mit
+mehreren Bedingungen filtern</a>
+<ul>
+<li><a href="#erwartete-kernaussage-20" id="toc-erwartete-kernaussage-20">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-20" id="toc-mögliche-lösungen-20">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-20" id="toc-korrekturhinweis-20">Korrekturhinweis</a></li>
+<li><a href="#merksatz-22" id="toc-merksatz-22">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-24-daten-sortieren" id="toc-lösung-24-daten-sortieren">Lösung 24: Daten sortieren</a>
+<ul>
+<li><a href="#erwartete-kernaussage-21" id="toc-erwartete-kernaussage-21">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-21" id="toc-mögliche-lösungen-21">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-21" id="toc-korrekturhinweis-21">Korrekturhinweis</a></li>
+<li><a href="#merksatz-23" id="toc-merksatz-23">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-25-suchen-filtern-und-sortieren-kombinieren" id="toc-lösung-25-suchen-filtern-und-sortieren-kombinieren">Lösung 25:
+Suchen Filtern und Sortieren kombinieren</a>
+<ul>
+<li><a href="#erwartete-kernaussage-22" id="toc-erwartete-kernaussage-22">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-22" id="toc-mögliche-lösungen-22">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-22" id="toc-korrekturhinweis-22">Korrekturhinweis</a></li>
+<li><a href="#merksatz-24" id="toc-merksatz-24">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-26-daten-zählen-und-zusammenfassen" id="toc-lösung-26-daten-zählen-und-zusammenfassen">Lösung 26: Daten
+zählen und zusammenfassen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-23" id="toc-erwartete-kernaussage-23">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-23" id="toc-mögliche-lösungen-23">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-23" id="toc-korrekturhinweis-23">Korrekturhinweis</a></li>
+<li><a href="#merksatz-25" id="toc-merksatz-25">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-27-daten-mit-diagrammen-darstellen" id="toc-lösung-27-daten-mit-diagrammen-darstellen">Lösung 27: Daten mit
+Diagrammen darstellen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-24" id="toc-erwartete-kernaussage-24">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-24" id="toc-mögliche-lösungen-24">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-24" id="toc-korrekturhinweis-24">Korrekturhinweis</a></li>
+<li><a href="#merksatz-26" id="toc-merksatz-26">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-28-diagramme-kritisch-lesen" id="toc-lösung-28-diagramme-kritisch-lesen">Lösung 28: Diagramme
+kritisch lesen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-25" id="toc-erwartete-kernaussage-25">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-25" id="toc-mögliche-lösungen-25">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-25" id="toc-korrekturhinweis-25">Korrekturhinweis</a></li>
+<li><a href="#merksatz-27" id="toc-merksatz-27">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-29-was-bedeutet-big-data" id="toc-lösung-29-was-bedeutet-big-data">Lösung 29: Was bedeutet Big
+Data</a>
+<ul>
+<li><a href="#erwartete-kernaussage-26" id="toc-erwartete-kernaussage-26">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-26" id="toc-mögliche-lösungen-26">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-26" id="toc-korrekturhinweis-26">Korrekturhinweis</a></li>
+<li><a href="#merksatz-28" id="toc-merksatz-28">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-30-wo-entstehen-große-datenmengen" id="toc-lösung-30-wo-entstehen-große-datenmengen">Lösung 30: Wo
+entstehen große Datenmengen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-27" id="toc-erwartete-kernaussage-27">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-27" id="toc-mögliche-lösungen-27">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-27" id="toc-korrekturhinweis-27">Korrekturhinweis</a></li>
+<li><a href="#merksatz-29" id="toc-merksatz-29">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-31-wie-lernt-eine-künstliche-intelligenz" id="toc-lösung-31-wie-lernt-eine-künstliche-intelligenz">Lösung 31: Wie
+lernt eine künstliche Intelligenz</a>
+<ul>
+<li><a href="#erwartete-kernaussage-28" id="toc-erwartete-kernaussage-28">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-28" id="toc-mögliche-lösungen-28">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-28" id="toc-korrekturhinweis-28">Korrekturhinweis</a></li>
+<li><a href="#merksatz-30" id="toc-merksatz-30">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-32-chancen-und-grenzen-künstlicher-intelligenz" id="toc-lösung-32-chancen-und-grenzen-künstlicher-intelligenz">Lösung
+32: Chancen und Grenzen künstlicher Intelligenz</a>
+<ul>
+<li><a href="#erwartete-kernaussage-29" id="toc-erwartete-kernaussage-29">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-29" id="toc-mögliche-lösungen-29">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-29" id="toc-korrekturhinweis-29">Korrekturhinweis</a></li>
+<li><a href="#merksatz-31" id="toc-merksatz-31">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-33-datenschutz-beim-schülerfestival" id="toc-lösung-33-datenschutz-beim-schülerfestival">Lösung 33:
+Datenschutz beim Schülerfestival</a>
+<ul>
+<li><a href="#erwartete-kernaussage-30" id="toc-erwartete-kernaussage-30">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-30" id="toc-mögliche-lösungen-30">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-30" id="toc-korrekturhinweis-30">Korrekturhinweis</a></li>
+<li><a href="#merksatz-32" id="toc-merksatz-32">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-34-projekt-das-schülerfestival-planen" id="toc-lösung-34-projekt-das-schülerfestival-planen">Lösung 34: Projekt
+Das Schülerfestival planen</a>
+<ul>
+<li><a href="#erwartete-kernaussage-31" id="toc-erwartete-kernaussage-31">Erwartete Kernaussage</a></li>
+<li><a href="#mögliche-lösungen-31" id="toc-mögliche-lösungen-31">Mögliche Lösungen</a></li>
+<li><a href="#korrekturhinweis-31" id="toc-korrekturhinweis-31">Korrekturhinweis</a></li>
+<li><a href="#merksatz-33" id="toc-merksatz-33">Merksatz</a></li>
+</ul></li>
+<li><a href="#lösung-sql-tabellen-anlegen" id="toc-lösung-sql-tabellen-anlegen">Lösung – SQL Tabellen anlegen</a>
+<ul>
+<li><a href="#aufgabe-2" id="toc-aufgabe-2">Aufgabe 2</a></li>
+</ul></li>
+<li><a href="#lösung-crud-daten-anlegen-und-lesen" id="toc-lösung-crud-daten-anlegen-und-lesen">Lösung – CRUD Daten anlegen
+und lesen</a>
+<ul>
+<li><a href="#aufgabe-1" id="toc-aufgabe-1">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2-1" id="toc-aufgabe-2-1">Aufgabe 2</a></li>
+<li><a href="#aufgabe-3" id="toc-aufgabe-3">Aufgabe 3</a></li>
+<li><a href="#aufgabe-4" id="toc-aufgabe-4">Aufgabe 4</a></li>
+</ul></li>
+<li><a href="#lösung-crud-daten-ändern-und-löschen" id="toc-lösung-crud-daten-ändern-und-löschen">Lösung – CRUD Daten ändern
+und löschen</a>
+<ul>
+<li><a href="#aufgabe-1-1" id="toc-aufgabe-1-1">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2-2" id="toc-aufgabe-2-2">Aufgabe 2</a></li>
+<li><a href="#aufgabe-3-1" id="toc-aufgabe-3-1">Aufgabe 3</a></li>
+</ul></li>
+<li><a href="#lösung-sql-constraints-und-schlüssel" id="toc-lösung-sql-constraints-und-schlüssel">Lösung – SQL Constraints
+und Schlüssel</a></li>
+<li><a href="#lösung-sql-praxisauftrag" id="toc-lösung-sql-praxisauftrag">Lösung – SQL Praxisauftrag</a></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="lösungen">Lösungen</h1>
+<div class="page-break"></div>
+<h1 id="welche-informationen-brauchen-wir">01 – Welche Informationen
+brauchen wir?</h1>
+<hr />
+<div class="page-break"></div>
+<h1 id="hinweise">Hinweise</h1>
+<p>Die Aufgaben dieser Einheit sind bewusst offen gestaltet. Ziel ist
+es, den Informationsbedarf bei der Planung eines Schülerfestivals zu
+erkennen. Deshalb sind unterschiedliche Lösungen möglich.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="lösung-aufgabe-1">Lösung Aufgabe 1</h1>
+<h2 id="mögliche-benötigte-informationen">Mögliche benötigte
+Informationen</h2>
+<p>Beispiele:</p>
+<ul>
+<li>Welche Bands stehen zur Auswahl?</li>
+<li>Wie hoch ist das verfügbare Budget?</li>
+<li>Wie viele Besucherinnen und Besucher werden erwartet?</li>
+<li>Welche Bühne steht zur Verfügung?</li>
+<li>Wann soll das Festival stattfinden?</li>
+<li>Welche Technik wird benötigt?</li>
+<li>Welche Helferinnen und Helfer stehen zur Verfügung?</li>
+<li>Welche Verpflegung soll angeboten werden?</li>
+<li>Welche Sicherheitsvorgaben müssen eingehalten werden?</li>
+</ul>
+<p>Weitere sinnvolle Informationen sind möglich.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="lösung-aufgabe-2">Lösung Aufgabe 2</h1>
+<h2 id="welche-informationen-sind-besonders-wichtig">Welche
+Informationen sind besonders wichtig?</h2>
+<p>Mögliche Begründungen</p>
+<table>
+<thead>
+<tr class="header">
+<th>Information</th>
+<th>Mögliche Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Budget</td>
+<td>Ohne Geld können keine Entscheidungen getroffen werden.</td>
+</tr>
+<tr class="even">
+<td>Termin</td>
+<td>Alle weiteren Planungen hängen davon ab.</td>
+</tr>
+<tr class="odd">
+<td>Bands</td>
+<td>Das Programm bestimmt das Festival.</td>
+</tr>
+<tr class="even">
+<td>Besucherzahl</td>
+<td>Sie beeinflusst Bühne, Technik und Sicherheit.</td>
+</tr>
+<tr class="odd">
+<td>Veranstaltungsort</td>
+<td>Er bestimmt den verfügbaren Platz.</td>
+</tr>
+</tbody>
+</table>
+<p>Andere nachvollziehbare Begründungen sind ebenfalls richtig.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="lösung-aufgabe-3">Lösung Aufgabe 3</h1>
+<h2 id="fehlende-informationen-erkennen">Fehlende Informationen
+erkennen</h2>
+<p>Mögliche fehlende Angaben</p>
+<ul>
+<li>Kosten der Bands</li>
+<li>Größe der Bühne</li>
+<li>Verfügbarkeit der Bands</li>
+<li>Technikbedarf</li>
+<li>Anzahl der Helfenden</li>
+<li>Zeitplan</li>
+</ul>
+<p>Die Schülerinnen und Schüler sollen erkennen, dass Entscheidungen nur
+auf Grundlage ausreichender Informationen möglich sind.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="erwartete-erkenntnis">Erwartete Erkenntnis</h1>
+<p>Die Schülerinnen und Schüler erkennen:</p>
+<ul>
+<li>Für gute Entscheidungen werden Informationen benötigt.</li>
+<li>Nicht alle Informationen sind gleich wichtig.</li>
+<li>Fehlende Informationen erschweren Entscheidungen.</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="merksatz">Merksatz</h1>
+<blockquote>
+<p>Gute Entscheidungen benötigen passende Informationen.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="lösungen-1">Lösungen</h1>
+<div class="page-break"></div>
+<h1 id="welche-informationen-sind-wichtig">02 – Welche Informationen
+sind wichtig?</h1>
+<hr />
+<div class="page-break"></div>
+<h1 id="hinweise-1">Hinweise</h1>
+<p>In dieser Unterrichtseinheit sollen die Schülerinnen und Schüler
+erkennen, dass <strong>nicht alle Informationen gleich wichtig</strong>
+sind. Die Gewichtung kann sich je nach Fragestellung unterscheiden.</p>
+<p>Mehrere Lösungen sind daher möglich, wenn sie nachvollziehbar
+begründet werden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="lösung-aufgabe-1-1">Lösung Aufgabe 1</h1>
+<h2 id="wichtige-und-weniger-wichtige-informationen-unterscheiden">Wichtige
+und weniger wichtige Informationen unterscheiden</h2>
+<h3 id="beispiel">Beispiel</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Information</th>
+<th>Mögliche Einschätzung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Budget</td>
+<td>wichtig</td>
+</tr>
+<tr class="even">
+<td>Termin</td>
+<td>wichtig</td>
+</tr>
+<tr class="odd">
+<td>Verfügbare Bühne</td>
+<td>wichtig</td>
+</tr>
+<tr class="even">
+<td>Besucherzahl</td>
+<td>wichtig</td>
+</tr>
+<tr class="odd">
+<td>Lieblingsfarbe der Band</td>
+<td>eher unwichtig</td>
+</tr>
+<tr class="even">
+<td>Schuhgröße der Sängerin</td>
+<td>unwichtig</td>
+</tr>
+<tr class="odd">
+<td>Wettervorhersage</td>
+<td>wichtig</td>
+</tr>
+<tr class="even">
+<td>Musikrichtung</td>
+<td>wichtig</td>
+</tr>
+</tbody>
+</table>
+<p>Andere sinnvolle Zuordnungen sind möglich.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="lösung-aufgabe-2-1">Lösung Aufgabe 2</h1>
+<h2 id="entscheidung-begründen">Entscheidung begründen</h2>
+<h3 id="beispiel-1">Beispiel</h3>
+<p><strong>Budget</strong></p>
+<p>Begründung:</p>
+<blockquote>
+<p>Ohne ausreichendes Budget kann keine Band verpflichtet werden.</p>
+</blockquote>
+<hr />
+<p><strong>Besucherzahl</strong></p>
+<p>Begründung:</p>
+<blockquote>
+<p>Die erwartete Besucherzahl beeinflusst die Größe der Bühne und die
+Sicherheitsplanung.</p>
+</blockquote>
+<hr />
+<p><strong>Termin</strong></p>
+<p>Begründung:</p>
+<blockquote>
+<p>Erst wenn der Termin feststeht, können Bands und Helferinnen bzw.
+Helfer eingeplant werden.</p>
+</blockquote>
+<p>Weitere nachvollziehbare Begründungen sind richtig.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="lösung-aufgabe-3-1">Lösung Aufgabe 3</h1>
+<h2 id="unwichtige-informationen-erkennen">Unwichtige Informationen
+erkennen</h2>
+<p>Mögliche Beispiele</p>
+<ul>
+<li>Lieblingsfarbe</li>
+<li>Lieblingsessen</li>
+<li>Sternzeichen</li>
+<li>Haarfarbe</li>
+<li>Schuhgröße</li>
+</ul>
+<p>Diese Informationen helfen in der Regel <strong>nicht</strong> bei
+der Planung eines Schülerfestivals.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="erwartete-erkenntnis-1">Erwartete Erkenntnis</h1>
+<p>Die Schülerinnen und Schüler erkennen:</p>
+<ul>
+<li>Informationen sind unterschiedlich bedeutsam.</li>
+<li>Die Wichtigkeit hängt von der Fragestellung ab.</li>
+<li>Gute Entscheidungen beruhen auf den passenden Informationen.</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="merksatz-1">Merksatz</h1>
+<blockquote>
+<p>Nicht möglichst viele Informationen sind wichtig – sondern die
+richtigen.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="lösung-03-woher-kommen-informationen">Lösung 03: Woher kommen
+Informationen</h1>
+<h2 id="erwartete-kernaussage">Erwartete Kernaussage</h2>
+<p>Informationsquellen können Personen, Beobachtungen, Dokumente,
+Messungen oder digitale Angebote sein.</p>
+<h2 id="mögliche-lösungen">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-2">Merksatz</h2>
+<p><strong>Informationsquellen können Personen, Beobachtungen,
+Dokumente, Messungen oder digitale Angebote sein.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-04-sind-alle-informationen-zuverlässig">Lösung 04: Sind
+alle Informationen zuverlässig</h1>
+<h2 id="erwartete-kernaussage-1">Erwartete Kernaussage</h2>
+<p>Eine Information ist nicht automatisch zuverlässig, nur weil sie
+veröffentlicht wurde.</p>
+<h2 id="mögliche-lösungen-1">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-1">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-3">Merksatz</h2>
+<p><strong>Eine Information ist nicht automatisch zuverlässig, nur weil
+sie veröffentlicht wurde.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-05-wie-vergleichen-wir-möglichkeiten">Lösung 05: Wie
+vergleichen wir Möglichkeiten</h1>
+<h2 id="erwartete-kernaussage-2">Erwartete Kernaussage</h2>
+<p>Ein fairer Vergleich braucht vorher festgelegte Kriterien.</p>
+<h2 id="mögliche-lösungen-2">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-2">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-4">Merksatz</h2>
+<p><strong>Ein fairer Vergleich braucht vorher festgelegte
+Kriterien.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-06-entscheiden-mit-einer-entscheidungsmatrix">Lösung 06:
+Entscheiden mit einer Entscheidungsmatrix</h1>
+<h2 id="erwartete-kernaussage-3">Erwartete Kernaussage</h2>
+<p>Eine Entscheidungsmatrix macht Bewertungen nachvollziehbar, ersetzt
+aber nicht das begründete Urteil.</p>
+<h2 id="mögliche-lösungen-3">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-3">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-5">Merksatz</h2>
+<p><strong>Eine Entscheidungsmatrix macht Bewertungen nachvollziehbar,
+ersetzt aber nicht das begründete Urteil.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-07-daten-übersichtlich-in-tabellen-darstellen">Lösung 07:
+Daten übersichtlich in Tabellen darstellen</h1>
+<h2 id="erwartete-kernaussage-4">Erwartete Kernaussage</h2>
+<p>Eine gute Tabelle ordnet gleichartige Daten in Spalten und einzelne
+Fälle in Zeilen.</p>
+<h2 id="mögliche-lösungen-4">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-4">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-6">Merksatz</h2>
+<p><strong>Eine gute Tabelle ordnet gleichartige Daten in Spalten und
+einzelne Fälle in Zeilen.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-08-was-ist-ein-datensatz">Lösung 08: Was ist ein
+Datensatz</h1>
+<h2 id="erwartete-kernaussage-5">Erwartete Kernaussage</h2>
+<p>Ein Datensatz beschreibt genau ein Objekt oder einen Fall.</p>
+<h2 id="mögliche-lösungen-5">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-5">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-7">Merksatz</h2>
+<p><strong>Ein Datensatz beschreibt genau ein Objekt oder einen
+Fall.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-09-warum-brauchen-wir-datenbanken">Lösung 09: Warum
+brauchen wir Datenbanken</h1>
+<h2 id="erwartete-kernaussage-6">Erwartete Kernaussage</h2>
+<p>Datenbanken unterstützen das strukturierte Speichern, Verknüpfen und
+gezielte Auswerten größerer Datenbestände.</p>
+<h2 id="mögliche-lösungen-6">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-6">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-8">Merksatz</h2>
+<p><strong>Datenbanken unterstützen das strukturierte Speichern,
+Verknüpfen und gezielte Auswerten größerer Datenbestände.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-10-von-dingen-zu-klassen">Lösung 10: Von Dingen zu
+Klassen</h1>
+<h2 id="erwartete-kernaussage-7">Erwartete Kernaussage</h2>
+<p>Eine Klasse beschreibt gemeinsame Merkmale gleichartiger Objekte.</p>
+<h2 id="mögliche-lösungen-7">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-7">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-9">Merksatz</h2>
+<p><strong>Eine Klasse beschreibt gemeinsame Merkmale gleichartiger
+Objekte.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-11-attribute-beschreiben-eigenschaften">Lösung 11:
+Attribute beschreiben Eigenschaften</h1>
+<h2 id="erwartete-kernaussage-8">Erwartete Kernaussage</h2>
+<p>Attribute beschreiben Eigenschaften einer Klasse.</p>
+<h2 id="mögliche-lösungen-8">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-8">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-10">Merksatz</h2>
+<p><strong>Attribute beschreiben Eigenschaften einer
+Klasse.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-12-objekte-sind-konkrete-exemplare">Lösung 12: Objekte
+sind konkrete Exemplare</h1>
+<h2 id="erwartete-kernaussage-9">Erwartete Kernaussage</h2>
+<p>Ein Objekt ist ein konkretes Exemplar einer Klasse.</p>
+<h2 id="mögliche-lösungen-9">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-9">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-11">Merksatz</h2>
+<p><strong>Ein Objekt ist ein konkretes Exemplar einer
+Klasse.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-13-von-klassen-zu-tabellen">Lösung 13: Von Klassen zu
+Tabellen</h1>
+<h2 id="erwartete-kernaussage-10">Erwartete Kernaussage</h2>
+<p>Eine Klasse kann als Tabelle, ein Attribut als Spalte und ein Objekt
+als Zeile dargestellt werden.</p>
+<h2 id="mögliche-lösungen-10">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-10">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-12">Merksatz</h2>
+<p><strong>Eine Klasse kann als Tabelle, ein Attribut als Spalte und ein
+Objekt als Zeile dargestellt werden.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-14-warum-jede-zeile-eindeutig-sein-muss">Lösung 14: Warum
+jede Zeile eindeutig sein muss</h1>
+<h2 id="erwartete-kernaussage-11">Erwartete Kernaussage</h2>
+<p>Datensätze müssen eindeutig identifizierbar sein.</p>
+<h2 id="mögliche-lösungen-11">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-11">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-13">Merksatz</h2>
+<p><strong>Datensätze müssen eindeutig identifizierbar
+sein.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-15-der-primärschlüssel">Lösung 15: Der
+Primärschlüssel</h1>
+<h2 id="erwartete-kernaussage-12">Erwartete Kernaussage</h2>
+<p>Der Primärschlüssel identifiziert jeden Datensatz eindeutig.</p>
+<h2 id="mögliche-lösungen-12">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-12">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-14">Merksatz</h2>
+<p><strong>Der Primärschlüssel identifiziert jeden Datensatz
+eindeutig.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-16-mehrere-tabellen-statt-wiederholungen">Lösung 16:
+Mehrere Tabellen statt Wiederholungen</h1>
+<h2 id="erwartete-kernaussage-13">Erwartete Kernaussage</h2>
+<p>Wiederholte Angaben sollten in eigene Tabellen ausgelagert
+werden.</p>
+<h2 id="mögliche-lösungen-13">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-13">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-15">Merksatz</h2>
+<p><strong>Wiederholte Angaben sollten in eigene Tabellen ausgelagert
+werden.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-17-der-fremdschlüssel">Lösung 17: Der Fremdschlüssel</h1>
+<h2 id="erwartete-kernaussage-14">Erwartete Kernaussage</h2>
+<p>Ein Fremdschlüssel verweist auf den Primärschlüssel einer anderen
+Tabelle.</p>
+<h2 id="mögliche-lösungen-14">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-14">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-16">Merksatz</h2>
+<p><strong>Ein Fremdschlüssel verweist auf den Primärschlüssel einer
+anderen Tabelle.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-18-beziehungen-zwischen-tabellen">Lösung 18: Beziehungen
+zwischen Tabellen</h1>
+<h2 id="erwartete-kernaussage-15">Erwartete Kernaussage</h2>
+<p>Bei einer 1:n-Beziehung kann ein Datensatz der ersten Tabelle mit
+mehreren Datensätzen der zweiten Tabelle verbunden sein.</p>
+<h2 id="mögliche-lösungen-15">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-15">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-17">Merksatz</h2>
+<p><strong>Bei einer 1:n-Beziehung kann ein Datensatz der ersten Tabelle
+mit mehreren Datensätzen der zweiten Tabelle verbunden
+sein.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-19-ein-datenbankschema-lesen">Lösung 19: Ein
+Datenbankschema lesen</h1>
+<h2 id="erwartete-kernaussage-16">Erwartete Kernaussage</h2>
+<p>Ein Datenbankschema zeigt Tabellen, Attribute, Schlüssel und
+Beziehungen.</p>
+<h2 id="mögliche-lösungen-16">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-16">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-18">Merksatz</h2>
+<p><strong>Ein Datenbankschema zeigt Tabellen, Attribute, Schlüssel und
+Beziehungen.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-20-ein-datenbankschema-entwerfen">Lösung 20: Ein
+Datenbankschema entwerfen</h1>
+<h2 id="erwartete-kernaussage-17">Erwartete Kernaussage</h2>
+<p>Ein gutes Schema bildet die benötigten Informationen ohne unnötige
+Doppelungen ab.</p>
+<h2 id="mögliche-lösungen-17">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-17">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-19">Merksatz</h2>
+<p><strong>Ein gutes Schema bildet die benötigten Informationen ohne
+unnötige Doppelungen ab.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-21-datensätze-gezielt-suchen">Lösung 21: Datensätze
+gezielt suchen</h1>
+<h2 id="erwartete-kernaussage-18">Erwartete Kernaussage</h2>
+<p>Eine Suche braucht ein klares Suchmerkmal und einen passenden
+Suchwert.</p>
+<h2 id="mögliche-lösungen-18">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-18">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-20">Merksatz</h2>
+<p><strong>Eine Suche braucht ein klares Suchmerkmal und einen passenden
+Suchwert.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-22-daten-filtern">Lösung 22: Daten filtern</h1>
+<h2 id="erwartete-kernaussage-19">Erwartete Kernaussage</h2>
+<p>Filtern zeigt nur Datensätze, die eine Bedingung erfüllen.</p>
+<h2 id="mögliche-lösungen-19">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-19">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-21">Merksatz</h2>
+<p><strong>Filtern zeigt nur Datensätze, die eine Bedingung
+erfüllen.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-23-mit-mehreren-bedingungen-filtern">Lösung 23: Mit
+mehreren Bedingungen filtern</h1>
+<h2 id="erwartete-kernaussage-20">Erwartete Kernaussage</h2>
+<p>UND verlangt alle Bedingungen; ODER mindestens eine erfüllte
+Bedingung.</p>
+<h2 id="mögliche-lösungen-20">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-20">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-22">Merksatz</h2>
+<p><strong>UND verlangt alle Bedingungen; ODER mindestens eine erfüllte
+Bedingung.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-24-daten-sortieren">Lösung 24: Daten sortieren</h1>
+<h2 id="erwartete-kernaussage-21">Erwartete Kernaussage</h2>
+<p>Sortieren ordnet Datensätze nach einem oder mehreren Merkmalen.</p>
+<h2 id="mögliche-lösungen-21">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-21">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-23">Merksatz</h2>
+<p><strong>Sortieren ordnet Datensätze nach einem oder mehreren
+Merkmalen.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-25-suchen-filtern-und-sortieren-kombinieren">Lösung 25:
+Suchen Filtern und Sortieren kombinieren</h1>
+<h2 id="erwartete-kernaussage-22">Erwartete Kernaussage</h2>
+<p>Komplexe Abfragen werden schrittweise aus Ziel, Bedingungen und
+Sortierung geplant.</p>
+<h2 id="mögliche-lösungen-22">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-22">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-24">Merksatz</h2>
+<p><strong>Komplexe Abfragen werden schrittweise aus Ziel, Bedingungen
+und Sortierung geplant.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-26-daten-zählen-und-zusammenfassen">Lösung 26: Daten
+zählen und zusammenfassen</h1>
+<h2 id="erwartete-kernaussage-23">Erwartete Kernaussage</h2>
+<p>Aus Daten können Kennzahlen wie Anzahl, Summe, Minimum, Maximum oder
+Durchschnitt gebildet werden.</p>
+<h2 id="mögliche-lösungen-23">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-23">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-25">Merksatz</h2>
+<p><strong>Aus Daten können Kennzahlen wie Anzahl, Summe, Minimum,
+Maximum oder Durchschnitt gebildet werden.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-27-daten-mit-diagrammen-darstellen">Lösung 27: Daten mit
+Diagrammen darstellen</h1>
+<h2 id="erwartete-kernaussage-24">Erwartete Kernaussage</h2>
+<p>Die Diagrammart richtet sich nach Fragestellung und Daten.</p>
+<h2 id="mögliche-lösungen-24">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-24">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-26">Merksatz</h2>
+<p><strong>Die Diagrammart richtet sich nach Fragestellung und
+Daten.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-28-diagramme-kritisch-lesen">Lösung 28: Diagramme
+kritisch lesen</h1>
+<h2 id="erwartete-kernaussage-25">Erwartete Kernaussage</h2>
+<p>Diagramme können durch Achsenskalierung, Auswahl oder Gestaltung
+einen falschen Eindruck erzeugen.</p>
+<h2 id="mögliche-lösungen-25">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-25">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-27">Merksatz</h2>
+<p><strong>Diagramme können durch Achsenskalierung, Auswahl oder
+Gestaltung einen falschen Eindruck erzeugen.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-29-was-bedeutet-big-data">Lösung 29: Was bedeutet Big
+Data</h1>
+<h2 id="erwartete-kernaussage-26">Erwartete Kernaussage</h2>
+<p>Big Data bezeichnet Datenbestände, die durch Umfang, Geschwindigkeit
+oder Vielfalt besondere Verfahren erfordern.</p>
+<h2 id="mögliche-lösungen-26">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-26">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-28">Merksatz</h2>
+<p><strong>Big Data bezeichnet Datenbestände, die durch Umfang,
+Geschwindigkeit oder Vielfalt besondere Verfahren
+erfordern.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-30-wo-entstehen-große-datenmengen">Lösung 30: Wo
+entstehen große Datenmengen</h1>
+<h2 id="erwartete-kernaussage-27">Erwartete Kernaussage</h2>
+<p>Große Datenmengen entstehen durch Sensoren, Plattformen, Käufe,
+Mobilgeräte und vernetzte Systeme.</p>
+<h2 id="mögliche-lösungen-27">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-27">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-29">Merksatz</h2>
+<p><strong>Große Datenmengen entstehen durch Sensoren, Plattformen,
+Käufe, Mobilgeräte und vernetzte Systeme.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-31-wie-lernt-eine-künstliche-intelligenz">Lösung 31: Wie
+lernt eine künstliche Intelligenz</h1>
+<h2 id="erwartete-kernaussage-28">Erwartete Kernaussage</h2>
+<p>Beim maschinellen Lernen erkennt ein System Muster in Trainingsdaten
+und überträgt sie auf neue Fälle.</p>
+<h2 id="mögliche-lösungen-28">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-28">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-30">Merksatz</h2>
+<p><strong>Beim maschinellen Lernen erkennt ein System Muster in
+Trainingsdaten und überträgt sie auf neue Fälle.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-32-chancen-und-grenzen-künstlicher-intelligenz">Lösung
+32: Chancen und Grenzen künstlicher Intelligenz</h1>
+<h2 id="erwartete-kernaussage-29">Erwartete Kernaussage</h2>
+<p>KI kann unterstützen, aber Ergebnisse können falsch, verzerrt oder
+ungeeignet sein.</p>
+<h2 id="mögliche-lösungen-29">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-29">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-31">Merksatz</h2>
+<p><strong>KI kann unterstützen, aber Ergebnisse können falsch, verzerrt
+oder ungeeignet sein.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-33-datenschutz-beim-schülerfestival">Lösung 33:
+Datenschutz beim Schülerfestival</h1>
+<h2 id="erwartete-kernaussage-30">Erwartete Kernaussage</h2>
+<p>Personenbezogene Daten dürfen nur zweckgebunden, sparsam und
+geschützt verarbeitet werden.</p>
+<h2 id="mögliche-lösungen-30">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-30">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-32">Merksatz</h2>
+<p><strong>Personenbezogene Daten dürfen nur zweckgebunden, sparsam und
+geschützt verarbeitet werden.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-34-projekt-das-schülerfestival-planen">Lösung 34: Projekt
+Das Schülerfestival planen</h1>
+<h2 id="erwartete-kernaussage-31">Erwartete Kernaussage</h2>
+<p>Eine gute Festivalplanung verbindet Informationsbewertung,
+Datenmodellierung, Abfragen, Auswertung und Datenschutz.</p>
+<h2 id="mögliche-lösungen-31">Mögliche Lösungen</h2>
+<ul>
+<li>Fachbegriffe werden korrekt verwendet.</li>
+<li>Die Antwort bezieht sich nachvollziehbar auf die
+Festivalplanung.</li>
+<li>Begründungen nennen mindestens ein passendes Kriterium oder
+Beispiel.</li>
+</ul>
+<h2 id="korrekturhinweis-31">Korrekturhinweis</h2>
+<p>Mehrere Lösungen sind möglich. Entscheidend sind fachliche
+Richtigkeit, schlüssige Begründung und ein erkennbarer Bezug zur
+Aufgabe. Gleichwertige Formulierungen sind anzuerkennen.</p>
+<h2 id="merksatz-33">Merksatz</h2>
+<p><strong>Eine gute Festivalplanung verbindet Informationsbewertung,
+Datenmodellierung, Abfragen, Auswertung und Datenschutz.</strong></p>
+<div class="page-break"></div>
+<h1 id="lösung-sql-tabellen-anlegen">Lösung – SQL Tabellen anlegen</h1>
+<h2 id="aufgabe-2">Aufgabe 2</h2>
+<p>Eine mögliche Lösung:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Fach (</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    FachID <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    Bezeichnung <span class="dt">VARCHAR</span>(<span class="dv">100</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">UNIQUE</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
+<p>Andere geeignete Datentypen sind abhängig vom verwendeten
+Datenbanksystem möglich.</p>
+<div class="page-break"></div>
+<h1 id="lösung-crud-daten-anlegen-und-lesen">Lösung – CRUD Daten anlegen
+und lesen</h1>
+<h2 id="aufgabe-1">Aufgabe 1</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> Klasse (KlasseID, Bezeichnung)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">2</span>, <span class="st">&#39;9b&#39;</span>);</span></code></pre></div>
+<h2 id="aufgabe-2-1">Aufgabe 2</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> Schueler</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    (SchuelerID, Schuelernummer, Name, KlasseID)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1003</span>, <span class="st">&#39;S-1003&#39;</span>, <span class="st">&#39;Lea&#39;</span>, <span class="dv">2</span>);</span></code></pre></div>
+<h2 id="aufgabe-3">Aufgabe 3</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Schuelernummer, Name</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler;</span></code></pre></div>
+<h2 id="aufgabe-4">Aufgabe 4</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">1003</span>;</span></code></pre></div>
+<div class="page-break"></div>
+<h1 id="lösung-crud-daten-ändern-und-löschen">Lösung – CRUD Daten ändern
+und löschen</h1>
+<h2 id="aufgabe-1-1">Aufgabe 1</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> Schueler</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> Name <span class="op">=</span> <span class="st">&#39;Lea Schneider&#39;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">1003</span>;</span></code></pre></div>
+<h2 id="aufgabe-2-2">Aufgabe 2</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> Schueler</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> KlasseID <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">1001</span>;</span></code></pre></div>
+<h2 id="aufgabe-3-1">Aufgabe 3</h2>
+<p>Kontrolle:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">1002</span>;</span></code></pre></div>
+<p>Löschen:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> Schueler</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">1002</span>;</span></code></pre></div>
+<div class="page-break"></div>
+<h1 id="lösung-sql-constraints-und-schlüssel">Lösung – SQL Constraints
+und Schlüssel</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Anforderung</th>
+<th>Constraint</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Name muss vorhanden sein</td>
+<td><code>NOT NULL</code></td>
+</tr>
+<tr class="even">
+<td>E-Mail darf nicht doppelt vorkommen</td>
+<td><code>UNIQUE</code></td>
+</tr>
+<tr class="odd">
+<td>ID identifiziert Datensatz</td>
+<td><code>PRIMARY KEY</code></td>
+</tr>
+<tr class="even">
+<td>Klasse muss existieren</td>
+<td><code>FOREIGN KEY</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ein Primärschlüssel kann aus mehreren Spalten bestehen.</p>
+<p>Ein alternatives eindeutiges Merkmal kann zusätzlich mit
+<code>UNIQUE</code> abgesichert werden.</p>
+<div class="page-break"></div>
+<h1 id="lösung-sql-praxisauftrag">Lösung – SQL Praxisauftrag</h1>
+<p>Eine mögliche Lösung:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Schueler (</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    SchuelerID <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    Schuelernummer <span class="dt">VARCHAR</span>(<span class="dv">20</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">UNIQUE</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    Name <span class="dt">VARCHAR</span>(<span class="dv">100</span>) <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Kurs (</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    KursID <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    Bezeichnung <span class="dt">VARCHAR</span>(<span class="dv">100</span>) <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">UNIQUE</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Teilnahme (</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    SchuelerID <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    KursID <span class="dt">INTEGER</span> <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (SchuelerID, KursID),</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (SchuelerID)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">REFERENCES</span> Schueler(SchuelerID),</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (KursID)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        <span class="kw">REFERENCES</span> Kurs(KursID)</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
+<p>Beispieldaten:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> Schueler</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    (SchuelerID, Schuelernummer, Name)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span>, <span class="st">&#39;S-001&#39;</span>, <span class="st">&#39;Mia&#39;</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>, <span class="st">&#39;S-002&#39;</span>, <span class="st">&#39;Tim&#39;</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">3</span>, <span class="st">&#39;S-003&#39;</span>, <span class="st">&#39;Lea&#39;</span>);</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> Kurs</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    (KursID, Bezeichnung)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span>, <span class="st">&#39;Informatik&#39;</span>),</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>, <span class="st">&#39;Robotik&#39;</span>);</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> Teilnahme</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    (SchuelerID, KursID)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">1</span>,<span class="dv">1</span>),</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>,<span class="dv">1</span>),</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2</span>,<span class="dv">2</span>),</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">3</span>,<span class="dv">2</span>);</span></code></pre></div>
+<p>CRUD-Beispiele:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> Schueler;</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> Schueler</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> Name <span class="op">=</span> <span class="st">&#39;Lea Schneider&#39;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">3</span>;</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> Teilnahme</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> KursID <span class="op">=</span> <span class="dv">2</span>;</span></code></pre></div>
+<p>Die Tabelle <code>Teilnahme</code> benötigt zwei Fremdschlüssel, weil
+jeder Datensatz genau einen Schüler mit genau einem Kurs verbindet.</p>
+</body>
+</html>

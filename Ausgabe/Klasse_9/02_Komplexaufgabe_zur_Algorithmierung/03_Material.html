@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Komplexaufgabe zur Algorithmierung</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Komplexaufgabe zur Algorithmierung</h1>
+<p class="subtitle">Informatik · Klasse 9 · Material</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#materialien-lineare-algorithmen" id="toc-materialien-lineare-algorithmen">Materialien – Lineare
+Algorithmen</a></li>
+<li><a href="#m01-rollenkarten" id="toc-m01-rollenkarten">M01 –
+Rollenkarten</a>
+<ul>
+<li><a href="#ziel" id="toc-ziel">Ziel</a></li>
+</ul></li>
+<li><a href="#rolle-kai" id="toc-rolle-kai">Rolle: KAI</a></li>
+<li><a href="#rolle-programmierer" id="toc-rolle-programmierer">Rolle:
+Programmierer</a></li>
+<li><a href="#rolle-beobachter" id="toc-rolle-beobachter">Rolle:
+Beobachter</a></li>
+<li><a href="#reflexion" id="toc-reflexion">Reflexion</a></li>
+<li><a href="#m02-eigenschaftenkarten" id="toc-m02-eigenschaftenkarten">M02 – Eigenschaftenkarten</a>
+<ul>
+<li><a href="#karte-1" id="toc-karte-1">Karte 1</a></li>
+</ul></li>
+<li><a href="#eindeutig" id="toc-eindeutig">eindeutig</a>
+<ul>
+<li><a href="#karte-2" id="toc-karte-2">Karte 2</a></li>
+</ul></li>
+<li><a href="#vollständig" id="toc-vollständig">vollständig</a>
+<ul>
+<li><a href="#karte-3" id="toc-karte-3">Karte 3</a></li>
+</ul></li>
+<li><a href="#richtige-reihenfolge" id="toc-richtige-reihenfolge">richtige Reihenfolge</a>
+<ul>
+<li><a href="#karte-4" id="toc-karte-4">Karte 4</a></li>
+</ul></li>
+<li><a href="#ausführbar" id="toc-ausführbar">ausführbar</a></li>
+<li><a href="#einsatzmöglichkeiten" id="toc-einsatzmöglichkeiten">Einsatzmöglichkeiten</a></li>
+<li><a href="#m03-sortierkarten" id="toc-m03-sortierkarten">M03 –
+Sortierkarten</a>
+<ul>
+<li><a href="#karte" id="toc-karte">Karte</a></li>
+<li><a href="#karte-5" id="toc-karte-5">Karte</a></li>
+<li><a href="#karte-6" id="toc-karte-6">Karte</a></li>
+<li><a href="#karte-7" id="toc-karte-7">Karte</a></li>
+<li><a href="#karte-8" id="toc-karte-8">Karte</a></li>
+<li><a href="#karte-9" id="toc-karte-9">Karte</a></li>
+<li><a href="#aufgabe" id="toc-aufgabe">Aufgabe</a></li>
+</ul></li>
+<li><a href="#m04-beobachtungsbogen" id="toc-m04-beobachtungsbogen">M04
+– Beobachtungsbogen</a>
+<ul>
+<li><a href="#gruppe" id="toc-gruppe">Gruppe</a></li>
+<li><a href="#was-ist-besonders-gut" id="toc-was-ist-besonders-gut">Was
+ist besonders gut?</a></li>
+<li><a href="#was-sollte-verbessert-werden" id="toc-was-sollte-verbessert-werden">Was sollte verbessert
+werden?</a></li>
+</ul></li>
+<li><a href="#m05-lösungskarten" id="toc-m05-lösungskarten">M05 –
+Lösungskarten</a>
+<ul>
+<li><a href="#typische-lösungen" id="toc-typische-lösungen">Typische
+Lösungen</a></li>
+</ul></li>
+<li><a href="#m06-zusatzaufgaben" id="toc-m06-zusatzaufgaben">M06 –
+Zusatzaufgaben</a>
+<ul>
+<li><a href="#hinweise" id="toc-hinweise">Hinweise</a></li>
+</ul></li>
+<li><a href="#aufgabe-1-reihenfolge-finden" id="toc-aufgabe-1-reihenfolge-finden">Aufgabe 1 – Reihenfolge
+finden</a></li>
+<li><a href="#aufgabe-2-fehler-finden" id="toc-aufgabe-2-fehler-finden">Aufgabe 2 – Fehler finden</a></li>
+<li><a href="#aufgabe-3-fehlende-schritte" id="toc-aufgabe-3-fehlende-schritte">Aufgabe 3 – Fehlende
+Schritte</a></li>
+<li><a href="#aufgabe-4-kai-fragt-nach" id="toc-aufgabe-4-kai-fragt-nach">Aufgabe 4 – KAI fragt nach</a></li>
+<li><a href="#aufgabe-5-eigener-algorithmus" id="toc-aufgabe-5-eigener-algorithmus">Aufgabe 5 – Eigener
+Algorithmus</a></li>
+<li><a href="#m07-differenzierung" id="toc-m07-differenzierung">M07 –
+Differenzierung</a>
+<ul>
+<li><a href="#ziel-1" id="toc-ziel-1">Ziel</a></li>
+</ul></li>
+<li><a href="#unterstützung" id="toc-unterstützung">Unterstützung</a>
+<ul>
+<li><a href="#hilfekarten" id="toc-hilfekarten">Hilfekarten</a></li>
+<li><a href="#satzanfänge" id="toc-satzanfänge">Satzanfänge</a></li>
+<li><a href="#partnerarbeit" id="toc-partnerarbeit">Partnerarbeit</a></li>
+</ul></li>
+<li><a href="#erweiterung" id="toc-erweiterung">Erweiterung</a>
+<ul>
+<li><a href="#aufgabe-1" id="toc-aufgabe-1">Aufgabe</a></li>
+<li><a href="#aufgabe-2" id="toc-aufgabe-2">Aufgabe</a></li>
+<li><a href="#aufgabe-3" id="toc-aufgabe-3">Aufgabe</a></li>
+</ul></li>
+<li><a href="#hinweise-für-lehrkräfte" id="toc-hinweise-für-lehrkräfte">Hinweise für Lehrkräfte</a></li>
+<li><a href="#m08-projektauftrag" id="toc-m08-projektauftrag">M08 –
+Projektauftrag</a>
+<ul>
+<li><a href="#komplexaufgabe-zur-algorithmierung" id="toc-komplexaufgabe-zur-algorithmierung">Komplexaufgabe zur
+Algorithmierung</a></li>
+<li><a href="#eure-aufgabe" id="toc-eure-aufgabe">Eure Aufgabe</a></li>
+<li><a href="#mögliche-projektarten" id="toc-mögliche-projektarten">Mögliche Projektarten</a></li>
+<li><a href="#mindestanforderungen" id="toc-mindestanforderungen">Mindestanforderungen</a></li>
+<li><a href="#abgabe" id="toc-abgabe">Abgabe</a></li>
+<li><a href="#grundsatz" id="toc-grundsatz">Grundsatz</a></li>
+</ul></li>
+<li><a href="#m09-anforderungskarten" id="toc-m09-anforderungskarten">M09 – Anforderungskarten</a>
+<ul>
+<li><a href="#problem" id="toc-problem">Problem</a></li>
+<li><a href="#ziel-2" id="toc-ziel-2">Ziel</a></li>
+<li><a href="#zielgruppe" id="toc-zielgruppe">Zielgruppe</a></li>
+<li><a href="#muss-anforderung" id="toc-muss-anforderung">Muss-Anforderung</a></li>
+<li><a href="#kann-anforderung" id="toc-kann-anforderung">Kann-Anforderung</a></li>
+<li><a href="#grenze" id="toc-grenze">Grenze</a></li>
+<li><a href="#eingabe" id="toc-eingabe">Eingabe</a></li>
+<li><a href="#verarbeitung" id="toc-verarbeitung">Verarbeitung</a></li>
+<li><a href="#ausgabe" id="toc-ausgabe">Ausgabe</a></li>
+<li><a href="#speicherung" id="toc-speicherung">Speicherung</a></li>
+</ul></li>
+<li><a href="#m10-testprotokoll" id="toc-m10-testprotokoll">M10 –
+Testprotokoll</a>
+<ul>
+<li><a href="#projekt" id="toc-projekt">Projekt</a></li>
+<li><a href="#team" id="toc-team">Team</a></li>
+<li><a href="#version" id="toc-version">Version</a></li>
+<li><a href="#testfälle" id="toc-testfälle">Testfälle</a></li>
+<li><a href="#gefundene-probleme" id="toc-gefundene-probleme">Gefundene
+Probleme</a></li>
+<li><a href="#nachtest" id="toc-nachtest">Nachtest</a></li>
+<li><a href="#ergebnis" id="toc-ergebnis">Ergebnis</a></li>
+</ul></li>
+<li><a href="#m11-teamboard" id="toc-m11-teamboard">M11 – Teamboard</a>
+<ul>
+<li><a href="#projekt-1" id="toc-projekt-1">Projekt</a></li>
+<li><a href="#aktuelles-ziel" id="toc-aktuelles-ziel">Aktuelles
+Ziel</a></li>
+<li><a href="#offen" id="toc-offen">Offen</a></li>
+<li><a href="#in-arbeit" id="toc-in-arbeit">In Arbeit</a></li>
+<li><a href="#erledigt" id="toc-erledigt">Erledigt</a></li>
+<li><a href="#kurzer-teamcheck" id="toc-kurzer-teamcheck">Kurzer
+Teamcheck</a></li>
+</ul></li>
+<li><a href="#m12-peer-review" id="toc-m12-peer-review">M12 –
+Peer-Review</a>
+<ul>
+<li><a href="#bewertetes-projekt" id="toc-bewertetes-projekt">Bewertetes
+Projekt</a></li>
+<li><a href="#testendes-team" id="toc-testendes-team">Testendes
+Team</a></li>
+<li><a href="#problem-und-anforderungen" id="toc-problem-und-anforderungen">Problem und Anforderungen</a></li>
+<li><a href="#bedienung-und-funktion" id="toc-bedienung-und-funktion">Bedienung und Funktion</a></li>
+<li><a href="#test" id="toc-test">Test</a></li>
+<li><a href="#unser-wichtigster-verbesserungsvorschlag" id="toc-unser-wichtigster-verbesserungsvorschlag">Unser wichtigster
+Verbesserungsvorschlag</a></li>
+<li><a href="#eine-stärke-des-projekts" id="toc-eine-stärke-des-projekts">Eine Stärke des Projekts</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="materialien-lineare-algorithmen">Materialien – Lineare
+Algorithmen</h1>
+<p>Dieser Ordner enthält ergänzende Unterrichtsmaterialien zum Kapitel
+<strong>Lineare Algorithmen</strong>.</p>
+<p>Die Materialien können unabhängig vom Arbeitsheft eingesetzt
+werden.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Datei</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>M01_KAI_Rollenkarten.md</td>
+<td>Rollenkarten für Rollenspiele</td>
+</tr>
+<tr class="even">
+<td>M02_Eigenschaftenkarten.md</td>
+<td>Karten zu den Eigenschaften von Algorithmen</td>
+</tr>
+<tr class="odd">
+<td>M03_Sortierkarten_Algorithmen.md</td>
+<td>Ausschneidekarten für Sortieraufgaben</td>
+</tr>
+<tr class="even">
+<td>M04_Beobachtungsbogen.md</td>
+<td>Beobachtungsbogen für Gruppenarbeit</td>
+</tr>
+<tr class="odd">
+<td>M05_Loesungskarten.md</td>
+<td>Lösungen ausgewählter Aufgaben</td>
+</tr>
+<tr class="even">
+<td>M06_Zusatzaufgaben.md</td>
+<td>Vertiefende Aufgaben</td>
+</tr>
+<tr class="odd">
+<td>M07_Differenzierung.md</td>
+<td>Ideen zur inneren Differenzierung</td>
+</tr>
+</tbody>
+</table>
+<div class="page-break"></div>
+<h1 id="m01-rollenkarten">M01 – Rollenkarten</h1>
+<h2 id="ziel">Ziel</h2>
+<p>Die Schülerinnen und Schüler erleben, wie Computer Anweisungen
+ausführen.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="rolle-kai">Rolle: KAI</h1>
+<p>Du bist KAI.</p>
+<p>Du führst Anweisungen <strong>genau</strong> aus.</p>
+<p>Du darfst niemals raten.</p>
+<p>Du darfst keine Informationen ergänzen.</p>
+<p>Wenn dir Informationen fehlen, fragst du sofort nach.</p>
+<p>Du darfst keinen Schritt überspringen.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="rolle-programmierer">Rolle: Programmierer</h1>
+<p>Du liest den Algorithmus laut vor.</p>
+<p>Du darfst nichts erklären.</p>
+<p>Du darfst nur das vorlesen, was geschrieben wurde.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="rolle-beobachter">Rolle: Beobachter</h1>
+<p>Achte darauf,</p>
+<ul>
+<li>wann KAI nachfragen muss,</li>
+<li>welche Informationen fehlen,</li>
+<li>welche Schritte verbessert werden müssen.</li>
+</ul>
+<p>Notiere deine Beobachtungen.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="reflexion">Reflexion</h1>
+<p>Besprecht anschließend gemeinsam:</p>
+<ul>
+<li>Warum musste KAI nachfragen?</li>
+<li>Welche Informationen haben gefehlt?</li>
+<li>Wie kann der Algorithmus verbessert werden?</li>
+</ul>
+<div class="page-break"></div>
+<h1 id="m02-eigenschaftenkarten">M02 – Eigenschaftenkarten</h1>
+<p>Die Karten werden ausgeschnitten.</p>
+<p>Jede Gruppe erhält einen vollständigen Satz.</p>
+<hr />
+<h2 id="karte-1">Karte 1</h2>
+<div class="page-break"></div>
+<h1 id="eindeutig">eindeutig</h1>
+<p>Jeder Schritt ist klar beschrieben.</p>
+<p>Es gibt keine unterschiedlichen Interpretationen.</p>
+<hr />
+<h2 id="karte-2">Karte 2</h2>
+<div class="page-break"></div>
+<h1 id="vollständig">vollständig</h1>
+<p>Alle notwendigen Informationen sind vorhanden.</p>
+<p>Es fehlt kein Schritt.</p>
+<hr />
+<h2 id="karte-3">Karte 3</h2>
+<div class="page-break"></div>
+<h1 id="richtige-reihenfolge">richtige Reihenfolge</h1>
+<p>Die Handlungsschritte stehen in der richtigen Reihenfolge.</p>
+<hr />
+<h2 id="karte-4">Karte 4</h2>
+<div class="page-break"></div>
+<h1 id="ausführbar">ausführbar</h1>
+<p>Jeder Schritt kann tatsächlich ausgeführt werden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="einsatzmöglichkeiten">Einsatzmöglichkeiten</h1>
+<ul>
+<li>Zuordnungsaufgaben</li>
+<li>Gruppenarbeit</li>
+<li>Fehleranalyse</li>
+<li>Wiederholung</li>
+</ul>
+<div class="page-break"></div>
+<h1 id="m03-sortierkarten">M03 – Sortierkarten</h1>
+<p>Die Karten werden ausgeschnitten.</p>
+<p>Die Gruppen entscheiden,</p>
+<p>ob die Beschreibung ein guter Algorithmus ist.</p>
+<hr />
+<h2 id="karte">Karte</h2>
+<p>Öffne dein Heft.</p>
+<hr />
+<h2 id="karte-5">Karte</h2>
+<p>Arbeite ordentlich.</p>
+<hr />
+<h2 id="karte-6">Karte</h2>
+<p>Schalte den Computer ein.</p>
+<hr />
+<h2 id="karte-7">Karte</h2>
+<p>Sei vorsichtig.</p>
+<hr />
+<h2 id="karte-8">Karte</h2>
+<p>Drücke die Eingabetaste.</p>
+<hr />
+<h2 id="karte-9">Karte</h2>
+<p>Gib dein Bestes.</p>
+<hr />
+<h2 id="aufgabe">Aufgabe</h2>
+<p>Sortiert die Karten in zwei Gruppen.</p>
+<ul>
+<li>Algorithmus</li>
+<li>Kein Algorithmus</li>
+</ul>
+<p>Begründet eure Entscheidung.</p>
+<div class="page-break"></div>
+<h1 id="m04-beobachtungsbogen">M04 – Beobachtungsbogen</h1>
+<h2 id="gruppe">Gruppe</h2>
+<hr />
+<hr />
+<table>
+<thead>
+<tr class="header">
+<th>Beobachtung</th>
+<th style="text-align: center;">Ja</th>
+<th style="text-align: center;">Nein</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alle Schritte eindeutig</td>
+<td style="text-align: center;">☐</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr class="even">
+<td>Reihenfolge richtig</td>
+<td style="text-align: center;">☐</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr class="odd">
+<td>Vollständig</td>
+<td style="text-align: center;">☐</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr class="even">
+<td>Ausführbar</td>
+<td style="text-align: center;">☐</td>
+<td style="text-align: center;">☐</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="was-ist-besonders-gut">Was ist besonders gut?</h2>
+<hr />
+<hr />
+<hr />
+<h2 id="was-sollte-verbessert-werden">Was sollte verbessert werden?</h2>
+<hr />
+<hr />
+<div class="page-break"></div>
+<h1 id="m05-lösungskarten">M05 – Lösungskarten</h1>
+<h2 id="typische-lösungen">Typische Lösungen</h2>
+<h3 id="gute-algorithmen">Gute Algorithmen</h3>
+<ul>
+<li>Zähne putzen</li>
+<li>Schulranzen packen</li>
+<li>Ampel überqueren</li>
+</ul>
+<hr />
+<h3 id="kein-guter-algorithmus">Kein guter Algorithmus</h3>
+<ul>
+<li>Sei nett.</li>
+<li>Beeile dich.</li>
+<li>Arbeite ordentlich.</li>
+</ul>
+<p>Begründung:</p>
+<p>Die Aussagen sind nicht eindeutig ausführbar.</p>
+<div class="page-break"></div>
+<h1 id="m06-zusatzaufgaben">M06 – Zusatzaufgaben</h1>
+<h2 id="hinweise">Hinweise</h2>
+<p>Die Zusatzaufgaben dienen der Vertiefung und können im Unterricht, in
+Vertretungsstunden oder als Hausaufgabe eingesetzt werden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="aufgabe-1-reihenfolge-finden">Aufgabe 1 – Reihenfolge
+finden</h1>
+<p>Die folgenden Schritte gehören zu einem Algorithmus.</p>
+<p>Leider sind sie durcheinander geraten.</p>
+<p>Bringe sie in die richtige Reihenfolge.</p>
+<h3 id="schuhe-binden">Schuhe binden</h3>
+<ul>
+<li>Schleife festziehen.</li>
+<li>Schuhe anziehen.</li>
+<li>Schleife bilden.</li>
+<li>Schnürsenkel kreuzen.</li>
+<li>Knoten bilden.</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="aufgabe-2-fehler-finden">Aufgabe 2 – Fehler finden</h1>
+<p>Ein Algorithmus soll beschreiben, wie ein Brief verschickt wird.</p>
+<ol type="1">
+<li>Brief einwerfen.</li>
+<li>Brief schreiben.</li>
+<li>Brief unterschreiben.</li>
+<li>Brief in einen Umschlag legen.</li>
+</ol>
+<p>Welche Fehler findest du?</p>
+<p>Verbessere den Algorithmus.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="aufgabe-3-fehlende-schritte">Aufgabe 3 – Fehlende Schritte</h1>
+<p>Ergänze den Algorithmus.</p>
+<h3 id="computer-starten">Computer starten</h3>
+<ol type="1">
+<li><hr /></li>
+<li><p>Monitor einschalten.</p></li>
+<li><hr /></li>
+<li><p>Benutzer anmelden.</p></li>
+</ol>
+<hr />
+<div class="page-break"></div>
+<h1 id="aufgabe-4-kai-fragt-nach">Aufgabe 4 – KAI fragt nach</h1>
+<p>Ein Mitschüler sagt:</p>
+<blockquote>
+<p>„Nimm das Blatt und lege es dahin.“</p>
+</blockquote>
+<p>Welche Fragen würde KAI stellen?</p>
+<p>Notiere mindestens vier Fragen.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="aufgabe-5-eigener-algorithmus">Aufgabe 5 – Eigener
+Algorithmus</h1>
+<p>Entwickle einen Algorithmus für eine Alltagssituation.</p>
+<p>Beispiele:</p>
+<ul>
+<li>Hände waschen</li>
+<li>Fahrrad abschließen</li>
+<li>Zimmer lüften</li>
+<li>Brotdose einpacken</li>
+</ul>
+<p>Tausche deinen Algorithmus anschließend mit einer Partnerin oder
+einem Partner aus.</p>
+<p>Kann KAI ihn ohne Rückfragen ausführen?</p>
+<div class="page-break"></div>
+<h1 id="m07-differenzierung">M07 – Differenzierung</h1>
+<h2 id="ziel-1">Ziel</h2>
+<p>Nicht alle Schülerinnen und Schüler arbeiten im gleichen Tempo.</p>
+<p>Die folgenden Vorschläge erleichtern die innere Differenzierung.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="unterstützung">Unterstützung</h1>
+<p>Geeignet für Schülerinnen und Schüler, die noch Schwierigkeiten beim
+Formulieren von Algorithmen haben.</p>
+<h2 id="hilfekarten">Hilfekarten</h2>
+<ul>
+<li>Was passiert zuerst?</li>
+<li>Fehlt ein Schritt?</li>
+<li>Kann KAI den Schritt ausführen?</li>
+<li>Ist die Reihenfolge richtig?</li>
+</ul>
+<hr />
+<h2 id="satzanfänge">Satzanfänge</h2>
+<ul>
+<li>Zuerst …</li>
+<li>Danach …</li>
+<li>Anschließend …</li>
+<li>Zum Schluss …</li>
+</ul>
+<hr />
+<h2 id="partnerarbeit">Partnerarbeit</h2>
+<p>Ein Schüler schreibt.</p>
+<p>Ein Schüler übernimmt die Rolle von KAI.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="erweiterung">Erweiterung</h1>
+<p>Geeignet für leistungsstärkere Schülerinnen und Schüler.</p>
+<h2 id="aufgabe-1">Aufgabe</h2>
+<p>Entwickle absichtlich einen fehlerhaften Algorithmus.</p>
+<p>Eine andere Gruppe sucht die Fehler.</p>
+<hr />
+<h2 id="aufgabe-2">Aufgabe</h2>
+<p>Beschreibe denselben Algorithmus</p>
+<ul>
+<li>als Fließtext,</li>
+<li>als nummerierte Liste,</li>
+<li>in Scratch,</li>
+<li>in Python.</li>
+</ul>
+<p>Welche Darstellung ist für Menschen am einfachsten?</p>
+<p>Welche für Computer?</p>
+<p>Begründe deine Antwort.</p>
+<hr />
+<h2 id="aufgabe-3">Aufgabe</h2>
+<p>Überlege:</p>
+<p>Warum sind Kochrezepte häufig keine guten Algorithmen für
+Computer?</p>
+<p>Diskutiert in der Gruppe.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="hinweise-für-lehrkräfte">Hinweise für Lehrkräfte</h1>
+<p>Die Erweiterungsaufgaben eignen sich besonders</p>
+<ul>
+<li>für schnelle Lerngruppen,</li>
+<li>zur Binnendifferenzierung,</li>
+<li>für Lernbüros,</li>
+<li>als Wahlaufgaben.</li>
+</ul>
+<div class="page-break"></div>
+<h1 id="m08-projektauftrag">M08 – Projektauftrag</h1>
+<h2 id="komplexaufgabe-zur-algorithmierung">Komplexaufgabe zur
+Algorithmierung</h2>
+<p>Arbeitet in Partner- oder Teamarbeit an einer einfachen
+informatischen Problemstellung.</p>
+<p>Euer Ziel ist nicht nur ein funktionierendes Ergebnis. Ihr sollt den
+gesamten Lösungsprozess nachvollziehbar gestalten.</p>
+<h2 id="eure-aufgabe">Eure Aufgabe</h2>
+<ol type="1">
+<li>Beschreibt das Problem.</li>
+<li>Formuliert Muss- und Kann-Anforderungen.</li>
+<li>Entwickelt mindestens zwei Lösungsideen.</li>
+<li>Entscheidet euch begründet für einen Lösungsweg.</li>
+<li>Plant eine kleine erste funktionsfähige Version.</li>
+<li>Setzt die Lösung um.</li>
+<li>Testet systematisch.</li>
+<li>Verbessert die Lösung.</li>
+<li>Dokumentiert wichtige Entscheidungen.</li>
+<li>Präsentiert das Ergebnis.</li>
+</ol>
+<h2 id="mögliche-projektarten">Mögliche Projektarten</h2>
+<ul>
+<li>kleines Computerspiel</li>
+<li>Simulation</li>
+<li>grafische Anwendung</li>
+<li>digitaler Helfer</li>
+<li>einfache Robotik- oder Steuerungsaufgabe</li>
+</ul>
+<p>Die Lehrkraft kann einen gemeinsamen Projektrahmen vorgeben.</p>
+<h2 id="mindestanforderungen">Mindestanforderungen</h2>
+<p>Euer Projekt muss</p>
+<ul>
+<li>eine klar beschriebene Problemstellung besitzen,</li>
+<li>mindestens drei überprüfbare Muss-Anforderungen enthalten,</li>
+<li>einen nachvollziehbaren Algorithmus oder Lösungsentwurf
+besitzen,</li>
+<li>eine funktionsfähige Kernversion erreichen,</li>
+<li>mindestens drei dokumentierte Testfälle enthalten,</li>
+<li>nach einem Test mindestens einmal gezielt verbessert werden,</li>
+<li>dokumentiert und präsentiert werden.</li>
+</ul>
+<h2 id="abgabe">Abgabe</h2>
+<ul>
+<li>Projektergebnis</li>
+<li>Projektdokumentation</li>
+<li>Testprotokoll</li>
+<li>Präsentation</li>
+</ul>
+<h2 id="grundsatz">Grundsatz</h2>
+<blockquote>
+<p>Eine kleine, gut getestete und nachvollziehbare Lösung ist besser als
+ein großes, unfertiges Projekt.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="m09-anforderungskarten">M09 – Anforderungskarten</h1>
+<p>Die Karten können ausgeschnitten oder digital verteilt werden.</p>
+<hr />
+<h2 id="problem">Problem</h2>
+<p><strong>Welches Problem soll gelöst werden?</strong></p>
+<p>Formuliert es in einem Satz.</p>
+<hr />
+<h2 id="ziel-2">Ziel</h2>
+<p><strong>Woran erkennt ihr, dass das Projekt erfolgreich
+ist?</strong></p>
+<p>Beschreibt das gewünschte Ergebnis.</p>
+<hr />
+<h2 id="zielgruppe">Zielgruppe</h2>
+<p><strong>Wer benutzt eure Lösung?</strong></p>
+<p>Was muss für diese Personen berücksichtigt werden?</p>
+<hr />
+<h2 id="muss-anforderung">Muss-Anforderung</h2>
+<p><strong>Was muss unbedingt funktionieren?</strong></p>
+<p>Formuliert die Anforderung so, dass sie getestet werden kann.</p>
+<hr />
+<h2 id="kann-anforderung">Kann-Anforderung</h2>
+<p><strong>Was wäre eine sinnvolle Erweiterung?</strong></p>
+<p>Diese Funktion ist nicht notwendig, um die Kernaufgabe zu
+erfüllen.</p>
+<hr />
+<h2 id="grenze">Grenze</h2>
+<p><strong>Was gehört bewusst nicht zur ersten Version?</strong></p>
+<p>Begrenzt den Projektumfang.</p>
+<hr />
+<h2 id="eingabe">Eingabe</h2>
+<p><strong>Welche Daten oder Aktionen erhält das System?</strong></p>
+<hr />
+<h2 id="verarbeitung">Verarbeitung</h2>
+<p><strong>Was geschieht mit den Eingaben?</strong></p>
+<hr />
+<h2 id="ausgabe">Ausgabe</h2>
+<p><strong>Welches Ergebnis liefert das System?</strong></p>
+<hr />
+<h2 id="speicherung">Speicherung</h2>
+<p><strong>Welche Daten müssen vorübergehend oder dauerhaft gespeichert
+werden?</strong></p>
+<div class="page-break"></div>
+<h1 id="m10-testprotokoll">M10 – Testprotokoll</h1>
+<h2 id="projekt">Projekt</h2>
+<hr />
+<h2 id="team">Team</h2>
+<hr />
+<h2 id="version">Version</h2>
+<hr />
+<hr />
+<h2 id="testfälle">Testfälle</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Nr.</th>
+<th>Ausgangslage</th>
+<th>Eingabe / Aktion</th>
+<th>Erwartetes Ergebnis</th>
+<th>Tatsächliches Ergebnis</th>
+<th style="text-align: center;">bestanden</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="gefundene-probleme">Gefundene Probleme</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Nr.</th>
+<th>Problem</th>
+<th>Priorität</th>
+<th>vermutete Ursache</th>
+<th>Änderung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Priorität:</p>
+<ul>
+<li><strong>kritisch</strong> – Kernfunktion funktioniert nicht</li>
+<li><strong>wichtig</strong> – wichtige Funktion fehlerhaft</li>
+<li><strong>klein</strong> – Verbesserung ohne Einfluss auf die
+Kernfunktion</li>
+</ul>
+<hr />
+<h2 id="nachtest">Nachtest</h2>
+<p>Welche Änderungen wurden erneut getestet?</p>
+<hr />
+<hr />
+<h2 id="ergebnis">Ergebnis</h2>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Kernfunktionen
+funktionieren.</label></li>
+<li><label><input type="checkbox"></input>Muss-Anforderungen sind
+getestet.</label></li>
+<li><label><input type="checkbox"></input>Fehler wurden
+dokumentiert.</label></li>
+<li><label><input type="checkbox"></input>Änderungen wurden
+nachgetestet.</label></li>
+</ul>
+<div class="page-break"></div>
+<h1 id="m11-teamboard">M11 – Teamboard</h1>
+<h2 id="projekt-1">Projekt</h2>
+<hr />
+<h2 id="aktuelles-ziel">Aktuelles Ziel</h2>
+<hr />
+<hr />
+<h2 id="offen">Offen</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Aufgabe</th>
+<th>Verantwortlich</th>
+<th>Priorität</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="in-arbeit">In Arbeit</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Aufgabe</th>
+<th>Verantwortlich</th>
+<th>Problem / Hinweis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="erledigt">Erledigt</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Aufgabe</th>
+<th>Ergebnis / Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="kurzer-teamcheck">Kurzer Teamcheck</h2>
+<h3 id="was-haben-wir-seit-dem-letzten-check-geschafft">Was haben wir
+seit dem letzten Check geschafft?</h3>
+<hr />
+<h3 id="wo-hängen-wir">Wo hängen wir?</h3>
+<hr />
+<h3 id="was-ist-unser-nächster-gemeinsamer-schritt">Was ist unser
+nächster gemeinsamer Schritt?</h3>
+<hr />
+<div class="page-break"></div>
+<h1 id="m12-peer-review">M12 – Peer-Review</h1>
+<h2 id="bewertetes-projekt">Bewertetes Projekt</h2>
+<hr />
+<h2 id="testendes-team">Testendes Team</h2>
+<hr />
+<hr />
+<h2 id="problem-und-anforderungen">Problem und Anforderungen</h2>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Wir verstehen das
+Problem.</label></li>
+<li><label><input type="checkbox"></input>Das Ziel ist eindeutig.</label></li>
+<li><label><input type="checkbox"></input>Die Muss-Anforderungen sind
+überprüfbar.</label></li>
+<li><label><input type="checkbox"></input>Der Projektumfang wirkt
+realistisch.</label></li>
+</ul>
+<h3 id="rückmeldung">Rückmeldung</h3>
+<hr />
+<hr />
+<h2 id="bedienung-und-funktion">Bedienung und Funktion</h2>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Wir verstehen ohne lange Erklärung,
+wie die Lösung benutzt wird.</label></li>
+<li><label><input type="checkbox"></input>Die Kernfunktion
+funktioniert.</label></li>
+<li><label><input type="checkbox"></input>Fehlbedienungen führen nicht sofort
+zu unverständlichem Verhalten.</label></li>
+</ul>
+<h3 id="rückmeldung-1">Rückmeldung</h3>
+<hr />
+<hr />
+<h2 id="test">Test</h2>
+<p>Beschreibt mindestens einen Test, den ihr durchgeführt habt.</p>
+<p><strong>Aktion / Eingabe:</strong></p>
+<hr />
+<p><strong>Erwartetes Ergebnis:</strong></p>
+<hr />
+<p><strong>Tatsächliches Ergebnis:</strong></p>
+<hr />
+<hr />
+<h2 id="unser-wichtigster-verbesserungsvorschlag">Unser wichtigster
+Verbesserungsvorschlag</h2>
+<hr />
+<hr />
+<h2 id="eine-stärke-des-projekts">Eine Stärke des Projekts</h2>
+<hr />
+</body>
+</html>

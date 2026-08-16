@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Dokumentation</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Dokumentation</h1>
+<p class="subtitle">Dokumentation</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#abgleich-informationen-und-daten" id="toc-abgleich-informationen-und-daten">Abgleich – Informationen und
+Daten</a>
+<ul>
+<li><a href="#verbindliche-kapitelstruktur" id="toc-verbindliche-kapitelstruktur">Verbindliche
+Kapitelstruktur</a></li>
+<li><a href="#offener-altbestand" id="toc-offener-altbestand">Offener
+Altbestand</a></li>
+<li><a href="#lösungen-und-präsentationen" id="toc-lösungen-und-präsentationen">Lösungen und
+Präsentationen</a></li>
+</ul></li>
+<li><a href="#architektur-grundlagen" id="toc-architektur-grundlagen">Architektur Grundlagen</a>
+<ul>
+<li><a href="#ebenen" id="toc-ebenen">Ebenen</a></li>
+<li><a href="#regeln" id="toc-regeln">Regeln</a></li>
+<li><a href="#sql" id="toc-sql">SQL</a></li>
+</ul></li>
+<li><a href="#audit-klasse-7" id="toc-audit-klasse-7">Audit – Klasse
+7</a>
+<ul>
+<li><a href="#ziel" id="toc-ziel">Ziel</a></li>
+<li><a href="#fachliche-abdeckung" id="toc-fachliche-abdeckung">Fachliche Abdeckung</a></li>
+<li><a href="#leistungsbewertung" id="toc-leistungsbewertung">Leistungsbewertung</a></li>
+<li><a href="#struktur" id="toc-struktur">Struktur</a></li>
+<li><a href="#offener-merge" id="toc-offener-merge">Offener
+Merge</a></li>
+<li><a href="#ergebnis" id="toc-ergebnis">Ergebnis</a></li>
+</ul></li>
+<li><a href="#audit-klasse-9" id="toc-audit-klasse-9">Audit Klasse 9</a>
+<ul>
+<li><a href="#zusammenfassung" id="toc-zusammenfassung">Zusammenfassung</a></li>
+<li><a href="#rot-vor-weiterem-ausbau-korrigieren" id="toc-rot-vor-weiterem-ausbau-korrigieren">Rot – vor weiterem Ausbau
+korrigieren</a></li>
+<li><a href="#gelb-im-nächsten-review-prüfen" id="toc-gelb-im-nächsten-review-prüfen">Gelb – im nächsten Review
+prüfen</a></li>
+<li><a href="#grün-positiv" id="toc-grün-positiv">Grün –
+positiv</a></li>
+</ul></li>
+<li><a href="#empfohlene-reihenfolge-der-bereinigung" id="toc-empfohlene-reihenfolge-der-bereinigung">Empfohlene Reihenfolge
+der Bereinigung</a>
+<ul>
+<li><a href="#wichtig" id="toc-wichtig">Wichtig</a></li>
+</ul></li>
+<li><a href="#gesamtaudit-informatik-klassen-710" id="toc-gesamtaudit-informatik-klassen-710">Gesamtaudit Informatik
+Klassen 7–10</a>
+<ul>
+<li><a href="#zweck" id="toc-zweck">Zweck</a></li>
+<li><a href="#prüfkriterien" id="toc-prüfkriterien">Prüfkriterien</a></li>
+<li><a href="#klasse-7" id="toc-klasse-7">Klasse 7</a></li>
+<li><a href="#klasse-8" id="toc-klasse-8">Klasse 8</a></li>
+<li><a href="#klasse-9" id="toc-klasse-9">Klasse 9</a></li>
+<li><a href="#klasse-10" id="toc-klasse-10">Klasse 10</a></li>
+</ul></li>
+<li><a href="#progression-7-10" id="toc-progression-7-10">Progression 7
+→ 10</a></li>
+<li><a href="#qualitätsregeln-für-weitere-änderungen" id="toc-qualitätsregeln-für-weitere-änderungen">Qualitätsregeln für
+weitere Änderungen</a></li>
+<li><a href="#ergebnis-1" id="toc-ergebnis-1">Ergebnis</a></li>
+<li><a href="#autorenleitfaden" id="toc-autorenleitfaden">Autorenleitfaden</a>
+<ul>
+<li><a href="#oer-lehrwerk-informatik-für-die-oberschule-sachsen" id="toc-oer-lehrwerk-informatik-für-die-oberschule-sachsen">OER-Lehrwerk
+Informatik für die Oberschule Sachsen</a></li>
+</ul></li>
+<li><a href="#grundprinzip" id="toc-grundprinzip">1.
+Grundprinzip</a></li>
+<li><a href="#aufbau-eines-kapitels" id="toc-aufbau-eines-kapitels">2.
+Aufbau eines Kapitels</a></li>
+<li><a href="#einstieg" id="toc-einstieg">3. Einstieg</a></li>
+<li><a href="#fachbegriffe" id="toc-fachbegriffe">4.
+Fachbegriffe</a></li>
+<li><a href="#sprache" id="toc-sprache">5. Sprache</a></li>
+<li><a href="#beispiele" id="toc-beispiele">6. Beispiele</a></li>
+<li><a href="#aufgaben" id="toc-aufgaben">7. Aufgaben</a></li>
+<li><a href="#bilder" id="toc-bilder">8. Bilder</a></li>
+<li><a href="#software" id="toc-software">9. Software</a></li>
+<li><a href="#quellen" id="toc-quellen">10. Quellen</a></li>
+<li><a href="#lösungen" id="toc-lösungen">11. Lösungen</a></li>
+<li><a href="#präsentationen" id="toc-präsentationen">12.
+Präsentationen</a></li>
+<li><a href="#arbeitshefte" id="toc-arbeitshefte">13.
+Arbeitshefte</a></li>
+<li><a href="#lehrerband" id="toc-lehrerband">14. Lehrerband</a></li>
+<li><a href="#grundsatz" id="toc-grundsatz">15. Grundsatz</a></li>
+<li><a href="#didaktisches-konzept" id="toc-didaktisches-konzept">Didaktisches Konzept</a>
+<ul>
+<li><a href="#oer-lehrwerk-informatik-für-die-oberschule-sachsen-1" id="toc-oer-lehrwerk-informatik-für-die-oberschule-sachsen-1">OER-Lehrwerk
+Informatik für die Oberschule Sachsen</a></li>
+</ul></li>
+<li><a href="#unsere-grundsätze" id="toc-unsere-grundsätze">Unsere
+Grundsätze</a>
+<ul>
+<li><a href="#vom-problem-zum-begriff" id="toc-vom-problem-zum-begriff">1. Vom Problem zum Begriff</a></li>
+<li><a href="#alltag-vor-technik" id="toc-alltag-vor-technik">2. Alltag
+vor Technik</a></li>
+<li><a href="#informationstechnik-ist-werkzeug" id="toc-informationstechnik-ist-werkzeug">3. Informationstechnik ist
+Werkzeug</a></li>
+<li><a href="#verstehen-statt-auswendiglernen" id="toc-verstehen-statt-auswendiglernen">4. Verstehen statt
+Auswendiglernen</a></li>
+<li><a href="#denken-vor-merken" id="toc-denken-vor-merken">5. Denken
+vor Merken</a></li>
+<li><a href="#eigene-erfahrungen-nutzen" id="toc-eigene-erfahrungen-nutzen">6. Eigene Erfahrungen nutzen</a></li>
+<li><a href="#fehler-sind-lernchancen" id="toc-fehler-sind-lernchancen">7. Fehler sind Lernchancen</a></li>
+<li><a href="#humor-unterstützt-das-lernen" id="toc-humor-unterstützt-das-lernen">8. Humor unterstützt das
+Lernen</a></li>
+<li><a href="#geschichten-statt-definitionen" id="toc-geschichten-statt-definitionen">9. Geschichten statt
+Definitionen</a></li>
+<li><a href="#transfer-ist-pflicht" id="toc-transfer-ist-pflicht">10.
+Transfer ist Pflicht</a></li>
+<li><a href="#informatik-ist-problemlösen" id="toc-informatik-ist-problemlösen">11. Informatik ist
+Problemlösen</a></li>
+<li><a href="#software-ist-austauschbar" id="toc-software-ist-austauschbar">12. Software ist
+austauschbar</a></li>
+<li><a href="#sprache-1" id="toc-sprache-1">13. Sprache</a></li>
+<li><a href="#quellen-1" id="toc-quellen-1">14. Quellen</a></li>
+</ul></li>
+<li><a href="#qualitätsanspruch" id="toc-qualitätsanspruch">Qualitätsanspruch</a></li>
+<li><a href="#unser-leitsatz" id="toc-unser-leitsatz">Unser
+Leitsatz</a></li>
+<li><a href="#qualitätsstandards" id="toc-qualitätsstandards">Qualitätsstandards</a>
+<ul>
+<li><a href="#oer-lehrwerk-informatik-für-die-oberschule-sachsen-2" id="toc-oer-lehrwerk-informatik-für-die-oberschule-sachsen-2">OER-Lehrwerk
+Informatik für die Oberschule Sachsen</a></li>
+</ul></li>
+<li><a href="#fachliche-qualität" id="toc-fachliche-qualität">1.
+Fachliche Qualität</a></li>
+<li><a href="#didaktische-qualität" id="toc-didaktische-qualität">2.
+Didaktische Qualität</a></li>
+<li><a href="#methodische-qualität" id="toc-methodische-qualität">3.
+Methodische Qualität</a></li>
+<li><a href="#sprachliche-qualität" id="toc-sprachliche-qualität">4.
+Sprachliche Qualität</a></li>
+<li><a href="#gestaltung" id="toc-gestaltung">5. Gestaltung</a></li>
+<li><a href="#oer-qualität" id="toc-oer-qualität">6.
+OER-Qualität</a></li>
+<li><a href="#lehrerband-1" id="toc-lehrerband-1">7. Lehrerband</a></li>
+<li><a href="#abschlusskontrolle" id="toc-abschlusskontrolle">8.
+Abschlusskontrolle</a></li>
+<li><a href="#unser-qualitätsanspruch" id="toc-unser-qualitätsanspruch">Unser Qualitätsanspruch</a></li>
+<li><a href="#quellenleitfaden" id="toc-quellenleitfaden">Quellenleitfaden</a>
+<ul>
+<li><a href="#oer-lehrwerk-informatik-für-die-oberschule-sachsen-3" id="toc-oer-lehrwerk-informatik-für-die-oberschule-sachsen-3">OER-Lehrwerk
+Informatik für die Oberschule Sachsen</a></li>
+</ul></li>
+<li><a href="#grundsatz-1" id="toc-grundsatz-1">1. Grundsatz</a></li>
+<li><a href="#reihenfolge-der-quellen" id="toc-reihenfolge-der-quellen">2. Reihenfolge der Quellen</a>
+<ul>
+<li><a href="#lehrpläne-und-bildungsstandards" id="toc-lehrpläne-und-bildungsstandards">1. Lehrpläne und
+Bildungsstandards</a></li>
+<li><a href="#gesetze-und-offizielle-veröffentlichungen" id="toc-gesetze-und-offizielle-veröffentlichungen">2. Gesetze und
+offizielle Veröffentlichungen</a></li>
+<li><a href="#wissenschaftliche-literatur" id="toc-wissenschaftliche-literatur">3. Wissenschaftliche
+Literatur</a></li>
+<li><a href="#schulbücher" id="toc-schulbücher">4. Schulbücher</a></li>
+<li><a href="#seriöse-internetquellen" id="toc-seriöse-internetquellen">5. Seriöse Internetquellen</a></li>
+</ul></li>
+<li><a href="#nicht-verwendete-quellen" id="toc-nicht-verwendete-quellen">3. Nicht verwendete Quellen</a></li>
+<li><a href="#verwendung-von-ki" id="toc-verwendung-von-ki">4.
+Verwendung von KI</a></li>
+<li><a href="#quellenangaben" id="toc-quellenangaben">5.
+Quellenangaben</a></li>
+<li><a href="#zitierweise" id="toc-zitierweise">6. Zitierweise</a>
+<ul>
+<li><a href="#bücher" id="toc-bücher">Bücher</a></li>
+<li><a href="#lehrpläne" id="toc-lehrpläne">Lehrpläne</a></li>
+<li><a href="#internetquellen" id="toc-internetquellen">Internetquellen</a></li>
+</ul></li>
+<li><a href="#bilder-1" id="toc-bilder-1">7. Bilder</a></li>
+<li><a href="#quellenprüfung" id="toc-quellenprüfung">8.
+Quellenprüfung</a></li>
+<li><a href="#änderungen" id="toc-änderungen">9. Änderungen</a></li>
+<li><a href="#qualitätsanspruch-1" id="toc-qualitätsanspruch-1">10.
+Qualitätsanspruch</a></li>
+<li><a href="#repository-standards" id="toc-repository-standards">Repository-Standards</a></li>
+<li><a href="#ziel-des-projekts" id="toc-ziel-des-projekts">1. Ziel des
+Projekts</a></li>
+<li><a href="#grundprinzipien" id="toc-grundprinzipien">2.
+Grundprinzipien</a></li>
+<li><a href="#sprache-2" id="toc-sprache-2">3. Sprache</a></li>
+<li><a href="#aufgaben-1" id="toc-aufgaben-1">4. Aufgaben</a></li>
+<li><a href="#lebensweltbezug" id="toc-lebensweltbezug">5.
+Lebensweltbezug</a></li>
+<li><a href="#kompetenzorientierung" id="toc-kompetenzorientierung">6.
+Kompetenzorientierung</a></li>
+<li><a href="#medienbildung" id="toc-medienbildung">7.
+Medienbildung</a></li>
+<li><a href="#ki" id="toc-ki">8. KI</a></li>
+<li><a href="#bilder-2" id="toc-bilder-2">9. Bilder</a></li>
+<li><a href="#präsentationen-1" id="toc-präsentationen-1">10.
+Präsentationen</a></li>
+<li><a href="#lehrerband-2" id="toc-lehrerband-2">11.
+Lehrerband</a></li>
+<li><a href="#lösungen-1" id="toc-lösungen-1">12. Lösungen</a></li>
+<li><a href="#dateibenennung" id="toc-dateibenennung">13.
+Dateibenennung</a></li>
+<li><a href="#markdown" id="toc-markdown">14. Markdown</a></li>
+<li><a href="#kapitel" id="toc-kapitel">Kapitel</a>
+<ul>
+<li><a href="#aufgabe" id="toc-aufgabe">Aufgabe</a></li>
+</ul></li>
+<li><a href="#lizenz" id="toc-lizenz">15. Lizenz</a></li>
+<li><a href="#qualitätssicherung" id="toc-qualitätssicherung">16.
+Qualitätssicherung</a></li>
+<li><a href="#langfristige-pflege" id="toc-langfristige-pflege">17.
+Langfristige Pflege</a></li>
+<li><a href="#stilguide" id="toc-stilguide">Stilguide</a>
+<ul>
+<li><a href="#oer-lehrwerk-informatik-für-die-oberschule-sachsen-4" id="toc-oer-lehrwerk-informatik-für-die-oberschule-sachsen-4">OER-Lehrwerk
+Informatik für die Oberschule Sachsen</a></li>
+</ul></li>
+<li><a href="#sprache-3" id="toc-sprache-3">1. Sprache</a>
+<ul>
+<li><a href="#zielgruppe" id="toc-zielgruppe">Zielgruppe</a></li>
+<li><a href="#satzbau" id="toc-satzbau">Satzbau</a></li>
+<li><a href="#fachbegriffe-1" id="toc-fachbegriffe-1">Fachbegriffe</a></li>
+<li><a href="#ansprache" id="toc-ansprache">Ansprache</a></li>
+</ul></li>
+<li><a href="#kapitelaufbau" id="toc-kapitelaufbau">2.
+Kapitelaufbau</a></li>
+<li><a href="#überschriften" id="toc-überschriften">3. Überschriften</a>
+<ul>
+<li><a href="#kapitel-1" id="toc-kapitel-1">Kapitel</a></li>
+</ul></li>
+<li><a href="#kapitel-1-daten-und-informationen" id="toc-kapitel-1-daten-und-informationen">Kapitel 1 – Daten und
+Informationen</a>
+<ul>
+<li><a href="#abschnitt" id="toc-abschnitt">Abschnitt</a></li>
+<li><a href="#daten-im-alltag" id="toc-daten-im-alltag">Daten im
+Alltag</a></li>
+<li><a href="#unterabschnitt" id="toc-unterabschnitt">Unterabschnitt</a></li>
+</ul></li>
+<li><a href="#merkkästen" id="toc-merkkästen">4. Merkkästen</a></li>
+<li><a href="#alltagssituationen" id="toc-alltagssituationen">5.
+Alltagssituationen</a></li>
+<li><a href="#beispiele-1" id="toc-beispiele-1">6. Beispiele</a></li>
+<li><a href="#aufgaben-2" id="toc-aufgaben-2">7. Aufgaben</a></li>
+<li><a href="#bilder-3" id="toc-bilder-3">8. Bilder</a></li>
+<li><a href="#tabellen" id="toc-tabellen">9. Tabellen</a></li>
+<li><a href="#symbole" id="toc-symbole">10. Symbole</a></li>
+<li><a href="#farben" id="toc-farben">11. Farben</a></li>
+<li><a href="#quellen-2" id="toc-quellen-2">12. Quellen</a>
+<ul>
+<li><a href="#bücher-1" id="toc-bücher-1">Bücher</a></li>
+<li><a href="#internet" id="toc-internet">Internet</a></li>
+</ul></li>
+<li><a href="#dateibenennung-1" id="toc-dateibenennung-1">13.
+Dateibenennung</a></li>
+<li><a href="#quellenverzeichnis" id="toc-quellenverzeichnis">14.
+Quellenverzeichnis</a></li>
+<li><a href="#künstliche-intelligenz" id="toc-künstliche-intelligenz">15. Künstliche Intelligenz</a></li>
+<li><a href="#unser-leitsatz-1" id="toc-unser-leitsatz-1">16. Unser
+Leitsatz</a></li>
+<li><a href="#vorlage-lehrerband" id="toc-vorlage-lehrerband">Vorlage
+Lehrerband</a></li>
+<li><a href="#kapitel-2" id="toc-kapitel-2">Kapitel</a></li>
+<li><a href="#einordnung" id="toc-einordnung">Einordnung</a></li>
+<li><a href="#kompetenzen" id="toc-kompetenzen">Kompetenzen</a></li>
+<li><a href="#lernziele" id="toc-lernziele">Lernziele</a></li>
+<li><a href="#benötigte-materialien" id="toc-benötigte-materialien">Benötigte Materialien</a></li>
+<li><a href="#vorbereitung" id="toc-vorbereitung">Vorbereitung</a></li>
+<li><a href="#unterrichtsverlauf" id="toc-unterrichtsverlauf">Unterrichtsverlauf</a>
+<ul>
+<li><a href="#einstieg-ca.-___-minuten" id="toc-einstieg-ca.-___-minuten">Einstieg (ca. ___ Minuten)</a></li>
+<li><a href="#erarbeitung-ca.-___-minuten" id="toc-erarbeitung-ca.-___-minuten">Erarbeitung (ca. ___
+Minuten)</a></li>
+<li><a href="#sicherung-ca.-___-minuten" id="toc-sicherung-ca.-___-minuten">Sicherung (ca. ___ Minuten)</a></li>
+<li><a href="#transfer-ca.-___-minuten" id="toc-transfer-ca.-___-minuten">Transfer (ca. ___ Minuten)</a></li>
+</ul></li>
+<li><a href="#erwartete-ergebnisse" id="toc-erwartete-ergebnisse">Erwartete Ergebnisse</a></li>
+<li><a href="#typische-schülervorstellungen" id="toc-typische-schülervorstellungen">Typische
+Schülervorstellungen</a></li>
+<li><a href="#differenzierung" id="toc-differenzierung">Differenzierung</a>
+<ul>
+<li><a href="#unterstützung" id="toc-unterstützung">Unterstützung</a></li>
+<li><a href="#erweiterung" id="toc-erweiterung">Erweiterung</a></li>
+</ul></li>
+<li><a href="#digitale-werkzeuge" id="toc-digitale-werkzeuge">Digitale
+Werkzeuge</a></li>
+<li><a href="#hinweise-zur-leistungsbewertung" id="toc-hinweise-zur-leistungsbewertung">Hinweise zur
+Leistungsbewertung</a></li>
+<li><a href="#lösungen-2" id="toc-lösungen-2">Lösungen</a></li>
+<li><a href="#weiterführende-ideen" id="toc-weiterführende-ideen">Weiterführende Ideen</a></li>
+<li><a href="#quellen-3" id="toc-quellen-3">Quellen</a></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="abgleich-informationen-und-daten">Abgleich – Informationen und
+Daten</h1>
+<h2 id="verbindliche-kapitelstruktur">Verbindliche Kapitelstruktur</h2>
+<p>Arbeitsheft und Lehrerband bilden derzeit die neue Struktur ab:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Nr.</th>
+<th>Thema</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">01</td>
+<td>Welche Informationen brauchen wir</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">02</td>
+<td>Welche Informationen sind wichtig</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">03</td>
+<td>Woher kommen Informationen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">04</td>
+<td>Informationen vergleichen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">05</td>
+<td>Daten oder Information</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">06</td>
+<td>Ordnung schaffen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">07</td>
+<td>Eine gute Ordnung finden</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">08</td>
+<td>Welche Band laden wir ein</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">09</td>
+<td>Entscheidungen vergleichen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td>Wenn die Informationen immer mehr werden</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td>Was ist eine Datenbank</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td>Vom Objekt zur Datenbank</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td>Klassen werden Tabellen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td>Eindeutige Ordnungsmerkmale</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td>Der richtige Primärschlüssel</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td>Tabellen verbinden mit Schlüsseln</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td>Beziehungen zwischen Tabellen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td>Beziehungen beschreiben</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td>Informationen finden</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td>Suchen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21</td>
+<td>Filtern</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22</td>
+<td>Mehrere Bedingungen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23</td>
+<td>Sortieren</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">24</td>
+<td>Welches Werkzeug passt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">25</td>
+<td>Informationen auswerten</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">26</td>
+<td>Informationen darstellen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">27</td>
+<td>Das passende Diagramm</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">28</td>
+<td>Wenn Datenmengen zu groß werden</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">29</td>
+<td>Muster erkennen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">30</td>
+<td>Wie KI aus Daten lernt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">31</td>
+<td>Verschiedene Arten von KI</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">32</td>
+<td>KI als Werkzeug zur Informationsgewinnung</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">33</td>
+<td>Datenschutz und Datensicherheit</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">34</td>
+<td>Projekt – Das Schülerfestival planen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">35</td>
+<td>SQL – Tabellen anlegen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">36</td>
+<td>CRUD – Daten anlegen und lesen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">37</td>
+<td>CRUD – Daten ändern und löschen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">38</td>
+<td>SQL – Constraints und Schlüssel</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">39</td>
+<td>SQL – Praxisauftrag</td>
+</tr>
+</tbody>
+</table>
+<h2 id="offener-altbestand">Offener Altbestand</h2>
+<p><code>01_Arbeitsheft/14_Tabellen_verbinden.md</code></p>
+<p>Die Datei ist nicht leer. Sie führt didaktisch in Beziehungen
+zwischen Tabellen ein, wird aber von der neuen Struktur bereits durch
+die Kapitel 16–18 abgedeckt.</p>
+<p>Sie wird deshalb <strong>nicht automatisch gelöscht</strong>.</p>
+<p>Empfehlung für den nächsten Review: - Inhalte gegen Kapitel 16–18
+prüfen, - wertvolle Aufgaben ggf. in <code>03_Material</code>
+übernehmen, - danach Altdatei entfernen.</p>
+<h2 id="lösungen-und-präsentationen">Lösungen und Präsentationen</h2>
+<p>Die Dateien 01–03 sowie 34–39 sind weitgehend direkt zuordenbar.</p>
+<p>Der Bereich 04–33 folgt jedoch noch der älteren
+Kapitelgliederung.</p>
+<p>Eine reine Umbenennung ist nicht sicher, weil die neue Gliederung
+Inhalte zusammenführt, aufteilt und anders gewichtet.</p>
+<h3 id="entscheidung">Entscheidung</h3>
+<p>Lösungen und Präsentationen 04–33 sollen <strong>inhaltlich gegen das
+aktuelle Arbeitsheft neu erstellt bzw. überarbeitet</strong> werden.</p>
+<p>Keine automatische Rename-Migration durchführen.</p>
+<div class="page-break"></div>
+<h1 id="architektur-grundlagen">Architektur Grundlagen</h1>
+<h2 id="ebenen">Ebenen</h2>
+<ul>
+<li>Grundlagen: fachliche Konzepte</li>
+<li>Werkzeuge: konkrete Software</li>
+<li>Klassen: Unterrichtsmaterialien</li>
+</ul>
+<h2 id="regeln">Regeln</h2>
+<ul>
+<li>Ein Thema wird genau einmal erklärt.</li>
+<li>Standards werden von Implementierungen getrennt.</li>
+<li>Klassenmaterialien verweisen auf Grundlagen und Werkzeuge.</li>
+</ul>
+<h2 id="sql">SQL</h2>
+<ul>
+<li>Grundlagen/SQL: ANSI-/ISO-SQL und relationale Konzepte.</li>
+<li>Werkzeuge/SQLite, PostgreSQL, Oracle, MySQL, SQL_Server:
+systemspezifische Besonderheiten.</li>
+</ul>
+<div class="page-break"></div>
+<h1 id="audit-klasse-7">Audit – Klasse 7</h1>
+<h2 id="ziel">Ziel</h2>
+<p>Dieser Audit dokumentiert den Abschlussstand der Klassenstufe 7 nach
+den PRs #1 bis #17.</p>
+<h2 id="fachliche-abdeckung">Fachliche Abdeckung</h2>
+<p>Die ausgearbeiteten Materialien decken die vorgesehenen Kernbereiche
+ab:</p>
+<ul>
+<li>Informatikgeschichte als motivierender Einstieg</li>
+<li>binäre Darstellung und einfache Binärarithmetik</li>
+<li>digitale Repräsentation von Text, Bild und Audio</li>
+<li>EVAS</li>
+<li>Informatiksysteme, Speicher, Dateien, Ordner und Pfade</li>
+<li>Information, Daten und Darstellungsformen</li>
+<li>Objekt, Attribut, Attributwert, Klasse und Methode</li>
+<li>verantwortungsvoller Umgang mit Daten und Medien</li>
+</ul>
+<p>Zusätzlich wurde auf Wunsch des Lehrwerkskonzepts eine
+Programmiervertiefung mit Algorithmen und Scratch aufgenommen.</p>
+<h2 id="leistungsbewertung">Leistungsbewertung</h2>
+<p>Vorhanden sind:</p>
+<ol type="1">
+<li>benotete EVAS-Präsentation mit Bewertungsraster,</li>
+<li>Leistungskontrolle „Digitale Information und EVAS“,</li>
+<li>Leistungskontrolle „Algorithmen und Scratch“,</li>
+<li>Leistungskontrolle „Repräsentation von Daten“.</li>
+</ol>
+<p>Die Geschichte der Informatik ist ausdrücklich nicht
+prüfungsrelevant.</p>
+<h2 id="struktur">Struktur</h2>
+<p>Die Werkteile sind getrennt nach Arbeitsheft, Lehrerband, Material,
+Lösungen, Präsentationen, Quellen und Leistungskontrollen.</p>
+<p>Die Programmiervertiefung liegt derzeit im durchgehenden Lernweg
+<code>01_Grundlagen_der_digitalen_Welt</code>. Der Ordner
+<code>03_Algorithmen_und_Programmierung</code> dokumentiert diese
+Entscheidung. Eine spätere Migration wäre rein strukturell und verändert
+die fachliche Abdeckung nicht.</p>
+<h2 id="offener-merge">Offener Merge</h2>
+<p>Der Wahlbereich „Künstliche Intelligenz“ ist in PR #17 vollständig
+ausgearbeitet. Nach dessen Merge ist auch der Wahlbereich im Hauptzweig
+vorhanden.</p>
+<h2 id="ergebnis">Ergebnis</h2>
+<p>Nach Merge von PR #17 und dem PR dieses Audits ist Klasse 7 als
+geschlossener, unterrichtsfähiger Produktionsstand dokumentiert. Weitere
+Änderungen können danach als Qualitätsverbesserungen oder zusätzliche
+Wahlbereiche behandelt werden, nicht mehr als Lückenschluss.</p>
+<div class="page-break"></div>
+<h1 id="audit-klasse-9">Audit Klasse 9</h1>
+<p>Stand: bereitgestelltes Repository-Archiv</p>
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+<p>Die Architektur von Klasse 9 ist grundsätzlich tragfähig. Die
+wichtigsten Probleme liegen aktuell nicht in fehlenden Werkteilen,
+sondern in Altbeständen und einer teilweise nicht vollständig
+synchronisierten Umstrukturierung.</p>
+<h2 id="rot-vor-weiterem-ausbau-korrigieren">Rot – vor weiterem Ausbau
+korrigieren</h2>
+<h3 id="informationen-und-daten-zwei-kapitelstände-parallel">1.
+Informationen und Daten: zwei Kapitelstände parallel</h3>
+<p>Im Arbeitsheft existieren doppelte Nummern:</p>
+<ul>
+<li><code>14_Eindeutige_Ordnungsmerkmale.md</code></li>
+<li><code>14_Tabellen_verbinden.md</code></li>
+</ul>
+<p>sowie:</p>
+<ul>
+<li><code>31_Verschiedene_Arten_von_KI.md</code></li>
+<li><code>31_Chancen_und_Grenzen_von_KI.md</code></li>
+</ul>
+<p>Der Lehrerband enthält jeweils nur die neueren Varianten:</p>
+<ul>
+<li><code>14_Eindeutige_Ordnungsmerkmale.md</code></li>
+<li><code>31_Verschiedene_Arten_von_KI.md</code></li>
+</ul>
+<p>Die beiden zusätzlichen Arbeitsheftdateien sind daher sehr
+wahrscheinlich Altbestände und müssen fachlich geprüft und entweder
+entfernt oder sauber neu eingeordnet werden.</p>
+<h3 id="lösungen-und-präsentationen-nicht-mit-neuer-arbeitsheftgliederung-synchron">2.
+Lösungen und Präsentationen nicht mit neuer Arbeitsheftgliederung
+synchron</h3>
+<p>Arbeitsheft und Lehrerband verwenden ab Kapitel 4 die neue
+Gliederung.</p>
+<p>Beispiele:</p>
+<ul>
+<li><p>Arbeitsheft <code>04_Informationen_vergleichen.md</code></p></li>
+<li><p>Lösung/Präsentation
+<code>04_Sind_alle_Informationen_zuverlaessig.md</code></p></li>
+<li><p>Arbeitsheft <code>05_Daten_oder_Information.md</code></p></li>
+<li><p>Lösung/Präsentation
+<code>05_Wie_vergleichen_wir_Moeglichkeiten.md</code></p></li>
+</ul>
+<p>Diese Abweichung zieht sich über einen großen Teil des Lernbereichs
+bis zum KI-/Datenschutzblock.</p>
+<p>Die neuen SQL-Kapitel 35–39 sind dagegen wieder synchron.</p>
+<p>Folge: Eine Lehrkraft kann anhand der Kapitelnummer derzeit nicht
+zuverlässig die passende Lösung bzw. Präsentation zum Arbeitsheft
+finden.</p>
+<h3 id="generiertes-docx-liegt-in-den-quellen">3. Generiertes DOCX liegt
+in den Quellen</h3>
+<p>Datei:</p>
+<p><code>Klasse_9/02_Komplexaufgabe_zur_Algorithmierung/01_Arbeitsheft/Arbeitsheft_Lineare_Algorithmen.docx</code></p>
+<p>Das widerspricht der festgelegten Single-Source-of-Truth-Regel:
+Markdown ist Quelle, DOCX ist Build-Artefakt.</p>
+<p>Die Datei sollte aus dem Quellbereich entfernt werden.</p>
+<h3 id="leere-altdateien-in-der-komplexaufgabe">4. Leere Altdateien in
+der Komplexaufgabe</h3>
+<p>Vorhanden und leer:</p>
+<ul>
+<li><code>01_Arbeitsheft/Neue Datei</code></li>
+<li><code>01_Arbeitsheft/README_2.txt</code></li>
+</ul>
+<p>Beide sollten entfernt werden.</p>
+<h3 id="root-readme-des-lehrwerks-ist-leer">5. Root-README des Lehrwerks
+ist leer</h3>
+<p><code>Unterrichtsmaterial_Oberschule_Sachsen/README.md</code> besitzt
+0 Byte.</p>
+<p>Das ist der zentrale Einstiegspunkt innerhalb des Lehrwerks und
+sollte eine kurze Struktur- und Nutzungsübersicht enthalten.</p>
+<hr />
+<h2 id="gelb-im-nächsten-review-prüfen">Gelb – im nächsten Review
+prüfen</h2>
+<h3 id="arbeitsheft_lineare_algorithmen.md-als-zusätzlicher-altbestand">6.
+<code>Arbeitsheft_Lineare_Algorithmen.md</code> als zusätzlicher
+Altbestand</h3>
+<p>Neben den modularen Dateien <code>00_Einstieg.md</code> bis
+<code>12_Kompetenzcheck.md</code> existiert zusätzlich:</p>
+<p><code>Arbeitsheft_Lineare_Algorithmen.md</code></p>
+<p>Die Datei ist ein kurzes eigenständiges Arbeitsheft und überschneidet
+sich mit den modularen Inhalten.</p>
+<p>Prüfen: - Wird sie noch bewusst benötigt? - Falls nein: entfernen. -
+Falls ja: außerhalb des zu aggregierenden Werkteilordners ablegen, damit
+der Build sie nicht zusätzlich in das Sammeldokument aufnimmt.</p>
+<h3 id="arbeitsheft-und-lehrerband-im-wahlbereich-sind-bewusst-unterschiedlich-strukturiert">7.
+Arbeitsheft und Lehrerband im Wahlbereich sind bewusst unterschiedlich
+strukturiert</h3>
+<p>Arbeitsheft: - elf fachliche Schülerkapitel</p>
+<p>Lehrerband: - Unterrichtsverlauf - didaktische Hinweise -
+Lösungshinweise - Differenzierung - Bewertung</p>
+<p>Das ist kein Fehler. Hier sollte ausdrücklich <strong>keine</strong>
+1:1-Dateizuordnung erzwungen werden.</p>
+<h3 id="komplexaufgabe-ebenfalls-nicht-vollständig-11-aufgebaut">8.
+Komplexaufgabe ebenfalls nicht vollständig 1:1 aufgebaut</h3>
+<p>Das Arbeitsheft besitzt einen Lernweg mit vielen Einzelkapiteln,
+während Lehrerband, Lösungen und Präsentationen teilweise
+zusammenfassend organisiert sind.</p>
+<p>Auch dies kann didaktisch sinnvoll sein. Prüfkriterium sollte hier
+nicht gleicher Dateiname, sondern vollständige Abdeckung sein.</p>
+<hr />
+<h2 id="grün-positiv">Grün – positiv</h2>
+<h3 id="werkteilstruktur">Werkteilstruktur</h3>
+<p>Alle drei Lernbereiche der Klasse 9 besitzen die vereinbarte
+Werkteilstruktur:</p>
+<ul>
+<li><code>01_Arbeitsheft</code></li>
+<li><code>02_Lehrerband</code></li>
+<li><code>03_Material</code></li>
+<li><code>04_Loesungen</code></li>
+<li><code>05_Praesentationen</code></li>
+<li><code>06_Dateien</code></li>
+<li><code>07_Quellen</code></li>
+<li><code>08_Bilder</code></li>
+<li><code>09_Lernkontrollen</code></li>
+</ul>
+<h3 id="sql-crud-erweiterung">SQL-/CRUD-Erweiterung</h3>
+<p>Die neuen Kapitel 35–39 sind zwischen</p>
+<ul>
+<li>Arbeitsheft</li>
+<li>Lehrerband</li>
+<li>Lösungen</li>
+<li>Präsentationen</li>
+</ul>
+<p>sauber synchronisiert.</p>
+<h3 id="lernkontrollen">Lernkontrollen</h3>
+<p><code>Informationen und Daten</code> besitzt neun Lernkontrollen; die
+technische JSON-Ablage ist getrennt.</p>
+<p>Die Komplexaufgabe und der Wahlbereich besitzen ebenfalls eigene
+Lernkontrollen.</p>
+<h3 id="h1">H1</h3>
+<p>Im geprüften Bereich Klasse 9 wurden keine Markdown-Dateien ohne H1
+gefunden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="empfohlene-reihenfolge-der-bereinigung">Empfohlene Reihenfolge
+der Bereinigung</h1>
+<ol type="1">
+<li>Leere Dateien und generiertes DOCX entfernen.</li>
+<li>Die beiden doppelten Arbeitsheftkapitel <code>14</code> und
+<code>31</code> fachlich entscheiden.</li>
+<li>Arbeitsheft/Lehrerband gegen Lösungen/Präsentationen in
+<code>Informationen und Daten</code> neu zuordnen.</li>
+<li>Root-README füllen.</li>
+<li>Erst danach Feinaudit auf Sprache, Didaktik und Querverweise.</li>
+</ol>
+<h2 id="wichtig">Wichtig</h2>
+<p>Die größte Baustelle ist aktuell nicht fehlender Unterrichtsinhalt,
+sondern die historische Umstrukturierung des Lernbereichs
+<code>Informationen und Daten</code>.</p>
+<p>Bevor weitere Kapitel ergänzt werden, sollte dort eine eindeutige
+verbindliche Kapitelreihenfolge hergestellt werden.</p>
+<div class="page-break"></div>
+<h1 id="gesamtaudit-informatik-klassen-710">Gesamtaudit Informatik
+Klassen 7–10</h1>
+<h2 id="zweck">Zweck</h2>
+<p>Diese Datei dient als zentraler Qualitätscheck des
+Unterrichtsmaterials für die Klassen 7 bis 10 der Oberschule Sachsen.
+Sie ergänzt die klassenbezogenen Jahrespläne, Meilensteine und
+Audits.</p>
+<h2 id="prüfkriterien">Prüfkriterien</h2>
+<p>Für jede Klassenstufe werden folgende Punkte geprüft:</p>
+<ol type="1">
+<li>Abdeckung der verbindlichen Lernbereiche</li>
+<li>Abdeckung der Wahlbereiche</li>
+<li>nachvollziehbare Progression über die Klassenstufen</li>
+<li>Unterrichtsmaterial für Schülerinnen und Schüler</li>
+<li>Lehrerhinweise bzw. Lehrerband</li>
+<li>Lösungen und Erwartungshorizonte</li>
+<li>Präsentations- bzw. Tafelmaterial, soweit sinnvoll</li>
+<li>Leistungskontrollen und planbare Notengebung</li>
+<li>Quellen- und Lizenzhinweise</li>
+<li>konsistente Benennung und Ordnerstruktur</li>
+</ol>
+<h2 id="klasse-7">Klasse 7</h2>
+<h3 id="schwerpunkt-und-progression">Schwerpunkt und Progression</h3>
+<p>Der Einstieg führt von der Geschichte der Informatik und der
+digitalen Repräsentation über Binärzahlen und verschiedene Datenarten zu
+EVAS, Algorithmen und einer ersten visuellen Programmierung mit Scratch.
+Die Geschichte der Informatik dient bewusst als informativer Einstieg
+und nicht als Gegenstand einer Leistungskontrolle.</p>
+<h3 id="notengebung">Notengebung</h3>
+<p>Die benotete EVAS-Präsentation ist als eigenständige Leistung
+vorgesehen. Zusätzlich stehen schriftliche Leistungskontrollen für
+fachliche Kernbereiche zur Verfügung. Damit ist eine planbare
+Notengebung über das Schuljahr möglich.</p>
+<h3 id="wahlbereiche">Wahlbereiche</h3>
+<p>Die Wahlbereiche sind im Repository dokumentiert. Bereits vorhandene
+Inhalte zur Künstlichen Intelligenz werden durch die weiteren
+Wahlbereichsmaterialien ergänzt.</p>
+<h3 id="status">Status</h3>
+<p><strong>unterrichtlich vollständig angelegt</strong></p>
+<h2 id="klasse-8">Klasse 8</h2>
+<h3 id="schwerpunkt-und-progression-1">Schwerpunkt und Progression</h3>
+<p>Klasse 8 führt die objektorientierte Sicht weiter: Objekte, Klassen
+und Attribute werden systematisch aufgebaut. Darauf folgen Algorithmen
+und die praktische Umsetzung mit Robot Karol. Damit wird die in Klasse 7
+begonnene algorithmische Denkweise formalisiert und praktisch
+vertieft.</p>
+<h3 id="notengebung-1">Notengebung</h3>
+<p>Es liegen mehrere schriftliche Leistungskontrollen einschließlich
+Lösungen vor, unter anderem zu Objekten/Klassen/Attributen, Algorithmen
+und Robot Karol. Dadurch können mindestens zwei schriftliche Noten pro
+Halbjahr geplant werden, ohne jede Unterrichtseinheit prüfen zu
+müssen.</p>
+<h3 id="wahlbereiche-1">Wahlbereiche</h3>
+<p>Die Wahlbereiche Steuern und Regeln, Mobile Endgeräte sowie
+Computergrafik sind ergänzt.</p>
+<h3 id="status-1">Status</h3>
+<p><strong>unterrichtlich vollständig angelegt</strong></p>
+<h2 id="klasse-9">Klasse 9</h2>
+<h3 id="schwerpunkt-und-progression-2">Schwerpunkt und Progression</h3>
+<p>Klasse 9 baut auf den Modellierungs- und Algorithmuskenntnissen der
+vorherigen Klassen auf und erweitert diese insbesondere um strukturierte
+Datenverarbeitung und Datenbanken. Begriffe und Benennungen wurden im
+Konsistenzabgleich vereinheitlicht.</p>
+<h3 id="wahlbereiche-2">Wahlbereiche</h3>
+<p>Die vorhandenen Inhalte zu Informatik und Automatisierung werden
+durch Mobile Endgeräte und Computergrafik ergänzt.</p>
+<h3 id="status-2">Status</h3>
+<p><strong>nach Konsistenzkorrektur vollständig angelegt</strong></p>
+<h2 id="klasse-10">Klasse 10</h2>
+<h3 id="verbindliche-lernbereiche">Verbindliche Lernbereiche</h3>
+<p>Die Materialien bilden die verbindlichen Lernbereiche Webbasierte
+Anwendungen und Komplexes Informatikprojekt ab. Beim Informatikprojekt
+stehen Problemanalyse, Arbeitsteilung, Schnittstellen, Integration,
+Test, Sicherung, Dokumentation, Präsentation und Reflexion im
+Mittelpunkt.</p>
+<h3 id="notengebung-2">Notengebung</h3>
+<p>Vier schriftliche Leistungskontrollen sind vorgesehen, sodass zwei
+schriftliche Noten pro Halbjahr planbar sind.</p>
+<h3 id="wahlbereiche-3">Wahlbereiche</h3>
+<p>Sicherheit in der Informationsverarbeitung ist als Wahlbereich
+ausgearbeitet; Mobile Endgeräte und Computergrafik ergänzen das
+Angebot.</p>
+<h3 id="status-3">Status</h3>
+<p><strong>unterrichtlich vollständig angelegt</strong></p>
+<div class="page-break"></div>
+<h1 id="progression-7-10">Progression 7 → 10</h1>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Klasse</th>
+<th>zentraler Entwicklungsschritt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>7</td>
+<td>digitale Welt verstehen, Daten binär repräsentieren, EVAS, erste
+Algorithmen und Scratch</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>objektorientierte Grundbegriffe, strukturiertere Algorithmen, Robot
+Karol</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>komplexere Informationsstrukturen und Datenbanken, Anwendung und
+Modellierung</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>webbasierte Anwendungen sowie Planung und Durchführung eines
+komplexen Informatikprojekts</td>
+</tr>
+</tbody>
+</table>
+<p>Die Abfolge vermeidet einen isolierten Neustart in jeder
+Klassenstufe. Begriffe und Arbeitsweisen werden wieder aufgegriffen und
+zunehmend formalisiert bzw. selbstständiger angewendet.</p>
+<div class="page-break"></div>
+<h1 id="qualitätsregeln-für-weitere-änderungen">Qualitätsregeln für
+weitere Änderungen</h1>
+<ul>
+<li>Neue Inhalte müssen einer Klassenstufe und einem Lern- oder
+Wahlbereich eindeutig zugeordnet werden.</li>
+<li>Schüler- und Lehrermaterial müssen getrennt erkennbar bleiben.</li>
+<li>Zu bewerteten schriftlichen Aufgaben gehört ein Erwartungshorizont
+bzw. eine Lösung.</li>
+<li>Bei Projekten müssen Kriterien vor Beginn transparent sein.</li>
+<li>Quellen müssen so angegeben werden, dass Lehrkräfte Aussagen und
+externe Materialien nachvollziehen können.</li>
+<li>Wahlbereiche dürfen Pflichtinhalte ergänzen, aber nicht
+ersetzen.</li>
+<li>Änderungen an Begrifflichkeiten müssen auf Folgeklassen geprüft
+werden, damit die Progression konsistent bleibt.</li>
+</ul>
+<div class="page-break"></div>
+<h1 id="ergebnis-1">Ergebnis</h1>
+<p>Nach den bisherigen Ergänzungen und Korrekturen liegt für die Klassen
+7 bis 10 eine durchgängige Materialstruktur mit Pflicht- und
+Wahlbereichen, Bewertungsmöglichkeiten und einer erkennbaren fachlichen
+Progression vor.</p>
+<p>Der Audit ist als lebendes Dokument zu verstehen: Werden künftig
+Unterrichtserfahrungen, neue Aufgaben oder Lehrplanänderungen
+eingearbeitet, sollte dieser Abgleich erneut durchgeführt werden.</p>
+<div class="page-break"></div>
+<h1 id="autorenleitfaden">Autorenleitfaden</h1>
+<h2 id="oer-lehrwerk-informatik-für-die-oberschule-sachsen">OER-Lehrwerk
+Informatik für die Oberschule Sachsen</h2>
+<p>Dieses Dokument beschreibt verbindliche Regeln für die Erstellung
+aller Unterrichtsmaterialien dieses Projektes.</p>
+<p>Das Ziel ist ein Lehrwerk, das aus einem Guss wirkt – unabhängig
+davon, wann oder von wem einzelne Kapitel erstellt wurden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="grundprinzip">1. Grundprinzip</h1>
+<p>Jedes Material muss den Grundsätzen des <strong>Didaktischen
+Konzepts</strong> entsprechen.</p>
+<p>Das bedeutet insbesondere:</p>
+<ul>
+<li>Verstehen statt Auswendiglernen</li>
+<li>Entdecken statt Vorgeben</li>
+<li>Denken statt Klicken</li>
+<li>Alltag vor Technik</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="aufbau-eines-kapitels">2. Aufbau eines Kapitels</h1>
+<p>Ein Kapitel folgt möglichst dieser Reihenfolge.</p>
+<ol type="1">
+<li>Motivation</li>
+<li>Alltagssituation</li>
+<li>Leitfrage</li>
+<li>Vermutungen der Schülerinnen und Schüler</li>
+<li>Erarbeitung</li>
+<li>Fachliche Erklärung</li>
+<li>Merkkasten</li>
+<li>Beispiele</li>
+<li>Übungen</li>
+<li>Transfer</li>
+<li>Zusammenfassung</li>
+<li>Kompetenzcheck</li>
+<li>Quellen</li>
+</ol>
+<p>Je nach Thema kann die Reihenfolge angepasst werden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="einstieg">3. Einstieg</h1>
+<p>Jedes Kapitel beginnt mit einer Situation aus dem Alltag.</p>
+<p>Beispiele:</p>
+<ul>
+<li>Bushaltestelle</li>
+<li>Smartphone</li>
+<li>Wetter-App</li>
+<li>Navigationsgerät</li>
+<li>Supermarkt</li>
+<li>Feuerwehr</li>
+<li>Krankenhaus</li>
+<li>Schule</li>
+<li>Sport</li>
+<li>Online-Shop</li>
+</ul>
+<p>Nicht mit Definitionen.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="fachbegriffe">4. Fachbegriffe</h1>
+<p>Fachbegriffe werden niemals zu Beginn erklärt.</p>
+<p>Sie entstehen aus der Erarbeitung.</p>
+<p>Die Reihenfolge lautet:</p>
+<p>Situation → Erkenntnis → Begriff</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="sprache">5. Sprache</h1>
+<p>Texte richten sich an Schülerinnen und Schüler der Oberschule.</p>
+<p>Deshalb gelten folgende Regeln:</p>
+<ul>
+<li>kurze Sätze</li>
+<li>verständliche Wörter</li>
+<li>aktive Sprache</li>
+<li>möglichst wenig Fremdwörter</li>
+<li>Beispiele vor Definitionen</li>
+</ul>
+<p>Komplizierte Formulierungen vermeiden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="beispiele">6. Beispiele</h1>
+<p>Beispiele sollen</p>
+<ul>
+<li>aktuell,</li>
+<li>lebensnah,</li>
+<li>nachvollziehbar und</li>
+<li>altersgerecht</li>
+</ul>
+<p>sein.</p>
+<p>Wann immer möglich arbeiten Schülerinnen und Schüler mit eigenen
+Daten oder Beobachtungen.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="aufgaben">7. Aufgaben</h1>
+<p>Aufgaben sollen abwechslungsreich sein.</p>
+<p>Mögliche Formate:</p>
+<ul>
+<li>beobachten</li>
+<li>beschreiben</li>
+<li>vergleichen</li>
+<li>begründen</li>
+<li>diskutieren</li>
+<li>recherchieren</li>
+<li>messen</li>
+<li>zeichnen</li>
+<li>programmieren</li>
+<li>reflektieren</li>
+<li>präsentieren</li>
+</ul>
+<p>Reine Abschreibaufgaben sind zu vermeiden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="bilder">8. Bilder</h1>
+<p>Bilder dienen dem Verständnis.</p>
+<p>Sie sind keine Dekoration.</p>
+<p>Jedes Bild beantwortet mindestens eine Frage oder unterstützt die
+Erklärung eines Sachverhalts.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="software">9. Software</h1>
+<p>Programme stehen niemals im Mittelpunkt.</p>
+<p>Sie sind Werkzeuge.</p>
+<p>Das Lernziel ist immer ein informatisches Konzept.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="quellen">10. Quellen</h1>
+<p>Alle fachlichen Inhalte sind zu belegen.</p>
+<p>Bevorzugt werden:</p>
+<ul>
+<li>Lehrplan Sachsen</li>
+<li>Gesellschaft für Informatik (GI)</li>
+<li>Bundesamt für Sicherheit in der Informationstechnik (BSI)</li>
+<li>wissenschaftliche Fachliteratur</li>
+<li>anerkannte Lehrbücher</li>
+</ul>
+<p>Internetquellen nur verwenden, wenn sie fachlich belastbar sind.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="lösungen">11. Lösungen</h1>
+<p>Zu jeder Aufgabe existiert eine Musterlösung.</p>
+<p>Dabei werden auch alternative richtige Lösungen berücksichtigt.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="präsentationen">12. Präsentationen</h1>
+<p>Präsentationen unterstützen den Unterricht.</p>
+<p>Sie ersetzen ihn nicht.</p>
+<p>Folien enthalten:</p>
+<ul>
+<li>wenig Text</li>
+<li>aussagekräftige Bilder</li>
+<li>Leitfragen</li>
+<li>Gesprächsanlässe</li>
+</ul>
+<p>Keine Textwüsten.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="arbeitshefte">13. Arbeitshefte</h1>
+<p>Arbeitshefte sollen im Unterricht direkt nutzbar sein.</p>
+<p>Sie enthalten:</p>
+<ul>
+<li>Erklärungen</li>
+<li>Beispiele</li>
+<li>Aufgaben</li>
+<li>Platz zum Arbeiten</li>
+<li>Wiederholungen</li>
+<li>Kompetenzchecks</li>
+</ul>
+<p>Keine Platzhalter.</p>
+<p>Keine Blindtexte.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="lehrerband">14. Lehrerband</h1>
+<p>Der Lehrerband ergänzt das Arbeitsheft.</p>
+<p>Er enthält unter anderem:</p>
+<ul>
+<li>Unterrichtsziele</li>
+<li>didaktische Hinweise</li>
+<li>Lösungen</li>
+<li>Differenzierung</li>
+<li>typische Fehlvorstellungen</li>
+<li>zusätzliche Informationen</li>
+<li>Quellen</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="grundsatz">15. Grundsatz</h1>
+<p>Jedes Material soll Schülerinnen und Schüler zum Denken anregen.</p>
+<p>Nicht jede Aufgabe muss sofort lösbar sein.</p>
+<p>Neugier und Diskussion sind ausdrücklich erwünscht.</p>
+<div class="page-break"></div>
+<h1 id="didaktisches-konzept">Didaktisches Konzept</h1>
+<h2 id="oer-lehrwerk-informatik-für-die-oberschule-sachsen-1">OER-Lehrwerk
+Informatik für die Oberschule Sachsen</h2>
+<blockquote>
+<p><strong>Leitgedanke:</strong></p>
+<p>Informatik ist die Wissenschaft der systematischen Verarbeitung von
+Informationen. Informationstechnik ist dabei ein Werkzeug, das Menschen
+bei der Lösung von Aufgaben unterstützt.</p>
+<p>Unser Unterricht soll Schülerinnen und Schüler dazu befähigen,
+informatische Zusammenhänge zu verstehen, Probleme zu lösen und dieses
+Wissen auf neue Situationen zu übertragen.</p>
+</blockquote>
+<hr />
+<div class="page-break"></div>
+<h1 id="unsere-grundsätze">Unsere Grundsätze</h1>
+<h2 id="vom-problem-zum-begriff">1. Vom Problem zum Begriff</h2>
+<p>Jedes neue Thema beginnt mit einer realen Situation.</p>
+<p>Nicht:</p>
+<blockquote>
+<p>Heute lernen wir Daten und Informationen.</p>
+</blockquote>
+<p>Sondern:</p>
+<blockquote>
+<p>Warum kommt ein Schüler trotz Fahrplan zu spät zur Schule?</p>
+</blockquote>
+<p>Die Schülerinnen und Schüler denken zunächst selbst nach.</p>
+<p>Erst danach werden Fachbegriffe eingeführt.</p>
+<hr />
+<h2 id="alltag-vor-technik">2. Alltag vor Technik</h2>
+<p>Informatik beginnt nicht am Computer.</p>
+<p>Sie begegnet uns überall.</p>
+<p>Zum Beispiel:</p>
+<ul>
+<li>Bushaltestelle</li>
+<li>Bahnhof</li>
+<li>Supermarkt</li>
+<li>Smartphone</li>
+<li>Wetter-App</li>
+<li>Smartwatch</li>
+<li>Krankenhaus</li>
+<li>Feuerwehr</li>
+<li>Schule</li>
+<li>Sport</li>
+<li>Online-Shop</li>
+<li>Navigationsgerät</li>
+</ul>
+<p>Der Computer ist häufig nur das Werkzeug.</p>
+<hr />
+<h2 id="informationstechnik-ist-werkzeug">3. Informationstechnik ist
+Werkzeug</h2>
+<p>Informationstechnik dient dazu,</p>
+<ul>
+<li>Informationen bereitzustellen,</li>
+<li>Aufgaben zu lösen,</li>
+<li>Entscheidungen zu unterstützen,</li>
+<li>Menschen miteinander zu verbinden.</li>
+</ul>
+<p>Sie ist niemals Selbstzweck.</p>
+<p>Wir unterrichten daher keine Programme.</p>
+<p>Wir unterrichten informatische Konzepte.</p>
+<hr />
+<h2 id="verstehen-statt-auswendiglernen">4. Verstehen statt
+Auswendiglernen</h2>
+<p>Unser Ziel ist nicht das Wiedergeben von Definitionen.</p>
+<p>Unser Ziel ist das Verstehen von Zusammenhängen.</p>
+<p>Die Schülerinnen und Schüler sollen am Ende eines Kapitels sagen
+können:</p>
+<blockquote>
+<p>Jetzt verstehe ich, warum das so funktioniert.</p>
+</blockquote>
+<hr />
+<h2 id="denken-vor-merken">5. Denken vor Merken</h2>
+<p>Jede Unterrichtseinheit folgt möglichst diesem Ablauf:</p>
+<ol type="1">
+<li>Beobachten</li>
+<li>Vermuten</li>
+<li>Diskutieren</li>
+<li>Ausprobieren</li>
+<li>Erkennen</li>
+<li>Fachbegriff kennenlernen</li>
+<li>Anwenden</li>
+</ol>
+<p>Nicht umgekehrt.</p>
+<hr />
+<h2 id="eigene-erfahrungen-nutzen">6. Eigene Erfahrungen nutzen</h2>
+<p>Wann immer möglich arbeiten die Schülerinnen und Schüler mit eigenen
+Beobachtungen.</p>
+<p>Beispiele:</p>
+<ul>
+<li>eigener Schulweg</li>
+<li>eigener Busfahrplan</li>
+<li>aktuelles Wetter</li>
+<li>Akkustand des Smartphones</li>
+<li>Schrittzähler</li>
+<li>Bildschirmzeit</li>
+<li>Navigationsroute</li>
+</ul>
+<p>Dadurch entstehen persönliche Bezüge zum Lernstoff.</p>
+<hr />
+<h2 id="fehler-sind-lernchancen">7. Fehler sind Lernchancen</h2>
+<p>Fehlvorstellungen gehören zum Lernprozess.</p>
+<p>Typische Irrtümer werden bewusst genutzt.</p>
+<p>Beispiel:</p>
+<p>Auf einem Display steht</p>
+<blockquote>
+<p>18</p>
+</blockquote>
+<p>Was bedeutet diese Zahl?</p>
+<p>Erst durch die Diskussion erkennen die Schülerinnen und Schüler:</p>
+<p>Ohne Kontext besitzen Daten keine eindeutige Bedeutung.</p>
+<hr />
+<h2 id="humor-unterstützt-das-lernen">8. Humor unterstützt das
+Lernen</h2>
+<p>Überraschende Situationen bleiben besser im Gedächtnis als
+Definitionen.</p>
+<p>Humor wird deshalb gezielt eingesetzt.</p>
+<p>Beispiele:</p>
+<ul>
+<li>Ein Kühlschrank schreibt eine Einkaufsliste.</li>
+<li>Ein Toaster besitzt WLAN.</li>
+<li>Zwei Personen lesen dieselbe Anzeige und treffen unterschiedliche
+Entscheidungen.</li>
+</ul>
+<p>Humor dient dabei immer dem Verständnis und niemals der
+Ablenkung.</p>
+<hr />
+<h2 id="geschichten-statt-definitionen">9. Geschichten statt
+Definitionen</h2>
+<p>Menschen erinnern sich besser an Geschichten als an reine Fakten.</p>
+<p>Deshalb beginnt möglichst jedes Kapitel mit einer kurzen
+Alltagssituation.</p>
+<p>Diese Situation bildet den roten Faden des gesamten Kapitels.</p>
+<hr />
+<h2 id="transfer-ist-pflicht">10. Transfer ist Pflicht</h2>
+<p>Jedes Kapitel endet mit einer Übertragung auf neue Situationen.</p>
+<p>Typische Fragen:</p>
+<ul>
+<li>Wo begegnet dir dieses Prinzip noch?</li>
+<li>Kannst du ein eigenes Beispiel nennen?</li>
+<li>Welche Gemeinsamkeiten erkennst du?</li>
+</ul>
+<p>Erst der Transfer zeigt, dass ein Konzept verstanden wurde.</p>
+<hr />
+<h2 id="informatik-ist-problemlösen">11. Informatik ist
+Problemlösen</h2>
+<p>Computer lösen keine Probleme.</p>
+<p>Menschen lösen Probleme.</p>
+<p>Informationstechnik unterstützt sie dabei.</p>
+<p>Dieser Gedanke zieht sich durch das gesamte Lehrwerk.</p>
+<hr />
+<h2 id="software-ist-austauschbar">12. Software ist austauschbar</h2>
+<p>Programme ändern sich.</p>
+<p>Informatische Konzepte bleiben.</p>
+<p>Deshalb steht niemals ein bestimmtes Programm im Mittelpunkt.</p>
+<p>Werkzeuge werden eingesetzt, wenn sie das Verständnis eines
+informatischen Sachverhalts unterstützen.</p>
+<hr />
+<h2 id="sprache-1">13. Sprache</h2>
+<p>Die Texte richten sich an Schülerinnen und Schüler der
+Oberschule.</p>
+<p>Deshalb verwenden wir:</p>
+<ul>
+<li>kurze Sätze</li>
+<li>verständliche Wörter</li>
+<li>anschauliche Beispiele</li>
+<li>klare Struktur</li>
+<li>bekannte Situationen</li>
+</ul>
+<p>Fachbegriffe werden erst eingeführt, wenn ihre Bedeutung verstanden
+wurde.</p>
+<hr />
+<h2 id="quellen-1">14. Quellen</h2>
+<p>Alle fachlichen Aussagen basieren auf überprüfbaren Quellen.</p>
+<p>Bevorzugt werden:</p>
+<ul>
+<li>Lehrplan Sachsen</li>
+<li>Gesellschaft für Informatik (GI)</li>
+<li>Bundesamt für Sicherheit in der Informationstechnik (BSI)</li>
+<li>wissenschaftliche Fachliteratur</li>
+<li>anerkannte Lehrbücher</li>
+</ul>
+<p>Quellen werden dokumentiert und nachvollziehbar angegeben.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="qualitätsanspruch">Qualitätsanspruch</h1>
+<p>Dieses Lehrwerk möchte kein Nachschlagewerk sein.</p>
+<p>Es möchte Neugier wecken.</p>
+<p>Es möchte zum Denken anregen.</p>
+<p>Es möchte Zusammenhänge verständlich machen.</p>
+<p>Es soll Schülerinnen und Schüler befähigen, informatische Probleme
+selbstständig zu erkennen, zu analysieren und zu lösen.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="unser-leitsatz">Unser Leitsatz</h1>
+<blockquote>
+<p><strong>Entdecken statt Auswendiglernen.</strong></p>
+<p><strong>Denken statt Klicken.</strong></p>
+<p><strong>Verstehen statt Wiedergeben.</strong></p>
+<p><strong>Informationstechnik unterstützt Menschen – sie ersetzt sie
+nicht.</strong></p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="qualitätsstandards">Qualitätsstandards</h1>
+<h2 id="oer-lehrwerk-informatik-für-die-oberschule-sachsen-2">OER-Lehrwerk
+Informatik für die Oberschule Sachsen</h2>
+<p>Dieses Dokument definiert die Mindestanforderungen an alle
+Unterrichtsmaterialien.</p>
+<p>Ein Material gilt erst dann als fertig, wenn alle Punkte erfüllt
+sind.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="fachliche-qualität">1. Fachliche Qualität</h1>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Lehrplankonform</label></li>
+<li><label><input type="checkbox"></input>Fachlich korrekt</label></li>
+<li><label><input type="checkbox"></input>Aktuelle Inhalte</label></li>
+<li><label><input type="checkbox"></input>Fachbegriffe korrekt
+verwendet</label></li>
+<li><label><input type="checkbox"></input>Beispiele fachlich
+richtig</label></li>
+<li><label><input type="checkbox"></input>Quellen vollständig
+angegeben</label></li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="didaktische-qualität">2. Didaktische Qualität</h1>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>motivierender Einstieg</label></li>
+<li><label><input type="checkbox"></input>Alltagssituation
+vorhanden</label></li>
+<li><label><input type="checkbox"></input>Leitfrage vorhanden</label></li>
+<li><label><input type="checkbox"></input>Schülerinnen und Schüler entdecken
+Zusammenhänge selbst</label></li>
+<li><label><input type="checkbox"></input>Fachbegriffe erst nach der
+Erarbeitung</label></li>
+<li><label><input type="checkbox"></input>Transferaufgaben
+vorhanden</label></li>
+<li><label><input type="checkbox"></input>Kompetenzcheck
+vorhanden</label></li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="methodische-qualität">3. Methodische Qualität</h1>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Einzelarbeit möglich</label></li>
+<li><label><input type="checkbox"></input>Partnerarbeit möglich</label></li>
+<li><label><input type="checkbox"></input>Gesprächsanlässe
+vorhanden</label></li>
+<li><label><input type="checkbox"></input>unterschiedliche
+Aufgabentypen</label></li>
+<li><label><input type="checkbox"></input>Förderung des
+Problemlösens</label></li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="sprachliche-qualität">4. Sprachliche Qualität</h1>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>verständliche Sprache</label></li>
+<li><label><input type="checkbox"></input>kurze Sätze</label></li>
+<li><label><input type="checkbox"></input>altersgerechte
+Beispiele</label></li>
+<li><label><input type="checkbox"></input>keine unnötigen
+Fremdwörter</label></li>
+<li><label><input type="checkbox"></input>klare Struktur</label></li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="gestaltung">5. Gestaltung</h1>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>übersichtliches Layout</label></li>
+<li><label><input type="checkbox"></input>Tabellen verständlich</label></li>
+<li><label><input type="checkbox"></input>Bilder unterstützen den
+Inhalt</label></li>
+<li><label><input type="checkbox"></input>Schwarz-Weiß-Druck
+möglich</label></li>
+<li><label><input type="checkbox"></input>ausreichender Platz für
+Schülerlösungen</label></li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="oer-qualität">6. OER-Qualität</h1>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Quellen dokumentiert</label></li>
+<li><label><input type="checkbox"></input>Bildrechte geklärt</label></li>
+<li><label><input type="checkbox"></input>Lizenz kompatibel</label></li>
+<li><label><input type="checkbox"></input>bearbeitbare Quelldateien
+vorhanden</label></li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="lehrerband-1">7. Lehrerband</h1>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>vollständige Lösungen</label></li>
+<li><label><input type="checkbox"></input>didaktische Hinweise</label></li>
+<li><label><input type="checkbox"></input>Hinweise zur
+Differenzierung</label></li>
+<li><label><input type="checkbox"></input>typische
+Fehlvorstellungen</label></li>
+<li><label><input type="checkbox"></input>Zeitplanung</label></li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="abschlusskontrolle">8. Abschlusskontrolle</h1>
+<p>Vor der Veröffentlichung wird geprüft:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Würde ich dieses Material selbst im
+Unterricht einsetzen?</label></li>
+<li><label><input type="checkbox"></input>Fördert es das
+Verstehen?</label></li>
+<li><label><input type="checkbox"></input>Regt es zum Nachdenken
+an?</label></li>
+<li><label><input type="checkbox"></input>Unterstützt es den
+Kompetenzaufbau?</label></li>
+<li><label><input type="checkbox"></input>Hat jede Seite einen erkennbaren
+Mehrwert?</label></li>
+</ul>
+<p>Wenn eine dieser Fragen mit <strong>Nein</strong> beantwortet wird,
+ist das Material noch nicht fertig.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="unser-qualitätsanspruch">Unser Qualitätsanspruch</h1>
+<p>Wir entwickeln kein Arbeitsblatt.</p>
+<p>Wir entwickeln kein Nachschlagewerk.</p>
+<p>Wir entwickeln ein Lehrwerk, das Schülerinnen und Schüler
+befähigt,</p>
+<ul>
+<li>Zusammenhänge zu erkennen,</li>
+<li>Probleme zu lösen,</li>
+<li>informatisch zu denken und</li>
+<li>das Gelernte auf neue Situationen zu übertragen.</li>
+</ul>
+<p>Lieber wenige hervorragende Materialien als viele
+durchschnittliche.</p>
+<div class="page-break"></div>
+<h1 id="quellenleitfaden">Quellenleitfaden</h1>
+<h2 id="oer-lehrwerk-informatik-für-die-oberschule-sachsen-3">OER-Lehrwerk
+Informatik für die Oberschule Sachsen</h2>
+<p>Dieser Leitfaden legt fest, welche Quellen für dieses Projekt
+verwendet werden, wie sie dokumentiert werden und welche
+Qualitätsanforderungen sie erfüllen müssen.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="grundsatz-1">1. Grundsatz</h1>
+<p>Alle fachlichen Aussagen müssen nachvollziehbar und überprüfbar
+sein.</p>
+<p>Ziel ist ein fachlich korrektes Lehrwerk, das langfristig gepflegt
+und weiterentwickelt werden kann.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="reihenfolge-der-quellen">2. Reihenfolge der Quellen</h1>
+<p>Bei der Erstellung von Unterrichtsmaterialien werden Quellen in
+folgender Reihenfolge bevorzugt.</p>
+<h2 id="lehrpläne-und-bildungsstandards">1. Lehrpläne und
+Bildungsstandards</h2>
+<p>Diese Quellen besitzen höchste Priorität.</p>
+<p>Beispiele:</p>
+<ul>
+<li>Lehrplan Oberschule Sachsen</li>
+<li>Bildungsstandards der Gesellschaft für Informatik (GI)</li>
+</ul>
+<p>Diese Quellen bestimmen die fachlichen Inhalte und Kompetenzen.</p>
+<hr />
+<h2 id="gesetze-und-offizielle-veröffentlichungen">2. Gesetze und
+offizielle Veröffentlichungen</h2>
+<p>Beispiele:</p>
+<ul>
+<li>Bundesamt für Sicherheit in der Informationstechnik (BSI)</li>
+<li>Bundeszentrale für politische Bildung (bpb)</li>
+<li>Datenschutzkonferenz (DSK)</li>
+<li>Bundesministerium für Bildung und Forschung (BMBF)</li>
+</ul>
+<hr />
+<h2 id="wissenschaftliche-literatur">3. Wissenschaftliche Literatur</h2>
+<p>Bevorzugt werden</p>
+<ul>
+<li>Fachbücher</li>
+<li>wissenschaftliche Veröffentlichungen</li>
+<li>Veröffentlichungen von Hochschulen</li>
+<li>Veröffentlichungen anerkannter Fachgesellschaften</li>
+</ul>
+<hr />
+<h2 id="schulbücher">4. Schulbücher</h2>
+<p>Schulbücher dienen</p>
+<ul>
+<li>als didaktische Orientierung,</li>
+<li>zum Vergleich von Erklärungen,</li>
+<li>zur Kontrolle der fachlichen Tiefe.</li>
+</ul>
+<p>Sie ersetzen keine Primärquellen.</p>
+<hr />
+<h2 id="seriöse-internetquellen">5. Seriöse Internetquellen</h2>
+<p>Internetquellen werden nur verwendet, wenn</p>
+<ul>
+<li>der Autor bekannt ist,</li>
+<li>die Institution vertrauenswürdig ist,</li>
+<li>die Inhalte fachlich überprüfbar sind,</li>
+<li>ein Veröffentlichungsdatum vorhanden ist.</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="nicht-verwendete-quellen">3. Nicht verwendete Quellen</h1>
+<p>Folgende Quellen werden grundsätzlich nicht als fachliche Grundlage
+verwendet.</p>
+<ul>
+<li>anonyme Webseiten</li>
+<li>Foren</li>
+<li>unbelegte Blogbeiträge</li>
+<li>Social-Media-Beiträge</li>
+<li>Werbeseiten</li>
+<li>KI-generierte Inhalte ohne Überprüfung</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="verwendung-von-ki">4. Verwendung von KI</h1>
+<p>Künstliche Intelligenz kann bei</p>
+<ul>
+<li>Formulierungen,</li>
+<li>Strukturierung,</li>
+<li>Ideenfindung,</li>
+<li>Beispielen</li>
+</ul>
+<p>unterstützen.</p>
+<p>Sie ersetzt jedoch niemals die fachliche Prüfung.</p>
+<p>Jede fachliche Aussage wird anhand geeigneter Quellen überprüft.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="quellenangaben">5. Quellenangaben</h1>
+<p>Jedes Kapitel besitzt ein eigenes Quellenverzeichnis.</p>
+<p>Zusätzlich besitzt jeder Lernbereich ein gemeinsames
+Quellenverzeichnis.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="zitierweise">6. Zitierweise</h1>
+<h2 id="bücher">Bücher</h2>
+<p>Autor: Titel. Verlag, Erscheinungsjahr.</p>
+<h3 id="beispiel">Beispiel</h3>
+<p>Jens Gallenbacher: <em>Abenteuer Informatik</em>. Springer Vieweg,
+2024.</p>
+<hr />
+<h2 id="lehrpläne">Lehrpläne</h2>
+<p>Institution: Titel. Bundesland, Erscheinungsjahr.</p>
+<h3 id="beispiel-1">Beispiel</h3>
+<p>Sächsisches Staatsministerium für Kultus: <em>Lehrplan Oberschule –
+Informatik.</em></p>
+<hr />
+<h2 id="internetquellen">Internetquellen</h2>
+<p>Institution oder Autor</p>
+<p>Titel</p>
+<p>URL</p>
+<p>Abrufdatum</p>
+<h3 id="beispiel-2">Beispiel</h3>
+<p>Bundesamt für Sicherheit in der Informationstechnik</p>
+<p>Passwörter sicher erstellen</p>
+<p>https://www.bsi.bund.de</p>
+<p>Abruf: 29.07.2026</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="bilder-1">7. Bilder</h1>
+<p>Es dürfen ausschließlich Bilder verwendet werden,</p>
+<ul>
+<li>deren Lizenz bekannt ist,</li>
+<li>die für OER geeignet sind oder</li>
+<li>die selbst erstellt wurden.</li>
+</ul>
+<p>Die Quelle jedes Bildes wird dokumentiert.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="quellenprüfung">8. Quellenprüfung</h1>
+<p>Vor der Veröffentlichung wird geprüft:</p>
+<ul>
+<li>Sind alle fachlichen Aussagen belegt?</li>
+<li>Stimmen Beispiele und Zahlen?</li>
+<li>Sind Internetquellen noch erreichbar?</li>
+<li>Sind Bildrechte geklärt?</li>
+<li>Sind die Quellen aktuell?</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="änderungen">9. Änderungen</h1>
+<p>Veraltete Informationen werden regelmäßig überprüft.</p>
+<p>Insbesondere folgende Themen können sich kurzfristig ändern:</p>
+<ul>
+<li>Datenschutz</li>
+<li>IT-Sicherheit</li>
+<li>Künstliche Intelligenz</li>
+<li>Software</li>
+<li>Betriebssysteme</li>
+<li>Internetdienste</li>
+</ul>
+<p>Diese Inhalte werden vor jeder Veröffentlichung erneut
+kontrolliert.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="qualitätsanspruch-1">10. Qualitätsanspruch</h1>
+<p>Quellen dienen nicht dazu, ein Dokument zu füllen.</p>
+<p>Sie dienen dazu,</p>
+<ul>
+<li>fachliche Richtigkeit sicherzustellen,</li>
+<li>Aussagen nachvollziehbar zu machen,</li>
+<li>Vertrauen zu schaffen.</li>
+</ul>
+<p>Das Lehrwerk soll auch nach mehreren Jahren noch als fachlich
+zuverlässige Grundlage für den Informatikunterricht genutzt werden
+können.</p>
+<div class="page-break"></div>
+<h1 id="repository-standards">Repository-Standards</h1>
+<p>Dieses Dokument legt verbindliche Standards für alle Inhalte des
+GitHub-Repositories fest.</p>
+<p>Alle Arbeitshefte, Lehrerbände, Lösungen, Präsentationen und
+Zusatzmaterialien orientieren sich an diesen Vorgaben.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="ziel-des-projekts">1. Ziel des Projekts</h1>
+<p>Das Repository stellt ein vollständiges
+Open-Educational-Resources-Unterrichtswerk für das Fach Informatik an
+Oberschulen in Sachsen bereit.</p>
+<p>Die Materialien sollen</p>
+<ul>
+<li>fachlich korrekt,</li>
+<li>didaktisch sinnvoll,</li>
+<li>offen lizenzierbar,</li>
+<li>langfristig wartbar und</li>
+<li>direkt im Unterricht einsetzbar sein.</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="grundprinzipien">2. Grundprinzipien</h1>
+<p>Jede Unterrichtseinheit folgt derselben Lernstruktur.</p>
+<p>Problem</p>
+<p>↓</p>
+<p>Fragen stellen</p>
+<p>↓</p>
+<p>Informationen sammeln</p>
+<p>↓</p>
+<p>Lösungen entwickeln</p>
+<p>↓</p>
+<p>Begriff einführen</p>
+<p>↓</p>
+<p>Anwenden</p>
+<p>↓</p>
+<p>Reflektieren</p>
+<p>↓</p>
+<p>Transfer</p>
+<p>Definitionen stehen niemals am Anfang einer Unterrichtseinheit.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="sprache-2">3. Sprache</h1>
+<p>Alle Texte</p>
+<ul>
+<li>verwenden kurze Sätze,</li>
+<li>sind altersgerecht formuliert,</li>
+<li>erklären neue Fachbegriffe erst nach ihrer Anwendung,</li>
+<li>verzichten auf unnötige Fremdwörter.</li>
+</ul>
+<p>Fachbegriffe werden konsequent verwendet.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="aufgaben-1">4. Aufgaben</h1>
+<p>Jede Unterrichtseinheit enthält möglichst unterschiedliche
+Aufgabenformen.</p>
+<p>Zum Beispiel</p>
+<ul>
+<li>Beobachten</li>
+<li>Beschreiben</li>
+<li>Vergleichen</li>
+<li>Begründen</li>
+<li>Diskutieren</li>
+<li>Anwenden</li>
+<li>Reflektieren</li>
+</ul>
+<p>Reine Abschreibaufgaben sollen vermieden werden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="lebensweltbezug">5. Lebensweltbezug</h1>
+<p>Jede Unterrichtseinheit besitzt mindestens einen Bezug zur
+Lebenswelt.</p>
+<p>Beispiele</p>
+<ul>
+<li>Schule</li>
+<li>Schülerfestival</li>
+<li>Smartphone</li>
+<li>Messenger</li>
+<li>Streaming</li>
+<li>Online-Shopping</li>
+<li>Navigation</li>
+<li>KI</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="kompetenzorientierung">6. Kompetenzorientierung</h1>
+<p>Jede Aufgabe soll mindestens eine Kompetenz fördern.</p>
+<p>Beispiele</p>
+<ul>
+<li>Fachwissen</li>
+<li>Problemlösen</li>
+<li>Kommunikation</li>
+<li>Bewertung</li>
+<li>Modellieren</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="medienbildung">7. Medienbildung</h1>
+<p>Digitale Werkzeuge werden bewusst eingesetzt.</p>
+<p>Dabei wird unterschieden zwischen</p>
+<ul>
+<li>Suchmaschinen,</li>
+<li>Datenbanken,</li>
+<li>Tabellenkalkulation,</li>
+<li>KI-Systemen,</li>
+<li>Programmierung.</li>
+</ul>
+<p>Werkzeuge werden nicht Selbstzweck.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="ki">8. KI</h1>
+<p>Bei der Behandlung von KI gilt:</p>
+<ul>
+<li>keine Produktwerbung,</li>
+<li>mehrere Beispiele nennen,</li>
+<li>Quellen kritisch prüfen,</li>
+<li>Chancen und Grenzen darstellen,</li>
+<li>Datenschutz berücksichtigen.</li>
+</ul>
+<p>KI wird als Werkzeug verstanden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="bilder-2">9. Bilder</h1>
+<p>Bilder dienen ausschließlich dem besseren Verständnis.</p>
+<p>Sie sollen</p>
+<ul>
+<li>Informationen vermitteln,</li>
+<li>keine Dekoration sein,</li>
+<li>barrierearm gestaltet werden.</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="präsentationen-1">10. Präsentationen</h1>
+<p>Präsentationen unterstützen den Unterricht.</p>
+<p>Sie ersetzen ihn nicht.</p>
+<p>Empfehlung</p>
+<ul>
+<li>6 bis 10 Folien</li>
+<li>große Schrift</li>
+<li>wenig Text</li>
+<li>viele Fragen</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="lehrerband-2">11. Lehrerband</h1>
+<p>Jede Lehrerband-Datei enthält</p>
+<ul>
+<li>Lernziele</li>
+<li>Kompetenzen</li>
+<li>Unterrichtsablauf</li>
+<li>Lösungen</li>
+<li>Differenzierung</li>
+<li>typische Fehlvorstellungen</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="lösungen-1">12. Lösungen</h1>
+<p>Lösungen enthalten</p>
+<ul>
+<li>Musterlösungen,</li>
+<li>alternative Antworten,</li>
+<li>mögliche Schülerformulierungen.</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="dateibenennung">13. Dateibenennung</h1>
+<p>Dateinamen beginnen immer mit einer zweistelligen Nummer.</p>
+<p>Beispiel</p>
+<p>01_Welche_Informationen_brauchen_wir.md</p>
+<p>Keine Umlaute.</p>
+<p>Leerzeichen werden durch Unterstriche ersetzt.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="markdown">14. Markdown</h1>
+<p>Überschriften verwenden ausschließlich Markdown.</p>
+<p>Beispiele</p>
+<div class="page-break"></div>
+<h1 id="kapitel">Kapitel</h1>
+<h2 id="aufgabe">Aufgabe</h2>
+<h3 id="merkkasten">Merkkasten</h3>
+<hr />
+<div class="page-break"></div>
+<h1 id="lizenz">15. Lizenz</h1>
+<p>Alle Materialien werden als OER veröffentlicht.</p>
+<p>Externe Materialien dürfen nur verwendet werden,</p>
+<p>wenn ihre Lizenz dies erlaubt.</p>
+<p>Quellen müssen angegeben werden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="qualitätssicherung">16. Qualitätssicherung</h1>
+<p>Vor jeder Veröffentlichung wird geprüft:</p>
+<p>□ Fachlich korrekt</p>
+<p>□ Lehrplankonform</p>
+<p>□ Rechtschreibung</p>
+<p>□ Verständlichkeit</p>
+<p>□ Einheitliches Layout</p>
+<p>□ Quellen vorhanden</p>
+<p>□ Barrierearm</p>
+<p>□ OER-konform</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="langfristige-pflege">17. Langfristige Pflege</h1>
+<p>Produktnamen können sich ändern.</p>
+<p>Deshalb werden</p>
+<ul>
+<li>Begriffe erklärt,</li>
+<li>Produkte nur als Beispiele verwendet,</li>
+<li>Links regelmäßig überprüft.</li>
+</ul>
+<p>Das Repository soll langfristig aktuell bleiben.</p>
+<div class="page-break"></div>
+<h1 id="stilguide">Stilguide</h1>
+<h2 id="oer-lehrwerk-informatik-für-die-oberschule-sachsen-4">OER-Lehrwerk
+Informatik für die Oberschule Sachsen</h2>
+<p>Dieser Stilguide definiert verbindliche Regeln für Sprache,
+Gestaltung und Aufbau aller Materialien.</p>
+<p>Ziel ist ein einheitliches Erscheinungsbild über alle Klassenstufen
+hinweg.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="sprache-3">1. Sprache</h1>
+<h2 id="zielgruppe">Zielgruppe</h2>
+<p>Schülerinnen und Schüler der Oberschule Sachsen.</p>
+<p>Die Sprache soll</p>
+<ul>
+<li>verständlich,</li>
+<li>motivierend,</li>
+<li>altersgerecht und</li>
+<li>fachlich korrekt</li>
+</ul>
+<p>sein.</p>
+<hr />
+<h2 id="satzbau">Satzbau</h2>
+<p>Bevorzugt werden</p>
+<ul>
+<li>kurze Sätze</li>
+<li>aktive Formulierungen</li>
+<li>klare Aussagen</li>
+</ul>
+<p>Statt</p>
+<blockquote>
+<p>Die Informationsverarbeitung erfolgt …</p>
+</blockquote>
+<p>lieber</p>
+<blockquote>
+<p>Informationen werden verarbeitet.</p>
+</blockquote>
+<hr />
+<h2 id="fachbegriffe-1">Fachbegriffe</h2>
+<p>Neue Fachbegriffe werden</p>
+<ul>
+<li>hervorgehoben,</li>
+<li>erklärt und</li>
+<li>anschließend regelmäßig verwendet.</li>
+</ul>
+<p>Sie werden niemals vorausgesetzt.</p>
+<hr />
+<h2 id="ansprache">Ansprache</h2>
+<p>Direkte Ansprache.</p>
+<p>Beispielsweise</p>
+<blockquote>
+<p>Überlege …</p>
+</blockquote>
+<blockquote>
+<p>Beobachte …</p>
+</blockquote>
+<blockquote>
+<p>Vergleiche …</p>
+</blockquote>
+<blockquote>
+<p>Diskutiert gemeinsam …</p>
+</blockquote>
+<p>Nicht</p>
+<blockquote>
+<p>Es soll untersucht werden …</p>
+</blockquote>
+<hr />
+<div class="page-break"></div>
+<h1 id="kapitelaufbau">2. Kapitelaufbau</h1>
+<p>Jedes Kapitel enthält möglichst:</p>
+<ol type="1">
+<li>Einstieg</li>
+<li>Alltagssituation</li>
+<li>Leitfrage</li>
+<li>Erarbeitung</li>
+<li>Erklärung</li>
+<li>Merkkasten</li>
+<li>Beispiele</li>
+<li>Übungen</li>
+<li>Transfer</li>
+<li>Zusammenfassung</li>
+<li>Kompetenzcheck</li>
+<li>Quellen</li>
+</ol>
+<hr />
+<div class="page-break"></div>
+<h1 id="überschriften">3. Überschriften</h1>
+<h2 id="kapitel-1">Kapitel</h2>
+<div class="page-break"></div>
+<h1 id="kapitel-1-daten-und-informationen">Kapitel 1 – Daten und
+Informationen</h1>
+<hr />
+<h2 id="abschnitt">Abschnitt</h2>
+<h2 id="daten-im-alltag">Daten im Alltag</h2>
+<hr />
+<h2 id="unterabschnitt">Unterabschnitt</h2>
+<h3 id="aufgabe-3">Aufgabe 3</h3>
+<hr />
+<div class="page-break"></div>
+<h1 id="merkkästen">4. Merkkästen</h1>
+<p>Merkkästen enthalten ausschließlich wichtige Erkenntnisse.</p>
+<p>Keine langen Erklärungen.</p>
+<p>Beispiel:</p>
+<blockquote>
+<p><strong>Merke</strong></p>
+<p>Daten erhalten ihre Bedeutung erst durch den Zusammenhang.</p>
+</blockquote>
+<hr />
+<div class="page-break"></div>
+<h1 id="alltagssituationen">5. Alltagssituationen</h1>
+<p>Jedes Kapitel beginnt mit einer Situation aus dem Alltag.</p>
+<p>Zum Beispiel:</p>
+<ul>
+<li>Bushaltestelle</li>
+<li>Bahnhof</li>
+<li>Wetter</li>
+<li>Smartphone</li>
+<li>Online-Shop</li>
+<li>Feuerwehr</li>
+<li>Krankenhaus</li>
+<li>Sport</li>
+<li>Schule</li>
+<li>Navigationsgerät</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="beispiele-1">6. Beispiele</h1>
+<p>Beispiele sollen</p>
+<ul>
+<li>realistisch,</li>
+<li>aktuell,</li>
+<li>nachvollziehbar</li>
+</ul>
+<p>sein.</p>
+<p>Wann immer möglich arbeiten Schülerinnen und Schüler mit eigenen
+Beobachtungen.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="aufgaben-2">7. Aufgaben</h1>
+<p>Aufgaben sollen abwechslungsreich sein.</p>
+<p>Geeignete Operatoren:</p>
+<ul>
+<li>beobachten</li>
+<li>beschreiben</li>
+<li>erklären</li>
+<li>vergleichen</li>
+<li>begründen</li>
+<li>diskutieren</li>
+<li>recherchieren</li>
+<li>entwickeln</li>
+<li>programmieren</li>
+<li>testen</li>
+<li>reflektieren</li>
+<li>bewerten</li>
+</ul>
+<p>Nicht ständig denselben Operator verwenden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="bilder-3">8. Bilder</h1>
+<p>Bilder unterstützen den Lernprozess.</p>
+<p>Jedes Bild beantwortet mindestens eine Frage.</p>
+<p>Bilder dienen niemals nur der Dekoration.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="tabellen">9. Tabellen</h1>
+<p>Tabellen sind einfach aufgebaut.</p>
+<p>Nur so viele Spalten wie notwendig.</p>
+<p>Ausreichend Platz zum Schreiben.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="symbole">10. Symbole</h1>
+<p>Im gesamten Lehrwerk werden dieselben Symbole verwendet.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>💡</td>
+<td>Merke</td>
+</tr>
+<tr class="even">
+<td>🔍</td>
+<td>Entdecken</td>
+</tr>
+<tr class="odd">
+<td>🤝</td>
+<td>Partnerarbeit</td>
+</tr>
+<tr class="even">
+<td>💬</td>
+<td>Diskussion</td>
+</tr>
+<tr class="odd">
+<td>💻</td>
+<td>Computerarbeit</td>
+</tr>
+<tr class="even">
+<td>✍</td>
+<td>Aufgabe</td>
+</tr>
+<tr class="odd">
+<td>🌍</td>
+<td>Alltag</td>
+</tr>
+<tr class="even">
+<td>⭐</td>
+<td>Merksatz</td>
+</tr>
+<tr class="odd">
+<td>🧠</td>
+<td>Nachdenken</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="page-break"></div>
+<h1 id="farben">11. Farben</h1>
+<p>Farben unterstützen die Orientierung.</p>
+<p>Sie dürfen niemals die einzige Informationsquelle sein.</p>
+<p>Alle Materialien müssen auch in Schwarz-Weiß verständlich
+bleiben.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="quellen-2">12. Quellen</h1>
+<p>Quellen werden einheitlich angegeben.</p>
+<h2 id="bücher-1">Bücher</h2>
+<p>Autor: Titel. Verlag, Jahr.</p>
+<h2 id="internet">Internet</h2>
+<p>Institution oder Autor.</p>
+<p>Titel.</p>
+<p>URL.</p>
+<p>Abrufdatum.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="dateibenennung-1">13. Dateibenennung</h1>
+<p>Arbeitsheft_Informationen_und_Daten_Klasse9.docx</p>
+<p>Lehrerband_Informationen_und_Daten_Klasse9.docx</p>
+<p>Praesentation_Informationen_und_Daten_Klasse9.pptx</p>
+<p>Lernkontrolle_01.docx</p>
+<p>Loesungen_Lernkontrolle_01.docx</p>
+<p>Keine Leerzeichen.</p>
+<p>Umlaute vermeiden.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="quellenverzeichnis">14. Quellenverzeichnis</h1>
+<p>Jedes Kapitel besitzt ein eigenes Quellenverzeichnis.</p>
+<p>Zusätzlich besitzt jeder Lernbereich ein gemeinsames
+Quellenverzeichnis.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="künstliche-intelligenz">15. Künstliche Intelligenz</h1>
+<p>KI darf bei der Erstellung unterstützen.</p>
+<p>Alle Inhalte werden jedoch vor der Veröffentlichung</p>
+<ul>
+<li>fachlich,</li>
+<li>sprachlich und</li>
+<li>didaktisch</li>
+</ul>
+<p>geprüft.</p>
+<p>Die Verantwortung für die veröffentlichten Inhalte liegt immer bei
+den Autorinnen und Autoren.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="unser-leitsatz-1">16. Unser Leitsatz</h1>
+<p>Jede Seite soll eine Geschichte erzählen.</p>
+<p>Jede Aufgabe soll zum Denken anregen.</p>
+<p>Jede Erklärung soll zum Verstehen führen.</p>
+<p>Jede Schülerin und jeder Schüler soll erkennen:</p>
+<blockquote>
+<p><strong>Informatik hilft Menschen, Probleme zu verstehen und zu
+lösen.</strong></p>
+</blockquote>
+<p>Nicht der Computer steht im Mittelpunkt.</p>
+<p>Der Mensch steht im Mittelpunkt.</p>
+<div class="page-break"></div>
+<h1 id="vorlage-lehrerband">Vorlage Lehrerband</h1>
+<blockquote>
+<p>Diese Vorlage dient als einheitliche Struktur für alle Kapitel des
+Lehrerbandes. Dadurch erhalten alle Unterrichtseinheiten denselben
+Aufbau und sind für Lehrkräfte schnell nutzbar.</p>
+</blockquote>
+<hr />
+<div class="page-break"></div>
+<h1 id="kapitel-2">Kapitel</h1>
+<p><strong>Arbeitsheft:</strong></p>
+<p><strong>Unterrichtseinheit:</strong></p>
+<p><strong>Zeitbedarf:</strong></p>
+<hr />
+<div class="page-break"></div>
+<h1 id="einordnung">Einordnung</h1>
+<p>Einordnung des Kapitels innerhalb des Lernbereichs.</p>
+<p>Welche Kenntnisse werden vorausgesetzt?</p>
+<p>Welche Inhalte folgen anschließend?</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="kompetenzen">Kompetenzen</h1>
+<p>Die Schülerinnen und Schüler können …</p>
+<ul>
+<li>…</li>
+<li>…</li>
+<li>…</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="lernziele">Lernziele</h1>
+<p>Nach dieser Unterrichtseinheit können die Schülerinnen und
+Schüler</p>
+<h3 id="fachwissen">Fachwissen</h3>
+<ul>
+<li></li>
+</ul>
+<h3 id="erkenntnisgewinnung">Erkenntnisgewinnung</h3>
+<ul>
+<li></li>
+</ul>
+<h3 id="kommunikation">Kommunikation</h3>
+<ul>
+<li></li>
+</ul>
+<h3 id="bewertung">Bewertung</h3>
+<ul>
+<li></li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="benötigte-materialien">Benötigte Materialien</h1>
+<ul>
+<li>Arbeitsheft</li>
+<li>Präsentation</li>
+<li>Computer / Tablet (optional)</li>
+<li>Arbeitsblatt (optional)</li>
+<li>Beispieldateien</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="vorbereitung">Vorbereitung</h1>
+<p>Hinweise für die Lehrkraft.</p>
+<p>Beispielsweise</p>
+<ul>
+<li>Dateien vorbereiten</li>
+<li>Gruppen bilden</li>
+<li>Material auslegen</li>
+<li>Technik testen</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="unterrichtsverlauf">Unterrichtsverlauf</h1>
+<h2 id="einstieg-ca.-___-minuten">Einstieg (ca. ___ Minuten)</h2>
+<p>Ziel</p>
+<p>…</p>
+<p>Mögliche Fragen</p>
+<ul>
+<li>…</li>
+<li>…</li>
+<li>…</li>
+</ul>
+<hr />
+<h2 id="erarbeitung-ca.-___-minuten">Erarbeitung (ca. ___ Minuten)</h2>
+<p>Bearbeitung der Aufgaben.</p>
+<p>Hinweise</p>
+<ul>
+<li>…</li>
+<li>…</li>
+</ul>
+<p>Typische Beobachtungen</p>
+<ul>
+<li>…</li>
+<li>…</li>
+</ul>
+<hr />
+<h2 id="sicherung-ca.-___-minuten">Sicherung (ca. ___ Minuten)</h2>
+<p>Gemeinsame Auswertung.</p>
+<p>Wichtige Erkenntnisse</p>
+<ul>
+<li>…</li>
+<li>…</li>
+<li>…</li>
+</ul>
+<hr />
+<h2 id="transfer-ca.-___-minuten">Transfer (ca. ___ Minuten)</h2>
+<p>Übertragung auf neue Situationen.</p>
+<p>Beispiele</p>
+<ul>
+<li>Alltag</li>
+<li>Schule</li>
+<li>Freizeit</li>
+<li>Beruf</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="erwartete-ergebnisse">Erwartete Ergebnisse</h1>
+<p>Zusammenfassung der wichtigsten Schülerantworten.</p>
+<p>Aufgabe 1</p>
+<p>…</p>
+<p>Aufgabe 2</p>
+<p>…</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="typische-schülervorstellungen">Typische
+Schülervorstellungen</h1>
+<p>Mögliche Fehlvorstellungen.</p>
+<p>Beispiele</p>
+<ul>
+<li>…</li>
+<li>…</li>
+<li>…</li>
+</ul>
+<p>Hinweise zum Umgang</p>
+<p>…</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="differenzierung">Differenzierung</h1>
+<h2 id="unterstützung">Unterstützung</h2>
+<ul>
+<li>vereinfachte Aufgaben</li>
+<li>Partnerarbeit</li>
+<li>Hilfekarten</li>
+</ul>
+<h2 id="erweiterung">Erweiterung</h2>
+<ul>
+<li>Zusatzaufgaben</li>
+<li>Recherche</li>
+<li>Transferaufgaben</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="digitale-werkzeuge">Digitale Werkzeuge</h1>
+<p>Geeignete Programme oder Webseiten.</p>
+<p>Beispielsweise</p>
+<ul>
+<li>LibreOffice</li>
+<li>Tabellenkalkulation</li>
+<li>Datenbank</li>
+<li>KI-Werkzeuge</li>
+<li>Suchmaschinen</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="hinweise-zur-leistungsbewertung">Hinweise zur
+Leistungsbewertung</h1>
+<p>Worauf sollte besonders geachtet werden?</p>
+<p>Mögliche Beobachtungsschwerpunkte</p>
+<ul>
+<li>Mitarbeit</li>
+<li>Fachsprache</li>
+<li>Problemlösestrategien</li>
+<li>Begründungen</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="lösungen-2">Lösungen</h1>
+<p>Vollständige Musterlösungen.</p>
+<p>Alternative Lösungen sind möglich.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="weiterführende-ideen">Weiterführende Ideen</h1>
+<p>Ideen für</p>
+<ul>
+<li>Projekte</li>
+<li>Hausaufgaben</li>
+<li>Vertiefung</li>
+<li>Fächerverbindungen</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="quellen-3">Quellen</h1>
+<p>Lehrplan</p>
+<p>Literatur</p>
+<p>Internetquellen</p>
+</body>
+</html>
