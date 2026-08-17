@@ -1,4 +1,4 @@
-# Lösungen – 01 bis 03 Daten und Darstellungen
+# Lösungen – 01 bis 03 Daten, Darstellungen und digitale Medien
 
 ## Information und Daten
 
@@ -15,6 +15,7 @@ Mögliche sinnvolle Zuordnungen:
 - Wegbeschreibung → Karte plus kurzer Text
 - Interview → Audio/Video oder Transkript
 - Klassenumfrage → Tabelle für Rohdaten, Diagramm für Übersicht
+- Bewegungsablauf → Animation oder Video
 
 Andere begründete Lösungen sind möglich.
 
@@ -25,6 +26,8 @@ Andere begründete Lösungen sind möglich.
 - Vortrag → Präsentationssoftware
 - Logo → Grafikprogramm
 - Interview schneiden → Audio-/Videosoftware
+- Umfrage online durchführen → browserbasierte Anwendung/Umfragetool
+- Messwerte als Diagramm darstellen → Tabellenkalkulation
 
 ## Inhalt und Design
 
@@ -34,4 +37,25 @@ Design: Schriftgröße und Hintergrundfarbe. Das Foto kann zugleich gestalterisc
 
 ## Automatisierung
 
-Beispiele: Rechtschreibprüfung, automatische Summen, Formatvorlagen, automatische Farbanpassung. Die Auswahl von Ziel, Inhalt und Bewertung des Ergebnisses bleibt eine menschliche Aufgabe.
+Beispiele:
+
+| Funktion | Eingabe | Verarbeitung | Ergebnis | Menschliche Entscheidung |
+|---|---|---|---|---|
+| Rechtschreibprüfung | Text | Wörter/Muster vergleichen | Markierung/Vorschlag | Vorschlag prüfen |
+| automatische Summe | Zahlenwerte | addieren | Ergebniswert | passende Zellen wählen |
+| Layoutvorlage | Inhalt/Platzhalter | Formatregeln anwenden | gestaltete Folie | Zweck/Zielgruppe prüfen |
+| Sortieren | Datensätze | nach Kriterium ordnen | sortierte Liste | Sortierkriterium wählen |
+
+Die Software übernimmt Arbeitsschritte, entscheidet aber nicht automatisch, ob das Ergebnis inhaltlich richtig und sinnvoll ist.
+
+## Medien kritisch prüfen
+
+Vor dem Weiterleiten prüfen:
+
+- Quelle und Urheber nachvollziehbar?
+- Datum, Ort und Kontext erkennbar?
+- Gibt es unabhängige Bestätigung?
+- Könnten Bild, Ton, Ausschnitt oder Beschreibung manipuliert sein?
+- Werden Personenrechte oder Datenschutz verletzt?
+
+Bei Unsicherheit nicht weiterverbreiten und ggf. Lehrkraft oder verantwortliche Stelle informieren.
