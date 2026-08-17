@@ -1,53 +1,58 @@
-# Leistungskontrolle 1 – Digitale Information und EVAS
+# Leistungskontrolle 1 – Informatik im Alltag
 
 **Name:** ______________________________  **Klasse:** __________
 
 **Arbeitszeit:** 45 Minuten  
 **Gesamt:** 30 Punkte
 
-> Die Geschichte der Informatik ist nicht Bestandteil dieser Leistungskontrolle.
+> Die Geschichte der Informatik dient der Orientierung. Jahreszahlen und biografische Details werden hier nicht geprüft. Ausführliche Binärumrechnung und Binäraddition sind Vertiefung und werden in dieser Leistungskontrolle nicht abgefragt.
 
-## Aufgabe 1 – Binärzahlen umrechnen (8 Punkte)
+## Aufgabe 1 – EVA und Blockbild anwenden (6 Punkte)
 
-1. Wandle `13₁₀` ins Binärsystem um. (2 P)
-2. Wandle `26₁₀` ins Binärsystem um. (2 P)
-3. Wandle `10110₂` ins Dezimalsystem um. (2 P)
-4. Wandle `111001₂` ins Dezimalsystem um. (2 P)
+Ein Schüler meldet sich an einem Schulcomputer an, öffnet die Lernplattform und lädt eine Datei hoch.
 
-## Aufgabe 2 – Binärzahlen addieren (4 Punkte)
+Ordne den Vorgang sinnvoll zu:
 
-Berechne schriftlich:
+1. **Eingabe** (1 P)
+2. **Verarbeitung** (1 P)
+3. **Ausgabe** (1 P)
+4. **Speicherung** (1 P)
+5. **Vernetzung** (1 P)
+6. **Benutzerhandlung** (1 P)
 
-```text
-  1011₂
-+ 0110₂
-```
+## Aufgabe 2 – Hardware, Software und Daten (6 Punkte)
 
-Führe anschließend eine Probe im Dezimalsystem durch.
+Ordne die Begriffe den Gruppen **Hardware**, **Software** oder **Daten** zu und begründe zwei Zuordnungen kurz.
 
-## Aufgabe 3 – Texte im Computer (4 Punkte)
+- Tastatur
+- Betriebssystem
+- Präsentationsdatei
+- Browser
+- Arbeitsspeicher
+- Foto-Datei
 
-1. Warum braucht ein Computer eine Vereinbarung wie ASCII oder Unicode? (2 P)
-2. Erkläre, warum derselbe Bitwert nur dann eindeutig als Zeichen verstanden wird, wenn der verwendete Zeichencode bekannt ist. (2 P)
+## Aufgabe 3 – Software und Lizenzformen (5 Punkte)
 
-## Aufgabe 4 – Bilder und Ton (6 Punkte)
+1. Erkläre den Unterschied zwischen Betriebssystem und Anwendungssoftware. (2 P)
+2. Warum bedeutet „kostenlos heruntergeladen“ nicht automatisch „frei weitergeben“? (1 P)
+3. Nenne je ein Merkmal proprietärer Software und von Open-Source-Software. (2 P)
 
-1. Erkläre den Begriff **Pixel**. (1 P)
-2. Wofür steht **RGB**? (1 P)
-3. Was bedeutet **Auflösung** bei einem Rasterbild? (1 P)
-4. Erkläre den Begriff **Abtastrate**. (1 P)
-5. Erkläre den Begriff **Bittiefe** bei Audio. (1 P)
-6. Nenne einen Grund, warum digitale Audio- oder Bilddaten komprimiert werden. (1 P)
+## Aufgabe 4 – Speicher sinnvoll auswählen (5 Punkte)
 
-## Aufgabe 5 – EVAS anwenden (8 Punkte)
+Für eine wichtige Schulpräsentation stehen zur Auswahl: RAM, SSD im Schul-PC, USB-Stick, Netzlaufwerk, Cloudspeicher.
 
-Ein Smartphone nimmt ein Foto auf und speichert es anschließend.
+1. Warum ist RAM kein geeigneter dauerhafter Speicherort? (1 P)
+2. Nenne zwei Eigenschaften, nach denen man Speicher vergleichen kann. (2 P)
+3. Wähle einen geeigneten Speicherort für eine Präsentation, die zu Hause und in der Schule bearbeitet werden soll. Begründe. (2 P)
 
-Beschreibe den Vorgang nach EVAS:
+## Aufgabe 5 – Dateien, Ordner, Pfade und Meldungen (5 Punkte)
 
-- **Eingabe** (2 P)
-- **Verarbeitung** (2 P)
-- **Ausgabe** (2 P)
-- **Speicherung** (2 P)
+1. Erkläre den Unterschied zwischen **Kopieren** und **Verschieben**. (2 P)
+2. Gib einen sinnvollen Pfad für eine Informatik-Präsentation in Klasse 7 an. (1 P)
+3. Eine Meldung lautet: „Datei kann nicht gespeichert werden – keine Berechtigung“. Nenne zwei sinnvolle nächste Schritte. (2 P)
 
-Formuliere jeweils konkret, welche Information verarbeitet wird.
+## Aufgabe 6 – Bit, Byte und Größenordnungen (3 Punkte)
+
+1. Was ist ein Bit? (1 P)
+2. Wie viele Bit hat ein Byte? (1 P)
+3. Ordne der Größe nach: `800 KB`, `2 MB`, `3 GB`. (1 P)
