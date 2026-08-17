@@ -1,53 +1,41 @@
-# Leistungskontrolle 1 – Digitale Information und EVAS
+# Leistungskontrolle 1 – Informatik im Alltag
 
 **Name:** ______________________________  **Klasse:** __________
 
 **Arbeitszeit:** 45 Minuten  
 **Gesamt:** 30 Punkte
 
-> Die Geschichte der Informatik ist nicht Bestandteil dieser Leistungskontrolle.
+> Die Geschichte der Informatik dient der Orientierung. Jahreszahlen und biografische Details werden hier nicht abgefragt.
 
-## Aufgabe 1 – Binärzahlen umrechnen (8 Punkte)
+## Aufgabe 1 – EVA/EVAS anwenden (6 Punkte)
 
-1. Wandle `13₁₀` ins Binärsystem um. (2 P)
-2. Wandle `26₁₀` ins Binärsystem um. (2 P)
-3. Wandle `10110₂` ins Dezimalsystem um. (2 P)
-4. Wandle `111001₂` ins Dezimalsystem um. (2 P)
+Ein Schüler meldet sich an einem Schulcomputer an, öffnet die Lernplattform und lädt eine Datei herunter.
 
-## Aufgabe 2 – Binärzahlen addieren (4 Punkte)
+Ordne dem Vorgang konkrete Beispiele für **Eingabe**, **Verarbeitung**, **Ausgabe**, **Speicherung** und ggf. **Netzwerkzugriff** zu. Formuliere jeweils in eigenen Worten.
 
-Berechne schriftlich:
+## Aufgabe 2 – Informatiksysteme und Blockbild (5 Punkte)
 
-```text
-  1011₂
-+ 0110₂
-```
+1. Zeichne ein einfaches Blockbild eines Informatiksystems mit Eingabe, Verarbeitung, Ausgabe und Speicher. (3 P)
+2. Nenne für ein Smartphone je ein konkretes Beispiel für Eingabe, Verarbeitung, Ausgabe und Speicher. (2 P)
 
-Führe anschließend eine Probe im Dezimalsystem durch.
+## Aufgabe 3 – Hardware, Software und Systembereitschaft (5 Punkte)
 
-## Aufgabe 3 – Texte im Computer (4 Punkte)
+1. Ordne zu: Prozessor, Betriebssystem, Browser, RAM, Touchscreen, Präsentationsprogramm. Nutze die Kategorien **Hardware**, **Betriebssystem** und **Anwendungssoftware/Werkzeug**. (3 P)
+2. Eine Online-Plattform meldet „Anmeldung fehlgeschlagen“. Nenne vier sinnvolle Prüfschritte, bevor du dieselbe Eingabe immer wiederholst. (2 P)
 
-1. Warum braucht ein Computer eine Vereinbarung wie ASCII oder Unicode? (2 P)
-2. Erkläre, warum derselbe Bitwert nur dann eindeutig als Zeichen verstanden wird, wenn der verwendete Zeichencode bekannt ist. (2 P)
+## Aufgabe 4 – Lizenzformen (4 Punkte)
 
-## Aufgabe 4 – Bilder und Ton (6 Punkte)
+1. Erkläre den Unterschied zwischen **kostenlos** und **Open Source**. (2 P)
+2. Erkläre den Unterschied zwischen **proprietärer Software** und **Open-Source-Software**. (2 P)
 
-1. Erkläre den Begriff **Pixel**. (1 P)
-2. Wofür steht **RGB**? (1 P)
-3. Was bedeutet **Auflösung** bei einem Rasterbild? (1 P)
-4. Erkläre den Begriff **Abtastrate**. (1 P)
-5. Erkläre den Begriff **Bittiefe** bei Audio. (1 P)
-6. Nenne einen Grund, warum digitale Audio- oder Bilddaten komprimiert werden. (1 P)
+## Aufgabe 5 – Speicher und Datenmengen (5 Punkte)
 
-## Aufgabe 5 – EVAS anwenden (8 Punkte)
+1. Erkläre den Unterschied zwischen flüchtigem und nichtflüchtigem Speicher und nenne je ein Beispiel. (2 P)
+2. Vergleiche lokalen Speicher, Netzwerkspeicher und Cloudspeicher für eine Schulpräsentation. Nenne zwei sinnvolle Kriterien. (2 P)
+3. Rechne um: Wie viele Bit sind 6 Byte? (1 P)
 
-Ein Smartphone nimmt ein Foto auf und speichert es anschließend.
+## Aufgabe 6 – Dateien, Ordner, Pfade und Dateioperationen (5 Punkte)
 
-Beschreibe den Vorgang nach EVAS:
-
-- **Eingabe** (2 P)
-- **Verarbeitung** (2 P)
-- **Ausgabe** (2 P)
-- **Speicherung** (2 P)
-
-Formuliere jeweils konkret, welche Information verarbeitet wird.
+1. Erkläre den Unterschied zwischen **Kopieren** und **Verschieben**. (2 P)
+2. Gib einen sinnvollen Pfad und Dateinamen für eine Informatik-Präsentation zum EVA-Prinzip an. (1 P)
+3. Nenne zwei Gründe, warum `fertig_final_neu2.pptx` kein guter Dateiname ist, und schlage eine bessere Benennung vor. (2 P)
