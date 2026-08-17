@@ -48,7 +48,8 @@ jobs:
         run: |
           ./Build/package_artifacts.sh
 
-      - name: Build-Ausgabe in aktuellen Branch übernehmen
+      - name: Build-Ausgabe in Feature-Branch übernehmen
+        if: ${{ github.ref_name != 'main' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -64,3 +65,8 @@ jobs:
 
           git commit -m "Build-Ausgabe aktualisieren [skip ci]"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Main-Build abgeschlossen
+        if: ${{ github.ref_name == 'main' }}
+        run: |
+          echo "main ist geschützt: Build wurde geprüft, Ausgabe wird nicht direkt nach main gepusht."
