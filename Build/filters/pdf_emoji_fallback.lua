@@ -5,11 +5,11 @@
 -- Letzteres ist wichtig, weil Pandoc Code mit DejaVu Sans Mono setzt.
 
 local replacements = {
-  ["🧪"] = "Experiment",
-  ["📖"] = "Aufgabe",
-  ["🤖"] = "Roboter",
-  ["💡"] = "Hinweis",
-  ["🚀"] = "Start",
+  ["🧪"] = "",
+  ["📖"] = "",
+  ["🤖"] = "",
+  ["💡"] = "Merke",
+  ["🚀"] = "",
   ["💬"] = "Gespräch",
   ["✅"] = "Ja",
   ["❌"] = "Nein",
