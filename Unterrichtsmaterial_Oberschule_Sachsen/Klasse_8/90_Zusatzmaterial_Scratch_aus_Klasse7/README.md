@@ -1,35 +1,17 @@
-# Klasse 7 – Algorithmen und Programmierung
+# Klasse 8 – Zusatzmaterial Scratch
 
-## Leitfrage
+Dieses Material stammt aus einer früheren Planung für Klasse 7. Im sächsischen Lehrplan Informatik Oberschule 2022 gehört die systematische Behandlung von Algorithmen und Programmierung zum **Lernbereich 1 „Algorithmen und Programme“ der Klassenstufe 8 (15 Ustd.)**.
 
-> **Wie beschreiben und programmieren wir eindeutige Abläufe?**
+Das Material bleibt deshalb erhalten, ist aber bewusst als **Zusatz-/Differenzierungsmaterial** gekennzeichnet. Es ersetzt nicht die reguläre Klasse-8-Struktur und wird vor einer möglichen Integration mit dem vorhandenen Algorithmik-/Robot-Karol-Material abgeglichen.
 
-Dieser Lernbereich bündelt die bisher unter `01_Grundlagen_der_digitalen_Welt` geführte Programmiervertiefung. Damit liegen Arbeitsheft, Lehrerband, Material, Lösungen, Präsentationen und Lernkontrolle an einem eindeutigen Ort.
+## Enthaltene Themen
 
-## Unterrichtsfolge
+- Begriff und Eigenschaften eines Algorithmus
+- Sequenz, Entscheidung/Verzweigung und Wiederholung
+- Scratch: Ereignisse, Eingaben, Bedingungen, Schleifen und Variablen
+- Scratch-Projekt und Kompetenzcheck
+- Arbeitsheft, Lehrerband, Material, Lösungen, Präsentationen und Lernkontrolle
 
-| Nr. | Thema | Schwerpunkt |
-|---:|---|---|
-| 01 | Was ist ein Algorithmus? | eindeutige, geordnete und endliche Abläufe |
-| 02 | Algorithmen darstellen | Sequenz, Entscheidung und Wiederholung |
-| 03 | Scratch – Einstieg | Oberfläche, Ereignisse und erste Sequenzen |
-| 04 | Scratch – Eingaben | Ereignisse und Eingaben |
-| 05 | Scratch – Bedingungen | Entscheidungen im Programm |
-| 06 | Scratch – Schleifen | Wiederholungen |
-| 07 | Scratch – Variablen | Werte speichern und verändern |
-| 08 | Erstes Scratch-Projekt | Strukturen kombinieren und testen |
-| 09 | Kompetenzcheck | sichern, erklären und anwenden |
+## Lehrplanbezug Klasse 8
 
-## Werkteile
-
-- `01_Arbeitsheft` – Schülertexte und Aufgaben
-- `02_Lehrerband` – Unterrichtsplanung und Lehrerhinweise
-- `03_Material` – Karten, Arbeitsaufträge und Checklisten
-- `04_Loesungen` – Musterlösungen
-- `05_Praesentationen` – Präsentationen und Folienpläne unter `md/`
-- `07_Quellen` – Quellenhinweise
-- `09_Lernkontrollen` – Leistungskontrolle Algorithmen und Scratch einschließlich Lösung und JSON
-
-## Übergang zu Klasse 8
-
-Die Inhalte bilden bewusst die Brücke zur vertieften Algorithmik und zu Robot Karol in Klasse 8.
+Die Inhalte passen grundsätzlich zu den Anforderungen an algorithmische Grundstrukturen und visuelle/blockbasierte Programmierumgebungen. Der Lehrplan verlangt darüber hinaus insbesondere verschiedene Darstellungsformen von Algorithmen, Strategien zur Problemlösung, den Umgang mit Fehlermeldungen, Einblick in Grenzen der Berechenbarkeit und die gesellschaftliche Bedeutung von Algorithmen. Diese Punkte sind bei einer späteren Zusammenführung mit dem regulären Klasse-8-Lernbereich zu berücksichtigen.
