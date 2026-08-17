@@ -1,53 +1,61 @@
-# Präsentation – 04 bis 06 Objekte, Klassen und Datenrechte
+# Präsentation – 04 bis 06 Objekte, Klassen und verantwortliche Datennutzung
 
-## Folie 1
+## Folie 1 – Leitfrage
 
-> Welche Dinge in einem Dokument kann ein Computer als Objekte behandeln?
+> Wie beschreibt ein Computer Dinge in Dokumenten und Anwendungen?
 
-## Folie 2
+## Folie 2 – Objekte in Anwendersoftware
 
-Objekt und Beispiele.
+Bild, Textfeld, Tabellenzelle, Folie, Audioausschnitt oder Videoelement als konkrete Objekte.
 
-## Folie 3
+## Folie 3 – Attribute und Attributwerte
 
-Attribut und Attributwert.
+Attribut = Eigenschaft, Attributwert = konkreter Wert. Beispiel: Breite = 10 cm, Farbe = blau.
 
-## Folie 4
+## Folie 4 – Objektzustand ändern
 
-Live-Beispiel: Bildbreite, Höhe, Position verändern.
+Attributwerte verändern den Zustand eines konkreten Objekts. Die Klasse selbst ändert sich dadurch nicht.
 
-## Folie 5
+## Folie 5 – Klasse als Bauplan
 
-Klasse als gemeinsame Beschreibung.
+Klasse beschreibt gemeinsame Attribute und Methoden ähnlicher Objekte, z. B. `Bild`, `Textfeld`, `Fahrrad`.
 
-## Folie 6
+## Folie 6 – Klasse und Objekt unterscheiden
 
-Klasse Fahrrad – konkrete Objekte vergleichen.
+Die Klasse besitzt keine konkreten Werte wie „rot“ oder „10 cm“. Werte gehören zu konkreten Objekten.
 
-## Folie 7
+## Folie 7 – Methoden und Verwaltung
 
-Methoden versus Erstellen/Kopieren/Löschen.
+Methode ändert bzw. nutzt ein Objekt. Erstellen, Kopieren und Löschen verwalten Objekte.
 
-## Folie 8
+## Folie 8 – Vereinfachte Darstellung
 
-Transfer zu Scratch-Figuren.
+Klasse-Objekt-Karte: Klassenname, Attribute, Beispielobjekt mit Attributwerten, mögliche Methoden.
 
-## Folie 9
+## Folie 9 – Was technisch möglich ist, ist nicht automatisch erlaubt
 
-> Was technisch möglich ist, ist nicht automatisch erlaubt.
+Fallbeispiele: Klassenfoto, fremde Musik, Standortdaten, KI-generiertes Bild.
 
-## Folie 10
+## Folie 10 – Persönliche Daten und Persönlichkeitsrechte
 
-Persönliche Daten und Persönlichkeitsrechte.
+Name, Foto, Stimme, Standort, Kontaktdaten. Veröffentlichung und Weitergabe bewusst prüfen.
 
-## Folie 11
+## Folie 11 – Urheberrecht, Quelle, Zitat, Plagiat
 
-Urheberrecht und Quellen.
+Fundstelle ist keine Nutzungserlaubnis. Quellen angeben, Lizenz beachten, fremde Leistung nicht als eigene ausgeben.
 
-## Folie 12
+## Folie 12 – Inhaltsdaten und Metadaten
 
-Vier Fragen vor dem Teilen von Daten.
+Was steht im Dokument? Welche Zusatzinformationen hängen daran? Beispiel Foto: Bildinhalt, Datum, Ort, Gerät.
 
-## Folie 13
+## Folie 13 – Dokumentenschutz
 
-Ausblick auf Klasse 8: Klassen, Objekte und Attribute werden systematisch vertieft.
+Zugriffsrechte, Freigaben, Passwörter, Backup und Versionen als einfache Schutzstrategien.
+
+## Folie 14 – Manipulation und automatische Erzeugung
+
+Medien können von Menschen oder Automaten verändert bzw. erzeugt werden. Quellen und Kontext prüfen.
+
+## Folie 15 – Sicherung
+
+> Datenmodelle helfen beim Beschreiben digitaler Objekte. Rechte, Quellen und Schutz entscheiden, ob Nutzung verantwortungsvoll ist.

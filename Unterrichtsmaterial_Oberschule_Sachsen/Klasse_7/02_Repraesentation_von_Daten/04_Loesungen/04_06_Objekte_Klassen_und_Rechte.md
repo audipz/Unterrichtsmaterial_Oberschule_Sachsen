@@ -4,9 +4,12 @@
 
 Beispiel Bildobjekt:
 
+- Klasse: `Bild`
+- Objekt: konkretes Bild in der Präsentation
 - Attribut `Breite` – Wert `8 cm`
 - Attribut `Höhe` – Wert `5 cm`
 - Attribut `Drehung` – Wert `0°`
+- mögliche Methode: drehen, skalieren, zuschneiden
 
 Bild löschen/kopieren/neu erstellen verwaltet Objekte; Bildbreite, Farbe oder Drehung verändern Attributwerte.
 
@@ -20,9 +23,42 @@ Beispiel Klasse `Fahrrad`:
 
 `rot`, `21` usw. sind konkrete Attributwerte einzelner Objekte.
 
-Klasse = gemeinsame Beschreibung ähnlicher Objekte; Objekt = konkretes Exemplar.
+Klasse = gemeinsame Beschreibung ähnlicher Objekte; Objekt = konkretes Exemplar. Wenn ein konkretes Fahrrad neu lackiert wird, ändert sich der Attributwert dieses Objekts. Die Klasse `Fahrrad` bleibt als Bauplan gleich.
 
-## Datenrechte
+## Objektzustand oder Objektverwaltung
+
+Attributwert ändern:
+
+- Bild drehen
+- Bildbreite verändern
+- Farbe eines Textfelds ändern
+
+Objekte verwalten:
+
+- Bild löschen
+- Bild kopieren
+- neues Bild einfügen
+- Tabelle duplizieren
+
+## Inhaltsdaten und Metadaten
+
+- sichtbare Personen → Inhaltsdaten, weil sie im Bild sichtbar sind
+- Aufnahmedatum → Metadatum, Zusatzinformation zur Datei
+- Dateigröße → Metadatum, technische Zusatzinformation
+- sichtbarer Text auf einem Schild → Inhaltsdaten
+- Aufnahmeort → Metadatum, sofern als Zusatzinformation gespeichert
+
+## Dokumentenschutz
+
+Mögliche Zuordnungen:
+
+- nur Lesen erlauben → schützt vor versehentlicher Änderung
+- Freigabe nur für bestimmte Personen → schützt vor ungewolltem Zugriff
+- regelmäßiges Backup → schützt vor Datenverlust
+- Versionierung → schützt vor Verwechslung oder Überschreiben
+- persönliche Daten entfernen → schützt Datenschutz und Persönlichkeitsrechte
+
+## Datenrechte und Medienkritik
 
 ### Klassenfoto
 
@@ -34,11 +70,16 @@ Eine Fundstelle in einer Suchmaschine ist keine Nutzungserlaubnis. Lizenz bzw. R
 
 ### Standort
 
-Mögliche Fragen: Warum benötigt die App den Standort? Nur während der Nutzung oder dauerhaft? Wer erhält die Daten? Kann die Berechtigung später widerrufen werden?
+Standort einer anderen Person nicht ohne deren Zustimmung weitergeben.
 
-## Material Fallkarten
+### Freie Lizenz
 
-1. Öffentliche Weitergabe ohne Zustimmung ist nicht verantwortungsvoll.
-2. Nutzungsrechte/Lizenz der Musik prüfen; ggf. geeignet lizenzierte Medien verwenden.
-3. Standort einer anderen Person nicht ohne deren Zustimmung weitergeben.
-4. Bei zulässiger freier Lizenz die Lizenzbedingungen und Quellenangabe beachten.
+Bei zulässiger freier Lizenz die Lizenzbedingungen und Quellenangabe beachten.
+
+### KI-generierter Text
+
+Nicht als eigene Leistung ausgeben, wenn dies nicht erlaubt oder nicht gekennzeichnet ist. Vorgaben der Aufgabe und Quellen-/Hilfsmittelangabe beachten.
+
+### Manipulierter Bildausschnitt
+
+Ausschnitte können falsche Eindrücke erzeugen. Kontext, Quelle und ggf. Original prüfen, bevor Inhalte bewertet oder weitergegeben werden.

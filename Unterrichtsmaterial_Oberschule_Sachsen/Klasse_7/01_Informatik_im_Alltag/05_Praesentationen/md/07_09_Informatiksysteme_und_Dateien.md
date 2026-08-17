@@ -1,61 +1,61 @@
-# Präsentation – 15 bis 17 Informatiksysteme und Dateien
+# Präsentation – 07 bis 09 Informatiksysteme, Speicher und Dateien
 
-## Folie 1
+## Folie 1 – Leitfrage
 
-> Was gehört zu einem Informatiksystem?
+> Was muss zusammenarbeiten, damit ein Informatiksystem im Alltag nutzbar ist?
 
-## Folie 2
+## Folie 2 – Informatiksystem im Blockbild
 
-Hardware versus Software.
+`Eingabe → Verarbeitung → Ausgabe`, Speicher als zusätzlicher Baustein. Beispiele: Smartphone, Fahrkartenautomat, Schulcomputer.
 
-## Folie 3
+## Folie 3 – Hardware
 
-Betriebssystem, Anwendung, Tool.
+Körperliche Bestandteile: Prozessor, Arbeitsspeicher, SSD, Bildschirm, Tastatur, Sensoren. Technische Angaben immer auf die Aufgabe beziehen.
 
-## Folie 4
+## Folie 4 – Software
 
-Prozessor und Speicher.
+Betriebssystem, Anwendungssoftware und Werkzeuge unterscheiden. Software steuert, verarbeitet und stellt Funktionen bereit.
 
-## Folie 5
+## Folie 5 – Systembereitschaft
 
-Lizenzformen: proprietär, Open Source, freie Software.
+Gerät starten, anmelden, Netzwerk prüfen, Anwendung oder Online-Plattform öffnen. Fehlermeldungen zuerst lesen, dann gezielt handeln.
 
-## Folie 6
+## Folie 6 – Lizenzformen
 
-> Warum gibt es verschiedene Speicherarten?
+Kostenpflichtig/kostenlos ist nicht dasselbe wie proprietär/Open Source. Nutzungsrechte bestimmen, was erlaubt ist.
 
-## Folie 7
+## Folie 7 – Digitalisierung, Automatisierung, Vernetzung
 
-flüchtig / nichtflüchtig.
+Alltagsbeispiele sammeln: Online-Fahrplan, automatische Rechtschreibprüfung, Cloudspeicher, smarte Geräte.
 
-## Folie 8
+## Folie 8 – Speicherarten
 
-lokal / Netzwerk / Cloud.
+Flüchtig/nichtflüchtig, lokal, Wechselspeicher, Netzwerk und Cloud. Speicherorte nach Zweck auswählen.
 
-## Folie 9
+## Folie 9 – Speichereigenschaften
 
-Bit, Byte und Größenordnungen.
+Kapazität, Zugriffszeit, Zuverlässigkeit, Mobilität, Kosten und Zugriffsrechte vergleichen.
 
-## Folie 10
+## Folie 10 – Bit, Byte und Größenordnungen
 
-Backup: Warum eine zweite Kopie?
+Bit als zwei Zustände, Byte als 8 Bit, typische Größenordnungen von Dateien einschätzen.
 
-## Folie 11
+## Folie 11 – Dateien und Dateitypen
 
-> Wie finden wir Dateien wieder?
+Datei, Dateityp und Anwendung zuordnen. Dateiendung ist ein Hinweis, aber kein vollständiger Beweis für Inhalt.
 
-## Folie 12
+## Folie 12 – Ordner und Pfade
 
-Datei, Dateityp, Ordner, Pfad.
+Sinnvolle Ordnerstruktur und nachvollziehbare Pfadangaben. Beispiel am Schulnetz oder an der Lernplattform.
 
-## Folie 13
+## Folie 13 – Dateioperationen
 
-Kopieren versus Verschieben.
+Erstellen, Kopieren, Verschieben, Umbenennen, Löschen. Unterschied Kopieren/Verschieben besonders sichern.
 
-## Folie 14
+## Folie 14 – Fehlermeldungen und Praxisfall
 
-Ordnerchallenge.
+Beispiel: Anmeldung fehlgeschlagen, Datei nicht gefunden, keine Berechtigung. Prüfschritte formulieren.
 
-## Folie 15
+## Folie 15 – Sicherung
 
-Sicherung: Informatiksysteme bestehen nicht nur aus sichtbaren Geräten – Hardware, Software, Speicher und strukturierte Daten arbeiten zusammen.
+> Informatiksysteme bestehen aus Hardware, Software, Daten, Speicher und Nutzung. Vernetzung, Rechte und Ordnung entscheiden mit, ob sie zuverlässig funktionieren.

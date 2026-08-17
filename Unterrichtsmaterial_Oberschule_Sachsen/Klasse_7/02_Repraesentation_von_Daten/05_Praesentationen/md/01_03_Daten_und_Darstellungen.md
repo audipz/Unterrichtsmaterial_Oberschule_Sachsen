@@ -1,49 +1,57 @@
-# Präsentation – 01 bis 03 Daten und Darstellungen
+# Präsentation – 01 bis 03 Daten, Darstellungen und digitale Medien
 
-## Folie 1
+## Folie 1 – Leitfrage
 
-> Was bedeutet die Zahl 18?
+> Wann werden Daten zu Informationen?
 
-## Folie 2
+## Folie 2 – Einstieg: Die Zahl 18
 
-Daten versus Information.
+Gleiche Daten, verschiedene Kontexte: Temperatur, Alter, Preis, Hausnummer.
 
-## Folie 3
+## Folie 3 – Daten versus Information
 
-Kontext verändert Bedeutung.
+Daten sind Darstellungen. Information entsteht durch Bedeutung im Kontext.
 
-## Folie 4
+## Folie 4 – Darstellungsformen
 
-Darstellungsformen: Text, Tabelle, Diagramm, Bild, Audio, Video.
+Text, Tabelle, Diagramm, Grafik, Animation, Audio, Video und Multimedia vergleichen.
 
-## Folie 5
+## Folie 5 – Welche Darstellung passt?
 
-> Welche Darstellung passt zur Aufgabe?
+Kriterien: Zweck, Zielgruppe, Genauigkeit, Übersichtlichkeit, Barrierefreiheit.
 
-## Folie 6
+## Folie 6 – Beispiel Wetterdaten
 
-Beispiel Wetterdaten: Tabelle versus Diagramm.
+Tabelle für genaue Werte, Diagramm für Entwicklung. Beide Darstellungen haben Stärken.
 
-## Folie 7
+## Folie 7 – Digitale Medien planen
 
-Ziel und Zielgruppe.
+Ziel, Zielgruppe und Kernaussage vor Gestaltung und Werkzeug klären.
 
-## Folie 8
+## Folie 8 – Inhalt und Design trennen
 
-Inhalt versus Gestaltung.
+Inhalt sagt, **was** vermittelt wird. Design steuert, **wie** es wahrgenommen wird.
 
-## Folie 9
+## Folie 9 – Software problembezogen auswählen
 
-Welche Software passt zu welcher Aufgabe?
+Textverarbeitung, Präsentation, Tabellenkalkulation, Grafikprogramm, Audio-/Video-Software, browserbasierte Anwendung.
 
-## Folie 10
+## Folie 10 – Weitere Anwendung kennenlernen
 
-Automatisierung in Anwendersoftware.
+Beispiel Tabellenkalkulation: Rohdaten erfassen, Formeln nutzen, Diagramm erzeugen.
 
-## Folie 11
+## Folie 11 – Automatisierung in Anwendersoftware
 
-Sicherung: Daten + Kontext → Information.
+Eingabe → automatische Verarbeitung → Ergebnis: Rechtschreibprüfung, Summenbildung, Layoutvorlage, Untertitelvorschlag.
 
-## Folie 12
+## Folie 12 – Was bleibt menschliche Verantwortung?
 
-> Wenn Programme mit Dokumenten arbeiten: Welche Dinge darin kann man als Objekte mit Eigenschaften beschreiben?
+Ziel setzen, Daten prüfen, Kontext bewerten, Ergebnis auswählen und überarbeiten.
+
+## Folie 13 – Sicherung
+
+> Gute digitale Medien verbinden passende Daten, verständlichen Kontext, geeignetes Werkzeug und verantwortliche Gestaltung.
+
+## Folie 14 – Ausblick
+
+> Wenn ein Dokument aus Bildern, Tabellen und Textfeldern besteht: Welche Dinge darin kann man als Objekte mit Eigenschaften beschreiben?
