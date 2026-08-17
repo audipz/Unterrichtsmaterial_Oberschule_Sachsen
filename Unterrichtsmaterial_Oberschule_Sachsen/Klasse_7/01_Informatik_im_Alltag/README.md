@@ -1,40 +1,46 @@
-# Klasse 7 – Grundlagen der digitalen Welt
+# Klasse 7 – Lernbereich 1: Informatik im Alltag
+
+**Zeitrichtwert laut Lehrplan 2022: 10 Unterrichtsstunden**
 
 ## Leitfrage
 
-> **Wie arbeitet ein Computer?**
+> **Wie funktionieren Informatiksysteme in unserem Alltag und wie gehen wir sicher mit ihnen um?**
 
-Der Lernbereich ist für Einzelstunden von 45 Minuten aufgebaut. Jede Stunde beginnt mit Rückblick und Leitfrage und endet mit Sicherung und Ausblick.
+## Lehrplanbezug
 
-## Unterrichtsfolge
+Der Lernbereich deckt die verbindlichen Inhalte „Informatik im Alltag“ ab: Entwicklung der Informatik und Rechentechnik, Digitalisierung/Automatisierung/Vernetzung, EVA-Prinzip, Hardware und Software, Lizenzformen, Speicher sowie Datei-, Ordner- und Pfadstrukturen.
 
-| Nr. | Thema | Schwerpunkt |
+## Vorhandene Unterrichtsfolge
+
+| Nr. | Thema | Einordnung |
 |---:|---|---|
-| 00 | Woher kommen Computer? | Geschichte als motivierender Einstieg, nicht prüfungsrelevant |
-| 01 | 0 und 1 | Bit und zwei Zustände |
-| 02 | Binärzahlen | Zweierpotenzen, Division durch 2, Rückumrechnung, Addition |
-| 03 | Texte im Computer | ASCII, Unicode, UTF-8 |
-| 04 | Bilder im Computer | Pixel, RGB, Auflösung, Speicherbedarf |
-| 05 | Musik im Computer | Abtastrate, Bittiefe, Kanäle, Kompression |
-| 06 | EVAS-Prinzip | Eingabe, Verarbeitung, Ausgabe, Speicherung; EVAS-Präsentation als benotete Leistung |
-| 07 | Hardware und Software | Komponenten, Betriebssystem, Anwendungen und Werkzeuge |
-| 08 | Speicher und Datenmengen | Prozessor, flüchtig/nichtflüchtig, Bit und Byte |
-| 09 | Dateien, Ordner und Pfade | Dateitypen, Ordnerstruktur, Pfadangaben, Dateioperationen |
+| 00 | Woher kommen Computer? | Lehrplan: Entwicklung der Informatik und Rechentechnik |
+| 01 | 0 und 1 | Lehrplan: binäre Darstellung von Zuständen, Bit/Byte |
+| 02 | Binärzahlen | **Vertiefung/Differenzierung**: Zweierpotenzen, Division durch 2, Rückumrechnung, Addition |
+| 03 | Texte im Computer | **Vertiefung und Brücke zu LB 2**: digitale Darstellung von Text |
+| 04 | Bilder im Computer | **Vertiefung und Brücke zu LB 2**: digitale Darstellung von Grafik |
+| 05 | Musik im Computer | **Vertiefung und Brücke zu LB 2**: digitale Darstellung von Audio |
+| 06 | EVA-Prinzip | Lehrplan: allgemeiner Aufbau und Übertragung auf Alltagssysteme |
+| 07 | Hardware und Software | Lehrplan: Zusammenwirken, Betriebssystem, Anwendungen und Werkzeuge |
+| 08 | Speicher und Datenmengen | Lehrplan: Speicherarten/-eigenschaften, flüchtig/nichtflüchtig, Datenmengen |
+| 09 | Dateien, Ordner und Pfade | Lehrplan: Dateityp, Ordnerstruktur, Pfade und Dateioperationen |
 
-Die Dateien sind teilweise thematisch gebündelt, sodass eine Datei mehrere aufeinanderfolgende Einzelstunden unterstützt.
+## Noch ausdrücklich mitzubehandeln
 
-**Algorithmen und Scratch gehören nicht mehr in diesen Lernbereich.** Sie sind vollständig unter `03_Algorithmen_und_Programmierung` gebündelt und werden dort mit eigener Nummerierung 01–09 geführt.
+Die vorhandenen Stunden werden bei der weiteren Überarbeitung um die im Lehrplan ausdrücklich genannten Aspekte ergänzt bzw. dort sichtbar gemacht:
+
+- Digitalisierung, Automatisierung und Vernetzung als Entwicklungstendenzen
+- Lizenzformen: kostenpflichtige/freie sowie proprietäre/Open-Source-Software
+- Speicher nach Zugriffsart, Zugriffszeit, Zuverlässigkeit und Wirkprinzip; lokale, Netzwerk-, Wechsel- und Cloudspeicher
+- Blockschaltbild eines Informatiksystems
+- Herstellen der Systembereitschaft, Anmeldung in Schulnetzwerk/Online-Plattform
+- Datei- und Ordneroperationen einschließlich sinnvoller Reaktion auf Hinweise und Fehlermeldungen
 
 ## Leistungsbewertung
 
-Vorgesehen sind in diesem Lernbereich:
+Verbindlicher Prüfungsstoff richtet sich nach den Lehrplaninhalten. Die ausführlichen Umrechnungsverfahren für Binärzahlen und die Binäraddition sowie Detailwissen zu Zeichen-, Bild- und Audiocodierung sind als Vertiefung gekennzeichnet und nicht automatisch Kernstoff einer Leistungskontrolle.
 
-- **benotete EVAS-Präsentation** mit Bewertungsbogen,
-- **Leistungskontrolle 1:** Digitale Information und EVAS.
-
-Die Leistungskontrolle zu Algorithmen und Scratch liegt im Lernbereich `03_Algorithmen_und_Programmierung`.
-
-Die Geschichte der Informatik dient ausschließlich Einstieg und Orientierung und wird nicht in der Leistungskontrolle abgefragt.
+Die Geschichte der Informatik dient der Orientierung; Jahreszahlen und biografische Detailkenntnisse werden nicht isoliert abgefragt.
 
 ## Werkteile
 
@@ -45,7 +51,3 @@ Die Geschichte der Informatik dient ausschließlich Einstieg und Orientierung un
 - `05_Praesentationen` – Präsentationen; Folienpläne unter `md/`
 - `07_Quellen` – Quellen- und Redaktionshinweise
 - `09_Lernkontrollen` – schriftliche Leistungskontrolle und Lösung
-
-## Übergang
-
-Nach den Grundlagen der digitalen Welt werden die Themen in den weiteren Klasse-7-Lernbereichen fortgeführt. Algorithmen und Programmierung liegen unter `03_Algorithmen_und_Programmierung`; dort werden Sequenz, Entscheidung und Wiederholung mit Scratch vertieft.
