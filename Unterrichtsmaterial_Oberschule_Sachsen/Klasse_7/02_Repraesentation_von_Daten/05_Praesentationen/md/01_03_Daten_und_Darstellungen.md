@@ -1,49 +1,53 @@
-# Präsentation – 01 bis 03 Daten und Darstellungen
+# Präsentation – 01 bis 03 Daten, Darstellungen und digitale Medien
 
-## Folie 1
+## Folie 1 – Leitfrage
 
-> Was bedeutet die Zahl 18?
+> Sind Daten und Informationen dasselbe?
 
-## Folie 2
+**Lehrerhinweis:** Mit einem isolierten Wert beginnen, z. B. `18`. Erst durch Kontext wird Information daraus.
 
-Daten versus Information.
+## Folie 2 – Daten brauchen Kontext
 
-## Folie 3
+Daten sind Darstellungen. Information entsteht, wenn Menschen oder Systeme Daten im Kontext deuten.
 
-Kontext verändert Bedeutung.
+## Folie 3 – Eine Information, viele Darstellungen
 
-## Folie 4
+Text, Tabelle, Diagramm, Grafik, Audio, Video und Multimedia können dieselbe Information unterschiedlich gut vermitteln.
 
-Darstellungsformen: Text, Tabelle, Diagramm, Bild, Audio, Video.
+## Folie 4 – Zweck und Zielgruppe
 
-## Folie 5
+Die passende Darstellungsform hängt von Fragestellung, Zielgruppe und Situation ab.
 
-> Welche Darstellung passt zur Aufgabe?
+## Folie 5 – Darstellungsformen vergleichen
 
-## Folie 6
+Tabelle: genaue Werte. Diagramm: Muster und Vergleiche. Text: Erklärung. Bild/Grafik: Überblick. Audio/Video: Ablauf, Atmosphäre oder Demonstration.
 
-Beispiel Wetterdaten: Tabelle versus Diagramm.
+## Folie 6 – Digitale Medien erstellen
 
-## Folie 7
+Vor dem Erstellen klären: Was soll vermittelt werden? Für wen? In welcher Form?
 
-Ziel und Zielgruppe.
+## Folie 7 – Inhalt und Design trennen
 
-## Folie 8
+Inhalt = Aussage. Design = Form. Gestaltung soll Verständlichkeit unterstützen und darf Information nicht verfälschen.
 
-Inhalt versus Gestaltung.
+## Folie 8 – Software passend auswählen
 
-## Folie 9
+Textverarbeitung, Präsentation, Tabellenkalkulation, Grafikprogramm, Audio-/Video-Software oder browsergestützte Anwendung.
 
-Welche Software passt zu welcher Aufgabe?
+**Lehrerhinweis:** Problembezogene Auswahl ist verbindlich. Nicht nur Namen von Programmen abfragen, sondern begründen lassen.
 
-## Folie 10
+## Folie 9 – Weitere Anwendungssoftware kennenlernen
 
-Automatisierung in Anwendersoftware.
+Eine bislang weniger bekannte Anwendung praktisch erkunden: z. B. Tabellenkalkulation für Auswertung oder Grafikprogramm für ein Schaubild.
 
-## Folie 11
+## Folie 10 – Automatisierung in Anwendersoftware
 
-Sicherung: Daten + Kontext → Information.
+Rechtschreibprüfung, automatische Summen, Layoutvorlagen, Filter, Formatvorlagen, Bildkorrektur.
 
-## Folie 12
+## Folie 11 – Automatisch erzeugte Medien kritisch prüfen
 
-> Wenn Programme mit Dokumenten arbeiten: Welche Dinge darin kann man als Objekte mit Eigenschaften beschreiben?
+Automaten können Texte, Bilder oder Vorschläge erzeugen. Ergebnisse müssen auf Inhalt, Quelle, Absicht und Fehler geprüft werden.
+
+## Folie 12 – Sicherung
+
+> Daten werden erst durch Kontext zu Information. Gute digitale Medien wählen Darstellung, Software und Gestaltung passend zum Zweck.
