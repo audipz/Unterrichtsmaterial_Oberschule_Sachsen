@@ -1,50 +1,50 @@
-# Lösung – Leistungskontrolle 1 Digitale Information und EVAS
+# Lösung – Leistungskontrolle 1 Informatik im Alltag
 
-## Aufgabe 1 – 8 Punkte
+## Aufgabe 1 – 6 Punkte
 
-1. `13₁₀ = 1101₂` – 2 P
-2. `26₁₀ = 11010₂` – 2 P
-3. `10110₂ = 22₁₀` – 2 P
-4. `111001₂ = 57₁₀` – 2 P
+Mögliche Lösung:
 
-## Aufgabe 2 – 4 Punkte
+1. Eingabe: Benutzername/Passwort, Maus-/Tastatureingaben, ausgewählte Datei. – 1 P
+2. Verarbeitung: Anmeldung wird geprüft, Datei wird für den Upload vorbereitet. – 1 P
+3. Ausgabe: Rückmeldung am Bildschirm, Dateiname/Statusanzeige. – 1 P
+4. Speicherung: Datei liegt lokal, im Netzlaufwerk oder auf der Lernplattform. – 1 P
+5. Vernetzung: Verbindung zur Lernplattform/Server; Daten werden übertragen. – 1 P
+6. Benutzerhandlung: anmelden, Datei auswählen, Upload starten. – 1 P
 
-```text
-  1011
-+ 0110
-------
- 10001
-```
+Sinngemäß richtige Zuordnungen werden anerkannt.
 
-`11 + 6 = 17`; `10001₂ = 17₁₀`.
+## Aufgabe 2 – 6 Punkte
 
-- korrektes Binärergebnis: 2 P
-- Überträge nachvollziehbar: 1 P
-- Dezimalprobe: 1 P
+Zuordnung:
 
-## Aufgabe 3 – 4 Punkte
+- Hardware: Tastatur, Arbeitsspeicher
+- Software: Betriebssystem, Browser
+- Daten: Präsentationsdatei, Foto-Datei
 
-1. Ein Zeichencode ordnet Zeichen eindeutige Zahlenwerte zu, damit Sender und Empfänger dieselbe Bedeutung verwenden. – 2 P
-2. Eine Bitfolge besitzt ohne vereinbarte Interpretation nur einen Zahlenwert; erst der Zeichencode legt fest, welches Zeichen damit gemeint ist. – 2 P
+Je richtige Zuordnung 0,5 P = 3 P. Zwei sinnvolle Begründungen je 1,5 P = 3 P.
 
-## Aufgabe 4 – 6 Punkte
+Beispiele: Die Tastatur ist körperlich vorhanden. Ein Browser ist ein Programm. Eine Foto-Datei enthält gespeicherte Bilddaten.
 
-Je 1 P:
+## Aufgabe 3 – 5 Punkte
 
-1. Pixel = einzelner Bildpunkt eines Rasterbildes.
-2. RGB = Rot, Grün, Blau.
-3. Auflösung beschreibt die Anzahl der Bildpunkte, z. B. Breite × Höhe.
-4. Abtastrate = Zahl der Messungen eines Signals pro Sekunde.
-5. Bittiefe = Anzahl Bits pro Messwert / mögliche Abstufungen.
-6. Kompression reduziert Datenmenge, Speicherbedarf oder Übertragungsaufwand.
+1. Betriebssystem verwaltet grundlegende Ressourcen und ermöglicht die Nutzung des Systems; Anwendungssoftware unterstützt konkrete Aufgaben. – 2 P
+2. Kostenlos beschreibt nur den Preis; Nutzungs-, Kopier- und Änderungsrechte hängen von der Lizenz ab. – 1 P
+3. Proprietär: Rechte und Quelltext liegen meist beim Anbieter, Nutzung ist eingeschränkt. Open Source: Quelltext ist zugänglich und Nutzung/Änderung/Weitergabe sind im Rahmen der Lizenz erlaubt. – 2 P
 
-## Aufgabe 5 – 8 Punkte
+## Aufgabe 4 – 5 Punkte
 
-Beispiel:
+1. RAM ist flüchtig und verliert Daten ohne Strom. – 1 P
+2. Beispiele: Kapazität, Zugriffszeit/Geschwindigkeit, Zuverlässigkeit, Mobilität, Kosten, Zugriffsart, Verfügbarkeit. – 2 P
+3. Geeignet z. B. Netzlaufwerk oder Cloudspeicher, wenn Zugriff zu Hause und in der Schule möglich ist; USB-Stick nur mit Risiko von Verlust/Defekt; lokale SSD nur an einem Gerät verfügbar. – 2 P
 
-- Eingabe: Licht trifft auf den Kamerasensor; Sensor liefert Messwerte. – 2 P
-- Verarbeitung: Messwerte werden zu Pixel-/Farbinformationen verarbeitet. – 2 P
-- Ausgabe: Foto/Vorschau erscheint auf dem Display. – 2 P
-- Speicherung: Bilddaten werden als Datei im Gerätespeicher abgelegt. – 2 P
+## Aufgabe 5 – 5 Punkte
 
-Sinngemäß korrekte fachliche Lösungen werden anerkannt.
+1. Kopieren erzeugt eine zusätzliche Datei; Verschieben ändert den Speicherort und das Original liegt nicht mehr am alten Ort. – 2 P
+2. Beispiel: `Schule/Klasse_7/Informatik/EVAS/Praesentation.pptx`. Andere sinnvolle Pfade möglich. – 1 P
+3. Sinnvolle Schritte: Meldung lesen, Speicherort prüfen, anderen Ordner wählen, Berechtigung erfragen, erneut anmelden, Dateinamen prüfen, Lehrkraft fragen, nicht einfach schließen. – 2 P
+
+## Aufgabe 6 – 3 Punkte
+
+1. Ein Bit kann zwei Zustände darstellen, z. B. 0/1 oder aus/an. – 1 P
+2. Ein Byte hat 8 Bit. – 1 P
+3. `800 KB < 2 MB < 3 GB`. – 1 P
