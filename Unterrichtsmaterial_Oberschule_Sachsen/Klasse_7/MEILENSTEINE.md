@@ -27,9 +27,10 @@ Die vorhandenen ausführlichen Binärumrechnungen sowie Text-/Bild-/Audio-Codier
 
 ### Werkteil-Konsistenz
 
-- [ ] Präsentationen gegen die ergänzten Pflichtinhalte spiegeln
-- [ ] Lösungen/Aufgabenabdeckung prüfen und ergänzen
-- [ ] Lernkontrolle auf verbindlichen Prüfungsstoff und neue Kernbegriffe prüfen
+- [x] Präsentationsplan 07–09 gegen die ergänzten Pflichtinhalte gespiegelt
+- [x] Material zu Systembereitschaft, Dateioperationen und Fehlermeldungen ergänzt
+- [x] Lösung zum neuen Material ergänzt
+- [x] Lernkontrolle auf verbindlichen Prüfungsstoff und neue Kernbegriffe umgestellt
 
 ## Lernbereich 2 – Repräsentation von Daten
 
@@ -53,9 +54,10 @@ Die vorhandenen ausführlichen Binärumrechnungen sowie Text-/Bild-/Audio-Codier
 
 ### Werkteil-Konsistenz
 
-- [ ] Präsentationen gegen die ergänzten Pflichtinhalte spiegeln
-- [ ] Lösungen und Material auf die neuen Aufgaben abstimmen
-- [ ] Lernkontrolle auf Metadaten, Automatisierung, Softwareauswahl und Schutzstrategien prüfen
+- [x] Präsentationspläne 01–03 und 04–06 gegen die ergänzten Pflichtinhalte gespiegelt
+- [x] Material zu Quellen, Metadaten und Dokumentenschutz ergänzt
+- [x] Lösung zum neuen Material ergänzt
+- [x] Lernkontrolle auf Metadaten, Automatisierung, Softwareauswahl und Schutzstrategien geprüft und ergänzt
 
 ## Abgrenzung Klasse 8
 
@@ -71,4 +73,4 @@ Die vorhandenen ausführlichen Binärumrechnungen sowie Text-/Bild-/Audio-Codier
 
 ## Status
 
-Klasse 7 ist **strukturell lehrplankonform**. Die beiden Pflichtlernbereiche sind in Arbeitsheft und Lehrerband inhaltlich gegen die zentralen Lehrplananforderungen nachgezogen. Noch offen ist die Konsistenzprüfung der übrigen Werkteile – insbesondere Präsentationen, Lösungen, Lernkontrollen – sowie der drei Wahlbereiche.
+Klasse 7 ist in den beiden Pflichtlernbereichen **strukturell und inhaltlich lehrplankonform nachgezogen**. Arbeitsheft, Lehrerband, zentrale Präsentationspläne, ergänzende Materialien, Lösungen und Lernkontrollen spiegeln die verbindlichen Kernpunkte. Noch offen ist die separate Lehrplanprüfung der drei Wahlbereiche sowie bei Bedarf die Neuerzeugung bzw. Qualitätskontrolle der PPTX-Masterdateien aus den aktualisierten Präsentationsplänen.
