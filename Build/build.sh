@@ -76,7 +76,7 @@ build_dir() {
 \\renewcommand{\\headrulewidth}{0pt}
 \\renewcommand{\\footrulewidth}{0pt}
 EOF
-    pandoc "$combined" --from markdown --to pdf --standalone --toc --toc-depth=2 --lua-filter="$FILTER_ROOT/pagebreak.lua" --pdf-engine=xelatex --include-in-header="$footer_tex" --variable=classoption:titlepage --variable=geometry:margin=22mm --variable=mainfont:"DejaVu Sans" --variable=monofont:"DejaVu Sans Mono" --metadata "title=$title" --metadata "subtitle=$subtitle" --metadata "toc-title=Inhaltsverzeichnis" --metadata "lang=de-DE" --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" --output "$out_dir/$name.pdf" || echo "WARNUNG: PDF fehlgeschlagen: $relative" >&2
+    pandoc "$combined" --from markdown --to pdf --standalone --toc --toc-depth=2 --lua-filter="$FILTER_ROOT/pagebreak.lua" --lua-filter="$FILTER_ROOT/pdf_emoji_fallback.lua" --pdf-engine=xelatex --include-in-header="$footer_tex" --variable=classoption:titlepage --variable=geometry:margin=22mm --variable=mainfont:"DejaVu Sans" --variable=monofont:"DejaVu Sans Mono" --metadata "title=$title" --metadata "subtitle=$subtitle" --metadata "toc-title=Inhaltsverzeichnis" --metadata "lang=de-DE" --resource-path="$dir:$SOURCE_ROOT:$REPO_ROOT" --output "$out_dir/$name.pdf" || echo "WARNUNG: PDF fehlgeschlagen: $relative" >&2
   fi
 }
 
