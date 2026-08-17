@@ -1,52 +1,58 @@
 # Leistungskontrolle – Repräsentation von Daten
 
-**Name:** ______________________________  **Klasse:** __________
+**Klasse:** 7  
+**Zeit:** 45 Minuten  
+**Punkte:** 32
 
-**Arbeitszeit:** 45 Minuten  
-**Gesamt:** 30 Punkte
+## Aufgabe 1 – Daten und Information (4 Punkte)
 
-## Aufgabe 1 – Information und Daten (6 Punkte)
+Erkläre den Unterschied zwischen Daten und Information. Nutze das Beispiel `18` und zwei verschiedene Kontexte.
 
-1. Erkläre den Unterschied zwischen **Daten** und **Information**. (3 P)
-2. Die Zahl `18` steht allein auf einem Zettel. Nenne zwei verschiedene Kontexte, in denen daraus unterschiedliche Informationen werden. (3 P)
+## Aufgabe 2 – Darstellungsformen (4 Punkte)
 
-## Aufgabe 2 – Darstellungsformen (5 Punkte)
+Du sollst die Ergebnisse einer Klassenumfrage darstellen. Vergleiche Tabelle und Diagramm. Nenne je einen Vorteil und einen Nachteil.
 
-Wähle jeweils eine geeignete Darstellungsform und begründe kurz:
+## Aufgabe 3 – Geeignete Software auswählen (4 Punkte)
 
-1. Entwicklung der Temperatur über sieben Tage. (2 P)
-2. genauer Stundenplan einer Klasse. (2 P)
-3. Nenne einen Nachteil, wenn eine wichtige Information ausschließlich als Bild angeboten wird. (1 P)
+Wähle für die folgenden Aufgaben eine passende Softwareart und begründe kurz:
 
-## Aufgabe 3 – Objekte und Attribute (7 Punkte)
+1. Einladung mit viel Text
+2. Umfrage auswerten
+3. Plakat gestalten
+4. kurzer Erklärfilm
 
-Ein Bild in einer Präsentation besitzt:
+## Aufgabe 4 – Inhalt, Design und Automatisierung (5 Punkte)
 
-```text
-Breite = 10 cm
-Höhe = 6 cm
-Drehung = 15°
-```
+1. Ordne zu: `Überschrift`, `Schriftgröße`, `Foto`, `Aussage: Beginn 15 Uhr`, `Hintergrundfarbe` – Inhalt oder Design?
+2. Nenne zwei automatische Funktionen in Anwendersoftware.
+3. Warum muss man automatische Ergebnisse trotzdem prüfen?
 
-1. Was ist hier das **Objekt**? (1 P)
-2. Nenne drei **Attribute**. (3 P)
-3. Nenne einen **Attributwert**. (1 P)
-4. Erkläre den Unterschied zwischen `Bild löschen` und `Breite ändern`. (2 P)
+## Aufgabe 5 – Objekt, Klasse, Attribut, Attributwert (6 Punkte)
 
-## Aufgabe 4 – Klasse und Objekt (4 Punkte)
+Ein Präsentationsprogramm enthält drei Bilder. Alle sind Bildobjekte, aber sie haben unterschiedliche Breite, Höhe, Position und Transparenz.
 
-Gegeben sind drei konkrete Fahrräder mit unterschiedlicher Farbe und Gangzahl.
+1. Nenne die Klasse.
+2. Nenne zwei Attribute.
+3. Nenne zwei mögliche Attributwerte.
+4. Erkläre, warum sich die Klasse nicht ändert, wenn ein Bild größer gezogen wird.
 
-1. Erkläre, was die Klasse `Fahrrad` beschreibt. (2 P)
-2. Nenne zwei sinnvolle Attribute der Klasse. (2 P)
+## Aufgabe 6 – Methoden und Objektverwaltung (3 Punkte)
 
-## Aufgabe 5 – Software auswählen und Automatisierung (4 Punkte)
+Unterscheide an Beispielen:
 
-1. Welche Softwareart eignet sich besonders zum Auswerten einer Umfrage mit vielen Zahlenwerten? Begründe. (2 P)
-2. Nenne eine Funktion einer Anwendersoftware, die Arbeit automatisch übernimmt, und erkläre kurz, was automatisiert wird. (2 P)
+- Attributwert ändern
+- Objekt erstellen/kopieren/löschen
+- Methode auf ein Objekt anwenden
 
-## Aufgabe 6 – Daten verantwortungsvoll nutzen (4 Punkte)
+## Aufgabe 7 – Rechte, Quellen und Plagiat (3 Punkte)
 
-Du findest im Internet ein Foto deiner Klasse, das du in einer öffentlich zugänglichen Präsentation verwenden möchtest.
+Du findest ein Bild im Internet und möchtest es in einer veröffentlichten Präsentation verwenden. Welche drei Fragen musst du vorher klären?
 
-Nenne vier Punkte, die du vor einer Veröffentlichung prüfen solltest.
+## Aufgabe 8 – Metadaten und Dokumentenschutz (3 Punkte)
+
+1. Erkläre den Unterschied zwischen Inhaltsdaten und Metadaten.
+2. Nenne eine Möglichkeit, ein Dokument vor ungewolltem Zugriff oder Veränderung zu schützen.
+
+## Aufgabe 9 – Manipulation und automatische Medienerzeugung (3 Punkte)
+
+Nenne zwei Hinweise, mit denen du prüfen kannst, ob ein Bild, Text oder Video manipuliert oder automatisch erzeugt sein könnte.
