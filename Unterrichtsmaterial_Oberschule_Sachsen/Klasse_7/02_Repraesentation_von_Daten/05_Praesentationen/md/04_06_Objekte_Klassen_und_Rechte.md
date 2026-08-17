@@ -1,53 +1,67 @@
 # Präsentation – 04 bis 06 Objekte, Klassen und Datenrechte
 
-## Folie 1
+## Folie 1 – Leitfrage
 
-> Welche Dinge in einem Dokument kann ein Computer als Objekte behandeln?
+> Wie beschreibt ein Computer Dinge mit Eigenschaften?
 
-## Folie 2
+## Folie 2 – Objekte in Anwendungen
 
-Objekt und Beispiele.
+Bild, Textfeld, Tabellenzelle, Folie, Datei, Figur.
 
-## Folie 3
+## Folie 3 – Attribut und Attributwert
 
-Attribut und Attributwert.
+Attribut: Farbe, Größe, Position. Attributwert: rot, 12 cm, x=40.
 
-## Folie 4
+## Folie 4 – Zustand eines Objekts
 
-Live-Beispiel: Bildbreite, Höhe, Position verändern.
+Ein Objekt hat konkrete Attributwerte. Wenn sich Werte ändern, ändert sich der Zustand des Objekts.
 
-## Folie 5
+**Kommentarbereich:** Ausdrücklich sagen: Die Klasse ändert sich dadurch nicht. Häufiger Schülerfehler: Werte der Klasse zuordnen.
 
-Klasse als gemeinsame Beschreibung.
+## Folie 5 – Klasse als Bauplan
 
-## Folie 6
+Klasse beschreibt gemeinsame Attribute und mögliche Methoden ähnlicher Objekte.
 
-Klasse Fahrrad – konkrete Objekte vergleichen.
+## Folie 6 – Objektbeispiele aus einer Klasse
 
-## Folie 7
+Klasse `Bildobjekt`: Objekt A klein/links, Objekt B groß/rechts, Objekt C transparent.
 
-Methoden versus Erstellen/Kopieren/Löschen.
+## Folie 7 – Methoden
 
-## Folie 8
+Methoden ändern etwas am Objekt oder lösen eine Aktion aus, z. B. verschieben, drehen, skalieren.
 
-Transfer zu Scratch-Figuren.
+## Folie 8 – Erstellen, Kopieren, Löschen unterscheiden
 
-## Folie 9
+Das Verwalten eines Objekts ist nicht dasselbe wie das Ändern seiner Attributwerte.
 
-> Was technisch möglich ist, ist nicht automatisch erlaubt.
+## Folie 9 – Vereinfachte Darstellung
 
-## Folie 10
+Klasse oben, darunter Attribute und Methoden; konkrete Objekte mit eigenen Werten daneben.
 
-Persönliche Daten und Persönlichkeitsrechte.
+## Folie 10 – Was technisch möglich ist, ist nicht automatisch erlaubt
 
-## Folie 11
+Daten und Medien haben rechtliche und persönliche Bezüge.
 
-Urheberrecht und Quellen.
+## Folie 11 – Persönliche Daten und Persönlichkeitsrechte
 
-## Folie 12
+Name, Foto, Stimme, Standort, Kontakt, Verhalten. Vor Veröffentlichung Betroffene berücksichtigen.
 
-Vier Fragen vor dem Teilen von Daten.
+## Folie 12 – Urheberrecht, Quellen, Zitat, Plagiat
 
-## Folie 13
+Fremde Texte, Bilder, Musik und Videos brauchen Nutzungsrecht, Quellenangabe oder zulässiges Zitat.
 
-Ausblick auf Klasse 8: Klassen, Objekte und Attribute werden systematisch vertieft.
+## Folie 13 – Inhaltsdaten und Metadaten
+
+Inhaltsdaten: sichtbarer Inhalt. Metadaten: zusätzliche Informationen wie Autor, Zeitpunkt, Gerät, Standort.
+
+## Folie 14 – Dokumentenschutz und Zugriffsrechte
+
+Passwort, Freigabe, Leserecht, Schreibrecht, öffentliche Links.
+
+## Folie 15 – Manipulation und automatische Erzeugung
+
+Bilder, Texte und Videos können bearbeitet oder automatisch erzeugt werden. Kontext und Quelle prüfen.
+
+## Folie 16 – Sicherung
+
+> Daten und Medien müssen technisch verstanden, rechtlich zulässig und verantwortungsvoll genutzt werden.
