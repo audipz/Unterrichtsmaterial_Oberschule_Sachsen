@@ -1,50 +1,62 @@
-# Lösung – Leistungskontrolle 1 Digitale Information und EVAS
+# Lösung – Leistungskontrolle 1 Informatik im Alltag
 
-## Aufgabe 1 – 8 Punkte
+## Aufgabe 1 – EVA/EVAS anwenden (6 Punkte)
 
-1. `13₁₀ = 1101₂` – 2 P
-2. `26₁₀ = 11010₂` – 2 P
-3. `10110₂ = 22₁₀` – 2 P
-4. `111001₂ = 57₁₀` – 2 P
+Mögliche Lösung:
 
-## Aufgabe 2 – 4 Punkte
+- Eingabe: Benutzername/Passwort eingeben, Datei anklicken. – 1 P
+- Verarbeitung: Anmeldedaten prüfen, Anfrage an Server verarbeiten, Datei auswählen. – 1 P
+- Ausgabe: Lernplattform oder Fehlermeldung erscheint, Download wird angezeigt. – 1 P
+- Speicherung: Datei wird im Download-Ordner oder in einem gewählten Ordner gespeichert. – 1 P
+- Netzwerkzugriff: Verbindung zur Plattform/Server, Daten werden übertragen. – 1 P
+- fachlich schlüssige Formulierungen im Zusammenhang: 1 P
 
-```text
-  1011
-+ 0110
-------
- 10001
-```
+## Aufgabe 2 – Informatiksysteme und Blockbild (5 Punkte)
 
-`11 + 6 = 17`; `10001₂ = 17₁₀`.
+Blockbild: Eingabe → Verarbeitung → Ausgabe, Speicher als verbundener Baustein. – 3 P
 
-- korrektes Binärergebnis: 2 P
-- Überträge nachvollziehbar: 1 P
-- Dezimalprobe: 1 P
+Smartphone-Beispiel, je sinnvoller Bestandteil 0,5 P, insgesamt 2 P:
 
-## Aufgabe 3 – 4 Punkte
+- Eingabe: Touchscreen, Kamera, Mikrofon, Sensor
+- Verarbeitung: Prozessor/App verarbeitet Daten
+- Ausgabe: Display, Lautsprecher, Vibration
+- Speicher: interner Speicher, Cloudspeicher, App-Daten
 
-1. Ein Zeichencode ordnet Zeichen eindeutige Zahlenwerte zu, damit Sender und Empfänger dieselbe Bedeutung verwenden. – 2 P
-2. Eine Bitfolge besitzt ohne vereinbarte Interpretation nur einen Zahlenwert; erst der Zeichencode legt fest, welches Zeichen damit gemeint ist. – 2 P
+## Aufgabe 3 – Hardware, Software und Systembereitschaft (5 Punkte)
 
-## Aufgabe 4 – 6 Punkte
+Zuordnung:
 
-Je 1 P:
+- Hardware: Prozessor, RAM, Touchscreen
+- Betriebssystem: Betriebssystem
+- Anwendungssoftware/Werkzeug: Browser, Präsentationsprogramm
 
-1. Pixel = einzelner Bildpunkt eines Rasterbildes.
-2. RGB = Rot, Grün, Blau.
-3. Auflösung beschreibt die Anzahl der Bildpunkte, z. B. Breite × Höhe.
-4. Abtastrate = Zahl der Messungen eines Signals pro Sekunde.
-5. Bittiefe = Anzahl Bits pro Messwert / mögliche Abstufungen.
-6. Kompression reduziert Datenmenge, Speicherbedarf oder Übertragungsaufwand.
+Je zwei korrekte Zuordnungen 1 P, insgesamt 3 P.
 
-## Aufgabe 5 – 8 Punkte
+Prüfschritte bei Anmeldung, je sinnvoller Punkt 0,5 P, maximal 2 P:
 
-Beispiel:
+- Benutzername prüfen
+- Passwort sorgfältig neu eingeben
+- Tastaturlayout/Großschreibung prüfen
+- Netzwerk/WLAN prüfen
+- richtige Plattform/Adresse prüfen
+- Meldung genau lesen
+- ggf. Passwort zurücksetzen oder Lehrkraft informieren
 
-- Eingabe: Licht trifft auf den Kamerasensor; Sensor liefert Messwerte. – 2 P
-- Verarbeitung: Messwerte werden zu Pixel-/Farbinformationen verarbeitet. – 2 P
-- Ausgabe: Foto/Vorschau erscheint auf dem Display. – 2 P
-- Speicherung: Bilddaten werden als Datei im Gerätespeicher abgelegt. – 2 P
+## Aufgabe 4 – Lizenzformen (4 Punkte)
+
+1. Kostenlos beschreibt den Preis; Open Source beschreibt zugänglichen Quelltext und Nutzungsrechte gemäß Lizenz. – 2 P
+2. Proprietäre Software wird durch Anbieterbedingungen kontrolliert, Quelltext ist meist nicht frei zugänglich. Open-Source-Software stellt Quelltext und bestimmte Nutzungs-/Veränderungsrechte bereit. – 2 P
+
+## Aufgabe 5 – Speicher und Datenmengen (5 Punkte)
+
+1. Flüchtiger Speicher verliert Daten ohne Strom, z. B. RAM. Nichtflüchtiger Speicher behält Daten, z. B. SSD, USB-Stick. – 2 P
+2. Kriterien: Verfügbarkeit, Zugriffsgeschwindigkeit, Kapazität, Zugriffsrechte, Internetabhängigkeit, Mobilität, Zuverlässigkeit, Datenschutz. Zwei Kriterien mit Vergleich: 2 P.
+3. `6 Byte = 48 Bit`. – 1 P
+
+## Aufgabe 6 – Dateien, Ordner, Pfade und Dateioperationen (5 Punkte)
+
+1. Kopieren erzeugt eine zusätzliche Datei; das Original bleibt erhalten. Verschieben ändert den Speicherort. – 2 P
+2. Beispiel: `Schule/Klasse_7/Informatik/EVAS/EVAS_Praesentation_Max_2026-08-17.pptx` – 1 P
+3. Probleme: unklarer Inhalt, mehrere „Final“-Versionen, kein Datum/Autor/Thema, schwer wiederzufinden. Besser: Thema, Datum und Version nennen. Zwei Gründe + Verbesserung: 2 P.
 
 Sinngemäß korrekte fachliche Lösungen werden anerkannt.
