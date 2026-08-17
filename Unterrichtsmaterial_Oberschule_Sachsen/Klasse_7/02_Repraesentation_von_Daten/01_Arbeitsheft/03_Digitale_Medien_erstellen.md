@@ -26,26 +26,44 @@ Beispiele für Gestaltung:
 - Bilder
 - Übergänge
 
-Ein Inhalt sollte nicht dadurch unverständlich werden, dass jede Überschrift einzeln anders formatiert wird.
+Ein Inhalt sollte nicht dadurch unverständlich werden, dass jede Überschrift einzeln anders formatiert wird. Sinnvoll ist, wiederkehrende Gestaltung möglichst über Formatvorlagen, Folienlayouts oder andere gemeinsame Einstellungen zu steuern.
 
-## Geeignete Software wählen
+## Geeignete Software problembezogen wählen
 
 Je nach Aufgabe sind unterschiedliche Anwendungen sinnvoll:
 
 - Textverarbeitung
 - Präsentationssoftware
 - Tabellenkalkulation
-- Grafikprogramm
+- Pixel- oder Vektorgrafikprogramm
 - Audio-/Videosoftware
 - browsergestützte Anwendungen
 
-## Aufgabe 1
+Nicht die bekannteste Anwendung ist automatisch die beste. Entscheidend ist, **welche Aufgabe gelöst werden soll**.
+
+### Beispiel
+
+Für eine Umfrage mit vielen Zahlen ist eine Tabellenkalkulation meist geeigneter als eine Präsentationssoftware. Für ein Logo mit klaren Formen kann ein Vektorgrafikprogramm sinnvoller sein als eine Pixelgrafik-Anwendung.
+
+## Automatisierung in Anwendersoftware
+
+Anwendungen übernehmen viele Verarbeitungsschritte automatisch. Beispiele:
+
+- Rechtschreibprüfung markiert mögliche Fehler.
+- Tabellenkalkulation berechnet Summen oder Mittelwerte neu, wenn Eingabedaten geändert werden.
+- Formatvorlagen wenden mehrere Gestaltungsmerkmale gleichzeitig an.
+- automatische Farbanpassung oder Bildkorrektur verändert Bildwerte nach einem Verfahren.
+- Präsentationssoftware richtet Objekte aus oder passt Layouts an.
+
+Automatisierung bedeutet nicht, dass das Ergebnis automatisch richtig oder sinnvoll ist. **Der Mensch muss Eingaben, Regeln und Ergebnis prüfen.**
+
+## Aufgabe 1 – Software auswählen
 
 Wähle für jede Aufgabe eine geeignete Softwareart und begründe:
 
 1. Einladung mit viel Fließtext
 2. Auswertung einer Umfrage
-3. Plakat
+3. Logo für eine Schülerfirma
 4. kurzer Erklärfilm
 5. Vortrag mit Bildern und Stichpunkten
 
@@ -59,14 +77,25 @@ Ordne zu:
 - Aussage „Beginn: 15 Uhr“
 - blaue Hintergrundfarbe
 
-## Aufgabe 3 – Überarbeiten
+## Aufgabe 3 – Automatisierung untersuchen
+
+Wähle eine Anwendung, die ihr im Unterricht nutzt. Finde eine Funktion, die Arbeit automatisch übernimmt.
+
+Beschreibe:
+
+1. Welche Eingabe bekommt die Funktion?
+2. Was macht die Software automatisch?
+3. Welches Ergebnis entsteht?
+4. Warum muss ein Mensch das Ergebnis trotzdem prüfen?
+
+## Aufgabe 4 – Eine weitere Anwendung kennenlernen
+
+Nutze – wenn möglich – eine Anwendung, die du bisher selten verwendet hast, zum Beispiel ein Vektorgrafikprogramm, eine Audioanwendung oder ein browsergestütztes Medientool. Erstelle ein kleines Produkt und notiere zwei Gemeinsamkeiten und zwei Unterschiede zu einer dir bekannten Anwendung.
+
+## Aufgabe 5 – Überarbeiten
 
 Untersuche ein eigenes digitales Dokument. Nenne zwei Verbesserungen beim Inhalt und zwei bei der Gestaltung.
 
-## Aufgabe 4 – Automatisierung entdecken
-
-Welche Arbeit übernimmt Software bereits automatisch? Beispiele: Rechtschreibprüfung, automatische Summenbildung, Farbanpassung, Layoutvorlagen.
-
 ## Merksatz
 
-> Gute digitale Medien verbinden passende Inhalte mit einer Gestaltung, die den Zweck unterstützt.
+> Gute digitale Medien verbinden passende Inhalte mit einer zweckmäßigen Gestaltung und einer geeigneten Anwendung. Automatische Funktionen unterstützen uns, ersetzen aber nicht die Kontrolle durch den Menschen.
