@@ -1,5 +1,8 @@
--- Ersetzt Emoji-Zeichen, die DejaVu Sans im XeLaTeX-PDF-Build nicht enthält.
--- Die Markdown-Quellen sowie DOCX/HTML/PPTX bleiben unverändert.
+-- Ersetzt Zeichen, die DejaVu Sans bzw. DejaVu Sans Mono im XeLaTeX-PDF-Build
+-- nicht enthält. Die Markdown-Quellen sowie DOCX/HTML/PPTX bleiben unverändert.
+--
+-- Der Filter behandelt sowohl normalen Text (Str) als auch Code/CodeBlock.
+-- Letzteres ist wichtig, weil Pandoc Code mit DejaVu Sans Mono setzt.
 
 local replacements = {
   ["🧪"] = "Experiment",
@@ -10,20 +13,30 @@ local replacements = {
   ["💬"] = "Gespräch",
   ["✅"] = "Ja",
   ["❌"] = "Nein",
+  ["😊"] = ":-)",
+  ["中"] = "ZHONG",
 }
 
-function Str(el)
-  local text = el.text
-  local changed = false
-
-  for emoji, replacement in pairs(replacements) do
-    if text:find(emoji, 1, true) then
-      text = text:gsub(emoji, replacement)
-      changed = true
-    end
+local function replace_unsupported(text)
+  for character, replacement in pairs(replacements) do
+    text = text:gsub(character, replacement)
   end
+  return text
+end
 
-  if changed then
+function Str(el)
+  local text = replace_unsupported(el.text)
+  if text ~= el.text then
     return pandoc.Str(text)
   end
+end
+
+function Code(el)
+  el.text = replace_unsupported(el.text)
+  return el
+end
+
+function CodeBlock(el)
+  el.text = replace_unsupported(el.text)
+  return el
 end
