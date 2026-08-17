@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Netzwerke in der Informatik</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Netzwerke in der Informatik</h1>
+<p class="subtitle">Informatik · Klasse 8 · Loesungen</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#lösungen-netzwerke-in-der-informatik" id="toc-lösungen-netzwerke-in-der-informatik">Lösungen – Netzwerke in
+der Informatik</a>
+<ul>
+<li><a href="#stunde-1" id="toc-stunde-1">Stunde 1</a></li>
+<li><a href="#stunde-2" id="toc-stunde-2">Stunde 2</a></li>
+<li><a href="#stunde-3" id="toc-stunde-3">Stunde 3</a></li>
+<li><a href="#stunde-4" id="toc-stunde-4">Stunde 4</a></li>
+<li><a href="#stunde-5" id="toc-stunde-5">Stunde 5</a></li>
+<li><a href="#stunde-6" id="toc-stunde-6">Stunde 6</a></li>
+<li><a href="#stunde-7" id="toc-stunde-7">Stunde 7</a></li>
+<li><a href="#stunde-8" id="toc-stunde-8">Stunde 8</a></li>
+<li><a href="#stunde-9" id="toc-stunde-9">Stunde 9</a></li>
+<li><a href="#stunde-10" id="toc-stunde-10">Stunde 10</a></li>
+<li><a href="#sicherung" id="toc-sicherung">Sicherung</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="lösungen-netzwerke-in-der-informatik">Lösungen – Netzwerke in
+der Informatik</h1>
+<h2 id="stunde-1">Stunde 1</h2>
+<p>Beispiele: Heimnetz mit Smartphone/Notebook/Drucker; Schulnetz mit
+PCs/Server/Internetanschluss; Mobilfunknetz. LAN = lokales Netz, WLAN =
+drahtloses lokales Netz, Intranet = internes Organisationsnetz, Internet
+= weltweites Netz von Netzen.</p>
+<h2 id="stunde-2">Stunde 2</h2>
+<p>Möglicher Datenweg: Schul-PC → Switch bzw. Accesspoint → Router →
+Internet → Zielserver. Die konkrete Struktur kann abweichen; bewertet
+wird die funktional sinnvolle Modellierung.</p>
+<h2 id="stunde-3">Stunde 3</h2>
+<ul>
+<li>Client: nutzt Dienste.</li>
+<li>Server: stellt Dienste/Daten bereit.</li>
+<li>Router: verbindet Netze.</li>
+<li>Switch: verbindet Geräte im lokalen Netz.</li>
+<li>Accesspoint: stellt drahtlosen Netzzugang bereit.</li>
+</ul>
+<h2 id="stunde-4">Stunde 4</h2>
+<p>IP-Adresse: technische Adresse zur Identifikation/Erreichbarkeit im
+Netzwerk. DNS: ordnet Namen wie Domainnamen passenden IP-Adressen zu.
+DNS erleichtert die Nutzung, weil Menschen sich Namen meist besser
+merken können.</p>
+<h2 id="stunde-5">Stunde 5</h2>
+<p>Beispiel:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Medium</th>
+<th>Stärke</th>
+<th>Grenze</th>
+<th>typischer Einsatz</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Kupfer</td>
+<td>günstig, verbreitet</td>
+<td>begrenzte Reichweite/Störeinflüsse</td>
+<td>LAN-Verkabelung</td>
+</tr>
+<tr class="even">
+<td>Lichtwellenleiter</td>
+<td>hohe Datenrate, große Reichweite</td>
+<td>aufwendigere Technik</td>
+<td>Backbone/Internetanschlüsse</td>
+</tr>
+<tr class="odd">
+<td>Funk</td>
+<td>mobil, keine Kabel</td>
+<td>Störungen/Reichweite geteilt</td>
+<td>WLAN/Mobilfunk</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stunde-6">Stunde 6</h2>
+<p>Protokolle legen Regeln für den Datenaustausch fest. HTTP dient der
+Übertragung von Webinhalten; FTP der Dateiübertragung; Mail-Protokolle
+dem Transport/Abruf von E-Mail. WWW und Mail sind Dienste.</p>
+<h2 id="stunde-7">Stunde 7</h2>
+<p>Sinnvolle Reihenfolge: Symptom prüfen → lokale Verbindung/WLAN/LAN →
+Router/Netzzugang → IP-Konfiguration → DNS/Namensauflösung → konkreten
+Dienst testen. Andere fachlich begründete Reihenfolgen sind möglich.</p>
+<h2 id="stunde-8">Stunde 8</h2>
+<p>Caesar mit Verschiebung +3: <code>NETZWERK</code> →
+<code>QHWCHHUN</code> (Alphabet ohne Sonderzeichen). Wichtig ist das
+korrekte regelgeleitete Verschieben.</p>
+<h2 id="stunde-9">Stunde 9</h2>
+<p>Bei symmetrischer Verschlüsselung verwenden Sender und Empfänger
+denselben geheimen Schlüssel für Ver- und Entschlüsselung. Zentrale
+Herausforderung ist der sichere Schlüsselaustausch.</p>
+<h2 id="stunde-10">Stunde 10</h2>
+<p>Klartextspeicherung von Passwörtern ist riskant, weil ein
+Datenabfluss die Passwörter unmittelbar offenlegen würde.
+Einwegfunktionen erzeugen aus einer Eingabe einen Prüfwert, ohne eine
+einfache Rückumwandlung wie bei einer klassischen Verschlüsselung
+vorzusehen. Für Klasse 8 genügt diese konzeptionelle Abgrenzung.</p>
+<h2 id="sicherung">Sicherung</h2>
+<ol type="1">
+<li>Ein Netzwerk besteht aus verbundenen Informatiksystemen und
+Netzwerkkomponenten.</li>
+<li>Ein Router verbindet unterschiedliche Netzwerke und leitet Daten
+weiter.</li>
+<li>DNS ordnet Namen technischen Netzwerkadressen zu.</li>
+<li>Ein Netzwerkprotokoll legt Regeln für die Kommunikation fest.</li>
+<li>Kryptografie befasst sich mit Verfahren zum Schutz bzw. zur
+Verschlüsselung von Informationen.</li>
+</ol>
+</body>
+</html>

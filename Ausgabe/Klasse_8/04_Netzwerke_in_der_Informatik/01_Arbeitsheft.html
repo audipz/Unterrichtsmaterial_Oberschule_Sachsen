@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Netzwerke in der Informatik</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Netzwerke in der Informatik</h1>
+<p class="subtitle">Informatik · Klasse 8 · Arbeitsheft</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#arbeitsheft-netzwerke-in-der-informatik" id="toc-arbeitsheft-netzwerke-in-der-informatik">Arbeitsheft – Netzwerke
+in der Informatik</a>
+<ul>
+<li><a href="#stunde-1-netzwerke-im-alltag" id="toc-stunde-1-netzwerke-im-alltag">Stunde 1 – Netzwerke im
+Alltag</a></li>
+<li><a href="#stunde-2-netzwerkarchitekturen-und-datenwege" id="toc-stunde-2-netzwerkarchitekturen-und-datenwege">Stunde 2 –
+Netzwerkarchitekturen und Datenwege</a></li>
+<li><a href="#stunde-3-komponenten-eines-einfachen-netzwerks" id="toc-stunde-3-komponenten-eines-einfachen-netzwerks">Stunde 3 –
+Komponenten eines einfachen Netzwerks</a></li>
+<li><a href="#stunde-4-ip-adressen-und-dns" id="toc-stunde-4-ip-adressen-und-dns">Stunde 4 – IP-Adressen und
+DNS</a></li>
+<li><a href="#stunde-5-übertragungsmedien" id="toc-stunde-5-übertragungsmedien">Stunde 5 –
+Übertragungsmedien</a></li>
+<li><a href="#stunde-6-protokolle-und-dienste" id="toc-stunde-6-protokolle-und-dienste">Stunde 6 – Protokolle und
+Dienste</a></li>
+<li><a href="#stunde-7-netzwerk-untersuchen-und-fehler-eingrenzen" id="toc-stunde-7-netzwerk-untersuchen-und-fehler-eingrenzen">Stunde 7 –
+Netzwerk untersuchen und Fehler eingrenzen</a></li>
+<li><a href="#stunde-8-kryptografie-im-historischen-kontext" id="toc-stunde-8-kryptografie-im-historischen-kontext">Stunde 8 –
+Kryptografie im historischen Kontext</a></li>
+<li><a href="#stunde-9-symmetrische-verschlüsselung" id="toc-stunde-9-symmetrische-verschlüsselung">Stunde 9 – Symmetrische
+Verschlüsselung</a></li>
+<li><a href="#stunde-10-verschlüsselung-heute" id="toc-stunde-10-verschlüsselung-heute">Stunde 10 – Verschlüsselung
+heute</a></li>
+<li><a href="#quelle" id="toc-quelle">Quelle</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="arbeitsheft-netzwerke-in-der-informatik">Arbeitsheft – Netzwerke
+in der Informatik</h1>
+<h2 id="stunde-1-netzwerke-im-alltag">Stunde 1 – Netzwerke im
+Alltag</h2>
+<h3 id="leitfrage">Leitfrage</h3>
+<p>Warum arbeiten viele Informatiksysteme heute nicht allein?</p>
+<p><strong>Aufgabe 1:</strong> Nenne drei Netzwerke aus deinem Alltag
+und beschreibe jeweils, welche Geräte oder Menschen verbunden sind.</p>
+<p><strong>Aufgabe 2:</strong> Ordne zu: lokal begrenztes Netzwerk,
+drahtloses Netzwerk, internes Organisationsnetz, weltweites Netz.</p>
+<p>Begriffe: <strong>LAN, WLAN, Intranet, Internet</strong>.</p>
+<h2 id="stunde-2-netzwerkarchitekturen-und-datenwege">Stunde 2 –
+Netzwerkarchitekturen und Datenwege</h2>
+<p>Zeichne für einen Schulcomputer den möglichen Datenweg bis zu einer
+Webseite im Internet. Markiere mindestens Endgerät, lokales Netzwerk,
+Router und Internet.</p>
+<p><strong>Merksatz:</strong> Ein Netzwerk verbindet Informatiksysteme,
+damit Daten ausgetauscht und gemeinsame Dienste genutzt werden
+können.</p>
+<h2 id="stunde-3-komponenten-eines-einfachen-netzwerks">Stunde 3 –
+Komponenten eines einfachen Netzwerks</h2>
+<p>Ordne die Begriffe ihren Aufgaben zu:</p>
+<ul>
+<li>Client</li>
+<li>Server</li>
+<li>Router</li>
+<li>Switch</li>
+<li>Accesspoint</li>
+</ul>
+<p><strong>Transfer:</strong> Welche dieser Komponenten findest du
+wahrscheinlich in einem Schulnetz? Begründe.</p>
+<h2 id="stunde-4-ip-adressen-und-dns">Stunde 4 – IP-Adressen und
+DNS</h2>
+<p><strong>Aufgabe:</strong> Erkläre den Unterschied in eigenen
+Worten:</p>
+<ul>
+<li>IP-Adresse: ______________________________</li>
+<li>DNS: ____________________________________</li>
+</ul>
+<p>Warum ist ein Namensdienst praktisch, obwohl Computer mit Adressen
+arbeiten?</p>
+<h2 id="stunde-5-übertragungsmedien">Stunde 5 – Übertragungsmedien</h2>
+<p>Vergleiche <strong>Kupferkabel, Lichtwellenleiter und Funk</strong>
+hinsichtlich Geschwindigkeit, Reichweite, Störanfälligkeit,
+Beweglichkeit und typischem Einsatz.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Medium</th>
+<th>Stärke</th>
+<th>Grenze</th>
+<th>typischer Einsatz</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Kupfer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Lichtwellenleiter</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Funk</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="stunde-6-protokolle-und-dienste">Stunde 6 – Protokolle und
+Dienste</h2>
+<p>Ordne Protokoll bzw. Dienst einer typischen Nutzung zu:</p>
+<ul>
+<li>HTTP</li>
+<li>FTP</li>
+<li>Mail-Protokolle</li>
+<li>WWW</li>
+<li>Mail</li>
+</ul>
+<p><strong>Aufgabe:</strong> Erkläre, warum Geräte gemeinsame Regeln für
+die Kommunikation benötigen.</p>
+<h2 id="stunde-7-netzwerk-untersuchen-und-fehler-eingrenzen">Stunde 7 –
+Netzwerk untersuchen und Fehler eingrenzen</h2>
+<p>Ein Schüler kann eine lokale Datei öffnen, aber keine Webseite
+erreichen.</p>
+<p>Entwickle eine sinnvolle Prüfreihenfolge. Nutze mindestens vier
+Schritte, z. B. Verbindung, WLAN/LAN, Router, Adresse/DNS, Dienst.</p>
+<p><strong>Regel:</strong> Erst beobachten und eingrenzen, dann gezielt
+ändern und erneut testen.</p>
+<h2 id="stunde-8-kryptografie-im-historischen-kontext">Stunde 8 –
+Kryptografie im historischen Kontext</h2>
+<p>Begriffe: <strong>Klartext, Geheimtext, Schlüssel,
+Kryptografie</strong>.</p>
+<p>Verschlüssele das Wort <code>NETZWERK</code> mit einer
+Caesar-Verschiebung um 3 Stellen.</p>
+<p>Geheimtext: ______________________________</p>
+<h2 id="stunde-9-symmetrische-verschlüsselung">Stunde 9 – Symmetrische
+Verschlüsselung</h2>
+<p>Erkläre das Grundprinzip eines symmetrischen Verfahrens: Was müssen
+Sender und Empfänger gemeinsam kennen?</p>
+<p>Entschlüssle einen kurzen Caesar-Geheimtext und dokumentiere dein
+Vorgehen.</p>
+<h2 id="stunde-10-verschlüsselung-heute">Stunde 10 – Verschlüsselung
+heute</h2>
+<h3 id="fallbeispiel">Fallbeispiel</h3>
+<p>Ein Dienst speichert Passwörter nicht als lesbaren Klartext.</p>
+<p><strong>Aufgabe 1:</strong> Erkläre, warum Klartextspeicherung
+problematisch wäre.</p>
+<p><strong>Aufgabe 2:</strong> Informiere dich im Unterrichtsgespräch
+über Einwegfunktionen und ordne ein, warum sie sich von einer einfachen
+Caesar-Verschlüsselung unterscheiden.</p>
+<h3 id="sicherung">Sicherung</h3>
+<p>Ergänze:</p>
+<ol type="1">
+<li>Ein Netzwerk besteht aus ____________________________________.</li>
+<li>Ein Router _________________________________________________ .</li>
+<li>DNS ________________________________________________________ .</li>
+<li>Ein Netzwerkprotokoll _____________________________________ .</li>
+<li>Kryptografie _______________________________________________ .</li>
+</ol>
+<h2 id="quelle">Quelle</h2>
+<p>Sächsischer Lehrplan Oberschule Informatik 2022, Klassenstufe 8,
+Lernbereich 2 „Netzwerke in der Informatik“:
+https://www.schulportal.sachsen.de/lplandb/index.php?refBezeichnung=OS%2C+Kl.+8%2C+LB+2&amp;refLehrplanId=514&amp;refLehrplanItemId=118555</p>
+</body>
+</html>
