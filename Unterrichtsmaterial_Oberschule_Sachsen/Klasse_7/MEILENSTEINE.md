@@ -27,9 +27,11 @@ Die vorhandenen ausführlichen Binärumrechnungen sowie Text-/Bild-/Audio-Codier
 
 ### Werkteil-Konsistenz
 
-- [ ] Präsentationen gegen die ergänzten Pflichtinhalte spiegeln
-- [ ] Lösungen/Aufgabenabdeckung prüfen und ergänzen
-- [ ] Lernkontrolle auf verbindlichen Prüfungsstoff und neue Kernbegriffe prüfen
+- [x] Präsentations-MD zu 07–09 gegen die ergänzten Pflichtinhalte gespiegelt
+- [x] Material zu Systembereitschaft, Lizenzformen und Speicher ergänzt
+- [x] Lernkontrolle auf verbindlichen Prüfungsstoff und neue Kernbegriffe geprüft und ersetzt
+- [x] Lösung zur Lernkontrolle angepasst
+- [ ] vorhandene PPTX-Master visuell gegen den aktualisierten Folienplan prüfen bzw. neu erzeugen
 
 ## Lernbereich 2 – Repräsentation von Daten
 
@@ -53,9 +55,11 @@ Die vorhandenen ausführlichen Binärumrechnungen sowie Text-/Bild-/Audio-Codier
 
 ### Werkteil-Konsistenz
 
-- [ ] Präsentationen gegen die ergänzten Pflichtinhalte spiegeln
-- [ ] Lösungen und Material auf die neuen Aufgaben abstimmen
-- [ ] Lernkontrolle auf Metadaten, Automatisierung, Softwareauswahl und Schutzstrategien prüfen
+- [x] Präsentations-MD 01–03 und 04–06 gegen die ergänzten Pflichtinhalte gespiegelt
+- [x] Material zu Metadaten, Dokumentenschutz, Manipulation, Zitat und Plagiat ergänzt
+- [x] Lernkontrolle auf Metadaten, Automatisierung, Softwareauswahl und Schutzstrategien geprüft und ersetzt
+- [x] Lösung zur Lernkontrolle angepasst
+- [ ] vorhandene PPTX-Master visuell gegen die aktualisierten Folienpläne prüfen bzw. neu erzeugen
 
 ## Abgrenzung Klasse 8
 
@@ -71,4 +75,4 @@ Die vorhandenen ausführlichen Binärumrechnungen sowie Text-/Bild-/Audio-Codier
 
 ## Status
 
-Klasse 7 ist **strukturell lehrplankonform**. Die beiden Pflichtlernbereiche sind in Arbeitsheft und Lehrerband inhaltlich gegen die zentralen Lehrplananforderungen nachgezogen. Noch offen ist die Konsistenzprüfung der übrigen Werkteile – insbesondere Präsentationen, Lösungen, Lernkontrollen – sowie der drei Wahlbereiche.
+Klasse 7 ist **strukturell lehrplankonform**. Die beiden Pflichtlernbereiche sind in Arbeitsheft, Lehrerband, Präsentationsplänen, ergänzenden Materialien sowie Lernkontrollen gegen die zentralen Lehrplananforderungen nachgezogen. Noch offen ist die visuelle Aktualisierung bzw. Neuerzeugung der PPTX-Master sowie der separate Lehrplanabgleich der drei Wahlbereiche.
