@@ -6,9 +6,9 @@
 
 # Einordnung
 
-Die Stunde eröffnet den Informatikunterricht der Klassenstufe 7. Die Geschichte der Informatik wird bewusst als **motivierende Orientierung** behandelt und nicht als Stoff zum Auswendiglernen. Namen und Jahreszahlen sind nicht für eine Leistungskontrolle vorgesehen.
+Die Stunde eröffnet den Informatikunterricht der Klassenstufe 7. Sie verbindet zwei verbindliche Perspektiven des Lehrplans: den **Einblick in die Entwicklung von Informatik und Rechentechnik** sowie grundlegende aktuelle Entwicklungstendenzen **Digitalisierung, Automatisierung und Vernetzung**.
 
-Die Schülerinnen und Schüler erarbeiten in Gruppen ausgewählte Stationen der Entwicklung und stellen sie knapp vor. Der rote Faden lautet: Technische Entwicklungen entstehen, weil Menschen konkrete Probleme lösen wollen.
+Die Geschichte wird bewusst als motivierende Orientierung behandelt. Namen und Jahreszahlen sind nicht für eine isolierte Abfrage vorgesehen. Der rote Faden lautet: Technische Entwicklungen entstehen, weil Menschen konkrete Probleme lösen wollen – und moderne Informatiksysteme verändern heute viele Lebensbereiche.
 
 Die Stunde ist als **Einzelstunde mit 45 Minuten** geplant.
 
@@ -16,7 +16,7 @@ Die Stunde ist als **Einzelstunde mit 45 Minuten** geplant.
 
 # Leitfrage
 
-> Warum haben Menschen begonnen, Rechenmaschinen und später Computer zu entwickeln?
+> Warum haben Menschen Rechenmaschinen und Computer entwickelt – und warum werden heute immer mehr Dinge digital, automatisiert und vernetzt?
 
 ---
 
@@ -26,9 +26,10 @@ Die Schülerinnen und Schüler können
 
 - historische Entwicklungen als Reaktion auf konkrete Probleme beschreiben,
 - wesentliche Ideen ausgewählter Personen in eigenen Worten wiedergeben,
-- Informationen aus einem kurzen Sachtext entnehmen,
-- Ergebnisse in einem sehr kurzen Gruppenbeitrag vorstellen,
-- Gemeinsamkeiten verschiedener Entwicklungsschritte erkennen.
+- mechanische und elektronische Rechentechnik als Entwicklungsschritte einordnen,
+- Digitalisierung, Automatisierung und Vernetzung an Alltagsbeispielen unterscheiden,
+- Chancen und mögliche Folgen wie Datenschutz, Energiebedarf oder Abhängigkeit von Diensten benennen,
+- Ergebnisse in einem kurzen Gruppenbeitrag vorstellen.
 
 Nicht erwartet werden das Auswendiglernen von Lebensdaten, Jahreszahlen oder technischen Detailkonstruktionen.
 
@@ -45,19 +46,17 @@ Nicht erwartet werden das Auswendiglernen von Lebensdaten, Jahreszahlen oder tec
 
 # Unterrichtsverlauf
 
-## 1. Einstieg und Aktivierung – ca. 5 Minuten
+## 1. Einstieg und Aktivierung – ca. 4 Minuten
 
 Impuls:
 
-> Wo begegnen euch heute Computer, auch wenn sie nicht wie ein PC aussehen?
+> Wo begegnen euch heute Informatiksysteme, auch wenn sie nicht wie ein PC aussehen?
 
-Mögliche Nennungen: Smartphone, Auto, Fahrkartenautomat, Waschmaschine, Spielkonsole, Smartwatch.
+Mögliche Nennungen: Smartphone, Auto, Fahrkartenautomat, Waschmaschine, Spielkonsole, Smartwatch, Smarthome-Gerät.
 
-Anschließend:
+Anschließend kurz fragen:
 
 > Wie haben Menschen gerechnet und Informationen verarbeitet, bevor es Computer gab?
-
-Die Antworten werden kurz gesammelt, aber nicht ausführlich bewertet.
 
 ---
 
@@ -70,69 +69,66 @@ Auftrag:
 1. Person oder Entwicklung erfassen.
 2. Problem bestimmen.
 3. Idee beziehungsweise Lösung beschreiben.
-4. Bedeutung für heutige Computer benennen.
-5. Einen Kurzvortrag von höchstens zwei Minuten vorbereiten.
+4. Bedeutung für heutige Informatiksysteme benennen.
+5. Kurzvortrag von höchstens 90 Sekunden vorbereiten.
 
-Hinweis an die Klasse:
-
-> Ihr müsst euch keine Jahreszahlen merken. Entscheidend ist, welches Problem gelöst werden sollte und welche neue Idee daraus entstand.
+Hinweis an die Klasse: Entscheidend sind **Problem, Idee und Bedeutung**, nicht Jahreszahlen.
 
 ---
 
-## 3. Gruppenarbeit – ca. 17 Minuten
+## 3. Gruppenarbeit – ca. 14 Minuten
 
-Die Lehrkraft unterstützt vor allem beim Verdichten der Texte. Die Gruppen sollen keine vollständigen Referate schreiben, sondern drei bis vier klare Aussagen vorbereiten.
-
-Bei schwächeren Gruppen kann die Reihenfolge **Problem → Idee → Bedeutung** sichtbar an die Tafel geschrieben werden.
+Die Lehrkraft unterstützt beim Verdichten. Bei schwächeren Gruppen kann die Reihenfolge **Problem → Idee → Bedeutung** sichtbar an der Tafel stehen.
 
 ---
 
-## 4. Kurzvorträge und Sicherung – ca. 15 Minuten
+## 4. Kurzvorträge und historische Sicherung – ca. 12 Minuten
 
-Jede Gruppe erhält maximal zwei Minuten. Die übrigen Schülerinnen und Schüler ergänzen die Tabelle im Arbeitsheft.
+Die übrigen Schülerinnen und Schüler ergänzen die Tabelle im Arbeitsheft. Bei Zeitdruck reichen vier exemplarische Stationen; weitere können kurz von der Lehrkraft ergänzt werden.
 
-Bei Zeitdruck werden die Beiträge auf etwa 90 Sekunden begrenzt. Die Tabelle muss nicht wortgleich gefüllt sein; sinnvolle Stichpunkte genügen.
+Wichtig ist die Entwicklungslinie von mechanischer zu elektronischer Informationsverarbeitung, nicht die Vollständigkeit der Technikgeschichte.
 
 ---
 
-## 5. Abschluss – ca. 5 Minuten
+## 5. Transfer: Digitalisierung – Automatisierung – Vernetzung – ca. 8 Minuten
 
-Leitfrage erneut aufgreifen:
+Die Beispiele im Arbeitsheft gemeinsam zuordnen. Begriffe sauber trennen:
 
-> Warum entstanden immer neue Rechenmaschinen und Computer?
+- **Digitalisierung:** Informationen/Abläufe werden digital repräsentiert bzw. digital bearbeitbar.
+- **Automatisierung:** Arbeitsschritte werden nach Regeln selbstständig ausgeführt.
+- **Vernetzung:** Systeme tauschen Daten aus.
+
+Ein Beispiel kann mehrere Merkmale besitzen. Gerade das ist didaktisch hilfreich.
+
+Mögliche Vertiefungsfrage:
+
+> Was gewinnen wir dadurch – und welche neuen Probleme entstehen?
+
+Schülernahe Aspekte: Komfort, Geschwindigkeit, Zusammenarbeit; gleichzeitig Datenschutz, Energieverbrauch, Abhängigkeit von Internet/Anbietern, Nachhaltigkeit.
+
+---
+
+## 6. Abschluss – ca. 4 Minuten
 
 Erwartete Kernaussage:
 
-> Menschen wollten konkrete Aufgaben schneller, zuverlässiger oder automatisch lösen.
+> Menschen entwickelten Informatiksysteme, um Informationen schneller und zuverlässiger zu verarbeiten. Heute prägen Digitalisierung, Automatisierung und Vernetzung viele Lebensbereiche.
 
-Gemeinsamer Merksatz:
+Ausblick:
 
-> Computer sind nicht plötzlich entstanden. Viele Menschen entwickelten über lange Zeit Ideen, um Rechnen und Informationsverarbeitung zu erleichtern oder zu automatisieren.
-
----
-
-# Ausblick
-
-Die Stunde endet mit der Frage:
-
-> Könnt ihr euch vorstellen, eine ganze Sprache nur aus 0 und 1 zu gestalten?
-
-Damit wird die nächste Stunde zur binären Informationsdarstellung vorbereitet.
+> Wie kann ein Computer mit nur zwei Zuständen sehr viele verschiedene Informationen darstellen?
 
 ---
 
 # Typische Stolperstellen
 
 - Die Gruppen verlieren sich in Lebensdaten. → Auf Problem, Idee und Bedeutung zurückführen.
-- Die Vorträge werden zu lang. → Zwei Minuten konsequent begrenzen.
-- Historische Aussagen werden zu absolut formuliert, etwa „der erste Computer“. → Bei umstrittenen Einordnungen lieber von „einem wichtigen Meilenstein“ sprechen.
+- „Digital = automatisch.“ → Mit einem eingescannten, aber nicht automatisch verarbeiteten Arbeitsblatt gegenhalten.
+- „Vernetzt = Internet.“ → Auch Bluetooth-Verbindung oder Schulnetz sind Vernetzung.
+- Historische Aussagen werden zu absolut formuliert, etwa „der erste Computer“. → Besser von wichtigen Meilensteinen sprechen.
 
 ---
 
 # Wenn heute weniger Zeit ist
 
-- Die Einstiegsdiskussion auf zwei Minuten kürzen.
-- Die Gruppenpräsentationen auf 60–90 Sekunden begrenzen.
-- Die letzte Spalte der Übersicht nur mündlich sichern.
-
-Die Abschlussfrage und der Ausblick auf **0 und 1** sollten erhalten bleiben.
+Historische Gruppenphase auf vier Stationen begrenzen und die Transferphase zu Digitalisierung/Automatisierung/Vernetzung unbedingt beibehalten, da diese ausdrücklich zum verbindlichen Lehrplaninhalt gehört.

@@ -2,11 +2,11 @@
 
 ## Leitfrage
 
-> Warum haben Menschen begonnen, Rechenmaschinen und später Computer zu entwickeln?
+> Warum haben Menschen begonnen, Rechenmaschinen und später Computer zu entwickeln – und warum werden heute immer mehr Dinge digital, automatisiert und vernetzt?
 
 Computer, Smartphones und Spielekonsolen wirken heute selbstverständlich. Doch Menschen mussten lange Zeit ohne elektronische Rechner auskommen. Trotzdem mussten sie zählen, rechnen, Daten ordnen und komplizierte Aufgaben lösen.
 
-In dieser Stunde untersucht ihr einige Stationen auf dem Weg zum modernen Computer.
+In dieser Stunde untersucht ihr einige Stationen auf dem Weg zum modernen Informatiksystem und schaut anschließend auf aktuelle Entwicklungstendenzen.
 
 ---
 
@@ -54,9 +54,32 @@ Ergänze die Übersicht in Stichpunkten.
 
 ---
 
-## 4. Gemeinsamkeiten finden
+## 4. Von der Rechenmaschine zur vernetzten Welt
 
-Was verbindet die vorgestellten Personen und Entwicklungen?
+Heute geht es nicht mehr nur darum, schneller zu rechnen. Drei Entwicklungstendenzen begegnen uns fast überall:
+
+- **Digitalisierung:** Informationen und Abläufe werden digital dargestellt und verarbeitet, zum Beispiel Fahrkarten, Fotos oder Schulaufgaben.
+- **Automatisierung:** Informatiksysteme übernehmen Arbeitsschritte selbstständig nach vorgegebenen Regeln, zum Beispiel Waschprogramme, Rechtschreibprüfung oder automatische Lichtsteuerung.
+- **Vernetzung:** Geräte und Dienste tauschen Daten aus, zum Beispiel Smartphone und Smartwatch, Schulcloud oder Smarthome-Geräte.
+
+### Aufgabe
+
+Ordne die Beispiele zu. Mehrere Zuordnungen können gleichzeitig passen.
+
+| Beispiel | Digitalisierung | Automatisierung | Vernetzung |
+|---|:---:|:---:|:---:|
+| digitales Klassenbuch | | | |
+| Bewegungsmelder schaltet Licht | | | |
+| gemeinsames Dokument in einer Cloud | | | |
+| Smartwatch sendet Messwerte ans Smartphone | | | |
+
+Überlege anschließend: Welche Vorteile entstehen? Welche Nachteile oder Risiken können auftreten, etwa für Datenschutz, Energieverbrauch oder Abhängigkeit von Diensten?
+
+---
+
+## 5. Gemeinsamkeiten finden
+
+Was verbindet die historischen Entwicklungen und die heutigen Trends?
 
 ____________________________________________________
 
@@ -64,12 +87,12 @@ ____________________________________________________
 
 ### Merksatz
 
-> Computer sind nicht plötzlich entstanden. Über viele Jahrhunderte entwickelten Menschen neue Ideen, um Rechnen und Informationsverarbeitung zu erleichtern oder zu automatisieren.
+> Informatiksysteme entstanden, um Informationen schneller und zuverlässiger zu verarbeiten. Heute prägen Digitalisierung, Automatisierung und Vernetzung viele Lebensbereiche.
 
 ---
 
 ## Ausblick
 
-Moderne Computer unterscheiden sich stark von den frühen Rechenmaschinen. Trotzdem beruht ihre Informationsverarbeitung auf einer überraschend einfachen Idee:
+Moderne Informatiksysteme unterscheiden sich stark von frühen Rechenmaschinen. Trotzdem müssen sie Informationen intern eindeutig darstellen.
 
-> **Könnt ihr euch vorstellen, eine ganze Sprache nur aus 0 und 1 zu gestalten?**
+> **Wie kann ein Computer mit nur zwei Zuständen sehr viele verschiedene Informationen darstellen?**

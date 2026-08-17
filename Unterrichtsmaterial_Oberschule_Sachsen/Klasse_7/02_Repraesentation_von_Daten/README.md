@@ -22,7 +22,19 @@ Die in Lernbereich 1 verwendeten Beispiele zu Text, Bild und Audio werden hier u
 
 ## Objektorientierung
 
-Klasse, Objekt, Attribut, Attributwert und Methode werden bereits in Klasse 7 als informatisches Modell eingeführt. Dabei ist zwischen dem Verwalten/Erstellen/Löschen von Objekten und dem Ändern von Attributwerten zu unterscheiden. Die Klasse beschreibt den gemeinsamen Bauplan; konkrete Attributwerte gehören zum Zustand eines Objekts und verändern die Klasse nicht.
+Klasse, Objekt, Attribut, Attributwert und Methode werden bereits in Klasse 7 als informatisches Modell eingeführt. Dabei ist zwischen dem Verwalten/Erstellen/Löschen von Objekten und dem Ändern von Attributwerten zu unterscheiden.
+
+Wichtig für den Unterricht: **Die Klasse beschreibt die gemeinsamen Merkmale bzw. den Bauplan. Der konkrete Zustand gehört zum Objekt.** Ändert sich beispielsweise die Farbe eines einzelnen Objektes, ändert sich dadurch nicht die Klasse und auch nicht automatisch ein anderes Objekt derselben Klasse.
+
+## Digitale Medien und Automatisierung
+
+Die Lernenden sollen nicht nur Funktionen einer einzelnen Anwendung bedienen, sondern begründen können, welche Softwareart für eine Aufgabe geeignet ist. Automatische Funktionen wie Rechtschreibprüfung, Summenbildung, Formatvorlagen oder Bildanpassung werden als Verarbeitung nach Regeln betrachtet. Automatische Ergebnisse müssen weiterhin durch Menschen geprüft werden.
+
+## Datenrechte, Schutz und Glaubwürdigkeit
+
+Neben sichtbaren Inhaltsdaten werden **Metadaten** ausdrücklich thematisiert. Dokumentenschutz wird nicht auf „Passwort setzen“ reduziert, sondern umfasst je nach Aufgabe Zugriffsrechte, Freigaben, Backups und bewusste Veröffentlichung.
+
+Bei manipulierten oder automatisch erzeugten Medien steht die Prüfung von **Quelle, Kontext, möglicher Veränderung und Absicht** im Mittelpunkt. Eine überzeugende Darstellung ist kein Beweis für Wahrheit.
 
 ## Abgrenzung zu Klasse 8
 
@@ -40,3 +52,7 @@ Zum Lernbereich gehört eine separate Leistungskontrolle „Repräsentation von 
 - Lösungen
 - Präsentationen
 - Leistungskontrolle mit Lösung
+
+## Qualitätsstatus
+
+Arbeitsheft und Lehrerband bilden die zuvor offenen Lehrplanaspekte zu Automatisierung, Softwareauswahl, Metadaten, Dokumentenschutz und Medienmanipulation nun ausdrücklich ab. Präsentationen, Lösungen und Lernkontrolle werden im nächsten Schritt dagegen gespiegelt.
