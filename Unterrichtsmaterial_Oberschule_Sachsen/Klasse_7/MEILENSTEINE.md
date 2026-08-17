@@ -1,67 +1,52 @@
 # Meilensteine – Klasse 7
 
-## Status
+## Lehrplanbasis
 
-**Stand:** inhaltlich vollständig ausgearbeitet; Wahlbereich KI separat in PR #17.
+Sächsischer Lehrplan Informatik Oberschule 2022:
 
-## Meilenstein 1 – Einstieg und digitale Grundlagen
+- Lernbereich 1: **Informatik im Alltag** – 10 Ustd.
+- Lernbereich 2: **Repräsentation von Daten** – 15 Ustd.
+- Wahlbereiche: **Künstliche Intelligenz**, **Mobile Endgeräte**, **Computergrafik**
 
-- [x] Geschichte der Informatik
-- [x] 0 und 1 / Bit
-- [x] Binärzahlen mit Zweierpotenzen
-- [x] Umrechnung durch Division durch 2
-- [x] Binäraddition
-- [x] Texte / ASCII / Unicode / UTF-8
-- [x] Bilder / Pixel / RGB
-- [x] Musik / Digitalisierung
+## Lernbereich 1 – Informatik im Alltag
 
-## Meilenstein 2 – Informatiksysteme und EVAS
-
-- [x] EVAS-Prinzip
-- [x] benotete EVAS-Präsentation
+- [x] Entwicklung der Informatik/Rechentechnik
+- [x] binäre Zustände sowie Bit/Byte und Datenmengen
+- [x] EVA-Prinzip
 - [x] Hardware und Software
-- [x] Prozessor und Speicher
-- [x] Datenmengen
+- [x] Speichergrundlagen
 - [x] Dateien, Ordner und Pfade
+- [ ] Digitalisierung, Automatisierung und Vernetzung in den Kernmaterialien ausdrücklich systematisieren
+- [ ] Lizenzformen (frei/kostenpflichtig, proprietär/Open Source) vollständig in Arbeitsheft, Lehrerband und Präsentation ergänzen
+- [ ] Speicherarten/-eigenschaften und lokale/vernetzte/Cloud-Speicher vollständig gegen Lehrplan prüfen
+- [ ] Systembereitschaft, Schulnetz/Online-Plattform und Umgang mit Systemmeldungen sichtbar absichern
 
-## Meilenstein 3 – Repräsentation von Daten
+Die vorhandenen ausführlichen Binärumrechnungen sowie Text-/Bild-/Audio-Codierung sind Vertiefungs- bzw. Brückenmaterial und nicht als zusätzlicher verbindlicher Lehrplanstoff zu behandeln.
+
+## Lernbereich 2 – Repräsentation von Daten
 
 - [x] Information und Daten
-- [x] Darstellungsformen
-- [x] digitale Medien
-- [x] Objekt, Attribut, Attributwert
+- [x] Darstellungsformen und digitale Medien
+- [x] Objekt, Attribut und Attributwert
 - [x] Klasse und Methode
-- [x] Datenrechte, Urheberrecht und Quellen
-- [x] Leistungskontrolle
+- [x] Urheberrecht, Quellen und Datenschutz als Themen angelegt
+- [ ] Bildung und Darstellung von Klassen/Objekten vollständig gegen die verbindlichen Anforderungen prüfen
+- [ ] Trennung von Inhalt und Design sowie Automatisierung der Informationsverarbeitung sichtbar absichern
+- [ ] problembezogene Auswahl von Anwendersoftware und weitere Anwendungssoftware absichern
+- [ ] Inhaltsdaten/Metadaten, Dokumentenschutz sowie Manipulation durch Menschen und Automaten vollständig absichern
 
-## Meilenstein 4 – Programmiervertiefung
+## Abgrenzung Klasse 8
 
-- [x] Algorithmen
-- [x] Sequenz, Entscheidung, Wiederholung
-- [x] Scratch-Einstieg
-- [x] Eingaben und Ereignisse
-- [x] Bedingungen
-- [x] Schleifen
-- [x] Variablen
-- [x] Übungsprojekt
-- [x] Kompetenzcheck
-- [x] Leistungskontrolle
+- [x] Eigenständigen Klasse-7-Pflichtbereich „Algorithmen und Programmierung“ entfernt
+- [x] vorhandenes Scratch-Material verlustfrei nach `Klasse_8/90_Zusatzmaterial_Scratch_aus_Klasse7` verschoben und als Zusatzmaterial gekennzeichnet
 
-## Meilenstein 5 – Wahlbereich
+## Wahlbereiche
 
-- [x] Künstliche Intelligenz inhaltlich erstellt
-- [x] kritische Prüfung von KI-Ergebnissen
-- [x] Lehrerband, Material, Lösungen und Präsentation
-- [ ] PR #17 mergen
+- [x] Künstliche Intelligenz
+- [x] Mobile Endgeräte strukturell vorhanden
+- [x] Computergrafik strukturell vorhanden
+- [ ] Inhalte der drei Wahlbereiche jeweils separat gegen die verbindlichen Lehrplanziele prüfen
 
-## Qualitätscheck
+## Status
 
-- [x] Einzelstundenprinzip berücksichtigt
-- [x] Rückblick – Leitfrage – Sicherung – Ausblick als Grundstruktur
-- [x] Geschichte ausdrücklich nicht prüfungsrelevant
-- [x] EVAS-Präsentation benotbar
-- [x] Leistungskontrollen als getrennte Dokumente
-- [x] Lösungen getrennt von Leistungskontrollen
-- [x] Übergang zu Klasse 8 dokumentiert
-
-Nach Merge von PR #17 und dem finalen Abgleich kann Klasse 7 als abgeschlossener Produktionsstand markiert werden.
+Klasse 7 ist mit diesem Stand **strukturell am Lehrplan 2022 ausgerichtet**. Inhaltlich bestehen die oben markierten Ergänzungs- und Prüfaufgaben; daher wird Klasse 7 noch nicht als vollständig abgeschlossen gekennzeichnet.
