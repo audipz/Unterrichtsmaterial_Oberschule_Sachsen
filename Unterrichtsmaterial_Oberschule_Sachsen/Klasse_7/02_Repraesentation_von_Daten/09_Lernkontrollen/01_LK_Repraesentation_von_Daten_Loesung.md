@@ -1,42 +1,39 @@
 # Lösung – Leistungskontrolle Repräsentation von Daten
 
-## Aufgabe 1 – 6 Punkte
+**Gesamt:** 32 Punkte
 
-1. Daten sind Darstellungen, die gespeichert und verarbeitet werden können. Information entsteht, wenn Daten in einem Kontext Bedeutung erhalten. – 3 P
-2. Beispiele: 18 °C, 18 Euro, 18 Personen, Hausnummer 18. Zwei sinnvolle unterschiedliche Kontexte: 3 P.
+## Aufgabe 1 – Daten und Information (4 Punkte)
 
-## Aufgabe 2 – 5 Punkte
+Daten sind Darstellungen, Zeichen oder Werte. Information entsteht, wenn Daten in einem Kontext Bedeutung erhalten. `18` kann z. B. 18 Grad, 18 Jahre, Hausnummer 18 oder 18 Punkte bedeuten. 2 Punkte Begriffserklärung, 2 Punkte Kontexte.
 
-1. Diagramm, da die Entwicklung/Änderung schnell sichtbar wird. – 2 P
-2. Tabelle, da Zeiten und Fächer systematisch zugeordnet werden können. – 2 P
-3. z. B. Barrierefreiheit, fehlende Textsuche oder unklare Interpretation ohne Beschreibung. – 1 P
+## Aufgabe 2 – Darstellungsformen (4 Punkte)
 
-## Aufgabe 3 – 7 Punkte
+Tabelle: genaue Einzelwerte gut ablesbar, aber Muster oft weniger schnell erkennbar. Diagramm: Vergleiche und Entwicklungen gut sichtbar, aber Einzelwerte ggf. ungenauer. Je ein sinnvoller Vor-/Nachteil pro Darstellungsform.
 
-1. Das konkrete Bild in der Präsentation. – 1 P
-2. Breite, Höhe, Drehung. – 3 P
-3. z. B. `10 cm`, `6 cm` oder `15°`. – 1 P
-4. Löschen entfernt/verwaltet das Objekt; Breite ändern verändert einen Attributwert des bestehenden Objekts. – 2 P
+## Aufgabe 3 – Geeignete Software auswählen (4 Punkte)
 
-## Aufgabe 4 – 4 Punkte
+Einladung: Textverarbeitung. Umfrage: Tabellenkalkulation. Plakat: Grafik-/Präsentationsprogramm. Erklärfilm: Video-/Animationssoftware. Je 0,5 Punkte Auswahl und 0,5 Punkte Begründung.
 
-1. Die Klasse beschreibt gemeinsame Eigenschaften bzw. mögliche Methoden ähnlicher Fahrrad-Objekte. – 2 P
-2. z. B. Farbe, Gangzahl, Rahmengröße. – je 1 P
+## Aufgabe 4 – Inhalt, Design und Automatisierung (5 Punkte)
 
-## Aufgabe 5 – 4 Punkte
+Inhalt: Überschrift, Foto, Aussage „Beginn 15 Uhr“. Design: Schriftgröße, Hintergrundfarbe. Automatische Funktionen: Rechtschreibprüfung, Layoutvorlagen, automatische Summen, Diagramm aus Tabelle, Bildkorrektur, Vorschläge. Automatische Ergebnisse müssen geprüft werden, weil Software Kontext, Wahrheit, Aktualität und Absicht nicht sicher beurteilt. Punkte anteilig.
 
-1. Tabellenkalkulation; Zahlen lassen sich strukturiert erfassen, berechnen und auswerten. – 2 P
-2. z. B. Rechtschreibprüfung, automatische Summe, Formatvorlage, Farbanpassung. Funktion + Erklärung: 2 P.
+## Aufgabe 5 – Objekt, Klasse, Attribut, Attributwert (6 Punkte)
 
-## Aufgabe 6 – 4 Punkte
+Klasse: Bildobjekt/Bild. Attribute: Breite, Höhe, Position, Transparenz, Drehung. Attributwerte: z. B. Breite 8 cm, Position links oben, Transparenz 30 %. Wenn ein Bild größer gezogen wird, ändert sich nur der Attributwert bzw. Zustand dieses konkreten Objekts; die Klasse als Bauplan für Bildobjekte bleibt gleich.
 
-Je sinnvoller Aspekt 1 P, z. B.:
+## Aufgabe 6 – Methoden und Objektverwaltung (3 Punkte)
 
-- Zustimmung/Rechte der abgebildeten Personen
-- Urheber bzw. Rechte am Foto
-- Lizenz/Nutzungserlaubnis
-- Reichweite und Zielgruppe der Veröffentlichung
-- notwendige Quellenangabe
-- schulische Vorgaben bzw. Datenschutzregeln
+Attributwert ändern: Breite von 5 cm auf 8 cm setzen. Objektverwaltung: Bild kopieren, neues Textfeld erstellen, Objekt löschen. Methode: drehen, verschieben, skalieren, zuschneiden. Je 1 Punkt.
 
-Maximal 4 Punkte.
+## Aufgabe 7 – Rechte, Quellen und Plagiat (3 Punkte)
+
+Mögliche Fragen: Wer ist Urheber? Unter welcher Lizenz steht das Bild? Darf ich es für meinen Zweck verwenden? Muss ich eine Quelle nennen? Ist eine Person erkennbar und muss zustimmen? Verändere ich fremde Arbeit und gebe sie als eigene aus? Drei sinnvolle Punkte je 1 Punkt.
+
+## Aufgabe 8 – Metadaten und Dokumentenschutz (3 Punkte)
+
+Inhaltsdaten sind sichtbare bzw. direkt wahrnehmbare Inhalte, z. B. Text oder Bild. Metadaten beschreiben zusätzliche Informationen, z. B. Autor, Änderungsdatum, Kamera, Standort. Schutz: Passwort, Schreibschutz, Berechtigungen, nur Leselink, Zugriff auf bestimmte Personen beschränken. Punkte anteilig.
+
+## Aufgabe 9 – Manipulation und automatische Medienerzeugung (3 Punkte)
+
+Hinweise: Quelle prüfen, Veröffentlichungsdatum prüfen, Bildfehler/ungewöhnliche Details, andere Quellen vergleichen, Rückwärtssuche, Metadaten prüfen, übertriebene/unklare Darstellung, fehlender Urheber, Kontext passt nicht. Zwei Hinweise plus Begründung ergeben volle Punktzahl.
