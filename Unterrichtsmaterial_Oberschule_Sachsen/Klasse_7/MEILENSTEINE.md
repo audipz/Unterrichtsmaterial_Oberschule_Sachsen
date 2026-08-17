@@ -27,9 +27,10 @@ Die vorhandenen ausführlichen Binärumrechnungen sowie Text-/Bild-/Audio-Codier
 
 ### Werkteil-Konsistenz
 
-- [ ] Präsentationen gegen die ergänzten Pflichtinhalte spiegeln
-- [ ] Lösungen/Aufgabenabdeckung prüfen und ergänzen
-- [ ] Lernkontrolle auf verbindlichen Prüfungsstoff und neue Kernbegriffe prüfen
+- [x] Präsentations-MD gegen die ergänzten Pflichtinhalte gespiegelt
+- [x] Lösungen/Aufgabenabdeckung für Informatiksysteme, Speicher und Dateien ergänzt
+- [x] Lernkontrolle auf verbindlichen Prüfungsstoff und neue Kernbegriffe ausgerichtet
+- [ ] vorhandene PPTX-Master gegen die aktualisierten Präsentations-MD visuell prüfen/ggf. neu bauen
 
 ## Lernbereich 2 – Repräsentation von Daten
 
@@ -53,9 +54,10 @@ Die vorhandenen ausführlichen Binärumrechnungen sowie Text-/Bild-/Audio-Codier
 
 ### Werkteil-Konsistenz
 
-- [ ] Präsentationen gegen die ergänzten Pflichtinhalte spiegeln
-- [ ] Lösungen und Material auf die neuen Aufgaben abstimmen
-- [ ] Lernkontrolle auf Metadaten, Automatisierung, Softwareauswahl und Schutzstrategien prüfen
+- [x] Präsentations-MD gegen die ergänzten Pflichtinhalte gespiegelt
+- [x] Material und Lösungen auf die neuen Aufgaben abgestimmt
+- [x] Lernkontrolle auf Metadaten, Automatisierung, Softwareauswahl und Schutzstrategien geprüft
+- [ ] vorhandene PPTX-Master gegen die aktualisierten Präsentations-MD visuell prüfen/ggf. neu bauen
 
 ## Abgrenzung Klasse 8
 
@@ -71,4 +73,4 @@ Die vorhandenen ausführlichen Binärumrechnungen sowie Text-/Bild-/Audio-Codier
 
 ## Status
 
-Klasse 7 ist **strukturell lehrplankonform**. Die beiden Pflichtlernbereiche sind in Arbeitsheft und Lehrerband inhaltlich gegen die zentralen Lehrplananforderungen nachgezogen. Noch offen ist die Konsistenzprüfung der übrigen Werkteile – insbesondere Präsentationen, Lösungen, Lernkontrollen – sowie der drei Wahlbereiche.
+Klasse 7 ist **strukturell lehrplankonform**. Die beiden Pflichtlernbereiche sind in Arbeitsheft, Lehrerband, Präsentations-MD, Material/Lösungen und Lernkontrollen gegen die zentralen Lehrplananforderungen nachgezogen. Noch offen ist die visuelle Prüfung bzw. der Neubau der vorhandenen PPTX-Master sowie der separate Lehrplanabgleich der drei Wahlbereiche.
