@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Robot Karol</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Robot Karol</h1>
+<p class="subtitle">Informatik · Klasse 8 · Arbeitsheft</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#robot-karol-kennenlernen" id="toc-robot-karol-kennenlernen">01 – Robot Karol kennenlernen</a>
+<ul>
+<li><a href="#leitfrage" id="toc-leitfrage">Leitfrage</a></li>
+<li><a href="#grundbefehle" id="toc-grundbefehle">Grundbefehle</a></li>
+<li><a href="#aufgabe-1-vorhersagen" id="toc-aufgabe-1-vorhersagen">Aufgabe 1 – Vorhersagen</a></li>
+<li><a href="#aufgabe-2-rechteckweg" id="toc-aufgabe-2-rechteckweg">Aufgabe 2 – Rechteckweg</a></li>
+<li><a href="#aufgabe-3-fehleranalyse" id="toc-aufgabe-3-fehleranalyse">Aufgabe 3 – Fehleranalyse</a></li>
+<li><a href="#aufgabe-4-ziegel" id="toc-aufgabe-4-ziegel">Aufgabe 4 –
+Ziegel</a></li>
+<li><a href="#programmieren-heißt-testen" id="toc-programmieren-heißt-testen">Programmieren heißt testen</a></li>
+<li><a href="#merke" id="toc-merke">Merke</a></li>
+</ul></li>
+<li><a href="#wiederholungen-in-robot-karol" id="toc-wiederholungen-in-robot-karol">02 – Wiederholungen in Robot
+Karol</a>
+<ul>
+<li><a href="#rückblick" id="toc-rückblick">Rückblick</a></li>
+<li><a href="#feste-wiederholung" id="toc-feste-wiederholung">Feste
+Wiederholung</a></li>
+<li><a href="#aufgabe-1" id="toc-aufgabe-1">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2-quadrat" id="toc-aufgabe-2-quadrat">Aufgabe 2 –
+Quadrat</a></li>
+<li><a href="#aufgabe-3-ziegelmuster" id="toc-aufgabe-3-ziegelmuster">Aufgabe 3 – Ziegelmuster</a></li>
+<li><a href="#verschachtelte-wiederholung" id="toc-verschachtelte-wiederholung">Verschachtelte
+Wiederholung</a></li>
+<li><a href="#aufgabe-4" id="toc-aufgabe-4">Aufgabe 4</a></li>
+<li><a href="#aufgabe-5-lesbarkeit" id="toc-aufgabe-5-lesbarkeit">Aufgabe 5 – Lesbarkeit</a></li>
+<li><a href="#merke-1" id="toc-merke-1">Merke</a></li>
+</ul></li>
+<li><a href="#bedingungen-und-sensoren-in-robot-karol" id="toc-bedingungen-und-sensoren-in-robot-karol">03 – Bedingungen und
+Sensoren in Robot Karol</a>
+<ul>
+<li><a href="#leitfrage-1" id="toc-leitfrage-1">Leitfrage</a></li>
+<li><a href="#sensoren-als-fragen" id="toc-sensoren-als-fragen">Sensoren
+als Fragen</a></li>
+<li><a href="#entscheidung" id="toc-entscheidung">Entscheidung</a></li>
+<li><a href="#aufgabe-1-1" id="toc-aufgabe-1-1">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2" id="toc-aufgabe-2">Aufgabe 2</a></li>
+<li><a href="#bedingte-wiederholung" id="toc-bedingte-wiederholung">Bedingte Wiederholung</a></li>
+<li><a href="#aufgabe-3" id="toc-aufgabe-3">Aufgabe 3</a></li>
+<li><a href="#aufgabe-4-ziegel-suchen" id="toc-aufgabe-4-ziegel-suchen">Aufgabe 4 – Ziegel suchen</a></li>
+<li><a href="#aufgabe-5-fehlerfall" id="toc-aufgabe-5-fehlerfall">Aufgabe 5 – Fehlerfall</a></li>
+<li><a href="#merke-2" id="toc-merke-2">Merke</a></li>
+</ul></li>
+<li><a href="#unterprogramme-und-systematisches-problemlösen" id="toc-unterprogramme-und-systematisches-problemlösen">04 –
+Unterprogramme und systematisches Problemlösen</a>
+<ul>
+<li><a href="#rückblick-1" id="toc-rückblick-1">Rückblick</a></li>
+<li><a href="#teile-statt-eines-langen-programms" id="toc-teile-statt-eines-langen-programms">Teile statt eines langen
+Programms</a></li>
+<li><a href="#verbindung-zur-objektorientierung" id="toc-verbindung-zur-objektorientierung">Verbindung zur
+Objektorientierung</a></li>
+<li><a href="#aufgabe-1-rechts-drehen" id="toc-aufgabe-1-rechts-drehen">Aufgabe 1 – Rechts drehen</a></li>
+<li><a href="#aufgabe-2-teilprobleme" id="toc-aufgabe-2-teilprobleme">Aufgabe 2 – Teilprobleme</a></li>
+<li><a href="#aufgabe-3-wiederverwenden" id="toc-aufgabe-3-wiederverwenden">Aufgabe 3 – Wiederverwenden</a></li>
+<li><a href="#aufgabe-4-planen-vor-programmieren" id="toc-aufgabe-4-planen-vor-programmieren">Aufgabe 4 – Planen vor
+Programmieren</a></li>
+<li><a href="#aufgabe-5-debugging" id="toc-aufgabe-5-debugging">Aufgabe
+5 – Debugging</a></li>
+<li><a href="#merke-3" id="toc-merke-3">Merke</a></li>
+</ul></li>
+<li><a href="#karol-projekt-planen-programmieren-testen" id="toc-karol-projekt-planen-programmieren-testen">05 – Karol-Projekt:
+planen, programmieren, testen</a>
+<ul>
+<li><a href="#projektauftrag" id="toc-projektauftrag">Projektauftrag</a></li>
+<li><a href="#vorgehen" id="toc-vorgehen">Vorgehen</a></li>
+<li><a href="#dokumentation" id="toc-dokumentation">Dokumentation</a></li>
+<li><a href="#reflexion" id="toc-reflexion">Reflexion</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="robot-karol-kennenlernen">01 – Robot Karol kennenlernen</h1>
+<h2 id="leitfrage">Leitfrage</h2>
+<blockquote>
+<p>Wie wird aus einem Algorithmus ein Programm für einen Roboter?</p>
+</blockquote>
+<p>Robot Karol ist eine Lernumgebung, in der ein virtueller Roboter in
+einer Welt aus Feldern, Wänden und Ziegeln gesteuert wird.</p>
+<h2 id="grundbefehle">Grundbefehle</h2>
+<p>Je nach eingesetzter Version heißen die Befehle sinngemäß:</p>
+<ul>
+<li><code>Schritt</code></li>
+<li><code>LinksDrehen</code></li>
+<li><code>RechtsDrehen</code></li>
+<li><code>Hinlegen</code></li>
+<li><code>Aufheben</code></li>
+<li><code>MarkeSetzen</code></li>
+<li><code>MarkeLöschen</code></li>
+</ul>
+<p>Entscheidend ist: Karol führt Anweisungen genau in der angegebenen
+Reihenfolge aus.</p>
+<h2 id="aufgabe-1-vorhersagen">Aufgabe 1 – Vorhersagen</h2>
+<p>Beschreibe, wo Karol nach diesem Ablauf steht:</p>
+<pre class="text"><code>Schritt
+Schritt
+LinksDrehen
+Schritt</code></pre>
+<h2 id="aufgabe-2-rechteckweg">Aufgabe 2 – Rechteckweg</h2>
+<p>Plane einen Ablauf, mit dem Karol ein Rechteck mit Seitenlängen 4 und
+2 Feldern abläuft.</p>
+<h2 id="aufgabe-3-fehleranalyse">Aufgabe 3 – Fehleranalyse</h2>
+<p>Ein Schüler möchte Karol nach rechts drehen, verwendet aber dreimal
+<code>LinksDrehen</code>. Funktioniert das? Begründe.</p>
+<h2 id="aufgabe-4-ziegel">Aufgabe 4 – Ziegel</h2>
+<p>Plane einen Algorithmus, mit dem Karol drei Ziegel hintereinander
+ablegt.</p>
+<h2 id="programmieren-heißt-testen">Programmieren heißt testen</h2>
+<p>Nach jeder Änderung:</p>
+<ol type="1">
+<li>Welt in Ausgangslage bringen.</li>
+<li>Programm starten.</li>
+<li>Verhalten beobachten.</li>
+<li>Fehlerstelle finden.</li>
+<li>gezielt verändern.</li>
+</ol>
+<h2 id="merke">Merke</h2>
+<blockquote>
+<p>Ein Programm ist die konkrete Formulierung eines Algorithmus in den
+Befehlen einer Programmiersprache oder Lernumgebung.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="wiederholungen-in-robot-karol">02 – Wiederholungen in Robot
+Karol</h1>
+<h2 id="rückblick">Rückblick</h2>
+<p>Viele Programme enthalten gleiche Befehle mehrfach.</p>
+<blockquote>
+<p><strong>Leitfrage:</strong> Wie können wir Karol kürzere und
+übersichtlichere Programme geben?</p>
+</blockquote>
+<h2 id="feste-wiederholung">Feste Wiederholung</h2>
+<p>Statt fünfmal <code>Schritt</code> zu schreiben, verwenden wir eine
+Wiederholung.</p>
+<pre class="text"><code>wiederhole 5 mal
+    Schritt
+endewiederhole</code></pre>
+<p>Die genaue Schreibweise kann je nach verwendeter Karol-Version leicht
+abweichen. Das Prinzip bleibt gleich.</p>
+<h2 id="aufgabe-1">Aufgabe 1</h2>
+<p>Vereinfache einen Ablauf mit acht aufeinanderfolgenden Schritten.</p>
+<h2 id="aufgabe-2-quadrat">Aufgabe 2 – Quadrat</h2>
+<p>Entwickle einen Algorithmus, mit dem Karol ein Quadrat mit
+Seitenlänge 4 abläuft. Nutze Wiederholungen sinnvoll.</p>
+<h2 id="aufgabe-3-ziegelmuster">Aufgabe 3 – Ziegelmuster</h2>
+<p>Karol soll fünfmal einen Ziegel ablegen und danach einen Schritt
+gehen. Formuliere den Algorithmus.</p>
+<h2 id="verschachtelte-wiederholung">Verschachtelte Wiederholung</h2>
+<p>Eine Wiederholung kann eine weitere Wiederholung enthalten. Dadurch
+lassen sich regelmäßige Muster beschreiben.</p>
+<h2 id="aufgabe-4">Aufgabe 4</h2>
+<p>Plane ein 3 × 4-Muster aus Bewegungen oder Ziegeln. Kennzeichne
+äußere und innere Wiederholung.</p>
+<h2 id="aufgabe-5-lesbarkeit">Aufgabe 5 – Lesbarkeit</h2>
+<p>Vergleiche zwei Programme: eines mit vielen Einzelbefehlen und eines
+mit Wiederholungen. Welche Vorteile hat die strukturierte Version?</p>
+<h2 id="merke-1">Merke</h2>
+<blockquote>
+<p>Wiederholungen reduzieren doppelte Anweisungen und machen regelmäßige
+Abläufe leichter verständlich und veränderbar.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="bedingungen-und-sensoren-in-robot-karol">03 – Bedingungen und
+Sensoren in Robot Karol</h1>
+<h2 id="leitfrage-1">Leitfrage</h2>
+<blockquote>
+<p>Wie kann Karol auf seine Umgebung reagieren?</p>
+</blockquote>
+<p>Ein starres Programm funktioniert nur, wenn die Welt genau wie
+erwartet aufgebaut ist. Bedingungen machen Programme flexibler.</p>
+<h2 id="sensoren-als-fragen">Sensoren als Fragen</h2>
+<p>Karol kann seine Umgebung prüfen. Je nach Version stehen Abfragen
+sinngemäß zur Verfügung, zum Beispiel:</p>
+<ul>
+<li>Ist vorne frei?</li>
+<li>Ist links frei?</li>
+<li>Liegt hier ein Ziegel?</li>
+<li>Ist hier eine Marke?</li>
+</ul>
+<h2 id="entscheidung">Entscheidung</h2>
+<pre class="text"><code>wenn vorne frei dann
+    Schritt
+sonst
+    LinksDrehen
+endewenn</code></pre>
+<h2 id="aufgabe-1-1">Aufgabe 1</h2>
+<p>Beschreibe in Worten, was der Algorithmus macht.</p>
+<h2 id="aufgabe-2">Aufgabe 2</h2>
+<p>Karol soll einen Schritt gehen, wenn vor ihm frei ist. Ist dort eine
+Wand, soll er sich links drehen. Formuliere den Ablauf.</p>
+<h2 id="bedingte-wiederholung">Bedingte Wiederholung</h2>
+<pre class="text"><code>solange vorne frei
+    Schritt
+endesolange</code></pre>
+<p>Damit kann Karol unabhängig von der Länge eines Weges bis zur Wand
+laufen.</p>
+<h2 id="aufgabe-3">Aufgabe 3</h2>
+<p>Vergleiche feste Wiederholung und bedingte Wiederholung. Wann ist
+welche Variante besser?</p>
+<h2 id="aufgabe-4-ziegel-suchen">Aufgabe 4 – Ziegel suchen</h2>
+<p>Plane einen Algorithmus, der Karol vorwärts laufen lässt, bis er auf
+einem Feld mit Ziegel steht.</p>
+<h2 id="aufgabe-5-fehlerfall">Aufgabe 5 – Fehlerfall</h2>
+<p>Was passiert, wenn ein Algorithmus voraussetzt, dass irgendwann eine
+Wand kommt, die Welt aber unendlich bzw. sehr lang ist? Welche Rolle
+spielt die Endlichkeit eines Algorithmus?</p>
+<h2 id="merke-2">Merke</h2>
+<blockquote>
+<p>Bedingungen und Sensoren machen Programme abhängig von der aktuellen
+Situation statt nur von einer vorher bekannten Welt.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="unterprogramme-und-systematisches-problemlösen">04 –
+Unterprogramme und systematisches Problemlösen</h1>
+<h2 id="rückblick-1">Rückblick</h2>
+<p>Bedingungen und Wiederholungen machen Programme flexibler.</p>
+<blockquote>
+<p><strong>Leitfrage:</strong> Wie zerlegen wir größere Karol-Probleme
+in überschaubare Teilaufgaben?</p>
+</blockquote>
+<h2 id="teile-statt-eines-langen-programms">Teile statt eines langen
+Programms</h2>
+<p>Wiederkehrende Abläufe können als eigene Unterprogramme bzw.
+Anweisungsblöcke beschrieben werden.</p>
+<p>Beispiele:</p>
+<ul>
+<li><code>RechtsDrehen</code></li>
+<li><code>GeheBisZurWand</code></li>
+<li><code>LegeReihe</code></li>
+<li><code>BaueSaeule</code></li>
+</ul>
+<p>Ein sinnvoller Name beschreibt, <strong>was</strong> ein Teilprogramm
+leistet.</p>
+<h2 id="verbindung-zur-objektorientierung">Verbindung zur
+Objektorientierung</h2>
+<p>Karol ist ein Objekt. Befehle wie <code>Schritt</code> oder selbst
+definierte Abläufe können als Verhalten des Objekts verstanden werden.
+Damit verbinden sich Objektorientierung und Algorithmik.</p>
+<h2 id="aufgabe-1-rechts-drehen">Aufgabe 1 – Rechts drehen</h2>
+<p>Definiere <code>RechtsDrehen</code> ausschließlich mit vorhandenen
+Linksdrehungen.</p>
+<h2 id="aufgabe-2-teilprobleme">Aufgabe 2 – Teilprobleme</h2>
+<p>Zerlege die Aufgabe „Karol baut ein Rechteck aus Ziegeln“ in
+mindestens vier Teilprobleme.</p>
+<h2 id="aufgabe-3-wiederverwenden">Aufgabe 3 – Wiederverwenden</h2>
+<p>Welche Vorteile hat ein Unterprogramm, das an mehreren Stellen
+verwendet wird?</p>
+<h2 id="aufgabe-4-planen-vor-programmieren">Aufgabe 4 – Planen vor
+Programmieren</h2>
+<p>Erstelle für eine Karol-Aufgabe deiner Wahl:</p>
+<ol type="1">
+<li>Zielbeschreibung,</li>
+<li>Teilprobleme,</li>
+<li>benötigte Kontrollstrukturen,</li>
+<li>mindestens drei Testfälle,</li>
+<li>erst danach das Programm.</li>
+</ol>
+<h2 id="aufgabe-5-debugging">Aufgabe 5 – Debugging</h2>
+<p>Ordne die Schritte sinnvoll:</p>
+<ul>
+<li>Programm ändern</li>
+<li>Fehler reproduzieren</li>
+<li>erwartetes Verhalten festlegen</li>
+<li>Fehlerstelle eingrenzen</li>
+<li>erneut testen</li>
+</ul>
+<h2 id="merke-3">Merke</h2>
+<blockquote>
+<p>Größere Programme werden verständlicher, wenn wir sie in benannte,
+überschaubare Teilaufgaben zerlegen und systematisch testen.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="karol-projekt-planen-programmieren-testen">05 – Karol-Projekt:
+planen, programmieren, testen</h1>
+<h2 id="projektauftrag">Projektauftrag</h2>
+<p>Entwickle eine eigene Karol-Welt mit einer klaren Aufgabe. Dein
+Programm soll mindestens enthalten:</p>
+<ul>
+<li>eine Wiederholung,</li>
+<li>eine Bedingung,</li>
+<li>eine bedingte Wiederholung oder vergleichbare situationsabhängige
+Lösung,</li>
+<li>mindestens ein sinnvoll benanntes Unterprogramm,</li>
+<li>mindestens drei dokumentierte Testfälle.</li>
+</ul>
+<h2 id="vorgehen">Vorgehen</h2>
+<ol type="1">
+<li>Problem beschreiben.</li>
+<li>Welt skizzieren.</li>
+<li>Teilprobleme formulieren.</li>
+<li>Algorithmus in Blöcken planen.</li>
+<li>Programm umsetzen.</li>
+<li>mit Testfällen prüfen.</li>
+<li>Fehler verbessern.</li>
+<li>Lösung kurz dokumentieren.</li>
+</ol>
+<h2 id="dokumentation">Dokumentation</h2>
+<h3 id="ziel">Ziel</h3>
+<hr />
+<h3 id="teilprobleme">Teilprobleme</h3>
+<ol type="1">
+<li><hr /></li>
+<li><hr /></li>
+<li><hr /></li>
+</ol>
+<h3 id="verwendete-kontrollstrukturen">Verwendete
+Kontrollstrukturen</h3>
+<hr />
+<h3 id="testfälle">Testfälle</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Test</th>
+<th>Ausgangslage</th>
+<th>Erwartung</th>
+<th>Ergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="reflexion">Reflexion</h2>
+<p>Welche Programmstelle war am schwierigsten? Welche Änderung hat die
+Lösung verbessert?</p>
+</body>
+</html>

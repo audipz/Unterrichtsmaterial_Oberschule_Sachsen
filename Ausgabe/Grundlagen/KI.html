@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Grundlagen</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Grundlagen</h1>
+<p class="subtitle">KI</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#künstliche-intelligenz" id="toc-künstliche-intelligenz">Künstliche Intelligenz</a>
+<ul>
+<li><a href="#willkommen" id="toc-willkommen">Willkommen</a></li>
+<li><a href="#inhalte" id="toc-inhalte">Inhalte</a></li>
+</ul></li>
+<li><a href="#was-ist-künstliche-intelligenz" id="toc-was-ist-künstliche-intelligenz">Was ist Künstliche
+Intelligenz?</a>
+<ul>
+<li><a href="#ki-denkt-nicht." id="toc-ki-denkt-nicht.">KI denkt
+nicht.</a></li>
+<li><a href="#merke" id="toc-merke">Merke</a></li>
+</ul></li>
+<li><a href="#ki-im-alltag" id="toc-ki-im-alltag">KI im Alltag</a>
+<ul>
+<li><a href="#informatik" id="toc-informatik">Informatik</a></li>
+<li><a href="#merke-1" id="toc-merke-1">Merke</a></li>
+</ul></li>
+<li><a href="#ki-im-unterricht" id="toc-ki-im-unterricht">KI im
+Unterricht</a>
+<ul>
+<li><a href="#ki-ersetzt-keine-hausaufgaben." id="toc-ki-ersetzt-keine-hausaufgaben.">KI ersetzt keine
+Hausaufgaben.</a></li>
+<li><a href="#nicht-sinnvoll" id="toc-nicht-sinnvoll">Nicht
+sinnvoll</a></li>
+<li><a href="#merke-2" id="toc-merke-2">Merke</a></li>
+</ul></li>
+<li><a href="#gute-prompts" id="toc-gute-prompts">Gute Prompts</a>
+<ul>
+<li><a href="#schlechter-prompt" id="toc-schlechter-prompt">Schlechter
+Prompt</a></li>
+<li><a href="#besser" id="toc-besser">Besser</a></li>
+<li><a href="#gute-prompts-enthalten" id="toc-gute-prompts-enthalten">Gute Prompts enthalten</a></li>
+<li><a href="#merke-3" id="toc-merke-3">Merke</a></li>
+</ul></li>
+<li><a href="#grenzen-von-ki" id="toc-grenzen-von-ki">Grenzen von KI</a>
+<ul>
+<li><a href="#halluzinationen" id="toc-halluzinationen">Halluzinationen</a></li>
+<li><a href="#deshalb-gilt" id="toc-deshalb-gilt">Deshalb gilt</a></li>
+<li><a href="#merke-4" id="toc-merke-4">Merke</a></li>
+</ul></li>
+<li><a href="#datenschutz" id="toc-datenschutz">Datenschutz</a>
+<ul>
+<li><a href="#nicht-eingeben" id="toc-nicht-eingeben">Nicht
+eingeben</a></li>
+<li><a href="#besser-1" id="toc-besser-1">Besser</a></li>
+<li><a href="#merke-5" id="toc-merke-5">Merke</a></li>
+</ul></li>
+<li><a href="#urheberrecht" id="toc-urheberrecht">Urheberrecht</a>
+<ul>
+<li><a href="#beachte" id="toc-beachte">Beachte</a></li>
+<li><a href="#deshalb" id="toc-deshalb">Deshalb</a></li>
+<li><a href="#merke-6" id="toc-merke-6">Merke</a></li>
+</ul></li>
+<li><a href="#weiterlernen" id="toc-weiterlernen">Weiterlernen</a>
+<ul>
+<li><a href="#empfehlenswerte-angebote" id="toc-empfehlenswerte-angebote">Empfehlenswerte Angebote</a></li>
+<li><a href="#tipp" id="toc-tipp">Tipp</a></li>
+</ul></li>
+<li><a href="#quellen" id="toc-quellen">Quellen</a></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="künstliche-intelligenz">Künstliche Intelligenz</h1>
+<h2 id="willkommen">Willkommen</h2>
+<p>Künstliche Intelligenz (KI) begegnet uns heute fast überall.</p>
+<p>Sie hilft beim Übersetzen, Schreiben, Programmieren, Erkennen von
+Bildern und beim Beantworten von Fragen.</p>
+<p>Auch im Informatikunterricht kann KI unterstützen.</p>
+<p>Dabei gilt:</p>
+<blockquote>
+<p>KI ersetzt nicht das Denken.</p>
+</blockquote>
+<p>KI kann Vorschläge machen.</p>
+<p>Ob diese richtig sind, muss immer der Mensch entscheiden.</p>
+<hr />
+<h2 id="inhalte">Inhalte</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Datei</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>01_Was_ist_KI.md</td>
+<td>Grundlagen</td>
+</tr>
+<tr class="even">
+<td>02_Wie_funktioniert_KI.md</td>
+<td>Funktionsweise</td>
+</tr>
+<tr class="odd">
+<td>03_KI_im_Alltag.md</td>
+<td>Beispiele</td>
+</tr>
+<tr class="even">
+<td>04_KI_im_Unterricht.md</td>
+<td>KI sinnvoll nutzen</td>
+</tr>
+<tr class="odd">
+<td>05_Prompting.md</td>
+<td>Gute Fragen stellen</td>
+</tr>
+<tr class="even">
+<td>06_Grenzen.md</td>
+<td>Fehler und Halluzinationen</td>
+</tr>
+<tr class="odd">
+<td>07_Datenschutz.md</td>
+<td>Datenschutz</td>
+</tr>
+<tr class="even">
+<td>08_Urheberrecht.md</td>
+<td>Urheberrecht</td>
+</tr>
+<tr class="odd">
+<td>09_Weiterlernen.md</td>
+<td>Weitere Informationen</td>
+</tr>
+<tr class="even">
+<td>10_Quellen.md</td>
+<td>Quellen</td>
+</tr>
+</tbody>
+</table>
+<div class="page-break"></div>
+<h1 id="was-ist-künstliche-intelligenz">Was ist Künstliche
+Intelligenz?</h1>
+<p>Künstliche Intelligenz bezeichnet Computersysteme,</p>
+<p>die Aufgaben lösen können,</p>
+<p>für die normalerweise menschliche Intelligenz notwendig ist.</p>
+<p>Dazu gehören beispielsweise</p>
+<ul>
+<li>Sprache verstehen,</li>
+<li>Texte schreiben,</li>
+<li>Bilder erkennen,</li>
+<li>Muster finden,</li>
+<li>Vorhersagen treffen.</li>
+</ul>
+<hr />
+<h2 id="ki-denkt-nicht.">KI denkt nicht.</h2>
+<p>Eine KI besitzt</p>
+<ul>
+<li>kein Bewusstsein,</li>
+<li>keine Gefühle,</li>
+<li>keine eigenen Erfahrungen.</li>
+</ul>
+<p>Sie verarbeitet Daten</p>
+<p>und berechnet Wahrscheinlichkeiten.</p>
+<hr />
+<h2 id="merke">Merke</h2>
+<p>Eine KI beantwortet Fragen.</p>
+<p>Denken musst weiterhin du.</p>
+<div class="page-break"></div>
+<h1 id="ki-im-alltag">KI im Alltag</h1>
+<p>KI begegnet uns täglich.</p>
+<p>Zum Beispiel</p>
+<ul>
+<li>Sprachassistenten</li>
+<li>Übersetzungsprogramme</li>
+<li>Suchmaschinen</li>
+<li>Navigation</li>
+<li>Bilderkennung</li>
+<li>Musikempfehlungen</li>
+<li>Chatbots</li>
+</ul>
+<hr />
+<h2 id="informatik">Informatik</h2>
+<p>Auch Programmierer nutzen heute KI.</p>
+<p>Zum Beispiel</p>
+<ul>
+<li>Code erklären</li>
+<li>Fehler suchen</li>
+<li>Dokumentationen schreiben</li>
+</ul>
+<hr />
+<h2 id="merke-1">Merke</h2>
+<p>KI unterstützt Menschen.</p>
+<p>Sie ersetzt sie nicht.</p>
+<div class="page-break"></div>
+<h1 id="ki-im-unterricht">KI im Unterricht</h1>
+<p>KI kann helfen,</p>
+<ul>
+<li>Texte zusammenzufassen,</li>
+<li>Programme zu erklären,</li>
+<li>Beispiele zu finden,</li>
+<li>Fehler zu erkennen.</li>
+</ul>
+<hr />
+<h2 id="ki-ersetzt-keine-hausaufgaben.">KI ersetzt keine
+Hausaufgaben.</h2>
+<p>Nutze KI,</p>
+<p>um</p>
+<ul>
+<li>Zusammenhänge zu verstehen,</li>
+<li>Ideen zu sammeln,</li>
+<li>Lösungen zu überprüfen.</li>
+</ul>
+<hr />
+<h2 id="nicht-sinnvoll">Nicht sinnvoll</h2>
+<p>KI einfach abschreiben.</p>
+<p>Dann lernst du nichts.</p>
+<hr />
+<h2 id="merke-2">Merke</h2>
+<p>KI ist ein Werkzeug.</p>
+<p>Lernen musst du selbst.</p>
+<div class="page-break"></div>
+<h1 id="gute-prompts">Gute Prompts</h1>
+<p>Eine KI beantwortet Fragen.</p>
+<p>Je besser die Frage,</p>
+<p>desto besser die Antwort.</p>
+<hr />
+<h2 id="schlechter-prompt">Schlechter Prompt</h2>
+<pre><code>Schreibe ein Programm.</code></pre>
+<hr />
+<h2 id="besser">Besser</h2>
+<pre><code>Schreibe ein Python-Programm,
+
+das drei Zahlen addiert
+
+und erkläre jede Zeile.</code></pre>
+<hr />
+<h2 id="gute-prompts-enthalten">Gute Prompts enthalten</h2>
+<ul>
+<li>Aufgabe</li>
+<li>Programmiersprache</li>
+<li>Ziel</li>
+<li>gewünschte Erklärung</li>
+</ul>
+<hr />
+<h2 id="merke-3">Merke</h2>
+<p>Gute Fragen führen zu besseren Antworten.</p>
+<div class="page-break"></div>
+<h1 id="grenzen-von-ki">Grenzen von KI</h1>
+<p>KI macht Fehler.</p>
+<p>Diese Fehler sind manchmal schwer zu erkennen.</p>
+<hr />
+<h2 id="halluzinationen">Halluzinationen</h2>
+<p>Manchmal erfindet eine KI</p>
+<ul>
+<li>Quellen,</li>
+<li>Fakten,</li>
+<li>Programme,</li>
+<li>Personen.</li>
+</ul>
+<p>Diese Antworten wirken oft überzeugend.</p>
+<p>Sind aber falsch.</p>
+<hr />
+<h2 id="deshalb-gilt">Deshalb gilt</h2>
+<p>Prüfe wichtige Informationen immer.</p>
+<p>Nutze mehrere Quellen.</p>
+<hr />
+<h2 id="merke-4">Merke</h2>
+<p>Nicht jede Antwort einer KI ist richtig.</p>
+<div class="page-break"></div>
+<h1 id="datenschutz">Datenschutz</h1>
+<p>Überlege,</p>
+<p>welche Informationen du einer KI gibst.</p>
+<hr />
+<h2 id="nicht-eingeben">Nicht eingeben</h2>
+<ul>
+<li>Passwörter</li>
+<li>Telefonnummern</li>
+<li>Adressen</li>
+<li>Zeugnisse</li>
+<li>persönliche Daten anderer Personen</li>
+</ul>
+<hr />
+<h2 id="besser-1">Besser</h2>
+<p>Verwende neutrale Beispiele.</p>
+<hr />
+<h2 id="merke-5">Merke</h2>
+<p>Persönliche Daten gehören nicht in öffentliche KI-Systeme.</p>
+<div class="page-break"></div>
+<h1 id="urheberrecht">Urheberrecht</h1>
+<p>Auch bei der Nutzung von KI gilt das Urheberrecht.</p>
+<hr />
+<h2 id="beachte">Beachte</h2>
+<p>Texte</p>
+<p>Bilder</p>
+<p>Musik</p>
+<p>Programme</p>
+<p>können urheberrechtlich geschützt sein.</p>
+<hr />
+<h2 id="deshalb">Deshalb</h2>
+<p>Prüfe,</p>
+<p>ob Inhalte weiterverwendet werden dürfen.</p>
+<p>Gib Quellen an.</p>
+<hr />
+<h2 id="merke-6">Merke</h2>
+<p>KI hebt das Urheberrecht nicht auf.</p>
+<div class="page-break"></div>
+<h1 id="weiterlernen">Weiterlernen</h1>
+<h2 id="empfehlenswerte-angebote">Empfehlenswerte Angebote</h2>
+<ul>
+<li>klicksafe</li>
+<li>Internet-ABC</li>
+<li>Bundeszentrale für politische Bildung</li>
+<li>OpenAI Learn</li>
+<li>AI for Oceans</li>
+<li>Elements of AI</li>
+</ul>
+<hr />
+<h2 id="tipp">Tipp</h2>
+<p>Nutze verschiedene Quellen.</p>
+<p>Vergleiche Informationen.</p>
+<div class="page-break"></div>
+<h1 id="quellen">Quellen</h1>
+<p>OpenAI</p>
+<p>https://openai.com</p>
+<hr />
+<p>klicksafe</p>
+<p>https://www.klicksafe.de</p>
+<hr />
+<p>Bundeszentrale für politische Bildung</p>
+<p>https://www.bpb.de</p>
+<hr />
+<p>Elements of AI</p>
+<p>https://www.elementsofai.com</p>
+<hr />
+<p>Internet-ABC</p>
+<p>https://www.internet-abc.de</p>
+</body>
+</html>

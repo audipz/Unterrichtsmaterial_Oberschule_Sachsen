@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Informationen und Daten</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Informationen und Daten</h1>
+<p class="subtitle">Informatik · Klasse 9 · Material</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#material" id="toc-material">Material</a></li>
+<li><a href="#m01-datensatzkarten" id="toc-m01-datensatzkarten">M01 –
+Datensatzkarten</a>
+<ul>
+<li><a href="#aufgabe" id="toc-aufgabe">Aufgabe</a></li>
+<li><a href="#schüler-a" id="toc-schüler-a">Schüler A</a></li>
+<li><a href="#schüler-b" id="toc-schüler-b">Schüler B</a></li>
+<li><a href="#schüler-c" id="toc-schüler-c">Schüler C</a></li>
+<li><a href="#leitfragen" id="toc-leitfragen">Leitfragen</a></li>
+</ul></li>
+<li><a href="#m02-klassen-objekte-und-attribute" id="toc-m02-klassen-objekte-und-attribute">M02 – Klassen, Objekte und
+Attribute</a>
+<ul>
+<li><a href="#karten-sortieren" id="toc-karten-sortieren">Karten
+sortieren</a></li>
+<li><a href="#lösungsschema" id="toc-lösungsschema">Lösungsschema</a></li>
+<li><a href="#transfer" id="toc-transfer">Transfer</a></li>
+</ul></li>
+<li><a href="#m03-primärschlüssel-prüfen" id="toc-m03-primärschlüssel-prüfen">M03 – Primärschlüssel prüfen</a>
+<ul>
+<li><a href="#tabelle-schüler" id="toc-tabelle-schüler">Tabelle
+Schüler</a></li>
+<li><a href="#kriterien" id="toc-kriterien">Kriterien</a></li>
+<li><a href="#zusatzfrage" id="toc-zusatzfrage">Zusatzfrage</a></li>
+</ul></li>
+<li><a href="#m04-fremdschlüssel-und-beziehungen" id="toc-m04-fremdschlüssel-und-beziehungen">M04 – Fremdschlüssel und
+Beziehungen</a>
+<ul>
+<li><a href="#ausgangstabellen" id="toc-ausgangstabellen">Ausgangstabellen</a></li>
+<li><a href="#aufgaben" id="toc-aufgaben">Aufgaben</a></li>
+<li><a href="#merksatz" id="toc-merksatz">Merksatz</a></li>
+</ul></li>
+<li><a href="#m05-crud-karten" id="toc-m05-crud-karten">M05 –
+CRUD-Karten</a>
+<ul>
+<li><a href="#karte-a" id="toc-karte-a">Karte A</a></li>
+<li><a href="#karte-b" id="toc-karte-b">Karte B</a></li>
+<li><a href="#karte-c" id="toc-karte-c">Karte C</a></li>
+<li><a href="#karte-d" id="toc-karte-d">Karte D</a></li>
+<li><a href="#zuordnung" id="toc-zuordnung">Zuordnung</a></li>
+<li><a href="#wichtig" id="toc-wichtig">Wichtig</a></li>
+</ul></li>
+<li><a href="#m06-sql-befehlskarten" id="toc-m06-sql-befehlskarten">M06
+– SQL-Befehlskarten</a>
+<ul>
+<li><a href="#select" id="toc-select">SELECT</a></li>
+<li><a href="#where" id="toc-where">WHERE</a></li>
+<li><a href="#order-by" id="toc-order-by">ORDER BY</a></li>
+<li><a href="#insert" id="toc-insert">INSERT</a></li>
+<li><a href="#update" id="toc-update">UPDATE</a></li>
+<li><a href="#delete" id="toc-delete">DELETE</a></li>
+<li><a href="#create-table" id="toc-create-table">CREATE TABLE</a></li>
+<li><a href="#aufgabe-1" id="toc-aufgabe-1">Aufgabe</a></li>
+</ul></li>
+<li><a href="#m07-sql-fehlersuche" id="toc-m07-sql-fehlersuche">M07 –
+SQL-Fehlersuche</a>
+<ul>
+<li><a href="#a" id="toc-a">A</a></li>
+<li><a href="#b" id="toc-b">B</a></li>
+<li><a href="#c" id="toc-c">C</a></li>
+<li><a href="#d" id="toc-d">D</a></li>
+<li><a href="#e" id="toc-e">E</a></li>
+</ul></li>
+<li><a href="#m08-normalisierung" id="toc-m08-normalisierung">M08 –
+Normalisierung</a>
+<ul>
+<li><a href="#ausgangstabelle" id="toc-ausgangstabelle">Ausgangstabelle</a></li>
+<li><a href="#aufgaben-1" id="toc-aufgaben-1">Aufgaben</a></li>
+<li><a href="#ziel" id="toc-ziel">Ziel</a></li>
+</ul></li>
+<li><a href="#m09-denormalisierung" id="toc-m09-denormalisierung">M09 –
+Denormalisierung</a>
+<ul>
+<li><a href="#situation" id="toc-situation">Situation</a></li>
+<li><a href="#auftrag" id="toc-auftrag">Auftrag</a></li>
+<li><a href="#merksatz-1" id="toc-merksatz-1">Merksatz</a></li>
+</ul></li>
+<li><a href="#m10-sqlite-arbeitskarte" id="toc-m10-sqlite-arbeitskarte">M10 – SQLite-Arbeitskarte</a>
+<ul>
+<li><a href="#ziel-1" id="toc-ziel-1">Ziel</a></li>
+<li><a href="#datenbank-öffnen" id="toc-datenbank-öffnen">1. Datenbank
+öffnen</a></li>
+<li><a href="#übersicht-einschalten" id="toc-übersicht-einschalten">2.
+Übersicht einschalten</a></li>
+<li><a href="#fremdschlüssel-aktivieren" id="toc-fremdschlüssel-aktivieren">3. Fremdschlüssel aktivieren</a></li>
+<li><a href="#tabellen-anzeigen" id="toc-tabellen-anzeigen">4. Tabellen
+anzeigen</a></li>
+<li><a href="#daten-lesen" id="toc-daten-lesen">5. Daten lesen</a></li>
+<li><a href="#crud-durchführen" id="toc-crud-durchführen">6. CRUD
+durchführen</a></li>
+<li><a href="#beenden" id="toc-beenden">7. Beenden</a></li>
+<li><a href="#hilfe" id="toc-hilfe">Hilfe</a></li>
+</ul></li>
+<li><a href="#m11-db-browser-for-sqlite-arbeitskarte" id="toc-m11-db-browser-for-sqlite-arbeitskarte">M11 – DB Browser for
+SQLite – Arbeitskarte</a>
+<ul>
+<li><a href="#ablauf" id="toc-ablauf">Ablauf</a></li>
+<li><a href="#übung" id="toc-übung">Übung</a></li>
+<li><a href="#wichtig-1" id="toc-wichtig-1">Wichtig</a></li>
+</ul></li>
+<li><a href="#m12-datenqualität-prüfen" id="toc-m12-datenqualität-prüfen">M12 – Datenqualität prüfen</a>
+<ul>
+<li><a href="#checkliste" id="toc-checkliste">Checkliste</a></li>
+<li><a href="#bewertung" id="toc-bewertung">Bewertung</a></li>
+</ul></li>
+<li><a href="#m13-datenschutz-fallkarten" id="toc-m13-datenschutz-fallkarten">M13 – Datenschutz-Fallkarten</a>
+<ul>
+<li><a href="#fall-a" id="toc-fall-a">Fall A</a></li>
+<li><a href="#fall-b" id="toc-fall-b">Fall B</a></li>
+<li><a href="#fall-c" id="toc-fall-c">Fall C</a></li>
+<li><a href="#fall-d" id="toc-fall-d">Fall D</a></li>
+</ul></li>
+<li><a href="#m14-sql-referenzkarte" id="toc-m14-sql-referenzkarte">M14
+– SQL-Referenzkarte</a>
+<ul>
+<li><a href="#tabelle" id="toc-tabelle">Tabelle</a></li>
+<li><a href="#create" id="toc-create">Create</a></li>
+<li><a href="#read" id="toc-read">Read</a></li>
+<li><a href="#update-1" id="toc-update-1">Update</a></li>
+<li><a href="#delete-1" id="toc-delete-1">Delete</a></li>
+<li><a href="#sortieren" id="toc-sortieren">Sortieren</a></li>
+<li><a href="#eindeutigkeit" id="toc-eindeutigkeit">Eindeutigkeit</a></li>
+<li><a href="#beziehung" id="toc-beziehung">Beziehung</a></li>
+</ul></li>
+<li><a href="#m15-peer-review-datenmodell" id="toc-m15-peer-review-datenmodell">M15 – Peer-Review Datenmodell</a>
+<ul>
+<li><a href="#bewertetes-modell" id="toc-bewertetes-modell">Bewertetes
+Modell</a></li>
+<li><a href="#prüft" id="toc-prüft">Prüft</a></li>
+<li><a href="#eine-stärke" id="toc-eine-stärke">Eine Stärke</a></li>
+<li><a href="#eine-unklarheit" id="toc-eine-unklarheit">Eine
+Unklarheit</a></li>
+<li><a href="#ein-verbesserungsvorschlag" id="toc-ein-verbesserungsvorschlag">Ein Verbesserungsvorschlag</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="material">Material</h1>
+<p>Dieser Ordner enthält ergänzende Unterrichtsmaterialien zum
+Lernbereich <strong>Informationen und Daten</strong>.</p>
+<p>Die Materialien unterstützen insbesondere:</p>
+<ul>
+<li>Datenmodellierung,</li>
+<li>Tabellen und Datensätze,</li>
+<li>Primär- und Fremdschlüssel,</li>
+<li>SQL und CRUD,</li>
+<li>Suchen, Filtern und Sortieren,</li>
+<li>Datenqualität,</li>
+<li>Datenschutz,</li>
+<li>Big Data und künstliche Intelligenz.</li>
+</ul>
+<p>Für grundlegende SQL-Erklärungen wird auf</p>
+<pre class="text"><code>Grundlagen/SQL/</code></pre>
+<p>verwiesen.</p>
+<p>Für die konkrete Arbeit mit SQLite wird auf</p>
+<pre class="text"><code>Werkzeuge/SQLite/</code></pre>
+<p>verwiesen.</p>
+<div class="page-break"></div>
+<h1 id="m01-datensatzkarten">M01 – Datensatzkarten</h1>
+<h2 id="aufgabe">Aufgabe</h2>
+<p>Ordnet die Karten so, dass aus einzelnen Informationen sinnvolle
+Datensätze entstehen.</p>
+<hr />
+<h2 id="schüler-a">Schüler A</h2>
+<pre class="text"><code>SchuelerID: 1001
+Name: Mia
+Klasse: 9a
+Geburtsjahr: 2011</code></pre>
+<hr />
+<h2 id="schüler-b">Schüler B</h2>
+<pre class="text"><code>SchuelerID: 1002
+Name: Tim
+Klasse: 9a
+Geburtsjahr: 2010</code></pre>
+<hr />
+<h2 id="schüler-c">Schüler C</h2>
+<pre class="text"><code>SchuelerID: 1003
+Name: Lea
+Klasse: 9b
+Geburtsjahr: 2011</code></pre>
+<hr />
+<h2 id="leitfragen">Leitfragen</h2>
+<ol type="1">
+<li>Welche Attribute besitzt jeder Datensatz?</li>
+<li>Welches Attribut eignet sich als Primärschlüssel?</li>
+<li>Warum eignet sich der Name nicht zuverlässig als
+Primärschlüssel?</li>
+<li>Welche weiteren Attribute könnten sinnvoll sein?</li>
+</ol>
+<div class="page-break"></div>
+<h1 id="m02-klassen-objekte-und-attribute">M02 – Klassen, Objekte und
+Attribute</h1>
+<h2 id="karten-sortieren">Karten sortieren</h2>
+<p>Ordnet die Begriffe:</p>
+<pre class="text"><code>Schueler
+Mia
+Tim
+SchuelerID
+Name
+Geburtsdatum
+Klasse
+9a</code></pre>
+<p>in die Kategorien:</p>
+<ul>
+<li>Klasse</li>
+<li>Objekt</li>
+<li>Attribut</li>
+<li>Attributwert</li>
+</ul>
+<h2 id="lösungsschema">Lösungsschema</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Begriff</th>
+<th>Kategorie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="transfer">Transfer</h2>
+<p>Erstellt dieselbe Zuordnung für:</p>
+<pre class="text"><code>Buch
+Kurs
+Lehrkraft
+Raum</code></pre>
+<div class="page-break"></div>
+<h1 id="m03-primärschlüssel-prüfen">M03 – Primärschlüssel prüfen</h1>
+<p>Entscheidet für jedes Attribut:</p>
+<ul>
+<li>geeignet,</li>
+<li>bedingt geeignet,</li>
+<li>ungeeignet.</li>
+</ul>
+<h2 id="tabelle-schüler">Tabelle Schüler</h2>
+<pre class="text"><code>Name
+Geburtsdatum
+E-Mail
+Schuelernummer
+SchuelerID</code></pre>
+<h2 id="kriterien">Kriterien</h2>
+<p>Ein guter Primärschlüssel sollte:</p>
+<ul>
+<li>eindeutig,</li>
+<li>stabil,</li>
+<li>möglichst kurz,</li>
+<li>immer vorhanden</li>
+</ul>
+<p>sein.</p>
+<h2 id="zusatzfrage">Zusatzfrage</h2>
+<p>Welche Attribute könnten zusätzlich mit <code>UNIQUE</code>
+abgesichert werden?</p>
+<div class="page-break"></div>
+<h1 id="m04-fremdschlüssel-und-beziehungen">M04 – Fremdschlüssel und
+Beziehungen</h1>
+<h2 id="ausgangstabellen">Ausgangstabellen</h2>
+<h3 id="klasse">Klasse</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">KlasseID</th>
+<th>Bezeichnung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td>9a</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td>9b</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schüler">Schüler</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">SchuelerID</th>
+<th>Name</th>
+<th style="text-align: right;">KlasseID</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1001</td>
+<td>Mia</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1002</td>
+<td>Tim</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1003</td>
+<td>Lea</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="aufgaben">Aufgaben</h2>
+<ol type="1">
+<li>Markiert die Primärschlüssel.</li>
+<li>Markiert den Fremdschlüssel.</li>
+<li>Beschreibt die Beziehung.</li>
+<li>Was wäre an folgendem Datensatz problematisch?</li>
+</ol>
+<pre class="text"><code>SchuelerID: 1004
+Name: Noah
+KlasseID: 99</code></pre>
+<h2 id="merksatz">Merksatz</h2>
+<blockquote>
+<p>Ein Fremdschlüssel verweist auf einen vorhandenen Datensatz einer
+anderen Tabelle.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="m05-crud-karten">M05 – CRUD-Karten</h1>
+<p>Schneidet die Karten aus und ordnet sie den vier CRUD-Operationen
+zu.</p>
+<hr />
+<h2 id="karte-a">Karte A</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> Schueler (SchuelerID, Name)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">1001</span>, <span class="st">&#39;Mia&#39;</span>);</span></code></pre></div>
+<hr />
+<h2 id="karte-b">Karte B</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">1001</span>;</span></code></pre></div>
+<hr />
+<h2 id="karte-c">Karte C</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> Schueler</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> Name <span class="op">=</span> <span class="st">&#39;Mia Müller&#39;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">1001</span>;</span></code></pre></div>
+<hr />
+<h2 id="karte-d">Karte D</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> Schueler</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">1001</span>;</span></code></pre></div>
+<hr />
+<h2 id="zuordnung">Zuordnung</h2>
+<table>
+<thead>
+<tr class="header">
+<th>CRUD</th>
+<th>SQL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Read</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Update</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Delete</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="wichtig">Wichtig</h2>
+<p><code>CREATE TABLE</code> gehört nicht zum CRUD-Create. CRUD-Create
+meint das Anlegen eines <strong>Datensatzes</strong>.</p>
+<div class="page-break"></div>
+<h1 id="m06-sql-befehlskarten">M06 – SQL-Befehlskarten</h1>
+<h2 id="select">SELECT</h2>
+<p>Daten lesen.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Name</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler;</span></code></pre></div>
+<hr />
+<h2 id="where">WHERE</h2>
+<p>Daten filtern.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> KlasseID <span class="op">=</span> <span class="dv">1</span></span></code></pre></div>
+<hr />
+<h2 id="order-by">ORDER BY</h2>
+<p>Daten sortieren.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Name <span class="kw">ASC</span></span></code></pre></div>
+<hr />
+<h2 id="insert">INSERT</h2>
+<p>Datensatz anlegen.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> <span class="op">..</span>.</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="op">..</span>.);</span></code></pre></div>
+<hr />
+<h2 id="update">UPDATE</h2>
+<p>Datensatz ändern.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> <span class="op">..</span>.</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> <span class="op">..</span>.</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="op">..</span>.;</span></code></pre></div>
+<hr />
+<h2 id="delete">DELETE</h2>
+<p>Datensatz löschen.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> <span class="op">..</span>.</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="op">..</span>.;</span></code></pre></div>
+<hr />
+<h2 id="create-table">CREATE TABLE</h2>
+<p>Tabelle anlegen.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="op">..</span>.</span></code></pre></div>
+<hr />
+<h2 id="aufgabe-1">Aufgabe</h2>
+<p>Erstellt aus mehreren Karten eine sinnvolle SQL-Abfrage.</p>
+<div class="page-break"></div>
+<h1 id="m07-sql-fehlersuche">M07 – SQL-Fehlersuche</h1>
+<p>Findet die Fehler.</p>
+<h2 id="a">A</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Name</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>Schueler;</span></code></pre></div>
+<h2 id="b">B</h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> Schueler</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>Name <span class="op">=</span> <span class="st">&#39;Mia&#39;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">1</span>;</span></code></pre></div>
+<h2 id="c">C</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> Schueler</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> SchuelerID <span class="op">=</span> <span class="dv">1</span>;</span></code></pre></div>
+<h2 id="d">D</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> Name <span class="op">=</span> Mia;</span></code></pre></div>
+<h2 id="e">E</h2>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> Schueler</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> KlasseID <span class="op">=</span> <span class="dv">2</span>;</span></code></pre></div>
+<h3 id="zusatzfrage-1">Zusatzfrage</h3>
+<p>Die letzte Anweisung ist syntaktisch korrekt. Warum kann sie trotzdem
+gefährlich sein?</p>
+<div class="page-break"></div>
+<h1 id="m08-normalisierung">M08 – Normalisierung</h1>
+<h2 id="ausgangstabelle">Ausgangstabelle</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">SchuelerID</th>
+<th>Name</th>
+<th>Klasse</th>
+<th>Klassenlehrer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1001</td>
+<td>Mia</td>
+<td>9a</td>
+<td>Frau Müller</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1002</td>
+<td>Tim</td>
+<td>9a</td>
+<td>Frau Müller</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1003</td>
+<td>Lea</td>
+<td>9b</td>
+<td>Herr Weber</td>
+</tr>
+</tbody>
+</table>
+<h2 id="aufgaben-1">Aufgaben</h2>
+<ol type="1">
+<li>Welche Daten werden mehrfach gespeichert?</li>
+<li>Welche Probleme entstehen bei Änderungen?</li>
+<li>Zerlegt die Tabelle in:</li>
+</ol>
+<pre class="text"><code>Schueler
+Klasse</code></pre>
+<ol start="4" type="1">
+<li>Ergänzt Primär- und Fremdschlüssel.</li>
+</ol>
+<h2 id="ziel">Ziel</h2>
+<p>Eine mögliche Struktur:</p>
+<pre class="text"><code>Klasse
+- KlasseID
+- Bezeichnung
+- Klassenlehrer
+
+Schueler
+- SchuelerID
+- Name
+- KlasseID</code></pre>
+<div class="page-break"></div>
+<h1 id="m09-denormalisierung">M09 – Denormalisierung</h1>
+<h2 id="situation">Situation</h2>
+<p>Eine große Auswertung wird tausendfach pro Minute gelesen.</p>
+<p>Für jede Anzeige sind mehrere Joins nötig.</p>
+<p>Das Entwicklungsteam schlägt vor, einige bereits berechnete Werte
+zusätzlich zu speichern.</p>
+<h2 id="auftrag">Auftrag</h2>
+<p>Bewertet den Vorschlag.</p>
+<h3 id="vorteile">Vorteile</h3>
+<hr />
+<h3 id="nachteile">Nachteile</h3>
+<hr />
+<h3 id="risiken">Risiken</h3>
+<hr />
+<h3 id="wann-wäre-die-entscheidung-sinnvoll">Wann wäre die Entscheidung
+sinnvoll?</h3>
+<hr />
+<h2 id="merksatz-1">Merksatz</h2>
+<blockquote>
+<p>Redundanz kann bewusst eingesetzt werden, wenn der Nutzen die
+zusätzlichen Risiken und Pflegekosten rechtfertigt.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="m10-sqlite-arbeitskarte">M10 – SQLite-Arbeitskarte</h1>
+<h2 id="ziel-1">Ziel</h2>
+<p>Eine Datenbank öffnen, SQL ausführen und CRUD anwenden.</p>
+<h2 id="datenbank-öffnen">1. Datenbank öffnen</h2>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite3</span> schule.db</span></code></pre></div>
+<h2 id="übersicht-einschalten">2. Übersicht einschalten</h2>
+<pre class="text"><code>.headers on
+.mode column</code></pre>
+<h2 id="fremdschlüssel-aktivieren">3. Fremdschlüssel aktivieren</h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>PRAGMA foreign_keys <span class="op">=</span> <span class="kw">ON</span>;</span></code></pre></div>
+<h2 id="tabellen-anzeigen">4. Tabellen anzeigen</h2>
+<pre class="text"><code>.tables</code></pre>
+<h2 id="daten-lesen">5. Daten lesen</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler;</span></code></pre></div>
+<h2 id="crud-durchführen">6. CRUD durchführen</h2>
+<ul>
+<li>INSERT</li>
+<li>SELECT</li>
+<li>UPDATE</li>
+<li>DELETE</li>
+</ul>
+<h2 id="beenden">7. Beenden</h2>
+<pre class="text"><code>.quit</code></pre>
+<h2 id="hilfe">Hilfe</h2>
+<p>Ausführliche Anleitung:</p>
+<pre class="text"><code>Werkzeuge/SQLite/</code></pre>
+<div class="page-break"></div>
+<h1 id="m11-db-browser-for-sqlite-arbeitskarte">M11 – DB Browser for
+SQLite – Arbeitskarte</h1>
+<h2 id="ablauf">Ablauf</h2>
+<ol type="1">
+<li>Datenbank öffnen oder neu anlegen.</li>
+<li>Register <strong>SQL ausführen</strong> öffnen.</li>
+<li>SQL-Anweisung eingeben.</li>
+<li>Anweisung ausführen.</li>
+<li>Ergebnis kontrollieren.</li>
+<li>Änderungen speichern.</li>
+</ol>
+<h2 id="übung">Übung</h2>
+<p>Führt aus:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler;</span></code></pre></div>
+<p>Danach:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> Schueler</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    (SchuelerID, Name)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    (<span class="dv">2001</span>, <span class="st">&#39;Alex&#39;</span>);</span></code></pre></div>
+<p>Prüft anschließend erneut:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Schueler;</span></code></pre></div>
+<h2 id="wichtig-1">Wichtig</h2>
+<p>Die grafische Oberfläche unterstützt euch beim Arbeiten.</p>
+<blockquote>
+<p>SQL soll trotzdem bewusst geschrieben und verstanden werden.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="m12-datenqualität-prüfen">M12 – Datenqualität prüfen</h1>
+<h2 id="checkliste">Checkliste</h2>
+<p>Prüft einen Datensatz.</p>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Pflichtfelder vorhanden</label></li>
+<li><label><input type="checkbox"></input>Datentypen plausibel</label></li>
+<li><label><input type="checkbox"></input>eindeutige IDs</label></li>
+<li><label><input type="checkbox"></input>keine unerwünschten
+Duplikate</label></li>
+<li><label><input type="checkbox"></input>Fremdschlüssel gültig</label></li>
+<li><label><input type="checkbox"></input>Werte im erlaubten
+Bereich</label></li>
+<li><label><input type="checkbox"></input>Schreibweisen
+konsistent</label></li>
+<li><label><input type="checkbox"></input>fehlende Werte bewusst
+behandelt</label></li>
+</ul>
+<h2 id="bewertung">Bewertung</h2>
+<h3 id="gefundene-probleme">Gefundene Probleme</h3>
+<hr />
+<h3 id="folgen">Folgen</h3>
+<hr />
+<h3 id="verbesserung">Verbesserung</h3>
+<hr />
+<div class="page-break"></div>
+<h1 id="m13-datenschutz-fallkarten">M13 – Datenschutz-Fallkarten</h1>
+<h2 id="fall-a">Fall A</h2>
+<p>Eine App speichert Namen und Geburtsdaten, obwohl für die Aufgabe nur
+eine zufällige Teilnehmer-ID benötigt wird.</p>
+<p><strong>Frage:</strong> Welche Daten könnten vermieden werden?</p>
+<hr />
+<h2 id="fall-b">Fall B</h2>
+<p>Eine Teilnehmerliste liegt ungeschützt in einem öffentlich
+erreichbaren Ordner.</p>
+<p><strong>Frage:</strong> Ist dies eher ein Datenschutz-,
+Datensicherheits- oder beides Problem?</p>
+<hr />
+<h2 id="fall-c">Fall C</h2>
+<p>Eine Statistik nutzt anonymisierte Daten.</p>
+<p><strong>Frage:</strong> Warum kann das datenschutzfreundlicher
+sein?</p>
+<hr />
+<h2 id="fall-d">Fall D</h2>
+<p>Ein System speichert Daten unbegrenzt, obwohl sie nach Ende des
+Projekts nicht mehr benötigt werden.</p>
+<p><strong>Frage:</strong> Welche Alternative wäre sinnvoll?</p>
+<div class="page-break"></div>
+<h1 id="m14-sql-referenzkarte">M14 – SQL-Referenzkarte</h1>
+<h2 id="tabelle">Tabelle</h2>
+<div class="sourceCode" id="cb38"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Tabelle (</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ID</span> <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    Name <span class="dt">VARCHAR</span>(<span class="dv">100</span>) <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>);</span></code></pre></div>
+<h2 id="create">Create</h2>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> Tabelle (<span class="kw">ID</span>, Name)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">VALUES</span> (<span class="dv">1</span>, <span class="st">&#39;Beispiel&#39;</span>);</span></code></pre></div>
+<h2 id="read">Read</h2>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Tabelle</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">ID</span> <span class="op">=</span> <span class="dv">1</span>;</span></code></pre></div>
+<h2 id="update-1">Update</h2>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> Tabelle</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> Name <span class="op">=</span> <span class="st">&#39;Neu&#39;</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">ID</span> <span class="op">=</span> <span class="dv">1</span>;</span></code></pre></div>
+<h2 id="delete-1">Delete</h2>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> Tabelle</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">ID</span> <span class="op">=</span> <span class="dv">1</span>;</span></code></pre></div>
+<h2 id="sortieren">Sortieren</h2>
+<div class="sourceCode" id="cb43"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Name <span class="kw">ASC</span></span></code></pre></div>
+<h2 id="eindeutigkeit">Eindeutigkeit</h2>
+<div class="sourceCode" id="cb44"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UNIQUE</span></span></code></pre></div>
+<h2 id="beziehung">Beziehung</h2>
+<div class="sourceCode" id="cb45"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">FOREIGN</span> <span class="kw">KEY</span> (<span class="op">..</span>.)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="kw">REFERENCES</span> <span class="op">..</span>.</span></code></pre></div>
+<p>Ausführliche Erklärung:</p>
+<pre class="text"><code>Grundlagen/SQL/</code></pre>
+<div class="page-break"></div>
+<h1 id="m15-peer-review-datenmodell">M15 – Peer-Review Datenmodell</h1>
+<h2 id="bewertetes-modell">Bewertetes Modell</h2>
+<hr />
+<h2 id="prüft">Prüft</h2>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Klassen/Tabellen sind sinnvoll
+gewählt.</label></li>
+<li><label><input type="checkbox"></input>Attribute gehören zur richtigen
+Tabelle.</label></li>
+<li><label><input type="checkbox"></input>Primärschlüssel sind
+eindeutig.</label></li>
+<li><label><input type="checkbox"></input>Fremdschlüssel sind
+nachvollziehbar.</label></li>
+<li><label><input type="checkbox"></input>unnötige Wiederholungen wurden
+vermieden.</label></li>
+<li><label><input type="checkbox"></input>Beziehungen sind fachlich
+korrekt.</label></li>
+</ul>
+<h2 id="eine-stärke">Eine Stärke</h2>
+<hr />
+<h2 id="eine-unklarheit">Eine Unklarheit</h2>
+<hr />
+<h2 id="ein-verbesserungsvorschlag">Ein Verbesserungsvorschlag</h2>
+<hr />
+</body>
+</html>

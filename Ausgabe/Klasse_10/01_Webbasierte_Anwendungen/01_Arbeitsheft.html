@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Webbasierte Anwendungen</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Webbasierte Anwendungen</h1>
+<p class="subtitle">Informatik · Klasse 10 · Arbeitsheft</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#lokal-oder-im-web" id="toc-lokal-oder-im-web">01 – Lokal
+oder im Web?</a>
+<ul>
+<li><a href="#leitfrage" id="toc-leitfrage">Leitfrage</a></li>
+<li><a href="#rückblick" id="toc-rückblick">Rückblick</a></li>
+<li><a href="#lokale-anwendung" id="toc-lokale-anwendung">Lokale
+Anwendung</a></li>
+<li><a href="#webbasierte-anwendung" id="toc-webbasierte-anwendung">Webbasierte Anwendung</a></li>
+<li><a href="#gemeinsamkeiten" id="toc-gemeinsamkeiten">Gemeinsamkeiten</a></li>
+<li><a href="#unterschiede" id="toc-unterschiede">Unterschiede</a></li>
+<li><a href="#aufgabe-1" id="toc-aufgabe-1">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2" id="toc-aufgabe-2">Aufgabe 2</a></li>
+<li><a href="#aufgabe-3" id="toc-aufgabe-3">Aufgabe 3</a></li>
+<li><a href="#merksatz" id="toc-merksatz">Merksatz</a></li>
+</ul></li>
+<li><a href="#hypertext-html-und-objekte" id="toc-hypertext-html-und-objekte">02 – Hypertext, HTML und Objekte</a>
+<ul>
+<li><a href="#leitfrage-1" id="toc-leitfrage-1">Leitfrage</a></li>
+<li><a href="#hypertext" id="toc-hypertext">Hypertext</a></li>
+<li><a href="#struktur-und-gestaltung-trennen" id="toc-struktur-und-gestaltung-trennen">Struktur und Gestaltung
+trennen</a></li>
+<li><a href="#objektorientierte-sicht" id="toc-objektorientierte-sicht">Objektorientierte Sicht</a></li>
+<li><a href="#aufgabe-1-1" id="toc-aufgabe-1-1">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2-1" id="toc-aufgabe-2-1">Aufgabe 2</a></li>
+<li><a href="#aufgabe-3-1" id="toc-aufgabe-3-1">Aufgabe 3</a></li>
+<li><a href="#aufgabe-4" id="toc-aufgabe-4">Aufgabe 4</a></li>
+<li><a href="#merksatz-1" id="toc-merksatz-1">Merksatz</a></li>
+</ul></li>
+<li><a href="#privat-öffentlich-und-cookies" id="toc-privat-öffentlich-und-cookies">03 – Privat, öffentlich und
+Cookies</a>
+<ul>
+<li><a href="#leitfrage-2" id="toc-leitfrage-2">Leitfrage</a></li>
+<li><a href="#privater-und-öffentlicher-bereich" id="toc-privater-und-öffentlicher-bereich">Privater und öffentlicher
+Bereich</a></li>
+<li><a href="#standortdaten" id="toc-standortdaten">Standortdaten</a></li>
+<li><a href="#cookies" id="toc-cookies">Cookies</a></li>
+<li><a href="#soziale-netzwerke" id="toc-soziale-netzwerke">Soziale
+Netzwerke</a></li>
+<li><a href="#aufgabe-1-sichtbarkeit" id="toc-aufgabe-1-sichtbarkeit">Aufgabe 1 – Sichtbarkeit</a></li>
+<li><a href="#aufgabe-2-cookies" id="toc-aufgabe-2-cookies">Aufgabe 2 –
+Cookies</a></li>
+<li><a href="#aufgabe-3-standort" id="toc-aufgabe-3-standort">Aufgabe 3
+– Standort</a></li>
+<li><a href="#aufgabe-4-fallanalyse" id="toc-aufgabe-4-fallanalyse">Aufgabe 4 – Fallanalyse</a></li>
+<li><a href="#merksatz-2" id="toc-merksatz-2">Merksatz</a></li>
+</ul></li>
+<li><a href="#passwörter-backups-und-cyberkriminalität" id="toc-passwörter-backups-und-cyberkriminalität">04 – Passwörter,
+Backups und Cyberkriminalität</a>
+<ul>
+<li><a href="#leitfrage-3" id="toc-leitfrage-3">Leitfrage</a></li>
+<li><a href="#starke-zugangsdaten" id="toc-starke-zugangsdaten">Starke
+Zugangsdaten</a></li>
+<li><a href="#mehrfaktor-authentisierung" id="toc-mehrfaktor-authentisierung">Mehrfaktor-Authentisierung</a></li>
+<li><a href="#phishing" id="toc-phishing">Phishing</a></li>
+<li><a href="#backup" id="toc-backup">Backup</a></li>
+<li><a href="#aufgabe-1-2" id="toc-aufgabe-1-2">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2-2" id="toc-aufgabe-2-2">Aufgabe 2</a></li>
+<li><a href="#aufgabe-3-2" id="toc-aufgabe-3-2">Aufgabe 3</a></li>
+<li><a href="#aufgabe-4-phishing-fall" id="toc-aufgabe-4-phishing-fall">Aufgabe 4 – Phishing-Fall</a></li>
+<li><a href="#merksatz-3" id="toc-merksatz-3">Merksatz</a></li>
+</ul></li>
+<li><a href="#zwei-schlüssel-statt-einem" id="toc-zwei-schlüssel-statt-einem">05 – Zwei Schlüssel statt einem</a>
+<ul>
+<li><a href="#leitfrage-4" id="toc-leitfrage-4">Leitfrage</a></li>
+<li><a href="#symmetrische-verschlüsselung-rückblick" id="toc-symmetrische-verschlüsselung-rückblick">Symmetrische
+Verschlüsselung – Rückblick</a></li>
+<li><a href="#asymmetrische-verschlüsselung" id="toc-asymmetrische-verschlüsselung">Asymmetrische
+Verschlüsselung</a></li>
+<li><a href="#einwegidee" id="toc-einwegidee">Einwegidee</a></li>
+<li><a href="#beispiel-mit-briefkästen" id="toc-beispiel-mit-briefkästen">Beispiel mit Briefkästen</a></li>
+<li><a href="#aufgabe-1-3" id="toc-aufgabe-1-3">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2-3" id="toc-aufgabe-2-3">Aufgabe 2</a></li>
+<li><a href="#aufgabe-3-3" id="toc-aufgabe-3-3">Aufgabe 3</a></li>
+<li><a href="#aufgabe-4-1" id="toc-aufgabe-4-1">Aufgabe 4</a></li>
+<li><a href="#merksatz-4" id="toc-merksatz-4">Merksatz</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="lokal-oder-im-web">01 – Lokal oder im Web?</h1>
+<h2 id="leitfrage">Leitfrage</h2>
+<blockquote>
+<p><strong>Was passiert eigentlich, wenn eine Anwendung nicht auf
+unserem Computer, sondern im Web läuft?</strong></p>
+</blockquote>
+<h2 id="rückblick">Rückblick</h2>
+<p>Aus Klasse 8 kennt ihr Netzwerke, Clients, Server, Router,
+IP-Adressen und Netzwerkprotokolle. Jetzt betrachten wir Anwendungen,
+die über ein Netzwerk genutzt werden.</p>
+<h2 id="lokale-anwendung">Lokale Anwendung</h2>
+<p>Eine lokale Anwendung wird auf einem Gerät installiert und dort
+ausgeführt. Viele benötigte Dateien liegen direkt auf diesem Gerät.</p>
+<p>Beispiele:</p>
+<ul>
+<li>lokal installierter Texteditor</li>
+<li>Bildbearbeitungsprogramm</li>
+<li>Offline-Spiel</li>
+</ul>
+<h2 id="webbasierte-anwendung">Webbasierte Anwendung</h2>
+<p>Eine webbasierte Anwendung wird typischerweise über einen Browser
+genutzt. Teile der Anwendung laufen beim Benutzer, andere auf einem
+Server.</p>
+<p>Vereinfacht:</p>
+<pre class="text"><code>Browser / Client
+      │ Anfrage
+      ▼
+   Netzwerk
+      │
+      ▼
+    Server
+      │ Antwort
+      ▼
+Browser / Client</code></pre>
+<h2 id="gemeinsamkeiten">Gemeinsamkeiten</h2>
+<p>Lokale und webbasierte Anwendungen können dieselbe Aufgabe lösen:
+Texte bearbeiten, Bilder verwalten, Nachrichten austauschen oder Daten
+auswerten.</p>
+<h2 id="unterschiede">Unterschiede</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Merkmal</th>
+<th>lokal</th>
+<th>webbasiert</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Installation</td>
+<td>oft nötig</td>
+<td>Browser genügt häufig</td>
+</tr>
+<tr class="even">
+<td>Internet</td>
+<td>nicht immer nötig</td>
+<td>meist nötig</td>
+</tr>
+<tr class="odd">
+<td>Daten</td>
+<td>häufig lokal</td>
+<td>oft auf Servern</td>
+</tr>
+<tr class="even">
+<td>Aktualisierung</td>
+<td>lokal</td>
+<td>zentral auf dem Server möglich</td>
+</tr>
+<tr class="odd">
+<td>Zusammenarbeit</td>
+<td>abhängig von Software</td>
+<td>häufig direkt integriert</td>
+</tr>
+</tbody>
+</table>
+<h2 id="aufgabe-1">Aufgabe 1</h2>
+<p>Ordne zu und begründe: lokale Anwendung, webbasierte Anwendung oder
+beides möglich.</p>
+<ol type="1">
+<li>Textverarbeitung</li>
+<li>Messenger</li>
+<li>Tabellenkalkulation</li>
+<li>Computerspiel</li>
+<li>Bildbearbeitung</li>
+</ol>
+<h2 id="aufgabe-2">Aufgabe 2</h2>
+<p>Nenne je zwei Vor- und Nachteile einer webbasierten Anwendung.</p>
+<h2 id="aufgabe-3">Aufgabe 3</h2>
+<p>Erkläre mit den Begriffen <strong>Client</strong>,
+<strong>Server</strong> und <strong>Netzwerkprotokoll</strong>, wie eine
+Webseite zum Browser gelangt.</p>
+<h2 id="merksatz">Merksatz</h2>
+<blockquote>
+<p>Bei webbasierten Anwendungen arbeiten Client und Server über ein
+Netzwerk zusammen. Protokolle legen Regeln für die Kommunikation
+fest.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="hypertext-html-und-objekte">02 – Hypertext, HTML und
+Objekte</h1>
+<h2 id="leitfrage-1">Leitfrage</h2>
+<blockquote>
+<p><strong>Wie wird aus strukturiertem Text eine Webseite?</strong></p>
+</blockquote>
+<p>Webseiten bestehen aus strukturierten Inhalten. Ein einfaches
+Dokument kann mit HTML beschrieben werden.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype </span>html<span class="dt">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span> <span class="er">lang</span><span class="ot">=</span><span class="st">&quot;de&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;utf-8&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Meine Seite<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Willkommen<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Das ist ein Absatz.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://example.org&quot;</span><span class="dt">&gt;</span>Ein Link<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+<h2 id="hypertext">Hypertext</h2>
+<p>Hypertext verbindet Inhalte durch Verweise. Ein Link führt von einem
+Dokument, Abschnitt oder Medium zu einem anderen Ziel.</p>
+<h2 id="struktur-und-gestaltung-trennen">Struktur und Gestaltung
+trennen</h2>
+<p>HTML beschreibt vor allem Struktur und Bedeutung. CSS kann die
+Gestaltung übernehmen.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;hinweis&quot;</span><span class="dt">&gt;</span>Wichtige Information<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.hinweis</span> {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<h2 id="objektorientierte-sicht">Objektorientierte Sicht</h2>
+<p>Auch in einer Webseite können wir bekannte Begriffe wiederfinden:</p>
+<ul>
+<li><strong>Klasse:</strong> z. B. alle Elemente mit der CSS-Klasse
+<code>hinweis</code></li>
+<li><strong>Objekt:</strong> ein konkreter Absatz auf der Seite</li>
+<li><strong>Attribut:</strong> z. B. <code>href</code>,
+<code>class</code>, <code>src</code></li>
+<li><strong>Attributwert:</strong> z. B.
+<code>class=&quot;hinweis&quot;</code></li>
+<li><strong>Methode/Operation:</strong> eine Aktion, die ein Element
+oder seinen Zustand verändert</li>
+</ul>
+<p>Diese Sicht hilft, Strukturen zu analysieren. Sie ist ein Modell und
+nicht mit einer vollständigen objektorientierten Programmiersprache
+gleichzusetzen.</p>
+<h2 id="aufgabe-1-1">Aufgabe 1</h2>
+<p>Markiere im HTML-Beispiel Überschrift, Absatz und Link.</p>
+<h2 id="aufgabe-2-1">Aufgabe 2</h2>
+<p>Erstelle eine einfache Seite mit:</p>
+<ul>
+<li>einer Überschrift,</li>
+<li>zwei Absätzen,</li>
+<li>einer Liste,</li>
+<li>einem Link.</li>
+</ul>
+<h2 id="aufgabe-3-1">Aufgabe 3</h2>
+<p>Nenne zu einem Link-Element ein mögliches Attribut und den
+zugehörigen Attributwert.</p>
+<h2 id="aufgabe-4">Aufgabe 4</h2>
+<p>Erkläre, warum die Trennung von Inhalt und Gestaltung bei größeren
+Webseiten sinnvoll ist.</p>
+<h2 id="merksatz-1">Merksatz</h2>
+<blockquote>
+<p>HTML strukturiert Inhalte. Links machen Dokumente zu Hypertext.
+Attribute beschreiben Eigenschaften von Elementen.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="privat-öffentlich-und-cookies">03 – Privat, öffentlich und
+Cookies</h1>
+<h2 id="leitfrage-2">Leitfrage</h2>
+<blockquote>
+<p><strong>Welche Daten geben wir im Web preis – bewusst und
+unbewusst?</strong></p>
+</blockquote>
+<h2 id="privater-und-öffentlicher-bereich">Privater und öffentlicher
+Bereich</h2>
+<p>Eine Information kann für unterschiedliche Personenkreise sichtbar
+sein. Bei webbasierten Diensten muss deshalb geprüft werden:</p>
+<ul>
+<li>Wer kann den Inhalt sehen?</li>
+<li>Wer darf ihn verändern?</li>
+<li>Wie lange bleibt er gespeichert?</li>
+<li>Kann er weitergegeben oder kopiert werden?</li>
+</ul>
+<h2 id="standortdaten">Standortdaten</h2>
+<p>Standortdaten können nützlich sein, etwa für Navigation. Gleichzeitig
+können sie Bewegungsprofile ermöglichen.</p>
+<h2 id="cookies">Cookies</h2>
+<p>Cookies sind kleine Informationen, die eine Website im Browser
+speichern lassen kann. Sie können technisch nötig sein, Einstellungen
+speichern oder zur Analyse und Werbung verwendet werden.</p>
+<blockquote>
+<p><strong>Wichtig:</strong> Nicht jeder Cookie hat denselben Zweck.
+Entscheidend ist, welche Daten wofür verarbeitet werden.</p>
+</blockquote>
+<h2 id="soziale-netzwerke">Soziale Netzwerke</h2>
+<p>Bei Posts, Bildern und Kommentaren verschwimmt die Grenze zwischen
+privat und öffentlich schnell. Auch vermeintlich private Inhalte können
+kopiert, weitergeleitet oder durch Screenshots dauerhaft verbreitet
+werden.</p>
+<h2 id="aufgabe-1-sichtbarkeit">Aufgabe 1 – Sichtbarkeit</h2>
+<p>Ordne vier Beispiele nach gewünschter Sichtbarkeit: nur ich,
+ausgewählte Personen, Schulgruppe, öffentlich.</p>
+<ul>
+<li>Urlaubsfoto</li>
+<li>Gruppenarbeitsdatei</li>
+<li>privates Tagebuch</li>
+<li>Veranstaltungshinweis</li>
+</ul>
+<h2 id="aufgabe-2-cookies">Aufgabe 2 – Cookies</h2>
+<p>Formuliere zwei sinnvolle Fragen, die du dir bei einem Cookie-Banner
+stellen kannst.</p>
+<h2 id="aufgabe-3-standort">Aufgabe 3 – Standort</h2>
+<p>Nenne je einen sinnvollen und einen problematischen Einsatz von
+Standortdaten.</p>
+<h2 id="aufgabe-4-fallanalyse">Aufgabe 4 – Fallanalyse</h2>
+<p>Eine App möchte Zugriff auf Standort, Kontakte, Mikrofon und Kamera.
+Entwickle Kriterien, mit denen du entscheidest, welche Rechte für den
+Zweck wirklich nötig sind.</p>
+<h2 id="merksatz-2">Merksatz</h2>
+<blockquote>
+<p>Datenschutz beginnt mit der Frage, welche Daten für einen Zweck
+tatsächlich benötigt werden und wer darauf zugreifen darf.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="passwörter-backups-und-cyberkriminalität">04 – Passwörter,
+Backups und Cyberkriminalität</h1>
+<h2 id="leitfrage-3">Leitfrage</h2>
+<blockquote>
+<p><strong>Wie schützen wir Konten und Daten, wenn ein System
+angegriffen wird oder ausfällt?</strong></p>
+</blockquote>
+<h2 id="starke-zugangsdaten">Starke Zugangsdaten</h2>
+<p>Gute Passwörter sind lang, einzigartig und nicht leicht zu erraten.
+Für verschiedene wichtige Konten sollte nicht dasselbe Passwort
+verwendet werden.</p>
+<p>Ein Passwortmanager kann helfen, viele unterschiedliche Zugangsdaten
+sicher zu verwalten.</p>
+<h2 id="mehrfaktor-authentisierung">Mehrfaktor-Authentisierung</h2>
+<p>Zusätzlich zum Passwort kann ein zweiter Faktor verlangt werden, etwa
+eine Bestätigung auf einem zweiten Gerät oder ein
+Sicherheitsschlüssel.</p>
+<h2 id="phishing">Phishing</h2>
+<p>Angreifer versuchen häufig, Menschen zur Preisgabe von Zugangsdaten
+zu bewegen. Warnzeichen können sein:</p>
+<ul>
+<li>unerwarteter Zeitdruck,</li>
+<li>ungewöhnliche Absenderadresse,</li>
+<li>Aufforderung zur Anmeldung über einen zugesandten Link,</li>
+<li>ungewöhnliche Dateianhänge,</li>
+<li>Forderung nach vertraulichen Informationen.</li>
+</ul>
+<h2 id="backup">Backup</h2>
+<p>Ein Backup ist eine zusätzliche Kopie wichtiger Daten. Es hilft bei
+versehentlichem Löschen, Defekten, Schadsoftware oder Verlust eines
+Gerätes.</p>
+<p>Ein gutes Backup liegt nicht nur im selben Ordner oder auf demselben
+Gerät wie die Originaldatei.</p>
+<h2 id="aufgabe-1-2">Aufgabe 1</h2>
+<p>Bewerte die Passwörter <code>123456</code>, <code>Sommer2026</code>,
+<code>K7!wZ9?</code> und eine lange zufällige Passphrase. Begründe nach
+den Kriterien Länge, Vorhersagbarkeit und Wiederverwendung.</p>
+<h2 id="aufgabe-2-2">Aufgabe 2</h2>
+<p>Erkläre, warum Mehrfaktor-Authentisierung das Risiko eines
+gestohlenen Passworts verringern kann.</p>
+<h2 id="aufgabe-3-2">Aufgabe 3</h2>
+<p>Entwirf eine Backupstrategie für ein wichtiges Schulprojekt.</p>
+<h2 id="aufgabe-4-phishing-fall">Aufgabe 4 – Phishing-Fall</h2>
+<p>Du erhältst eine Nachricht: „Dein Schulkonto wird heute gelöscht.
+Melde dich sofort hier an.“ Beschreibe einen sicheren Prüfweg, ohne den
+Link zu benutzen.</p>
+<h2 id="merksatz-3">Merksatz</h2>
+<blockquote>
+<p>Datensicherheit braucht technische Maßnahmen und
+verantwortungsbewusstes Verhalten: starke Zugangsdaten, zusätzliche
+Faktoren, Backups und kritisches Prüfen.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="zwei-schlüssel-statt-einem">05 – Zwei Schlüssel statt einem</h1>
+<h2 id="leitfrage-4">Leitfrage</h2>
+<blockquote>
+<p><strong>Wie kann man verschlüsselt kommunizieren, ohne vorher
+heimlich denselben Schlüssel auszutauschen?</strong></p>
+</blockquote>
+<h2 id="symmetrische-verschlüsselung-rückblick">Symmetrische
+Verschlüsselung – Rückblick</h2>
+<p>Bei symmetrischer Verschlüsselung wird derselbe geheime Schlüssel zum
+Ver- und Entschlüsseln verwendet. Das funktioniert gut, wirft aber eine
+Frage auf: Wie kommt der geheime Schlüssel sicher zur anderen
+Person?</p>
+<h2 id="asymmetrische-verschlüsselung">Asymmetrische
+Verschlüsselung</h2>
+<p>Bei asymmetrischen Verfahren gibt es ein zusammengehöriges
+Schlüsselpaar:</p>
+<ul>
+<li><strong>öffentlicher Schlüssel</strong> – darf verteilt werden</li>
+<li><strong>privater Schlüssel</strong> – bleibt geheim</li>
+</ul>
+<p>Vereinfacht kann eine Nachricht mit dem öffentlichen Schlüssel des
+Empfängers verschlüsselt werden. Zum Entschlüsseln wird der passende
+private Schlüssel benötigt.</p>
+<pre class="text"><code>öffentlicher Schlüssel → verschlüsseln
+privater Schlüssel      → entschlüsseln</code></pre>
+<h2 id="einwegidee">Einwegidee</h2>
+<p>Die zugrunde liegenden mathematischen Operationen sind so gewählt,
+dass die Vorwärtsrichtung praktisch leicht berechnet werden kann, die
+Umkehrung ohne zusätzliches Geheimnis bei geeigneter Schlüssellänge aber
+mit realistischen Rechenmitteln nicht praktikabel sein soll.</p>
+<blockquote>
+<p><strong>Wichtig:</strong> Sicherheit bedeutet hier nicht
+„mathematisch unmöglich“, sondern beruht auf Verfahren, Schlüssellängen,
+korrekter Umsetzung und begrenzter Rechenleistung.</p>
+</blockquote>
+<h2 id="beispiel-mit-briefkästen">Beispiel mit Briefkästen</h2>
+<p>Stellt euch einen Briefkasten vor:</p>
+<ul>
+<li>Jeder darf etwas durch den Schlitz einwerfen.</li>
+<li>Nur der Besitzer mit dem passenden Schlüssel kann den Kasten
+öffnen.</li>
+</ul>
+<p>Das Bild ist nicht vollständig technisch korrekt, hilft aber beim
+Verständnis der Rollen von öffentlichem und privatem Schlüssel.</p>
+<h2 id="aufgabe-1-3">Aufgabe 1</h2>
+<p>Erkläre den Unterschied zwischen symmetrischer und asymmetrischer
+Verschlüsselung in drei Sätzen.</p>
+<h2 id="aufgabe-2-3">Aufgabe 2</h2>
+<p>Alice möchte Bob eine vertrauliche Nachricht senden. Welchen
+Schlüssel von Bob benötigt Alice zum Verschlüsseln? Welcher Schlüssel
+darf niemals öffentlich werden?</p>
+<h2 id="aufgabe-3-3">Aufgabe 3</h2>
+<p>Warum wäre es problematisch, wenn jemand Bobs privaten Schlüssel
+kopiert?</p>
+<h2 id="aufgabe-4-1">Aufgabe 4</h2>
+<p>Erkläre, warum „öffentlicher Schlüssel“ nicht bedeutet, dass die
+verschlüsselte Nachricht öffentlich lesbar ist.</p>
+<h2 id="merksatz-4">Merksatz</h2>
+<blockquote>
+<p>Bei asymmetrischer Verschlüsselung werden öffentlicher und privater
+Schlüssel getrennt verwendet. Der private Schlüssel muss geheim
+bleiben.</p>
+</blockquote>
+</body>
+</html>

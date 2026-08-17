@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Grundlagen</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Grundlagen</h1>
+<p class="subtitle">Glossar</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#glossar" id="toc-glossar">Glossar</a></li>
+<li><a href="#algorithmen" id="toc-algorithmen">Algorithmen</a>
+<ul>
+<li><a href="#algorithmus" id="toc-algorithmus">Algorithmus</a></li>
+<li><a href="#sequenz" id="toc-sequenz">Sequenz</a></li>
+<li><a href="#verzweigung" id="toc-verzweigung">Verzweigung</a></li>
+<li><a href="#wiederholung" id="toc-wiederholung">Wiederholung</a></li>
+<li><a href="#bedingung" id="toc-bedingung">Bedingung</a></li>
+<li><a href="#programm" id="toc-programm">Programm</a></li>
+</ul></li>
+<li><a href="#daten" id="toc-daten">Daten</a>
+<ul>
+<li><a href="#daten-1" id="toc-daten-1">Daten</a></li>
+<li><a href="#information" id="toc-information">Information</a></li>
+<li><a href="#eingabe" id="toc-eingabe">Eingabe</a></li>
+<li><a href="#ausgabe" id="toc-ausgabe">Ausgabe</a></li>
+<li><a href="#verarbeitung" id="toc-verarbeitung">Verarbeitung</a></li>
+<li><a href="#eva-prinzip" id="toc-eva-prinzip">EVA-Prinzip</a></li>
+</ul></li>
+<li><a href="#programmierung" id="toc-programmierung">Programmierung</a>
+<ul>
+<li><a href="#programmiersprache" id="toc-programmiersprache">Programmiersprache</a></li>
+<li><a href="#syntax" id="toc-syntax">Syntax</a></li>
+<li><a href="#quellcode" id="toc-quellcode">Quellcode</a></li>
+<li><a href="#debugging" id="toc-debugging">Debugging</a></li>
+<li><a href="#compiler" id="toc-compiler">Compiler</a></li>
+<li><a href="#interpreter" id="toc-interpreter">Interpreter</a></li>
+</ul></li>
+<li><a href="#künstliche-intelligenz" id="toc-künstliche-intelligenz">Künstliche Intelligenz</a>
+<ul>
+<li><a href="#ki" id="toc-ki">KI</a></li>
+<li><a href="#prompt" id="toc-prompt">Prompt</a></li>
+<li><a href="#halluzination" id="toc-halluzination">Halluzination</a></li>
+<li><a href="#sprachmodell" id="toc-sprachmodell">Sprachmodell</a></li>
+<li><a href="#token" id="toc-token">Token</a></li>
+</ul></li>
+<li><a href="#internet" id="toc-internet">Internet</a>
+<ul>
+<li><a href="#internet-1" id="toc-internet-1">Internet</a></li>
+<li><a href="#world-wide-web" id="toc-world-wide-web">World Wide
+Web</a></li>
+<li><a href="#browser" id="toc-browser">Browser</a></li>
+<li><a href="#url" id="toc-url">URL</a></li>
+<li><a href="#download" id="toc-download">Download</a></li>
+<li><a href="#upload" id="toc-upload">Upload</a></li>
+</ul></li>
+<li><a href="#open-source-und-oer" id="toc-open-source-und-oer">Open
+Source und OER</a>
+<ul>
+<li><a href="#open-source" id="toc-open-source">Open Source</a></li>
+<li><a href="#oer" id="toc-oer">OER</a></li>
+<li><a href="#repository" id="toc-repository">Repository</a></li>
+<li><a href="#commit" id="toc-commit">Commit</a></li>
+<li><a href="#lizenz" id="toc-lizenz">Lizenz</a></li>
+<li><a href="#creative-commons" id="toc-creative-commons">Creative
+Commons</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="glossar">Glossar</h1>
+<p>Dieses Glossar erklärt wichtige Begriffe aus dem
+Informatikunterricht.</p>
+<p>Die Begriffe sind nach Themen geordnet.</p>
+<p>Jeder Begriff besteht aus</p>
+<ul>
+<li>einer kurzen Definition,</li>
+<li>einem Beispiel,</li>
+<li>einem Hinweis auf verwandte Begriffe.</li>
+</ul>
+<p>Das Glossar wird mit jedem Kapitel erweitert.</p>
+<div class="page-break"></div>
+<h1 id="algorithmen">Algorithmen</h1>
+<h2 id="algorithmus">Algorithmus</h2>
+<p>Ein Algorithmus ist eine eindeutige und ausführbare Folge von
+Handlungsschritten zur Lösung eines Problems.</p>
+<h3 id="beispiel">Beispiel</h3>
+<p>Rezept zum Backen eines Kuchens</p>
+<p>Programm zur Berechnung einer Summe</p>
+<h3 id="siehe-auch">Siehe auch</h3>
+<ul>
+<li>Programm</li>
+<li>Sequenz</li>
+<li>Verzweigung</li>
+<li>Wiederholung</li>
+</ul>
+<hr />
+<h2 id="sequenz">Sequenz</h2>
+<p>Eine Sequenz ist eine Folge von Handlungsschritten.</p>
+<p>Sie werden nacheinander ausgeführt.</p>
+<h3 id="beispiel-1">Beispiel</h3>
+<pre class="text"><code>Tasse nehmen
+
+Milch eingießen
+
+Kakao einfüllen
+
+Umrühren</code></pre>
+<hr />
+<h2 id="verzweigung">Verzweigung</h2>
+<p>Eine Verzweigung entscheidet,</p>
+<p>welcher Weg ausgeführt wird.</p>
+<h3 id="beispiel-2">Beispiel</h3>
+<pre class="text"><code>Wenn es regnet,
+
+dann Schirm benutzen,
+
+sonst ohne Schirm gehen.</code></pre>
+<hr />
+<h2 id="wiederholung">Wiederholung</h2>
+<p>Eine Wiederholung führt dieselben Schritte mehrfach aus.</p>
+<h3 id="beispiel-3">Beispiel</h3>
+<pre class="text"><code>10-mal springen</code></pre>
+<hr />
+<h2 id="bedingung">Bedingung</h2>
+<p>Eine Bedingung entscheidet,</p>
+<p>ob eine Handlung ausgeführt wird.</p>
+<h3 id="beispiel-4">Beispiel</h3>
+<pre class="text"><code>Ist die Ampel grün?</code></pre>
+<hr />
+<h2 id="programm">Programm</h2>
+<p>Ein Programm beschreibt einen Algorithmus in einer
+Programmiersprache.</p>
+<h3 id="beispiel-5">Beispiel</h3>
+<p>Python</p>
+<p>Scratch</p>
+<p>Java</p>
+<p>C#</p>
+<div class="page-break"></div>
+<h1 id="daten">Daten</h1>
+<h2 id="daten-1">Daten</h2>
+<p>Daten sind Informationen,</p>
+<p>die gespeichert oder verarbeitet werden können.</p>
+<h3 id="beispiele">Beispiele</h3>
+<ul>
+<li>Zahlen</li>
+<li>Texte</li>
+<li>Bilder</li>
+<li>Musik</li>
+</ul>
+<hr />
+<h2 id="information">Information</h2>
+<p>Information entsteht,</p>
+<p>wenn Daten eine Bedeutung erhalten.</p>
+<hr />
+<h2 id="eingabe">Eingabe</h2>
+<p>Daten,</p>
+<p>die ein Programm erhält.</p>
+<hr />
+<h2 id="ausgabe">Ausgabe</h2>
+<p>Daten,</p>
+<p>die ein Programm ausgibt.</p>
+<hr />
+<h2 id="verarbeitung">Verarbeitung</h2>
+<p>Schritte,</p>
+<p>mit denen Daten verändert werden.</p>
+<hr />
+<h2 id="eva-prinzip">EVA-Prinzip</h2>
+<p>Eingabe</p>
+<p>↓</p>
+<p>Verarbeitung</p>
+<p>↓</p>
+<p>Ausgabe</p>
+<p>Das EVA-Prinzip wurde bereits in Klasse 8 behandelt und wird in
+diesem Lehrwerk vorausgesetzt.</p>
+<div class="page-break"></div>
+<h1 id="programmierung">Programmierung</h1>
+<h2 id="programmiersprache">Programmiersprache</h2>
+<p>Eine Programmiersprache dient dazu,</p>
+<p>Algorithmen zu beschreiben.</p>
+<h3 id="beispiele-1">Beispiele</h3>
+<ul>
+<li>Scratch</li>
+<li>Python</li>
+<li>Java</li>
+<li>C#</li>
+<li>VBA</li>
+</ul>
+<hr />
+<h2 id="syntax">Syntax</h2>
+<p>Die Syntax beschreibt die Schreibregeln einer Programmiersprache.</p>
+<hr />
+<h2 id="quellcode">Quellcode</h2>
+<p>Der Quellcode ist der Text,</p>
+<p>den Programmierer schreiben.</p>
+<hr />
+<h2 id="debugging">Debugging</h2>
+<p>Debugging bedeutet,</p>
+<p>Fehler systematisch zu suchen und zu beheben.</p>
+<hr />
+<h2 id="compiler">Compiler</h2>
+<p>Ein Compiler übersetzt Quellcode in ein ausführbares Programm.</p>
+<hr />
+<h2 id="interpreter">Interpreter</h2>
+<p>Ein Interpreter führt Programme direkt aus.</p>
+<p>Python verwendet üblicherweise einen Interpreter.</p>
+<div class="page-break"></div>
+<h1 id="künstliche-intelligenz">Künstliche Intelligenz</h1>
+<h2 id="ki">KI</h2>
+<p>Künstliche Intelligenz bezeichnet Computersysteme,</p>
+<p>die Aufgaben lösen,</p>
+<p>für die normalerweise menschliche Intelligenz erforderlich ist.
+:contentReference<span data-index="0">oaicite:0</span></p>
+<hr />
+<h2 id="prompt">Prompt</h2>
+<p>Ein Prompt ist eine Eingabe,</p>
+<p>mit der eine KI gesteuert wird.</p>
+<hr />
+<h2 id="halluzination">Halluzination</h2>
+<p>Eine Halluzination ist eine falsche,</p>
+<p>aber überzeugend klingende Antwort einer KI.</p>
+<hr />
+<h2 id="sprachmodell">Sprachmodell</h2>
+<p>Ein Sprachmodell berechnet,</p>
+<p>welche Wörter wahrscheinlich aufeinander folgen.
+:contentReference<span data-index="1">oaicite:1</span></p>
+<hr />
+<h2 id="token">Token</h2>
+<p>Token sind kleine Einheiten,</p>
+<p>in die ein Text zerlegt wird,</p>
+<p>damit ein Sprachmodell ihn verarbeiten kann. :contentReference<span data-index="2">oaicite:2</span></p>
+<div class="page-break"></div>
+<h1 id="internet">Internet</h1>
+<h2 id="internet-1">Internet</h2>
+<p>Das Internet verbindet weltweit Millionen von Computern.</p>
+<hr />
+<h2 id="world-wide-web">World Wide Web</h2>
+<p>Das World Wide Web (WWW)</p>
+<p>ist ein Dienst des Internets.</p>
+<p>Webseiten werden über Browser angezeigt.</p>
+<hr />
+<h2 id="browser">Browser</h2>
+<p>Ein Browser zeigt Webseiten an.</p>
+<h3 id="beispiele-2">Beispiele</h3>
+<ul>
+<li>Firefox</li>
+<li>Chrome</li>
+<li>Edge</li>
+<li>Safari</li>
+</ul>
+<hr />
+<h2 id="url">URL</h2>
+<p>Eine URL ist die Adresse einer Webseite.</p>
+<hr />
+<h2 id="download">Download</h2>
+<p>Beim Download werden Dateien aus dem Internet auf den eigenen
+Computer übertragen.</p>
+<hr />
+<h2 id="upload">Upload</h2>
+<p>Beim Upload werden Dateien vom eigenen Computer ins Internet
+übertragen.</p>
+<div class="page-break"></div>
+<h1 id="open-source-und-oer">Open Source und OER</h1>
+<h2 id="open-source">Open Source</h2>
+<p>Open Source bedeutet,</p>
+<p>dass der Quellcode öffentlich verfügbar ist.</p>
+<p>Andere Personen können ihn lesen,</p>
+<p>verbessern und weiterentwickeln.</p>
+<hr />
+<h2 id="oer">OER</h2>
+<p>Open Educational Resources</p>
+<p>sind frei nutzbare Bildungsmaterialien.</p>
+<hr />
+<h2 id="repository">Repository</h2>
+<p>Ein Repository ist ein Projektordner,</p>
+<p>der Dateien und ihre Versionsgeschichte enthält.</p>
+<hr />
+<h2 id="commit">Commit</h2>
+<p>Ein Commit speichert Änderungen.</p>
+<hr />
+<h2 id="lizenz">Lizenz</h2>
+<p>Eine Lizenz beschreibt,</p>
+<p>unter welchen Bedingungen Materialien genutzt werden dürfen.</p>
+<hr />
+<h2 id="creative-commons">Creative Commons</h2>
+<p>Creative-Commons-Lizenzen ermöglichen,</p>
+<p>Materialien unter bestimmten Bedingungen weiterzugeben und zu
+verändern.</p>
+</body>
+</html>

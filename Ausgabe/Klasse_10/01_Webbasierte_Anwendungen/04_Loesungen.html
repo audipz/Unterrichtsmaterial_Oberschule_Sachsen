@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Webbasierte Anwendungen</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Webbasierte Anwendungen</h1>
+<p class="subtitle">Informatik · Klasse 10 · Loesungen</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#lösungen-lernbereich-1-webbasierte-anwendungen" id="toc-lösungen-lernbereich-1-webbasierte-anwendungen">Lösungen –
+Lernbereich 1 Webbasierte Anwendungen</a>
+<ul>
+<li><a href="#lokal-oder-im-web" id="toc-lokal-oder-im-web">01 Lokal
+oder im Web</a></li>
+<li><a href="#hypertext-html-und-objekte" id="toc-hypertext-html-und-objekte">02 Hypertext, HTML und
+Objekte</a></li>
+<li><a href="#privat-öffentlich-und-cookies" id="toc-privat-öffentlich-und-cookies">03 Privat, öffentlich und
+Cookies</a></li>
+<li><a href="#passwörter-backups-cyberkriminalität" id="toc-passwörter-backups-cyberkriminalität">04 Passwörter, Backups,
+Cyberkriminalität</a></li>
+<li><a href="#asymmetrische-verschlüsselung" id="toc-asymmetrische-verschlüsselung">05 Asymmetrische
+Verschlüsselung</a></li>
+<li><a href="#erwartete-kernbegriffe" id="toc-erwartete-kernbegriffe">Erwartete Kernbegriffe</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="lösungen-lernbereich-1-webbasierte-anwendungen">Lösungen –
+Lernbereich 1 Webbasierte Anwendungen</h1>
+<h2 id="lokal-oder-im-web">01 Lokal oder im Web</h2>
+<p>Mögliche Vorteile webbasiert: zentrale Aktualisierung,
+geräteübergreifender Zugriff, Zusammenarbeit. Nachteile:
+Netzwerkabhängigkeit, Datenschutzfragen, Abhängigkeit vom Anbieter.</p>
+<p>Client fordert Inhalte oder Funktionen an; Server verarbeitet bzw.
+liefert Daten; ein Protokoll legt Kommunikationsregeln fest.</p>
+<h2 id="hypertext-html-und-objekte">02 Hypertext, HTML und Objekte</h2>
+<p>Mögliche Zuordnung:</p>
+<ul>
+<li><code>&lt;h1&gt;</code> Überschrift</li>
+<li><code>&lt;p&gt;</code> Absatz</li>
+<li><code>&lt;a href=&quot;...&quot;&gt;</code> Link</li>
+<li><code>href</code> ist ein Attribut, die Zieladresse der
+Attributwert.</li>
+</ul>
+<p>Trennung von Inhalt und Gestaltung erleichtert einheitliche
+Änderungen und Wiederverwendung.</p>
+<h2 id="privat-öffentlich-und-cookies">03 Privat, öffentlich und
+Cookies</h2>
+<p>Datensparsame Grundregel: Zugriff nur für den Personenkreis und
+Zeitraum, der für den Zweck nötig ist. Standortzugriff sollte an die
+konkrete Funktion gebunden werden. Cookie-Entscheidungen hängen vom
+Zweck ab; technisch notwendige Cookies sind anders zu bewerten als
+Tracking für Werbung.</p>
+<h2 id="passwörter-backups-cyberkriminalität">04 Passwörter, Backups,
+Cyberkriminalität</h2>
+<ul>
+<li><code>123456</code>: sehr schwach und häufig</li>
+<li><code>Sommer2026</code>: vorhersehbares Muster</li>
+<li>kurze zufällige Zeichenfolge: besser, aber Länge bleibt wichtig</li>
+<li>lange zufällige Passphrase: bei Einzigartigkeit typischerweise
+robust</li>
+</ul>
+<p>Bei Phishing keine zugesandten Anmeldelinks verwenden; Dienst über
+bekannten Weg öffnen und Meldung dort prüfen. Backup sollte getrennt vom
+Original liegen.</p>
+<h2 id="asymmetrische-verschlüsselung">05 Asymmetrische
+Verschlüsselung</h2>
+<p>Alice verwendet zum Verschlüsseln <strong>Bobs öffentlichen
+Schlüssel</strong>. Bob entschlüsselt mit <strong>seinem privaten
+Schlüssel</strong>. Wird der private Schlüssel kompromittiert, ist die
+Vertraulichkeit der darauf beruhenden Kommunikation gefährdet.</p>
+<h2 id="erwartete-kernbegriffe">Erwartete Kernbegriffe</h2>
+<p>Client, Server, Netzwerkprotokoll, Zugriffsrecht, Hypertext,
+Attribut, privater/öffentlicher Bereich, Cookie, Backup,
+Mehrfaktor-Authentisierung, öffentlicher Schlüssel, privater
+Schlüssel.</p>
+</body>
+</html>

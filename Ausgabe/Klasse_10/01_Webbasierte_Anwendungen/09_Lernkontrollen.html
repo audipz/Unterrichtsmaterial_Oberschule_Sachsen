@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Webbasierte Anwendungen</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Webbasierte Anwendungen</h1>
+<p class="subtitle">Informatik · Klasse 10 · Lernkontrollen</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#leistungskontrolle-1-webbasierte-anwendungen" id="toc-leistungskontrolle-1-webbasierte-anwendungen">Leistungskontrolle
+1 – Webbasierte Anwendungen</a>
+<ul>
+<li><a href="#aufgabe-1-begriffe-8-p" id="toc-aufgabe-1-begriffe-8-p">Aufgabe 1 – Begriffe (8 P)</a></li>
+<li><a href="#aufgabe-2-lokal-oder-webbasiert-6-p" id="toc-aufgabe-2-lokal-oder-webbasiert-6-p">Aufgabe 2 – Lokal oder
+webbasiert? (6 P)</a></li>
+<li><a href="#aufgabe-3-ablauf-im-netz-6-p" id="toc-aufgabe-3-ablauf-im-netz-6-p">Aufgabe 3 – Ablauf im Netz (6
+P)</a></li>
+<li><a href="#aufgabe-4-html-und-attribute-6-p" id="toc-aufgabe-4-html-und-attribute-6-p">Aufgabe 4 – HTML und Attribute
+(6 P)</a></li>
+<li><a href="#aufgabe-5-transfer-4-p" id="toc-aufgabe-5-transfer-4-p">Aufgabe 5 – Transfer (4 P)</a></li>
+</ul></li>
+<li><a href="#leistungskontrolle-2-datensicherheit-und-verschlüsselung" id="toc-leistungskontrolle-2-datensicherheit-und-verschlüsselung">Leistungskontrolle
+2 – Datensicherheit und Verschlüsselung</a>
+<ul>
+<li><a href="#aufgabe-1-datenschutz-im-web-8-p" id="toc-aufgabe-1-datenschutz-im-web-8-p">Aufgabe 1 – Datenschutz im Web
+(8 P)</a></li>
+<li><a href="#aufgabe-2-cookies-5-p" id="toc-aufgabe-2-cookies-5-p">Aufgabe 2 – Cookies (5 P)</a></li>
+<li><a href="#aufgabe-3-zugangsschutz-7-p" id="toc-aufgabe-3-zugangsschutz-7-p">Aufgabe 3 – Zugangsschutz (7
+P)</a></li>
+<li><a href="#aufgabe-4-backup-4-p" id="toc-aufgabe-4-backup-4-p">Aufgabe 4 – Backup (4 P)</a></li>
+<li><a href="#aufgabe-5-asymmetrische-verschlüsselung-6-p" id="toc-aufgabe-5-asymmetrische-verschlüsselung-6-p">Aufgabe 5 –
+Asymmetrische Verschlüsselung (6 P)</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="leistungskontrolle-1-webbasierte-anwendungen">Leistungskontrolle
+1 – Webbasierte Anwendungen</h1>
+<p><strong>Klasse 10 · 45 Minuten · 30 Punkte</strong></p>
+<p>Name: _______________________________ Datum: ______________</p>
+<h2 id="aufgabe-1-begriffe-8-p">Aufgabe 1 – Begriffe (8 P)</h2>
+<p>Erkläre kurz:</p>
+<ol type="1">
+<li>Client (2 P)</li>
+<li>Server (2 P)</li>
+<li>Netzwerkprotokoll (2 P)</li>
+<li>Hypertext (2 P)</li>
+</ol>
+<h2 id="aufgabe-2-lokal-oder-webbasiert-6-p">Aufgabe 2 – Lokal oder
+webbasiert? (6 P)</h2>
+<p>Nenne je zwei typische Vorteile und einen möglichen Nachteil einer
+webbasierten Anwendung gegenüber einer lokal installierten Anwendung.
+Begründe knapp.</p>
+<h2 id="aufgabe-3-ablauf-im-netz-6-p">Aufgabe 3 – Ablauf im Netz (6
+P)</h2>
+<p>Beschreibe in sinnvoller Reihenfolge, was geschieht, wenn ein Browser
+eine Seite von einem Server anfordert. Verwende die Begriffe
+<strong>Client</strong>, <strong>Server</strong>,
+<strong>Netzwerk</strong> und <strong>Protokoll</strong>.</p>
+<h2 id="aufgabe-4-html-und-attribute-6-p">Aufgabe 4 – HTML und Attribute
+(6 P)</h2>
+<p>Gegeben ist:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;menu&quot;</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;kontakt.html&quot;</span><span class="dt">&gt;</span>Kontakt<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code></pre></div>
+<ol type="1">
+<li>Welches Element wird dargestellt? (1 P)</li>
+<li>Nenne zwei Attribute. (2 P)</li>
+<li>Nenne die zugehörigen Attributwerte. (2 P)</li>
+<li>Welche Aufgabe erfüllt <code>href</code>? (1 P)</li>
+</ol>
+<h2 id="aufgabe-5-transfer-4-p">Aufgabe 5 – Transfer (4 P)</h2>
+<p>Eine Klasse bearbeitet gemeinsam ein Dokument im Browser. Erkläre
+zwei Gründe, warum dafür ein Server sinnvoll sein kann.</p>
+<div class="page-break"></div>
+<h1 id="leistungskontrolle-2-datensicherheit-und-verschlüsselung">Leistungskontrolle
+2 – Datensicherheit und Verschlüsselung</h1>
+<p><strong>Klasse 10 · 45 Minuten · 30 Punkte</strong></p>
+<p>Name: _______________________________ Datum: ______________</p>
+<h2 id="aufgabe-1-datenschutz-im-web-8-p">Aufgabe 1 – Datenschutz im Web
+(8 P)</h2>
+<p>Erkläre zwei Risiken von Standortdaten und zwei sinnvolle Maßnahmen
+zum Schutz der Privatsphäre.</p>
+<h2 id="aufgabe-2-cookies-5-p">Aufgabe 2 – Cookies (5 P)</h2>
+<p>Erkläre, warum Cookies nicht grundsätzlich „gut“ oder „schlecht“
+sind. Nenne zwei unterschiedliche Zwecke und bewerte sie.</p>
+<h2 id="aufgabe-3-zugangsschutz-7-p">Aufgabe 3 – Zugangsschutz (7
+P)</h2>
+<ol type="1">
+<li>Warum ist Passwortwiederverwendung problematisch? (2 P)</li>
+<li>Nenne zwei Merkmale eines guten Passwortkonzepts. (2 P)</li>
+<li>Erkläre den Nutzen von Mehrfaktor-Authentisierung. (3 P)</li>
+</ol>
+<h2 id="aufgabe-4-backup-4-p">Aufgabe 4 – Backup (4 P)</h2>
+<p>Entwirf eine sinnvolle Backupstrategie für ein wichtiges
+Abschlussprojekt und begründe, warum die Sicherung nicht nur im selben
+Ordner liegen sollte.</p>
+<h2 id="aufgabe-5-asymmetrische-verschlüsselung-6-p">Aufgabe 5 –
+Asymmetrische Verschlüsselung (6 P)</h2>
+<p>Alice möchte Bob vertraulich schreiben.</p>
+<ol type="1">
+<li>Welchen Schlüssel von Bob nutzt Alice zum Verschlüsseln? (2 P)</li>
+<li>Welcher Schlüssel muss geheim bleiben? (2 P)</li>
+<li>Erkläre den grundlegenden Unterschied zu einem symmetrischen
+Verfahren. (2 P)</li>
+</ol>
+</body>
+</html>

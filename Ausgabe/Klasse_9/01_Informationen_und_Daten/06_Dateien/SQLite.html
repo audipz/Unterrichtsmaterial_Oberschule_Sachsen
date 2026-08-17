@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Dateien</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Dateien</h1>
+<p class="subtitle">Informatik · Klasse 9 · SQLite</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#sqlite-komplettpaket-schulfestival" id="toc-sqlite-komplettpaket-schulfestival">SQLite-Komplettpaket:
+Schulfestival</a>
+<ul>
+<li><a href="#enthaltene-tabellen" id="toc-enthaltene-tabellen">Enthaltene Tabellen</a></li>
+<li><a href="#datenbankobjekte" id="toc-datenbankobjekte">Datenbankobjekte</a></li>
+<li><a href="#dateien" id="toc-dateien">Dateien</a></li>
+<li><a href="#empfohlene-programme" id="toc-empfohlene-programme">Empfohlene Programme</a></li>
+</ul></li>
+<li><a href="#arbeitsaufträge-zur-datenbank-festival.db" id="toc-arbeitsaufträge-zur-datenbank-festival.db">Arbeitsaufträge zur
+Datenbank <code>festival.db</code></a>
+<ul>
+<li><a href="#grundniveau" id="toc-grundniveau">Grundniveau</a></li>
+<li><a href="#mittleres-niveau" id="toc-mittleres-niveau">Mittleres
+Niveau</a></li>
+<li><a href="#erweitertes-niveau" id="toc-erweitertes-niveau">Erweitertes Niveau</a></li>
+<li><a href="#reflexion" id="toc-reflexion">Reflexion</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="sqlite-komplettpaket-schulfestival">SQLite-Komplettpaket:
+Schulfestival</h1>
+<p>Die Datenbank <code>festival.db</code> bildet ein fiktives, aber
+realistisch geplantes Schulfestival ab. Sie eignet sich für den
+Informatikunterricht der Klassenstufe 9 zu relationalen Datenbanken,
+SQL-Abfragen, Schlüsseln, Beziehungen, Filtern, Gruppieren und
+Auswerten.</p>
+<h2 id="enthaltene-tabellen">Enthaltene Tabellen</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Tabelle</th>
+<th style="text-align: right;">Datensätze</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>raeume</code></td>
+<td style="text-align: right;">8</td>
+<td>Veranstaltungsorte und Kapazitäten</td>
+</tr>
+<tr class="even">
+<td><code>veranstaltungen</code></td>
+<td style="text-align: right;">12</td>
+<td>Programm des Festivals</td>
+</tr>
+<tr class="odd">
+<td><code>besucher</code></td>
+<td style="text-align: right;">120</td>
+<td>anonymisierte Beispieldaten</td>
+</tr>
+<tr class="even">
+<td><code>tickets</code></td>
+<td style="text-align: right;">240</td>
+<td>Käufe, Reservierungen und Stornierungen</td>
+</tr>
+<tr class="odd">
+<td><code>helfer</code></td>
+<td style="text-align: right;">24</td>
+<td>Helferinnen und Helfer</td>
+</tr>
+<tr class="even">
+<td><code>anmeldungen</code></td>
+<td style="text-align: right;">72</td>
+<td>Helfereinsätze bei Veranstaltungen</td>
+</tr>
+<tr class="odd">
+<td><code>artikel</code></td>
+<td style="text-align: right;">10</td>
+<td>Getränke, Speisen und Merchandise</td>
+</tr>
+<tr class="even">
+<td><code>verkaeufe</code></td>
+<td style="text-align: right;">274</td>
+<td>Verkäufe während des Festivals</td>
+</tr>
+</tbody>
+</table>
+<h2 id="datenbankobjekte">Datenbankobjekte</h2>
+<ul>
+<li>Primär- und Fremdschlüssel</li>
+<li>CHECK- und UNIQUE-Bedingungen</li>
+<li>sechs Indizes</li>
+<li>Views <code>veranstaltung_auslastung</code>,
+<code>umsatz_nach_artikel</code> und <code>helfer_einsaetze</code></li>
+<li>aktivierte Fremdschlüsselprüfung</li>
+</ul>
+<h2 id="dateien">Dateien</h2>
+<ul>
+<li><code>festival.db</code> – direkt nutzbare SQLite-Datenbank</li>
+<li><code>schema.sql</code> – Tabellen, Indizes und Views</li>
+<li><code>beispielabfragen.sql</code> – zehn kommentierte
+Unterrichtsabfragen</li>
+<li><code>arbeitsauftraege.md</code> – differenzierte Aufgaben</li>
+<li><code>datenuebersicht.json</code> – maschinenlesbare Übersicht</li>
+</ul>
+<h2 id="empfohlene-programme">Empfohlene Programme</h2>
+<ul>
+<li>DB Browser for SQLite</li>
+<li>SQLiteStudio</li>
+<li>Python mit dem Modul <code>sqlite3</code></li>
+</ul>
+<p>Alle Namen, Kontaktdaten und Verkäufe sind vollständig fiktiv.</p>
+<div class="page-break"></div>
+<h1 id="arbeitsaufträge-zur-datenbank-festival.db">Arbeitsaufträge zur
+Datenbank <code>festival.db</code></h1>
+<h2 id="grundniveau">Grundniveau</h2>
+<ol type="1">
+<li>Zeige alle Veranstaltungen mit Titel, Datum und Beginn.</li>
+<li>Liste alle Räume mit mehr als 100 Plätzen.</li>
+<li>Ermittle alle kostenfreien Veranstaltungen.</li>
+<li>Sortiere die Artikel nach Verkaufspreis absteigend.</li>
+<li>Suche alle Besucherinnen und Besucher aus Pirna.</li>
+</ol>
+<h2 id="mittleres-niveau">Mittleres Niveau</h2>
+<ol start="6" type="1">
+<li>Verknüpfe <code>veranstaltungen</code> und <code>raeume</code> und
+gib Titel, Raum und Kapazität aus.</li>
+<li>Ermittle die Zahl der bezahlten Tickets je Veranstaltung.</li>
+<li>Berechne den Durchschnittspreis aller bezahlten Tickets.</li>
+<li>Zeige alle Helferinnen und Helfer mit der Zahl ihrer Einsätze.</li>
+<li>Ermittle den Gesamtumsatz je Artikel.</li>
+</ol>
+<h2 id="erweitertes-niveau">Erweitertes Niveau</h2>
+<ol start="11" type="1">
+<li>Finde die drei Veranstaltungen mit der höchsten Auslastung.</li>
+<li>Ermittle je Kategorie die Zahl der Veranstaltungen und den
+durchschnittlichen Eintrittspreis.</li>
+<li>Zeige alle Veranstaltungen, deren bezahlte Ticketzahl unter 25
+liegt.</li>
+<li>Berechne Umsatz und Deckungsbeitrag je Artikelkategorie.</li>
+<li>Entwickle eine eigene View, die pro Veranstaltung Ticketumsatz und
+Verkaufsumsatz zusammenführt.</li>
+</ol>
+<h2 id="reflexion">Reflexion</h2>
+<ol start="16" type="1">
+<li>Erkläre den Unterschied zwischen Primärschlüssel und Fremdschlüssel
+anhand zweier Tabellen.</li>
+<li>Begründe, weshalb E-Mail-Adressen in <code>besucher</code> eindeutig
+sein müssen.</li>
+<li>Untersuche, welche Fehler durch die CHECK-Bedingungen verhindert
+werden.</li>
+<li>Beschreibe den Nutzen eines Indexes.</li>
+<li>Nenne zwei Datenschutzprobleme, die bei echten Besucherdaten
+berücksichtigt werden müssten.</li>
+</ol>
+</body>
+</html>

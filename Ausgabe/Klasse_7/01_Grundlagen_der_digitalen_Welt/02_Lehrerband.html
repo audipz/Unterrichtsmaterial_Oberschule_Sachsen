@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Grundlagen der digitalen Welt</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Grundlagen der digitalen Welt</h1>
+<p class="subtitle">Informatik · Klasse 7 · Lehrerband</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#lehrerband" id="toc-lehrerband">Lehrerband</a></li>
+<li><a href="#woher-kommen-computer" id="toc-woher-kommen-computer">00 –
+Woher kommen Computer?</a></li>
+<li><a href="#einordnung" id="toc-einordnung">Einordnung</a></li>
+<li><a href="#leitfrage" id="toc-leitfrage">Leitfrage</a></li>
+<li><a href="#kompetenzen-und-lernziele" id="toc-kompetenzen-und-lernziele">Kompetenzen und Lernziele</a></li>
+<li><a href="#benötigte-materialien" id="toc-benötigte-materialien">Benötigte Materialien</a></li>
+<li><a href="#unterrichtsverlauf" id="toc-unterrichtsverlauf">Unterrichtsverlauf</a>
+<ul>
+<li><a href="#einstieg-und-aktivierung-ca.-5-minuten" id="toc-einstieg-und-aktivierung-ca.-5-minuten">1. Einstieg und
+Aktivierung – ca. 5 Minuten</a></li>
+<li><a href="#arbeitsauftrag-erklären-ca.-3-minuten" id="toc-arbeitsauftrag-erklären-ca.-3-minuten">2. Arbeitsauftrag
+erklären – ca. 3 Minuten</a></li>
+<li><a href="#gruppenarbeit-ca.-17-minuten" id="toc-gruppenarbeit-ca.-17-minuten">3. Gruppenarbeit – ca. 17
+Minuten</a></li>
+<li><a href="#kurzvorträge-und-sicherung-ca.-15-minuten" id="toc-kurzvorträge-und-sicherung-ca.-15-minuten">4. Kurzvorträge und
+Sicherung – ca. 15 Minuten</a></li>
+<li><a href="#abschluss-ca.-5-minuten" id="toc-abschluss-ca.-5-minuten">5. Abschluss – ca. 5 Minuten</a></li>
+</ul></li>
+<li><a href="#ausblick" id="toc-ausblick">Ausblick</a></li>
+<li><a href="#typische-stolperstellen" id="toc-typische-stolperstellen">Typische Stolperstellen</a></li>
+<li><a href="#wenn-heute-weniger-zeit-ist" id="toc-wenn-heute-weniger-zeit-ist">Wenn heute weniger Zeit
+ist</a></li>
+<li><a href="#lehrerband-01-kann-man-eine-sprache-nur-aus-0-und-1-schreiben" id="toc-lehrerband-01-kann-man-eine-sprache-nur-aus-0-und-1-schreiben">Lehrerband
+– 01 Kann man eine Sprache nur aus 0 und 1 schreiben?</a>
+<ul>
+<li><a href="#einordnung-1" id="toc-einordnung-1">Einordnung</a></li>
+<li><a href="#rückblick-ca.-3-minuten" id="toc-rückblick-ca.-3-minuten">Rückblick – ca. 3 Minuten</a></li>
+<li><a href="#leitfrage-1" id="toc-leitfrage-1">Leitfrage</a></li>
+<li><a href="#lernziele" id="toc-lernziele">Lernziele</a></li>
+<li><a href="#benötigtes-material" id="toc-benötigtes-material">Benötigtes Material</a></li>
+<li><a href="#unterrichtsverlauf-1" id="toc-unterrichtsverlauf-1">Unterrichtsverlauf</a></li>
+<li><a href="#erarbeitung-i-zwei-zustände" id="toc-erarbeitung-i-zwei-zustände">Erarbeitung I – Zwei
+Zustände</a></li>
+<li><a href="#erarbeitung-ii-kombinationen" id="toc-erarbeitung-ii-kombinationen">Erarbeitung II –
+Kombinationen</a></li>
+<li><a href="#anwendung-eigener-code" id="toc-anwendung-eigener-code">Anwendung – eigener Code</a></li>
+<li><a href="#typische-fehlvorstellungen" id="toc-typische-fehlvorstellungen">Typische Fehlvorstellungen</a></li>
+<li><a href="#differenzierung" id="toc-differenzierung">Differenzierung</a></li>
+<li><a href="#sicherung-tafelbild" id="toc-sicherung-tafelbild">Sicherung / Tafelbild</a></li>
+<li><a href="#wenn-heute-weniger-zeit-ist-1" id="toc-wenn-heute-weniger-zeit-ist-1">Wenn heute weniger Zeit
+ist</a></li>
+<li><a href="#ausblick-1" id="toc-ausblick-1">Ausblick</a></li>
+</ul></li>
+<li><a href="#lehrerband-02-wie-schreibt-ein-computer-zahlen" id="toc-lehrerband-02-wie-schreibt-ein-computer-zahlen">Lehrerband – 02
+Wie schreibt ein Computer Zahlen?</a>
+<ul>
+<li><a href="#einordnung-2" id="toc-einordnung-2">Einordnung</a></li>
+<li><a href="#zeit" id="toc-zeit">Zeit</a></li>
+<li><a href="#lernziele-1" id="toc-lernziele-1">Lernziele</a></li>
+<li><a href="#benötigtes-material-1" id="toc-benötigtes-material-1">Benötigtes Material</a></li>
+<li><a href="#rückblick-ca.-4-minuten" id="toc-rückblick-ca.-4-minuten">Rückblick – ca. 4 Minuten</a></li>
+<li><a href="#einstieg-ca.-4-minuten" id="toc-einstieg-ca.-4-minuten">Einstieg – ca. 4 Minuten</a></li>
+<li><a href="#erarbeitung-i-zweierpotenzen-ca.-10-minuten" id="toc-erarbeitung-i-zweierpotenzen-ca.-10-minuten">Erarbeitung I –
+Zweierpotenzen – ca. 10 Minuten</a></li>
+<li><a href="#erarbeitung-ii-division-durch-2-ca.-9-minuten" id="toc-erarbeitung-ii-division-durch-2-ca.-9-minuten">Erarbeitung II –
+Division durch 2 – ca. 9 Minuten</a></li>
+<li><a href="#übungsphase-ca.-12-minuten" id="toc-übungsphase-ca.-12-minuten">Übungsphase – ca. 12
+Minuten</a></li>
+<li><a href="#sicherung-ca.-4-minuten" id="toc-sicherung-ca.-4-minuten">Sicherung – ca. 4 Minuten</a></li>
+<li><a href="#ausblick-ca.-2-minuten" id="toc-ausblick-ca.-2-minuten">Ausblick – ca. 2 Minuten</a></li>
+<li><a href="#differenzierung-1" id="toc-differenzierung-1">Differenzierung</a></li>
+<li><a href="#typische-fehler" id="toc-typische-fehler">Typische
+Fehler</a></li>
+<li><a href="#wenn-heute-weniger-zeit-ist-2" id="toc-wenn-heute-weniger-zeit-ist-2">Wenn heute weniger Zeit
+ist</a></li>
+<li><a href="#prüfungsrelevanz" id="toc-prüfungsrelevanz">Prüfungsrelevanz</a></li>
+</ul></li>
+<li><a href="#lehrerband-03-wie-speichert-ein-computer-texte" id="toc-lehrerband-03-wie-speichert-ein-computer-texte">Lehrerband – 03
+Wie speichert ein Computer Texte?</a>
+<ul>
+<li><a href="#einordnung-3" id="toc-einordnung-3">Einordnung</a></li>
+<li><a href="#leitfrage-2" id="toc-leitfrage-2">Leitfrage</a></li>
+<li><a href="#lernziele-2" id="toc-lernziele-2">Lernziele</a></li>
+<li><a href="#benötigte-materialien-1" id="toc-benötigte-materialien-1">Benötigte Materialien</a></li>
+<li><a href="#rückblick-ca.-5-minuten" id="toc-rückblick-ca.-5-minuten">Rückblick (ca. 5 Minuten)</a></li>
+<li><a href="#einstieg-ca.-5-minuten" id="toc-einstieg-ca.-5-minuten">Einstieg (ca. 5 Minuten)</a></li>
+<li><a href="#erarbeitung-i-zeichen-als-zahlen-ca.-10-minuten" id="toc-erarbeitung-i-zeichen-als-zahlen-ca.-10-minuten">Erarbeitung I –
+Zeichen als Zahlen (ca. 10 Minuten)</a></li>
+<li><a href="#erarbeitung-ii-ascii-und-unicode-ca.-10-minuten" id="toc-erarbeitung-ii-ascii-und-unicode-ca.-10-minuten">Erarbeitung II
+– ASCII und Unicode (ca. 10 Minuten)</a></li>
+<li><a href="#übung-ca.-10-minuten" id="toc-übung-ca.-10-minuten">Übung
+(ca. 10 Minuten)</a></li>
+<li><a href="#sicherung-ca.-5-minuten" id="toc-sicherung-ca.-5-minuten">Sicherung (ca. 5 Minuten)</a></li>
+<li><a href="#typische-fehlvorstellungen-1" id="toc-typische-fehlvorstellungen-1">Typische
+Fehlvorstellungen</a></li>
+<li><a href="#differenzierung-2" id="toc-differenzierung-2">Differenzierung</a></li>
+<li><a href="#prüfungsrelevanz-1" id="toc-prüfungsrelevanz-1">Prüfungsrelevanz</a></li>
+<li><a href="#wenn-die-zeit-knapp-wird" id="toc-wenn-die-zeit-knapp-wird">Wenn die Zeit knapp wird</a></li>
+<li><a href="#ausblick-2" id="toc-ausblick-2">Ausblick</a></li>
+</ul></li>
+<li><a href="#lehrerband-04-bilder-im-computer" id="toc-lehrerband-04-bilder-im-computer">Lehrerband – 04 Bilder im
+Computer</a>
+<ul>
+<li><a href="#einordnung-4" id="toc-einordnung-4">Einordnung</a></li>
+<li><a href="#leitfrage-3" id="toc-leitfrage-3">Leitfrage</a></li>
+<li><a href="#kompetenzen" id="toc-kompetenzen">Kompetenzen</a></li>
+<li><a href="#prüfungsrelevant" id="toc-prüfungsrelevant">Prüfungsrelevant</a></li>
+<li><a href="#material" id="toc-material">Material</a></li>
+<li><a href="#unterrichtsverlauf-45-minuten" id="toc-unterrichtsverlauf-45-minuten">Unterrichtsverlauf – 45
+Minuten</a></li>
+<li><a href="#typische-fehlvorstellungen-2" id="toc-typische-fehlvorstellungen-2">Typische
+Fehlvorstellungen</a></li>
+<li><a href="#differenzierung-3" id="toc-differenzierung-3">Differenzierung</a></li>
+<li><a href="#tafelbild" id="toc-tafelbild">Tafelbild</a></li>
+<li><a href="#wenn-die-zeit-knapp-wird-1" id="toc-wenn-die-zeit-knapp-wird-1">Wenn die Zeit knapp wird</a></li>
+</ul></li>
+<li><a href="#lehrerband-04-musik-im-computer" id="toc-lehrerband-04-musik-im-computer">Lehrerband – 04 Musik im
+Computer</a>
+<ul>
+<li><a href="#leitfrage-4" id="toc-leitfrage-4">Leitfrage</a></li>
+<li><a href="#lernziele-3" id="toc-lernziele-3">Lernziele</a></li>
+<li><a href="#rückblick-3-minuten-1" id="toc-rückblick-3-minuten-1">Rückblick (3 Minuten)</a></li>
+<li><a href="#unterrichtsverlauf-45-minuten-1" id="toc-unterrichtsverlauf-45-minuten-1">Unterrichtsverlauf (45
+Minuten)</a></li>
+<li><a href="#typische-fehlvorstellungen-3" id="toc-typische-fehlvorstellungen-3">Typische
+Fehlvorstellungen</a></li>
+<li><a href="#differenzierung-4" id="toc-differenzierung-4">Differenzierung</a></li>
+<li><a href="#sicherung" id="toc-sicherung">Sicherung</a></li>
+<li><a href="#prüfungsrelevant-1" id="toc-prüfungsrelevant-1">Prüfungsrelevant</a></li>
+<li><a href="#wenn-die-zeit-knapp-wird-2" id="toc-wenn-die-zeit-knapp-wird-2">Wenn die Zeit knapp wird</a></li>
+<li><a href="#ausblick-3" id="toc-ausblick-3">Ausblick</a></li>
+</ul></li>
+<li><a href="#lehrerband-05-evas-prinzip" id="toc-lehrerband-05-evas-prinzip">Lehrerband – 05 EVAS-Prinzip</a>
+<ul>
+<li><a href="#leitfrage-5" id="toc-leitfrage-5">Leitfrage</a></li>
+<li><a href="#lernziele-4" id="toc-lernziele-4">Lernziele</a></li>
+<li><a href="#rückblick-3-minuten-2" id="toc-rückblick-3-minuten-2">Rückblick (3 Minuten)</a></li>
+<li><a href="#unterrichtsverlauf-45-minuten-2" id="toc-unterrichtsverlauf-45-minuten-2">Unterrichtsverlauf (45
+Minuten)</a></li>
+<li><a href="#wichtig-zur-speicherung" id="toc-wichtig-zur-speicherung">Wichtig zur Speicherung</a></li>
+<li><a href="#typische-fehlvorstellungen-4" id="toc-typische-fehlvorstellungen-4">Typische
+Fehlvorstellungen</a></li>
+<li><a href="#differenzierung-5" id="toc-differenzierung-5">Differenzierung</a></li>
+<li><a href="#leistungsbewertung" id="toc-leistungsbewertung">Leistungsbewertung</a></li>
+<li><a href="#wenn-die-zeit-knapp-wird-3" id="toc-wenn-die-zeit-knapp-wird-3">Wenn die Zeit knapp wird</a></li>
+<li><a href="#ausblick-4" id="toc-ausblick-4">Ausblick</a></li>
+</ul></li>
+<li><a href="#lehrerband-15-bis-17-informatiksysteme-und-dateien" id="toc-lehrerband-15-bis-17-informatiksysteme-und-dateien">Lehrerband –
+15 bis 17 Informatiksysteme und Dateien</a>
+<ul>
+<li><a href="#einordnung-5" id="toc-einordnung-5">Einordnung</a></li>
+<li><a href="#stunde-15-hardware-und-software" id="toc-stunde-15-hardware-und-software">Stunde 15 – Hardware und
+Software</a></li>
+<li><a href="#stunde-16-speicher" id="toc-stunde-16-speicher">Stunde 16
+– Speicher</a></li>
+<li><a href="#stunde-17-dateien-ordner-und-pfade" id="toc-stunde-17-dateien-ordner-und-pfade">Stunde 17 – Dateien, Ordner
+und Pfade</a></li>
+<li><a href="#typische-fehlvorstellungen-5" id="toc-typische-fehlvorstellungen-5">Typische
+Fehlvorstellungen</a></li>
+<li><a href="#prüfungsrelevant-2" id="toc-prüfungsrelevant-2">Prüfungsrelevant</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="lehrerband">Lehrerband</h1>
+<div class="page-break"></div>
+<h1 id="woher-kommen-computer">00 – Woher kommen Computer?</h1>
+<hr />
+<div class="page-break"></div>
+<h1 id="einordnung">Einordnung</h1>
+<p>Die Stunde eröffnet den Informatikunterricht der Klassenstufe 7. Die
+Geschichte der Informatik wird bewusst als <strong>motivierende
+Orientierung</strong> behandelt und nicht als Stoff zum Auswendiglernen.
+Namen und Jahreszahlen sind nicht für eine Leistungskontrolle
+vorgesehen.</p>
+<p>Die Schülerinnen und Schüler erarbeiten in Gruppen ausgewählte
+Stationen der Entwicklung und stellen sie knapp vor. Der rote Faden
+lautet: Technische Entwicklungen entstehen, weil Menschen konkrete
+Probleme lösen wollen.</p>
+<p>Die Stunde ist als <strong>Einzelstunde mit 45 Minuten</strong>
+geplant.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="leitfrage">Leitfrage</h1>
+<blockquote>
+<p>Warum haben Menschen begonnen, Rechenmaschinen und später Computer zu
+entwickeln?</p>
+</blockquote>
+<hr />
+<div class="page-break"></div>
+<h1 id="kompetenzen-und-lernziele">Kompetenzen und Lernziele</h1>
+<p>Die Schülerinnen und Schüler können</p>
+<ul>
+<li>historische Entwicklungen als Reaktion auf konkrete Probleme
+beschreiben,</li>
+<li>wesentliche Ideen ausgewählter Personen in eigenen Worten
+wiedergeben,</li>
+<li>Informationen aus einem kurzen Sachtext entnehmen,</li>
+<li>Ergebnisse in einem sehr kurzen Gruppenbeitrag vorstellen,</li>
+<li>Gemeinsamkeiten verschiedener Entwicklungsschritte erkennen.</li>
+</ul>
+<p>Nicht erwartet werden das Auswendiglernen von Lebensdaten,
+Jahreszahlen oder technischen Detailkonstruktionen.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="benötigte-materialien">Benötigte Materialien</h1>
+<ul>
+<li>Arbeitsheft <code>00_Woher_kommen_Computer.md</code></li>
+<li>sechs Gruppenblätter aus <code>03_Material</code></li>
+<li>Präsentation <code>00_Geschichte_der_Informatik.md</code></li>
+<li>Tafel oder Whiteboard</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="unterrichtsverlauf">Unterrichtsverlauf</h1>
+<h2 id="einstieg-und-aktivierung-ca.-5-minuten">1. Einstieg und
+Aktivierung – ca. 5 Minuten</h2>
+<p>Impuls:</p>
+<blockquote>
+<p>Wo begegnen euch heute Computer, auch wenn sie nicht wie ein PC
+aussehen?</p>
+</blockquote>
+<p>Mögliche Nennungen: Smartphone, Auto, Fahrkartenautomat,
+Waschmaschine, Spielkonsole, Smartwatch.</p>
+<p>Anschließend:</p>
+<blockquote>
+<p>Wie haben Menschen gerechnet und Informationen verarbeitet, bevor es
+Computer gab?</p>
+</blockquote>
+<p>Die Antworten werden kurz gesammelt, aber nicht ausführlich
+bewertet.</p>
+<hr />
+<h2 id="arbeitsauftrag-erklären-ca.-3-minuten">2. Arbeitsauftrag
+erklären – ca. 3 Minuten</h2>
+<p>Die Klasse wird in bis zu sechs Gruppen eingeteilt. Jede Gruppe
+erhält ein Informationsblatt.</p>
+<p>Auftrag:</p>
+<ol type="1">
+<li>Person oder Entwicklung erfassen.</li>
+<li>Problem bestimmen.</li>
+<li>Idee beziehungsweise Lösung beschreiben.</li>
+<li>Bedeutung für heutige Computer benennen.</li>
+<li>Einen Kurzvortrag von höchstens zwei Minuten vorbereiten.</li>
+</ol>
+<p>Hinweis an die Klasse:</p>
+<blockquote>
+<p>Ihr müsst euch keine Jahreszahlen merken. Entscheidend ist, welches
+Problem gelöst werden sollte und welche neue Idee daraus entstand.</p>
+</blockquote>
+<hr />
+<h2 id="gruppenarbeit-ca.-17-minuten">3. Gruppenarbeit – ca. 17
+Minuten</h2>
+<p>Die Lehrkraft unterstützt vor allem beim Verdichten der Texte. Die
+Gruppen sollen keine vollständigen Referate schreiben, sondern drei bis
+vier klare Aussagen vorbereiten.</p>
+<p>Bei schwächeren Gruppen kann die Reihenfolge <strong>Problem → Idee →
+Bedeutung</strong> sichtbar an die Tafel geschrieben werden.</p>
+<hr />
+<h2 id="kurzvorträge-und-sicherung-ca.-15-minuten">4. Kurzvorträge und
+Sicherung – ca. 15 Minuten</h2>
+<p>Jede Gruppe erhält maximal zwei Minuten. Die übrigen Schülerinnen und
+Schüler ergänzen die Tabelle im Arbeitsheft.</p>
+<p>Bei Zeitdruck werden die Beiträge auf etwa 90 Sekunden begrenzt. Die
+Tabelle muss nicht wortgleich gefüllt sein; sinnvolle Stichpunkte
+genügen.</p>
+<hr />
+<h2 id="abschluss-ca.-5-minuten">5. Abschluss – ca. 5 Minuten</h2>
+<p>Leitfrage erneut aufgreifen:</p>
+<blockquote>
+<p>Warum entstanden immer neue Rechenmaschinen und Computer?</p>
+</blockquote>
+<p>Erwartete Kernaussage:</p>
+<blockquote>
+<p>Menschen wollten konkrete Aufgaben schneller, zuverlässiger oder
+automatisch lösen.</p>
+</blockquote>
+<p>Gemeinsamer Merksatz:</p>
+<blockquote>
+<p>Computer sind nicht plötzlich entstanden. Viele Menschen entwickelten
+über lange Zeit Ideen, um Rechnen und Informationsverarbeitung zu
+erleichtern oder zu automatisieren.</p>
+</blockquote>
+<hr />
+<div class="page-break"></div>
+<h1 id="ausblick">Ausblick</h1>
+<p>Die Stunde endet mit der Frage:</p>
+<blockquote>
+<p>Könnt ihr euch vorstellen, eine ganze Sprache nur aus 0 und 1 zu
+gestalten?</p>
+</blockquote>
+<p>Damit wird die nächste Stunde zur binären Informationsdarstellung
+vorbereitet.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="typische-stolperstellen">Typische Stolperstellen</h1>
+<ul>
+<li>Die Gruppen verlieren sich in Lebensdaten. → Auf Problem, Idee und
+Bedeutung zurückführen.</li>
+<li>Die Vorträge werden zu lang. → Zwei Minuten konsequent
+begrenzen.</li>
+<li>Historische Aussagen werden zu absolut formuliert, etwa „der erste
+Computer“. → Bei umstrittenen Einordnungen lieber von „einem wichtigen
+Meilenstein“ sprechen.</li>
+</ul>
+<hr />
+<div class="page-break"></div>
+<h1 id="wenn-heute-weniger-zeit-ist">Wenn heute weniger Zeit ist</h1>
+<ul>
+<li>Die Einstiegsdiskussion auf zwei Minuten kürzen.</li>
+<li>Die Gruppenpräsentationen auf 60–90 Sekunden begrenzen.</li>
+<li>Die letzte Spalte der Übersicht nur mündlich sichern.</li>
+</ul>
+<p>Die Abschlussfrage und der Ausblick auf <strong>0 und 1</strong>
+sollten erhalten bleiben.</p>
+<div class="page-break"></div>
+<h1 id="lehrerband-01-kann-man-eine-sprache-nur-aus-0-und-1-schreiben">Lehrerband
+– 01 Kann man eine Sprache nur aus 0 und 1 schreiben?</h1>
+<h2 id="einordnung-1">Einordnung</h2>
+<p>Diese Stunde knüpft an den historischen Einstieg an. Die Schülerinnen
+und Schüler wechseln von der Frage, <strong>wie Computer entstanden
+sind</strong>, zur Frage, <strong>warum digitale Systeme mit zwei
+Zuständen arbeiten können</strong>.</p>
+<p>Die Stunde führt bewusst noch <strong>nicht</strong> in die
+Umrechnung von Binärzahlen ein. Ziel ist zunächst das Verständnis des
+Grundprinzips: Zwei Zustände können durch Kombinationen viele
+verschiedene Informationen darstellen.</p>
+<p><strong>Dauer:</strong> 45 Minuten<br />
+<strong>Stunde:</strong> 2<br />
+<strong>Prüfungsrelevant:</strong> ja – Grundbegriffe Bit, binär, zwei
+Zustände</p>
+<hr />
+<h2 id="rückblick-ca.-3-minuten">Rückblick – ca. 3 Minuten</h2>
+<p>Impuls:</p>
+<blockquote>
+<p>Was haben wir letzte Stunde gemacht?</p>
+</blockquote>
+<p>Mögliche Schülerantworten:</p>
+<ul>
+<li>Menschen haben schon lange Rechenhilfen entwickelt.</li>
+<li>verschiedene Erfinder lösten unterschiedliche Probleme.</li>
+<li>Computer sind schrittweise entstanden.</li>
+<li>Leibniz beschäftigte sich mit einem Zahlensystem aus zwei
+Zeichen.</li>
+</ul>
+<p>Der letzte Punkt bietet den direkten Übergang.</p>
+<hr />
+<h2 id="leitfrage-1">Leitfrage</h2>
+<blockquote>
+<p><strong>Könnt ihr euch vorstellen, eine ganze Sprache nur mit den
+Zeichen 0 und 1 zu gestalten?</strong></p>
+</blockquote>
+<p>Die Frage zunächst offen diskutieren lassen. Keine Definition
+vorwegnehmen.</p>
+<p>Anschließend folgende Bitfolge zeigen:</p>
+<pre class="text"><code>01001000 01100001 01101100 01101100 01101111</code></pre>
+<p>Sie kann – bei passender Zeichencodierung – für <code>Hallo</code>
+stehen. Entscheidend ist nicht, ASCII oder UTF-8 bereits fachlich zu
+behandeln, sondern die Erkenntnis:</p>
+<blockquote>
+<p>Eine Bitfolge erhält ihre Bedeutung durch eine vereinbarte
+Interpretation.</p>
+</blockquote>
+<hr />
+<h2 id="lernziele">Lernziele</h2>
+<p>Die Schülerinnen und Schüler können</p>
+<ul>
+<li>zwei Zustände als Grundlage binärer Darstellung beschreiben,</li>
+<li>den Begriff <strong>Bit</strong> erklären,</li>
+<li>mögliche Kombinationen aus wenigen Bits systematisch bestimmen,</li>
+<li>erklären, dass Bitfolgen erst durch Regeln eine Bedeutung
+erhalten,</li>
+<li>den Begriff <strong>Binärsystem/Dualsystem</strong> einordnen.</li>
+</ul>
+<hr />
+<h2 id="benötigtes-material">Benötigtes Material</h2>
+<ul>
+<li>Arbeitsheft Kapitel 01</li>
+<li>Präsentation Kapitel 01</li>
+<li>optional: Karten aus
+<code>03_Material/01_Binaercode_Karten.md</code></li>
+<li>Tafel/Whiteboard</li>
+</ul>
+<hr />
+<h2 id="unterrichtsverlauf-1">Unterrichtsverlauf</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Zeit</th>
+<th>Phase</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">3 min</td>
+<td>Rückblick</td>
+<td>Geschichte der Rechentechnik aktivieren</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5 min</td>
+<td>Einstieg</td>
+<td>Leitfrage und Bitfolge <code>Hallo</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">8 min</td>
+<td>Erarbeitung I</td>
+<td>Zwei Zustände, Bit, Alltagssysteme</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10 min</td>
+<td>Erarbeitung II</td>
+<td>Kombinationen mit 1, 2 und 3 Bits</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">12 min</td>
+<td>Anwendung</td>
+<td>eigenen Binärcode entwickeln</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5 min</td>
+<td>Sicherung</td>
+<td>Begriffe und Kernaussagen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2 min</td>
+<td>Ausblick</td>
+<td>Zahl 13 als nächste Herausforderung</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="erarbeitung-i-zwei-zustände">Erarbeitung I – Zwei Zustände</h2>
+<p>Alltagsbeispiele sammeln:</p>
+<pre class="text"><code>Licht:        aus / an
+Türkontakt:   offen / geschlossen
+Aussage:      falsch / wahr
+Signal:       nein / ja</code></pre>
+<p>Dann zur technischen Darstellung überleiten:</p>
+<pre class="text"><code>0 / 1</code></pre>
+<p>Wichtig ist eine sprachlich saubere Formulierung. Nicht sagen:</p>
+<blockquote>
+<p>Im Computer ist 0 immer „kein Strom“ und 1 immer „Strom“.</p>
+</blockquote>
+<p>Für Klasse 7 genügt:</p>
+<blockquote>
+<p>Digitale Schaltungen unterscheiden zwei klar definierte Zustände, die
+wir mit 0 und 1 bezeichnen.</p>
+</blockquote>
+<p>So wird keine technisch zu grobe Fehlvorstellung verfestigt.</p>
+<hr />
+<h2 id="erarbeitung-ii-kombinationen">Erarbeitung II –
+Kombinationen</h2>
+<p>Gemeinsam an der Tafel:</p>
+<pre class="text"><code>1 Bit:
+0
+1
+
+2 Bits:
+00
+01
+10
+11</code></pre>
+<p>Frage:</p>
+<blockquote>
+<p>Wie können wir sicher sein, dass wir keine Kombination vergessen
+haben?</p>
+</blockquote>
+<p>Danach drei Bits durch die Schülerinnen und Schüler ergänzen
+lassen.</p>
+<p>Erwartete Erkenntnis:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Bits</th>
+<th style="text-align: right;">Kombinationen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">32</td>
+</tr>
+</tbody>
+</table>
+<p>Die Potenzschreibweise <code>2^n</code> darf als Ausblick erwähnt
+werden, wird aber erst im Kapitel zu Binärzahlen systematisch
+benötigt.</p>
+<hr />
+<h2 id="anwendung-eigener-code">Anwendung – eigener Code</h2>
+<p>Die Aufgabe <code>JA / NEIN / STOPP / WEITER</code> eignet sich als
+Partnerarbeit.</p>
+<p>Die Schülerinnen und Schüler sollen selbst entdecken, dass für vier
+eindeutig unterscheidbare Nachrichten mindestens zwei Bits erforderlich
+sind.</p>
+<p>Eine mögliche Lösung:</p>
+<pre class="text"><code>00 → JA
+01 → NEIN
+10 → STOPP
+11 → WEITER</code></pre>
+<p>Andere eindeutige Zuordnungen sind gleichwertig.</p>
+<hr />
+<h2 id="typische-fehlvorstellungen">Typische Fehlvorstellungen</h2>
+<h3 id="bedeutet-immer-aus-1-bedeutet-immer-an.">„0 bedeutet immer aus,
+1 bedeutet immer an.“</h3>
+<p>Das ist eine hilfreiche Modellvorstellung, aber keine universelle
+technische Definition. Besser von <strong>zwei unterscheidbaren
+Zuständen</strong> sprechen.</p>
+<h3 id="eine-bitfolge-hat-immer-dieselbe-bedeutung.">„Eine Bitfolge hat
+immer dieselbe Bedeutung.“</h3>
+<p>Nein. Die Interpretation entscheidet, ob eine Bitfolge beispielsweise
+Zahl, Zeichen, Farbe oder Steuerinformation ist.</p>
+<h3 id="mit-zwei-bits-kann-ich-nur-die-zahlen-0-und-1-darstellen.">„Mit
+zwei Bits kann ich nur die Zahlen 0 und 1 darstellen.“</h3>
+<p>Zwei Bits erlauben vier unterschiedliche Kombinationen.</p>
+<hr />
+<h2 id="differenzierung">Differenzierung</h2>
+<h3 id="unterstützung">Unterstützung</h3>
+<p>Für die Kombinationsaufgabe Karten mit <code>0</code> und
+<code>1</code> verwenden. Lernende legen alle Möglichkeiten physisch
+aus.</p>
+<h3 id="erweiterung">Erweiterung</h3>
+<p>Schnelle Schülerinnen und Schüler beantworten:</p>
+<blockquote>
+<p>Wie viele Kombinationen sind mit 6, 7 oder 8 Bits möglich?</p>
+</blockquote>
+<p>Noch keine Umrechnung konkreter Binärzahlen verlangen.</p>
+<hr />
+<h2 id="sicherung-tafelbild">Sicherung / Tafelbild</h2>
+<pre class="text"><code>Zwei Zustände
+     ↓
+   0 / 1
+     ↓
+    Bit
+     ↓
+Kombinationen mehrerer Bits
+     ↓
+viele mögliche Informationen</code></pre>
+<p>Merksatz:</p>
+<blockquote>
+<p><strong>Ein Bit kann zwei Zustände darstellen. Mehrere Bits können zu
+vielen verschiedenen Kombinationen zusammengesetzt werden. Ihre
+Bedeutung entsteht durch eine Vereinbarung.</strong></p>
+</blockquote>
+<hr />
+<h2 id="wenn-heute-weniger-zeit-ist-1">Wenn heute weniger Zeit ist</h2>
+<ul>
+<li>Aufgabe zu vier Nachrichten als Haus-/Startaufgabe für die nächste
+Stunde nutzen.</li>
+<li>Die Tabelle bis 5 Bits kann in der folgenden Stunde beim Einstieg in
+Potenzen wieder aufgenommen werden.</li>
+<li>Die Sicherung zu <code>Bit</code> und <code>zwei Zustände</code>
+sollte nicht entfallen.</li>
+</ul>
+<hr />
+<h2 id="ausblick-1">Ausblick</h2>
+<blockquote>
+<p>Wir können mit mehreren Bits viele verschiedene Zeichenfolgen bilden.
+Aber wie wird daraus eine Zahl? Wie schreibt ein Computer zum Beispiel
+die <strong>13</strong> nur mit 0 und 1?</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="lehrerband-02-wie-schreibt-ein-computer-zahlen">Lehrerband – 02
+Wie schreibt ein Computer Zahlen?</h1>
+<h2 id="einordnung-2">Einordnung</h2>
+<p>Die vorherige Stunde hat geklärt, dass Computer zwei Zustände
+unterscheiden und diese als <code>0</code> und <code>1</code> darstellen
+können. In dieser Stunde wird daraus erstmals ein vollständiges
+Zahlensystem.</p>
+<p>Die Schülerinnen und Schüler sollen zwei Umrechnungsverfahren
+kennenlernen:</p>
+<ol type="1">
+<li>Zerlegung in Zweierpotenzen,</li>
+<li>wiederholte Division durch 2.</li>
+</ol>
+<p>Beide Verfahren sind prüfungsrelevant. Die Lernenden dürfen später
+das für sie verständlichere Verfahren bevorzugen, sollten aber beide
+erklären können.</p>
+<h2 id="zeit">Zeit</h2>
+<p>45 Minuten</p>
+<h2 id="lernziele-1">Lernziele</h2>
+<p>Die Schülerinnen und Schüler können</p>
+<ul>
+<li>die Stellenwerte des Binärsystems als Zweierpotenzen erklären,</li>
+<li>Dezimalzahlen mit Zweierpotenzen in Binärzahlen umwandeln,</li>
+<li>Dezimalzahlen durch wiederholte Division durch 2 umwandeln,</li>
+<li>Binärzahlen wieder in Dezimalzahlen überführen,</li>
+<li>beide Verfahren vergleichen.</li>
+</ul>
+<h2 id="benötigtes-material-1">Benötigtes Material</h2>
+<ul>
+<li>Arbeitsheft Kapitel 02</li>
+<li>Präsentation Kapitel 02</li>
+<li>Materialblatt <code>M02_Binaerzahlen_Uebung.md</code></li>
+<li>optional Karten mit <code>1, 2, 4, 8, 16, 32, 64</code></li>
+</ul>
+<h2 id="rückblick-ca.-4-minuten">Rückblick – ca. 4 Minuten</h2>
+<p>Fragen:</p>
+<blockquote>
+<p>Was ist ein Bit?</p>
+</blockquote>
+<p>Erwartung: Eine Stelle mit zwei möglichen Zuständen, meist
+<code>0</code> und <code>1</code>.</p>
+<blockquote>
+<p>Warum reichen 0 und 1 grundsätzlich aus, um Informationen
+darzustellen?</p>
+</blockquote>
+<p>Erwartung: Mehrere Bits können kombiniert und nach festen Regeln
+gedeutet werden.</p>
+<h2 id="einstieg-ca.-4-minuten">Einstieg – ca. 4 Minuten</h2>
+<p>An der Tafel steht:</p>
+<pre class="text"><code>13</code></pre>
+<p>Daneben:</p>
+<pre class="text"><code>1101</code></pre>
+<p>Impuls:</p>
+<blockquote>
+<p>Könnten beide Schreibweisen dieselbe Zahl meinen?</p>
+</blockquote>
+<p>Nicht sofort auflösen. Vermutungen sammeln.</p>
+<h2 id="erarbeitung-i-zweierpotenzen-ca.-10-minuten">Erarbeitung I –
+Zweierpotenzen – ca. 10 Minuten</h2>
+<p>Die Stellenwerttabelle gemeinsam entwickeln:</p>
+<pre class="text"><code>... 32 16 8 4 2 1</code></pre>
+<p>Wichtig ist zunächst das Muster der Verdopplung. Erst danach die
+Potenzschreibweise ergänzen:</p>
+<pre class="text"><code>2⁵ 2⁴ 2³ 2² 2¹ 2⁰</code></pre>
+<p>Beispiel 13 gemeinsam zerlegen:</p>
+<pre class="text"><code>13 = 8 + 4 + 1</code></pre>
+<p>Daraus:</p>
+<pre class="text"><code>8 4 2 1
+1 1 0 1</code></pre>
+<h3 id="typische-fehlvorstellung">Typische Fehlvorstellung</h3>
+<p>Manche Lernende setzen <code>2⁰ = 0</code>.</p>
+<p>Unbedingt sichern:</p>
+<pre class="text"><code>2⁰ = 1</code></pre>
+<h2 id="erarbeitung-ii-division-durch-2-ca.-9-minuten">Erarbeitung II –
+Division durch 2 – ca. 9 Minuten</h2>
+<p>Am selben Beispiel <code>13</code> das zweite Verfahren zeigen.</p>
+<p>Die Reste deutlich in einer eigenen Spalte notieren.</p>
+<p>Kernpunkt:</p>
+<blockquote>
+<p>Die Reste werden von unten nach oben gelesen.</p>
+</blockquote>
+<p>Ein häufiger Fehler ist das Lesen in Rechenrichtung. Deshalb
+unmittelbar eine Kontrollfrage stellen:</p>
+<blockquote>
+<p>Wie können wir prüfen, ob <code>1101₂</code> wirklich 13 ergibt?</p>
+</blockquote>
+<p>Rückrechnung über die Stellenwerte.</p>
+<h2 id="übungsphase-ca.-12-minuten">Übungsphase – ca. 12 Minuten</h2>
+<p>Arbeitsheft Aufgaben 1–3 oder Materialblatt.</p>
+<p>Empfehlung:</p>
+<ul>
+<li>schwächere Lernende zunächst Zahlen bis 15,</li>
+<li>mittleres Niveau bis 31,</li>
+<li>schnelle Lernende bis 127.</li>
+</ul>
+<p>Die Lehrkraft fordert bei mindestens einer Zahl ausdrücklich beide
+Verfahren.</p>
+<h2 id="sicherung-ca.-4-minuten">Sicherung – ca. 4 Minuten</h2>
+<p>Gemeinsam festhalten:</p>
+<pre class="text"><code>Dezimal → Binär
+1. Zweierpotenzen ODER
+2. Division durch 2
+
+Binär → Dezimal
+Stellenwerte mit 1 addieren</code></pre>
+<h2 id="ausblick-ca.-2-minuten">Ausblick – ca. 2 Minuten</h2>
+<blockquote>
+<p>Wir können jetzt Zahlen nur mit 0 und 1 darstellen. Aber auf eurem
+Smartphone stehen keine Binärzahlen, sondern Texte. Wie wird aus einer
+Zahl ein Buchstabe?</p>
+</blockquote>
+<p>Damit wird die nächste Stunde zur Zeichencodierung vorbereitet.</p>
+<h2 id="differenzierung-1">Differenzierung</h2>
+<h3 id="unterstützung-1">Unterstützung</h3>
+<ul>
+<li>vorbereitete Stellenwertkarten verwenden,</li>
+<li>Potenzschreibweise zunächst weglassen und mit
+<code>1, 2, 4, 8, ...</code> arbeiten,</li>
+<li>Umrechnung in Partnerarbeit mit gegenseitiger Kontrolle.</li>
+</ul>
+<h3 id="erweiterung-1">Erweiterung</h3>
+<p>Fragen:</p>
+<ul>
+<li>Welche größte Zahl kann mit 4 Bits dargestellt werden?</li>
+<li>Welche mit 8 Bits?</li>
+<li>Erkennst du eine Regel?</li>
+</ul>
+<p>Erwartung:</p>
+<pre class="text"><code>4 Bit → 15
+8 Bit → 255</code></pre>
+<p>Die allgemeine Formel <code>2^n - 1</code> kann als Erweiterung
+genannt werden, muss in Klasse 7 aber nicht formalisiert werden.</p>
+<h2 id="typische-fehler">Typische Fehler</h2>
+<ul>
+<li>Stellenwerte werden von links mit <code>1,2,4,...</code> begonnen
+statt von rechts.</li>
+<li><code>2⁰</code> wird falsch berechnet.</li>
+<li>Reste der Divisionsmethode werden von oben nach unten gelesen.</li>
+<li>Führende Nullen werden als wertverändernd interpretiert.</li>
+</ul>
+<h2 id="wenn-heute-weniger-zeit-ist-2">Wenn heute weniger Zeit ist</h2>
+<p>Die Divisionsmethode vollständig erklären und nur eine gemeinsame
+Übung rechnen. Aufgabe 3 und der Methodenvergleich können als Einstieg
+in der Folgestunde nachgeholt werden.</p>
+<h2 id="prüfungsrelevanz">Prüfungsrelevanz</h2>
+<p>Ja. Erwartet werden:</p>
+<ul>
+<li>Stellenwerte/Zweierpotenzen,</li>
+<li>Dezimal → Binär,</li>
+<li>Binär → Dezimal,</li>
+<li>mindestens ein nachvollziehbarer Rechenweg.</li>
+</ul>
+<div class="page-break"></div>
+<h1 id="lehrerband-03-wie-speichert-ein-computer-texte">Lehrerband – 03
+Wie speichert ein Computer Texte?</h1>
+<h2 id="einordnung-3">Einordnung</h2>
+<p>Die Schülerinnen und Schüler haben zuvor Binärzahlen kennengelernt.
+Nun wird die zentrale Idee erweitert: Auch Zeichen werden nicht „als
+Buchstaben“, sondern über vereinbarte Zahlenwerte gespeichert.</p>
+<p>Die Stunde bildet damit den Übergang von Zahlendarstellung zu
+allgemeiner Informationsdarstellung.</p>
+<h2 id="leitfrage-2">Leitfrage</h2>
+<blockquote>
+<p><strong>Wie kann ein Computer Buchstaben speichern, wenn er
+eigentlich nur Zahlen kennt?</strong></p>
+</blockquote>
+<h2 id="lernziele-2">Lernziele</h2>
+<p>Die Schülerinnen und Schüler können</p>
+<ul>
+<li>erklären, dass Zeichen über Zahlen codiert werden,</li>
+<li>ASCII als Beispiel einer Zeichencodierung beschreiben,</li>
+<li>den Unterschied zwischen ASCII, Unicode und UTF-8 auf elementarem
+Niveau erklären,</li>
+<li>erkennen, dass die Bedeutung einer Bitfolge von ihrer Interpretation
+abhängt,</li>
+<li>einfache Zeichencodes in Binärdarstellung überführen.</li>
+</ul>
+<h2 id="benötigte-materialien-1">Benötigte Materialien</h2>
+<ul>
+<li>Arbeitsheft Kapitel 03</li>
+<li>Präsentation Kapitel 03</li>
+<li>Material <code>M03_Zeichencodes.md</code></li>
+<li>optional Karten mit Zeichen und Zahlencodes</li>
+</ul>
+<h2 id="rückblick-ca.-5-minuten">Rückblick (ca. 5 Minuten)</h2>
+<p>Fragen:</p>
+<ul>
+<li>Welche Ziffern gibt es im Binärsystem?</li>
+<li>Wie wird <code>5₁₀</code> binär dargestellt?</li>
+<li>Was ist ein Bit?</li>
+</ul>
+<p>Dann die Leitfrage stellen.</p>
+<h2 id="einstieg-ca.-5-minuten">Einstieg (ca. 5 Minuten)</h2>
+<p>An die Tafel:</p>
+<pre class="text"><code>01000001</code></pre>
+<p>Frage:</p>
+<blockquote>
+<p>Was bedeutet diese Bitfolge?</p>
+</blockquote>
+<p>Mögliche Antworten:</p>
+<ul>
+<li>65</li>
+<li>eine Zahl</li>
+<li>ein Buchstabe</li>
+<li>„weiß man nicht“</li>
+</ul>
+<p>Die letzte Antwort ist didaktisch besonders wertvoll: Ohne
+Vereinbarung ist die Bedeutung nicht eindeutig.</p>
+<h2 id="erarbeitung-i-zeichen-als-zahlen-ca.-10-minuten">Erarbeitung I –
+Zeichen als Zahlen (ca. 10 Minuten)</h2>
+<p>Beispiel:</p>
+<pre class="text"><code>A → 65 → 01000001</code></pre>
+<p>Dann <code>B</code>, <code>C</code> und Leerzeichen ergänzen.</p>
+<p>Wichtig ist nicht das Auswendiglernen von ASCII-Werten, sondern das
+Prinzip der Zuordnung.</p>
+<h2 id="erarbeitung-ii-ascii-und-unicode-ca.-10-minuten">Erarbeitung II
+– ASCII und Unicode (ca. 10 Minuten)</h2>
+<p>ASCII knapp einführen:</p>
+<ul>
+<li>standardisierte Zuordnung,</li>
+<li>ursprünglich 128 Codes,</li>
+<li>ausreichend für einen kleinen Zeichenvorrat.</li>
+</ul>
+<p>Anschließend Problemfrage:</p>
+<blockquote>
+<p>Was machen wir mit <code>ä</code>, <code>€</code>, chinesischen
+Schriftzeichen oder Emojis?</p>
+</blockquote>
+<p>Unicode als Antwort einführen.</p>
+<p>UTF-8 nur als Speicherform erklären, nicht technisch über Bitmuster
+zerlegen.</p>
+<h2 id="übung-ca.-10-minuten">Übung (ca. 10 Minuten)</h2>
+<p>Arbeitsheft Aufgaben 1–4 bzw. Material M03.</p>
+<p>Aufgabe 5 eignet sich als Partnerarbeit zur Erkenntnis:</p>
+<blockquote>
+<p>Eine Codierung funktioniert nur, wenn Sender und Empfänger dieselbe
+Vereinbarung kennen.</p>
+</blockquote>
+<h2 id="sicherung-ca.-5-minuten">Sicherung (ca. 5 Minuten)</h2>
+<p>Gemeinsam festhalten:</p>
+<pre class="text"><code>Zeichen
+  ↓ Codierung
+Zahl
+  ↓ Binärdarstellung
+Bits</code></pre>
+<p>Tafelmerksatz:</p>
+<blockquote>
+<p><strong>Bits haben keine eingebaute Bedeutung. Eine vereinbarte
+Codierung legt fest, was sie darstellen.</strong></p>
+</blockquote>
+<h2 id="typische-fehlvorstellungen-1">Typische Fehlvorstellungen</h2>
+<h3 id="ascii-ist-binärschrift.">„ASCII ist Binärschrift.“</h3>
+<p>Nein. ASCII ordnet Zeichen Zahlenwerte zu. Diese Zahlen können
+anschließend binär gespeichert werden.</p>
+<h3 id="jeder-buchstabe-braucht-immer-genau-8-bit.">„Jeder Buchstabe
+braucht immer genau 8 Bit.“</h3>
+<p>Für einfache ASCII-Zeichen in vielen heutigen Systemen ist ein Byte
+typisch. Unicode/UTF-8 kann jedoch mehrere Bytes pro Zeichen
+benötigen.</p>
+<h3 id="unicode-und-utf-8-sind-dasselbe.">„Unicode und UTF-8 sind
+dasselbe.“</h3>
+<p>Vereinfachte Trennung:</p>
+<ul>
+<li>Unicode: Welches Zeichen hat welche Nummer?</li>
+<li>UTF-8: Wie wird diese Nummer als Bytes gespeichert?</li>
+</ul>
+<h2 id="differenzierung-2">Differenzierung</h2>
+<h3 id="basis">Basis</h3>
+<ul>
+<li>ASCII-Tabelle verwenden</li>
+<li>Zeichen ↔︎ Dezimalzahl zuordnen</li>
+<li>einfache Dezimalzahlen binär darstellen</li>
+</ul>
+<h3 id="erweiterung-2">Erweiterung</h3>
+<ul>
+<li>Speicherbedarf einfacher Zeichenketten bestimmen</li>
+<li>Unterschied zwischen Codepunkt und Codierung diskutieren</li>
+<li>erklären, warum verschiedene Codierungen zu Darstellungsfehlern
+führen können</li>
+</ul>
+<h2 id="prüfungsrelevanz-1">Prüfungsrelevanz</h2>
+<p>Geeignet für die spätere Leistungskontrolle:</p>
+<ul>
+<li>Prinzip der Zeichencodierung</li>
+<li>ASCII als Beispiel</li>
+<li>grobe Rolle von Unicode</li>
+<li>Zeichen → Zahl → Binär</li>
+<li>Bedeutung einer Bitfolge hängt von Interpretation ab</li>
+</ul>
+<p>Nicht erforderlich:</p>
+<ul>
+<li>konkrete Unicode-Codepunkte auswendig lernen</li>
+<li>UTF-8-Bitstruktur berechnen</li>
+</ul>
+<h2 id="wenn-die-zeit-knapp-wird">Wenn die Zeit knapp wird</h2>
+<p>Aufgabe 5 als Haus-/Zusatzaufgabe auslassen. ASCII, Unicode und der
+Merksatz zur Interpretation sollten unbedingt gesichert werden.</p>
+<h2 id="ausblick-2">Ausblick</h2>
+<blockquote>
+<p><strong>Wenn Texte als Zahlen gespeichert werden können – wie werden
+dann Bilder zu Zahlen?</strong></p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="lehrerband-04-bilder-im-computer">Lehrerband – 04 Bilder im
+Computer</h1>
+<h2 id="einordnung-4">Einordnung</h2>
+<p>Die Schülerinnen und Schüler kennen bereits Binärzahlen sowie die
+Darstellung von Texten über Zeichencodes. Nun übertragen sie die
+Grundidee „Information wird als Zahl dargestellt“ auf digitale
+Bilder.</p>
+<h2 id="leitfrage-3">Leitfrage</h2>
+<blockquote>
+<p><strong>Wie speichert ein Computer Bilder, obwohl er nur Zahlen und
+Bits kennt?</strong></p>
+</blockquote>
+<h2 id="kompetenzen">Kompetenzen</h2>
+<p>Die Schülerinnen und Schüler können</p>
+<ul>
+<li>Pixel als elementare Bildpunkte erklären,</li>
+<li>die Auflösung eines Rasterbilds bestimmen,</li>
+<li>das RGB-Modell grundlegend beschreiben,</li>
+<li>den Zusammenhang zwischen Farbtiefe und Speicherbedarf
+erklären,</li>
+<li>einfachen Speicherbedarf berechnen,</li>
+<li>Raster- und Vektorgrafiken unterscheiden.</li>
+</ul>
+<h2 id="prüfungsrelevant">Prüfungsrelevant</h2>
+<ul>
+<li>Pixel</li>
+<li>Auflösung</li>
+<li>RGB</li>
+<li>8 Bit = 256 Werte</li>
+<li>24 Bit pro RGB-Pixel bei 8 Bit je Farbkanal</li>
+<li>einfacher Speicherbedarf</li>
+<li>Unterschied Raster-/Vektorgrafik</li>
+</ul>
+<p>Nicht vertiefend prüfen:</p>
+<ul>
+<li>konkrete JPEG-/PNG-Kompressionsverfahren</li>
+<li>Farbmanagement</li>
+<li>Alpha-Kanal</li>
+</ul>
+<h2 id="material">Material</h2>
+<ul>
+<li>Arbeitsheft Kapitel 04</li>
+<li>Präsentation Kapitel 04</li>
+<li>Material M04</li>
+<li>kariertes Papier oder Pixelraster</li>
+<li>optional Bildschirm mit stark vergrößertem Bild</li>
+</ul>
+<h2 id="unterrichtsverlauf-45-minuten">Unterrichtsverlauf – 45
+Minuten</h2>
+<h3 id="rückblick-3-minuten">Rückblick – 3 Minuten</h3>
+<p>Fragen:</p>
+<ul>
+<li>Wie werden Buchstaben im Computer gespeichert?</li>
+<li>Warum ist eine Vereinbarung wie ASCII oder Unicode nötig?</li>
+</ul>
+<p>Überleitung:</p>
+<blockquote>
+<p>Wenn Buchstaben als Zahlen gespeichert werden können, gilt das
+vielleicht auch für Bilder.</p>
+</blockquote>
+<h3 id="einstieg-5-minuten">Einstieg – 5 Minuten</h3>
+<p>Ein stark vergrößertes Bild zeigen oder ein grobes Pixelbild an die
+Tafel zeichnen.</p>
+<p>Impuls:</p>
+<blockquote>
+<p>Was passiert, wenn wir ein digitales Bild immer weiter
+vergrößern?</p>
+</blockquote>
+<p>Erwartung: einzelne Kästchen/Punkte werden sichtbar.</p>
+<p>Begriff <strong>Pixel</strong> einführen.</p>
+<h3 id="erarbeitung-1-10-minuten">Erarbeitung 1 – 10 Minuten</h3>
+<p>Schwarz-Weiß-Pixelraster aus dem Arbeitsheft bearbeiten.</p>
+<p>Ziel: Die Lernenden erkennen unmittelbar, dass ein sehr einfaches
+Bild bereits mit <code>0</code> und <code>1</code> beschrieben werden
+kann.</p>
+<p>Anschließend Auflösung erklären:</p>
+<pre class="text"><code>Breite × Höhe</code></pre>
+<h3 id="erarbeitung-2-12-minuten">Erarbeitung 2 – 12 Minuten</h3>
+<p>RGB-Modell.</p>
+<p>Tafelbild:</p>
+<pre class="text"><code>Rot   Grün   Blau
+ 8     8      8 Bit
+          ↓
+        24 Bit</code></pre>
+<p>Wichtiger Rückgriff auf Binärzahlen:</p>
+<pre class="text"><code>2⁸ = 256</code></pre>
+<p>Damit wird erklärt, warum Werte von 0 bis 255 üblich sind.</p>
+<h3 id="erarbeitung-3-8-minuten">Erarbeitung 3 – 8 Minuten</h3>
+<p>Einfachen Speicherbedarf gemeinsam berechnen.</p>
+<p>Beispiel bewusst klein wählen:</p>
+<pre class="text"><code>100 × 100 Pixel
+24 Bit je Pixel</code></pre>
+<p>Danach Aufgabe 5 selbstständig oder paarweise.</p>
+<h3 id="sicherung-5-minuten">Sicherung – 5 Minuten</h3>
+<p>Gemeinsam festhalten:</p>
+<blockquote>
+<p>Ein Rasterbild besteht aus Pixeln. Für jeden Pixel werden
+Informationen über seine Farbe gespeichert.</p>
+</blockquote>
+<p>Kurze Gegenüberstellung Raster/Vektor.</p>
+<h3 id="ausblick-2-minuten">Ausblick – 2 Minuten</h3>
+<blockquote>
+<p>Ein Bild können wir in Zahlen zerlegen. Aber Schall verändert sich
+ständig. Wie kann daraus eine digitale Datei werden?</p>
+</blockquote>
+<h2 id="typische-fehlvorstellungen-2">Typische Fehlvorstellungen</h2>
+<h3 id="ein-pixel-ist-immer-ein-bit.">„Ein Pixel ist immer ein
+Bit.“</h3>
+<p>Nur bei sehr einfachen Schwarz-Weiß-Darstellungen kann ein Bit pro
+Pixel genügen. Ein Farbpixel benötigt wesentlich mehr Information.</p>
+<h3 id="bedeutet-1920-1080-pixel.">„1920 × 1080 bedeutet 1920 + 1080
+Pixel.“</h3>
+<p>Die Gesamtzahl ergibt sich durch Multiplikation.</p>
+<h3 id="rgb-255-bedeutet-255-bit.">„RGB 255 bedeutet 255 Bit.“</h3>
+<p>Der Wert 255 ist der größte Wert, der sich mit 8 Bit ohne Vorzeichen
+darstellen lässt.</p>
+<h3 id="jpeg-bilder-brauchen-immer-genau-breite-höhe-24-bit.">„JPEG-Bilder
+brauchen immer genau Breite × Höhe × 24 Bit.“</h3>
+<p>Diese Rechnung beschreibt einen vereinfachten unkomprimierten
+Speicherbedarf. Dateiformate können komprimieren.</p>
+<h3 id="vektorgrafiken-haben-keine-pixel.">„Vektorgrafiken haben keine
+Pixel.“</h3>
+<p>Bei der Darstellung auf einem Bildschirm werden sie natürlich auf
+Pixel gerendert. Die Datei beschreibt jedoch primär geometrische Formen
+statt einer festen Pixelmatrix.</p>
+<h2 id="differenzierung-3">Differenzierung</h2>
+<h3 id="unterstützung-2">Unterstützung</h3>
+<ul>
+<li>Zweierpotenzen-Tabelle bereitstellen.</li>
+<li>Speicherrechnung Schritt für Schritt gliedern: Pixel → Bit →
+Byte.</li>
+<li>RGB zunächst nur mit Grundfarben behandeln.</li>
+</ul>
+<h3 id="erweiterung-3">Erweiterung</h3>
+<p>Schnelle Schülerinnen und Schüler können untersuchen:</p>
+<ul>
+<li>Warum ergeben 32 Bit pro Pixel häufig Sinn?</li>
+<li>Welche Rolle könnte Transparenz spielen?</li>
+<li>Warum eignet sich SVG gut für Logos?</li>
+</ul>
+<p>Diese Erweiterungen sind nicht verpflichtend.</p>
+<h2 id="tafelbild">Tafelbild</h2>
+<pre class="text"><code>DIGITALES BILD
+
+Rasterbild
+   ↓
+Pixel
+   ↓
+Position + Farbe
+
+RGB
+Rot:  0 ... 255
+Grün: 0 ... 255
+Blau: 0 ... 255
+
+8 + 8 + 8 = 24 Bit je Pixel
+
+Speicher ≈ Pixelanzahl × Bit je Pixel</code></pre>
+<h2 id="wenn-die-zeit-knapp-wird-1">Wenn die Zeit knapp wird</h2>
+<ul>
+<li>Raster-/Vektorgrafik nur kurz mündlich gegenüberstellen.</li>
+<li>Aufgabe 6 als Hausaufgabe oder Einstieg der nächsten Stunde
+nutzen.</li>
+<li>Kompression nur als Hinweis erwähnen.</li>
+</ul>
+<p>Nicht streichen sollte man den Zusammenhang <code>2⁸ = 256</code>, da
+er die vorherige Binärstunde sinnvoll mit dem RGB-Modell verbindet.</p>
+<div class="page-break"></div>
+<h1 id="lehrerband-04-musik-im-computer">Lehrerband – 04 Musik im
+Computer</h1>
+<h2 id="leitfrage-4">Leitfrage</h2>
+<p>Wie wird aus einer Schallwelle eine Folge aus 0 und 1?</p>
+<h2 id="lernziele-3">Lernziele</h2>
+<p>Die Schülerinnen und Schüler können Abtastrate und Bittiefe erklären,
+Mono und Stereo unterscheiden und einen einfachen Speicherbedarf
+berechnen.</p>
+<h2 id="rückblick-3-minuten-1">Rückblick (3 Minuten)</h2>
+<ul>
+<li>Wie speichert ein Computer Texte?</li>
+<li>Wie speichert er Bilder?</li>
+<li>Was haben beide Darstellungen gemeinsam?</li>
+</ul>
+<p>Erwartung: Informationen werden in Zahlen und schließlich binär
+dargestellt.</p>
+<h2 id="unterrichtsverlauf-45-minuten-1">Unterrichtsverlauf (45
+Minuten)</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Zeit</th>
+<th>Phase</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">3 min</td>
+<td>Rückblick</td>
+<td>Texte und Bilder</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5 min</td>
+<td>Einstieg</td>
+<td>Ton aufnehmen: Was muss gespeichert werden?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10 min</td>
+<td>Erarbeitung</td>
+<td>Schallwelle und Abtastung</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8 min</td>
+<td>Erarbeitung</td>
+<td>Abtastrate und Bittiefe</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10 min</td>
+<td>Übung</td>
+<td>Arbeitsheft und Speicherberechnung</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6 min</td>
+<td>Sicherung</td>
+<td>Begriffe vergleichen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3 min</td>
+<td>Ausblick</td>
+<td>Informationsverarbeitung</td>
+</tr>
+</tbody>
+</table>
+<h2 id="typische-fehlvorstellungen-3">Typische Fehlvorstellungen</h2>
+<p><strong>„Der Computer speichert die Schallwelle selbst.“</strong> –
+Gespeichert werden Messwerte.</p>
+<p><strong>„Eine höhere Abtastrate macht den Ton lauter.“</strong> – Sie
+erhöht die zeitliche Auflösung, nicht die Lautstärke.</p>
+<p><strong>„MP3 bedeutet schlechte Qualität.“</strong> – MP3 ist
+verlustbehaftet; die wahrnehmbare Qualität hängt unter anderem von der
+Bitrate und dem Ausgangsmaterial ab.</p>
+<h2 id="differenzierung-4">Differenzierung</h2>
+<p>Basis: Begriffe und einfache Mono-Berechnung.</p>
+<p>Erweiterung: Stereo-Berechnung und Vergleich unterschiedlicher
+Einstellungen.</p>
+<h2 id="sicherung">Sicherung</h2>
+<p>Tafelbild:</p>
+<p><code>Schall → Mikrofon → Messwerte → Zahlen → Bits → Datei</code></p>
+<h2 id="prüfungsrelevant-1">Prüfungsrelevant</h2>
+<p>Grundidee der Digitalisierung, Abtastrate, Bittiefe, Mono/Stereo und
+einfache Speicherberechnung. Konkrete Audioformate und typische
+Abtastraten müssen nicht auswendig gelernt werden.</p>
+<h2 id="wenn-die-zeit-knapp-wird-2">Wenn die Zeit knapp wird</h2>
+<p>Kompression nur als Ausblick behandeln und Rechenaufgabe als
+Hausaufgabe nutzen.</p>
+<h2 id="ausblick-3">Ausblick</h2>
+<p>„Wir können jetzt Texte, Bilder und Töne digital darstellen. Was
+passiert mit diesen Informationen, wenn wir ein Gerät benutzen?“</p>
+<div class="page-break"></div>
+<h1 id="lehrerband-05-evas-prinzip">Lehrerband – 05 EVAS-Prinzip</h1>
+<h2 id="leitfrage-5">Leitfrage</h2>
+<p>Was passiert mit Informationen, wenn wir einen Computer benutzen?</p>
+<h2 id="lernziele-4">Lernziele</h2>
+<p>Die Schülerinnen und Schüler können Eingabe, Verarbeitung, Ausgabe
+und Speicherung unterscheiden und auf konkrete Systeme anwenden.</p>
+<h2 id="rückblick-3-minuten-2">Rückblick (3 Minuten)</h2>
+<p>„Was haben wir letzte Stunde gemacht?“</p>
+<p>Erwartung: Informationen können als Text, Bild und Ton digital
+dargestellt werden.</p>
+<h2 id="unterrichtsverlauf-45-minuten-2">Unterrichtsverlauf (45
+Minuten)</h2>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Zeit</th>
+<th>Phase</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">3 min</td>
+<td>Rückblick</td>
+<td>Informationsdarstellung</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5 min</td>
+<td>Einstieg</td>
+<td>Taschenrechner: Was passiert zwischen Tastendruck und Ergebnis?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10 min</td>
+<td>Erarbeitung</td>
+<td>EVA gemeinsam entwickeln</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8 min</td>
+<td>Erweiterung</td>
+<td>Rolle des Speichers</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">12 min</td>
+<td>Anwendung</td>
+<td>Geräte nach EVAS untersuchen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5 min</td>
+<td>Sicherung</td>
+<td>Schülerbeispiele vergleichen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2 min</td>
+<td>Ausblick</td>
+<td>Präsentationsaufgabe / Algorithmus</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wichtig-zur-speicherung">Wichtig zur Speicherung</h2>
+<p>Speicherung nicht als zwingend linearen vierten Schritt darstellen.
+Daten können vor, während und nach der Verarbeitung gespeichert
+werden.</p>
+<h2 id="typische-fehlvorstellungen-4">Typische Fehlvorstellungen</h2>
+<ul>
+<li>„Tastatur ist Eingabe und Bildschirm ist Ausgabe, also ist das schon
+EVAS.“ – Entscheidend ist auch, <strong>welche Informationen</strong>
+eingegeben und wie sie verarbeitet werden.</li>
+<li>„Speicherung kommt immer zuletzt.“ – Speicher kann in jeder Phase
+benötigt werden.</li>
+<li>„Verarbeitung bedeutet nur Rechnen.“ – Auch Vergleichen, Suchen,
+Sortieren, Decodieren oder Steuern sind Verarbeitung.</li>
+</ul>
+<h2 id="differenzierung-5">Differenzierung</h2>
+<p>Basis: ein Gerät mit eindeutigen Ein-/Ausgaben analysieren.</p>
+<p>Erweiterung: mehrere Eingaben, Zwischenspeicher und unterschiedliche
+Ausgaben eines Systems beschreiben.</p>
+<h2 id="leistungsbewertung">Leistungsbewertung</h2>
+<p>Die nachfolgende EVAS-Präsentation ist als <strong>benotete
+Leistung</strong> vorgesehen. Die Kriterien sind vor Beginn transparent
+auszuhändigen.</p>
+<h2 id="wenn-die-zeit-knapp-wird-3">Wenn die Zeit knapp wird</h2>
+<p>Nur Taschenrechner und Smartphone-Kamera gemeinsam behandeln; eigene
+Geräteanalyse als Vorbereitung für die Präsentation nutzen.</p>
+<h2 id="ausblick-4">Ausblick</h2>
+<p>„Alle Geräte verarbeiten Informationen – aber woher wissen sie,
+welche Verarbeitung ausgeführt werden soll?“</p>
+<div class="page-break"></div>
+<h1 id="lehrerband-15-bis-17-informatiksysteme-und-dateien">Lehrerband –
+15 bis 17 Informatiksysteme und Dateien</h1>
+<h2 id="einordnung-5">Einordnung</h2>
+<p>Die drei Einzelstunden schließen Pflichtinhalte des Lernbereichs
+„Informatik im Alltag“: Hardware/Software, Speicher und grundlegende
+Dateioperationen.</p>
+<h2 id="stunde-15-hardware-und-software">Stunde 15 – Hardware und
+Software</h2>
+<p><strong>Leitfrage:</strong> Was muss zusammenarbeiten, damit ein
+Informatiksystem nutzbar wird?</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Zeit</th>
+<th>Phase</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">3 min</td>
+<td>Rückblick</td>
+<td>EVAS und Informationsverarbeitung</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7 min</td>
+<td>Einstieg</td>
+<td>Smartphone zerlegen: Was ist Gerät, was Programm?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">12 min</td>
+<td>Erarbeitung</td>
+<td>Hardware, Software, Betriebssystem, Anwendung</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8 min</td>
+<td>Vertiefung</td>
+<td>Prozessor und Speicher</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10 min</td>
+<td>Übung</td>
+<td>Zuordnungen / Alltagssysteme</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5 min</td>
+<td>Sicherung</td>
+<td>Zusammenspiel</td>
+</tr>
+</tbody>
+</table>
+<p>Lizenzformen nur grundlegend unterscheiden; keine juristischen
+Detailfragen.</p>
+<h2 id="stunde-16-speicher">Stunde 16 – Speicher</h2>
+<p><strong>Leitfrage:</strong> Warum gibt es verschiedene
+Speicherarten?</p>
+<p>Schwerpunkte: flüchtig/nichtflüchtig, lokal/vernetzt/Cloud, Bit/Byte,
+Größenordnungen, Backup.</p>
+<p>Praxisnah mit realen Datenträgern bzw. Geräteangaben arbeiten.</p>
+<h2 id="stunde-17-dateien-ordner-und-pfade">Stunde 17 – Dateien, Ordner
+und Pfade</h2>
+<p><strong>Leitfrage:</strong> Wie organisieren wir Daten so, dass wir
+sie zuverlässig wiederfinden?</p>
+<p>Schwerpunkte: Datei, Dateityp, Ordner, Pfad, sinnvolle Namen sowie
+Erzeugen, Kopieren, Verschieben, Umbenennen und Löschen.</p>
+<p>Der Praxisauftrag sollte möglichst am tatsächlich verwendeten
+Schulnetz bzw. der Lernplattform durchgeführt werden.</p>
+<h2 id="typische-fehlvorstellungen-5">Typische Fehlvorstellungen</h2>
+<ul>
+<li>„Software = App“ – Betriebssysteme und Werkzeuge sind ebenfalls
+Software.</li>
+<li>„Cloud ist kein richtiger Speicher“ – Cloudspeicher liegt auf
+entfernten realen Informatiksystemen.</li>
+<li>„Kopieren und Verschieben sind dasselbe“ – beim Kopieren bleibt das
+Original erhalten.</li>
+<li>„Die Dateiendung bestimmt allein den Inhalt“ – sie kennzeichnet das
+erwartete Format, ersetzt aber nicht dessen tatsächliche Struktur.</li>
+</ul>
+<h2 id="prüfungsrelevant-2">Prüfungsrelevant</h2>
+<p>Grundbegriffe Hardware/Software, Prozessor/Speicher,
+flüchtig/nichtflüchtig, Bit/Byte, Datei/Dateityp/Ordner/Pfad sowie
+grundlegende Dateioperationen.</p>
+</body>
+</html>

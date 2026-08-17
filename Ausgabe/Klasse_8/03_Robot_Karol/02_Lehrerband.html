@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Robot Karol</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Robot Karol</h1>
+<p class="subtitle">Informatik · Klasse 8 · Lehrerband</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#lehrerband-robot-karol-einstieg" id="toc-lehrerband-robot-karol-einstieg">Lehrerband – Robot Karol
+Einstieg</a>
+<ul>
+<li><a href="#umfang" id="toc-umfang">Umfang</a></li>
+<li><a href="#stunde-1-umgebung-und-grundbefehle" id="toc-stunde-1-umgebung-und-grundbefehle">Stunde 1 – Umgebung und
+Grundbefehle</a></li>
+<li><a href="#stunde-2-wiederholungen" id="toc-stunde-2-wiederholungen">Stunde 2 – Wiederholungen</a></li>
+<li><a href="#hinweise" id="toc-hinweise">Hinweise</a></li>
+<li><a href="#prüfungsrelevanz" id="toc-prüfungsrelevanz">Prüfungsrelevanz</a></li>
+</ul></li>
+<li><a href="#lehrerband-robot-karol-bedingungen-und-unterprogramme" id="toc-lehrerband-robot-karol-bedingungen-und-unterprogramme">Lehrerband
+– Robot Karol: Bedingungen und Unterprogramme</a>
+<ul>
+<li><a href="#umfang-1" id="toc-umfang-1">Umfang</a></li>
+<li><a href="#stunde-3-bedingungen-und-sensoren" id="toc-stunde-3-bedingungen-und-sensoren">Stunde 3 – Bedingungen und
+Sensoren</a></li>
+<li><a href="#stunde-4-unterprogramme-und-problemlösen" id="toc-stunde-4-unterprogramme-und-problemlösen">Stunde 4 –
+Unterprogramme und Problemlösen</a></li>
+<li><a href="#typische-fehlvorstellungen" id="toc-typische-fehlvorstellungen">Typische Fehlvorstellungen</a></li>
+<li><a href="#prüfungsrelevanz-1" id="toc-prüfungsrelevanz-1">Prüfungsrelevanz</a></li>
+</ul></li>
+<li><a href="#lehrerband-karol-projekt-und-kompetenzcheck" id="toc-lehrerband-karol-projekt-und-kompetenzcheck">Lehrerband –
+Karol-Projekt und Kompetenzcheck</a>
+<ul>
+<li><a href="#umfang-2" id="toc-umfang-2">Umfang</a></li>
+<li><a href="#stunde-1-projektplanung-und-umsetzung" id="toc-stunde-1-projektplanung-und-umsetzung">Stunde 1 – Projektplanung
+und Umsetzung</a></li>
+<li><a href="#stunde-2-testen-und-kompetenzcheck" id="toc-stunde-2-testen-und-kompetenzcheck">Stunde 2 – Testen und
+Kompetenzcheck</a></li>
+<li><a href="#bewertung" id="toc-bewertung">Bewertung</a></li>
+<li><a href="#beobachtungsschwerpunkte" id="toc-beobachtungsschwerpunkte">Beobachtungsschwerpunkte</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="lehrerband-robot-karol-einstieg">Lehrerband – Robot Karol
+Einstieg</h1>
+<h2 id="umfang">Umfang</h2>
+<p>Zwei Einzelstunden à 45 Minuten.</p>
+<h2 id="stunde-1-umgebung-und-grundbefehle">Stunde 1 – Umgebung und
+Grundbefehle</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Zeit</th>
+<th>Phase</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td>Rückblick</td>
+<td>Algorithmus und Programm</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7 min</td>
+<td>Einstieg</td>
+<td>Karol-Welt und Orientierung</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10 min</td>
+<td>Demonstration</td>
+<td>Grundbefehle</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15 min</td>
+<td>Praxis</td>
+<td>kurze Wege und Ziegelaufgaben</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td>Fehleranalyse</td>
+<td>absichtlich falscher Ablauf</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3 min</td>
+<td>Sicherung</td>
+<td>Programm = konkret formulierter Algorithmus</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stunde-2-wiederholungen">Stunde 2 – Wiederholungen</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Zeit</th>
+<th>Phase</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td>Rückblick</td>
+<td>Grundbefehle</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7 min</td>
+<td>Einstieg</td>
+<td>langes Programm mit Einzelbefehlen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10 min</td>
+<td>Erarbeitung</td>
+<td>feste Wiederholung</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15 min</td>
+<td>Praxis</td>
+<td>Quadrat und Ziegelmuster</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td>Vergleich</td>
+<td>Lesbarkeit und Änderbarkeit</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3 min</td>
+<td>Ausblick</td>
+<td>Bedingungen und Sensoren</td>
+</tr>
+</tbody>
+</table>
+<h2 id="hinweise">Hinweise</h2>
+<p>Die konkrete Syntax kann zwischen Karol-Versionen variieren.
+Unterrichtlich steht die Kontrollstruktur im Mittelpunkt; Syntaxhinweise
+an die installierte Version anpassen.</p>
+<h2 id="prüfungsrelevanz">Prüfungsrelevanz</h2>
+<p>Grundbefehle lesen, Ablauf vorhersagen, Wiederholungen erkennen und
+einfache Karol-Programme entwerfen.</p>
+<div class="page-break"></div>
+<h1 id="lehrerband-robot-karol-bedingungen-und-unterprogramme">Lehrerband –
+Robot Karol: Bedingungen und Unterprogramme</h1>
+<h2 id="umfang-1">Umfang</h2>
+<p>Zwei Einzelstunden à 45 Minuten.</p>
+<h2 id="stunde-3-bedingungen-und-sensoren">Stunde 3 – Bedingungen und
+Sensoren</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Zeit</th>
+<th>Phase</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td>Rückblick</td>
+<td>Wiederholungen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7 min</td>
+<td>Einstieg</td>
+<td>gleiches Programm, unterschiedliche Welten</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10 min</td>
+<td>Erarbeitung</td>
+<td>Sensorfragen und WENN-Struktur</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15 min</td>
+<td>Praxis</td>
+<td>bis zur Wand / Hindernisreaktion</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td>Sicherung</td>
+<td>starre vs. situationsabhängige Programme</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3 min</td>
+<td>Ausblick</td>
+<td>größere Aufgaben zerlegen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stunde-4-unterprogramme-und-problemlösen">Stunde 4 –
+Unterprogramme und Problemlösen</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Zeit</th>
+<th>Phase</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td>Rückblick</td>
+<td>Bedingungen und Wiederholungen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8 min</td>
+<td>Einstieg</td>
+<td>unübersichtliches langes Programm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10 min</td>
+<td>Erarbeitung</td>
+<td>Teilprobleme und benannte Unterprogramme</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14 min</td>
+<td>Praxis</td>
+<td>Rechteck-/Musteraufgabe planen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td>Debugging</td>
+<td>Testen in Schritten</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3 min</td>
+<td>Sicherung</td>
+<td>Zerlegen – programmieren – testen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="typische-fehlvorstellungen">Typische Fehlvorstellungen</h2>
+<ul>
+<li>Eine Bedingung wird nur einmal geprüft, obwohl sie in einer Schleife
+liegt.</li>
+<li>Unterprogramme seien nur Abkürzungen; betonen: Struktur,
+Wiederverwendung, Wartbarkeit.</li>
+<li>Testen beginne erst am Ende; stattdessen früh und mit kleinen
+Testfällen.</li>
+</ul>
+<h2 id="prüfungsrelevanz-1">Prüfungsrelevanz</h2>
+<p>Bedingungen lesen und formulieren, feste und bedingte Wiederholungen
+unterscheiden, Teilprobleme erkennen und einfache Unterprogramme
+beschreiben.</p>
+<div class="page-break"></div>
+<h1 id="lehrerband-karol-projekt-und-kompetenzcheck">Lehrerband –
+Karol-Projekt und Kompetenzcheck</h1>
+<h2 id="umfang-2">Umfang</h2>
+<p>Zwei Einzelstunden à 45 Minuten.</p>
+<h2 id="stunde-1-projektplanung-und-umsetzung">Stunde 1 – Projektplanung
+und Umsetzung</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Zeit</th>
+<th>Phase</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td>Rückblick</td>
+<td>Bedingungen, Schleifen, Unterprogramme</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5 min</td>
+<td>Auftrag</td>
+<td>Anforderungen klären</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10 min</td>
+<td>Planung</td>
+<td>Welt, Teilprobleme, Kontrollstrukturen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20 min</td>
+<td>Umsetzung</td>
+<td>programmieren und früh testen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td>Zwischenstand</td>
+<td>Probleme und nächste Schritte sichern</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stunde-2-testen-und-kompetenzcheck">Stunde 2 – Testen und
+Kompetenzcheck</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Zeit</th>
+<th>Phase</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">5 min</td>
+<td>Einstieg</td>
+<td>Teststrategie wiederholen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">15 min</td>
+<td>Praxis</td>
+<td>mindestens drei Testfälle durchführen</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10 min</td>
+<td>Verbesserung</td>
+<td>Fehler beheben und erneut testen</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12 min</td>
+<td>Kompetenzcheck</td>
+<td>kurze schriftliche Aufgaben</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3 min</td>
+<td>Ausblick</td>
+<td>Vorbereitung Leistungskontrolle</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bewertung">Bewertung</h2>
+<p>Das Projekt ist primär Übung und Diagnose. Eine Note ist nicht
+erforderlich. Die schriftlichen Leistungskontrollen werden separat
+bereitgestellt.</p>
+<h2 id="beobachtungsschwerpunkte">Beobachtungsschwerpunkte</h2>
+<ul>
+<li>plant vor dem Programmieren,</li>
+<li>nutzt Kontrollstrukturen passend,</li>
+<li>benennt Teilprobleme sinnvoll,</li>
+<li>testet systematisch,</li>
+<li>kann Fehler begründen und verbessern.</li>
+</ul>
+</body>
+</html>

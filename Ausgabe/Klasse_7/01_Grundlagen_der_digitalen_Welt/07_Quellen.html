@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Grundlagen der digitalen Welt</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Grundlagen der digitalen Welt</h1>
+<p class="subtitle">Informatik · Klasse 7 · Quellen</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#quellen-00-geschichte-der-informatik" id="toc-quellen-00-geschichte-der-informatik">Quellen – 00 Geschichte
+der Informatik</a>
+<ul>
+<li><a href="#pascal" id="toc-pascal">Pascal</a></li>
+<li><a href="#leibniz" id="toc-leibniz">Leibniz</a></li>
+<li><a href="#babbage-und-lovelace" id="toc-babbage-und-lovelace">Babbage und Lovelace</a></li>
+<li><a href="#hollerith" id="toc-hollerith">Hollerith</a></li>
+<li><a href="#zuse" id="toc-zuse">Zuse</a></li>
+<li><a href="#von-neumann" id="toc-von-neumann">von Neumann</a></li>
+<li><a href="#redaktionelle-regel" id="toc-redaktionelle-regel">Redaktionelle Regel</a></li>
+</ul></li>
+<li><a href="#quellen-kann-man-eine-sprache-nur-aus-0-und-1-schreiben" id="toc-quellen-kann-man-eine-sprache-nur-aus-0-und-1-schreiben">Quellen
+– Kann man eine Sprache nur aus 0 und 1 schreiben?</a>
+<ul>
+<li><a href="#fachliche-grundlagen" id="toc-fachliche-grundlagen">Fachliche Grundlagen</a></li>
+<li><a href="#didaktische-hinweise" id="toc-didaktische-hinweise">Didaktische Hinweise</a></li>
+</ul></li>
+<li><a href="#quellen-binärzahlen" id="toc-quellen-binärzahlen">Quellen
+– Binärzahlen</a>
+<ul>
+<li><a href="#fachliche-grundlagen-1" id="toc-fachliche-grundlagen-1">Fachliche Grundlagen</a></li>
+<li><a href="#didaktische-festlegung" id="toc-didaktische-festlegung">Didaktische Festlegung</a></li>
+<li><a href="#redaktioneller-hinweis" id="toc-redaktioneller-hinweis">Redaktioneller Hinweis</a></li>
+</ul></li>
+<li><a href="#quellen-03-texte-im-computer" id="toc-quellen-03-texte-im-computer">Quellen – 03 Texte im Computer</a>
+<ul>
+<li><a href="#fachliche-referenzen" id="toc-fachliche-referenzen">Fachliche Referenzen</a></li>
+<li><a href="#didaktische-reduktion" id="toc-didaktische-reduktion">Didaktische Reduktion</a></li>
+<li><a href="#hinweise" id="toc-hinweise">Hinweise</a></li>
+</ul></li>
+<li><a href="#quellen-04-bilder-im-computer" id="toc-quellen-04-bilder-im-computer">Quellen – 04 Bilder im
+Computer</a>
+<ul>
+<li><a href="#fachliche-grundlagen-2" id="toc-fachliche-grundlagen-2">Fachliche Grundlagen</a></li>
+<li><a href="#didaktische-reduktion-1" id="toc-didaktische-reduktion-1">Didaktische Reduktion</a></li>
+<li><a href="#anschlusswissen" id="toc-anschlusswissen">Anschlusswissen</a></li>
+</ul></li>
+<li><a href="#quellen-04-musik-im-computer" id="toc-quellen-04-musik-im-computer">Quellen – 04 Musik im Computer</a>
+<ul>
+<li><a href="#didaktische-reduktion-2" id="toc-didaktische-reduktion-2">Didaktische Reduktion</a></li>
+</ul></li>
+<li><a href="#quellen-05-evas-prinzip" id="toc-quellen-05-evas-prinzip">Quellen – 05 EVAS-Prinzip</a>
+<ul>
+<li><a href="#fachliche-einordnung" id="toc-fachliche-einordnung">Fachliche Einordnung</a></li>
+<li><a href="#redaktionshinweis" id="toc-redaktionshinweis">Redaktionshinweis</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="quellen-00-geschichte-der-informatik">Quellen – 00 Geschichte
+der Informatik</h1>
+<p>Die historischen Gruppenblätter sind als didaktisch reduzierte
+Sekundärtexte formuliert. Für die redaktionelle Prüfung und eine spätere
+Bebilderung sollten bevorzugt Museums-, Archiv- und wissenschaftsnahe
+Quellen verwendet werden.</p>
+<h2 id="pascal">Pascal</h2>
+<ul>
+<li>Encyclopaedia Britannica: Blaise Pascal</li>
+<li>Computer History Museum: historische Rechenmaschinen</li>
+</ul>
+<h2 id="leibniz">Leibniz</h2>
+<ul>
+<li>Leibniz-Institut / Gottfried Wilhelm Leibniz Bibliothek: Materialien
+zu Leibniz</li>
+<li>Encyclopaedia Britannica: Gottfried Wilhelm Leibniz</li>
+</ul>
+<p>Hinweis: Das Binärsystem nicht verkürzt als alleinige „Erfindung von
+Leibniz“ darstellen. Im Material wird deshalb formuliert, dass er es
+systematisch beschrieb und untersuchte.</p>
+<h2 id="babbage-und-lovelace">Babbage und Lovelace</h2>
+<ul>
+<li>Science Museum, London: Charles Babbage / Difference Engine /
+Analytical Engine</li>
+<li>Computer History Museum: Charles Babbage und Ada Lovelace</li>
+</ul>
+<p>Hinweis: Die Bezeichnung „erste Programmiererin“ wird in der
+Fachgeschichte diskutiert. Im Material wird sie deshalb als häufig
+verwendete Einordnung kenntlich gemacht.</p>
+<h2 id="hollerith">Hollerith</h2>
+<ul>
+<li>U.S. Census Bureau: Herman Hollerith und die maschinelle
+Volkszählung</li>
+<li>Smithsonian Institution: Hollerith punched-card equipment</li>
+</ul>
+<h2 id="zuse">Zuse</h2>
+<ul>
+<li>Deutsches Technikmuseum: Konrad Zuse und Z3</li>
+<li>Deutsches Museum: frühe Rechentechnik</li>
+</ul>
+<p>Hinweis: Aussagen wie „erster Computer der Welt“ vermeiden. Die Z3
+wird als bedeutender Meilenstein beschrieben.</p>
+<h2 id="von-neumann">von Neumann</h2>
+<ul>
+<li>Institute for Advanced Study: John von Neumann</li>
+<li>Computer History Museum: stored-program computing</li>
+</ul>
+<p>Hinweis: Die Stored-Program-Architektur ist Ergebnis mehrerer
+Beteiligter. Eine alleinige Zuschreibung an von Neumann wäre historisch
+zu stark vereinfacht.</p>
+<h2 id="redaktionelle-regel">Redaktionelle Regel</h2>
+<p>Geschichte ist in Klasse 7 <strong>Einstieg und
+Orientierung</strong>, kein Faktenkatalog für Leistungskontrollen.
+Quellen dienen insbesondere dazu, Aussagen und Bildrechte vor
+Veröffentlichung zu prüfen.</p>
+<div class="page-break"></div>
+<h1 id="quellen-kann-man-eine-sprache-nur-aus-0-und-1-schreiben">Quellen
+– Kann man eine Sprache nur aus 0 und 1 schreiben?</h1>
+<h2 id="fachliche-grundlagen">Fachliche Grundlagen</h2>
+<ul>
+<li>National Institute of Standards and Technology (NIST), CSRC
+Glossary: <strong>bit</strong> – Definition als binäre Ziffer mit dem
+Wert 0 oder 1.</li>
+<li>National Institute of Standards and Technology (NIST), CSRC
+Glossary: <strong>bit string</strong> – geordnete Folge von Nullen und
+Einsen.</li>
+<li>The Unicode Consortium: <strong>Technical Introduction</strong> –
+Zeichen besitzen Codepunkte und werden durch definierte Codierungsformen
+als Bits bzw. Bytes dargestellt.</li>
+</ul>
+<h2 id="didaktische-hinweise">Didaktische Hinweise</h2>
+<p>Für Klasse 7 wird bewusst modellhaft von <strong>zwei
+unterscheidbaren Zuständen</strong> gesprochen. Die technische
+Realisierung elektronischer Logik wird nicht auf die vereinfachte
+Gleichsetzung <code>0 = kein Strom</code> und <code>1 = Strom</code>
+reduziert.</p>
+<p>Die konkrete Zeichencodierung (ASCII/Unicode/UTF-8) wird erst in
+einer späteren Unterrichtseinheit behandelt. Die Bitfolge im Einstieg
+dient hier ausschließlich dazu, das Prinzip einer vereinbarten
+Interpretation zu motivieren.</p>
+<div class="page-break"></div>
+<h1 id="quellen-binärzahlen">Quellen – Binärzahlen</h1>
+<h2 id="fachliche-grundlagen-1">Fachliche Grundlagen</h2>
+<ul>
+<li>Grundlagen zu Stellenwertsystemen und Binärdarstellung</li>
+<li>Potenzen zur Beschreibung binärer Stellenwerte</li>
+</ul>
+<h2 id="didaktische-festlegung">Didaktische Festlegung</h2>
+<p>In Klasse 7 werden zwei Verfahren verwendet:</p>
+<ol type="1">
+<li>Zerlegung einer Dezimalzahl in Zweierpotenzen</li>
+<li>wiederholte Division durch 2 mit Rest</li>
+</ol>
+<p>Die Lernenden sollen beide Verfahren kennenlernen. Eine formale
+Vertiefung in Zahlensystemtheorie ist nicht vorgesehen.</p>
+<h2 id="redaktioneller-hinweis">Redaktioneller Hinweis</h2>
+<p>Beispiele und Aufgaben sind eigenständig erstellt. Für spätere
+Bildmaterialien sind nur frei nutzbare bzw. selbst erstellte
+Darstellungen zu verwenden.</p>
+<div class="page-break"></div>
+<h1 id="quellen-03-texte-im-computer">Quellen – 03 Texte im
+Computer</h1>
+<h2 id="fachliche-referenzen">Fachliche Referenzen</h2>
+<ul>
+<li>The Unicode Consortium: Unicode Standard und Code Charts</li>
+<li>RFC 3629: UTF-8, a transformation format of ISO 10646</li>
+<li>ANSI X3.4 / ASCII als historischer Standard für
+Zeichenkodierung</li>
+</ul>
+<h2 id="didaktische-reduktion">Didaktische Reduktion</h2>
+<p>Für Klasse 7 wird bewusst unterschieden zwischen:</p>
+<ul>
+<li><strong>Zeichencodierung</strong>: Zuordnung von Zeichen zu
+Zahlen,</li>
+<li><strong>Unicode</strong>: universeller Zeichenvorrat mit
+Codepunkten,</li>
+<li><strong>UTF-8</strong>: konkrete Codierung dieser Codepunkte in
+Bytes.</li>
+</ul>
+<p>Die interne Bitstruktur von UTF-8 ist nicht Bestandteil der
+Stunde.</p>
+<h2 id="hinweise">Hinweise</h2>
+<p>Konkrete ASCII-Zahlenwerte dienen nur als Beispiele und müssen nicht
+auswendig gelernt werden. Zentral ist das Prinzip:</p>
+<pre class="text"><code>Zeichen → Zahl → Binärdarstellung → Bits</code></pre>
+<p>Die Angabe zum typischen UTF-8-Speicherbedarf (<code>A</code> 1 Byte,
+<code>ä</code> 2 Byte, <code>€</code> 3 Byte, <code>😊</code> 4 Byte)
+dient der Veranschaulichung unterschiedlich langer Codierungen.</p>
+<div class="page-break"></div>
+<h1 id="quellen-04-bilder-im-computer">Quellen – 04 Bilder im
+Computer</h1>
+<h2 id="fachliche-grundlagen-2">Fachliche Grundlagen</h2>
+<ul>
+<li>W3C: SVG – Scalable Vector Graphics. Grundlage zur Unterscheidung
+vektorbasierter Darstellungen.</li>
+<li>WHATWG / HTML Living Standard: Grundlagen zu RGB-Farbwerten in
+digitalen Darstellungen.</li>
+<li>Wikipedia-Artikel können zur schnellen Orientierung dienen, sollen
+aber nicht die primäre fachliche Quelle für Lehrmaterialien sein.</li>
+</ul>
+<h2 id="didaktische-reduktion-1">Didaktische Reduktion</h2>
+<p>Für Klasse 7 wird bewusst vereinfacht:</p>
+<ul>
+<li>Rasterbilder werden als Pixelmatrix eingeführt.</li>
+<li>RGB wird mit 8 Bit pro Kanal und Werten von 0 bis 255
+behandelt.</li>
+<li>Der Speicherbedarf wird zunächst unkomprimiert berechnet.</li>
+<li>JPEG/PNG/GIF werden nur als Beispiele für Bildformate genannt.</li>
+<li>Konkrete Kompressionsalgorithmen, Farbprofile, Chroma-Subsampling
+und Alpha-Kanäle werden nicht vertieft.</li>
+</ul>
+<h2 id="anschlusswissen">Anschlusswissen</h2>
+<p>Die Stunde knüpft direkt an folgende Inhalte an:</p>
+<ul>
+<li>Binärzahlen und Zweierpotenzen</li>
+<li><code>2⁸ = 256</code></li>
+<li>Bit und Byte</li>
+<li>Codierung von Zeichen</li>
+</ul>
+<p>Der Ausblick bereitet die Digitalisierung von Audio durch Abtastung
+und Quantisierung vor.</p>
+<div class="page-break"></div>
+<h1 id="quellen-04-musik-im-computer">Quellen – 04 Musik im
+Computer</h1>
+<p>Für die fachliche Vertiefung und redaktionelle Prüfung eignen sich
+insbesondere:</p>
+<ul>
+<li>ITU-T: Grundlagen digitaler Sprach- und Audiosignale</li>
+<li>Fraunhofer IIS: Informationen zur MP3-Entwicklung und
+Audiocodierung</li>
+<li>MDN / Web Audio Dokumentation für weiterführende technische
+Einordnung</li>
+</ul>
+<h2 id="didaktische-reduktion-2">Didaktische Reduktion</h2>
+<p>Für Klasse 7 werden Sampling-Theorem, Quantisierungsrauschen, Codecs
+und psychoakustische Modelle nicht mathematisch vertieft. Im Mittelpunkt
+stehen die Grundideen <strong>Abtastung</strong>,
+<strong>Bittiefe</strong>, <strong>Kanäle</strong> und
+<strong>Speicherbedarf</strong>.</p>
+<div class="page-break"></div>
+<h1 id="quellen-05-evas-prinzip">Quellen – 05 EVAS-Prinzip</h1>
+<h2 id="fachliche-einordnung">Fachliche Einordnung</h2>
+<p>Das EVA-Prinzip ist ein didaktisches Modell zur Beschreibung von
+Informationsverarbeitung. Für die Speicherung wird im Lehrwerk bewusst
+<strong>EVAS</strong> verwendet, ohne Speicher als zwingend letzten
+linearen Schritt darzustellen.</p>
+<h2 id="redaktionshinweis">Redaktionshinweis</h2>
+<p>Die Unterrichtseinheit reduziert Hardwaredetails bewusst. Im
+Mittelpunkt stehen Informationsflüsse und die Frage, welche
+Informationen eingegeben, verarbeitet, ausgegeben und gespeichert
+werden.</p>
+<p>Die bewertete Präsentationsaufgabe basiert auf der im Unterricht
+verwendeten Aufgabenstellung und wurde für das Lehrwerk um ein
+transparentes Bewertungsraster und einen Zuhörerbogen ergänzt.</p>
+</body>
+</html>

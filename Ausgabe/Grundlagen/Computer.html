@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Grundlagen</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Grundlagen</h1>
+<p class="subtitle">Computer</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#computer" id="toc-computer">Computer</a>
+<ul>
+<li><a href="#inhalte" id="toc-inhalte">Inhalte</a></li>
+</ul></li>
+<li><a href="#was-ist-ein-computer" id="toc-was-ist-ein-computer">Was
+ist ein Computer?</a>
+<ul>
+<li><a href="#aufgaben" id="toc-aufgaben">Aufgaben</a></li>
+<li><a href="#beispiele" id="toc-beispiele">Beispiele</a></li>
+<li><a href="#merke" id="toc-merke">Merke</a></li>
+</ul></li>
+<li><a href="#hardware" id="toc-hardware">Hardware</a>
+<ul>
+<li><a href="#beispiele-1" id="toc-beispiele-1">Beispiele</a></li>
+<li><a href="#eingabegeräte" id="toc-eingabegeräte">Eingabegeräte</a></li>
+<li><a href="#ausgabegeräte" id="toc-ausgabegeräte">Ausgabegeräte</a></li>
+<li><a href="#merke-1" id="toc-merke-1">Merke</a></li>
+</ul></li>
+<li><a href="#software" id="toc-software">Software</a>
+<ul>
+<li><a href="#beispiele-2" id="toc-beispiele-2">Beispiele</a></li>
+<li><a href="#arten" id="toc-arten">Arten</a></li>
+<li><a href="#merke-2" id="toc-merke-2">Merke</a></li>
+</ul></li>
+<li><a href="#betriebssystem" id="toc-betriebssystem">Betriebssystem</a>
+<ul>
+<li><a href="#aufgaben-1" id="toc-aufgaben-1">Aufgaben</a></li>
+<li><a href="#beispiele-3" id="toc-beispiele-3">Beispiele</a></li>
+<li><a href="#merke-3" id="toc-merke-3">Merke</a></li>
+</ul></li>
+<li><a href="#dateisystem" id="toc-dateisystem">Dateisystem</a>
+<ul>
+<li><a href="#aufbau" id="toc-aufbau">Aufbau</a></li>
+<li><a href="#vorteile" id="toc-vorteile">Vorteile</a></li>
+<li><a href="#merke-4" id="toc-merke-4">Merke</a></li>
+</ul></li>
+<li><a href="#das-evas-prinzip" id="toc-das-evas-prinzip">Das
+EVAS-Prinzip</a>
+<ul>
+<li><a href="#eingabe" id="toc-eingabe">Eingabe</a></li>
+<li><a href="#verarbeitung" id="toc-verarbeitung">Verarbeitung</a></li>
+<li><a href="#ausgabe" id="toc-ausgabe">Ausgabe</a></li>
+<li><a href="#speicherung" id="toc-speicherung">Speicherung</a></li>
+<li><a href="#beispiel-1-taschenrechner" id="toc-beispiel-1-taschenrechner">Beispiel 1 – Taschenrechner</a></li>
+<li><a href="#beispiel-2-textverarbeitung" id="toc-beispiel-2-textverarbeitung">Beispiel 2 –
+Textverarbeitung</a></li>
+<li><a href="#beispiel-3-digitale-wetterstation" id="toc-beispiel-3-digitale-wetterstation">Beispiel 3 – Digitale
+Wetterstation</a></li>
+<li><a href="#beispiel-4-schulfestkasse" id="toc-beispiel-4-schulfestkasse">Beispiel 4 – Schulfestkasse</a></li>
+<li><a href="#speicher-während-der-verarbeitung" id="toc-speicher-während-der-verarbeitung">Speicher während der
+Verarbeitung</a></li>
+<li><a href="#evas-bei-einem-programm" id="toc-evas-bei-einem-programm">EVAS bei einem Programm</a></li>
+<li><a href="#aufgabe-1-fahrkartenautomat" id="toc-aufgabe-1-fahrkartenautomat">Aufgabe 1 –
+Fahrkartenautomat</a></li>
+<li><a href="#aufgabe-2-smartphone-kamera" id="toc-aufgabe-2-smartphone-kamera">Aufgabe 2 –
+Smartphone-Kamera</a></li>
+<li><a href="#aufgabe-3-eigenes-beispiel" id="toc-aufgabe-3-eigenes-beispiel">Aufgabe 3 – Eigenes
+Beispiel</a></li>
+<li><a href="#merke-5" id="toc-merke-5">Merke</a></li>
+</ul></li>
+<li><a href="#zusammenfassung" id="toc-zusammenfassung">Zusammenfassung</a></li>
+<li><a href="#quellen" id="toc-quellen">Quellen</a></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="computer">Computer</h1>
+<p>Computer sind heute aus unserem Alltag nicht mehr wegzudenken.</p>
+<p>Sie helfen beim Lernen, Arbeiten, Kommunizieren und
+Programmieren.</p>
+<p>In diesem Kapitel lernst du den grundlegenden Aufbau eines Computers
+kennen.</p>
+<hr />
+<h2 id="inhalte">Inhalte</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Datei</th>
+<th>Inhalt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>01_Was_ist_ein_Computer.md</td>
+<td>Grundlagen</td>
+</tr>
+<tr class="even">
+<td>02_Hardware.md</td>
+<td>Hardware</td>
+</tr>
+<tr class="odd">
+<td>03_Software.md</td>
+<td>Software</td>
+</tr>
+<tr class="even">
+<td>04_Betriebssystem.md</td>
+<td>Betriebssysteme</td>
+</tr>
+<tr class="odd">
+<td>05_Dateisystem.md</td>
+<td>Dateien und Ordner</td>
+</tr>
+<tr class="even">
+<td>06_EVA.md</td>
+<td>Das EVA-Prinzip</td>
+</tr>
+<tr class="odd">
+<td>07_Zusammenfassung.md</td>
+<td>Wiederholung</td>
+</tr>
+<tr class="even">
+<td>08_Quellen.md</td>
+<td>Quellen</td>
+</tr>
+</tbody>
+</table>
+<div class="page-break"></div>
+<h1 id="was-ist-ein-computer">Was ist ein Computer?</h1>
+<p>Ein Computer ist ein elektronisches Gerät.</p>
+<p>Er verarbeitet Daten nach vorgegebenen Regeln.</p>
+<p>Diese Regeln werden als Programme bezeichnet.</p>
+<hr />
+<h2 id="aufgaben">Aufgaben</h2>
+<p>Ein Computer kann</p>
+<ul>
+<li>rechnen,</li>
+<li>Daten speichern,</li>
+<li>Programme ausführen,</li>
+<li>Informationen anzeigen,</li>
+<li>mit anderen Computern kommunizieren.</li>
+</ul>
+<hr />
+<h2 id="beispiele">Beispiele</h2>
+<ul>
+<li>Notebook</li>
+<li>Desktop-PC</li>
+<li>Tablet</li>
+<li>Smartphone</li>
+<li>Spielekonsole</li>
+<li>Mikrocontroller</li>
+</ul>
+<hr />
+<h2 id="merke">Merke</h2>
+<p>Ein Computer führt nur Befehle aus,</p>
+<p>die ihm vorher beschrieben wurden.</p>
+<div class="page-break"></div>
+<h1 id="hardware">Hardware</h1>
+<p>Hardware umfasst alle technischen Bestandteile eines Computers.</p>
+<hr />
+<h2 id="beispiele-1">Beispiele</h2>
+<ul>
+<li>Prozessor (CPU)</li>
+<li>Arbeitsspeicher (RAM)</li>
+<li>Festplatte oder SSD</li>
+<li>Mainboard</li>
+<li>Netzteil</li>
+<li>Bildschirm</li>
+<li>Tastatur</li>
+<li>Maus</li>
+</ul>
+<hr />
+<h2 id="eingabegeräte">Eingabegeräte</h2>
+<ul>
+<li>Tastatur</li>
+<li>Maus</li>
+<li>Mikrofon</li>
+<li>Scanner</li>
+<li>Kamera</li>
+</ul>
+<hr />
+<h2 id="ausgabegeräte">Ausgabegeräte</h2>
+<ul>
+<li>Bildschirm</li>
+<li>Lautsprecher</li>
+<li>Drucker</li>
+<li>Beamer</li>
+</ul>
+<hr />
+<h2 id="merke-1">Merke</h2>
+<p>Hardware kann man anfassen.</p>
+<div class="page-break"></div>
+<h1 id="software">Software</h1>
+<p>Software bezeichnet Programme.</p>
+<p>Sie steuern den Computer.</p>
+<hr />
+<h2 id="beispiele-2">Beispiele</h2>
+<ul>
+<li>Betriebssystem</li>
+<li>Browser</li>
+<li>Office-Programme</li>
+<li>Spiele</li>
+<li>Python</li>
+<li>Scratch</li>
+</ul>
+<hr />
+<h2 id="arten">Arten</h2>
+<h3 id="systemsoftware">Systemsoftware</h3>
+<p>Steuert den Computer.</p>
+<hr />
+<h3 id="anwendungssoftware">Anwendungssoftware</h3>
+<p>Hilft beim Lösen bestimmter Aufgaben.</p>
+<hr />
+<h2 id="merke-2">Merke</h2>
+<p>Ohne Software ist Hardware nahezu nutzlos.</p>
+<div class="page-break"></div>
+<h1 id="betriebssystem">Betriebssystem</h1>
+<p>Das Betriebssystem verwaltet den Computer.</p>
+<p>Es verbindet Hardware und Programme.</p>
+<hr />
+<h2 id="aufgaben-1">Aufgaben</h2>
+<ul>
+<li>Programme starten</li>
+<li>Dateien verwalten</li>
+<li>Speicher verwalten</li>
+<li>Geräte steuern</li>
+</ul>
+<hr />
+<h2 id="beispiele-3">Beispiele</h2>
+<ul>
+<li>Windows</li>
+<li>Linux</li>
+<li>macOS</li>
+<li>Android</li>
+<li>iPadOS</li>
+</ul>
+<hr />
+<h2 id="merke-3">Merke</h2>
+<p>Das Betriebssystem bildet die Grundlage für alle Programme.</p>
+<div class="page-break"></div>
+<h1 id="dateisystem">Dateisystem</h1>
+<p>Das Dateisystem organisiert Dateien.</p>
+<p>Es sorgt dafür,</p>
+<p>dass Dateien gespeichert und wiedergefunden werden können.</p>
+<hr />
+<h2 id="aufbau">Aufbau</h2>
+<pre><code>Dokumente
+
+├── Informatik
+
+├── Mathematik
+
+└── Bilder</code></pre>
+<hr />
+<h2 id="vorteile">Vorteile</h2>
+<ul>
+<li>Ordnung</li>
+<li>Übersicht</li>
+<li>schnelles Finden</li>
+</ul>
+<hr />
+<h2 id="merke-4">Merke</h2>
+<p>Eine gute Ordnerstruktur spart Zeit.</p>
+<div class="page-break"></div>
+<h1 id="das-evas-prinzip">Das EVAS-Prinzip</h1>
+<p>Computer und andere Informatiksysteme arbeiten nach dem
+<strong>EVAS-Prinzip</strong>.</p>
+<p>EVAS steht für:</p>
+<ol type="1">
+<li><strong>Eingabe</strong></li>
+<li><strong>Verarbeitung</strong></li>
+<li><strong>Ausgabe</strong></li>
+<li><strong>Speicherung</strong></li>
+</ol>
+<pre class="text"><code>Eingabe
+   ↓
+Verarbeitung
+   ↓
+Ausgabe
+   ↕
+Speicherung</code></pre>
+<p>Die Speicherung kann während der Verarbeitung sowie vor oder nach der
+Ausgabe erfolgen.</p>
+<hr />
+<h2 id="eingabe">Eingabe</h2>
+<p>Bei der Eingabe erhält das Informatiksystem Daten.</p>
+<h3 id="beispiele-für-eingabegeräte">Beispiele für Eingabegeräte</h3>
+<ul>
+<li>Tastatur</li>
+<li>Maus</li>
+<li>Touchscreen</li>
+<li>Mikrofon</li>
+<li>Kamera</li>
+<li>Scanner</li>
+<li>Sensor</li>
+</ul>
+<h3 id="beispiel">Beispiel</h3>
+<p>Eine Benutzerin gibt über die Tastatur zwei Zahlen ein.</p>
+<pre class="text"><code>4
+5</code></pre>
+<hr />
+<h2 id="verarbeitung">Verarbeitung</h2>
+<p>Bei der Verarbeitung werden die eingegebenen oder gespeicherten Daten
+nach festgelegten Regeln bearbeitet.</p>
+<p>Diese Regeln können durch einen Algorithmus beschrieben und durch ein
+Programm ausgeführt werden.</p>
+<h3 id="beispiele-4">Beispiele</h3>
+<ul>
+<li>Zahlen addieren</li>
+<li>Texte durchsuchen</li>
+<li>Bilder verändern</li>
+<li>Messwerte vergleichen</li>
+<li>Bedingungen prüfen</li>
+</ul>
+<h3 id="beispiel-1">Beispiel</h3>
+<p>Der Computer addiert die eingegebenen Zahlen.</p>
+<pre class="text"><code>4 + 5</code></pre>
+<hr />
+<h2 id="ausgabe">Ausgabe</h2>
+<p>Bei der Ausgabe stellt das Informatiksystem das Ergebnis bereit.</p>
+<h3 id="beispiele-für-ausgabegeräte">Beispiele für Ausgabegeräte</h3>
+<ul>
+<li>Bildschirm</li>
+<li>Drucker</li>
+<li>Lautsprecher</li>
+<li>Beamer</li>
+<li>Kontrollleuchte</li>
+<li>Motor</li>
+</ul>
+<h3 id="beispiel-2">Beispiel</h3>
+<p>Der Computer zeigt das Ergebnis auf dem Bildschirm an.</p>
+<pre class="text"><code>9</code></pre>
+<hr />
+<h2 id="speicherung">Speicherung</h2>
+<p>Bei der Speicherung werden Daten oder Ergebnisse dauerhaft oder
+vorübergehend abgelegt.</p>
+<h3 id="beispiele-für-speicher">Beispiele für Speicher</h3>
+<ul>
+<li>Arbeitsspeicher</li>
+<li>SSD</li>
+<li>Festplatte</li>
+<li>USB-Stick</li>
+<li>Speicherkarte</li>
+<li>Schulserver</li>
+<li>Cloudspeicher</li>
+</ul>
+<h3 id="gespeichert-werden-können">Gespeichert werden können</h3>
+<ul>
+<li>Eingabedaten</li>
+<li>Zwischenergebnisse</li>
+<li>Programme</li>
+<li>Einstellungen</li>
+<li>Endergebnisse</li>
+</ul>
+<h3 id="beispiel-3">Beispiel</h3>
+<p>Das Ergebnis einer Berechnung wird in einer Datei gespeichert.</p>
+<pre class="text"><code>ergebnis.txt</code></pre>
+<hr />
+<h2 id="beispiel-1-taschenrechner">Beispiel 1 – Taschenrechner</h2>
+<h3 id="eingabe-1">Eingabe</h3>
+<pre class="text"><code>4 + 5</code></pre>
+<h3 id="verarbeitung-1">Verarbeitung</h3>
+<p>Die Zahlen werden addiert.</p>
+<h3 id="ausgabe-1">Ausgabe</h3>
+<pre class="text"><code>9</code></pre>
+<h3 id="speicherung-1">Speicherung</h3>
+<p>Die Rechnung kann im Verlauf des Taschenrechners gespeichert
+werden.</p>
+<hr />
+<h2 id="beispiel-2-textverarbeitung">Beispiel 2 – Textverarbeitung</h2>
+<h3 id="eingabe-2">Eingabe</h3>
+<p>Eine Schülerin schreibt einen Text mit der Tastatur.</p>
+<h3 id="verarbeitung-2">Verarbeitung</h3>
+<p>Das Textverarbeitungsprogramm verarbeitet die Zeichen und formatiert
+den Text.</p>
+<h3 id="ausgabe-2">Ausgabe</h3>
+<p>Der Text wird auf dem Bildschirm angezeigt oder ausgedruckt.</p>
+<h3 id="speicherung-2">Speicherung</h3>
+<p>Das Dokument wird als Datei gespeichert.</p>
+<pre class="text"><code>Referat.docx</code></pre>
+<hr />
+<h2 id="beispiel-3-digitale-wetterstation">Beispiel 3 – Digitale
+Wetterstation</h2>
+<h3 id="eingabe-3">Eingabe</h3>
+<p>Sensoren messen:</p>
+<ul>
+<li>Temperatur</li>
+<li>Luftfeuchtigkeit</li>
+<li>Luftdruck</li>
+</ul>
+<h3 id="verarbeitung-3">Verarbeitung</h3>
+<p>Die Messwerte werden geprüft und ausgewertet.</p>
+<h3 id="ausgabe-3">Ausgabe</h3>
+<p>Die aktuellen Werte werden auf einem Display angezeigt.</p>
+<h3 id="speicherung-3">Speicherung</h3>
+<p>Die Messwerte werden mit Datum und Uhrzeit gespeichert.</p>
+<hr />
+<h2 id="beispiel-4-schulfestkasse">Beispiel 4 – Schulfestkasse</h2>
+<h3 id="eingabe-4">Eingabe</h3>
+<p>Die Anzahl und der Preis der verkauften Artikel werden
+eingegeben.</p>
+<h3 id="verarbeitung-4">Verarbeitung</h3>
+<p>Das Programm berechnet den Gesamtpreis.</p>
+<h3 id="ausgabe-4">Ausgabe</h3>
+<p>Der zu zahlende Betrag wird angezeigt.</p>
+<h3 id="speicherung-4">Speicherung</h3>
+<p>Der Verkauf wird für die spätere Abrechnung gespeichert.</p>
+<hr />
+<h2 id="speicher-während-der-verarbeitung">Speicher während der
+Verarbeitung</h2>
+<p>Nicht alle Daten werden dauerhaft gespeichert.</p>
+<p>Während eines Programms können Daten vorübergehend im Arbeitsspeicher
+abgelegt werden.</p>
+<h3 id="beispiel-4">Beispiel</h3>
+<p>Ein Programm berechnet den Durchschnitt aus drei Messwerten.</p>
+<pre class="text"><code>Messwert 1: 18
+Messwert 2: 20
+Messwert 3: 22</code></pre>
+<p>Während der Berechnung speichert das Programm:</p>
+<ul>
+<li>die drei Messwerte</li>
+<li>ihre Summe</li>
+<li>den berechneten Durchschnitt</li>
+</ul>
+<p>Nach dem Beenden des Programms gehen diese Werte verloren, wenn sie
+nicht in einer Datei oder Datenbank gespeichert wurden.</p>
+<hr />
+<h2 id="evas-bei-einem-programm">EVAS bei einem Programm</h2>
+<p>Ein Programm kann nach dem EVAS-Prinzip untersucht werden.</p>
+<pre class="text"><code>Eingabe:
+Welche Daten erhält das Programm?
+
+Verarbeitung:
+Was geschieht mit den Daten?
+
+Ausgabe:
+Welches Ergebnis wird ausgegeben?
+
+Speicherung:
+Welche Daten werden vorübergehend oder dauerhaft gespeichert?</code></pre>
+<hr />
+<h2 id="aufgabe-1-fahrkartenautomat">Aufgabe 1 – Fahrkartenautomat</h2>
+<p>Ordne die Vorgänge dem EVAS-Prinzip zu.</p>
+<ul>
+<li>Fahrziel auswählen</li>
+<li>Preis berechnen</li>
+<li>Fahrkarte drucken</li>
+<li>Verkauf im System protokollieren</li>
+<li>Geld oder Karte einlesen</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Vorgang</th>
+<th>EVAS-Bereich</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fahrziel auswählen</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Preis berechnen</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Fahrkarte drucken</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Verkauf protokollieren</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Geld oder Karte einlesen</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="aufgabe-2-smartphone-kamera">Aufgabe 2 – Smartphone-Kamera</h2>
+<p>Beschreibe das EVAS-Prinzip beim Fotografieren mit einem
+Smartphone.</p>
+<h3 id="eingabe-5">Eingabe</h3>
+<hr />
+<h3 id="verarbeitung-5">Verarbeitung</h3>
+<hr />
+<h3 id="ausgabe-5">Ausgabe</h3>
+<hr />
+<h3 id="speicherung-5">Speicherung</h3>
+<hr />
+<hr />
+<h2 id="aufgabe-3-eigenes-beispiel">Aufgabe 3 – Eigenes Beispiel</h2>
+<p>Wähle ein Informatiksystem aus.</p>
+<p>Beispiele:</p>
+<ul>
+<li>Geldautomat</li>
+<li>Navigationsgerät</li>
+<li>Spielekonsole</li>
+<li>Smartwatch</li>
+<li>Fahrstuhlsteuerung</li>
+<li>Schulcomputer</li>
+</ul>
+<p>Beschreibe Eingabe, Verarbeitung, Ausgabe und Speicherung.</p>
+<table>
+<thead>
+<tr class="header">
+<th>EVAS-Bereich</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Eingabe</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Verarbeitung</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Ausgabe</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Speicherung</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="merke-5">Merke</h2>
+<blockquote>
+<p>Das EVAS-Prinzip beschreibt die grundlegende Arbeitsweise eines
+Informatiksystems:</p>
+<p><strong>Daten werden eingegeben, verarbeitet, ausgegeben und
+gespeichert.</strong></p>
+</blockquote>
+<p>Die Verarbeitung erfolgt mithilfe von Algorithmen und Programmen. Die
+Speicherung sorgt dafür, dass Daten während der Verarbeitung oder für
+eine spätere Nutzung verfügbar bleiben.</p>
+<div class="page-break"></div>
+<h1 id="zusammenfassung">Zusammenfassung</h1>
+<p>Du kennst jetzt</p>
+<ul>
+<li>den Aufbau eines Computers,</li>
+<li>den Unterschied zwischen Hardware und Software,</li>
+<li>Aufgaben eines Betriebssystems,</li>
+<li>den Aufbau eines Dateisystems,</li>
+<li>das EVA-Prinzip.</li>
+</ul>
+<p>Diese Grundlagen werden im weiteren Lehrwerk regelmäßig benötigt.</p>
+<div class="page-break"></div>
+<h1 id="quellen">Quellen</h1>
+<p>Bundesamt für Sicherheit in der Informationstechnik</p>
+<p>https://www.bsi.bund.de</p>
+<hr />
+<p>OpenStax – Information Technology</p>
+<p>https://openstax.org</p>
+<hr />
+<p>Wikipedia – Computer</p>
+<p>https://de.wikipedia.org/wiki/Computer</p>
+</body>
+</html>

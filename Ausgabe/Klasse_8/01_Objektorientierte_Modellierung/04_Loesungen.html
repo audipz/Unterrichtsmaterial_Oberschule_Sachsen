@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Objektorientierte Modellierung</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Objektorientierte Modellierung</h1>
+<p class="subtitle">Informatik · Klasse 8 · Loesungen</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#lösungen-objektorientierung" id="toc-lösungen-objektorientierung">Lösungen – Objektorientierung</a>
+<ul>
+<li><a href="#zuordnung" id="toc-zuordnung">Zuordnung</a></li>
+<li><a href="#beispiel-smartphone_a" id="toc-beispiel-smartphone_a">Beispiel Smartphone_A</a></li>
+<li><a href="#fehleraufgabe" id="toc-fehleraufgabe">Fehleraufgabe</a></li>
+<li><a href="#methoden-und-zustände" id="toc-methoden-und-zustände">Methoden und Zustände</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="lösungen-objektorientierung">Lösungen – Objektorientierung</h1>
+<h2 id="zuordnung">Zuordnung</h2>
+<p><code>Hund</code> = Klasse, <code>Bello</code> = Objekt,
+<code>Fellfarbe</code> = Attribut, <code>braun</code> = Attributwert,
+<code>Auto</code> = Klasse, <code>Kennzeichen</code> = Attribut,
+<code>DD-AB 123</code> = Attributwert.</p>
+<h2 id="beispiel-smartphone_a">Beispiel Smartphone_A</h2>
+<p>Klasse <code>Smartphone</code>; Attribute z. B.
+<code>farbe=schwarz</code>, <code>speicher=128 GB</code>,
+<code>akku=73 %</code>, <code>lautstaerke=40 %</code>,
+<code>wlan=aktiv</code>.</p>
+<h2 id="fehleraufgabe">Fehleraufgabe</h2>
+<p><code>Auto_17</code> bezeichnet typischerweise ein konkretes Objekt.
+<code>Auto</code> ist die Klasse. Ein Attributwert gehört zu einem
+benannten Attribut, etwa <code>farbe=blau</code>.</p>
+<h2 id="methoden-und-zustände">Methoden und Zustände</h2>
+<p>Mögliche Klasse <code>Roboter</code>: Attribute
+<code>position</code>, <code>richtung</code>, <code>hatMarke</code>,
+<code>anzahlZiegel</code>; Methoden <code>schritt()</code>,
+<code>linksDrehen()</code>, <code>hinlegen()</code>,
+<code>aufheben()</code>, <code>markeSetzen()</code>.</p>
+<p><code>aufschliessen()</code> kann <code>verschlossen</code> auf
+<code>nein</code> setzen. <code>oeffnen()</code> kann anschließend
+<code>offen</code> auf <code>ja</code> setzen. Eine sinnvolle Bedingung
+lautet: Öffnen nur, wenn <code>verschlossen = nein</code>.</p>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Objektorientierte Modellierung</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Objektorientierte Modellierung</h1>
+<p class="subtitle">Informatik · Klasse 8 · Arbeitsheft</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#objekte-attribute-und-klassen" id="toc-objekte-attribute-und-klassen">01 – Objekte, Attribute und
+Klassen</a>
+<ul>
+<li><a href="#rückblick" id="toc-rückblick">Rückblick</a></li>
+<li><a href="#objekte" id="toc-objekte">Objekte</a></li>
+<li><a href="#attribute-und-attributwerte" id="toc-attribute-und-attributwerte">Attribute und
+Attributwerte</a></li>
+<li><a href="#klassen" id="toc-klassen">Klassen</a></li>
+<li><a href="#aufgabe-1" id="toc-aufgabe-1">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2" id="toc-aufgabe-2">Aufgabe 2</a></li>
+<li><a href="#aufgabe-3" id="toc-aufgabe-3">Aufgabe 3</a></li>
+<li><a href="#aufgabe-4-fehler-finden" id="toc-aufgabe-4-fehler-finden">Aufgabe 4 – Fehler finden</a></li>
+<li><a href="#transfer" id="toc-transfer">Transfer</a></li>
+<li><a href="#das-wichtigste" id="toc-das-wichtigste">Das
+Wichtigste</a></li>
+</ul></li>
+<li><a href="#methoden-und-zustände" id="toc-methoden-und-zustände">02 –
+Methoden und Zustände</a>
+<ul>
+<li><a href="#rückblick-1" id="toc-rückblick-1">Rückblick</a></li>
+<li><a href="#zustand-eines-objekts" id="toc-zustand-eines-objekts">Zustand eines Objekts</a></li>
+<li><a href="#methoden" id="toc-methoden">Methoden</a></li>
+<li><a href="#aufgabe-1-1" id="toc-aufgabe-1-1">Aufgabe 1</a></li>
+<li><a href="#aufgabe-2-1" id="toc-aufgabe-2-1">Aufgabe 2</a></li>
+<li><a href="#aufgabe-3-objektkarte" id="toc-aufgabe-3-objektkarte">Aufgabe 3 – Objektkarte</a></li>
+<li><a href="#aufgabe-4-reihenfolge" id="toc-aufgabe-4-reihenfolge">Aufgabe 4 – Reihenfolge</a></li>
+<li><a href="#verbindung-zu-algorithmen" id="toc-verbindung-zu-algorithmen">Verbindung zu Algorithmen</a></li>
+<li><a href="#merksatz" id="toc-merksatz">Merksatz</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="objekte-attribute-und-klassen">01 – Objekte, Attribute und
+Klassen</h1>
+<h2 id="rückblick">Rückblick</h2>
+<p>In Klasse 7 habt ihr bereits gelernt, dass man Dinge der realen oder
+digitalen Welt als <strong>Objekte</strong> beschreiben kann.</p>
+<blockquote>
+<p><strong>Leitfrage:</strong> Wie kann man viele ähnliche Objekte
+übersichtlich beschreiben?</p>
+</blockquote>
+<h2 id="objekte">Objekte</h2>
+<p>Ein Objekt ist ein konkretes Exemplar, über das wir Informationen
+speichern oder mit dem wir arbeiten.</p>
+<p>Beispiele:</p>
+<ul>
+<li>der Schüler <code>Mia</code></li>
+<li>das Fahrrad <code>Rad_17</code></li>
+<li>die Spielfigur <code>Katze1</code></li>
+<li>der Roboter <code>Karol</code></li>
+</ul>
+<h2 id="attribute-und-attributwerte">Attribute und Attributwerte</h2>
+<p>Ein <strong>Attribut</strong> beschreibt eine Eigenschaft eines
+Objekts. Der <strong>Attributwert</strong> ist die konkrete
+Ausprägung.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Objekt</th>
+<th>Attribut</th>
+<th>Attributwert</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fahrrad <code>Rad_17</code></td>
+<td>Farbe</td>
+<td>rot</td>
+</tr>
+<tr class="even">
+<td>Fahrrad <code>Rad_17</code></td>
+<td>Gänge</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td>Fahrrad <code>Rad_17</code></td>
+<td>fahrbereit</td>
+<td>ja</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Merke:</strong> Attribut = Eigenschaft, Attributwert =
+konkreter Wert dieser Eigenschaft.</p>
+</blockquote>
+<h2 id="klassen">Klassen</h2>
+<p>Viele Objekte besitzen dieselben Arten von Eigenschaften. Dann können
+wir sie zu einer <strong>Klasse</strong> zusammenfassen.</p>
+<p>Beispiel Klasse <code>Fahrrad</code>:</p>
+<ul>
+<li>Attribute: <code>farbe</code>, <code>gaenge</code>,
+<code>fahrbereit</code></li>
+<li>mögliche Objekte: <code>Rad_17</code>, <code>Rad_18</code>,
+<code>Rad_19</code></li>
+</ul>
+<p>Eine Klasse beschreibt also, welche Eigenschaften gleichartige
+Objekte besitzen können.</p>
+<h2 id="aufgabe-1">Aufgabe 1</h2>
+<p>Ordne zu: Objekt, Klasse, Attribut oder Attributwert.</p>
+<ol type="1">
+<li><code>Hund</code></li>
+<li><code>Bello</code></li>
+<li><code>Fellfarbe</code></li>
+<li><code>braun</code></li>
+<li><code>Auto</code></li>
+<li><code>Kennzeichen</code></li>
+<li><code>DD-AB 123</code></li>
+</ol>
+<h2 id="aufgabe-2">Aufgabe 2</h2>
+<p>Beschreibe das Objekt <code>Smartphone_A</code> mit mindestens fünf
+sinnvollen Attributen und konkreten Attributwerten.</p>
+<h2 id="aufgabe-3">Aufgabe 3</h2>
+<p>Bilde für die folgenden Objekte eine gemeinsame Klasse und nenne
+passende Attribute:</p>
+<ul>
+<li><code>Buch_1</code>, <code>Buch_2</code>, <code>Buch_3</code></li>
+<li><code>Schueler_1</code>, <code>Schueler_2</code>,
+<code>Schueler_3</code></li>
+</ul>
+<h2 id="aufgabe-4-fehler-finden">Aufgabe 4 – Fehler finden</h2>
+<p>Jemand schreibt:</p>
+<blockquote>
+<p>Die Klasse <code>Auto_17</code> hat den Attributwert
+<code>Auto</code>.</p>
+</blockquote>
+<p>Erkläre, warum diese Aussage ungenau oder falsch ist.</p>
+<h2 id="transfer">Transfer</h2>
+<p>Warum ist es für Programme hilfreich, nicht jedes Objekt völlig neu
+beschreiben zu müssen?</p>
+<h2 id="das-wichtigste">Das Wichtigste</h2>
+<ul>
+<li>Ein Objekt ist ein konkretes Exemplar.</li>
+<li>Attribute beschreiben Eigenschaften.</li>
+<li>Attributwerte sind konkrete Werte.</li>
+<li>Eine Klasse fasst gleichartige Objekte mit gemeinsamen Merkmalen
+zusammen.</li>
+</ul>
+<div class="page-break"></div>
+<h1 id="methoden-und-zustände">02 – Methoden und Zustände</h1>
+<h2 id="rückblick-1">Rückblick</h2>
+<p>Objekte besitzen Attribute und konkrete Attributwerte. Klassen
+beschreiben gemeinsame Eigenschaften gleichartiger Objekte.</p>
+<blockquote>
+<p><strong>Leitfrage:</strong> Wie können Objekte ihren Zustand
+verändern?</p>
+</blockquote>
+<h2 id="zustand-eines-objekts">Zustand eines Objekts</h2>
+<p>Die Gesamtheit der aktuellen Attributwerte beschreibt den
+<strong>Zustand</strong> eines Objekts.</p>
+<p>Beispiel <code>Ampel_A</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Attribut</th>
+<th>Wert</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>farbe</td>
+<td>rot</td>
+</tr>
+<tr class="even">
+<td>aktiv</td>
+<td>ja</td>
+</tr>
+</tbody>
+</table>
+<p>Ändert sich <code>farbe</code> von <code>rot</code> auf
+<code>grün</code>, ändert sich der Zustand.</p>
+<h2 id="methoden">Methoden</h2>
+<p>Eine <strong>Methode</strong> beschreibt eine Aktion, die ein Objekt
+ausführen kann.</p>
+<p>Beispiel Klasse <code>Lampe</code>:</p>
+<ul>
+<li>Attribute: <code>farbe</code>, <code>helligkeit</code>,
+<code>eingeschaltet</code></li>
+<li>Methoden: <code>einschalten()</code>, <code>ausschalten()</code>,
+<code>heller()</code>, <code>dunkler()</code></li>
+</ul>
+<p>Die Methode <code>einschalten()</code> kann beispielsweise den
+Attributwert <code>eingeschaltet</code> von <code>nein</code> auf
+<code>ja</code> ändern.</p>
+<h2 id="aufgabe-1-1">Aufgabe 1</h2>
+<p>Ergänze für die Klasse <code>Roboter</code> mindestens vier Attribute
+und fünf Methoden.</p>
+<h2 id="aufgabe-2-1">Aufgabe 2</h2>
+<p>Das Objekt <code>Tuer_1</code> besitzt:</p>
+<ul>
+<li><code>offen = nein</code></li>
+<li><code>verschlossen = ja</code></li>
+</ul>
+<p>Welche Zustandsänderungen könnten die Methoden
+<code>aufschliessen()</code> und <code>oeffnen()</code> bewirken?</p>
+<h2 id="aufgabe-3-objektkarte">Aufgabe 3 – Objektkarte</h2>
+<p>Erstelle eine vollständige Objektkarte für eine Spielfigur:</p>
+<ul>
+<li>Klassenname</li>
+<li>Objektname</li>
+<li>mindestens fünf Attribute mit Attributwerten</li>
+<li>mindestens vier Methoden</li>
+</ul>
+<h2 id="aufgabe-4-reihenfolge">Aufgabe 4 – Reihenfolge</h2>
+<p>Kann <code>Tuer_1.oeffnen()</code> sinnvoll ausgeführt werden,
+solange <code>verschlossen = ja</code> gilt? Formuliere eine mögliche
+Bedingung.</p>
+<h2 id="verbindung-zu-algorithmen">Verbindung zu Algorithmen</h2>
+<p>Methoden bestehen in Programmen wiederum aus Anweisungen. Damit
+entsteht die Brücke zu Algorithmen: Ein Objekt führt einen genau
+beschriebenen Ablauf aus.</p>
+<h2 id="merksatz">Merksatz</h2>
+<blockquote>
+<p>Methoden beschreiben Verhalten. Durch Methoden können sich
+Attributwerte und damit der Zustand eines Objekts ändern.</p>
+</blockquote>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Dateien</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Dateien</h1>
+<p class="subtitle">Informatik · Klasse 9 · Dokumentation</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#festival.db" id="toc-festival.db">festival.db</a>
+<ul>
+<li><a href="#tabellen-und-datensätze" id="toc-tabellen-und-datensätze">Tabellen und Datensätze</a></li>
+<li><a href="#geeignete-unterrichtsthemen" id="toc-geeignete-unterrichtsthemen">Geeignete
+Unterrichtsthemen</a></li>
+</ul></li>
+<li><a href="#mensa.xlsx" id="toc-mensa.xlsx">mensa.xlsx</a></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="festival.db">festival.db</h1>
+<p>Vollständig befüllte SQLite-Beispieldatenbank zum
+Schülerfestival.</p>
+<h2 id="tabellen-und-datensätze">Tabellen und Datensätze</h2>
+<p>{ “raeume”: 8, “veranstaltungen”: 12, “besucher”: 120, “tickets”:
+120, “helfer”: 24, “anmeldungen”: 240, “verkaeufe”: 180 }</p>
+<p>Zusätzlich enthält die Datenbank:</p>
+<ul>
+<li>Primär- und Fremdschlüssel</li>
+<li>Indizes</li>
+<li>die Sicht <code>veranstaltung_auslastung</code></li>
+<li>die Sicht <code>umsatz_nach_artikel</code></li>
+</ul>
+<h2 id="geeignete-unterrichtsthemen">Geeignete Unterrichtsthemen</h2>
+<ul>
+<li>Tabellen und Beziehungen</li>
+<li>Primär- und Fremdschlüssel</li>
+<li>SELECT, WHERE, ORDER BY</li>
+<li>JOIN und GROUP BY</li>
+<li>Aggregatfunktionen</li>
+<li>Datenqualität und Datenschutz</li>
+</ul>
+<div class="page-break"></div>
+<h1 id="mensa.xlsx">mensa.xlsx</h1>
+<p>Die Arbeitsmappe enthält vier Tabellenblätter:</p>
+<ul>
+<li><code>Speiseplan</code>: 15 vollständige Speiseplantage</li>
+<li><code>Verkaeufe</code>: Portionen, Preise und berechnete
+Umsätze</li>
+<li><code>Auswertung</code>: Formeln für zentrale Kennzahlen</li>
+<li><code>Aufgaben</code>: zehn Unterrichtsaufträge</li>
+</ul>
+<p>Die Datei eignet sich für Sortieren, Filtern, Formeln, Diagramme und
+Datenanalyse.</p>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Grundlagen</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Grundlagen</h1>
+<p class="subtitle">Python</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#schnellstart" id="toc-schnellstart">Schnellstart</a>
+<ul>
+<li><a href="#python-starten" id="toc-python-starten">Python
+starten</a></li>
+<li><a href="#erstes-programm" id="toc-erstes-programm">Erstes
+Programm</a></li>
+<li><a href="#speichern" id="toc-speichern">Speichern</a></li>
+<li><a href="#merke" id="toc-merke">Merke</a></li>
+</ul></li>
+<li><a href="#der-editor" id="toc-der-editor">Der Editor</a>
+<ul>
+<li><a href="#bestandteile" id="toc-bestandteile">Bestandteile</a></li>
+<li><a href="#vorteile" id="toc-vorteile">Vorteile</a></li>
+<li><a href="#merke-1" id="toc-merke-1">Merke</a></li>
+</ul></li>
+<li><a href="#syntax" id="toc-syntax">Syntax</a>
+<ul>
+<li><a href="#beispiel" id="toc-beispiel">Beispiel</a></li>
+<li><a href="#groß--und-kleinschreibung" id="toc-groß--und-kleinschreibung">Groß- und Kleinschreibung</a></li>
+<li><a href="#einrückungen" id="toc-einrückungen">Einrückungen</a></li>
+<li><a href="#merke-2" id="toc-merke-2">Merke</a></li>
+</ul></li>
+<li><a href="#ein-programm" id="toc-ein-programm">Ein Programm</a>
+<ul>
+<li><a href="#beispiel-1" id="toc-beispiel-1">Beispiel</a></li>
+<li><a href="#reihenfolge" id="toc-reihenfolge">Reihenfolge</a></li>
+<li><a href="#merke-3" id="toc-merke-3">Merke</a></li>
+</ul></li>
+<li><a href="#fehlermeldungen" id="toc-fehlermeldungen">Fehlermeldungen</a>
+<ul>
+<li><a href="#syntaxfehler" id="toc-syntaxfehler">Syntaxfehler</a></li>
+<li><a href="#laufzeitfehler" id="toc-laufzeitfehler">Laufzeitfehler</a></li>
+<li><a href="#logische-fehler" id="toc-logische-fehler">Logische
+Fehler</a></li>
+<li><a href="#merke-4" id="toc-merke-4">Merke</a></li>
+</ul></li>
+<li><a href="#debugging" id="toc-debugging">Debugging</a>
+<ul>
+<li><a href="#vorgehensweise" id="toc-vorgehensweise">Vorgehensweise</a></li>
+<li><a href="#tipp" id="toc-tipp">Tipp</a></li>
+<li><a href="#merke-5" id="toc-merke-5">Merke</a></li>
+</ul></li>
+<li><a href="#quellen" id="toc-quellen">Quellen</a>
+<ul>
+<li><a href="#python-software-foundation" id="toc-python-software-foundation">Python Software Foundation</a></li>
+<li><a href="#python-dokumentation" id="toc-python-dokumentation">Python-Dokumentation</a></li>
+<li><a href="#thonny" id="toc-thonny">Thonny</a></li>
+<li><a href="#lizenzhinweis" id="toc-lizenzhinweis">Lizenzhinweis</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="schnellstart">Schnellstart</h1>
+<h2 id="python-starten">Python starten</h2>
+<p>Python kann auf unterschiedliche Weise verwendet werden.</p>
+<p>Zum Beispiel</p>
+<ul>
+<li>Thonny</li>
+<li>Visual Studio Code</li>
+<li>IDLE</li>
+<li>Jupyter Notebook</li>
+</ul>
+<p>Im Unterricht verwenden wir <strong>Thonny</strong>.</p>
+<hr />
+<h2 id="erstes-programm">Erstes Programm</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo Welt!&quot;</span>)</span></code></pre></div>
+<p>Mit der Taste <strong>F5</strong> wird das Programm gestartet.</p>
+<hr />
+<h2 id="speichern">Speichern</h2>
+<p>Programme besitzen meistens die Dateiendung</p>
+<pre><code>.py</code></pre>
+<hr />
+<h2 id="merke">Merke</h2>
+<p>Speichere dein Programm regelmäßig.</p>
+<div class="page-break"></div>
+<h1 id="der-editor">Der Editor</h1>
+<p>Ein Editor dient zum Schreiben von Programmen.</p>
+<p>Er unterstützt dich beim Programmieren.</p>
+<hr />
+<h2 id="bestandteile">Bestandteile</h2>
+<ul>
+<li>Menü</li>
+<li>Editor</li>
+<li>Ausgabefenster</li>
+<li>Fehlermeldungen</li>
+</ul>
+<hr />
+<h2 id="vorteile">Vorteile</h2>
+<p>Der Editor</p>
+<ul>
+<li>färbt Befehle ein,</li>
+<li>erkennt viele Fehler,</li>
+<li>erleichtert das Schreiben.</li>
+</ul>
+<hr />
+<h2 id="merke-1">Merke</h2>
+<p>Der Editor führt dein Programm nicht aus.</p>
+<p>Er hilft dir beim Schreiben.</p>
+<div class="page-break"></div>
+<h1 id="syntax">Syntax</h1>
+<p>Jede Programmiersprache besitzt Regeln.</p>
+<p>Diese Regeln nennt man <strong>Syntax</strong>.</p>
+<hr />
+<h2 id="beispiel">Beispiel</h2>
+<p>Richtig</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo&quot;</span>)</span></code></pre></div>
+<p>Falsch</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Print(<span class="st">&quot;Hallo&quot;</span>)</span></code></pre></div>
+<hr />
+<h2 id="groß--und-kleinschreibung">Groß- und Kleinschreibung</h2>
+<p>Python unterscheidet</p>
+<pre><code>print</code></pre>
+<p>und</p>
+<pre><code>Print</code></pre>
+<hr />
+<h2 id="einrückungen">Einrückungen</h2>
+<p>Python verwendet Einrückungen zur Strukturierung.</p>
+<p>Darauf kommen wir später noch ausführlich zurück.</p>
+<hr />
+<h2 id="merke-2">Merke</h2>
+<p>Syntaxfehler lassen sich oft schnell beheben.</p>
+<p>Sie sagen nichts darüber aus, ob dein Algorithmus richtig ist.</p>
+<div class="page-break"></div>
+<h1 id="ein-programm">Ein Programm</h1>
+<p>Ein Python-Programm besteht aus Anweisungen.</p>
+<p>Sie werden von oben nach unten ausgeführt.</p>
+<hr />
+<h2 id="beispiel-1">Beispiel</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Guten Morgen&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Willkommen&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Viel Erfolg&quot;</span>)</span></code></pre></div>
+<hr />
+<h2 id="reihenfolge">Reihenfolge</h2>
+<p>Die Reihenfolge der Anweisungen entspricht dem Algorithmus.</p>
+<p>Ändert sich die Reihenfolge,</p>
+<p>ändert sich häufig auch das Ergebnis.</p>
+<hr />
+<h2 id="merke-3">Merke</h2>
+<p>Python führt Programme Schritt für Schritt aus.</p>
+<div class="page-break"></div>
+<h1 id="fehlermeldungen">Fehlermeldungen</h1>
+<p>Fehler gehören zum Programmieren.</p>
+<p>Sie helfen dabei,</p>
+<p>Programme zu verbessern.</p>
+<hr />
+<h2 id="syntaxfehler">Syntaxfehler</h2>
+<p>Die Schreibweise stimmt nicht.</p>
+<hr />
+<h2 id="laufzeitfehler">Laufzeitfehler</h2>
+<p>Der Fehler entsteht erst während der Ausführung.</p>
+<hr />
+<h2 id="logische-fehler">Logische Fehler</h2>
+<p>Das Programm läuft.</p>
+<p>Das Ergebnis ist jedoch falsch.</p>
+<hr />
+<h2 id="merke-4">Merke</h2>
+<p>Nicht jede Fehlermeldung bedeutet,</p>
+<p>dass dein Algorithmus falsch ist.</p>
+<div class="page-break"></div>
+<h1 id="debugging">Debugging</h1>
+<p>Debugging bedeutet,</p>
+<p>Programme systematisch zu überprüfen.</p>
+<hr />
+<h2 id="vorgehensweise">Vorgehensweise</h2>
+<ol type="1">
+<li>Programm starten.</li>
+<li>Fehler beobachten.</li>
+<li>Ursache suchen.</li>
+<li>Fehler beheben.</li>
+<li>Erneut testen.</li>
+</ol>
+<hr />
+<h2 id="tipp">Tipp</h2>
+<p>Ändere immer nur eine Stelle.</p>
+<p>So erkennst du leichter,</p>
+<p>welche Änderung geholfen hat.</p>
+<hr />
+<h2 id="merke-5">Merke</h2>
+<p>Testen gehört zum Programmieren dazu.</p>
+<div class="page-break"></div>
+<h1 id="quellen">Quellen</h1>
+<h2 id="python-software-foundation">Python Software Foundation</h2>
+<p>https://www.python.org</p>
+<hr />
+<h2 id="python-dokumentation">Python-Dokumentation</h2>
+<p>https://docs.python.org</p>
+<hr />
+<h2 id="thonny">Thonny</h2>
+<p>https://thonny.org</p>
+<hr />
+<h2 id="lizenzhinweis">Lizenzhinweis</h2>
+<p>Python ist freie Software.</p>
+<p>Die Programmiersprache wird von der Python Software Foundation
+entwickelt.</p>
+<p>Dieses Lehrwerk steht in keiner Verbindung zur Python Software
+Foundation.</p>
+</body>
+</html>
