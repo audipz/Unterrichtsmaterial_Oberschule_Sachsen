@@ -1,53 +1,51 @@
-# Präsentation – 04 bis 06 Objekte, Klassen und Datenrechte
+# Präsentation – 04 bis 06 Objekte, Klassen, Rechte und Dokumentenschutz
 
-## Folie 1
+## Folie 1 – Leitfrage
 
-> Welche Dinge in einem Dokument kann ein Computer als Objekte behandeln?
+> Wie beschreibt ein Computer Dinge mit Eigenschaften?
 
-## Folie 2
+## Folie 2 – Objekt und Attribute
 
-Objekt und Beispiele.
+Objekt = konkretes Ding im Dokument oder Programm. Attribute beschreiben Eigenschaften, z. B. Farbe, Größe, Position oder Dateiname.
 
-## Folie 3
+## Folie 3 – Attributwert und Zustand
 
-Attribut und Attributwert.
+Attributwert = konkreter Wert eines Attributs. Der Zustand eines Objekts besteht aus seinen aktuellen Attributwerten.
 
-## Folie 4
+**Lehrerhinweis:** Wichtig: Wenn ein Objekt seine Werte ändert, ändert sich nicht die Klasse. Das ist eine typische Fehlvorstellung.
 
-Live-Beispiel: Bildbreite, Höhe, Position verändern.
+## Folie 4 – Klasse als Bauplan
 
-## Folie 5
+Eine Klasse beschreibt gemeinsame Merkmale ähnlicher Objekte. Konkrete Objekte entstehen aus diesem Bauplan und haben eigene Werte.
 
-Klasse als gemeinsame Beschreibung.
+## Folie 5 – Methoden und Aktionen unterscheiden
 
-## Folie 6
+Methode: verändert etwas am Objekt oder führt eine objektbezogene Handlung aus. Erstellen, Kopieren und Löschen sind Verwaltungsaktionen.
 
-Klasse Fahrrad – konkrete Objekte vergleichen.
+## Folie 6 – Vereinfachte Darstellung
 
-## Folie 7
+Klasse: Attribute und mögliche Methoden. Objekt: konkrete Attributwerte. Pfeile zeigen Zuordnung von Objekt zu Klasse.
 
-Methoden versus Erstellen/Kopieren/Löschen.
+## Folie 7 – Persönliche Daten und Rechte
 
-## Folie 8
+Name, Foto, Stimme, Standort, Kontaktdaten. Persönlichkeitsrechte beachten, bevor Daten veröffentlicht oder geteilt werden.
 
-Transfer zu Scratch-Figuren.
+## Folie 8 – Urheberrecht, Quelle, Zitat, Plagiat
 
-## Folie 9
+Fremde Texte, Bilder, Musik und Videos benötigen erlaubte Nutzung. Quellen müssen nachvollziehbar angegeben werden. Kopieren ohne Kennzeichnung kann ein Plagiat sein.
 
-> Was technisch möglich ist, ist nicht automatisch erlaubt.
+## Folie 9 – Inhaltsdaten und Metadaten
 
-## Folie 10
+Inhaltsdaten: eigentlicher Inhalt. Metadaten: Zusatzinformationen wie Autor, Änderungsdatum, Standortdaten oder Dateieigenschaften.
 
-Persönliche Daten und Persönlichkeitsrechte.
+## Folie 10 – Dokumentenschutz
 
-## Folie 11
+Passwortschutz, Leserechte, Bearbeitungsrechte, Freigaben und Versionen helfen, Dokumente kontrolliert zu nutzen.
 
-Urheberrecht und Quellen.
+## Folie 11 – Manipulation und Verbreitung
 
-## Folie 12
+Medien können verändert, aus dem Kontext gerissen oder automatisch erzeugt werden. Deshalb Quelle, Kontext und Plausibilität prüfen.
 
-Vier Fragen vor dem Teilen von Daten.
+## Folie 12 – Sicherung
 
-## Folie 13
-
-Ausblick auf Klasse 8: Klassen, Objekte und Attribute werden systematisch vertieft.
+> Daten und Medien sind nicht nur technisch erreichbar. Ihre Darstellung, Nutzung, Veränderung und Weitergabe müssen fachlich und rechtlich verantwortet werden.
