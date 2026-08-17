@@ -1,50 +1,42 @@
-# Lösung – Leistungskontrolle 1 Digitale Information und EVAS
+# Lösung – Leistungskontrolle Informatik im Alltag
 
-## Aufgabe 1 – 8 Punkte
+**Gesamt:** 30 Punkte
 
-1. `13₁₀ = 1101₂` – 2 P
-2. `26₁₀ = 11010₂` – 2 P
-3. `10110₂ = 22₁₀` – 2 P
-4. `111001₂ = 57₁₀` – 2 P
+## Aufgabe 1 – Informatiksysteme im Alltag (5 Punkte)
 
-## Aufgabe 2 – 4 Punkte
+Beispiele: Smartphone, Fahrkartenautomat, Smartwatch, Scannerkasse, Waschmaschine, Navigationsgerät. 2 Punkte für zwei passende Beispiele. 3 Punkte für EVA/S-Erklärung an einem Beispiel, z. B. Smartphone: Eingabe über Touchscreen/Mikrofon, Verarbeitung durch Prozessor/App, Ausgabe über Bildschirm/Lautsprecher, Speicherung in Datei/App/Cloud.
 
-```text
-  1011
-+ 0110
-------
- 10001
-```
+## Aufgabe 2 – Hardware, Software und Daten (5 Punkte)
 
-`11 + 6 = 17`; `10001₂ = 17₁₀`.
+- Prozessor: Hardware
+- Betriebssystem: Software
+- Präsentationsprogramm: Software
+- Tastatur: Hardware
+- Bilddatei: Daten
 
-- korrektes Binärergebnis: 2 P
-- Überträge nachvollziehbar: 1 P
-- Dezimalprobe: 1 P
+Je 0,5 Punkte pro Zuordnung, bis 2,5 Punkte. Bis 2,5 Punkte für sinnvolle Begründungen.
 
-## Aufgabe 3 – 4 Punkte
+## Aufgabe 3 – Systembereitschaft und Vernetzung (4 Punkte)
 
-1. Ein Zeichencode ordnet Zeichen eindeutige Zahlenwerte zu, damit Sender und Empfänger dieselbe Bedeutung verwenden. – 2 P
-2. Eine Bitfolge besitzt ohne vereinbarte Interpretation nur einen Zahlenwert; erst der Zeichencode legt fest, welches Zeichen damit gemeint ist. – 2 P
+1. Ohne Netzwerkverbindung kann die Lernplattform bzw. Datei nicht erreicht werden; das Informatiksystem ist für diese Aufgabe nicht vollständig betriebsbereit. 2 Punkte.
+2. Sinnvolle Schritte: WLAN/LAN prüfen, Anmeldung prüfen, Browser neu laden, andere Webseite testen, Fehlermeldung genau lesen, später erneut versuchen. Zwei passende Schritte je 1 Punkt.
 
-## Aufgabe 4 – 6 Punkte
+## Aufgabe 4 – Speicher und Datenmengen (5 Punkte)
 
-Je 1 P:
+Flüchtiger Speicher verliert Daten ohne Strom, z. B. RAM. Nichtflüchtiger Speicher behält Daten, z. B. SSD/USB-Stick. Cloudspeicher liegt auf entfernten Servern und wird über Netzwerk/Internet erreicht. Ein Backup auf demselben defekten Datenträger hilft nicht, weil Original und Kopie gleichzeitig verloren gehen können.
 
-1. Pixel = einzelner Bildpunkt eines Rasterbildes.
-2. RGB = Rot, Grün, Blau.
-3. Auflösung beschreibt die Anzahl der Bildpunkte, z. B. Breite × Höhe.
-4. Abtastrate = Zahl der Messungen eines Signals pro Sekunde.
-5. Bittiefe = Anzahl Bits pro Messwert / mögliche Abstufungen.
-6. Kompression reduziert Datenmenge, Speicherbedarf oder Übertragungsaufwand.
+## Aufgabe 5 – Dateien, Ordner und Pfade (5 Punkte)
 
-## Aufgabe 5 – 8 Punkte
+Kopieren erzeugt ein weiteres Exemplar; Verschieben ändert den Speicherort. Sinnvoller Pfad z. B. `Schule/Klasse_7/Informatik/EVAS/EVAS_Praesentation.pptx`. Schlechter Dateiname, weil unklar, ungeordnet und versionstechnisch verwirrend. Besser z. B. `2026-08-17_EVAS_Praesentation_Meyer.pptx` oder `EVAS_Praesentation_Gruppe2.pptx`.
 
-Beispiel:
+## Aufgabe 6 – Lizenzformen (4 Punkte)
 
-- Eingabe: Licht trifft auf den Kamerasensor; Sensor liefert Messwerte. – 2 P
-- Verarbeitung: Messwerte werden zu Pixel-/Farbinformationen verarbeitet. – 2 P
-- Ausgabe: Foto/Vorschau erscheint auf dem Display. – 2 P
-- Speicherung: Bilddaten werden als Datei im Gerätespeicher abgelegt. – 2 P
+1. falsch – kostenlos sagt nichts über Quelltext oder Veränderungsrechte aus.
+2. falsch – proprietäre Software wird durch Anbieter/Lizenz beschränkt.
+3. richtig – Open Source bedeutet zugänglicher Quelltext unter einer Lizenz.
 
-Sinngemäß korrekte fachliche Lösungen werden anerkannt.
+Punkte: je 1 Punkt für korrektes Kreuz, 1 Punkt für eine passende Gesamtbegründung.
+
+## Aufgabe 7 – Entwicklungstendenzen (2 Punkte)
+
+Digitalisierung: analoge Information oder Abläufe werden digital dargestellt bzw. verarbeitet, z. B. Papierformular als Onlineformular. Automatisierung: ein System führt Schritte selbstständig nach Regeln aus, z. B. automatische Rechtschreibprüfung oder automatische Sortierung. Je 1 Punkt.
