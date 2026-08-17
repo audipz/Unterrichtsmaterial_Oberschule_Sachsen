@@ -1,61 +1,60 @@
 # Klasse 7 – Informatik
 
-## Leitfrage
+Grundlage ist der sächsische Lehrplan Informatik Oberschule 2022.
 
-> **Wie arbeitet ein Computer und wie werden Informationen dargestellt und verarbeitet?**
+## Verbindliche Lernbereiche
 
-Die Materialien sind für Einzelstunden von 45 Minuten geplant. Jede Stunde beginnt mit einem kurzen Rückblick („Was haben wir letzte Stunde gemacht?“), führt über eine Leitfrage zur Erarbeitung und endet mit Sicherung und Ausblick.
+### 1. Informatik im Alltag – 10 Ustd.
 
-## Didaktischer Lernweg
+Material: `01_Informatik_im_Alltag`
 
-### 1. Grundlagen der digitalen Welt
+Verbindliche Schwerpunkte:
 
-- Geschichte der Informatik als motivierender Einstieg, nicht prüfungsrelevant
-- binäre Zustände, Bit und Binärzahlen
-- Umrechnung über Zweierpotenzen und Division durch 2
-- Binäraddition
-- Texte, Bilder und Musik als digitale Daten
-- EVAS-Prinzip
-- benotete EVAS-Präsentation
-- Hardware und Software
-- Prozessor, Speicher und Datenmengen
-- Dateien, Ordner und Pfade
+- Entwicklung der Informatik und Rechentechnik sowie aktuelle Entwicklungstendenzen
+- Digitalisierung, Automatisierung und Vernetzung im Alltag
+- allgemeiner Aufbau eines Informatiksystems und EVA-Prinzip
+- Hardware und Software sowie deren Zusammenwirken
+- Lizenzformen: kostenpflichtig/frei, proprietär/Open Source
+- Speicher: Eigenschaften, Speicherarten und Anwendungsgebiete
+- binäre Zustände, Bit/Byte und Größenordnungen von Datenmengen
+- Datei, Dateityp, Ordner und Pfad
+- Datei- und Ordneroperationen sowie lokale, vernetzte und webbasierte Speicher
 
-### 2. Repräsentation von Daten
+Die vorhandenen Vertiefungen zu Binärzahlen, Text-, Bild- und Audiodaten dienen der Anschaulichkeit und Differenzierung. Umrechnungsverfahren und Binäraddition sind keine eigenständigen verbindlichen Lehrplanforderungen der Klassenstufe 7 und werden deshalb nicht als Kernstoff für Leistungskontrollen behandelt.
 
-- Information und Daten unterscheiden
-- Darstellungsformen auswählen und vergleichen
-- digitale Medien zweckmäßig erstellen
-- Objekt, Attribut und Attributwert
-- Klasse und Methode
-- personenbezogene Daten, Urheberrecht und Quellen
+### 2. Repräsentation von Daten – 15 Ustd.
 
-### 3. Algorithmen und Programmierung
+Material: `02_Repraesentation_von_Daten`
 
-Die Programmiervertiefung besitzt einen eigenen, vollständigen Lernbereich. Alle zugehörigen Unterrichtsdateien liegen unter `03_Algorithmen_und_Programmierung`:
+Verbindliche Schwerpunkte:
 
-- Sequenz, Entscheidung und Wiederholung
-- Scratch: Ereignisse, Eingaben, Bedingungen, Schleifen und Variablen
-- Übungsprojekt und Kompetenzcheck
-- separate Leistungskontrolle
+- Information und Daten unterscheiden; Darstellungsformen vergleichen
+- informatische Konzepte auf die Erstellung digitaler Medien übertragen
+- Objektorientierung: Klasse, Objekt, Attribut, Attributwert und Methode
+- Klassen bilden und konkrete Objekte dem Modell Klasse–Objekt–Attribut–Attributwert zuordnen
+- Methoden zum Ändern von Attributwerten und vereinfachte Darstellungen von Klassen/Objekten
+- Inhalt und Design trennen sowie Automatisierung bei der Informationsverarbeitung erkennen
+- problembezogen geeignete Anwendersoftware auswählen und weitere Anwendungssoftware kennenlernen
+- Urheber- und Persönlichkeitsrechte, Quellenangaben, Zitatrecht und Plagiat
+- Datenschutz und Datensicherheit, Inhalts- und Metadaten, Schutz von Dokumenten
+- Erstellung, Manipulation und Verbreitung von Informationen und Medien durch Menschen und Automaten
 
-Diese Inhalte bilden bewusst eine Brücke zu Klasse 8.
+## Wahlbereiche
 
-### 4. Wahlbereiche
+Die drei Wahlbereiche entsprechen dem Lehrplan 2022:
 
-Die Wahlbereiche werden jeweils als eigenständige Lernbereiche mit konsistenter Binnenstruktur geführt.
+1. `04_Wahlbereich_KI` – Künstliche Intelligenz
+2. `05_Wahlbereich_Mobile_Endgeraete` – Mobile Endgeräte
+3. `06_Wahlbereich_Computergrafik` – Computergrafik
+
+Ein Wahlbereich kann ergänzend zum Pflichtunterricht bearbeitet werden.
+
+## Abgrenzung zu Klasse 8
+
+Ein eigenständiger Pflichtlernbereich „Algorithmen und Programmierung“ gehört **nicht** zur Klassenstufe 7. Algorithmische Grundstrukturen, visuelle Programmierumgebungen und die systematische Programmierung gehören zum Lernbereich „Algorithmen und Programme“ der Klassenstufe 8.
+
+Das bisherige Scratch-Material aus Klasse 7 wurde deshalb ohne Inhaltsverlust nach `Klasse_8/90_Zusatzmaterial_Scratch_aus_Klasse7` verschoben. Es ist dort als Zusatz-/Differenzierungsmaterial gekennzeichnet und nicht mehr Bestandteil des Klasse-7-Pflichtcurriculums.
 
 ## Leistungsbewertung
 
-Es stehen mehrere benotbare bzw. schriftlich prüfbare Leistungen zur Verfügung:
-
-- benotete EVAS-Präsentation mit Bewertungsraster
-- Leistungskontrolle „Digitale Information und EVAS“
-- Leistungskontrolle „Algorithmen und Scratch“ im Lernbereich `03_Algorithmen_und_Programmierung`
-- Leistungskontrolle „Repräsentation von Daten“
-
-Die Geschichte der Informatik dient ausschließlich der Orientierung und Motivation. Jahreszahlen und biografische Detailkenntnisse sind **nicht** Gegenstand einer Leistungskontrolle.
-
-## Übergang zu Klasse 8
-
-Am Ende der Klassenstufe kennen die Schülerinnen und Schüler bereits Objekt, Attribut, Klasse und Methode auf grundlegendem Niveau sowie zentrale Programmstrukturen. Klasse 8 kann darauf mit vertiefter Objektorientierung, Algorithmen und Robot Karol aufbauen.
+Leistungskontrollen in Klasse 7 beziehen sich auf die verbindlichen Inhalte der beiden Pflichtlernbereiche. Vorhandene Vertiefungen können zum Üben und Differenzieren genutzt werden, werden aber nicht allein deshalb zu verbindlichem Prüfungsstoff.

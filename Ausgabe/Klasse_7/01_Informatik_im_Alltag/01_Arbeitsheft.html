@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Informatik im Alltag</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page { size: A4; margin: 20mm 18mm 20mm 22mm; }
+body { font-family: Arial, Helvetica, sans-serif; max-width: 920px; margin: 0 auto; padding: 2rem; line-height: 1.45; }
+header#title-block-header { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+nav#TOC { break-before: page; page-break-before: always; }
+.page-break { break-before: page; page-break-before: always; }
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+th, td { border: 1px solid #999; padding: .45rem; vertical-align: top; }
+pre { padding: .8rem; overflow-x: auto; background: #f4f4f4; }
+code { font-family: "Courier New", monospace; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Informatik im Alltag</h1>
+<p class="subtitle">Informatik · Klasse 7 · Arbeitsheft</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Inhaltsverzeichnis</h2>
+<ul>
+<li><a href="#woher-kommen-computer" id="toc-woher-kommen-computer">00 –
+Woher kommen Computer?</a>
+<ul>
+<li><a href="#leitfrage" id="toc-leitfrage">Leitfrage</a></li>
+<li><a href="#einstieg" id="toc-einstieg">1. Einstieg</a></li>
+<li><a href="#gruppenarbeit-eine-station-der-computergeschichte" id="toc-gruppenarbeit-eine-station-der-computergeschichte">2.
+Gruppenarbeit – eine Station der Computergeschichte</a></li>
+<li><a href="#während-der-kurzvorträge" id="toc-während-der-kurzvorträge">3. Während der Kurzvorträge</a></li>
+<li><a href="#gemeinsamkeiten-finden" id="toc-gemeinsamkeiten-finden">4.
+Gemeinsamkeiten finden</a></li>
+<li><a href="#ausblick" id="toc-ausblick">Ausblick</a></li>
+</ul></li>
+<li><a href="#kann-man-eine-sprache-nur-aus-0-und-1-schreiben" id="toc-kann-man-eine-sprache-nur-aus-0-und-1-schreiben">Kann man eine
+Sprache nur aus 0 und 1 schreiben?</a>
+<ul>
+<li><a href="#rückblick" id="toc-rückblick">Rückblick</a></li>
+<li><a href="#leitfrage-1" id="toc-leitfrage-1">Leitfrage</a></li>
+<li><a href="#zwei-zustände-reichen-aus" id="toc-zwei-zustände-reichen-aus">Zwei Zustände reichen aus</a></li>
+<li><a href="#aufgabe-1-zwei-zustände-finden" id="toc-aufgabe-1-zwei-zustände-finden">Aufgabe 1 – Zwei Zustände
+finden</a></li>
+<li><a href="#wie-viele-möglichkeiten-entstehen" id="toc-wie-viele-möglichkeiten-entstehen">Wie viele Möglichkeiten
+entstehen?</a></li>
+<li><a href="#eine-vereinbarung-macht-aus-bits-information" id="toc-eine-vereinbarung-macht-aus-bits-information">Eine Vereinbarung
+macht aus Bits Information</a></li>
+<li><a href="#aufgabe-3-erfindet-einen-eigenen-binärcode" id="toc-aufgabe-3-erfindet-einen-eigenen-binärcode">Aufgabe 3 – Erfindet
+einen eigenen Binärcode</a></li>
+<li><a href="#warum-nicht-zehn-zustände" id="toc-warum-nicht-zehn-zustände">Warum nicht zehn Zustände?</a></li>
+<li><a href="#sicherung" id="toc-sicherung">Sicherung</a></li>
+<li><a href="#ausblick-1" id="toc-ausblick-1">Ausblick</a></li>
+</ul></li>
+<li><a href="#wie-schreibt-ein-computer-zahlen" id="toc-wie-schreibt-ein-computer-zahlen">02 – Wie schreibt ein Computer
+Zahlen?</a>
+<ul>
+<li><a href="#rückblick-1" id="toc-rückblick-1">Rückblick</a></li>
+<li><a href="#zwei-zahlensysteme" id="toc-zwei-zahlensysteme">Zwei
+Zahlensysteme</a></li>
+<li><a href="#stellenwerte-im-dezimalsystem" id="toc-stellenwerte-im-dezimalsystem">Stellenwerte im
+Dezimalsystem</a></li>
+<li><a href="#stellenwerte-im-binärsystem" id="toc-stellenwerte-im-binärsystem">Stellenwerte im
+Binärsystem</a></li>
+</ul></li>
+<li><a href="#methode-1-mit-zweierpotenzen" id="toc-methode-1-mit-zweierpotenzen">Methode 1 – Mit Zweierpotenzen</a>
+<ul>
+<li><a href="#beispiel-22" id="toc-beispiel-22">Beispiel: 22</a></li>
+<li><a href="#aufgabe-1-mit-zweierpotenzen" id="toc-aufgabe-1-mit-zweierpotenzen">Aufgabe 1 – Mit
+Zweierpotenzen</a></li>
+</ul></li>
+<li><a href="#methode-2-wiederholt-durch-2-teilen" id="toc-methode-2-wiederholt-durch-2-teilen">Methode 2 – Wiederholt
+durch 2 teilen</a>
+<ul>
+<li><a href="#aufgabe-2-division-durch-2" id="toc-aufgabe-2-division-durch-2">Aufgabe 2 – Division durch
+2</a></li>
+</ul></li>
+<li><a href="#binär-zurück-ins-dezimalsystem" id="toc-binär-zurück-ins-dezimalsystem">Binär zurück ins
+Dezimalsystem</a>
+<ul>
+<li><a href="#aufgabe-3-binär-nach-dezimal" id="toc-aufgabe-3-binär-nach-dezimal">Aufgabe 3 – Binär nach
+Dezimal</a></li>
+<li><a href="#aufgabe-4-fehler-finden" id="toc-aufgabe-4-fehler-finden">Aufgabe 4 – Fehler finden</a></li>
+<li><a href="#aufgabe-5-welche-methode-passt-zu-dir" id="toc-aufgabe-5-welche-methode-passt-zu-dir">Aufgabe 5 – Welche
+Methode passt zu dir?</a></li>
+</ul></li>
+<li><a href="#knobelaufgabe" id="toc-knobelaufgabe">Knobelaufgabe</a></li>
+<li><a href="#das-wichtigste" id="toc-das-wichtigste">Das Wichtigste</a>
+<ul>
+<li><a href="#ausblick-2" id="toc-ausblick-2">Ausblick</a></li>
+</ul></li>
+<li><a href="#wie-speichert-ein-computer-texte" id="toc-wie-speichert-ein-computer-texte">03 – Wie speichert ein
+Computer Texte?</a>
+<ul>
+<li><a href="#rückblick-2" id="toc-rückblick-2">Rückblick</a></li>
+<li><a href="#eine-vereinbarung-macht-aus-zahlen-zeichen" id="toc-eine-vereinbarung-macht-aus-zahlen-zeichen">Eine Vereinbarung
+macht aus Zahlen Zeichen</a></li>
+<li><a href="#vom-buchstaben-zum-bitmuster" id="toc-vom-buchstaben-zum-bitmuster">Vom Buchstaben zum
+Bitmuster</a></li>
+<li><a href="#ascii-eine-frühe-gemeinsame-vereinbarung" id="toc-ascii-eine-frühe-gemeinsame-vereinbarung">ASCII – eine frühe
+gemeinsame Vereinbarung</a></li>
+<li><a href="#warum-ascii-allein-nicht-reicht" id="toc-warum-ascii-allein-nicht-reicht">Warum ASCII allein nicht
+reicht</a></li>
+<li><a href="#utf-8-unterschiedlich-viele-bytes" id="toc-utf-8-unterschiedlich-viele-bytes">UTF-8 – unterschiedlich viele
+Bytes</a></li>
+<li><a href="#gleiche-bits-unterschiedliche-bedeutung" id="toc-gleiche-bits-unterschiedliche-bedeutung">Gleiche Bits –
+unterschiedliche Bedeutung</a></li>
+<li><a href="#aufgabe-5-eigene-codierung" id="toc-aufgabe-5-eigene-codierung">Aufgabe 5 – Eigene
+Codierung</a></li>
+</ul></li>
+<li><a href="#das-wichtigste-1" id="toc-das-wichtigste-1">Das
+Wichtigste</a>
+<ul>
+<li><a href="#ausblick-3" id="toc-ausblick-3">Ausblick</a></li>
+</ul></li>
+<li><a href="#wie-speichert-ein-computer-bilder" id="toc-wie-speichert-ein-computer-bilder">04 – Wie speichert ein
+Computer Bilder?</a>
+<ul>
+<li><a href="#rückblick-3" id="toc-rückblick-3">Rückblick</a></li>
+</ul></li>
+<li><a href="#ein-bild-aus-kleinen-punkten" id="toc-ein-bild-aus-kleinen-punkten">Ein Bild aus kleinen Punkten</a>
+<ul>
+<li><a href="#beispiel" id="toc-beispiel">Beispiel</a></li>
+<li><a href="#aufgabe-1-pixelbild-lesen" id="toc-aufgabe-1-pixelbild-lesen">Aufgabe 1 – Pixelbild lesen</a></li>
+</ul></li>
+<li><a href="#auflösung" id="toc-auflösung">Auflösung</a>
+<ul>
+<li><a href="#aufgabe-2-auflösung-berechnen" id="toc-aufgabe-2-auflösung-berechnen">Aufgabe 2 – Auflösung
+berechnen</a></li>
+</ul></li>
+<li><a href="#farbe-braucht-mehr-information" id="toc-farbe-braucht-mehr-information">Farbe braucht mehr
+Information</a></li>
+<li><a href="#das-rgb-modell" id="toc-das-rgb-modell">Das RGB-Modell</a>
+<ul>
+<li><a href="#aufgabe-3-farben-untersuchen" id="toc-aufgabe-3-farben-untersuchen">Aufgabe 3 – Farben
+untersuchen</a></li>
+</ul></li>
+<li><a href="#warum-gerade-0-bis-255" id="toc-warum-gerade-0-bis-255">Warum gerade 0 bis 255?</a></li>
+<li><a href="#wie-viele-farben-sind-möglich" id="toc-wie-viele-farben-sind-möglich">Wie viele Farben sind
+möglich?</a>
+<ul>
+<li><a href="#aufgabe-4-bit-und-farbe" id="toc-aufgabe-4-bit-und-farbe">Aufgabe 4 – Bit und Farbe</a></li>
+</ul></li>
+<li><a href="#bildgröße-und-speicherbedarf" id="toc-bildgröße-und-speicherbedarf">Bildgröße und Speicherbedarf</a>
+<ul>
+<li><a href="#beispiel-1" id="toc-beispiel-1">Beispiel</a></li>
+<li><a href="#aufgabe-5-speicherbedarf" id="toc-aufgabe-5-speicherbedarf">Aufgabe 5 – Speicherbedarf</a></li>
+</ul></li>
+<li><a href="#warum-sind-bilddateien-oft-kleiner" id="toc-warum-sind-bilddateien-oft-kleiner">Warum sind Bilddateien oft
+kleiner?</a></li>
+<li><a href="#rastergrafik-oder-vektorgrafik" id="toc-rastergrafik-oder-vektorgrafik">Rastergrafik oder
+Vektorgrafik?</a>
+<ul>
+<li><a href="#aufgabe-6-was-passt-besser" id="toc-aufgabe-6-was-passt-besser">Aufgabe 6 – Was passt
+besser?</a></li>
+</ul></li>
+<li><a href="#transfer-ein-pixel-ist-information" id="toc-transfer-ein-pixel-ist-information">Transfer – Ein Pixel ist
+Information</a></li>
+<li><a href="#das-wichtigste-2" id="toc-das-wichtigste-2">Das
+Wichtigste</a>
+<ul>
+<li><a href="#ausblick-4" id="toc-ausblick-4">Ausblick</a></li>
+</ul></li>
+<li><a href="#wie-speichert-ein-computer-musik" id="toc-wie-speichert-ein-computer-musik">04 – Wie speichert ein
+Computer Musik?</a>
+<ul>
+<li><a href="#rückblick-4" id="toc-rückblick-4">Rückblick</a></li>
+<li><a href="#schall-ist-eine-schwingung" id="toc-schall-ist-eine-schwingung">Schall ist eine Schwingung</a></li>
+<li><a href="#abtasten" id="toc-abtasten">Abtasten</a></li>
+<li><a href="#bittiefe" id="toc-bittiefe">Bittiefe</a></li>
+<li><a href="#mono-und-stereo" id="toc-mono-und-stereo">Mono und
+Stereo</a></li>
+<li><a href="#speicherbedarf" id="toc-speicherbedarf">Speicherbedarf</a></li>
+<li><a href="#kompression" id="toc-kompression">Kompression</a></li>
+<li><a href="#aufgaben" id="toc-aufgaben">Aufgaben</a></li>
+<li><a href="#das-wichtigste-3" id="toc-das-wichtigste-3">Das
+Wichtigste</a></li>
+<li><a href="#ausblick-5" id="toc-ausblick-5">Ausblick</a></li>
+</ul></li>
+<li><a href="#wie-verarbeitet-ein-computer-informationen" id="toc-wie-verarbeitet-ein-computer-informationen">05 – Wie verarbeitet
+ein Computer Informationen?</a>
+<ul>
+<li><a href="#rückblick-5" id="toc-rückblick-5">Rückblick</a></li>
+<li><a href="#das-eva-prinzip" id="toc-das-eva-prinzip">Das
+EVA-Prinzip</a></li>
+<li><a href="#die-rolle-des-speichers" id="toc-die-rolle-des-speichers">Die Rolle des Speichers</a></li>
+<li><a href="#beispiele" id="toc-beispiele">Beispiele</a></li>
+<li><a href="#aufgabe-1-zuordnen" id="toc-aufgabe-1-zuordnen">Aufgabe 1
+– Zuordnen</a></li>
+<li><a href="#aufgabe-2-eigene-analyse" id="toc-aufgabe-2-eigene-analyse">Aufgabe 2 – Eigene Analyse</a></li>
+<li><a href="#aufgabe-3-alltag" id="toc-aufgabe-3-alltag">Aufgabe 3 –
+Alltag</a></li>
+<li><a href="#aufgabe-4-nachdenken" id="toc-aufgabe-4-nachdenken">Aufgabe 4 – Nachdenken</a></li>
+<li><a href="#das-wichtigste-4" id="toc-das-wichtigste-4">Das
+Wichtigste</a></li>
+<li><a href="#ausblick-6" id="toc-ausblick-6">Ausblick</a></li>
+</ul></li>
+<li><a href="#was-gehört-zu-einem-informatiksystem" id="toc-was-gehört-zu-einem-informatiksystem">15 – Was gehört zu einem
+Informatiksystem?</a>
+<ul>
+<li><a href="#leitfrage-2" id="toc-leitfrage-2">Leitfrage</a></li>
+<li><a href="#hardware" id="toc-hardware">Hardware</a></li>
+<li><a href="#software" id="toc-software">Software</a></li>
+<li><a href="#zusammenspiel" id="toc-zusammenspiel">Zusammenspiel</a></li>
+<li><a href="#prozessor-und-speicher" id="toc-prozessor-und-speicher">Prozessor und Speicher</a></li>
+<li><a href="#lizenzformen" id="toc-lizenzformen">Lizenzformen</a></li>
+<li><a href="#aufgaben-1" id="toc-aufgaben-1">Aufgaben</a></li>
+<li><a href="#merksatz-1" id="toc-merksatz-1">Merksatz</a></li>
+</ul></li>
+<li><a href="#wo-bleiben-unsere-daten" id="toc-wo-bleiben-unsere-daten">16 – Wo bleiben unsere Daten?</a>
+<ul>
+<li><a href="#leitfrage-3" id="toc-leitfrage-3">Leitfrage</a></li>
+<li><a href="#flüchtig-und-nichtflüchtig" id="toc-flüchtig-und-nichtflüchtig">Flüchtig und nichtflüchtig</a></li>
+<li><a href="#speicherorte" id="toc-speicherorte">Speicherorte</a></li>
+<li><a href="#eigenschaften-vergleichen" id="toc-eigenschaften-vergleichen">Eigenschaften vergleichen</a></li>
+<li><a href="#bit-und-byte" id="toc-bit-und-byte">Bit und Byte</a></li>
+<li><a href="#backup" id="toc-backup">Backup</a></li>
+<li><a href="#aufgaben-2" id="toc-aufgaben-2">Aufgaben</a></li>
+<li><a href="#ausblick-7" id="toc-ausblick-7">Ausblick</a></li>
+</ul></li>
+<li><a href="#wie-finden-wir-dateien-wieder" id="toc-wie-finden-wir-dateien-wieder">17 – Wie finden wir Dateien
+wieder?</a>
+<ul>
+<li><a href="#leitfrage-4" id="toc-leitfrage-4">Leitfrage</a></li>
+<li><a href="#datei-und-dateityp" id="toc-datei-und-dateityp">Datei und
+Dateityp</a></li>
+<li><a href="#ordner" id="toc-ordner">Ordner</a></li>
+<li><a href="#pfad" id="toc-pfad">Pfad</a></li>
+<li><a href="#grundlegende-dateioperationen" id="toc-grundlegende-dateioperationen">Grundlegende
+Dateioperationen</a></li>
+<li><a href="#lokal-und-vernetzt" id="toc-lokal-und-vernetzt">Lokal und
+vernetzt</a></li>
+<li><a href="#aufgaben-3" id="toc-aufgaben-3">Aufgaben</a></li>
+<li><a href="#praxisauftrag" id="toc-praxisauftrag">Praxisauftrag</a></li>
+<li><a href="#merksatz-2" id="toc-merksatz-2">Merksatz</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="page-break"></div>
+<h1 id="woher-kommen-computer">00 – Woher kommen Computer?</h1>
+<h2 id="leitfrage">Leitfrage</h2>
+<blockquote>
+<p>Warum haben Menschen begonnen, Rechenmaschinen und später Computer zu
+entwickeln?</p>
+</blockquote>
+<p>Computer, Smartphones und Spielekonsolen wirken heute
+selbstverständlich. Doch Menschen mussten lange Zeit ohne elektronische
+Rechner auskommen. Trotzdem mussten sie zählen, rechnen, Daten ordnen
+und komplizierte Aufgaben lösen.</p>
+<p>In dieser Stunde untersucht ihr einige Stationen auf dem Weg zum
+modernen Computer.</p>
+<hr />
+<h2 id="einstieg">1. Einstieg</h2>
+<p>Notiere zwei Situationen, in denen Menschen heute Computer zum
+Rechnen oder Verarbeiten von Informationen verwenden.</p>
+<ol type="1">
+<li><hr /></li>
+<li><hr /></li>
+</ol>
+<p>Überlege anschließend: Wie könnten Menschen diese Aufgaben früher
+gelöst haben?</p>
+<hr />
+<hr />
+<h2 id="gruppenarbeit-eine-station-der-computergeschichte">2.
+Gruppenarbeit – eine Station der Computergeschichte</h2>
+<p>Eure Gruppe erhält ein Informationsblatt zu einer Person oder einer
+wichtigen Entwicklung.</p>
+<p>Bearbeitet gemeinsam diese Fragen:</p>
+<ol type="1">
+<li>Wer war die Person beziehungsweise worum ging es bei der
+Entwicklung?</li>
+<li>Welches Problem sollte gelöst werden?</li>
+<li>Welche Idee oder Maschine entstand daraus?</li>
+<li>Welche Verbindung gibt es zu heutigen Computern?</li>
+</ol>
+<p>Bereitet anschließend einen <strong>Kurzvortrag von höchstens zwei
+Minuten</strong> vor. Es geht nicht darum, Jahreszahlen auswendig zu
+lernen. Erklärt euren Mitschülerinnen und Mitschülern vor allem
+<strong>Problem, Idee und Bedeutung</strong>.</p>
+<hr />
+<h2 id="während-der-kurzvorträge">3. Während der Kurzvorträge</h2>
+<p>Ergänze die Übersicht in Stichpunkten.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Person / Entwicklung</th>
+<th>Welches Problem?</th>
+<th>Welche Idee?</th>
+<th>Bedeutung heute</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Blaise Pascal</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Gottfried Wilhelm Leibniz</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Charles Babbage / Ada Lovelace</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Herman Hollerith</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Konrad Zuse</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>John von Neumann</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="gemeinsamkeiten-finden">4. Gemeinsamkeiten finden</h2>
+<p>Was verbindet die vorgestellten Personen und Entwicklungen?</p>
+<hr />
+<hr />
+<h3 id="merksatz">Merksatz</h3>
+<blockquote>
+<p>Computer sind nicht plötzlich entstanden. Über viele Jahrhunderte
+entwickelten Menschen neue Ideen, um Rechnen und
+Informationsverarbeitung zu erleichtern oder zu automatisieren.</p>
+</blockquote>
+<hr />
+<h2 id="ausblick">Ausblick</h2>
+<p>Moderne Computer unterscheiden sich stark von den frühen
+Rechenmaschinen. Trotzdem beruht ihre Informationsverarbeitung auf einer
+überraschend einfachen Idee:</p>
+<blockquote>
+<p><strong>Könnt ihr euch vorstellen, eine ganze Sprache nur aus 0 und 1
+zu gestalten?</strong></p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="kann-man-eine-sprache-nur-aus-0-und-1-schreiben">Kann man eine
+Sprache nur aus 0 und 1 schreiben?</h1>
+<h2 id="rückblick">Rückblick</h2>
+<p>Was haben wir in der letzten Stunde über die Geschichte der
+Rechentechnik herausgefunden?</p>
+<p>Notiere zwei Gedanken:</p>
+<ol type="1">
+<li><hr /></li>
+<li><hr /></li>
+</ol>
+<hr />
+<h2 id="leitfrage-1">Leitfrage</h2>
+<blockquote>
+<p><strong>Könnt ihr euch vorstellen, eine ganze Sprache nur mit den
+Zeichen 0 und 1 zu gestalten?</strong></p>
+</blockquote>
+<p>Betrachte diese Zeichenfolge:</p>
+<pre class="text"><code>01001000 01100001 01101100 01101100 01101111</code></pre>
+<p>Was könnte sie bedeuten?</p>
+<hr />
+<p>Welche Vermutung hast du, warum ein Computer überhaupt mit
+<code>0</code> und <code>1</code> arbeitet?</p>
+<hr />
+<hr />
+<h2 id="zwei-zustände-reichen-aus">Zwei Zustände reichen aus</h2>
+<p>Elektronische Bauteile können Zustände unterscheiden. Für den
+Einstieg reichen zwei Möglichkeiten:</p>
+<pre class="text"><code>AN    AUS
+1     0</code></pre>
+<p>Auch viele Dinge aus dem Alltag besitzen zwei klar unterscheidbare
+Zustände:</p>
+<ul>
+<li>Licht an / Licht aus</li>
+<li>Schalter geschlossen / Schalter offen</li>
+<li>Frage wahr / Frage falsch</li>
+<li>Signal vorhanden / Signal nicht vorhanden</li>
+</ul>
+<p>Ein Computer kann solche zwei Zustände sehr zuverlässig
+unterscheiden.</p>
+<blockquote>
+<p><strong>Merke:</strong> Ein einzelner binärer Zustand wird als
+<strong>Bit</strong> bezeichnet. Ein Bit kann den Wert <code>0</code>
+oder <code>1</code> besitzen.</p>
+</blockquote>
+<hr />
+<h2 id="aufgabe-1-zwei-zustände-finden">Aufgabe 1 – Zwei Zustände
+finden</h2>
+<p>Finde vier Beispiele aus deinem Alltag, die sich mit genau zwei
+Zuständen beschreiben lassen.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Beispiel</th>
+<th>Zustand 0</th>
+<th>Zustand 1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lichtschalter</td>
+<td>aus</td>
+<td>an</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="wie-viele-möglichkeiten-entstehen">Wie viele Möglichkeiten
+entstehen?</h2>
+<p>Mit <strong>einem Bit</strong> gibt es zwei Möglichkeiten:</p>
+<pre class="text"><code>0
+1</code></pre>
+<p>Mit <strong>zwei Bits</strong> entstehen schon vier
+Kombinationen:</p>
+<pre class="text"><code>00
+01
+10
+11</code></pre>
+<p>Mit <strong>drei Bits</strong> gibt es acht Kombinationen:</p>
+<pre class="text"><code>000
+001
+010
+011
+100
+101
+110
+111</code></pre>
+<h3 id="aufgabe-2">Aufgabe 2</h3>
+<p>Vervollständige die Tabelle.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Anzahl Bits</th>
+<th style="text-align: right;">mögliche Kombinationen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<p>Was fällt dir auf?</p>
+<hr />
+<hr />
+<h2 id="eine-vereinbarung-macht-aus-bits-information">Eine Vereinbarung
+macht aus Bits Information</h2>
+<p>Die Zeichenfolge</p>
+<pre class="text"><code>01000001</code></pre>
+<p>ist zunächst nur eine Folge von Bits.</p>
+<p>Erst eine <strong>Vereinbarung</strong> legt fest, was sie bedeutet.
+Eine solche Vereinbarung kann zum Beispiel sagen:</p>
+<pre class="text"><code>01000001 → A</code></pre>
+<p>Eine andere Vereinbarung könnte dieselbe Bitfolge als Zahl
+interpretieren.</p>
+<blockquote>
+<p><strong>Merke:</strong> Bits bekommen ihre Bedeutung durch Regeln und
+Vereinbarungen. Deshalb können Computer Zahlen, Texte, Bilder, Musik und
+viele andere Informationen darstellen.</p>
+</blockquote>
+<hr />
+<h2 id="aufgabe-3-erfindet-einen-eigenen-binärcode">Aufgabe 3 – Erfindet
+einen eigenen Binärcode</h2>
+<p>Ihr dürft nur die Zeichen <code>0</code> und <code>1</code>
+verwenden.</p>
+<p>Erfindet einen Code für vier Nachrichten:</p>
+<pre class="text"><code>JA
+NEIN
+STOPP
+WEITER</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>Nachricht</th>
+<th>euer Code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>JA</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>NEIN</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>STOPP</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>WEITER</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="prüft-euren-code">Prüft euren Code</h3>
+<ol type="1">
+<li>Ist jede Nachricht eindeutig?</li>
+<li>Kann eine andere Gruppe euren Code benutzen, wenn ihr die
+Vereinbarung erklärt?</li>
+<li>Wie viele Bits benötigt ihr mindestens für vier verschiedene
+Nachrichten?</li>
+</ol>
+<hr />
+<h2 id="warum-nicht-zehn-zustände">Warum nicht zehn Zustände?</h2>
+<p>Menschen rechnen im Alltag meist mit zehn Ziffern:</p>
+<pre class="text"><code>0 1 2 3 4 5 6 7 8 9</code></pre>
+<p>Computer verwenden intern häufig nur zwei Zustände. Zwei klar
+unterscheidbare Zustände lassen sich technisch besonders zuverlässig
+speichern und verarbeiten.</p>
+<p>Das Zahlensystem mit den Ziffern <code>0</code> und <code>1</code>
+heißt <strong>Binärsystem</strong> oder <strong>Dualsystem</strong>.</p>
+<hr />
+<h2 id="sicherung">Sicherung</h2>
+<p>Ergänze die Sätze.</p>
+<p>Ein Bit kann die Werte ______ oder ______ besitzen.</p>
+<p>Mit zwei Bits gibt es ______ verschiedene Kombinationen.</p>
+<p>Computer können mit Bits unterschiedliche Informationen darstellen,
+weil</p>
+<hr />
+<hr />
+<h2 id="ausblick-1">Ausblick</h2>
+<p>Wir wissen jetzt, warum zwei Zustände reichen können.</p>
+<p>Die nächste Frage lautet:</p>
+<blockquote>
+<p><strong>Wie kann ein Computer mit 0 und 1 die Zahl 13
+darstellen?</strong></p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="wie-schreibt-ein-computer-zahlen">02 – Wie schreibt ein Computer
+Zahlen?</h1>
+<h2 id="rückblick-1">Rückblick</h2>
+<p>In der letzten Stunde habt ihr herausgefunden:</p>
+<ul>
+<li>Computer unterscheiden zwei Zustände.</li>
+<li>Diese Zustände können als <code>0</code> und <code>1</code>
+dargestellt werden.</li>
+<li>Eine einzelne Binärstelle nennt man <strong>Bit</strong>.</li>
+</ul>
+<p>Heute beantworten wir die nächste Frage:</p>
+<blockquote>
+<p><strong>Wie kann ein Computer mit nur 0 und 1 Zahlen
+darstellen?</strong></p>
+</blockquote>
+<hr />
+<h2 id="zwei-zahlensysteme">Zwei Zahlensysteme</h2>
+<p>Im Alltag verwenden wir das <strong>Dezimalsystem</strong>. Es
+besitzt zehn Ziffern:</p>
+<pre class="text"><code>0 1 2 3 4 5 6 7 8 9</code></pre>
+<p>Computer verwenden häufig das <strong>Binärsystem</strong>. Es
+besitzt nur zwei Ziffern:</p>
+<pre class="text"><code>0 1</code></pre>
+<p>Der Unterschied liegt nicht darin, <em>ob</em> man große Zahlen
+darstellen kann, sondern darin, welche <strong>Stellenwerte</strong>
+verwendet werden.</p>
+<hr />
+<h2 id="stellenwerte-im-dezimalsystem">Stellenwerte im
+Dezimalsystem</h2>
+<p>Bei der Zahl <code>347</code> hat jede Stelle einen anderen Wert:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Stelle</th>
+<th style="text-align: right;">Potenz</th>
+<th style="text-align: right;">Wert</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">Hunderter</td>
+<td style="text-align: right;">10²</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">Zehner</td>
+<td style="text-align: right;">10¹</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">Einer</td>
+<td style="text-align: right;">10⁰</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Damit gilt:</p>
+<pre class="text"><code>347 = 3 · 100 + 4 · 10 + 7 · 1</code></pre>
+<hr />
+<h2 id="stellenwerte-im-binärsystem">Stellenwerte im Binärsystem</h2>
+<p>Im Binärsystem werden die Stellenwerte mit Potenzen von 2
+gebildet:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Potenz</th>
+<th style="text-align: right;">2⁷</th>
+<th style="text-align: right;">2⁶</th>
+<th style="text-align: right;">2⁵</th>
+<th style="text-align: right;">2⁴</th>
+<th style="text-align: right;">2³</th>
+<th style="text-align: right;">2²</th>
+<th style="text-align: right;">2¹</th>
+<th style="text-align: right;">2⁰</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">Wert</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Diese Reihe solltest du sicher kennen:</p>
+<pre class="text"><code>1, 2, 4, 8, 16, 32, 64, 128, ...</code></pre>
+<p>Jeder Wert ist doppelt so groß wie der vorherige.</p>
+<blockquote>
+<p><strong>Merke:</strong> Im Binärsystem entspricht jede Stelle einer
+Zweierpotenz.</p>
+</blockquote>
+<hr />
+<div class="page-break"></div>
+<h1 id="methode-1-mit-zweierpotenzen">Methode 1 – Mit
+Zweierpotenzen</h1>
+<p>Wir wollen die Dezimalzahl <code>13</code> binär darstellen.</p>
+<p>Zuerst suchen wir die größten Zweierpotenzen, aus denen sich 13
+zusammensetzen lässt:</p>
+<pre class="text"><code>13 = 8 + 4 + 1</code></pre>
+<p>Die Stellenwerte lauten:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">8</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Also:</p>
+<pre class="text"><code>13₁₀ = 1101₂</code></pre>
+<p>Die tiefgestellten Zahlen zeigen das verwendete Zahlensystem an.</p>
+<hr />
+<h2 id="beispiel-22">Beispiel: 22</h2>
+<pre class="text"><code>22 = 16 + 4 + 2</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">16</th>
+<th style="text-align: right;">8</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Damit:</p>
+<pre class="text"><code>22₁₀ = 10110₂</code></pre>
+<hr />
+<h2 id="aufgabe-1-mit-zweierpotenzen">Aufgabe 1 – Mit
+Zweierpotenzen</h2>
+<p>Wandle ins Binärsystem um.</p>
+<ol type="1">
+<li><code>5₁₀ = ____________________₂</code></li>
+<li><code>9₁₀ = ____________________₂</code></li>
+<li><code>12₁₀ = ____________________₂</code></li>
+<li><code>18₁₀ = ____________________₂</code></li>
+<li><code>27₁₀ = ____________________₂</code></li>
+</ol>
+<p>Notiere bei mindestens zwei Aufgaben zusätzlich die Zerlegung in
+Zweierpotenzen.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="methode-2-wiederholt-durch-2-teilen">Methode 2 – Wiederholt
+durch 2 teilen</h1>
+<p>Es gibt noch einen zweiten Weg.</p>
+<p>Wir teilen die Zahl immer wieder durch 2 und notieren den Rest.</p>
+<p>Beispiel mit <code>13</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Rechnung</th>
+<th style="text-align: right;">Ergebnis</th>
+<th style="text-align: right;">Rest</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>13 : 2</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>6 : 2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>3 : 2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>1 : 2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Jetzt lesen wir die Reste <strong>von unten nach oben</strong>:</p>
+<pre class="text"><code>1101</code></pre>
+<p>Also wieder:</p>
+<pre class="text"><code>13₁₀ = 1101₂</code></pre>
+<blockquote>
+<p><strong>Merke:</strong> Bei der Divisionsmethode werden die Reste von
+unten nach oben gelesen.</p>
+</blockquote>
+<hr />
+<h2 id="aufgabe-2-division-durch-2">Aufgabe 2 – Division durch 2</h2>
+<p>Wandle mit der Divisionsmethode um.</p>
+<ol type="1">
+<li><code>10₁₀</code></li>
+<li><code>15₁₀</code></li>
+<li><code>20₁₀</code></li>
+<li><code>25₁₀</code></li>
+</ol>
+<p>Zeige jeweils alle Rechenschritte.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="binär-zurück-ins-dezimalsystem">Binär zurück ins
+Dezimalsystem</h1>
+<p>Nun gehen wir den umgekehrten Weg.</p>
+<p>Beispiel:</p>
+<pre class="text"><code>10110₂</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>Stelle</th>
+<th style="text-align: right;">16</th>
+<th style="text-align: right;">8</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bit</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Wir addieren nur die Stellenwerte, bei denen eine <code>1</code>
+steht:</p>
+<pre class="text"><code>16 + 4 + 2 = 22</code></pre>
+<p>Also:</p>
+<pre class="text"><code>10110₂ = 22₁₀</code></pre>
+<hr />
+<h2 id="aufgabe-3-binär-nach-dezimal">Aufgabe 3 – Binär nach
+Dezimal</h2>
+<p>Wandle ins Dezimalsystem um.</p>
+<ol type="1">
+<li><code>101₂ = ______₁₀</code></li>
+<li><code>1001₂ = ______₁₀</code></li>
+<li><code>1110₂ = ______₁₀</code></li>
+<li><code>10000₂ = ______₁₀</code></li>
+<li><code>11001₂ = ______₁₀</code></li>
+<li><code>111111₂ = ______₁₀</code></li>
+</ol>
+<hr />
+<h2 id="aufgabe-4-fehler-finden">Aufgabe 4 – Fehler finden</h2>
+<p>Jemand behauptet:</p>
+<pre class="text"><code>14₁₀ = 1111₂</code></pre>
+<p>Stimmt das?</p>
+<p>Prüfe die Aussage und korrigiere sie gegebenenfalls.</p>
+<hr />
+<hr />
+<hr />
+<h2 id="aufgabe-5-welche-methode-passt-zu-dir">Aufgabe 5 – Welche
+Methode passt zu dir?</h2>
+<p>Vergleiche beide Verfahren.</p>
+<h3 id="zweierpotenzen">Zweierpotenzen</h3>
+<p>Vorteil:</p>
+<hr />
+<h3 id="division-durch-2">Division durch 2</h3>
+<p>Vorteil:</p>
+<hr />
+<p>Welche Methode würdest du bei der Zahl <code>73</code> verwenden?
+Begründe.</p>
+<hr />
+<hr />
+<div class="page-break"></div>
+<h1 id="knobelaufgabe">Knobelaufgabe</h1>
+<p>Mit vier Bits können genau die Stellenwerte</p>
+<pre class="text"><code>8 4 2 1</code></pre>
+<p>verwendet werden.</p>
+<ol type="1">
+<li>Welche kleinste Zahl kann dargestellt werden?</li>
+<li>Welche größte Zahl kann dargestellt werden?</li>
+<li>Wie viele verschiedene Bitmuster gibt es insgesamt?</li>
+</ol>
+<hr />
+<hr />
+<div class="page-break"></div>
+<h1 id="das-wichtigste">Das Wichtigste</h1>
+<ul>
+<li>Das Dezimalsystem arbeitet mit Potenzen von 10.</li>
+<li>Das Binärsystem arbeitet mit Potenzen von 2.</li>
+<li>Dezimalzahlen können über Zweierpotenzen oder durch wiederholte
+Division durch 2 ins Binärsystem umgerechnet werden.</li>
+<li>Binärzahlen werden ins Dezimalsystem zurückgerechnet, indem die
+Stellenwerte mit <code>1</code> addiert werden.</li>
+</ul>
+<h2 id="ausblick-2">Ausblick</h2>
+<blockquote>
+<p><strong>Wenn Zahlen nur aus 0 und 1 bestehen können – wie speichert
+ein Computer dann Buchstaben und ganze Texte?</strong></p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="wie-speichert-ein-computer-texte">03 – Wie speichert ein
+Computer Texte?</h1>
+<h2 id="rückblick-2">Rückblick</h2>
+<p>In der letzten Stunde habt ihr gelernt:</p>
+<ul>
+<li>Computer stellen Zahlen mit <code>0</code> und <code>1</code>
+dar.</li>
+<li>Jede Stelle im Binärsystem besitzt einen Stellenwert.</li>
+<li>Binärzahlen lassen sich umrechnen und addieren.</li>
+</ul>
+<p>Heute geht es um die nächste Frage:</p>
+<blockquote>
+<p><strong>Wie kann ein Computer Buchstaben speichern, wenn er
+eigentlich nur Zahlen kennt?</strong></p>
+</blockquote>
+<hr />
+<h2 id="eine-vereinbarung-macht-aus-zahlen-zeichen">Eine Vereinbarung
+macht aus Zahlen Zeichen</h2>
+<p>Ein Computer speichert nicht direkt den Buchstaben
+<code>A</code>.</p>
+<p>Stattdessen wird einem Zeichen eine Zahl zugeordnet.</p>
+<p>Beispiel:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Zeichen</th>
+<th style="text-align: right;">Zahl</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>A</code></td>
+<td style="text-align: right;">65</td>
+</tr>
+<tr class="even">
+<td><code>B</code></td>
+<td style="text-align: right;">66</td>
+</tr>
+<tr class="odd">
+<td><code>C</code></td>
+<td style="text-align: right;">67</td>
+</tr>
+<tr class="even">
+<td><code>a</code></td>
+<td style="text-align: right;">97</td>
+</tr>
+<tr class="odd">
+<td><code>b</code></td>
+<td style="text-align: right;">98</td>
+</tr>
+<tr class="even">
+<td><code>0</code></td>
+<td style="text-align: right;">48</td>
+</tr>
+<tr class="odd">
+<td>Leerzeichen</td>
+<td style="text-align: right;">32</td>
+</tr>
+</tbody>
+</table>
+<p>Diese Zuordnung nennt man <strong>Zeichencodierung</strong>.</p>
+<blockquote>
+<p><strong>Merke:</strong> Ein Zeichen wird durch eine Zahl dargestellt.
+Diese Zahl wird anschließend binär gespeichert.</p>
+</blockquote>
+<hr />
+<h2 id="vom-buchstaben-zum-bitmuster">Vom Buchstaben zum Bitmuster</h2>
+<p>Für <code>A</code> ist beispielsweise die Zahl 65 vereinbart.</p>
+<pre class="text"><code>A → 65₁₀ → 01000001₂</code></pre>
+<p>Für <code>B</code>:</p>
+<pre class="text"><code>B → 66₁₀ → 01000010₂</code></pre>
+<p>Damit kann derselbe Computer Zahlen, Buchstaben und andere Zeichen
+als Bitfolgen speichern.</p>
+<h3 id="aufgabe-1">Aufgabe 1</h3>
+<p>Wandle die folgenden Zeichencodes in Binärzahlen um:</p>
+<ol type="1">
+<li><code>A → 65₁₀ → ____________________₂</code></li>
+<li><code>B → 66₁₀ → ____________________₂</code></li>
+<li><code>C → 67₁₀ → ____________________₂</code></li>
+<li>Leerzeichen <code>→ 32₁₀ → ____________________₂</code></li>
+</ol>
+<hr />
+<h2 id="ascii-eine-frühe-gemeinsame-vereinbarung">ASCII – eine frühe
+gemeinsame Vereinbarung</h2>
+<p>Damit Computer Texte austauschen können, müssen sie dieselben Zahlen
+für dieselben Zeichen verwenden.</p>
+<p>Eine wichtige frühe Zeichencodierung ist <strong>ASCII</strong>.</p>
+<p>ASCII enthält unter anderem:</p>
+<ul>
+<li>lateinische Groß- und Kleinbuchstaben,</li>
+<li>Ziffern,</li>
+<li>Satzzeichen,</li>
+<li>Steuerzeichen.</li>
+</ul>
+<p>Mit sieben Bits lassen sich <code>2⁷ = 128</code> verschiedene Werte
+darstellen. Der ursprüngliche ASCII-Zeichensatz verwendet diese 128
+möglichen Codes.</p>
+<h3 id="aufgabe-2-eine-geheime-nachricht">Aufgabe 2 – Eine geheime
+Nachricht</h3>
+<p>Entschlüssele mit der Tabelle:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Zahl</th>
+<th style="text-align: left;">Zeichen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">72</td>
+<td style="text-align: left;">H</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">65</td>
+<td style="text-align: left;">A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">76</td>
+<td style="text-align: left;">L</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">79</td>
+<td style="text-align: left;">O</td>
+</tr>
+</tbody>
+</table>
+<pre class="text"><code>72 65 76 76 79</code></pre>
+<p>Nachricht: __________________________________________</p>
+<p>Was fällt dir am Zahlenwert des gleichen Buchstabens auf?</p>
+<hr />
+<hr />
+<h2 id="warum-ascii-allein-nicht-reicht">Warum ASCII allein nicht
+reicht</h2>
+<p>ASCII wurde für eine begrenzte Menge von Zeichen entwickelt.</p>
+<p>Doch Menschen schreiben zum Beispiel mit:</p>
+<pre class="text"><code>ä ö ü ß
+é ñ
+€
+Ω
+中
+😊</code></pre>
+<p>Für die Sprachen und Zeichen der Welt reichen 128 Möglichkeiten nicht
+aus.</p>
+<p>Dafür gibt es <strong>Unicode</strong>.</p>
+<p>Unicode ordnet sehr vielen Zeichen der Welt eindeutige Nummern
+zu.</p>
+<p>Beispiele:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Zeichen</th>
+<th style="text-align: left;">Unicode-Codepunkt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>A</code></td>
+<td style="text-align: left;">U+0041</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>€</code></td>
+<td style="text-align: left;">U+20AC</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>😊</code></td>
+<td style="text-align: left;">U+1F60A</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Wichtig:</strong> Unicode beschreibt, welches Zeichen welche
+Nummer erhält. Wie diese Nummer in Bytes gespeichert wird, regelt eine
+Codierung wie UTF-8.</p>
+</blockquote>
+<hr />
+<h2 id="utf-8-unterschiedlich-viele-bytes">UTF-8 – unterschiedlich viele
+Bytes</h2>
+<p><strong>UTF-8</strong> ist heute eine sehr verbreitete Möglichkeit,
+Unicode-Zeichen als Bytes zu speichern.</p>
+<p>Einige Zeichen benötigen nur ein Byte, andere mehrere.</p>
+<p>Vereinfacht:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Beispiel</th>
+<th style="text-align: right;">typischer Speicherbedarf in UTF-8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>A</code></td>
+<td style="text-align: right;">1 Byte</td>
+</tr>
+<tr class="even">
+<td><code>ä</code></td>
+<td style="text-align: right;">2 Byte</td>
+</tr>
+<tr class="odd">
+<td><code>€</code></td>
+<td style="text-align: right;">3 Byte</td>
+</tr>
+<tr class="even">
+<td><code>😊</code></td>
+<td style="text-align: right;">4 Byte</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aufgabe-3">Aufgabe 3</h3>
+<p>Ein Text enthält nur die fünf ASCII-Buchstaben
+<code>HALLO</code>.</p>
+<p>Wenn jedes Zeichen ein Byte benötigt:</p>
+<ol type="1">
+<li>Wie viele Zeichen enthält der Text? ______</li>
+<li>Wie viele Byte werden mindestens benötigt? ______</li>
+<li>Wie viele Bit sind das? ______</li>
+</ol>
+<hr />
+<h2 id="gleiche-bits-unterschiedliche-bedeutung">Gleiche Bits –
+unterschiedliche Bedeutung</h2>
+<p>Die Bitfolge</p>
+<pre class="text"><code>01000001</code></pre>
+<p>entspricht als Zahl dem Dezimalwert 65.</p>
+<p>Wenn wir vereinbaren, dass 65 als ASCII-Zeichen gelesen wird,
+bedeutet dieselbe Bitfolge:</p>
+<pre class="text"><code>A</code></pre>
+<p>Das zeigt etwas Wichtiges:</p>
+<blockquote>
+<p><strong>Bits besitzen nicht von selbst eine Bedeutung. Erst die
+Vereinbarung über ihre Interpretation macht daraus eine Zahl, einen
+Buchstaben, eine Farbe oder etwas anderes.</strong></p>
+</blockquote>
+<h3 id="aufgabe-4-erklären">Aufgabe 4 – Erklären</h3>
+<p>Erkläre mit eigenen Worten:</p>
+<blockquote>
+<p>Warum kann dieselbe Bitfolge sowohl eine Zahl als auch ein Buchstabe
+sein?</p>
+</blockquote>
+<hr />
+<hr />
+<hr />
+<h2 id="aufgabe-5-eigene-codierung">Aufgabe 5 – Eigene Codierung</h2>
+<p>Ihr dürft nur die Zeichen <code>A</code>, <code>B</code>,
+<code>C</code> und Leerzeichen verwenden.</p>
+<p>Entwickelt zu zweit eine eigene Codierung mit zwei Bits.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Bitmuster</th>
+<th>Zeichen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>00</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>01</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>10</code></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>11</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Codiert anschließend das Wort:</p>
+<pre class="text"><code>AB CAB</code></pre>
+<p>Bitfolge:</p>
+<hr />
+<p>Tauscht eure Bitfolge mit einem anderen Team. Kann das andere Team
+sie ohne eure Codiertabelle lesen?</p>
+<p>Was zeigt das?</p>
+<hr />
+<hr />
+<div class="page-break"></div>
+<h1 id="das-wichtigste-1">Das Wichtigste</h1>
+<ul>
+<li>Computer speichern Zeichen als Zahlen.</li>
+<li>Eine Zeichencodierung legt fest, welche Zahl zu welchem Zeichen
+gehört.</li>
+<li>ASCII ist eine frühe standardisierte Zeichencodierung.</li>
+<li>Unicode stellt Zeichen vieler Sprachen und Schriftsysteme
+bereit.</li>
+<li>UTF-8 speichert Unicode-Zeichen in einem oder mehreren Bytes.</li>
+<li>Eine Bitfolge erhält ihre Bedeutung erst durch die vereinbarte
+Interpretation.</li>
+</ul>
+<h2 id="ausblick-3">Ausblick</h2>
+<blockquote>
+<p><strong>Texte können wir nun als Zahlen speichern. Aber wie kann ein
+Computer ein Foto speichern, obwohl ein Bild aus Farben
+besteht?</strong></p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="wie-speichert-ein-computer-bilder">04 – Wie speichert ein
+Computer Bilder?</h1>
+<h2 id="rückblick-3">Rückblick</h2>
+<p>In der letzten Stunde habt ihr herausgefunden:</p>
+<ul>
+<li>Zeichen können durch Zahlen dargestellt werden.</li>
+<li>Ein Zeichensatz legt fest, welche Zahl zu welchem Zeichen
+gehört.</li>
+<li>Computer speichern Texte als Bitfolgen.</li>
+</ul>
+<p>Heute beantworten wir die nächste Frage:</p>
+<blockquote>
+<p><strong>Wie kann ein Computer ein Bild speichern, obwohl er nur
+Zahlen und Bits kennt?</strong></p>
+</blockquote>
+<hr />
+<div class="page-break"></div>
+<h1 id="ein-bild-aus-kleinen-punkten">Ein Bild aus kleinen Punkten</h1>
+<p>Vergrößert man ein digitales Foto stark genug, erkennt man kleine
+quadratische Bildpunkte.</p>
+<p>Diese Bildpunkte heißen <strong>Pixel</strong>.</p>
+<blockquote>
+<p><strong>Pixel</strong> ist die Kurzform von <em>Picture Element</em>
+– also Bildelement.</p>
+</blockquote>
+<p>Ein digitales Rasterbild besteht aus vielen Pixeln, die in Zeilen und
+Spalten angeordnet sind.</p>
+<h2 id="beispiel">Beispiel</h2>
+<p>Ein sehr kleines Schwarz-Weiß-Bild könnte aus einem Raster mit 5 × 5
+Pixeln bestehen:</p>
+<pre class="text"><code>0 0 1 0 0
+0 1 1 1 0
+1 1 1 1 1
+0 1 1 1 0
+0 0 1 0 0</code></pre>
+<p>Wir vereinbaren:</p>
+<pre class="text"><code>0 = weiß
+1 = schwarz</code></pre>
+<p>Damit kann bereits ein kleines Bild als Folge von Nullen und Einsen
+beschrieben werden.</p>
+<hr />
+<h2 id="aufgabe-1-pixelbild-lesen">Aufgabe 1 – Pixelbild lesen</h2>
+<p>Zeichne ein 5 × 5-Raster auf kariertes Papier und färbe alle Felder
+schwarz, an denen im folgenden Raster eine <code>1</code> steht:</p>
+<pre class="text"><code>1 0 0 0 1
+0 1 0 1 0
+0 0 1 0 0
+0 1 0 1 0
+1 0 0 0 1</code></pre>
+<p>Was erkennst du?</p>
+<hr />
+<hr />
+<div class="page-break"></div>
+<h1 id="auflösung">Auflösung</h1>
+<p>Die <strong>Auflösung</strong> beschreibt, aus wie vielen Pixeln ein
+Bild besteht.</p>
+<p>Beispiel:</p>
+<pre class="text"><code>1920 × 1080 Pixel</code></pre>
+<p>Das bedeutet:</p>
+<ul>
+<li>1920 Pixel in der Breite,</li>
+<li>1080 Pixel in der Höhe.</li>
+</ul>
+<p>Die Gesamtzahl der Pixel erhält man durch Multiplikation:</p>
+<pre class="text"><code>1920 · 1080 = 2 073 600 Pixel</code></pre>
+<p>Das sind ungefähr 2,1 Millionen Pixel.</p>
+<h2 id="aufgabe-2-auflösung-berechnen">Aufgabe 2 – Auflösung
+berechnen</h2>
+<p>Berechne die Anzahl der Pixel:</p>
+<ol type="1">
+<li><code>800 × 600</code></li>
+<li><code>1280 × 720</code></li>
+<li><code>1920 × 1080</code></li>
+</ol>
+<hr />
+<div class="page-break"></div>
+<h1 id="farbe-braucht-mehr-information">Farbe braucht mehr
+Information</h1>
+<p>Bei einem Schwarz-Weiß-Bild reicht eine einfache Unterscheidung:</p>
+<pre class="text"><code>0 = weiß
+1 = schwarz</code></pre>
+<p>Bei Farbbildern muss für jeden Pixel zusätzlich gespeichert werden,
+<strong>welche Farbe</strong> er besitzt.</p>
+<p>Eine häufige Darstellung verwendet drei Farbanteile:</p>
+<ul>
+<li>Rot</li>
+<li>Grün</li>
+<li>Blau</li>
+</ul>
+<p>Dafür wird die Abkürzung <strong>RGB</strong> verwendet.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="das-rgb-modell">Das RGB-Modell</h1>
+<p>Eine Farbe wird durch drei Zahlen beschrieben:</p>
+<pre class="text"><code>(Rot, Grün, Blau)</code></pre>
+<p>Typischerweise kann jeder Farbanteil Werte von <code>0</code> bis
+<code>255</code> annehmen.</p>
+<p>Beispiele:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Farbe</th>
+<th style="text-align: right;">Rot</th>
+<th style="text-align: right;">Grün</th>
+<th style="text-align: right;">Blau</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Schwarz</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>Weiß</td>
+<td style="text-align: right;">255</td>
+<td style="text-align: right;">255</td>
+<td style="text-align: right;">255</td>
+</tr>
+<tr class="odd">
+<td>Rot</td>
+<td style="text-align: right;">255</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>Grün</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">255</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>Blau</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">255</td>
+</tr>
+<tr class="even">
+<td>Gelb</td>
+<td style="text-align: right;">255</td>
+<td style="text-align: right;">255</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Merke:</strong> Bei RGB entsteht eine Farbe durch das Mischen
+von rotem, grünem und blauem Licht.</p>
+</blockquote>
+<hr />
+<h2 id="aufgabe-3-farben-untersuchen">Aufgabe 3 – Farben
+untersuchen</h2>
+<p>Welche Farbe erwartest du ungefähr bei folgenden RGB-Werten?</p>
+<ol type="1">
+<li><code>(255, 0, 0)</code></li>
+<li><code>(0, 0, 255)</code></li>
+<li><code>(255, 255, 255)</code></li>
+<li><code>(0, 0, 0)</code></li>
+<li><code>(255, 255, 0)</code></li>
+</ol>
+<hr />
+<div class="page-break"></div>
+<h1 id="warum-gerade-0-bis-255">Warum gerade 0 bis 255?</h1>
+<p>Ein Farbkanal wird häufig mit <strong>8 Bit</strong> gespeichert.</p>
+<p>Mit 8 Bit sind <code>2⁸ = 256</code> verschiedene Werte möglich.</p>
+<p>Da beim Zählen mit <code>0</code> begonnen wird, reichen die Werte
+von:</p>
+<pre class="text"><code>0 bis 255</code></pre>
+<p>Für Rot, Grün und Blau werden also jeweils 8 Bit benötigt:</p>
+<pre class="text"><code>8 Bit + 8 Bit + 8 Bit = 24 Bit pro Pixel</code></pre>
+<p>Ein solches Bild besitzt eine <strong>Farbtiefe von 24
+Bit</strong>.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="wie-viele-farben-sind-möglich">Wie viele Farben sind
+möglich?</h1>
+<p>Für jeden der drei Farbkanäle stehen 256 Werte zur Verfügung.</p>
+<p>Also gibt es:</p>
+<pre class="text"><code>256 · 256 · 256 = 16 777 216</code></pre>
+<p>mögliche Farbkombinationen.</p>
+<p>Das sind mehr als 16 Millionen Farben.</p>
+<hr />
+<h2 id="aufgabe-4-bit-und-farbe">Aufgabe 4 – Bit und Farbe</h2>
+<ol type="1">
+<li>Wie viele Werte sind mit 1 Bit möglich?</li>
+<li>Wie viele Werte sind mit 2 Bit möglich?</li>
+<li>Wie viele Werte sind mit 8 Bit möglich?</li>
+<li>Wie viele Bit benötigt ein RGB-Pixel mit 8 Bit pro Farbkanal?</li>
+</ol>
+<hr />
+<div class="page-break"></div>
+<h1 id="bildgröße-und-speicherbedarf">Bildgröße und Speicherbedarf</h1>
+<p>Je mehr Pixel ein Bild besitzt und je mehr Bit pro Pixel gespeichert
+werden, desto mehr Speicher wird benötigt.</p>
+<p>Vereinfacht gilt für ein unkomprimiertes Bild:</p>
+<pre class="text"><code>Speicherbedarf = Anzahl der Pixel · Bit pro Pixel</code></pre>
+<h2 id="beispiel-1">Beispiel</h2>
+<p>Ein Bild besitzt:</p>
+<pre class="text"><code>100 × 100 Pixel</code></pre>
+<p>und verwendet 24 Bit pro Pixel.</p>
+<p>Dann gilt:</p>
+<pre class="text"><code>100 · 100 = 10 000 Pixel
+10 000 · 24 Bit = 240 000 Bit</code></pre>
+<p>Da 8 Bit einem Byte entsprechen:</p>
+<pre class="text"><code>240 000 : 8 = 30 000 Byte</code></pre>
+<p>Das sind ungefähr 30 kB.</p>
+<hr />
+<h2 id="aufgabe-5-speicherbedarf">Aufgabe 5 – Speicherbedarf</h2>
+<p>Ein kleines Bild hat <code>200 × 100 Pixel</code> und eine Farbtiefe
+von 24 Bit.</p>
+<ol type="1">
+<li>Wie viele Pixel besitzt das Bild?</li>
+<li>Wie viele Bit werden unkomprimiert benötigt?</li>
+<li>Wie viele Byte sind das?</li>
+</ol>
+<hr />
+<div class="page-break"></div>
+<h1 id="warum-sind-bilddateien-oft-kleiner">Warum sind Bilddateien oft
+kleiner?</h1>
+<p>Die gerade berechnete Dateigröße gilt nur für eine vereinfachte
+<strong>unkomprimierte</strong> Speicherung.</p>
+<p>Bildformate können Daten anders speichern und häufig
+komprimieren.</p>
+<p>Beispiele:</p>
+<ul>
+<li>PNG</li>
+<li>JPEG</li>
+<li>GIF</li>
+</ul>
+<p>Bei der Kompression wird versucht, weniger Speicher zu benötigen.</p>
+<p>Dabei gibt es zwei grundlegende Möglichkeiten:</p>
+<ul>
+<li><strong>verlustfrei:</strong> Das Original kann vollständig
+wiederhergestellt werden.</li>
+<li><strong>verlustbehaftet:</strong> Einige Informationen werden
+weggelassen, um stärker zu verkleinern.</li>
+</ul>
+<p>Für diese Unterrichtsstunde genügt die Grundidee. Die genauen
+Kompressionsverfahren sind nicht prüfungsrelevant.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="rastergrafik-oder-vektorgrafik">Rastergrafik oder
+Vektorgrafik?</h1>
+<p>Fotos werden meist als <strong>Rastergrafiken</strong> gespeichert.
+Sie bestehen aus Pixeln.</p>
+<p>Logos und einfache Zeichnungen können dagegen als
+<strong>Vektorgrafiken</strong> gespeichert werden. Dabei werden nicht
+alle einzelnen Pixel gespeichert, sondern Formen und Linien
+beschrieben.</p>
+<p>Beispiel:</p>
+<pre class="text"><code>Kreis mit Mittelpunkt (100,100) und Radius 50</code></pre>
+<p>Vektorgrafiken können deshalb häufig stark vergrößert werden, ohne
+sichtbar zu verpixeln.</p>
+<blockquote>
+<p><strong>Merke:</strong> Rastergrafiken speichern Pixel.
+Vektorgrafiken speichern geometrische Beschreibungen.</p>
+</blockquote>
+<hr />
+<h2 id="aufgabe-6-was-passt-besser">Aufgabe 6 – Was passt besser?</h2>
+<p>Entscheide, ob eher Rastergrafik oder Vektorgrafik geeignet ist:</p>
+<ol type="1">
+<li>Urlaubsfoto</li>
+<li>Schullogo</li>
+<li>Screenshot</li>
+<li>einfache geometrische Zeichnung</li>
+<li>Klassenfoto</li>
+</ol>
+<p>Begründe bei zwei Beispielen deine Entscheidung.</p>
+<hr />
+<div class="page-break"></div>
+<h1 id="transfer-ein-pixel-ist-information">Transfer – Ein Pixel ist
+Information</h1>
+<p>Bei Texten brauchten wir eine Vereinbarung, welche Zahl zu welchem
+Zeichen gehört.</p>
+<p>Bei Bildern brauchen wir ebenfalls Vereinbarungen:</p>
+<ul>
+<li>Wo befindet sich der Pixel?</li>
+<li>Welche Farbe besitzt er?</li>
+<li>Wie viele Bit werden verwendet?</li>
+</ul>
+<p>Damit zeigt sich erneut:</p>
+<blockquote>
+<p><strong>Für einen Computer sind auch Bilder letztlich Zahlen und
+Bitfolgen.</strong></p>
+</blockquote>
+<hr />
+<div class="page-break"></div>
+<h1 id="das-wichtigste-2">Das Wichtigste</h1>
+<ul>
+<li>Rasterbilder bestehen aus Pixeln.</li>
+<li>Die Auflösung beschreibt die Anzahl der Pixel in Breite und
+Höhe.</li>
+<li>Beim RGB-Modell wird eine Farbe aus Rot, Grün und Blau
+zusammengesetzt.</li>
+<li>Häufig werden 8 Bit je Farbkanal und damit 24 Bit pro Pixel
+verwendet.</li>
+<li>Mehr Pixel und größere Farbtiefe bedeuten grundsätzlich mehr
+Speicherbedarf.</li>
+<li>Bilddateien können komprimiert werden.</li>
+<li>Rastergrafiken speichern Pixel, Vektorgrafiken geometrische
+Beschreibungen.</li>
+</ul>
+<h2 id="ausblick-4">Ausblick</h2>
+<blockquote>
+<p><strong>Texte und Bilder können als Zahlen gespeichert werden. Aber
+Musik besteht aus Schallwellen – wie bekommt ein Computer einen Ton in
+Nullen und Einsen?</strong></p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="wie-speichert-ein-computer-musik">04 – Wie speichert ein
+Computer Musik?</h1>
+<h2 id="rückblick-4">Rückblick</h2>
+<p>Texte und Bilder werden im Computer als Zahlen gespeichert. Für Töne
+gilt dasselbe.</p>
+<blockquote>
+<p><strong>Leitfrage:</strong> Wie wird aus einer Schallwelle eine Folge
+aus 0 und 1?</p>
+</blockquote>
+<h2 id="schall-ist-eine-schwingung">Schall ist eine Schwingung</h2>
+<p>Ein Mikrofon wandelt Luftschwingungen in ein elektrisches Signal um.
+Dieses Signal verändert sich kontinuierlich. Ein Computer speichert
+dagegen einzelne Zahlenwerte.</p>
+<h2 id="abtasten">Abtasten</h2>
+<p>Beim <strong>Abtasten</strong> wird das Signal in kurzen
+Zeitabständen gemessen. Jeder Messwert beschreibt die Stärke des Signals
+zu diesem Zeitpunkt.</p>
+<p>Je häufiger gemessen wird, desto genauer kann der Verlauf beschrieben
+werden. Die Zahl der Messungen pro Sekunde heißt
+<strong>Abtastrate</strong>.</p>
+<p>Beispiel: <code>44 100 Hz</code> bedeutet 44 100 Messungen pro
+Sekunde.</p>
+<h2 id="bittiefe">Bittiefe</h2>
+<p>Jeder Messwert muss als Zahl gespeichert werden. Die
+<strong>Bittiefe</strong> bestimmt, wie viele unterschiedliche Werte
+möglich sind.</p>
+<ul>
+<li>8 Bit: 256 mögliche Werte</li>
+<li>16 Bit: 65 536 mögliche Werte</li>
+</ul>
+<p>Mehr Bits ermöglichen feinere Abstufungen, benötigen aber mehr
+Speicher.</p>
+<h2 id="mono-und-stereo">Mono und Stereo</h2>
+<p>Bei <strong>Mono</strong> wird ein Kanal gespeichert. Bei
+<strong>Stereo</strong> werden zwei Kanäle gespeichert, zum Beispiel
+links und rechts.</p>
+<h2 id="speicherbedarf">Speicherbedarf</h2>
+<p>Vereinfacht gilt:</p>
+<p><code>Speicherbedarf = Abtastrate × Bittiefe × Kanäle × Dauer</code></p>
+<p>Das Ergebnis wird zunächst in Bit berechnet.</p>
+<h3 id="beispiel-2">Beispiel</h3>
+<p>Eine Sekunde Stereo-Ton mit 44 100 Hz und 16 Bit benötigt:</p>
+<p><code>44 100 × 16 × 2 = 1 411 200 Bit</code></p>
+<p>Das sind <code>176 400 Byte</code> pro Sekunde.</p>
+<h2 id="kompression">Kompression</h2>
+<p>Unkomprimierte Audiodateien können groß werden. Deshalb werden Daten
+häufig komprimiert.</p>
+<ul>
+<li><strong>verlustfrei:</strong> Die ursprünglichen Daten lassen sich
+vollständig wiederherstellen.</li>
+<li><strong>verlustbehaftet:</strong> Weniger wichtige Informationen
+werden entfernt, um stärker zu verkleinern.</li>
+</ul>
+<p>MP3 ist ein bekanntes Beispiel für verlustbehaftete
+Audiokompression.</p>
+<h2 id="aufgaben">Aufgaben</h2>
+<ol type="1">
+<li>Erkläre mit eigenen Worten den Begriff
+<strong>Abtastrate</strong>.</li>
+<li>Warum verbessert eine höhere Bittiefe die Darstellung eines
+Tons?</li>
+<li>Was unterscheidet Mono und Stereo?</li>
+<li>Berechne den Speicherbedarf für 2 Sekunden Mono-Ton bei 8 000 Hz und
+8 Bit.</li>
+<li>Warum werden Audiodateien komprimiert?</li>
+<li>Begründe: Auch Musik besteht im Computer letztlich aus Zahlen.</li>
+</ol>
+<h2 id="das-wichtigste-3">Das Wichtigste</h2>
+<ul>
+<li>Schall wird in regelmäßigen Abständen gemessen.</li>
+<li>Die Abtastrate gibt die Messungen pro Sekunde an.</li>
+<li>Die Bittiefe bestimmt die Anzahl möglicher Messwerte.</li>
+<li>Digitale Audiodaten können komprimiert werden.</li>
+</ul>
+<h2 id="ausblick-5">Ausblick</h2>
+<blockquote>
+<p>Texte, Bilder und Musik sind jetzt digitale Informationen. Aber was
+macht ein Computer eigentlich mit diesen Informationen?</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="wie-verarbeitet-ein-computer-informationen">05 – Wie verarbeitet
+ein Computer Informationen?</h1>
+<h2 id="rückblick-5">Rückblick</h2>
+<p>Texte, Bilder und Musik werden im Computer als Zahlen und schließlich
+als Bits dargestellt.</p>
+<blockquote>
+<p><strong>Leitfrage:</strong> Was passiert mit Informationen, wenn wir
+einen Computer benutzen?</p>
+</blockquote>
+<h2 id="das-eva-prinzip">Das EVA-Prinzip</h2>
+<p>Viele Vorgänge lassen sich mit drei Schritten beschreiben:</p>
+<ol type="1">
+<li><strong>Eingabe (E)</strong> – Informationen gelangen in ein
+System.</li>
+<li><strong>Verarbeitung (V)</strong> – Das System verarbeitet die
+Informationen nach Regeln.</li>
+<li><strong>Ausgabe (A)</strong> – Ein Ergebnis wird ausgegeben.</li>
+</ol>
+<p>Beispiel Taschenrechner:</p>
+<p><code>5 + 8</code> → Addition → <code>13</code></p>
+<h2 id="die-rolle-des-speichers">Die Rolle des Speichers</h2>
+<p>Speicher ist nicht einfach ein vierter Schritt am Ende. Informationen
+können <strong>vor</strong>, <strong>während</strong> und
+<strong>nach</strong> der Verarbeitung gespeichert werden.</p>
+<p>Darum verwenden wir im Unterricht häufig die Bezeichnung
+<strong>EVAS</strong>:</p>
+<ul>
+<li>E – Eingabe</li>
+<li>V – Verarbeitung</li>
+<li>A – Ausgabe</li>
+<li>S – Speicherung</li>
+</ul>
+<h2 id="beispiele">Beispiele</h2>
+<h3 id="smartphone-kamera">Smartphone-Kamera</h3>
+<ul>
+<li>Eingabe: Licht trifft auf den Sensor.</li>
+<li>Verarbeitung: Messwerte werden zu einem Bild verarbeitet.</li>
+<li>Ausgabe: Das Bild erscheint auf dem Display.</li>
+<li>Speicherung: Das Foto wird als Datei gespeichert.</li>
+</ul>
+<h3 id="geldautomat">Geldautomat</h3>
+<ul>
+<li>Eingabe: Karte, PIN und gewünschter Betrag.</li>
+<li>Verarbeitung: Berechtigung und Kontostand werden geprüft.</li>
+<li>Ausgabe: Geld, Anzeige oder Fehlermeldung.</li>
+<li>Speicherung: Vorgang und Kontostand werden aktualisiert.</li>
+</ul>
+<h2 id="aufgabe-1-zuordnen">Aufgabe 1 – Zuordnen</h2>
+<p>Ordne Eingabe, Verarbeitung, Ausgabe und Speicherung zu:</p>
+<ol type="1">
+<li>Ein Scanner liest ein Blatt Papier ein.</li>
+<li>Eine Software erkennt Buchstaben im eingescannten Bild.</li>
+<li>Der erkannte Text wird angezeigt.</li>
+<li>Die Textdatei wird gespeichert.</li>
+</ol>
+<h2 id="aufgabe-2-eigene-analyse">Aufgabe 2 – Eigene Analyse</h2>
+<p>Wähle ein technisches System, zum Beispiel Fahrkartenautomat,
+Spielekonsole, Waschmaschine oder Smartwatch.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Bereich</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Eingabe</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Verarbeitung</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Ausgabe</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Speicherung</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="aufgabe-3-alltag">Aufgabe 3 – Alltag</h2>
+<p>Funktioniert EVA nur bei Computern? Beschreibe ein Beispiel außerhalb
+der Computerwelt und begründe deine Zuordnung.</p>
+<h2 id="aufgabe-4-nachdenken">Aufgabe 4 – Nachdenken</h2>
+<p>Warum ist die <strong>Verarbeitung</strong> der entscheidende Teil
+zwischen Eingabe und Ausgabe?</p>
+<h2 id="das-wichtigste-4">Das Wichtigste</h2>
+<blockquote>
+<p>Ein Informatiksystem nimmt Informationen auf, verarbeitet sie und
+gibt Ergebnisse aus. Speicher kann dabei an mehreren Stellen beteiligt
+sein.</p>
+</blockquote>
+<h2 id="ausblick-6">Ausblick</h2>
+<blockquote>
+<p>Wenn verschiedene Geräte nach EVAS arbeiten: Warum verarbeitet jedes
+Gerät seine Eingaben auf eine andere Weise?</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="was-gehört-zu-einem-informatiksystem">15 – Was gehört zu einem
+Informatiksystem?</h1>
+<h2 id="leitfrage-2">Leitfrage</h2>
+<blockquote>
+<p>Was muss zusammenarbeiten, damit aus einem Gerät ein nutzbares
+Informatiksystem wird?</p>
+</blockquote>
+<h2 id="hardware">Hardware</h2>
+<p><strong>Hardware</strong> sind die körperlichen Bestandteile eines
+Informatiksystems, zum Beispiel Prozessor, Arbeitsspeicher, SSD,
+Tastatur, Bildschirm oder Sensoren.</p>
+<h2 id="software">Software</h2>
+<p><strong>Software</strong> sind Programme und Daten, die auf der
+Hardware ausgeführt bzw. verarbeitet werden.</p>
+<p>Wir unterscheiden für den Einstieg:</p>
+<ul>
+<li><strong>Betriebssystem</strong> – verwaltet grundlegende Ressourcen
+und stellt Funktionen für Programme bereit.</li>
+<li><strong>Anwendungssoftware</strong> – hilft bei konkreten Aufgaben,
+z. B. Browser, Textverarbeitung oder Bildbearbeitung.</li>
+<li><strong>Werkzeuge/Tools</strong> – unterstützen bestimmte technische
+Aufgaben.</li>
+</ul>
+<h2 id="zusammenspiel">Zusammenspiel</h2>
+<p>Eine Textverarbeitung allein kann ohne Hardware nicht laufen. Ein
+Computer ohne passende Software kann viele Aufgaben ebenfalls nicht
+sinnvoll erfüllen.</p>
+<p><code>Hardware + Software + Daten + Benutzerhandlung → Informatiksystem im Einsatz</code></p>
+<h2 id="prozessor-und-speicher">Prozessor und Speicher</h2>
+<p>Der <strong>Prozessor</strong> führt Befehle aus und verarbeitet
+Daten. Speicher hält Daten und Programme für unterschiedliche Zeiträume
+bereit.</p>
+<h2 id="lizenzformen">Lizenzformen</h2>
+<p>Software darf nicht automatisch beliebig kopiert oder verändert
+werden.</p>
+<ul>
+<li><strong>proprietäre Software</strong>: Rechte und Nutzung werden vom
+Anbieter festgelegt.</li>
+<li><strong>Open-Source-Software</strong>: Quelltext ist unter einer
+entsprechenden Lizenz zugänglich und darf im Rahmen dieser Lizenz
+genutzt, verändert und weitergegeben werden.</li>
+<li><strong>freie Software</strong>: betont Freiheiten der Nutzer bei
+Ausführen, Untersuchen, Verändern und Weitergeben.</li>
+</ul>
+<h2 id="aufgaben-1">Aufgaben</h2>
+<ol type="1">
+<li>Ordne zu: Prozessor, Browser, RAM, Betriebssystem, Tastatur,
+Präsentationsprogramm.</li>
+<li>Erkläre an einem Smartphone, wie Hardware und Software
+zusammenarbeiten.</li>
+<li>Warum ist „kostenlos“ nicht dasselbe wie „Open Source“?</li>
+<li>Recherchiere die Lizenz eines Programms, das du im Unterricht
+nutzt.</li>
+<li>Nenne drei Informatiksysteme aus deinem Alltag, die nicht wie
+klassische PCs aussehen.</li>
+</ol>
+<h2 id="merksatz-1">Merksatz</h2>
+<blockquote>
+<p>Hardware ist das Gerät, Software beschreibt ausführbare Programme.
+Erst ihr Zusammenspiel ermöglicht die Verarbeitung von
+Informationen.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="wo-bleiben-unsere-daten">16 – Wo bleiben unsere Daten?</h1>
+<h2 id="leitfrage-3">Leitfrage</h2>
+<blockquote>
+<p>Warum gibt es Arbeitsspeicher, SSD, USB-Stick, Netzwerkspeicher und
+Cloudspeicher, wenn doch alle Daten speichern?</p>
+</blockquote>
+<h2 id="flüchtig-und-nichtflüchtig">Flüchtig und nichtflüchtig</h2>
+<p><strong>Flüchtiger Speicher</strong> verliert seinen Inhalt ohne
+Strom. Typisches Beispiel ist der Arbeitsspeicher (RAM).</p>
+<p><strong>Nichtflüchtiger Speicher</strong> behält Daten auch ohne
+Strom, zum Beispiel SSD, Speicherkarte oder USB-Stick.</p>
+<h2 id="speicherorte">Speicherorte</h2>
+<ul>
+<li>lokal im Gerät</li>
+<li>auf Wechseldatenträgern</li>
+<li>im Schul- oder Heimnetzwerk</li>
+<li>auf entfernten Servern bzw. in Cloud-Diensten</li>
+</ul>
+<h2 id="eigenschaften-vergleichen">Eigenschaften vergleichen</h2>
+<p>Speicher unterscheiden sich unter anderem in:</p>
+<ul>
+<li>Kapazität</li>
+<li>Geschwindigkeit/Zugriffszeit</li>
+<li>Zuverlässigkeit</li>
+<li>Mobilität</li>
+<li>Kosten</li>
+<li>Art des Zugriffs</li>
+</ul>
+<h2 id="bit-und-byte">Bit und Byte</h2>
+<p>Ein <strong>Bit</strong> kann zwei Zustände darstellen. Acht Bit
+bilden ein <strong>Byte</strong>.</p>
+<p>Für Größenordnungen verwenden wir Byte, Kilobyte, Megabyte, Gigabyte
+und Terabyte. In technischen Angaben können dezimale und binäre
+Vielfache vorkommen; entscheidend ist, die Größenordnung sicher
+einschätzen zu können.</p>
+<h2 id="backup">Backup</h2>
+<p>Ein <strong>Backup</strong> ist eine zusätzliche Kopie wichtiger
+Daten. Eine Kopie auf demselben defekten Datenträger schützt nicht vor
+dessen Ausfall.</p>
+<h2 id="aufgaben-2">Aufgaben</h2>
+<ol type="1">
+<li>Warum eignet sich RAM nicht als dauerhafter Speicher für deine
+Fotos?</li>
+<li>Vergleiche SSD, USB-Stick und Cloudspeicher für eine
+Schulpräsentation.</li>
+<li>Rechne: Wie viele Bit sind 4 Byte?</li>
+<li>Ordne nach Größe: 2 MB, 800 KB, 3 GB, 120 MB.</li>
+<li>Formuliere eine einfache Backup-Strategie für deine wichtigsten
+Schuldokumente.</li>
+<li>Erkläre, warum „Cloud“ nicht bedeutet, dass Daten ohne reale
+Computer gespeichert werden.</li>
+</ol>
+<h2 id="ausblick-7">Ausblick</h2>
+<blockquote>
+<p>Gespeicherte Daten müssen nicht nur irgendwo liegen – wir müssen sie
+auch wiederfinden.</p>
+</blockquote>
+<div class="page-break"></div>
+<h1 id="wie-finden-wir-dateien-wieder">17 – Wie finden wir Dateien
+wieder?</h1>
+<h2 id="leitfrage-4">Leitfrage</h2>
+<blockquote>
+<p>Was nützt ein großer Speicher, wenn wir unsere Dateien nicht
+wiederfinden?</p>
+</blockquote>
+<h2 id="datei-und-dateityp">Datei und Dateityp</h2>
+<p>Eine <strong>Datei</strong> speichert zusammengehörige Daten. Der
+<strong>Dateityp</strong> beschreibt, wie die Daten aufgebaut sind und
+mit welchen Anwendungen sie verarbeitet werden können.</p>
+<p>Beispiele:</p>
+<ul>
+<li><code>.txt</code> Text</li>
+<li><code>.png</code> Bild</li>
+<li><code>.pdf</code> Dokument</li>
+<li><code>.mp3</code> Audio</li>
+</ul>
+<p>Die Dateiendung ist ein Hinweis auf den Dateityp, nicht der
+eigentliche Inhalt.</p>
+<h2 id="ordner">Ordner</h2>
+<p>Ordner helfen, Dateien zu strukturieren. Sinnvolle Namen beschreiben
+den Inhalt statt zufällige Bezeichnungen wie <code>Neu</code>,
+<code>Test2</code> oder <code>asd</code> zu verwenden.</p>
+<h2 id="pfad">Pfad</h2>
+<p>Ein <strong>Pfad</strong> beschreibt den Weg zu einer Datei innerhalb
+einer Ordnerstruktur.</p>
+<p>Beispiel:</p>
+<pre class="text"><code>Schule/Klasse_7/Informatik/EVAS/Praesentation.pptx</code></pre>
+<h2 id="grundlegende-dateioperationen">Grundlegende
+Dateioperationen</h2>
+<ul>
+<li>erstellen</li>
+<li>kopieren</li>
+<li>verschieben</li>
+<li>umbenennen</li>
+<li>löschen</li>
+</ul>
+<p><strong>Kopieren</strong> erzeugt eine zusätzliche Datei.
+<strong>Verschieben</strong> ändert ihren Speicherort.</p>
+<h2 id="lokal-und-vernetzt">Lokal und vernetzt</h2>
+<p>Dateien können lokal auf einem Gerät oder auf einem
+Netzwerk-/Cloudspeicher liegen. Bei Netzwerkspeichern können
+Zugriffsrechte und eine Internet- bzw. Netzwerkverbindung wichtig
+sein.</p>
+<h2 id="aufgaben-3">Aufgaben</h2>
+<ol type="1">
+<li>Plane eine Ordnerstruktur für Informatik, Deutsch und
+Mathematik.</li>
+<li>Gib den Pfad zu einer Datei <code>LK1_Vorbereitung.pdf</code> in
+deinem Informatikordner an.</li>
+<li>Erkläre den Unterschied zwischen Kopieren und Verschieben.</li>
+<li>Warum ist <code>fertig_final_neu2.pdf</code> kein guter Dateiname?
+Schlage einen besseren vor.</li>
+<li>Welche Anwendung würdest du für <code>.png</code>, <code>.mp3</code>
+und <code>.pdf</code> verwenden?</li>
+<li>Eine Datei wurde versehentlich gelöscht. Welche Schutzmaßnahmen
+können helfen?</li>
+</ol>
+<h2 id="praxisauftrag">Praxisauftrag</h2>
+<p>Lege eine vorgegebene Ordnerstruktur an, erstelle zwei Dateien,
+kopiere eine Datei in einen zweiten Ordner, verschiebe die andere und
+benenne sie sinnvoll um. Dokumentiere die Schritte.</p>
+<h2 id="merksatz-2">Merksatz</h2>
+<blockquote>
+<p>Ordner strukturieren Dateien; Pfade beschreiben ihren
+Speicherort.</p>
+</blockquote>
+</body>
+</html>
