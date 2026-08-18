@@ -34,7 +34,8 @@ jobs:
             texlive-xetex \
             texlive-latex-recommended \
             fonts-dejavu-core \
-            python3-docx
+            python3-docx \
+            zip
 
       - name: Skripte ausführbar machen
         run: |
@@ -47,6 +48,14 @@ jobs:
       - name: Veröffentlichungsartefakte zusammenstellen
         run: |
           ./Build/package_artifacts.sh
+
+      - name: Vollständige Ausgabe als ZIP bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: Unterrichtsmaterial_Oberschule_Sachsen
+          path: .publish/Unterrichtsmaterial_Oberschule_Sachsen.zip
+          if-no-files-found: error
+          compression-level: 0
 
       - name: Build-Ausgabe in Feature-Branch übernehmen
         if: ${{ github.ref_name != 'main' }}
