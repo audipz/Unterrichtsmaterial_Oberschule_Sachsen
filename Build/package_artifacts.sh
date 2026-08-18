@@ -5,6 +5,7 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 OUTPUT_ROOT="$REPO_ROOT/Ausgabe"
 PUBLISH_ROOT="$REPO_ROOT/.publish"
 LEHRER_ROOT="$PUBLISH_ROOT/Lehrer"
+ZIP_PATH="$PUBLISH_ROOT/Unterrichtsmaterial_Oberschule_Sachsen.zip"
 
 rm -rf "$PUBLISH_ROOT"
 mkdir -p "$LEHRER_ROOT"
@@ -67,4 +68,15 @@ done < <(find "$OUTPUT_ROOT" -type f -print0)
 [[ "$lehrer_docs" -gt 0 ]] || { echo "FEHLER: Keine Lehrerdokumente gefunden." >&2; exit 1; }
 [[ "$lehrer_pptx" -gt 0 ]] || { echo "FEHLER: Keine PowerPoint-Masterdateien gefunden." >&2; exit 1; }
 
+# Die vollständige Build-Ausgabe zusätzlich als ein direkt herunterladbares
+# Archiv bereitstellen. Das ZIP liegt absichtlich außerhalb von Ausgabe/,
+# damit es sich nicht selbst in das Archiv einschließt.
+(
+  cd "$OUTPUT_ROOT"
+  zip -qr "$ZIP_PATH" .
+)
+
+[[ -s "$ZIP_PATH" ]] || { echo "FEHLER: ZIP-Ausgabe wurde nicht erzeugt." >&2; exit 1; }
+
 echo "Lehrerartefakt: $lehrer_docs Unterrichtsdokumente, davon $lehrer_pptx PowerPoint-Präsentationen"
+echo "ZIP-Ausgabe: $ZIP_PATH"
