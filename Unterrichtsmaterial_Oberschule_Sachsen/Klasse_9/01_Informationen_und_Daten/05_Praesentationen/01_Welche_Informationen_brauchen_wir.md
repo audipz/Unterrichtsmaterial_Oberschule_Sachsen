@@ -119,7 +119,35 @@ Ein großes, einfaches Prozessschema mit drei Elementen. Keine dekorativen Kache
 **Sprechernotiz / Lehrerhinweis**
 Schülergerechte Arbeitsdefinition entwickeln: Daten sind darstellbare Zeichen/Werte. Durch Interpretation in einem Kontext können sie für einen Menschen Information vermitteln.
 
-Darauf hinweisen, dass das Modell eine didaktische Vereinfachung ist: Ein gespeichertes Foto kann als Datenbestand betrachtet werden und zugleich beim Betrachten Informationen vermitteln.
+### Fachlicher Hintergrund für die Lehrkraft
+Das Schema **Daten + Kontext → Information** ist bewusst vereinfacht. Daten und Information sind fachlich nicht einfach zwei aufeinanderfolgende Dinge, bei denen Daten automatisch in Information umgewandelt werden. Ob Daten Information vermitteln, hängt unter anderem vom **Kontext**, vom **Empfänger**, von dessen **Vorwissen** und von der jeweiligen **Fragestellung bzw. dem Zweck** ab.
+
+Beispiel: Die Zeichenfolge `24` kann für eine Person zunächst bedeutungslos sein. Kennt sie den Kontext „Temperatur im Klassenraum in °C“, kann sie daraus die Information „Im Klassenraum sind 24 °C“ gewinnen.
+
+Auch Bilder, Texte und Audiodateien zeigen die Grenze des einfachen Modells: Ein digitales Foto liegt technisch als **codierte Daten** vor. Für einen Menschen, der das dargestellte Bild betrachtet und einordnet, kann es gleichzeitig **Informationen vermitteln**.
+
+**Wenn Schülerinnen oder Schüler fragen: „Sind Daten dann keine Informationen?“**
+
+Mögliche Antwort: „Nicht grundsätzlich. Wir betrachten die Begriffe aus unterschiedlichen Blickwinkeln. Daten beschreiben zunächst die darstellbare, speicherbare und verarbeitbare Form. Information beschreibt die Bedeutung, die jemand daraus in einem bestimmten Zusammenhang gewinnt.“
+
+**Wenn die Frage kommt: „Aber `24 °C` sind doch auch Daten?“**
+
+Ja. Auch `24 °C` lässt sich speichern und verarbeiten und kann deshalb als Datenrepräsentation betrachtet werden. Wenn ein Mensch weiß, dass damit die aktuelle Raumtemperatur gemeint ist, gewinnt er daraus zusätzlich eine Information. **Daten und Information schließen sich nicht gegenseitig aus.**
+
+**Wenn Schülerinnen oder Schüler fragen: „Versteht der Computer die Information?“**
+
+Für diese Jahrgangsstufe kann zunächst unterschieden werden: Ein Computer verarbeitet Daten nach programmierten bzw. festgelegten Verfahren. Ob man bei Computersystemen von „Verstehen“, „Wissen“ oder „Information“ im menschlichen Sinn spricht, ist eine weiterführende Frage und hängt auch davon ab, wie diese Begriffe definiert werden.
+
+### Komplexeres Modell
+Fachlich genauer kann man statt einer starren Kette folgendes Denkmodell verwenden:
+
+**Daten + Kontext + Fragestellung/Zweck + Interpretation durch einen Empfänger + Vorwissen → eine für diesen Empfänger gewonnene Information**
+
+Diese Information kann anschließend mit vorhandenem Wissen und weiteren Informationen **verknüpft, überprüft und eingeordnet** werden. Dadurch kann Wissen aufgebaut, bestätigt oder verändert werden.
+
+Es handelt sich daher eher um einen **Interpretations- und Verarbeitungsprozess** als um die automatische Umwandlung `Daten → Information → Wissen`.
+
+**Für den Unterricht:** Das komplexere Modell muss nicht vollständig auf die Schülerfolie übernommen werden. Das einfache Schema dient zunächst als Denkstütze. Diese ausführlichere Erklärung ist Hintergrundwissen für Nachfragen und verhindert fachlich zu absolute Aussagen.
 
 ---
 
@@ -187,7 +215,7 @@ Nicht den Eindruck erzeugen, jede Information werde automatisch zu Wissen. Wisse
 Ein durchgängiges Prozessschema über die Folienbreite. Begriffe groß, verbindende Prozesse kleiner an den Pfeilen.
 
 **Sprechernotiz / Lehrerhinweis**
-Jetzt erstmals das Gesamtmodell zeigen. Gemeinsam mit den Schülerinnen und Schülern von links nach rechts erklären lassen. Bei Bedarf auf Folie 3 zurückgreifen.
+Jetzt erstmals das Gesamtmodell zeigen. Gemeinsam mit den Schülerinnen und Schülern von links nach rechts erklären lassen. Bei Bedarf auf Folie 3 zurückgreifen. Darauf hinweisen, dass dies weiterhin eine **unterrichtliche Denkstütze** ist und kein automatischer technischer Prozess. Bei fachlichen Nachfragen auf das komplexere Modell aus den Lehrerhinweisen zu Folie 5 zurückgreifen.
 
 ---
 
