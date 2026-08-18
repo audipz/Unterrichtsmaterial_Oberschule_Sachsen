@@ -1,28 +1,73 @@
-# Präsentationsplan – Computergrafik
+# Präsentationsplan – Computergrafik: Bilder verändern und prüfen
 
 ## Folie 1 – Leitfrage
-Warum sieht ein Logo beim Vergrößern oft scharf aus, ein Foto aber irgendwann pixelig?
+**Kann ein echtes Foto eine falsche Geschichte erzählen?**
 
-## Folie 2 – Rastergrafik
-Bild aus Pixeln. Geeignet insbesondere für Fotos und pixelbasierte Bearbeitung.
+**Lehrerhinweis:** Zwei unterschiedlich zugeschnittene Versionen desselben Fotos zeigen. Noch nicht mit „Fake/Real“-Abstimmung starten, sondern Beobachtung und Interpretation trennen.
 
-## Folie 3 – Vektorgrafik
-Formen werden geometrisch beschrieben. Geeignet für Logos, Symbole und viele Diagramme.
+## Folie 2 – Bearbeitung ist nicht automatisch Täuschung
+Digitale Bilder werden häufig bearbeitet: zuschneiden, Helligkeit korrigieren, retuschieren, montieren oder generativ verändern.
 
-## Folie 4 – Skalieren
-Raster: vorhandene Pixel werden vergrößert/interpoliert. Vektor: Formen werden für die Ausgabegröße neu berechnet.
+Entscheidend ist, **welche Aussage im jeweiligen Kontext entsteht**.
 
-## Folie 5 – RGB
-Rot, Grün und Blau als additive Lichtanteile auf Bildschirmen. Kurzes Mischbeispiel.
+## Folie 3 – Der Ausschnitt verändert die Wirkung
+Version A: nur zwei scheinbar streitende Personen.  
+Version B: vollständiger Ausschnitt einer Theaterprobe.
 
-## Folie 6 – Formate
-JPEG: häufig Fotos, verlustbehaftete Kompression. PNG: Raster, verlustfreie Kompression, Transparenz möglich. SVG: Vektorgrafik.
+**Frage:** Welche Information wurde nicht gezeigt? Muss dafür ein Pixel gefälscht worden sein?
 
-## Folie 7 – Formatwahl
-Foto, Logo, transparentes Symbol und Screenshot vergleichen. Lernende müssen ihre Wahl begründen.
+## Folie 4 – Arten der Veränderung
+- Ausschnitt
+- Helligkeit/Farbe
+- Retusche
+- Montage
+- generative Veränderung
 
-## Folie 8 – Praxis
-Ein Logo aus Grundformen erstellen, Raster- und Vektorversion vergleichen.
+Zu jedem Begriff ein konkretes, leicht verständliches Beispiel und die Frage: **harmlos/kreativ oder irreführend – wovon hängt das ab?**
 
-## Folie 9 – Sicherung
-Nicht „bestes Format“, sondern: Welches Format passt zu Inhalt und Verwendungszweck?
+## Folie 5 – Bild und Bildunterschrift
+Dasselbe Bild kann mit verschiedenen Überschriften sehr unterschiedlich wirken.
+
+**Aufgabe:** Beobachtung im Bild von Behauptungen in der Bildunterschrift trennen.
+
+## Folie 6 – Authentizität: mehr als „sieht echt aus“
+Prüfen:
+1. Quelle,
+2. vollständiger Kontext,
+3. Ort und Zeitpunkt,
+4. unabhängige weitere Quellen,
+5. ältere Fundstellen/Bildsuche als Strategie,
+6. Unsicherheit offen benennen.
+
+## Folie 7 – Fall: echtes Foto, falscher Kontext
+Beitrag: „Dieses Foto zeigt das heutige Ereignis.“  
+Fund: Dasselbe Foto wurde Jahre zuvor an einem anderen Ort veröffentlicht.
+
+**Sicherung:** Das Bild muss nicht gefälscht sein; die Behauptung über das Bild kann trotzdem falsch sein.
+
+## Folie 8 – Grenzen der Bildprüfung
+Visuelle Auffälligkeiten allein reichen nicht zuverlässig für „echt“ oder „generiert“.
+
+**Lehrerhinweis:** Keine vermeintlich dauerhaften KI-Erkennungsmerkmale lehren. Herkunft und Kontext sind robuster als eine Checkliste optischer Artefakte.
+
+## Folie 9 – Bilder und Meinungsbildung
+Bilder wirken schnell und emotional. Ausschnitt, Reihenfolge, Text und Auswahl können eine Deutung verstärken.
+
+**Frage:** Warum sollten gerade besonders empörende oder perfekt bestätigende Bilder vor dem Teilen sorgfältig geprüft werden?
+
+## Folie 10 – Bild-Check
+Vor dem Weiterteilen:
+**Quelle → Kontext → Zeitpunkt/Ort → weitere Quellen → ältere Fundstellen → Unsicherheit**
+
+## Folie 11 – Analyseaufgabe
+Vergleicht zwei Versionen desselben Bildes:
+- Was ist tatsächlich sichtbar?
+- Was wurde weggelassen/verändert?
+- Welche Aussage entsteht?
+- Welche Zusatzinformation fehlt?
+- Was würdet ihr vor dem Teilen prüfen?
+
+## Folie 12 – Abschluss
+> **Ein Bild kann technisch echt sein und trotzdem in einem falschen Zusammenhang verwendet werden.**
+
+Schüler formulieren einen eigenen Beispielsatz, der diesen Unterschied erklärt.
