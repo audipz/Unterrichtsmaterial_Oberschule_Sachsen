@@ -1,17 +1,35 @@
 # Mobile Endgeräte – Lehrerhinweise
 
-## Ziel
-Der Wahlbereich verbindet technische Grundlagen mit einem reflektierten Umgang mit mobilen Geräten. Begriffe sollen an konkreten Alltagssituationen eingeführt werden.
+## Ziel und Schwerpunkt
+Der Wahlbereich untersucht Möglichkeiten und Grenzen mobiler Endgeräte unter den Gesichtspunkten Datenschutz, Datensicherheit, Berechtigungen, Cookies/Werbung, Persönlichkeits- und Urheberrechte sowie Netiquette. Technische Details dienen dem Verständnis dieser Bewertungsfragen und sind kein Selbstzweck.
 
-## Unterrichtshinweise
-- Einstieg über ein reales Smartphone/Tablet oder eine schematische Abbildung.
-- Sensoren nicht nur aufzählen: jeweils Eingabe, Verarbeitung und sichtbare Reaktion thematisieren.
-- Bei WLAN, Bluetooth und Mobilfunk Reichweite nur qualitativ vergleichen; konkrete Werte hängen von Technik und Umgebung ab.
-- Berechtigungen als Zweckbindung diskutieren: Eine Berechtigung ist nicht allein deshalb sinnvoll, weil das Betriebssystem sie anbietet.
-- Keine persönlichen Geräte oder Konten der Lernenden müssen für Aufgaben offengelegt werden.
+## Didaktischer Einstieg
+Mit einem **fiktiven** App-Fall starten: Eine kostenlose App verlangt mehrere Berechtigungen und zeigt personalisierte Werbung. Keine Lernenden müssen ihr eigenes Smartphone, Konto, Nutzungsverhalten oder persönliche Einstellungen offenlegen.
 
-## Erwartungshorizont
-Mobile Geräte verbinden Rechenleistung, Akku, Funktechnik und Sensorik. Typische Zuordnungen: Bildschirmdrehung – Lage-/Beschleunigungssensor; Navigation – Satellitenortung und ggf. weitere Sensoren; Schrittzählung – Bewegungssensoren; Helligkeit – Umgebungslichtsensor. WLAN dient typischerweise lokalen Netzen/Internetzugang, Bluetooth kurzen direkten Verbindungen, Mobilfunk der Verbindung über ein Mobilfunknetz.
+## Begriffliche Klärung
+- **Berechtigung:** Erlaubnis für eine App, auf bestimmte Gerätefunktionen oder Daten zuzugreifen.
+- **Datenschutz:** Schutz von Menschen bei der Verarbeitung personenbezogener Daten; Fragen nach Zweck, Erforderlichkeit und Umgang mit Daten stehen im Vordergrund.
+- **Datensicherheit:** technische und organisatorische Maßnahmen gegen Verlust, Veränderung und unbefugten Zugriff.
+- **Cookies/ähnliche Speichermechanismen:** können unterschiedlichen Zwecken dienen, z. B. technisch notwendiger Sitzung, Einstellungen, Statistik oder Werbung. Keine pauschale Gleichsetzung „Cookie = gefährlich“.
+- **Personalisierte Werbung:** Werbung wird anhand verfügbarer Merkmale oder Nutzungsinformationen ausgewählt; Umfang und Verfahren unterscheiden sich je nach Dienst.
+
+## App-Berechtigungen
+Nicht isoliert fragen „Darf die App das?“, sondern: **Welche konkrete Funktion soll damit ermöglicht werden?** Eine Kameraberechtigung kann für einen QR-Scanner plausibel sein, für einen reinen Taschenrechner nicht. Zusatzfunktionen können zusätzliche Berechtigungen erklären.
+
+## Persönlichkeits- und Urheberrechte
+Bei Fotos konsequent mehrere Ebenen unterscheiden:
+1. abgebildete Personen und deren Persönlichkeitsrechte,
+2. Urheber/in des Fotos bzw. anderer verwendeter Werke,
+3. Kontext der Veröffentlichung und Reichweite.
+
+Keine Rechtsberatung simulieren; Ziel ist die Sensibilisierung dafür, dass „Ich habe die Datei auf meinem Handy“ nicht automatisch bedeutet „Ich darf sie beliebig veröffentlichen“.
+
+## Netiquette
+Regeln müssen konkret und begründet sein. Besonders sinnvoll sind Regeln zu respektvoller Sprache, Zustimmung vor dem Weiterleiten privater Inhalte, Konfliktverhalten, Schutz vor Bloßstellung und angemessener Nachrichtenmenge.
+
+## Erwartungshorizont zum Mobile-Check
+Ein vollständiges Produkt umfasst mindestens: vertrauenswürdige Bezugsquelle, Aktualität/Updates, passende Berechtigungen, Datensparsamkeit, Sicherheitsmaßnahmen, Cookie-/Werbeeinstellungen, Rechte anderer und Verhalten in Gruppen. Die konkrete Entscheidung darf unterschiedlich ausfallen, wenn sie nachvollziehbar begründet ist.
 
 ## Differenzierung
-Stärkere Lernende können untersuchen, warum Standortbestimmung mehrere Informationsquellen kombiniert oder wie App-Berechtigungen auf verschiedenen Betriebssystemen gruppiert werden.
+- Unterstützung: vorgegebene Fallkarten und Satzstarter „Für die Funktion … ist … nötig/nicht nötig, weil …“.
+- Erweiterung: zwei unterschiedliche App-Geschäftsmodelle vergleichen oder ein Einstellungsdialog hinsichtlich verständlicher Einwilligung analysieren.
