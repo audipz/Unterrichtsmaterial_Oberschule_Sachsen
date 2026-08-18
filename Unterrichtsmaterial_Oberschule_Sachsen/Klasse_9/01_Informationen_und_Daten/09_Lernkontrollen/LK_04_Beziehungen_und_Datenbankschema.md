@@ -1,4 +1,6 @@
-# LK 04: Beziehungen und Datenbankschema
+# LK 04: Beziehungen und Datenbankschema – optionale Vertiefung
+
+> **Hinweis für die Lehrkraft:** Diese Lernkontrolle behandelt Fremdschlüssel und 1:n-Beziehungen und ist damit **eine optionale Vertiefung**. Sie darf nur eingesetzt werden, wenn diese Begriffe im Unterricht ausdrücklich eingeführt wurden. Sie gehört nicht automatisch zum verbindlichen Kern des Lernbereichs.
 
 **Zielzeit:** 15 Minuten  
 **Maximalzeit:** 20 Minuten  
@@ -7,31 +9,27 @@
 ## Aufgaben
 
 ### Aufgabe 1 (1 P)
+Bei einer im Unterricht behandelten 1:n-Beziehung: Wo steht der Fremdschlüssel typischerweise?
 
-Wo steht bei einer 1:n-Beziehung normalerweise der Fremdschlüssel?
-
-- a) Auf der 1-Seite
-- b) Auf der n-Seite
-- c) In keiner Tabelle
-- d) Immer in beiden Tabellen
+- a) auf der 1-Seite
+- b) auf der n-Seite
+- c) in keiner Tabelle
+- d) immer in beiden Tabellen
 
 ### Aufgabe 2 (2 P)
-
 Erkläre die Aufgabe eines Fremdschlüssels.
 
 _Antwort:_
 
 ### Aufgabe 3 (3 P)
-
-Ordne Primär- und Fremdschlüssel zu.
+Ordne im behandelten Beispiel Primär- und Fremdschlüssel zu.
 
 - a) Raum.Raum_ID → Primärschlüssel
 - b) Programmpunkt.Programmpunkt_ID → Primärschlüssel
 - c) Programmpunkt.Raum_ID → Fremdschlüssel
 
 ### Aufgabe 4 (4 P)
-
-Warum sollten Raumdaten nicht bei jedem Programmpunkt wiederholt werden?
+Warum ist es sinnvoll, Raumdaten nicht bei jedem Programmpunkt vollständig zu wiederholen?
 
 _Antwort:_
 
@@ -40,29 +38,18 @@ _Antwort:_
 # Erwartungshorizont
 
 ## Aufgabe 1 (1 P)
-
-Der Fremdschlüssel steht auf der n-Seite.
-
-Andere fachlich gleichwertige Formulierungen sind bei offenen Aufgaben anzuerkennen.
+Der Fremdschlüssel steht bei dieser Abbildung auf der n-Seite.
 
 ## Aufgabe 2 (2 P)
-
-Er verweist auf den Primärschlüssel einer anderen Tabelle.
-
-Andere fachlich gleichwertige Formulierungen sind bei offenen Aufgaben anzuerkennen.
+Er verweist auf die eindeutige Kennzeichnung eines Datensatzes in einer anderen Tabelle und stellt dadurch die Beziehung her.
 
 ## Aufgabe 3 (3 P)
-
 Alle Zuordnungen sind korrekt.
 
-Andere fachlich gleichwertige Formulierungen sind bei offenen Aufgaben anzuerkennen.
-
 ## Aufgabe 4 (4 P)
-
-Wiederholungen erhöhen Aufwand und Fehlergefahr; eine Raumtabelle speichert sie einmal.
+Wiederholte Speicherung erhöht Änderungsaufwand und Fehlergefahr. Eine getrennte Raumtabelle speichert die Raumdaten einmal und verknüpft sie mit Programmpunkten.
 
 Andere fachlich gleichwertige Formulierungen sind bei offenen Aufgaben anzuerkennen.
 
 ## Bewertungshinweis
-
-Konzipiert für etwa 15 Minuten; maximal 20 Minuten. Der verbindliche Notenschlüssel richtet sich nach den schulischen Festlegungen.
+Nur nach entsprechender Vertiefung einsetzen. Der verbindliche Notenschlüssel richtet sich nach den schulischen Festlegungen.
