@@ -143,7 +143,17 @@ anwenden</a></li>
 <li><a href="#merksatz-sichern" id="toc-merksatz-sichern">Merksatz
 sichern</a></li>
 </ul></li>
-<li><a href="#beispiele" id="toc-beispiele">Beispiele</a></li>
+<li><a href="#beispiele" id="toc-beispiele">Beispiele</a>
+<ul>
+<li><a href="#beispiel-1-größere-zahl-bestimmen" id="toc-beispiel-1-größere-zahl-bestimmen">Beispiel 1 – Größere Zahl
+bestimmen</a></li>
+<li><a href="#beispiel-2-summe-von-1-bis-n" id="toc-beispiel-2-summe-von-1-bis-n">Beispiel 2 – Summe von 1 bis
+n</a></li>
+<li><a href="#beispiel-3-eingabe-prüfen" id="toc-beispiel-3-eingabe-prüfen">Beispiel 3 – Eingabe prüfen</a></li>
+<li><a href="#beispiel-4-algorithmus-testen" id="toc-beispiel-4-algorithmus-testen">Beispiel 4 – Algorithmus
+testen</a></li>
+<li><a href="#transfer" id="toc-transfer">Transfer</a></li>
+</ul></li>
 <li><a href="#alltag-und-computer" id="toc-alltag-und-computer">Alltag
 und Computer</a>
 <ul>
@@ -214,11 +224,11 @@ Scratch und Python</a></li>
 erklären</a></li>
 <li><a href="#eigener-fehleralgorithmus" id="toc-eigener-fehleralgorithmus">11. Eigener
 Fehleralgorithmus</a></li>
-<li><a href="#transfer" id="toc-transfer">12. Transfer</a></li>
+<li><a href="#transfer-1" id="toc-transfer-1">12. Transfer</a></li>
 <li><a href="#plus-effizienz" id="toc-plus-effizienz">🚀 Plus –
 Effizienz</a></li>
 </ul></li>
-<li><a href="#transfer-1" id="toc-transfer-1">Transfer</a>
+<li><a href="#transfer-2" id="toc-transfer-2">Transfer</a>
 <ul>
 <li><a href="#aufgabe-1-frühstück-vorbereiten" id="toc-aufgabe-1-frühstück-vorbereiten">Aufgabe 1 – Frühstück
 vorbereiten</a></li>
@@ -378,7 +388,7 @@ Komplexaufgabe 1: Lineare Algorithmen</a>
 <li><a href="#aufgabe-2-1" id="toc-aufgabe-2-1">Aufgabe 2</a></li>
 <li><a href="#aufgabe-3-1" id="toc-aufgabe-3-1">Aufgabe 3</a></li>
 <li><a href="#aufgabe-4" id="toc-aufgabe-4">Aufgabe 4</a></li>
-<li><a href="#transfer-2" id="toc-transfer-2">Transfer</a></li>
+<li><a href="#transfer-3" id="toc-transfer-3">Transfer</a></li>
 <li><a href="#kompetenzcheck-1" id="toc-kompetenzcheck-1">Kompetenzcheck</a></li>
 </ul></li>
 </ul>
@@ -652,6 +662,87 @@ eindeutig beschrieben sind.</p>
 <hr />
 <div class="page-break"></div>
 <h1 id="beispiele">Beispiele</h1>
+<p>Algorithmen begegnen dir im Alltag und in Computerprogrammen.
+Entscheidend ist nicht das Thema, sondern dass die Lösung als
+eindeutige, ausführbare und endliche Folge von Schritten beschrieben
+werden kann.</p>
+<h2 id="beispiel-1-größere-zahl-bestimmen">Beispiel 1 – Größere Zahl
+bestimmen</h2>
+<p>Eingabe: zwei Zahlen <code>a</code> und <code>b</code>.</p>
+<p>Pseudocode:</p>
+<pre class="text"><code>wenn a &gt; b dann
+    gib a aus
+sonst
+    gib b aus
+ende wenn</code></pre>
+<p>Teste den Ablauf mit <code>(8, 3)</code>, <code>(2, 9)</code> und
+<code>(5, 5)</code>. Was fällt beim letzten Test auf? Ergänze den
+Algorithmus so, dass Gleichheit ausdrücklich behandelt wird.</p>
+<h2 id="beispiel-2-summe-von-1-bis-n">Beispiel 2 – Summe von 1 bis
+n</h2>
+<p>Für eine positive ganze Zahl <code>n</code> soll die Summe
+<code>1 + 2 + ... + n</code> berechnet werden.</p>
+<pre class="text"><code>summe ← 0
+für zahl von 1 bis n
+    summe ← summe + zahl
+ende für
+gib summe aus</code></pre>
+<p>Führe den Algorithmus für <code>n = 4</code> schrittweise in einer
+Tabelle aus. Notiere nach jedem Schleifendurchlauf <code>zahl</code> und
+<code>summe</code>.</p>
+<h2 id="beispiel-3-eingabe-prüfen">Beispiel 3 – Eingabe prüfen</h2>
+<p>Ein Programm darf nur Werte von 1 bis 10 akzeptieren.</p>
+<pre class="text"><code>wiederhole
+    lies wert ein
+solange wert &lt; 1 oder wert &gt; 10
+gib wert aus</code></pre>
+<p>Erkläre, warum hier eine bedingte Wiederholung sinnvoller ist als
+eine feste Wiederholungszahl.</p>
+<h2 id="beispiel-4-algorithmus-testen">Beispiel 4 – Algorithmus
+testen</h2>
+<p>Entwirf für Beispiel 1 mindestens drei Testfälle. Ein guter Testsatz
+enthält neben typischen Werten auch Rand- oder Sonderfälle.</p>
+<p>Nutze die Tabelle:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Eingabe</th>
+<th>erwartetes Ergebnis</th>
+<th>tatsächliches Ergebnis</th>
+<th>Änderung nötig?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="transfer">Transfer</h2>
+<p>Beschreibe einen eigenen kleinen Algorithmus zunächst in
+Alltagssprache und anschließend als Pseudocode oder Struktogramm.
+Markiere Sequenz, Auswahl und Wiederholung, soweit sie vorkommen.</p>
 <div class="page-break"></div>
 <h1 id="alltag-und-computer">Alltag und Computer</h1>
 <h2 id="warum-brauchen-computer-algorithmen">Warum brauchen Computer
@@ -855,7 +946,7 @@ Programmiersprache lösen.</p>
 <p>Jede Anweisung beschreibt einen Handlungsschritt.</p>
 <hr />
 <h2 id="das-erste-python-programm">Das erste Python-Programm</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Willkommen auf unserem Schulfest!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Willkommen auf unserem Schulfest!&quot;</span>)</span></code></pre></div>
 <hr />
 <h2 id="was-passiert">Was passiert?</h2>
 <p>Die Funktion <code>print()</code> gibt einen Text auf dem Bildschirm
@@ -1204,7 +1295,7 @@ Algorithmus</h3>
 <li><hr /></li>
 </ol>
 <hr />
-<h2 id="transfer">12. Transfer</h2>
+<h2 id="transfer-1">12. Transfer</h2>
 <h3 id="aufgabe-12-vom-ablauf-zum-problem">Aufgabe 12 – Vom Ablauf zum
 Problem</h3>
 <p>Wähle eine einfache Aufgabe aus dem Schulalltag.</p>
@@ -1244,7 +1335,7 @@ Problem</h3>
 <hr />
 <hr />
 <div class="page-break"></div>
-<h1 id="transfer-1">Transfer</h1>
+<h1 id="transfer-2">Transfer</h1>
 <p>Bisher hast du Algorithmen für Aufgaben rund um das Schulfest
 entwickelt.</p>
 <p>Nun überträgst du dein Wissen auf neue Situationen.</p>
@@ -2397,7 +2488,7 @@ Einzelpreis.</p>
 <p>Formuliere den Algorithmus als Pseudocode.</p>
 <h2 id="aufgabe-4">Aufgabe 4</h2>
 <p>Übertrage den Algorithmus nach Python.</p>
-<h2 id="transfer-2">Transfer</h2>
+<h2 id="transfer-3">Transfer</h2>
 <p>Entwickle einen Algorithmus zur Berechnung des Durchschnitts aus drei
 Messwerten.</p>
 <h2 id="kompetenzcheck-1">Kompetenzcheck</h2>
