@@ -45,11 +45,13 @@ code { font-family: "Courier New", monospace; }
 <ul>
 <li><a href="#leitfrage" id="toc-leitfrage">Leitfrage</a></li>
 <li><a href="#lehrplanstruktur" id="toc-lehrplanstruktur">Lehrplanstruktur</a></li>
+<li><a href="#ordnerstruktur" id="toc-ordnerstruktur">Ordnerstruktur</a></li>
 <li><a href="#geplanter-lernweg" id="toc-geplanter-lernweg">Geplanter
 Lernweg</a></li>
+<li><a href="#optionale-vertiefung-kryptografie" id="toc-optionale-vertiefung-kryptografie">Optionale Vertiefung:
+Kryptografie</a></li>
 <li><a href="#wahlbereiche" id="toc-wahlbereiche">Wahlbereiche</a></li>
 <li><a href="#leistungsbewertung" id="toc-leistungsbewertung">Leistungsbewertung</a></li>
-<li><a href="#übergang-aus-klasse-7" id="toc-übergang-aus-klasse-7">Übergang aus Klasse 7</a></li>
 <li><a href="#lehrplanquelle" id="toc-lehrplanquelle">Lehrplanquelle</a></li>
 </ul></li>
 <li><a href="#jahresplan-klasse-8" id="toc-jahresplan-klasse-8">Jahresplan – Klasse 8</a>
@@ -58,17 +60,22 @@ Lernweg</a></li>
 – Algorithmen und Programme (15 Ustd.)</a></li>
 <li><a href="#lernbereich-2-netzwerke-in-der-informatik-10-ustd." id="toc-lernbereich-2-netzwerke-in-der-informatik-10-ustd.">Lernbereich
 2 – Netzwerke in der Informatik (10 Ustd.)</a></li>
+<li><a href="#optionale-vertiefung-kryptografie-1" id="toc-optionale-vertiefung-kryptografie-1">Optionale Vertiefung –
+Kryptografie</a></li>
 <li><a href="#wahlbereiche-und-zeitreserve" id="toc-wahlbereiche-und-zeitreserve">Wahlbereiche und
 Zeitreserve</a></li>
 <li><a href="#lehrplanquelle-1" id="toc-lehrplanquelle-1">Lehrplanquelle</a></li>
 </ul></li>
 <li><a href="#meilensteine-klasse-8" id="toc-meilensteine-klasse-8">Meilensteine – Klasse 8</a>
 <ul>
+<li><a href="#struktur-und-konsistenz" id="toc-struktur-und-konsistenz">Struktur und Konsistenz</a></li>
 <li><a href="#curriculare-struktur" id="toc-curriculare-struktur">Curriculare Struktur</a></li>
 <li><a href="#lernbereich-1-algorithmen-und-programme-1" id="toc-lernbereich-1-algorithmen-und-programme-1">Lernbereich 1 –
 Algorithmen und Programme</a></li>
 <li><a href="#lernbereich-2-netzwerke-in-der-informatik-1" id="toc-lernbereich-2-netzwerke-in-der-informatik-1">Lernbereich 2 –
 Netzwerke in der Informatik</a></li>
+<li><a href="#optionale-vertiefung-kryptografie-2" id="toc-optionale-vertiefung-kryptografie-2">Optionale Vertiefung –
+Kryptografie</a></li>
 <li><a href="#wahlbereiche-1" id="toc-wahlbereiche-1">Wahlbereiche</a></li>
 <li><a href="#lehrplanbasis" id="toc-lehrplanbasis">Lehrplanbasis</a></li>
 </ul></li>
@@ -94,9 +101,12 @@ vertieft</a></li>
 <p><strong>Wie beschreiben, programmieren und vernetzen wir
 Informatiksysteme?</strong></p>
 </blockquote>
-<p>Die Materialien sind für Einzelstunden von 45 Minuten geplant und
-knüpfen an Klasse 7 an. Jede Stunde beginnt mit einem kurzen Rückblick
-und einer Leitfrage und endet mit Sicherung und Ausblick.</p>
+<p>Die Materialien sind für Einzelstunden von 45 Minuten geplant. Die
+fachlichen Begriffe werden in Klasse 8 jeweils so eingeführt, dass die
+Unterrichtsfolge auch ohne vorausgesetzte Behandlung einzelner Inhalte
+in Klasse 7 eingesetzt werden kann. Jede Sequenz beginnt mit einer
+Leitfrage und führt schrittweise vom konkreten Beispiel zum Fachbegriff
+und zur Anwendung.</p>
 <h2 id="lehrplanstruktur">Lehrplanstruktur</h2>
 <p>Der sächsische Lehrplan Informatik Oberschule 2022 sieht für Klasse 8
 zwei Pflichtlernbereiche vor:</p>
@@ -104,25 +114,55 @@ zwei Pflichtlernbereiche vor:</p>
 <li><strong>Algorithmen und Programme – 15 Ustd.</strong></li>
 <li><strong>Netzwerke in der Informatik – 10 Ustd.</strong></li>
 </ol>
-<p>Die vorhandene Unterrichtsfolge <strong>Objektorientierung →
-Algorithmen → Robot Karol</strong> bleibt bewusst erhalten. Sie bildet
-eine didaktische Progression innerhalb des ersten Pflichtlernbereichs:
-Begriffe wie Objekt, Klasse, Attribut, Attributwert und Methode werden
-zunächst systematisiert; darauf bauen algorithmische Grundstrukturen und
-schließlich die praktische Umsetzung mit Robot Karol auf.</p>
+<p>Die Unterrichtsfolge <strong>Objektorientierung → Algorithmen → Robot
+Karol</strong> bleibt bewusst erhalten. Sie bildet eine didaktische
+Progression innerhalb des ersten Pflichtlernbereichs: Objekt, Klasse,
+Attribut, Attributwert, Zustand und Methode werden voraussetzungsfrei
+aufgebaut; darauf folgen algorithmische Grundstrukturen und schließlich
+die praktische Umsetzung mit Robot Karol.</p>
+<h2 id="ordnerstruktur">Ordnerstruktur</h2>
+<ul>
+<li><code>00_Organisation</code> – organisatorische Unterlagen</li>
+<li><code>01_Objektorientierte_Modellierung</code> –
+voraussetzungsfreier Einstieg in Objekte, Klassen, Attribute, Zustände
+und Methoden</li>
+<li><code>02_Algorithmen</code> – Algorithmusbegriff,
+Kontrollstrukturen, Darstellungsformen und Testen</li>
+<li><code>03_Robot_Karol</code> – praktische Umsetzung, Bedingungen,
+Wiederholungen, Verschachtelung und eigene Anweisungen</li>
+<li><code>04_Netzwerke_in_der_Informatik</code> – zweiter
+Pflichtlernbereich</li>
+<li><code>05_Leistungskontrollen</code> – zentrale schriftliche
+Leistungskontrollen und Lösungen</li>
+<li><code>06_Wahlbereich_Steuern_und_Regeln</code> – Wahlbereich;
+derzeit README-Platzhalter bis zum vollständigen Ausbau</li>
+<li><code>07_Wahlbereich_Mobile_Endgeraete</code> – Wahlbereich; derzeit
+README-Platzhalter bis zum vollständigen Ausbau</li>
+<li><code>08_Wahlbereich_Computergrafik</code> – Wahlbereich; derzeit
+README-Platzhalter bis zum vollständigen Ausbau</li>
+<li><code>90_Zusatzmaterial_Scratch_aus_Klasse7</code> – optionales
+Zusatzmaterial</li>
+</ul>
+<p>Damit besitzt jeder reguläre Top-Level-Bereich eine eindeutige
+Nummer. README-only-Wahlbereiche sind bewusst als noch auszubauende
+Platzhalter gekennzeichnet und keine versehentlich leeren
+Unterrichtsordner.</p>
 <h2 id="geplanter-lernweg">Geplanter Lernweg</h2>
 <h3 id="lernbereich-1-algorithmen-und-programme">Lernbereich 1 –
 Algorithmen und Programme</h3>
 <ol type="1">
-<li>Objekte, Attribute und Attributwerte systematisieren</li>
-<li>Klassen als Baupläne gleichartiger Objekte</li>
-<li>Methoden und Zustandsänderungen</li>
-<li>Algorithmusbegriff und Eigenschaften</li>
-<li>Sequenz, Wiederholung und Verzweigung</li>
-<li>Algorithmen darstellen, testen und verbessern</li>
+<li>Konkrete Objekte und ihre Eigenschaften</li>
+<li>Attribute und Attributwerte</li>
+<li>Klassen als gemeinsame Beschreibung gleichartiger Objekte</li>
+<li>Zustände und Methoden</li>
+<li>Algorithmusbegriff und Qualitätsmerkmale</li>
+<li>Sequenz, Wiederholung, Verzweigung und Verschachtelung</li>
+<li>Algorithmen als Pseudocode und Struktogramm darstellen</li>
+<li>Testfälle, Fehlersuche und Debugging-Zyklus</li>
 <li>Robot Karol als didaktisch reduzierte Programmierumgebung</li>
-<li>Bedingungen, Wiederholungen und Sensoren praktisch anwenden</li>
-<li>Unterprogramme, Problemlöseprozess und Debugging</li>
+<li>Bedingungen und Sensorfragen praktisch anwenden</li>
+<li>Eigene Anweisungen definieren, aufrufen und wiederverwenden</li>
+<li>Probleme in Teilprobleme zerlegen und Lösungen strukturieren</li>
 <li>Projekt- und Transferaufgaben</li>
 <li>Grenzen der Berechenbarkeit exemplarisch thematisieren</li>
 <li>Bedeutung von Algorithmen im gesellschaftlichen Kontext
@@ -132,38 +172,48 @@ reflektieren</li>
 Netzwerke in der Informatik</h3>
 <ol type="1">
 <li>Bedeutung und Aufbau von Netzwerken</li>
-<li>LAN, WLAN, Intranet und Internet</li>
-<li>Client, Server, Router, Switch und Accesspoint</li>
+<li>LAN und WLAN begrifflich einführen und unterscheiden</li>
+<li>Client, Server, Router, Switch und Access Point mit ihren
+Aufgaben</li>
 <li>Endgeräte in ein einfaches Netzwerk einbinden</li>
-<li>IP-Adressen und DNS grundlegend einordnen</li>
+<li>IP-Adresse sowie DNS (Domain Name System) grundlegend einordnen</li>
 <li>Übertragungsmedien: Kupfer, Lichtwellenleiter und Funk</li>
-<li>Netzwerkprotokolle und Dienste: HTTP, FTP, Mail, WWW</li>
-<li>Datenwege untersuchen und grafisch nachvollziehen</li>
-<li>historische Kryptografie: Skytale,
-Freimaurer-/Substitutionsverfahren, Caesar</li>
-<li>Klartext, Geheimtext, Schlüssel und symmetrische Verschlüsselung;
-Bezug zur Gegenwart</li>
+<li>Netzwerkprotokolle zunächst ausschreiben und anhand ihrer Aufgaben
+erklären</li>
+<li>Netzwerkdienste von Programmen und Geräten unterscheiden</li>
+<li>Datenwege nachvollziehen und Fehler systematisch eingrenzen</li>
+<li>Kompetenzsicherung und Leistungskontrolle</li>
 </ol>
+<h2 id="optionale-vertiefung-kryptografie">Optionale Vertiefung:
+Kryptografie</h2>
+<p>Kryptografie wird als <strong>separate optionale Vertiefung</strong>
+geführt und ist nicht Voraussetzung für den regulären Netzwerkdurchgang.
+Die Zusatzmaterialien können – abhängig von Lerngruppe und verfügbarer
+Zeit – unter anderem behandeln:</p>
+<ul>
+<li>Grundbegriffe Klartext, Geheimtext, Schlüssel, Verschlüsselung und
+Entschlüsselung,</li>
+<li>Caesar als historisches Modell,</li>
+<li>symmetrische und asymmetrische Kryptografie,</li>
+<li>RSA mit didaktisch kleinen Beispielzahlen,</li>
+<li>Hashwerte und digitale Signaturen,</li>
+<li>HTTPS sowie SSL/TLS und die Kombination von Public-Key- und
+symmetrischer Kryptografie.</li>
+</ul>
 <h2 id="wahlbereiche">Wahlbereiche</h2>
 <ul>
 <li>Wahlbereich 1: Steuern und Regeln</li>
 <li>Wahlbereich 2: Mobile Endgeräte</li>
 <li>Wahlbereich 3: Computergrafik</li>
 </ul>
+<p>Die drei Wahlbereichsordner sind aktuell als README-Platzhalter
+vorhanden. Ihr vollständiger Lehrplanabgleich und Ausbau bleibt ein
+eigener Arbeitsschritt.</p>
 <h2 id="leistungsbewertung">Leistungsbewertung</h2>
-<p>Schriftliche Leistungskontrollen werden auf die beiden
-Pflichtlernbereiche verteilt. Praktische Karol- und Netzwerkaufgaben
-dienen zusätzlich dem Üben, Anwenden und Diagnostizieren. Die bisherige
-Konzentration der Leistungskontrollen ausschließlich auf
-Objektorientierung/Algorithmik/Karol wird im weiteren Abgleich
-überarbeitet, damit auch der Pflichtbereich Netzwerke angemessen
-berücksichtigt wird.</p>
-<h2 id="übergang-aus-klasse-7">Übergang aus Klasse 7</h2>
-<p>Klasse 7 führte Objekt, Attribut, Attributwert, Klasse und Methode
-grundlegend ein. Klasse 8 vertieft diese Begriffe und verbindet sie mit
-Algorithmen und Robot Karol. Die Netzwerksequenz erweitert den Blick vom
-einzelnen Informatiksystem auf vernetzte Systeme, Dienste und sichere
-Datenübertragung.</p>
+<p>Die zentralen schriftlichen Leistungskontrollen liegen unter
+<code>05_Leistungskontrollen</code>. Beide Pflichtlernbereiche werden
+berücksichtigt. Praktische Karol- und Netzwerkaufgaben dienen zusätzlich
+dem Üben, Anwenden und Diagnostizieren.</p>
 <h2 id="lehrplanquelle">Lehrplanquelle</h2>
 <p>Sächsisches Staatsministerium / Landesamt für Schule und Bildung:
 Lehrplan Oberschule Informatik, Neuerarbeitung 2022, Klassenstufe 8.
@@ -176,7 +226,8 @@ Ausfallstunden angepasst werden. Die Reihenfolge bleibt didaktisch
 verbindend: <strong>Objektorientierung → Algorithmen → Robot
 Karol</strong> bildet den ersten Pflichtlernbereich; anschließend folgt
 der zweite Pflichtlernbereich <strong>Netzwerke in der
-Informatik</strong>.</p>
+Informatik</strong>. Die Einstiege sind so angelegt, dass kein
+bestimmter Klasse-7-Vorlauf zwingend vorausgesetzt wird.</p>
 <h2 id="lernbereich-1-algorithmen-und-programme-15-ustd.">Lernbereich 1
 – Algorithmen und Programme (15 Ustd.)</h2>
 <table>
@@ -199,33 +250,35 @@ Informatik</strong>.</p>
 <td>1</td>
 <td>Objekte, Attribute, Attributwerte, Klassen</td>
 <td style="text-align: right;">2</td>
-<td>Begriffe sicher anwenden und Zustände beschreiben</td>
+<td>Begriffe voraussetzungsfrei aufbauen, sicher anwenden und Zustände
+beschreiben</td>
 </tr>
 <tr class="even">
 <td>2</td>
 <td>Methoden und Zustandsänderungen</td>
 <td style="text-align: right;">1</td>
-<td>Verhalten von Objekten erklären</td>
+<td>Verhalten von Objekten erklären; Definition und Aufruf
+unterscheiden</td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td>Algorithmusbegriff und Eigenschaften</td>
 <td style="text-align: right;">1</td>
-<td>Ausführbarkeit, Eindeutigkeit, Allgemeingültigkeit und Endlichkeit
-prüfen</td>
+<td>Eindeutigkeit, Ausführbarkeit, Endlichkeit und erwartbares Ergebnis
+in endlicher Zeit prüfen</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>Sequenz, Wiederholung, Verzweigung</td>
+<td>Sequenz, Wiederholung, Verzweigung und Verschachtelung</td>
 <td style="text-align: right;">2</td>
-<td>Grundstrukturen erkennen und darstellen</td>
+<td>Grundstrukturen erkennen, vergleichen und anwenden</td>
 </tr>
 <tr class="odd">
 <td>5</td>
 <td>Darstellungen und Testfälle</td>
 <td style="text-align: right;">1</td>
-<td>Umgangssprache, Programmcode, Flussdiagramm/Struktogramm vergleichen
-und testen</td>
+<td>Pseudocode und Struktogramm lesen/erstellen sowie konkrete Testfälle
+formulieren</td>
 </tr>
 <tr class="even">
 <td>6</td>
@@ -235,21 +288,24 @@ und testen</td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td>Wiederholungen, Bedingungen und Sensoren</td>
+<td>Wiederholungen, Bedingungen und Sensorfragen</td>
 <td style="text-align: right;">2</td>
-<td>situationsabhängige Programme entwickeln</td>
+<td>feste/bedingte Wiederholungen und Bedingungen praktisch
+anwenden</td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>Unterprogramme und Problemlöseprozess</td>
+<td>Eigene Anweisungen und Problemlöseprozess</td>
 <td style="text-align: right;">1</td>
-<td>Probleme zerlegen und Lösungen strukturieren</td>
+<td>Teilprobleme bilden; eigene Anweisungen definieren, aufrufen und
+wiederverwenden</td>
 </tr>
 <tr class="odd">
 <td>9</td>
-<td>Karol-Projekt: Planung, Test und Debugging</td>
+<td>Karol-Projekt: Muster programmatisch erzeugen</td>
 <td style="text-align: right;">2</td>
-<td>komplexeren Ablauf planen, implementieren und verbessern</td>
+<td>verschachtelte Kontrollstrukturen, eigene Anweisungen, Testen und
+Debugging anwenden</td>
 </tr>
 <tr class="even">
 <td>10</td>
@@ -287,57 +343,62 @@ und testen</td>
 <td>12</td>
 <td>Bedeutung und Struktur von Netzwerken</td>
 <td style="text-align: right;">1</td>
-<td>LAN, WLAN, Intranet und Internet unterscheiden</td>
+<td>Netzwerkbegriff anhand konkreter Alltagssituationen erklären</td>
 </tr>
 <tr class="even">
 <td>13</td>
-<td>Komponenten und Netzwerkarchitektur</td>
+<td>LAN, WLAN und Netzwerkkomponenten</td>
 <td style="text-align: right;">1</td>
-<td>Client, Server, Router, Switch und Accesspoint zuordnen</td>
+<td>Abkürzungen ausschreiben; Client, Server, Router, Switch und Access
+Point zuordnen</td>
 </tr>
 <tr class="odd">
 <td>14</td>
 <td>Einfaches Netzwerk modellieren</td>
 <td style="text-align: right;">1</td>
-<td>Endgeräte und Datenwege in einem einfachen Netzwerk darstellen</td>
+<td>Endgeräte und mögliche Datenwege in einem einfachen Netzwerk
+darstellen</td>
 </tr>
 <tr class="even">
 <td>15</td>
-<td>IP-Adressen und DNS</td>
+<td>IP-Adresse und DNS</td>
 <td style="text-align: right;">1</td>
-<td>Adressierung und Namensauflösung grundlegend erklären</td>
+<td>Internet Protocol sowie Domain Name System grundlegend erklären</td>
 </tr>
 <tr class="odd">
 <td>16</td>
 <td>Übertragungsmedien und Datenwege</td>
 <td style="text-align: right;">1</td>
-<td>Kupfer, Lichtwellenleiter und Funk vergleichen</td>
+<td>Kupfer, Lichtwellenleiter und Funk nach Zweck und Eigenschaften
+vergleichen</td>
 </tr>
 <tr class="even">
 <td>17</td>
-<td>Netzwerkprotokolle und Dienste</td>
+<td>Netzwerkprotokolle</td>
 <td style="text-align: right;">1</td>
-<td>HTTP, FTP, Mail, WWW und Dienste zuordnen</td>
+<td>Protokollbegriff aufbauen; wichtige Abkürzungen ausschreiben und
+Aufgaben zuordnen</td>
 </tr>
 <tr class="odd">
 <td>18</td>
-<td>Netzwerk untersuchen / simulieren</td>
+<td>Netzwerkdienste</td>
 <td style="text-align: right;">1</td>
-<td>Datenwege nachvollziehen und Fehlerquellen begründet prüfen</td>
+<td>Dienste anhand konkreter Alltagshandlungen erklären und von
+Programmen/Geräten unterscheiden</td>
 </tr>
 <tr class="even">
 <td>19</td>
-<td>Historische Kryptografie</td>
+<td>Netzwerk praktisch untersuchen</td>
 <td style="text-align: right;">1</td>
-<td>Klartext, Geheimtext, Schlüssel und Caesar/Substitution
-anwenden</td>
+<td>Kabel/WLAN, lokales Netz, Namensauflösung und Dienst als
+Fehlerbereiche systematisch prüfen</td>
 </tr>
 <tr class="odd">
 <td>20</td>
-<td>Verschlüsselung in der Gegenwart</td>
+<td>Vertiefung und Transfer</td>
 <td style="text-align: right;">1</td>
-<td>symmetrische Verfahren einordnen und Passwortschutz/Einwegfunktionen
-diskutieren</td>
+<td>Datenwege, Komponenten, Protokolle und Dienste an Fällen
+zusammenführen</td>
 </tr>
 <tr class="even">
 <td>21</td>
@@ -347,12 +408,20 @@ diskutieren</td>
 </tr>
 </tbody>
 </table>
+<h2 id="optionale-vertiefung-kryptografie-1">Optionale Vertiefung –
+Kryptografie</h2>
+<p>Kryptografie wird nicht als notwendiger Bestandteil des
+10-Stunden-Netzwerkdurchgangs eingeplant, sondern als separat
+einsetzbare Zusatzsequenz. Je nach Lerngruppe und Zeit können Caesar,
+symmetrische/asymmetrische Kryptografie, RSA, Hashwerte, Signaturen
+sowie HTTPS/TLS behandelt werden.</p>
 <h2 id="wahlbereiche-und-zeitreserve">Wahlbereiche und Zeitreserve</h2>
 <p>Weitere Einzelstunden können genutzt werden für:</p>
 <ul>
 <li>Wahlbereich <strong>Steuern und Regeln</strong>,</li>
 <li>Wahlbereich <strong>Mobile Endgeräte</strong>,</li>
 <li>Wahlbereich <strong>Computergrafik</strong>,</li>
+<li>optionale Kryptografie-Vertiefung,</li>
 <li>zusätzliche Karol-Welten und Differenzierung,</li>
 <li>Wiederholung vor Leistungskontrollen,</li>
 <li>individuelle Förderaufgaben,</li>
@@ -365,6 +434,28 @@ Lernbereich 1 „Algorithmen und Programme“ (15 Ustd.) und Lernbereich 2
 https://www.schulportal.sachsen.de/lplandb/lehrplan/514</p>
 <div class="page-break"></div>
 <h1 id="meilensteine-klasse-8">Meilensteine – Klasse 8</h1>
+<h2 id="struktur-und-konsistenz">Struktur und Konsistenz</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" checked></input>Top-Level-Ordner
+eindeutig nummeriert: <code>00</code> bis <code>08</code>, anschließend
+<code>90</code> für Zusatzmaterial.</label></li>
+<li><label><input type="checkbox" checked></input>Pflichtlernbereiche
+eindeutig als <code>01</code> bis <code>04</code> geführt.</label></li>
+<li><label><input type="checkbox" checked></input>Zentrale
+Leistungskontrollen unter <code>05_Leistungskontrollen</code>
+zusammengeführt.</label></li>
+<li><label><input type="checkbox" checked></input>Wahlbereiche eindeutig
+unter <code>06</code>, <code>07</code> und <code>08</code>
+eingeordnet.</label></li>
+<li><label><input type="checkbox" checked></input>Überflüssigen
+<code>.gitkeep</code> im bereits befüllten Netzwerkbereich
+entfernt.</label></li>
+<li><label><input type="checkbox" checked></input>Build-Packaging und
+Netzwerk-Querverweise an die neue Nummerierung angepasst.</label></li>
+<li><label><input type="checkbox" checked></input>README-only-Wahlbereiche
+ausdrücklich als noch auszubauende Platzhalter
+gekennzeichnet.</label></li>
+</ul>
 <h2 id="curriculare-struktur">Curriculare Struktur</h2>
 <ul class="task-list">
 <li><label><input type="checkbox" checked></input>Pflichtlernbereich 1 als
@@ -373,12 +464,18 @@ eingeordnet.</label></li>
 <li><label><input type="checkbox" checked></input>Didaktische Progression
 <strong>Objektorientierung → Algorithmen → Robot Karol</strong>
 ausdrücklich erhalten.</label></li>
+<li><label><input type="checkbox" checked></input>Objektorientierung so
+angelegt, dass kein bestimmter Klasse-7-Vorlauf zwingend vorausgesetzt
+wird.</label></li>
 <li><label><input type="checkbox" checked></input>Robot Karol als
 praktische Umsetzung algorithmischer Grundstrukturen
 verankert.</label></li>
 <li><label><input type="checkbox" checked></input>Pflichtlernbereich 2
 <strong>Netzwerke in der Informatik (10 Ustd.)</strong>
 ergänzt.</label></li>
+<li><label><input type="checkbox" checked></input>Kryptografie als separat
+einsetzbare optionale Vertiefung vom regulären Netzwerkdurchgang
+getrennt.</label></li>
 <li><label><input type="checkbox" checked></input>Jahresplan auf beide
 Pflichtlernbereiche angepasst.</label></li>
 <li><label><input type="checkbox" checked></input>Bewertungsplan so
@@ -388,12 +485,19 @@ angepasst, dass beide Pflichtlernbereiche geprüft werden.</label></li>
 Algorithmen und Programme</h2>
 <ul class="task-list">
 <li><label><input type="checkbox" checked></input>Objekt, Klasse, Attribut,
-Attributwert und Methode als vorbereitende Modellierungsbegriffe
-vorhanden.</label></li>
+Attributwert, Zustand und Methode als vorbereitende
+Modellierungsbegriffe vorhanden.</label></li>
 <li><label><input type="checkbox" checked></input>Algorithmusbegriff und
 Grundstrukturen vorhanden.</label></li>
+<li><label><input type="checkbox" checked></input>Struktogramm,
+Verschachtelung, konkrete Testfälle und Debugging als
+Darstellungs-/Arbeitsformen in den Präsentationsplänen
+nachgezogen.</label></li>
 <li><label><input type="checkbox" checked></input>Robot Karol als
 didaktisch reduzierte Programmierumgebung vorhanden.</label></li>
+<li><label><input type="checkbox" checked></input>Definition, Aufruf und
+Wiederverwendbarkeit eigener Anweisungen in den Präsentationsplänen
+konkretisiert.</label></li>
 <li><label><input type="checkbox"></input>Bestehende Arbeitshefte und
 Lehrerband vollständig gegen die Lehrplanpunkte <strong>Eigenschaften
 von Algorithmen</strong>, <strong>Umgang mit Fehlermeldungen</strong>,
@@ -404,8 +508,11 @@ Algorithmen</strong> spiegeln.</label></li>
 Lösungen und Lernkontrollen zu LB 1 auf denselben Stand
 synchronisieren.</label></li>
 <li><label><input type="checkbox"></input>Bestehende PPTX visuell prüfen und
-um ausführliche Lehrerbemerkungen, Grafiken und Quellenangaben
-ergänzen.</label></li>
+um ausführliche Lehrerbemerkungen, Grafiken und Quellenangaben ergänzen
+bzw. die geprüften PPTX einchecken.</label></li>
+<li><label><input type="checkbox"></input>Verschachtelung und konkrete
+Robot-Karol-Code-/Struktogramm-Aufgaben in Arbeitsblatt und Lösung
+synchronisieren.</label></li>
 </ul>
 <h2 id="lernbereich-2-netzwerke-in-der-informatik-1">Lernbereich 2 –
 Netzwerke in der Informatik</h2>
@@ -420,14 +527,14 @@ didaktischen Hinweisen angelegt.</label></li>
 Fehlerfälle angelegt.</label></li>
 <li><label><input type="checkbox" checked></input>Lösungen
 angelegt.</label></li>
-<li><label><input type="checkbox" checked></input>Präsentations-MD
-angelegt.</label></li>
+<li><label><input type="checkbox" checked></input>Präsentations-MD angelegt
+und Netzwerk/Kryptografie getrennt.</label></li>
 <li><label><input type="checkbox" checked></input>Quellen
 dokumentiert.</label></li>
 <li><label><input type="checkbox" checked></input>LK 4 auf Netzwerke
 umgestellt und Lösung ergänzt.</label></li>
 <li><label><input type="checkbox"></input>Präsentations-PPTX aus dem MD
-erstellen und visuell prüfen.</label></li>
+erstellen/einchecken und visuell prüfen.</label></li>
 <li><label><input type="checkbox"></input>PPTX mit ausführlichen
 Lehrerbemerkungen, eigenen Grafiken und Quellenhinweisen
 versehen.</label></li>
@@ -435,14 +542,35 @@ versehen.</label></li>
 Sichtprüfung auf Aufgabenmenge und 45-Minuten-Taktung
 feinjustieren.</label></li>
 </ul>
+<h2 id="optionale-vertiefung-kryptografie-2">Optionale Vertiefung –
+Kryptografie</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" checked></input>Eigene Präsentations-MD
+als Zusatz angelegt.</label></li>
+<li><label><input type="checkbox" checked></input>Symmetrische und
+asymmetrische Kryptografie gegenübergestellt.</label></li>
+<li><label><input type="checkbox" checked></input>RSA-Rechenbeispiel sowie
+HTTPS/TLS als moderne Einordnung vorgesehen.</label></li>
+<li><label><input type="checkbox"></input>Zusatz-PPTX einchecken und visuell
+prüfen.</label></li>
+<li><label><input type="checkbox"></input>Optionales Schüler-/Arbeitsmaterial
+abhängig von gewünschter Vertiefung ergänzen.</label></li>
+</ul>
 <h2 id="wahlbereiche-1">Wahlbereiche</h2>
+<p>Die Ordner <code>06_Wahlbereich_Steuern_und_Regeln</code>,
+<code>07_Wahlbereich_Mobile_Endgeraete</code> und
+<code>08_Wahlbereich_Computergrafik</code> sind derzeit bewusst nur als
+README-Platzhalter vorhanden.</p>
 <ul class="task-list">
 <li><label><input type="checkbox"></input>Wahlbereich <strong>Steuern und
-Regeln</strong> gegen den Lehrplan prüfen.</label></li>
+Regeln</strong> gegen den Lehrplan prüfen und vollständig
+ausbauen.</label></li>
 <li><label><input type="checkbox"></input>Wahlbereich <strong>Mobile
-Endgeräte</strong> gegen den Lehrplan prüfen.</label></li>
+Endgeräte</strong> gegen den Lehrplan prüfen und vollständig
+ausbauen.</label></li>
 <li><label><input type="checkbox"></input>Wahlbereich
-<strong>Computergrafik</strong> gegen den Lehrplan prüfen.</label></li>
+<strong>Computergrafik</strong> gegen den Lehrplan prüfen und
+vollständig ausbauen.</label></li>
 <li><label><input type="checkbox"></input>Präsentationen der Wahlbereiche auf
 Vollständigkeit, Lehrerhinweise, Grafiken und Quellen
 prüfen.</label></li>
