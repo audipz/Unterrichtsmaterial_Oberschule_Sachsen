@@ -14,7 +14,6 @@ Die Materialien orientieren sich am sächsischen Lehrplan Informatik Oberschule 
 ## Geplanter Lernweg
 
 ### Lernbereich 1 – Webbasierte Anwendungen
-
 - lokale und webbasierte Anwendungen vergleichen
 - Client, Server und Netzwerkprotokolle wiederholen und anwenden
 - einfache webbasierte Medien erstellen
@@ -26,7 +25,6 @@ Die Materialien orientieren sich am sächsischen Lehrplan Informatik Oberschule 
 - Grundidee asymmetrischer Verschlüsselung mit öffentlichem und privatem Schlüssel
 
 ### Lernbereich 2 – Komplexes Informatikprojekt
-
 - Problem analysieren
 - Projektziel und Teilaufgaben festlegen
 - Schnittstellen zwischen Gruppen definieren
@@ -36,20 +34,33 @@ Die Materialien orientieren sich am sächsischen Lehrplan Informatik Oberschule 
 - Projektverlauf dokumentieren
 - Ergebnis präsentieren und reflektieren
 
+## Wahlbereiche
+
+### 03 – Sicherheit in der Informationsverarbeitung
+Digitaler Fußabdruck, Datensammlungen, Cookies/Tracking, Berechtigungen, Datensparsamkeit und Kontoschutz.
+
+### 04 – Mobile Endgeräte
+Mobile Bezahldienste: Beteiligte, Datenfluss, Authentisierung, Autorisierung, Schutzmechanismen, Verlustszenario und begründete Sicherheitsbewertung.
+
+### 05 – Computergrafik
+Historische Entwicklung, Auflösung, Farbtiefe, Bildrate, Rohdatenmengen, Rechenleistung, Speicher, Kompression und Streaming.
+
 ## Leistungsbewertung
 
-Wie in den anderen Klassenstufen werden schriftliche Leistungskontrollen bereitgestellt. Projekt- und Übungsphasen können zusätzlich diagnostisch genutzt werden.
+Wie in den anderen Klassenstufen werden schriftliche Leistungskontrollen für die verbindlichen Lernbereiche bereitgestellt. Projekt- und Übungsphasen können zusätzlich diagnostisch genutzt werden. Wahlbereiche benötigen nicht zwingend eigene schriftliche Lernkontrollen.
 
 ## Werkteilstruktur
 
 ```text
+00_Organisation/
 01_Webbasierte_Anwendungen/
 02_Komplexes_Informatikprojekt/
 03_Wahlbereich_Sicherheit/
-00_Organisation/
+04_Wahlbereich_Mobile_Endgeraete/
+05_Wahlbereich_Computergrafik/
 ```
 
-Vollständige Lernbereiche verwenden nach Möglichkeit:
+Vollständig ausgearbeitete Unterrichtsbereiche verwenden je nach Bedarf:
 
 ```text
 01_Arbeitsheft/
@@ -57,8 +68,11 @@ Vollständige Lernbereiche verwenden nach Möglichkeit:
 03_Material/
 04_Loesungen/
 05_Praesentationen/
+    md/
 06_Dateien/
 07_Quellen/
 08_Bilder/
 09_Lernkontrollen/
 ```
+
+Die Markdown-Quellen zu Präsentationen liegen einheitlich in `05_Praesentationen/md/`. Fertige PowerPoint-Dateien liegen direkt in `05_Praesentationen/`.
