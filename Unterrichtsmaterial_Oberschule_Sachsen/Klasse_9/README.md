@@ -7,19 +7,20 @@ Die Materialien orientieren sich am sächsischen Lehrplan Informatik Oberschule 
 - **Lernbereich 1: Informationen und Daten – 13 Ustd.**
 - **Lernbereich 2: Komplexaufgabe zur Algorithmierung – 12 Ustd.**
 
-Ergänzend stehen Wahlbereiche zur Verfügung.
+Ergänzend stehen drei Wahlbereiche zur Verfügung.
 
 ```text
 00_Organisation/
 01_Informationen_und_Daten/
 02_Komplexaufgabe_zur_Algorithmierung/
 03_Wahlbereich_Informatik_und_Automatisierung/
+04_Wahlbereich_Mobile_Endgeraete/
+05_Wahlbereich_Computergrafik/
 ```
 
 ## Lernbereich 1 – Informationen und Daten
 
 Schwerpunkte:
-
 - große Datensammlungen und ihre Nutzung im Alltag
 - Datenbanksystem als Einheit von Datenbankmanagementsystem und Datenbasis
 - Tabelle, Datensatz und Datenfeld
@@ -31,40 +32,58 @@ Schwerpunkte:
 - Chancen und Risiken automatisierter Datenverarbeitung
 - Datenschutz, Persönlichkeitsrechte und gesellschaftlicher Umgang mit Daten
 
-**Hinweis:** Primär- und Fremdschlüssel können zur Vertiefung verwendet werden, sind im Lehrplan 2022 für Klasse 9 jedoch nicht als verbindliche Begriffe ausgewiesen.
+**Vertiefung:** Primär- und Fremdschlüssel können ergänzend behandelt werden. Lernkontrollen zu diesen Begriffen sind ausdrücklich als optionale Vertiefung gekennzeichnet und dürfen nur nach entsprechender Behandlung eingesetzt werden.
 
 ## Lernbereich 2 – Komplexaufgabe zur Algorithmierung
 
 Schwerpunkte:
-
 - Definition und Phasen eines Projektes
 - Planung des Projektablaufs
 - Teambildung und Zusammenarbeit
-- Problemanalyse
-- Lösungsentwurf
+- Problemanalyse und Lösungsentwurf
 - Umsetzung
-- Test und Verbesserung
-- Dokumentation
-- Präsentation
+- Test und iterative Verbesserung
+- Dokumentation und Präsentation
 - Qualitätskreislauf
 - Einsatz von Kommunikations- und Kooperationstools
 
-Die Programmiersprache bzw. Programmierumgebung ist ein Werkzeug. Im Mittelpunkt steht das systematische Lösen einer Problemstellung im Team.
+Algorithmische Grundlagen aus Klasse 8 werden nach Bedarf aktiviert. Scratch oder Python können als Werkzeuge genutzt werden; im Mittelpunkt steht das systematische Lösen einer Problemstellung im Team.
 
-## Wahlbereich – Informatik und Automatisierung
+## Wahlbereich 03 – Informatik und Automatisierung
 
 Schwerpunkte:
-
 - Möglichkeiten und Grenzen automatisierter Prozesse
+- Sensor – Verarbeitung – Aktor
 - Bots und soziale Netzwerke
-- Smarthome und Sprachassistenten
+- Smart Home und Sprachassistenten
 - Drohnen und technische Steuerungen
+- Fehler, Kontrolle und Verantwortung
 - Datenschutz und Datensicherheit
-- politische Meinungsbildung und Beeinflussung
+- automatisierte Auswahl von Inhalten und gesellschaftliche Auswirkungen
+
+## Wahlbereich 04 – Mobile Endgeräte
+
+Schwerpunkte:
+- Daten und App-Berechtigungen
+- Datenschutz und Datensicherheit
+- Cookies/ähnliche Speicherung und personalisierte Werbung
+- Persönlichkeits- und Urheberrechte beim Teilen von Inhalten
+- Netiquette und verantwortliche Kommunikation
+- begründeter Mobile-Check für Apps und Dienste
+
+## Wahlbereich 05 – Computergrafik
+
+Schwerpunkte:
+- Bearbeitung und manipulative Verwendung digitaler Bilder
+- Ausschnitt, Helligkeit/Farbe, Retusche, Montage und generative Veränderung
+- Authentizität anhand von Quelle und Kontext prüfen
+- Zeitpunkt/Ort und unabhängige weitere Quellen vergleichen
+- Bild-/Rückwärtssuche als mögliche Prüfstrategie
+- Wirkung irreführender Bilder auf Wahrnehmung und Meinungsbildung
 
 ## Einheitliche Werkteilstruktur
 
-Vollständig ausgearbeitete Lernbereiche verwenden nach Möglichkeit:
+Die ausgearbeiteten Bereiche verwenden:
 
 ```text
 01_Arbeitsheft/
@@ -78,7 +97,9 @@ Vollständig ausgearbeitete Lernbereiche verwenden nach Möglichkeit:
 09_Lernkontrollen/
 ```
 
-Technische JSON-Dateien zu Lernkontrollen liegen unter `09_Lernkontrollen/json/`.
+Verzeichnisse werden nicht als leere Platzhalter geführt. Wenn kein externes Arbeitsmedium erforderlich ist, dokumentiert eine README den Zweck und die Abgrenzung des Werkteils.
+
+Technische JSON-Dateien zu Lernkontrollen können unter `09_Lernkontrollen/json/` liegen.
 
 ## Arbeitsprinzip
 
@@ -104,8 +125,8 @@ reflektieren
 
 ## Leistungsbewertung
 
-Schriftliche Leistungskontrollen sollen den tatsächlich behandelten Stoff prüfen. Die Komplexaufgabe kann zusätzlich zur Diagnose, Dokumentation und Reflexion genutzt werden; die konkrete Benotungsform richtet sich nach der schulischen Festlegung.
+Schriftliche Lernkontrollen prüfen nur tatsächlich behandelte Inhalte. Als Vertiefung ausgewiesene Fachbegriffe dürfen nicht ohne vorherige Behandlung zum verbindlichen Prüfstoff werden. Die konkrete Benotungsform richtet sich nach den schulischen Festlegungen.
 
 ## Status
 
-Klasse 9 ist als ausgearbeitete Klassenstufe vorhanden. Diese Übersicht wurde nach der Fertigstellung von Klasse 7 und 8 auf den aktuellen Lehrplanbezug und die gemeinsame Werkstruktur abgestimmt.
+Die Markdown-/Materialstruktur von Klasse 9 ist über die beiden Pflichtlernbereiche und alle drei Wahlbereiche vereinheitlicht. Präsentationsquellen liegen als Markdown vor; die Erstellung und visuelle Prüfung der PowerPoint-Dateien erfolgt in einem getrennten Arbeitsschritt.
