@@ -2,209 +2,119 @@
 
 ## Zweck und Einsatz
 
-Diese Datei ist die inhaltliche Masterquelle für die PowerPoint-Präsentation zum Lernbereich. Die Präsentation begleitet mehrere Unterrichtsstunden und ist nicht als Vortrag aller Folien in einer Einzelstunde gedacht.
+Diese Datei ist die inhaltliche Masterquelle für die PowerPoint-Präsentation. Die Präsentation begleitet mehrere Unterrichtsstunden und ist **nicht** als Vortrag aller Folien in einer Einzelstunde gedacht.
 
-Roter Faden: **Webanwendung als Gesamtsystem verstehen → Architektur → Cloud → Verantwortung → IT-Security → Datenschutz → KI → verantwortungsvoller Betrieb.**
+Roter Faden: **Webanwendung als Gesamtsystem → Architektur → Kommunikation → Cloud → Verantwortung → IT-Security → Datenschutz → KI → verantwortungsvoller Betrieb.**
 
 Durchgängiges Beispiel ist eine Webanwendung für ein **Schülerfestival**: Schülerinnen und Schüler melden sich an, wählen Workshops und erhalten einen persönlichen Zeitplan.
 
-## Fachliche Leitgedanken
+## Prinzip für die Lehrerhinweise
 
-- Eine Webanwendung ist nicht nur das Frontend im Browser, sondern kann aus Frontend, Backend, Datenhaltung und weiteren Diensten bestehen.
-- „Webbasiert“ legt nicht fest, wo die gesamte Programmlogik ausgeführt wird.
-- Client/Server und 3-Tier beschreiben unterschiedliche Aspekte eines Systems.
-- Ein Tier ist nicht automatisch ein einzelner Rechner oder Server.
-- Cloud ist keine zusätzliche Schicht des 3-Tier-Modells, sondern eine Form der Bereitstellung von IT-Ressourcen und Diensten.
-- IT-Sicherheit und Datenschutz überschneiden sich, sind aber nicht dasselbe.
-- Eine technisch funktionierende Anwendung ist nicht automatisch sicher, datenschutzgerecht oder verantwortungsvoll betrieben.
-- KI kann sowohl Angreifer als auch Verteidiger unterstützen. KI-generierte Ergebnisse müssen geprüft werden.
+Die Präsentation setzt bei Lehrkräften keine berufspraktische Erfahrung mit Webentwicklung, Cloud oder IT-Security voraus. Fachbegriffe werden bei der ersten Verwendung erklärt. Die Lehrerhinweise enthalten Hintergrundwissen, typische Fehlvorstellungen und Grenzen vereinfachter Modelle. Schüler müssen nicht alle Vertiefungsbegriffe auswendig lernen.
 
 ---
 
 ## Folie 1 – Einstieg: Wo läuft eine Webanwendung?
 
-**Leitfrage:**
+**Leitfrage:** Du öffnest eine Webanwendung im Browser. Wo läuft sie eigentlich?
 
-> Du öffnest eine Webanwendung im Browser. Wo läuft sie eigentlich?
+Mögliche Antworten sammeln: Browser, eigener Rechner, Server, Rechenzentrum, Cloud.
 
-Zunächst nur mögliche Antworten zeigen bzw. sammeln:
-
-- im Browser?
-- auf meinem Rechner?
-- auf einem Server?
-- in einem Rechenzentrum?
-- in der Cloud?
-
-**Didaktik:** Noch nicht auflösen. Schüler begründen Vermutungen.
-
-**Lehrerhinweis:** Mehrere Antworten können gleichzeitig richtig sein. Genau diese Mehrdeutigkeit eröffnet die Architekturbetrachtung.
+**Lehrerhinweis:** Mehrere Antworten können gleichzeitig richtig sein. Eine Webanwendung kann Code auf dem Client und auf Servern ausführen. „Webanwendung“ beschreibt daher nicht einfach „ein Programm auf einem Server“.
 
 ---
 
 ## Folie 2 – Was gehört zur Webanwendung?
 
-Beispiel Schülerfestival:
+Schülerfestival: anmelden → Workshops ansehen → wählen → Zeitplan erhalten.
 
-1. anmelden
-2. Workshops ansehen
-3. Workshop wählen
-4. persönlichen Zeitplan erhalten
+Nach Klick: Benutzeroberfläche · Programmlogik · Daten · Benutzer-/Rechteverwaltung · Netzwerkkommunikation · ggf. externe Dienste.
 
-**Frage:** Welche Teile eines IT-Systems brauchen wir dafür?
+**Merksatz:** Eine Webanwendung ist ein Anwendungssystem – nicht nur die sichtbare Webseite.
 
-Nach Klick einzeln einblenden:
-
-- Benutzeroberfläche
-- Programmlogik
-- Daten
-- Benutzer- und Rechteverwaltung
-- Netzwerkkommunikation
-- ggf. externe Dienste
-
-**Merksatz:**
-
-> Eine Webanwendung ist ein Anwendungssystem – nicht nur die sichtbare Webseite.
+**Lehrerhinweis:** Frontend bezeichnet den benutzernahen Teil, Backend servernahe Dienste und Anwendungslogik. Datenhaltung kann Datenbanken, Dateien oder Objektspeicher umfassen. Reale Systeme können weitere Dienste enthalten.
 
 ---
 
 ## Folie 3 – Das 3-Tier-Modell
 
 ```text
-Presentation Tier
-Benutzerschnittstelle
-        ↓
-Application Tier
-Anwendungslogik
-        ↓
-Data Tier
-Datenhaltung
+Presentation Tier → Application Tier → Data Tier
+Benutzerschnittstelle  Anwendungslogik  Datenhaltung
 ```
 
-Beispiele:
-
-- Presentation Tier: Browseroberfläche, HTML, CSS, JavaScript
-- Application Tier: Backend, API, Geschäfts-/Anwendungslogik
-- Data Tier: relationale Datenbank, andere Datenbanken, Datei-/Objektspeicher
-
-**Lehrerhinweis:** Ein Tier ist eine logische bzw. Bereitstellungsebene. Drei Tiers bedeuten nicht zwingend drei physische Rechner. Mehrere Tiers können auf einem System laufen oder ein Tier kann auf viele Systeme verteilt sein.
+**Lehrerhinweis:** Ein *Tier* ist hier eine Architektur-/Bereitstellungsebene. Drei Tiers bedeuten nicht zwingend drei physische Rechner. Mehrere Tiers können auf einem System laufen; ein Tier kann auf viele Systeme verteilt sein. Das Modell hilft, Verantwortlichkeiten zu trennen.
 
 ---
 
 ## Folie 4 – Client/Server ist nicht dasselbe wie 3-Tier
 
-**Client/Server:** Wer kommuniziert mit wem und wer fordert einen Dienst an?
+Client/Server: Wer fordert einen Dienst an und wer stellt ihn bereit?  
+3-Tier: Wie sind Verantwortlichkeiten der Anwendung strukturiert?
 
-**3-Tier:** Wie werden Verantwortlichkeiten einer Anwendung strukturiert?
-
-**Frage:** Muss das Presentation Tier vollständig auf dem Client laufen?
-
-Antwort erst nach Diskussion: **Nein.**
-
-**Lehrerhinweis:** Die Begriffe Frontend = Client und Backend = Server sind als grobes Einstiegsmodell nützlich, aber nicht allgemeingültig.
+**Lehrerhinweis:** „Frontend = Client“ und „Backend = Server“ ist als Einstieg nützlich, aber nicht allgemeingültig. Auch Teile der Darstellung können serverseitig entstehen.
 
 ---
 
-## Folie 5 – Beispiel: clientseitige Webanwendung
+## Folie 5 – Clientseitige Webanwendung: Angular-SPA
 
-Beispiel Angular-SPA:
+Webserver liefert HTML/CSS/JavaScript → Browser führt Frontend-Code aus → API → Backend → Datenhaltung.
 
-```text
-Webserver
-  │
-  ├── HTML
-  ├── CSS
-  └── JavaScript
-        │ Download
-        ▼
-      Browser
-        │
-        │ API-Anfragen
-        ▼
-      Backend
-        │
-        ▼
-    Datenhaltung
-```
-
-**Kernaussage:** Ein großer Teil des Frontends und seiner Logik wird vom Server bereitgestellt und anschließend lokal im Browser ausgeführt.
-
-**Lehrerhinweis:** Angular dient als konkretes Beispiel, nicht als verpflichtendes Frameworkwissen.
+**Lehrerhinweis:** SPA = *Single Page Application*. Angular ist nur ein Beispiel. Die Anwendung wird gehostet und ausgeliefert; danach läuft ein großer Teil des Frontends lokal im Browser. Das Backend bleibt trotzdem Teil der Webanwendung.
 
 ---
 
-## Folie 6 – Beispiel: serverseitiges Rendering
+## Folie 6 – Serverseitiges Rendering: Beispiel PHP
 
-Beispiel klassische PHP-Anwendung:
+Browser → Anfrage → Webserver/PHP → Logik/Datenzugriff → erzeugtes HTML → Browser.
 
-```text
-Browser
-   │ Anfrage
-   ▼
-Webserver / PHP
-   │
-   ├── Anwendungslogik
-   ├── ggf. Datenbankzugriff
-   │
-   ▼
-erzeugtes HTML
-   │
-   ▼
-Browser
-```
-
-**Kernaussage:** Der Server kann HTML dynamisch erzeugen. JavaScript kann trotzdem zusätzlich clientseitig eingesetzt werden.
+**Lehrerhinweis:** Beim serverseitigen Rendering erzeugt der Server HTML für die Antwort. JavaScript kann zusätzlich im Browser laufen. PHP ist ein anschauliches Beispiel, nicht die einzige Technologie.
 
 ---
 
 ## Folie 7 – Moderne Anwendungen sind oft Mischformen
 
-Client und Server können jeweils Teile der Verarbeitung übernehmen.
+**Leitfrage:** Wer erledigt welche Arbeit – und warum?
 
-**Leitfrage:**
+Kriterien: Datenzugriff · Sicherheit · Reaktionsgeschwindigkeit · Rechenaufwand · Offline-Fähigkeit · Wartbarkeit.
 
-> Wer erledigt welche Arbeit – und warum?
-
-Mögliche Kriterien:
-
-- Rechenaufwand
-- Datenzugriff
-- Sicherheit
-- Reaktionsgeschwindigkeit
-- Offline-Fähigkeit
-- Wartbarkeit
-
-**Merksatz:**
-
-> „Webanwendung“ sagt nicht automatisch, wo ihre gesamte Programmlogik ausgeführt wird.
+**Lehrerhinweis:** Moderne Frameworks kombinieren häufig client- und serverseitige Verarbeitung. Die Folie soll bewusst eine Schwarz-Weiß-Einteilung verhindern.
 
 ---
 
-## Folie 8 – Wie kommunizieren die Teile?
-
-Vereinfachtes Kommunikationsmodell:
+## Folie 8 – HTTP: Request und Response
 
 ```text
-Browser / Client ↔ Netzwerk ↔ Webserver / API ↔ weitere Dienste
+Client --Request--> Server
+Client <--Response-- Server
 ```
 
-Begriffe:
+Begriffe: HTTP/HTTPS · Request · Response · API.
 
-- Request / Anfrage
-- Response / Antwort
-- HTTP / HTTPS
-- API als definierte Schnittstelle
-
-**Lehrerhinweis:** Protokolle als gemeinsame Regeln der Kommunikation wiederholen. HTTPS nicht mit „Website ist vertrauenswürdig“ gleichsetzen; es schützt insbesondere die Übertragung und bindet sie an eine authentisierte Gegenstelle über Zertifikate.
+**Lehrerhinweis:** HTTP ist ein Anwendungsprotokoll für den Austausch von Nachrichten. Eine API (*Application Programming Interface*) ist eine definierte Schnittstelle, über die Softwarefunktionen bzw. Daten angeboten werden. HTTPS bedeutet HTTP über TLS. Es schützt insbesondere die Übertragung und authentisiert die Gegenstelle über Zertifikate; es garantiert nicht, dass Inhalt oder Anwendung vertrauenswürdig sind.
 
 ---
 
-## Folie 9 – Hypertext und HTML
+## Folie 9 – Kommunikation ist nicht immer nur Request/Response
 
-**Internet ≠ World Wide Web.**
+**Leitfrage:** Was passiert, wenn der Server dem Browser sofort mitteilen soll, dass sich ein Workshopraum geändert hat?
 
-Das Web nutzt u. a. Hypertext, URLs und HTTP(S) auf der Internet-Infrastruktur.
+Vergleich:
 
-Kleines HTML-Beispiel:
+| Modell | Grundidee | Typischer Einsatz |
+|---|---|---|
+| HTTP Request/Response | Client fragt, Server antwortet | API, Seite laden |
+| Polling | Client fragt regelmäßig nach | einfacher Statuscheck |
+| Server-Sent Events (SSE) | länger offene Verbindung, Server sendet Ereignisse zum Client | Live-Feed |
+| WebSocket | dauerhafte bidirektionale Verbindung | Chat, Kollaboration, Live-Updates |
+
+**Lehrerhinweis:** Bei WebSocket baut der Client zunächst eine Verbindung auf. Danach können **beide Seiten** Nachrichten senden. Ein fachliches „Registrieren auf Events“ bzw. Subscription-Modell kann die Anwendung darüber implementieren, ist aber nicht durch WebSocket selbst vorgeschrieben. *Polling* bedeutet wiederholtes Nachfragen. *SSE* ermöglicht primär Server→Client-Ereignisse über eine länger offene HTTP-Verbindung. Client/Server beschreibt Rollen, nicht die Richtung jeder einzelnen Nachricht.
+
+---
+
+## Folie 10 – Hypertext und HTML
+
+Internet ≠ World Wide Web. Das Web nutzt u. a. URLs, HTTP(S) und Hypertext auf der Internet-Infrastruktur.
 
 ```html
 <h1>Schülerfestival</h1>
@@ -212,566 +122,315 @@ Kleines HTML-Beispiel:
 <a href="programm.html">Zum Programm</a>
 ```
 
-Daneben in der PPT die gerenderte Ansicht zeigen.
-
-**Lehrerhinweis:** HTML ist eine Auszeichnungssprache, keine Programmiersprache im engeren Sinn.
+**Lehrerhinweis:** HTML (*HyperText Markup Language*) ist eine Auszeichnungssprache, keine Programmiersprache im engeren Sinn. Hypertext verbindet Dokumente/Ressourcen durch Verweise.
 
 ---
 
-## Folie 10 – Webseite als strukturierte Elemente
+## Folie 11 – Webseite als strukturierte Elemente
 
-Brücke zu bekannten Objekt-/Datenvorstellungen:
+Überschrift · Link · Bild · Formularfeld; Elemente besitzen Attribute/Eigenschaften.
 
-- Überschrift
-- Link
-- Bild
-- Formularfeld
-
-Elemente besitzen Eigenschaften bzw. Attribute.
-
-**Hinweis:** Nicht behaupten, dass HTML-Elemente automatisch dasselbe sind wie Objekte eines objektorientierten Domänenmodells. Die Analogie dient der Strukturbetrachtung.
+**Lehrerhinweis:** Die Analogie zu Objekten dient nur der Strukturbetrachtung. HTML-Elemente sind nicht automatisch Domänenobjekte einer objektorientierten Anwendung.
 
 ---
 
-## Folie 11 – Und wo steht der Server?
+## Folie 12 – Wo steht der Server?
 
-Möglichkeiten sammeln:
+Eigener Server · Rechenzentrum · Hosting-Anbieter · Cloud-Infrastruktur.
 
-- eigener Rechner/Server
-- schulisches Rechenzentrum
-- Hosting-Anbieter
-- Cloud-Infrastruktur
+**Frage:** Ist Cloud eine Anwendungsarchitektur wie 3-Tier? → **Nein.**
 
-**Frage:**
-
-> Ist „Cloud“ eine Anwendungsarchitektur wie 3-Tier?
-
-Nach Klick: **Nein.**
-
-Eine 3-Tier-Anwendung kann lokal, in einem Rechenzentrum, in der Cloud oder verteilt betrieben werden.
+**Lehrerhinweis:** 3-Tier beschreibt eine Struktur der Anwendung; Cloud beschreibt eine Form der Bereitstellung/Nutzung von IT-Ressourcen und Diensten. Beides kann kombiniert werden.
 
 ---
 
-## Folie 12 – Was bedeutet Cloud?
+## Folie 13 – Was bedeutet Cloud?
 
-```text
-mein Gerät
-    │
- Internet
-    │
-Rechenzentrum
-├─ Rechenleistung
-├─ Speicher
-├─ Netzwerk
-└─ Dienste
-```
+Cloud = reale Rechenleistung, Speicher, Netzwerk und Dienste in Rechenzentren, die über Netze flexibel bereitgestellt werden.
 
-**Merksatz:**
-
-> Cloud bedeutet nicht, dass Daten „irgendwo schweben“. Reale IT-Infrastruktur wird über Netze flexibel als Dienst bereitgestellt.
-
-Diskussionsfragen:
-
-- Wo liegen die Daten tatsächlich?
-- Wer betreibt die Infrastruktur?
-- Was passiert bei einem Ausfall?
-- Was passiert ohne Netzverbindung?
-- Wie können Daten gesichert oder migriert werden?
+**Lehrerhinweis:** „Cloud“ bedeutet nicht, dass Daten ortlos sind. Physische Systeme stehen in Rechenzentren. Für Datenschutz, Verfügbarkeit und Abhängigkeiten können Betreiber, Standort/Region, Vertrag und Dienstmodell relevant sein.
 
 ---
 
-## Folie 13 – SaaS, PaaS und IaaS
+## Folie 14 – SaaS, PaaS und IaaS
 
-Nur als Orientierungsmodell, nicht als reine Lernwortliste:
+**SaaS – Software as a Service:** fertige Anwendung als Dienst nutzen.  
+**PaaS – Platform as a Service:** eigene Anwendung auf einer bereitgestellten Plattform/Laufzeit betreiben.  
+**IaaS – Infrastructure as a Service:** virtualisierte Rechen-, Speicher- und Netzwerkressourcen nutzen und darauf mehr selbst betreiben.
 
-**SaaS:** Ich nutze eine fertige Anwendung.
+**Lehrerwissen – SaaS:** Der Anbieter betreibt typischerweise Anwendung, Plattform und Infrastruktur. Der Kunde nutzt und konfiguriert die Anwendung und bleibt u. a. für Benutzer, Berechtigungen, Daten und passende Konfiguration verantwortlich. SaaS bedeutet **Software as a Service**, nicht „Service as a Service“.
 
-**PaaS:** Ich entwickle/deploye meine Anwendung; die Plattform übernimmt wesentliche Laufzeit- und Betriebsaufgaben.
+**Lehrerwissen – PaaS:** Der Anbieter stellt eine Laufzeit-/Entwicklungsplattform bereit. Entwickler deployen ihren eigenen Anwendungscode, ohne jeden Server und jedes Betriebssystem selbst administrieren zu müssen. Beispielhaft: selbst entwickeltes Schülerfestival-Backend auf einer verwalteten Plattform.
 
-**IaaS:** Ich erhalte Infrastrukturressourcen und betreibe darauf mehr Komponenten selbst.
+**Lehrerwissen – IaaS:** Der Anbieter stellt grundlegende virtualisierte Infrastruktur bereit, z. B. virtuelle Maschinen, Speicher und Netzwerke. Der Kunde betreibt darauf typischerweise Betriebssystem, Laufzeit und Anwendung stärker selbst. Hinter IaaS stehen reale Rechenzentren, Virtualisierung und automatisierte Bereitstellung.
 
-**Aufgabe:** Bei welchem Modell muss der Nutzer/Kunde typischerweise mehr technische Betriebsverantwortung übernehmen?
-
-**Lehrerhinweis:** Die Grenzen realer Angebote können unscharf sein.
-
----
-
-## Folie 14 – Shared Responsibility
-
-Einstiegsaussage:
-
-> „Wenn die Anwendung in der Cloud läuft, kümmert sich der Cloudanbieter um die Sicherheit.“
-
-Abstimmung: richtig / falsch / zu einfach.
-
-Nach Klick: **Zu einfach.**
-
-Zuordnungsbeispiele:
-
-- physisches Rechenzentrum
-- Hardware
-- Netzwerk
-- Betriebssystem
-- Anwendung
-- Konfiguration
-- Benutzerkonten
-- Rollen und Berechtigungen
-- Daten
-
-**Lehrerhinweis:** Die konkrete Verantwortungsverteilung hängt vom Dienstmodell und Vertrag ab. Shared Responsibility nicht als universell identische Tabelle darstellen.
+**Lehrerhinweis:** Reale Cloudangebote sind nicht immer eindeutig einer Schublade zuzuordnen. Weitere Modelle sind z. B. Managed Databases oder Serverless/FaaS. Diese sind Vertiefung, kein Pflichtwissen.
 
 ---
 
-## Folie 15 – Unsere Anwendung funktioniert. Ist sie sicher?
+## Folie 15 – Shared Responsibility
 
-Zunächst nur:
+Aussage: „Der Cloudanbieter kümmert sich um die Sicherheit.“ → **Zu einfach.**
 
-> Die Anmeldung funktioniert. Workshops können gewählt werden. Der Zeitplan wird angezeigt.
->
-> **Ist die Anwendung damit gut?**
+Zuordnen: Rechenzentrum · Hardware · Netzwerk · Betriebssystem · Plattform · Anwendung · Konfiguration · Konten · Rollen · Daten.
 
-Nach Diskussion einblenden:
-
-- Funktionalität
-- Sicherheit
-- Datenschutz
-- Zuverlässigkeit
-- Wartbarkeit
-- verantwortungsvoller Betrieb
+**Lehrerhinweis:** *Shared Responsibility* bedeutet geteilte Verantwortung. Welche Aufgaben Anbieter und Kunde übernehmen, hängt vom Dienstmodell und Vertrag ab. Bei SaaS übernimmt der Anbieter typischerweise mehr technische Schichten als bei IaaS. Verantwortung für eigene Benutzer, Berechtigungen, Daten und Fehlkonfigurationen verschwindet jedoch nicht automatisch.
 
 ---
 
-## Folie 16 – IT-Security: Was bedeutet „sicher“?
+## Folie 16 – Unsere Anwendung funktioniert. Ist sie damit gut?
 
-CIA-Schutzziele:
+Nach Diskussion: Funktionalität · Sicherheit · Datenschutz · Zuverlässigkeit · Wartbarkeit · verantwortungsvoller Betrieb.
 
-- **Confidentiality / Vertraulichkeit**
-- **Integrity / Integrität**
-- **Availability / Verfügbarkeit**
-
-Beispiele zeilenweise nach Klick:
-
-| Vorfall | Schutzziel |
-|---|---|
-| Fremde lesen Teilnehmerdaten | Vertraulichkeit |
-| Workshop-Zuordnungen werden manipuliert | Integrität |
-| Anmeldung ist nicht erreichbar | Verfügbarkeit |
-
-**Lehrerhinweis:** Ein Vorfall kann mehrere Schutzziele gleichzeitig betreffen.
+**Lehrerhinweis:** Funktionierende Software kann trotzdem unsicher, unzuverlässig oder datenschutzwidrig sein. Diese Folie leitet vom „Bauen“ zum verantwortlichen Betrieb über.
 
 ---
 
-## Folie 17 – Wo liegt die Angriffsfläche?
+## Folie 17 – IT-Security und CIA
 
-Das bekannte Architekturdiagramm erneut verwenden:
+Confidentiality/Vertraulichkeit · Integrity/Integrität · Availability/Verfügbarkeit.
 
-```text
-Mensch
-  ↕
-Browser ↔ Netzwerk ↔ Frontend ↔ Backend/API ↔ Datenhaltung
-                                      ↕
-                               Cloud/Infrastruktur
-```
+Beispiele zeilenweise einblenden: Fremde lesen Teilnehmerdaten · Workshopwahl wird manipuliert · Anmeldung fällt aus.
 
-**Auftrag:** Markiert Stellen, an denen Fehler, Fehlkonfigurationen oder Angriffe möglich sind.
-
-Mögliche Kategorien erst anschließend einblenden:
-
-- Benutzer und Identitäten
-- Software
-- Schnittstellen
-- Daten
-- Konfiguration
-- Abhängigkeiten/Lieferkette
-- Infrastruktur
+**Lehrerhinweis:** Die CIA-Triade ist ein grundlegendes Modell der Informationssicherheit. Ein Vorfall kann mehrere Ziele gleichzeitig betreffen. „Security“ umfasst Technik, Menschen, Prozesse und Organisation.
 
 ---
 
-## Folie 18 – Wer greift IT-Systeme an?
+## Folie 18 – Angriffsfläche
 
-Zunächst Motive sammeln:
+Mensch ↔ Browser ↔ Netzwerk ↔ Frontend ↔ Backend/API ↔ Datenhaltung ↔ Infrastruktur.
 
-- Geld
-- Datendiebstahl
-- Spionage
-- Sabotage
-- Protest
-- Neugier
-- Lernen/Forschung
-
-Dann zentrale Unterscheidung:
-
-> **Motivation oder gute Absicht ersetzt keine Berechtigung.**
+**Lehrerhinweis:** *Angriffsfläche* bezeichnet die Gesamtheit möglicher Ansatzpunkte, über die ein System beeinträchtigt werden könnte. Dazu zählen nicht nur Softwarefehler, sondern auch Konten, Konfigurationen, Schnittstellen, Abhängigkeiten und menschliche Prozesse. Keine realen Fremdsysteme testen.
 
 ---
 
 ## Folie 19 – White Hat, Black Hat, Grey Hat
 
-**White Hat:** autorisiert; untersucht Systeme im vereinbarten Rahmen, um Sicherheit zu verbessern.
+White Hat: autorisiert und im vereinbarten Rahmen.  
+Black Hat: nicht autorisiert bzw. schädlich.  
+Grey Hat: populärer Zwischenbegriff, ggf. ohne ausreichende Autorisierung.
 
-**Black Hat:** nicht autorisierte bzw. schädliche Angriffe.
-
-**Grey Hat:** gebräuchlicher Zwischenbegriff; Handlungen können ohne ausreichende Autorisierung erfolgen, auch wenn keine klassische Schädigungsabsicht behauptet wird.
-
-**Lehrerhinweis:** Farben sind vereinfachte populäre Kategorien. Rechtlich und ethisch entscheidend sind insbesondere Autorisierung, Handlung und Kontext.
+**Lehrerhinweis:** Die Farbbegriffe sind vereinfachte populäre Kategorien. Entscheidend sind Autorisierung, Handlung und Kontext. „Gute Absicht“ legitimiert keinen Zugriff auf fremde Systeme.
 
 ---
 
 ## Folie 20 – Penetration Testing
 
-**Leitfrage:**
+**Leitfrage:** Darf man eine Anwendung absichtlich angreifen, um sie sicherer zu machen? → Ja, bei eindeutig autorisiertem Auftrag und Scope.
 
-> Darf man eine Anwendung absichtlich angreifen, um sie sicherer zu machen?
+Black Box · Grey Box · White Box.
 
-Antwort: Ja, **wenn der Test autorisiert ist und Umfang sowie Regeln eindeutig festgelegt sind.**
-
-Perspektiven:
-
-- Black Box: wenig Vorwissen
-- Grey Box: teilweise Informationen/Zugänge
-- White Box: umfangreiche interne Informationen, ggf. Architektur/Quellcode
-
-**Lehrerhinweis:** Keine Anleitung zum Angriff fremder Systeme. Schwerpunkt sind Auftrag, Scope, Dokumentation, kontrolliertes Testen und verantwortliche Meldung von Befunden.
+**Lehrerhinweis:** Ein Penetrationstest ist ein geplanter, autorisierter Sicherheitstest mit definiertem Umfang (*Scope*), Regeln, Zeitraum und Dokumentation. Black Box = wenig internes Wissen; White Box = umfangreiche Informationen/Quellcode; Grey Box = dazwischen. Schwerpunkt im Unterricht ist das Prinzip professioneller Prüfung, nicht die Anleitung zum Angriff fremder Systeme.
 
 ---
 
 ## Folie 21 – Security by Design
 
-```text
-Planung
-  ↓
-Entwicklung
-  ↓
-Test
-  ↓
-Bereitstellung
-  ↓
-Betrieb / Monitoring
-  ↓
-Updates / Verbesserung
-  ↺
-```
+Planung → Entwicklung → Test → Deployment → Betrieb/Monitoring → Updates → Verbesserung.
 
-**Merksatz:**
-
-> Sicherheit wird nicht am Ende „angeschraubt“, sondern begleitet den Lebenszyklus.
-
-Beispiele: minimale Berechtigungen, sichere Voreinstellungen, Updates, Logging, Backup, Wiederherstellung, Tests.
+**Lehrerhinweis:** *Security by Design* bedeutet, Sicherheit bereits bei Anforderungen und Architektur mitzudenken. Beispiele: geringste notwendige Rechte, sichere Voreinstellungen, Eingabeprüfung, Patch-/Updatekonzept, Logging, Backup und Wiederherstellung. *Monitoring* ist die laufende Beobachtung eines Systems. *Logging* ist die Aufzeichnung relevanter Ereignisse. Logs können selbst sensible/personenbezogene Daten enthalten und müssen geschützt werden.
 
 ---
 
 ## Folie 22 – Authentifizierung und Autorisierung
 
-Zwei Fragen:
+**Wer bist du?** → Authentifizierung.  
+**Was darfst du?** → Autorisierung.
 
-> **Wer bist du?** → Authentifizierung
-
-> **Was darfst du?** → Autorisierung
-
-Schülerfestival:
-
-- Schüler darf eigene Workshopwahl sehen/ändern.
-- Lehrkraft darf Teilnehmerlisten für betreute Workshops sehen.
-- Administration besitzt weitergehende Rechte.
-
-**Lehrerhinweis:** Rollenmodell als vereinfachtes Beispiel. Prinzip der geringsten notwendigen Rechte ansprechen.
+**Lehrerhinweis:** Authentifizierung prüft eine behauptete Identität, z. B. durch Passwort plus zweiten Faktor. Autorisierung entscheidet anschließend über erlaubte Aktionen/Ressourcen. Das Prinzip der geringsten Rechte (*Least Privilege*) fordert nur die tatsächlich notwendigen Berechtigungen.
 
 ---
 
-## Folie 23 – Kontoschutz
+## Folie 23 – Kontoschutz und MFA
 
-Sinnvolle Maßnahmen:
+Einzigartige Passwörter · Passwortmanager · MFA · sichere Wiederherstellung · verdächtige Anmeldungen erkennen.
 
-- einzigartige Passwörter
-- Passwortmanager
-- Mehrfaktor-Authentisierung
-- sichere Wiederherstellungsverfahren
-- verdächtige Anmeldeversuche erkennen
-
-**Lehrerhinweis:** Keine überholte Pauschalregel „Sonderzeichen = sicheres Passwort“. Länge, Einzigartigkeit, sichere Speicherung und MFA sind wichtiger als formale Zeichenvorgaben allein.
+**Lehrerhinweis:** MFA = *Multi-Factor Authentication/Mehrfaktor-Authentisierung*: mindestens zwei unterschiedliche Faktoren, z. B. Wissen (Passwort), Besitz (Gerät/Token), biometrisches Merkmal. Keine Pauschalregel „Sonderzeichen = sicher“. Länge, Einzigartigkeit, sichere Speicherung und MFA sind wichtiger als formale Zeichenvorgaben allein.
 
 ---
 
-## Folie 24 – Phishing und Social Engineering
+## Folie 24 – Social Engineering
 
-Nicht nur Rechtschreibfehler suchen.
+**Definition für Schüler:** Social Engineering ist die gezielte Beeinflussung von Menschen, damit sie Informationen preisgeben oder sicherheitskritische Handlungen ausführen.
 
-Prüfkriterien:
+Beispiel: angeblicher IT-Support verlangt dringend Passwort oder MFA-Bestätigung.
 
-- Passt die Nachricht zum erwarteten Kontext?
-- Wird künstlicher Zeitdruck erzeugt?
-- Stimmt Absender/Domain/Linkziel?
-- Werden ungewöhnliche Daten oder Handlungen verlangt?
-- Kann ich die Behauptung über einen unabhängigen Weg prüfen?
-
-**Merksatz:**
-
-> Gute Fälschungen können sprachlich perfekt sein.
+**Lehrerhinweis:** Social Engineering nutzt Vertrauen, Autorität, Hilfsbereitschaft, Angst oder Zeitdruck. IT-Sicherheit betrifft deshalb nicht nur technische Schutzmaßnahmen. Identitäten und ungewöhnliche Forderungen sollten über einen unabhängigen Kommunikationsweg überprüft werden.
 
 ---
 
-## Folie 25 – Backup: Wogegen hilft es?
+## Folie 25 – Phishing
 
-Beispiele:
+**Definition für Schüler:** Phishing ist eine Form des Social Engineering, bei der vertrauenswürdige Kommunikation vorgetäuscht wird, um Daten oder Handlungen zu erlangen.
 
-- Hardwareausfall
-- versehentliches Löschen
-- beschädigte Daten
-- bestimmte Schadensfälle durch Schadsoftware
+Beispiel: „Dein Schulcloud-Konto wird heute gesperrt. Melde dich sofort über diesen Link an.“
 
-**Aber:**
+Prüfen: Kontext · Zeitdruck · Absender/Identität · tatsächliches Linkziel · unabhängiger Rückkanal.
 
-> Backup ≠ Zugriffsschutz ≠ Hochverfügbarkeit.
-
-**Lehrerhinweis:** Getrennte Kopien und Wiederherstellungstests als Prinzip ansprechen.
+**Lehrerhinweis:** Phishing ist nicht auf schlecht geschriebene E-Mails und nicht nur auf Passwortdiebstahl beschränkt. Es kann über E-Mail, SMS, Messenger oder soziale Netzwerke erfolgen und z. B. auf Zugangsdaten, MFA-Bestätigungen, Zahlungen oder das Öffnen schädlicher Inhalte zielen. *Spear Phishing* bezeichnet stärker zielgerichtete Varianten und ist optionales Lehrerwissen.
 
 ---
 
-## Folie 26 – Verschlüsselung: Welches Problem lösen wir?
+## Folie 26 – Backup und Wiederherstellung
 
-Einstiegsfrage:
+**Leitfragen:** Was wird gesichert? Wo? Wann? Durch wen? Wie lange? Wie wird die Wiederherstellung getestet?
 
-> Wie können Daten so übertragen oder gespeichert werden, dass Unbefugte sie nicht einfach lesen können?
+Unterscheiden:
 
-Begriffe zunächst problemorientiert einführen, nicht als reine Definitionen.
-
----
-
-## Folie 27 – Symmetrische Verschlüsselung
-
-Ein gemeinsamer geheimer Schlüssel wird zum Ver- und Entschlüsseln verwendet.
-
-**Leitproblem:**
-
-> Wie erhalten beide Seiten den gemeinsamen Schlüssel sicher?
-
-**Lehrerhinweis:** Reale Protokolle kombinieren häufig verschiedene kryptografische Verfahren.
-
----
-
-## Folie 28 – Asymmetrische Kryptografie
-
-Vereinfachtes Modell:
-
-- öffentlicher Schlüssel
-- privater Schlüssel
-
-Öffentlicher und privater Schlüssel erfüllen unterschiedliche Funktionen.
-
-**Lehrerhinweis:** Das oft verwendete „Briefkastenmodell“ ist nur eine Analogie. Nicht suggerieren, dass jede HTTPS-Nutzlast direkt asymmetrisch verschlüsselt wird.
-
----
-
-## Folie 29 – Verschlüsselung ≠ automatisch Vertrauen
-
-**Frage:**
-
-> Eine Verbindung ist verschlüsselt. Weiß ich damit automatisch, wem die Gegenstelle gehört?
-
-Nach Klick: **Nicht allein durch Verschlüsselung.**
-
-Ausblick:
-
-- Zertifikate
-- Vertrauensketten
-- Authentisierung der Gegenstelle
-
-**Lehrerhinweis:** Nur konzeptionell behandeln; keine PKI-Detailtiefe erforderlich.
-
----
-
-## Folie 30 – Datenschutz ist nicht dasselbe wie IT-Sicherheit
-
-Beispiel:
-
-> Unsere Datenbank ist hervorragend verschlüsselt. Wir speichern aber Geburtsdatum, Privatadresse und Telefonnummer aller Teilnehmenden, obwohl wir diese Daten für die Workshopwahl nicht benötigen.
-
-**Frage:** Ist das Problem damit gelöst, dass die Daten sicher gespeichert sind?
-
-Nach Klick: **Nein.**
-
-Datenschutzfragen:
-
-- Welche personenbezogenen Daten benötigen wir überhaupt?
-- Für welchen Zweck?
-- Wer darf sie nutzen?
-- Wie lange werden sie benötigt?
-- Wann werden sie gelöscht?
-
----
-
-## Folie 31 – DSGVO und NIS2: unterschiedliche Perspektiven
-
-Keine Paragraphen-Lernfolie.
-
-**DSGVO:** Rahmen für den rechtmäßigen und verantwortungsvollen Umgang mit personenbezogenen Daten.
-
-**NIS2:** europäischer Cybersicherheitsrahmen für bestimmte erfasste Einrichtungen und Unternehmen; Schwerpunkte sind u. a. Risikomanagement, Sicherheitsmaßnahmen, Vorfallbehandlung, Lieferketten und Meldepflichten.
-
-**Lehrerhinweis:** NIS2 nicht als allgemeines Gesetz für jede private Schülerwebsite darstellen. Nationale Umsetzung und konkrete Betroffenheit können sich ändern; bei vertiefter Behandlung aktuelle offizielle Quellen verwenden.
-
----
-
-## Folie 32 – Jetzt bekommt der Angreifer KI
-
-Zunächst nur Titel zeigen und sammeln lassen.
-
-Danach einzeln einblenden:
-
-- überzeugendere und personalisierte Phishingtexte
-- Übersetzung und Variation von Nachrichten
-- Unterstützung bei Informationsauswertung
-- Deepfakes und Social Engineering
-- Unterstützung bei Analyse von Software und möglichen Schwachstellen
-- Automatisierung von Arbeitsschritten
-
-**Lehrerhinweis:** Fähigkeiten nicht dramatisieren und keine operativen Angriffsanleitungen geben. KI verändert Geschwindigkeit und Skalierung, ersetzt aber nicht automatisch Fachwissen.
-
----
-
-## Folie 33 – Der Verteidiger hat ebenfalls KI
-
-Mögliche Anwendungen einzeln einblenden:
-
-- Logdaten zusammenfassen und analysieren
-- Anomalien priorisieren
-- verdächtige Nachrichten klassifizieren
-- Code auf mögliche Schwachstellen prüfen
-- Dokumentation unterstützen
-- Security-Teams bei Analyse und Recherche unterstützen
-
-**Kernaussage:**
-
-> KI kann sowohl Angriff als auch Verteidigung unterstützen.
-
----
-
-## Folie 34 – KI gegen KI?
-
-| Angriff | Verteidigung |
+| Konzept | Zweck |
 |---|---|
-| Phishing-Unterstützung | Erkennung und Analyse |
-| automatisierte Informationsauswertung | Monitoring und Priorisierung |
-| Unterstützung bei Codeanalyse | Code- und Konfigurationsprüfung |
-| Deepfake/Social Engineering | Erkennungs- und Prüfverfahren |
+| Synchronisation | Datenstände abgleichen |
+| Redundanz | Ausfall einzelner Komponenten abfangen |
+| Backup | früheren Datenstand wiederherstellen |
+| Archiv | Daten langfristig aufbewahren |
 
-**Diskussionsfrage:** Macht KI IT-Systeme automatisch unsicherer oder sicherer?
+**Lehrerhinweis:** Cloud-Synchronisation ist nicht automatisch Backup. Ein Backup sollte vom Produktivsystem angemessen getrennt sein und Wiederherstellung (*Restore*) muss getestet werden. Ein nicht wiederherstellbares Backup erfüllt seinen Zweck nicht.
 
-Erwartung: Es hängt von Einsatz, Qualität, Kontrolle, Kontext und Gegenmaßnahmen ab.
-
----
-
-## Folie 35 – KI programmiert unsere Anwendung
-
-Prompt-Beispiel:
-
-> „Erstelle mir einen Login für meine Webanwendung.“
-
-Frage:
-
-> Der Code läuft. Ist er deshalb sicher?
-
-Nach Klick:
-
-> **Funktioniert ≠ sicher.**
-
-Prüfpunkte:
-
-- Verstehe ich den erzeugten Code?
-- Sind Bibliotheken und Verfahren geeignet?
-- Werden Passwörter korrekt behandelt?
-- Sind Eingaben und Rechte geprüft?
-- Gibt es Tests?
-- Wurden vertrauliche Daten an einen externen KI-Dienst übermittelt?
+**Lehrervertiefung:** 3-2-1 ist eine verbreitete Faustregel: drei Datenkopien, zwei unterschiedliche Speicherarten/Medien, eine Kopie getrennt/offsite. RPO (*Recovery Point Objective*) beschreibt vereinfacht, wie viel Datenverlust zeitlich akzeptabel ist; RTO (*Recovery Time Objective*), wie lange die Wiederherstellung dauern darf.
 
 ---
 
-## Folie 36 – Technisch möglich ≠ erlaubt ≠ sicher ≠ sinnvoll
+## Folie 27 – Backup ist selbst ein Security- und Datenschutzthema
 
-Große Darstellung:
+Fragen: Wer darf Backupdaten lesen? Wo liegen sie? Sind sie verschlüsselt? Wie lange werden sie aufbewahrt? Wie werden sie gelöscht?
 
-```text
-technisch möglich
-      ≠
-     erlaubt
-      ≠
-     sicher
-      ≠
-     sinnvoll
-```
+CIA-Bezug: Verfügbarkeit durch Wiederherstellung · Integrität der Sicherung · Vertraulichkeit der Backupdaten.
 
-**Lehrerhinweis:** Diese Folie verbindet Technik, Ethik, Recht und Verantwortung, ohne Rechtsberatung zu simulieren.
+**Lehrerhinweis:** Backups können vollständige Kopien sensibler Daten enthalten und sind daher selbst schützenswerte Informationsbestände. Mehr Sicherungen erhöhen nicht automatisch die Sicherheit, wenn Zugriff, Aufbewahrung und Löschung ungeklärt sind.
 
 ---
 
-## Folie 37 – Abschlussfall: Schülerfestival
+## Folie 28 – Wofür Verschlüsselung?
 
-Architektur:
+Situationen: Browser↔Server · Datenbank/Datenträger · Backup · verlorenes Notebook · vertrauliche Nachricht.
 
-```text
-Browser / Angular-Frontend
-          ↕ HTTPS
-        Backend / API
-          ↕
-       PostgreSQL
+**Data in Transit:** Daten während der Übertragung.  
+**Data at Rest:** gespeicherte Daten.
 
-Betrieb in einer Cloudumgebung
-```
-
-Gespeicherte Daten beispielsweise:
-
-- Name
-- Klasse
-- schulische E-Mail-Adresse
-- Workshopwahl
-
-**Gruppenauftrag:** Prüft das System aus drei Perspektiven.
-
-### Architekturteam
-- Ist die Aufteilung nachvollziehbar?
-- Welche Komponente übernimmt welche Aufgabe?
-- Welche Schnittstellen gibt es?
-
-### Security-Team
-- Welche Schutzziele sind wichtig?
-- Welche Angriffsflächen gibt es?
-- Welche Schutzmaßnahmen sind angemessen?
-
-### Datenschutzteam
-- Welche Daten werden wirklich benötigt?
-- Wer benötigt Zugriff?
-- Wie lange müssen Daten gespeichert werden?
-
-Anschließend Ergebnisse zusammenführen: Entscheidungen einer Perspektive beeinflussen die anderen.
+**Lehrerhinweis:** Verschlüsselung dient vor allem dem Schutz der Vertraulichkeit gegen unberechtigtes Lesen. Der konkrete Schutz hängt vom Bedrohungsmodell ab. *Data in Use* bezeichnet Daten während der Verarbeitung; klassische Verschlüsselung kann dort nicht alle Risiken lösen.
 
 ---
 
-## Folie 38 – Sicherung
+## Folie 29 – HTTPS/TLS: Schutz der Kommunikation
 
-> Eine gute Webanwendung muss nicht nur funktionieren.
+Browser ⇄ **verschlüsselte TLS-Verbindung** ⇄ Webserver.
 
-Nach Klick einzeln einblenden:
-
-- verständlich aufgebaut sein
-- zuverlässig funktionieren
-- Daten angemessen schützen
-- sicher betrieben und aktualisiert werden
-- Datenschutz berücksichtigen
-- Verantwortlichkeiten klären
-- Änderungen und KI-Ergebnisse kritisch prüfen
+**Lehrerhinweis:** TLS (*Transport Layer Security*) schützt Daten auf dem Transportweg gegen einfaches Mitlesen und Manipulation und ermöglicht die Authentisierung der Gegenstelle über Zertifikate. HTTPS = HTTP über TLS. Eine HTTPS-Seite kann trotzdem betrügerisch oder eine Anwendung unsicher sein.
 
 ---
 
-## Folie 39 – Exit-Ticket
+## Folie 30 – Verschlüsselung gespeicherter Daten
 
-1. Erkläre den Unterschied zwischen **Client/Server** und **3-Tier** in eigenen Worten.
-2. Warum ist **Cloud** nicht einfach eine vierte Schicht einer 3-Tier-Anwendung?
-3. Nenne je ein Beispiel für **Vertraulichkeit, Integrität und Verfügbarkeit**.
-4. Warum ist eine sichere Datenbank nicht automatisch datenschutzgerecht?
-5. Nenne je eine Möglichkeit, wie KI Angreifer und Verteidiger unterstützen kann.
+Beispiele: Geräte-/Volume-Verschlüsselung · verschlüsselte Backups · ggf. anwendungsseitige Verschlüsselung.
+
+**Lehrerhinweis:** Datenträgerverschlüsselung schützt z. B. bei Verlust eines ausgeschalteten Geräts. Ist das System bereits entsperrt und die Anwendung kompromittiert, kann sie die entschlüsselten Daten ggf. lesen. Wichtig ist Schlüsselmanagement: Wer besitzt Schlüssel, wo werden sie gesichert, was geschieht bei Verlust? Backup und Schlüssel ungeschützt am selben Ort schwächen den Schutz; verlorene Schlüssel können Wiederherstellung unmöglich machen.
 
 ---
 
-## Übergang zum komplexen Informatikprojekt
+## Folie 31 – Symmetrisch und asymmetrisch
 
-Die nächste Unterrichtssequenz greift diese Systemperspektive auf. Bei einem eigenen Informatikprojekt sollen die Schülerinnen und Schüler nicht nur ein funktionierendes Produkt erstellen, sondern Anforderungen, Architektur, Daten, Schnittstellen, Sicherheit, Tests, Dokumentation, Betrieb und ggf. KI-Einsatz nachvollziehbar planen und reflektieren.
+**Symmetrisch:** gemeinsamer geheimer Schlüssel; effizient für große Datenmengen.  
+**Asymmetrisch:** zusammengehöriger öffentlicher und privater Schlüssel; unterstützt u. a. Authentisierung und Schlüsselaushandlung.
+
+**Lehrerhinweis:** Reale Protokolle wie TLS kombinieren Verfahren. Nicht behaupten, die gesamte HTTPS-Kommunikation werde einfach asymmetrisch verschlüsselt. Public-Key-Verfahren helfen u. a. bei Authentisierung/Schlüsselaushandlung; die eigentliche Datenübertragung nutzt typischerweise effiziente symmetrische Verfahren.
+
+---
+
+## Folie 32 – Verschlüsselung, Hashing, Signatur
+
+**Verschlüsselung:** Inhalt vor unberechtigtem Lesen schützen.  
+**Hash:** Einweg-Fingerabdruck eines Datenwerts.  
+**Digitale Signatur:** Integrität und Herkunft/Authentizität eines signierten Inhalts prüfbar machen.
+
+**Lehrerhinweis:** Hashing ist keine Verschlüsselung und wird nicht „entschlüsselt“. Passwörter sollten serverseitig nicht einfach reversibel verschlüsselt gespeichert werden, sondern mit geeigneten Passwort-Hashing-Verfahren samt Salt verarbeitet werden. Kryptografische Details sind Lehrervertiefung; Schüler sollen die unterschiedlichen Zwecke verstehen.
+
+---
+
+## Folie 33 – IT-Sicherheit ≠ Datenschutz
+
+IT-Sicherheit: Systeme und Informationen gegen Risiken schützen.  
+Datenschutz: rechtmäßiger und angemessener Umgang mit personenbezogenen Daten.
+
+**Lehrerhinweis:** Eine technisch hervorragend verschlüsselte Datenbank kann trotzdem personenbezogene Daten enthalten, die nicht erforderlich oder nicht rechtmäßig erhoben wurden. Umgekehrt benötigt Datenschutz angemessene technische und organisatorische Schutzmaßnahmen. Die Bereiche überschneiden sich, sind aber nicht identisch.
+
+---
+
+## Folie 34 – DSGVO
+
+Schülerperspektive: Welche personenbezogenen Daten brauchen wir für das Schülerfestival wirklich? Wer darf sie nutzen? Wie lange benötigen wir sie?
+
+**Lehrerhinweis:** DSGVO = Datenschutz-Grundverordnung der EU. Für den Unterricht stehen Grundideen im Vordergrund: Zweckbindung, Datenminimierung, Transparenz, angemessener Schutz und Rechte betroffener Personen. Keine Rechtsberatung und keine Paragraphenprüfung erforderlich.
+
+---
+
+## Folie 35 – NIS2: Cybersicherheit als Organisationsaufgabe
+
+**Für Schüler:** Für bestimmte Unternehmen und Einrichtungen gibt es gesetzliche Anforderungen, Cybersicherheitsrisiken systematisch zu beherrschen. Sicherheit ist dort nicht nur freiwillige Empfehlung.
+
+**Lehrerwissen:** NIS steht für *Network and Information Systems*. NIS2 ist die zweite EU-Richtlinie zu Cybersicherheit von Netz- und Informationssystemen. Sie betrifft nicht pauschal jedes Unternehmen und jede Website. Welche Organisationen konkret erfasst sind, hängt u. a. von Sektor, Größe und der geltenden nationalen Umsetzung ab.
+
+Praxisbezug: Risikomanagement · Vorfallbehandlung · Business Continuity/Backup · Lieferkettensicherheit · Schwachstellenmanagement · Cyberhygiene · Kryptografie · Zugriffsschutz/MFA · ggf. Meldepflichten.
+
+**Lehrerhinweis:** NIS2 zeigt, dass Security auch Management-, Prozess- und Organisationsaufgabe ist. DSGVO und NIS2 nicht vermischen: DSGVO fokussiert personenbezogene Daten und deren Verarbeitung; NIS2 Cybersicherheit und Resilienz bestimmter Organisationen. Ein Vorfall kann beide Bereiche berühren.
+
+**Aktualität:** Konkrete Pflichten, Schwellenwerte und betroffene Einrichtungen vor vertiefender Behandlung anhand aktueller offizieller Quellen prüfen. Das Unterrichtsmaterial vermittelt Grundprinzipien und ersetzt keine Rechtsberatung.
+
+---
+
+## Folie 36 – KI auf Angreifer- und Verteidigerseite
+
+Angriff: überzeugenderes Phishing · Informationsauswertung · Social Engineering/Deepfakes · Automatisierung.  
+Verteidigung: Anomalieerkennung · Loganalyse · Codeanalyse · Unterstützung von Security-Teams.
+
+**Lehrerhinweis:** KI ist weder automatisch Angriffs- noch Schutztechnik. Sie kann Fähigkeiten auf beiden Seiten verstärken. *Deepfake* bezeichnet künstlich erzeugte/manipulierte Medien, die reale Personen oder Ereignisse glaubhaft vortäuschen können. *Anomalieerkennung* sucht auffällige Abweichungen von erwarteten Mustern. KI-Ergebnisse können falsch sein und müssen überprüft werden.
+
+---
+
+## Folie 37 – KI-generierter Code: niemals blind übernehmen
+
+**Kernaussage auf der Folie:**
+
+> **KI-generierter Code muss immer geprüft werden und darf niemals blind übernommen werden.**
+
+Mögliche Probleme: fachliche/logische Fehler · Sicherheitslücken · veraltete/ungeeignete Abhängigkeiten · Datenschutzprobleme · Lizenz-/Herkunftsfragen · schlechte Wartbarkeit.
+
+Prüfschema: **Funktion → Verständlichkeit → Sicherheit → Datenschutz → Abhängigkeiten → Tests.**
+
+**Lehrerhinweis:** „Der Code läuft“ ist kein Qualitäts- oder Sicherheitsnachweis. Wer Code übernimmt, muss ihn verstehen, erklären, testen, warten und verantworten können. Besonders kritisch sind Login, Rechteprüfung, Kryptografie, Eingabevalidierung und Datenbankzugriffe. KI kann Code vorschlagen; die Verantwortung für den eingesetzten Code bleibt beim Menschen bzw. betreibenden Team.
+
+---
+
+## Folie 38 – Abschlussfall Schülerfestival
+
+Architektur: Angular-Frontend ⇄ API ⇄ Backend ⇄ Datenbank; Betrieb in Cloudumgebung; optional WebSocket für Live-Änderungen.
+
+Daten: Name · Klasse · E-Mail · Workshopwahl.
+
+**Auftrag:** Prüft das System als Architektur-, Datenschutz- und Security-Team.
+
+Fragen: Welche Daten brauchen wir? Wer darf was? Welche Schutzziele? Wie sichern/wiederherstellen? Welche Daten verschlüsseln wir wo? Wer trägt welche Cloud-Verantwortung? Wo sind Live-Verbindungen sinnvoll? Wo kann KI helfen und was muss geprüft werden?
+
+**Lehrerhinweis:** Es gibt nicht nur eine richtige Architektur. Bewertet werden begründete Entscheidungen und das Erkennen von Abhängigkeiten/Zielkonflikten.
+
+---
+
+## Folie 39 – Sicherung
+
+> Eine gute Webanwendung muss mehr als funktionieren.
+
+Einzeln einblenden: verständlich aufgebaut · zuverlässig · angemessen geschützt · datenschutzbewusst · sicher betrieben/aktualisiert · verantwortungsvoll weiterentwickelt.
+
+**Lehrerhinweis:** Abschluss bewusst auf Systemverantwortung richten. Die Schüler sollen Architektur, Daten, Sicherheit und Betrieb nicht mehr als getrennte Themen betrachten.
+
+---
+
+## Folie 40 – Exit-Ticket
+
+1. Warum ist eine Webanwendung nicht nur das Frontend?  
+2. Warum beschreibt Client/Server nicht die Richtung jeder einzelnen Nachricht?  
+3. Nenne drei Stellen, an denen Sicherheitsentscheidungen getroffen werden.  
+4. Erkläre den Unterschied zwischen Backup und Synchronisation.  
+5. Nenne je ein Beispiel für Data in Transit und Data at Rest.  
+6. Warum darf KI-generierter Code nicht blind übernommen werden?
+
+**Lehrerhinweis:** Antworten können als Diagnose für die nächste Stunde genutzt werden. Nicht alle sechs Fragen müssen gleichzeitig bearbeitet werden.
