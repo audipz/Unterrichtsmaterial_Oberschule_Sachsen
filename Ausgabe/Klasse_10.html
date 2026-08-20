@@ -46,6 +46,7 @@ code { font-family: "Courier New", monospace; }
 <li><a href="#verbindliche-lernbereiche" id="toc-verbindliche-lernbereiche">Verbindliche Lernbereiche</a></li>
 <li><a href="#geplanter-lernweg" id="toc-geplanter-lernweg">Geplanter
 Lernweg</a></li>
+<li><a href="#wahlbereiche" id="toc-wahlbereiche">Wahlbereiche</a></li>
 <li><a href="#leistungsbewertung" id="toc-leistungsbewertung">Leistungsbewertung</a></li>
 <li><a href="#werkteilstruktur" id="toc-werkteilstruktur">Werkteilstruktur</a></li>
 </ul></li>
@@ -55,9 +56,15 @@ Lernweg</a></li>
 <li><a href="#lehrplanbasis" id="toc-lehrplanbasis">Lehrplanbasis</a></li>
 <li><a href="#verbindliche-lernbereiche-1" id="toc-verbindliche-lernbereiche-1">Verbindliche Lernbereiche</a></li>
 <li><a href="#abgedeckte-pflichtinhalte" id="toc-abgedeckte-pflichtinhalte">Abgedeckte Pflichtinhalte</a></li>
-<li><a href="#wahlbereich" id="toc-wahlbereich">Wahlbereich</a></li>
+<li><a href="#wahlbereiche-1" id="toc-wahlbereiche-1">Wahlbereiche</a></li>
+<li><a href="#didaktische-und-terminologische-konventionen" id="toc-didaktische-und-terminologische-konventionen">Didaktische und
+terminologische Konventionen</a></li>
+<li><a href="#querverweise-und-sinnvolle-wiederaufnahme" id="toc-querverweise-und-sinnvolle-wiederaufnahme">Querverweise und
+sinnvolle Wiederaufnahme</a></li>
+<li><a href="#strukturprüfung" id="toc-strukturprüfung">Strukturprüfung</a></li>
+<li><a href="#noch-offen-vor-abschluss-klasse-10" id="toc-noch-offen-vor-abschluss-klasse-10">Noch offen vor Abschluss
+Klasse 10</a></li>
 <li><a href="#leistungsbewertung-1" id="toc-leistungsbewertung-1">Leistungsbewertung</a></li>
-<li><a href="#qualitätsregeln" id="toc-qualitätsregeln">Qualitätsregeln</a></li>
 <li><a href="#ergebnis" id="toc-ergebnis">Ergebnis</a></li>
 </ul></li>
 </ul>
@@ -105,25 +112,46 @@ Komplexes Informatikprojekt</h3>
 <li>Projektverlauf dokumentieren</li>
 <li>Ergebnis präsentieren und reflektieren</li>
 </ul>
+<h2 id="wahlbereiche">Wahlbereiche</h2>
+<h3 id="sicherheit-in-der-informationsverarbeitung">03 – Sicherheit in
+der Informationsverarbeitung</h3>
+<p>Digitaler Fußabdruck, Datensammlungen, Cookies/Tracking,
+Berechtigungen, Datensparsamkeit und Kontoschutz.</p>
+<h3 id="mobile-endgeräte">04 – Mobile Endgeräte</h3>
+<p>Mobile Bezahldienste: Beteiligte, Datenfluss, Authentisierung,
+Autorisierung, Schutzmechanismen, Verlustszenario und begründete
+Sicherheitsbewertung.</p>
+<h3 id="computergrafik">05 – Computergrafik</h3>
+<p>Historische Entwicklung, Auflösung, Farbtiefe, Bildrate,
+Rohdatenmengen, Rechenleistung, Speicher, Kompression und Streaming.</p>
 <h2 id="leistungsbewertung">Leistungsbewertung</h2>
 <p>Wie in den anderen Klassenstufen werden schriftliche
-Leistungskontrollen bereitgestellt. Projekt- und Übungsphasen können
-zusätzlich diagnostisch genutzt werden.</p>
+Leistungskontrollen für die verbindlichen Lernbereiche bereitgestellt.
+Projekt- und Übungsphasen können zusätzlich diagnostisch genutzt werden.
+Wahlbereiche benötigen nicht zwingend eigene schriftliche
+Lernkontrollen.</p>
 <h2 id="werkteilstruktur">Werkteilstruktur</h2>
-<pre class="text"><code>01_Webbasierte_Anwendungen/
+<pre class="text"><code>00_Organisation/
+01_Webbasierte_Anwendungen/
 02_Komplexes_Informatikprojekt/
 03_Wahlbereich_Sicherheit/
-00_Organisation/</code></pre>
-<p>Vollständige Lernbereiche verwenden nach Möglichkeit:</p>
+04_Wahlbereich_Mobile_Endgeraete/
+05_Wahlbereich_Computergrafik/</code></pre>
+<p>Vollständig ausgearbeitete Unterrichtsbereiche verwenden je nach
+Bedarf:</p>
 <pre class="text"><code>01_Arbeitsheft/
 02_Lehrerband/
 03_Material/
 04_Loesungen/
 05_Praesentationen/
+    md/
 06_Dateien/
 07_Quellen/
 08_Bilder/
 09_Lernkontrollen/</code></pre>
+<p>Die Markdown-Quellen zu Präsentationen liegen einheitlich in
+<code>05_Praesentationen/md/</code>. Fertige PowerPoint-Dateien liegen
+direkt in <code>05_Praesentationen/</code>.</p>
 <div class="page-break"></div>
 <h1 id="audit-klasse-10">Audit – Klasse 10</h1>
 <h2 id="lehrplanbasis">Lehrplanbasis</h2>
@@ -137,59 +165,222 @@ Ustd.</strong></li>
 Ustd.</strong></li>
 </ul>
 <h2 id="abgedeckte-pflichtinhalte">Abgedeckte Pflichtinhalte</h2>
-<h3 id="webbasierte-anwendungen">Webbasierte Anwendungen</h3>
+<h3 id="webbasierte-anwendungen">01 – Webbasierte Anwendungen</h3>
+<p>Abgedeckt sind insbesondere:</p>
 <ul>
-<li>informatische Konzepte zur Erstellung digitaler Medien</li>
-<li>lokale und webbasierte Anwendungen</li>
-<li>Client, Server, Netzwerkprotokolle und Zugriffsrechte</li>
-<li>Klassen und Objekte</li>
-<li>Methoden/Operationen zur Änderung von Attributen</li>
-<li>Datensicherheit im Internet</li>
-<li>privater und öffentlicher Bereich</li>
-<li>soziale Netzwerke</li>
-<li>Standortdaten und Cookies</li>
-<li>Passwortsicherheit und Backupstrategien</li>
-<li>Grundidee asymmetrischer Verschlüsselungsverfahren</li>
-<li>öffentlicher und privater Schlüssel</li>
+<li>Webanwendung als Gesamtsystem statt reines Frontend</li>
+<li>Client/Server und 3-Tier-/3-Schicht-Architektur</li>
+<li>clientseitige Single Page Applications und serverseitiges
+Rendering</li>
+<li>HTTP-Anfrage/Antwort, Polling, Server-Sent Events und WebSocket</li>
+<li>HTML, Hypertext und Programmierschnittstellen</li>
+<li>Hosting, Rechenzentrum und Cloud</li>
+<li>Software as a Service, Platform as a Service und Infrastructure as a
+Service</li>
+<li>Shared Responsibility</li>
+<li>Authentisierung und Autorisierung</li>
+<li>Kontoschutz und Multi-Faktor-Authentisierung</li>
+<li>Phishing und Social Engineering</li>
+<li>IT-Security, Schutzziele, Angriffsfläche und Security by Design</li>
+<li>White Hat, Black Hat, Grey Hat und autorisiertes Penetration
+Testing</li>
+<li>Backup, Wiederherstellung und Datensicherheit</li>
+<li>Verschlüsselung bei Kommunikation und Speicherung</li>
+<li>Datenschutz, personenbezogene Daten und regulatorischer Kontext</li>
+<li>Künstliche Intelligenz und die Pflicht zur Prüfung KI-generierter
+Ergebnisse bzw. Codes</li>
 </ul>
-<h3 id="komplexes-informatikprojekt">Komplexes Informatikprojekt</h3>
+<p>Die Darstellung verwendet ein Schülerfestival als durchgängiges
+Anwendungsbeispiel und trennt bewusst Architektur, Bereitstellung,
+Kommunikation, Sicherheit und Datenschutz.</p>
+<h3 id="komplexes-informatikprojekt">02 – Komplexes
+Informatikprojekt</h3>
+<p>Abgedeckt sind insbesondere:</p>
 <ul>
-<li>Projekt zur Lösung einer Problemstellung mit informatischen
-Werkzeugen</li>
-<li>Analyse und Planung</li>
-<li>Definition von Schnittstellen zwischen Arbeitsgruppen</li>
-<li>kollaborative Werkzeuge</li>
-<li>Zusammenführen von Einzelergebnissen</li>
-<li>Dokumentation des Projektverlaufs</li>
-<li>kontinuierliche Sicherung</li>
-<li>Auswertung, Präsentation und Reflexion</li>
+<li>komplexe Problemstellung mit informatischen Werkzeugen</li>
+<li>Analyse, Zieldefinition, Anforderungen und Projektumfang</li>
+<li>Zerlegung in Teilprojekte</li>
+<li>Rollen und Verantwortlichkeiten</li>
+<li>Schnittstellen und Übergaben zwischen Arbeitsgruppen</li>
+<li>einheitliche Vorlagen und gemeinsame Datenablage</li>
+<li>Mini-Projektmanagement</li>
+<li>Gantt-Diagramm, Abhängigkeiten, Meilensteine und Puffer</li>
+<li>Kanban als ergänzendes Arbeitsboard</li>
+<li>Risikomanagement</li>
+<li>laufende Reviews von Zwischen- und Endergebnissen</li>
+<li>Lehrerreview und klare Freigabeverantwortung</li>
+<li>Qualitätssicherung und Vier-Augen-Prinzip</li>
+<li>Versionierung, Backup und Datenlebenszyklus</li>
+<li>Datenschutz, Persönlichkeitsrechte, Urheberrecht und
+Nutzungsrechte</li>
+<li>verantwortlicher Einsatz Künstlicher Intelligenz</li>
+<li>technische Produktion und Veröffentlichung</li>
+<li>Dokumentation, Präsentation und Retrospektive</li>
 </ul>
-<h2 id="wahlbereich">Wahlbereich</h2>
-<p>Ausgearbeitet ist Wahlbereich 1 <strong>Sicherheit in der
-Informationsverarbeitung</strong> mit digitalem Fußabdruck,
-Datensammlungen, Standortdaten, Cookies, sozialen Medien und
-Datensparsamkeit.</p>
-<p>Die Wahlbereiche „Mobile Endgeräte“ und „Computergrafik“ bleiben
-optional und sind nicht Voraussetzung für die Vollständigkeit der
-verbindlichen Lernbereiche.</p>
+<p>Die <strong>Abschlusszeitung</strong> dient als lebensnahes
+Leitprojekt. Alternativ kann ein anderes ausreichend komplexes
+schulisches Informatikprojekt eingesetzt werden.</p>
+<p>Für die Abschlusszeitung stehen ergänzende Projektvorlagen zur
+Verfügung, darunter Projektauftrag, Beitrags- und Interviewvorlagen,
+Gantt-Vorlage und Gantt-Beispiel, Review-Vorlage sowie
+Projekttagebuch.</p>
+<h2 id="wahlbereiche-1">Wahlbereiche</h2>
+<h3 id="sicherheit-in-der-informationsverarbeitung-1">03 – Sicherheit in
+der Informationsverarbeitung</h3>
+<p>Ausgearbeitet mit:</p>
+<ul>
+<li>digitalem Fußabdruck</li>
+<li>bewusst angegebenen, automatisch erzeugten und abgeleiteten
+Daten</li>
+<li>Metadaten</li>
+<li>Datenaggregation und Profilbildung</li>
+<li>Tracking, Cookies, Tracking-Pixel und Browser-Fingerprinting</li>
+<li>App-Berechtigungen</li>
+<li>Datenminimierung, Zweckbindung und Transparenz</li>
+<li>Komfort-versus-Datenschutz-Abwägungen</li>
+<li>KI-basierter Datenauswertung und möglichen Fehlklassifikationen</li>
+<li>Kontoschutz, Passwortmanager und Multi-Faktor-Authentisierung</li>
+<li>Credential Stuffing</li>
+<li>persönlichen Maßnahmenplänen und Fallbeispielen</li>
+</ul>
+<p>Der Wahlbereich ergänzt den Security-Block aus Lernbereich 01 und
+fokussiert bewusst Datenspuren, Profilbildung, Datenschutz und
+persönliche Kontrolle.</p>
+<h3 id="mobile-endgeräte-1">04 – Mobile Endgeräte</h3>
+<p>Ausgearbeitet mit:</p>
+<ul>
+<li>mobilen Endgeräten als vollständigen Computersystemen</li>
+<li>System-on-a-Chip, Arbeitsspeicher, Flash-Speicher und
+spezialisierten Recheneinheiten</li>
+<li>Sensoren und satellitengestützter Positionsbestimmung</li>
+<li>Mobilfunk, Wireless Local Area Network, Bluetooth und Near Field
+Communication</li>
+<li>Betriebssystem, Programmierschnittstellen, Sandbox und
+Berechtigungen</li>
+<li>Softwareupdates und Installationsquellen</li>
+<li>Cloud-Synchronisation und Abgrenzung zum Backup</li>
+<li>mobilem Bezahlen als Leitbeispiel</li>
+<li>Authentisierung und Autorisierung</li>
+<li>Biometrie und Tokenisierung</li>
+<li>mehrschichtigen Schutzmechanismen</li>
+<li>Verlustszenario und priorisierten Gegenmaßnahmen</li>
+<li>Energieverbrauch und Lithium-Ionen-Akkus</li>
+<li>Komfort, Datenschutz und technische Abhängigkeiten</li>
+</ul>
+<h3 id="computergrafik-1">05 – Computergrafik</h3>
+<p>Ausgearbeitet mit:</p>
+<ul>
+<li>Raster- und Vektorgrafik</li>
+<li>Dateiformaten wie JPEG, PNG und Scalable Vector Graphics</li>
+<li>Pixeln, Auflösung und Seitenverhältnis</li>
+<li>HD, Full HD, Quad HD, Ultra HD/4K und 8K</li>
+<li>menschlicher Wahrnehmung, Betrachtungsabstand und Pixeldichte</li>
+<li>Pixels per Inch und Dots per Inch sowie Bezug zum Ausdruck</li>
+<li>Farbtiefe und den Farbmodellen RGB und CMYK</li>
+<li>unkomprimierten Rohdatenmengen</li>
+<li>verlustfreier und verlustbehafteter Kompression</li>
+<li>Transparenz/Alpha-Kanal und Ebenen</li>
+<li>Grundlagen dreidimensionaler Computergrafik, Polygone und
+Rendering</li>
+<li>Central Processing Unit, Graphics Processing Unit, Random Access
+Memory und Video Random Access Memory</li>
+<li>Frames per Second, Framezeiten und Latenz</li>
+<li>Flaschenhälsen bei Echtzeitgrafik</li>
+<li>Grafik-Streaming und Cloud-Gaming</li>
+<li>Bandbreite versus Latenz</li>
+<li>KI-generierten bzw. KI-veränderten Bildern</li>
+<li>kritischer Bewertung digitaler Bildquellen</li>
+</ul>
+<p>Berechnungen zu Bilddaten werden ausdrücklich als Modellrechnungen
+für unkomprimierte Daten gekennzeichnet.</p>
+<h2 id="didaktische-und-terminologische-konventionen">Didaktische und
+terminologische Konventionen</h2>
+<p>Klassenweit gelten folgende Qualitätsregeln für die
+Präsentationsquellen:</p>
+<ul>
+<li>Neue Fachbegriffe werden beim ersten didaktisch relevanten Auftreten
+erklärt.</li>
+<li>Abkürzungen werden nach Möglichkeit zuerst ausgeschrieben und
+anschließend in Klammern angegeben.</li>
+<li>Lehrerhinweise liefern Hintergrundwissen, typische Fehlvorstellungen
+und Grenzen vereinfachter Modelle.</li>
+<li>Mehrere erklärungsbedürftige Begriffe werden in Lehrerhinweisen
+möglichst durch eigene Absätze getrennt.</li>
+<li>Schülerwissen und fachliche Vertiefung werden unterschieden.</li>
+<li>Produkt- und Werkzeugnamen bleiben austauschbare Beispiele.</li>
+<li>Sicherheitsinhalte werden defensiv, verantwortungsorientiert und nur
+im Rahmen autorisierter Nutzung vermittelt.</li>
+<li>KI-generierte Inhalte, Aussagen und Codes werden nicht ungeprüft
+übernommen.</li>
+</ul>
+<h3 id="terminologie">Terminologie</h3>
+<p>Für neue bzw. überarbeitete Materialien wird bevorzugt
+<strong>Authentisierung</strong> für den Nachweis einer Identität oder
+Berechtigung verwendet und <strong>Autorisierung</strong> für die
+Entscheidung über zulässige Aktionen. Der im allgemeinen Sprachgebrauch
+ebenfalls verbreitete Begriff <strong>Authentifizierung</strong> kann in
+älteren Materialien oder Präsentationen vorkommen und ist kein
+inhaltlicher Widerspruch.</p>
+<p>Bereits finalisierte PowerPoint-Dateien werden für rein
+terminologische Vereinheitlichungen nicht erneut verändert, sofern
+daraus kein fachlicher Fehler entsteht.</p>
+<h2 id="querverweise-und-sinnvolle-wiederaufnahme">Querverweise und
+sinnvolle Wiederaufnahme</h2>
+<p>Themen werden zwischen den Bereichen bewusst wieder aufgenommen, aber
+aus unterschiedlicher Perspektive:</p>
+<ul>
+<li>Datenschutz und Rechte aus 03 werden im Projekt 02 praktisch
+angewendet.</li>
+<li>App-Berechtigungen werden in 03 aus Datenschutzsicht und in 04 aus
+Betriebssystem-/Techniksicht behandelt.</li>
+<li>Backup und Cloud aus 01 werden in 04 auf mobile Geräte
+übertragen.</li>
+<li>RGB/CMYK sowie Bildauflösung aus 02 werden in 05 technisch
+vertieft.</li>
+<li>KI erscheint in mehreren Bereichen jeweils mit passendem Kontext:
+Softwareentwicklung, Datenschutz, Projektarbeit und Computergrafik.</li>
+</ul>
+<p>Diese Überschneidungen sind didaktisch gewollte Wiederaufnahme und
+keine inhaltliche Doppelung ohne Mehrwert.</p>
+<h2 id="strukturprüfung">Strukturprüfung</h2>
+<p>Für alle fünf Unterrichtsbereiche sind Arbeitsheft bzw. Lernaufgaben,
+Lehrerhinweise, Material, Lösungen und Präsentationsquellen vorhanden.
+Quellenhinweise sind vorhanden. Die Präsentations-Markdowns liegen unter
+<code>05_Praesentationen/md/</code>; fertige <code>.pptx</code> werden
+direkt in <code>05_Praesentationen/</code> abgelegt.</p>
+<p>Die Pflichtbereiche 01 und 02 enthalten zusätzlich schriftliche
+Lernkontrollen. Für Wahlbereiche sind eigene Lernkontrollen optional und
+nicht Voraussetzung für strukturelle Vollständigkeit.</p>
+<p>Die PowerPoint-Dateien für 01 bis 05 wurden erstellt und im
+Arbeitsbranch abgelegt. Nachträgliche rein redaktionelle
+Vereinheitlichungen der Markdown-Quellen erfordern keine Neuerstellung
+bereits geprüfter PowerPoints.</p>
+<h2 id="noch-offen-vor-abschluss-klasse-10">Noch offen vor Abschluss
+Klasse 10</h2>
+<ul>
+<li>vollständigen Build des Branches bzw. nach dem Merge prüfen</li>
+<li>abschließende Dateinamen- und Linkprüfung im generierten Build
+durchführen</li>
+<li>nach erfolgreichem Build den Branch nach <code>main</code> mergen
+bzw. den Merge abschließen</li>
+</ul>
 <h2 id="leistungsbewertung-1">Leistungsbewertung</h2>
 <p>Vier schriftliche Leistungskontrollen stellen zwei planbare
 schriftliche Noten pro Halbjahr bereit. Sie sind thematisch den
-tatsächlich behandelten Lerninhalten zugeordnet.</p>
-<h2 id="qualitätsregeln">Qualitätsregeln</h2>
-<ul>
-<li>Sicherheitsinhalte werden defensiv und schutzorientiert
-vermittelt.</li>
-<li>Projektkompetenz wird über Zerlegung, Schnittstellen, Integration,
-Test, Dokumentation und Reflexion aufgebaut.</li>
-<li>Produkt- und Werkzeugnamen bleiben austauschbare Beispiele.</li>
-<li>Weiterführende technische Details werden als Vertiefung
-gekennzeichnet.</li>
-</ul>
+verbindlichen Lerninhalten zugeordnet.</p>
+<p>Das komplexe Informatikprojekt kann zusätzlich prozess- und
+produktorientiert bewertet werden. Dabei sollten Gruppenleistung und
+individuelle Verantwortungsübernahme nachvollziehbar voneinander
+unterschieden werden.</p>
 <h2 id="ergebnis">Ergebnis</h2>
-<p>Nach Merge der Klasse-10-PRs liegt für beide verbindlichen
-Lernbereiche ein vollständiger Unterrichtsweg mit Arbeitsheft,
-Lehrerband, Material, Lösungen, Präsentationen, Quellen und
-Leistungskontrollen vor.</p>
+<p><strong>Klasse 10 ist fachlich und strukturell vollständig
+ausgearbeitet.</strong></p>
+<p>Die fünf Bereiche 01 bis 05 besitzen Präsentationsquellen und fertige
+PowerPoint-Dateien. Die Pflichtbereiche decken die Lehrplananforderungen
+ab; die Wahlbereiche wurden fachlich erweitert und mit Lehrerhinweisen
+ergänzt.</p>
+<p>Vor dem endgültigen Abschluss bleibt nur noch die technische
+Gesamtprüfung des Builds sowie die abschließende Prüfung der generierten
+Links und Dateinamen.</p>
 </body>
 </html>
