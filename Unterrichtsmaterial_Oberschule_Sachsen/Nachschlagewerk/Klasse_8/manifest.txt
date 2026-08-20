@@ -1,9 +1,3 @@
 01_Objektorientierte_Modellierung.md
 02_Algorithmen.md
 03_Robot_Karol.md
-04_Netzwerke.md
-05_Steuern_und_Regeln.md
-06_Mobile_Endgeraete.md
-07_Computergrafik.md
-08_Glossar.md
-09_Bild_und_Quellenverzeichnis.md
