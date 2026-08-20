@@ -1,5 +1,7 @@
 # Informatik an der Oberschule Sachsen (OER)
 
+[**Aktuelle Unterrichtsmaterialien als ZIP herunterladen**](https://github.com/audipz/Unterrichtsmaterial_Oberschule_Sachsen/releases/download/unterrichtsmaterial-aktuell/Unterrichtsmaterial_Oberschule_Sachsen.zip)
+
 Ein freies, lehrplankonformes Unterrichtswerk für das Fach **Informatik an Oberschulen in Sachsen**.
 
 Das Projekt entsteht als **Open Educational Resource (OER)** und kann frei genutzt, angepasst und weiterentwickelt werden.
