@@ -8,12 +8,25 @@ WORK_ROOT="$REPO_ROOT/.build"
 TEMPLATE_ROOT="$REPO_ROOT/Build/templates"
 FILTER_ROOT="$REPO_ROOT/Build/filters"
 AREA="${1:-}"
+ALLOWED_AREAS=(Klasse_7 Klasse_8 Klasse_9 Klasse_10 Grundlagen Werkzeuge)
 
 command -v pandoc >/dev/null 2>&1 || { echo "Pandoc fehlt." >&2; exit 1; }
 
-SOURCE_BASE="$SOURCE_ROOT"
-[[ -n "$AREA" ]] && SOURCE_BASE="$SOURCE_ROOT/$AREA"
-[[ -d "$SOURCE_BASE" ]] || { echo "Bereich nicht gefunden: $SOURCE_BASE" >&2; exit 1; }
+is_allowed_area() {
+  local candidate="$1" allowed
+  for allowed in "${ALLOWED_AREAS[@]}"; do
+    [[ "$candidate" == "$allowed" ]] && return 0
+  done
+  return 1
+}
+
+if [[ -n "$AREA" ]]; then
+  is_allowed_area "$AREA" || {
+    echo "Bereich '$AREA' wird nicht veröffentlicht. Erlaubt: ${ALLOWED_AREAS[*]}" >&2
+    exit 1
+  }
+  [[ -d "$SOURCE_ROOT/$AREA" ]] || { echo "Bereich nicht gefunden: $SOURCE_ROOT/$AREA" >&2; exit 1; }
+fi
 
 rm -rf "$OUTPUT_ROOT" "$WORK_ROOT"
 mkdir -p "$OUTPUT_ROOT" "$WORK_ROOT"
@@ -28,14 +41,14 @@ find_class() {
 }
 
 copy_pptx_masters() {
-  local pptx rel target
+  local source_base="$1" pptx rel target
   while IFS= read -r -d '' pptx; do
     rel="${pptx#$SOURCE_ROOT/}"
     target="$OUTPUT_ROOT/$rel"
     mkdir -p "$(dirname "$target")"
     cp "$pptx" "$target"
     echo "COPY PPTX MASTER $rel"
-  done < <(find "$SOURCE_BASE" -type f -path '*/05_Praesentationen/*.pptx' -print0)
+  done < <(find "$source_base" -type f -path '*/05_Praesentationen/*.pptx' -print0)
 }
 
 build_dir() {
@@ -80,8 +93,29 @@ EOF
   fi
 }
 
-while IFS= read -r -d '' dir; do build_dir "$dir"; done < <(find "$SOURCE_BASE" -type d -print0)
-copy_pptx_masters
-python3 "$REPO_ROOT/Build/generate_index.py"
+build_area() {
+  local area="$1" source_base="$SOURCE_ROOT/$area"
+  [[ -d "$source_base" ]] || { echo "WARNUNG: Bereich fehlt und wird übersprungen: $area" >&2; return 0; }
+
+  # Der Bereichs-Root selbst wird bewusst nicht gebaut. Dadurch entstehen keine
+  # Sammeldateien wie Ausgabe/Klasse_7.pdf oder Ausgabe/Grundlagen.html.
+  while IFS= read -r -d '' dir; do
+    build_dir "$dir"
+  done < <(find "$source_base" -mindepth 1 -type d -print0)
+
+  copy_pptx_masters "$source_base"
+}
+
+if [[ -n "$AREA" ]]; then
+  build_area "$AREA"
+else
+  for area in "${ALLOWED_AREAS[@]}"; do
+    build_area "$area"
+  done
+fi
+
+# Ausgabe/ enthält bewusst nur die sechs veröffentlichten Top-Level-Bereiche.
+# Kein Repository-Index und keine internen Verzeichnisse wie Dokumentation,
+# .github, Build oder absolute Runner-Pfade werden erzeugt.
 rm -rf "$WORK_ROOT"
 echo "Build abgeschlossen: $OUTPUT_ROOT"
