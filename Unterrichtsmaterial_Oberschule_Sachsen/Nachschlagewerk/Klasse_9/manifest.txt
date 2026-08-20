@@ -1,0 +1,8 @@
+01_Informationen_Daten_und_Datenbanken.md
+02_Big_Data_und_automatisierte_Datenverarbeitung.md
+03_Algorithmische_Projekte.md
+04_Informatik_und_Automatisierung.md
+05_Mobile_Endgeraete_Daten_und_Rechte.md
+06_Computergrafik_Manipulation_und_Authentizitaet.md
+07_Glossar.md
+08_Bild_und_Quellenverzeichnis.md
