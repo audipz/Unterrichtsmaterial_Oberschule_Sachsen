@@ -11,4 +11,8 @@
 11_Objekte_Attribute_Klassen_Methoden.md
 12_Daten_verantwortungsvoll_nutzen.md
 13_Werkzeuge.md
-14_Zusatz_Wahlbereiche.md
+14_Kuenstliche_Intelligenz.md
+15_Mobile_Endgeraete.md
+16_Computergrafik.md
+17_Glossar.md
+18_Bild_und_Quellenverzeichnis.md
