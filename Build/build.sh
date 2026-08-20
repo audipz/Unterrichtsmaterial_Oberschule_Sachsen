@@ -138,6 +138,40 @@ build_area() {
   copy_pptx_masters "$source_base"
 }
 
+build_nachschlagewerke() {
+  local root="$SOURCE_ROOT/Nachschlagewerk" class_dir manifest class_name class_no combined entry source out_dir out_name safe
+  [[ -d "$root" ]] || return 0
+
+  while IFS= read -r -d '' class_dir; do
+    manifest="$class_dir/manifest.txt"
+    [[ -f "$manifest" ]] || continue
+    class_name="$(basename "$class_dir")"
+    [[ "$class_name" =~ ^Klasse_([0-9]+)$ ]] || { echo "WARNUNG: Ungültiges Nachschlagewerk-Verzeichnis: $class_name" >&2; continue; }
+    class_no="${BASH_REMATCH[1]}"
+
+    if [[ -n "$AREA" && "$AREA" != "$class_name" ]]; then
+      continue
+    fi
+
+    combined="$WORK_ROOT/Nachschlagewerk_${class_name}.md"
+    : > "$combined"
+    while IFS= read -r entry || [[ -n "$entry" ]]; do
+      entry="${entry%$'\r'}"
+      [[ -z "$entry" || "$entry" == \#* ]] && continue
+      source="$class_dir/$entry"
+      [[ -f "$source" ]] || { echo "FEHLER: Manifest-Datei fehlt: $source" >&2; exit 1; }
+      cat "$source" >> "$combined"
+      printf '\n\n\\newpage\n\n' >> "$combined"
+    done < "$manifest"
+
+    out_dir="$OUTPUT_ROOT/$class_name/Nachschlagewerk"
+    out_name="Nachschlagewerk_Informatik_${class_name}"
+    safe="Nachschlagewerk_${class_name}"
+    echo "BUILD Nachschlagewerk $class_name"
+    render_document "$combined" "$class_dir" "$out_dir" "$out_name" "Nachschlagewerk Informatik – Klasse $class_no" "Schülerhandbuch · Klasse $class_no" "$safe"
+  done < <(find "$root" -mindepth 1 -maxdepth 1 -type d -name 'Klasse_*' -print0 | sort -z)
+}
+
 if [[ -n "$AREA" ]]; then
   build_area "$AREA"
 else
@@ -145,6 +179,8 @@ else
     build_area "$area"
   done
 fi
+
+build_nachschlagewerke
 
 rm -rf "$WORK_ROOT"
 echo "Build abgeschlossen: $OUTPUT_ROOT"
