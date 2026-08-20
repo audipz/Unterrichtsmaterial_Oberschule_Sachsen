@@ -41,6 +41,10 @@ document_part() {
 is_teacher_path() {
   local rel="$1" part
   is_class_7_to_10 "$rel" || return 1
+
+  # Einzelne Lernkontrollen liegen im Build unter .../Lernkontrollen/.
+  [[ "$rel" == */Lernkontrollen/* ]] && return 0
+
   if [[ "$rel" == */05_Praesentationen/*.pptx ]]; then
     part="05_Praesentationen"
   else
@@ -68,9 +72,6 @@ done < <(find "$OUTPUT_ROOT" -type f -print0)
 [[ "$lehrer_docs" -gt 0 ]] || { echo "FEHLER: Keine Lehrerdokumente gefunden." >&2; exit 1; }
 [[ "$lehrer_pptx" -gt 0 ]] || { echo "FEHLER: Keine PowerPoint-Masterdateien gefunden." >&2; exit 1; }
 
-# Die vollständige Build-Ausgabe zusätzlich als ein direkt herunterladbares
-# Archiv bereitstellen. Das ZIP liegt absichtlich außerhalb von Ausgabe/,
-# damit es sich nicht selbst in das Archiv einschließt.
 (
   cd "$OUTPUT_ROOT"
   zip -qr "$ZIP_PATH" .
