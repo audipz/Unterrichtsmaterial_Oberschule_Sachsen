@@ -1,0 +1,14 @@
+01_Informatik_und_Computer.md
+02_Informationen_und_Daten.md
+03_Das_Binaersystem.md
+04_Texte_im_Computer.md
+05_Bilder_im_Computer.md
+06_Audio_im_Computer.md
+07_EVAS_Prinzip.md
+08_Speicher_und_Datenmengen.md
+09_Dateien_Ordner_und_Pfade.md
+10_Darstellung_von_Informationen.md
+11_Objekte_Attribute_Klassen_Methoden.md
+12_Daten_verantwortungsvoll_nutzen.md
+13_Werkzeuge.md
+14_Zusatz_Wahlbereiche.md
