@@ -49,7 +49,7 @@ jobs:
         run: |
           ./Build/package_artifacts.sh
 
-      - name: Vollständige Ausgabe als ZIP bereitstellen
+      - name: Vollständige Ausgabe als Actions-Artefakt bereitstellen
         uses: actions/upload-artifact@v4
         with:
           name: Unterrichtsmaterial_Oberschule_Sachsen
@@ -57,25 +57,53 @@ jobs:
           if-no-files-found: error
           compression-level: 0
 
-      - name: Build-Ausgabe in Feature-Branch übernehmen
+      - name: Öffentliches ZIP-Release aktualisieren
+        if: ${{ github.ref_name == 'main' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          TAG="unterrichtsmaterial-aktuell"
+          ZIP=".publish/Unterrichtsmaterial_Oberschule_Sachsen.zip"
+          TITLE="Aktuelle Unterrichtsmaterialien"
+          NOTES="Automatisch erzeugte Gesamtausgabe aus main. Build-Commit: ${GITHUB_SHA}"
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$ZIP" --clobber
+            gh release edit "$TAG" --title "$TITLE" --notes "$NOTES"
+          else
+            gh release create "$TAG" "$ZIP" \
+              --title "$TITLE" \
+              --notes "$NOTES" \
+              --target "$GITHUB_SHA" \
+              --latest
+          fi
+
+          echo "Öffentlicher Download: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/${TAG}/Unterrichtsmaterial_Oberschule_Sachsen.zip"
+
+      - name: Build-Ausgabe nicht versionieren
         if: ${{ github.ref_name != 'main' }}
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Ausgabe/ ist lokal absichtlich ignoriert. Nur der reproduzierbare
-          # GitHub-Build darf die generierten Dateien in Git aufnehmen.
-          git add -f Ausgabe/
-
-          if git diff --cached --quiet; then
-            echo "Keine Änderungen in Ausgabe/"
-            exit 0
+          # Bereits versionierte Build-Ausgabe einmalig aus Git entfernen.
+          # Die Dateien bleiben lokal für Packaging/Prüfung erhalten.
+          if git ls-files --error-unmatch Ausgabe >/dev/null 2>&1 || git ls-files Ausgabe | grep -q .; then
+            git rm -r --cached Ausgabe/
+            git commit -m "Generierte Build-Ausgabe aus Git entfernen [skip ci]"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          else
+            echo "Ausgabe/ ist nicht mehr versioniert."
           fi
 
-          git commit -m "Build-Ausgabe aktualisieren [skip ci]"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
-
-      - name: Main-Build abgeschlossen
-        if: ${{ github.ref_name == 'main' }}
+      - name: Build abgeschlossen
         run: |
-          echo "main ist geschützt: Build wurde geprüft, Ausgabe wird nicht direkt nach main gepusht."
+          echo "Build erfolgreich. Ausgabe/ wird nicht in Git eingecheckt."
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            echo "Das öffentliche Release-ZIP wurde aktualisiert."
+          else
+            echo "In Feature-Branches steht das ZIP als Actions-Artefakt zur Build-Prüfung bereit."
+          fi
