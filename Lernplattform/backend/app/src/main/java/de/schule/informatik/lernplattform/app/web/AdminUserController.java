@@ -1,5 +1,6 @@
 package de.schule.informatik.lernplattform.app.web;
 
+import de.schule.informatik.lernplattform.app.security.CurrentActor;
 import de.schule.informatik.lernplattform.app.user.UserProvisioningService;
 import de.schule.informatik.lernplattform.domain.user.CreateUserCommand;
 import de.schule.informatik.lernplattform.domain.user.UserLifecycleService;
@@ -28,17 +29,19 @@ public class AdminUserController {
 
     private final UserProvisioningService provisioningService;
     private final UserLifecycleService lifecycleService;
+    private final CurrentActor currentActor;
 
     public AdminUserController(UserProvisioningService provisioningService,
-                               UserLifecycleService lifecycleService) {
+                               UserLifecycleService lifecycleService,
+                               CurrentActor currentActor) {
         this.provisioningService = provisioningService;
         this.lifecycleService = lifecycleService;
+        this.currentActor = currentActor;
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public CreateUserResponse create(@PathVariable UUID schoolId,
-                                     @RequestParam UUID actorId,
                                      @Valid @RequestBody CreateUserRequest request) {
         var result = provisioningService.create(new CreateUserCommand(
                 schoolId,
@@ -46,7 +49,7 @@ public class AdminUserController {
                 request.initialPassword(),
                 request.roles(),
                 request.visibleClassIds() == null ? Set.of() : request.visibleClassIds(),
-                actorId
+                currentActor.id()
         ));
         return new CreateUserResponse(result.userId(), result.username(), result.displayName());
     }
@@ -55,17 +58,15 @@ public class AdminUserController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void studentLeavesSchool(@PathVariable UUID schoolId,
                                     @PathVariable UUID userId,
-                                    @RequestParam UUID actorId,
                                     @RequestParam(required = false) LocalDate effectiveDate) {
-        lifecycleService.studentLeavesSchool(schoolId, userId, effectiveDate, actorId);
+        lifecycleService.studentLeavesSchool(schoolId, userId, effectiveDate, currentActor.id());
     }
 
     @PostMapping("/{userId}/reactivate")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void reactivate(@PathVariable UUID schoolId,
-                           @PathVariable UUID userId,
-                           @RequestParam UUID actorId) {
-        lifecycleService.reactivate(schoolId, userId, actorId);
+                           @PathVariable UUID userId) {
+        lifecycleService.reactivate(schoolId, userId, currentActor.id());
     }
 
     public record CreateUserRequest(
