@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="540" viewBox="0 0 1100 540" role="img" aria-labelledby="title desc">
+  <title id="title">Vom Rohdatum zum Bericht</title>
+  <desc id="desc">Datenquellen fließen über Erfassung und Aufbereitung in einen zentralen Datenspeicher, werden analysiert und anschließend in Berichten und Dashboards dargestellt.</desc>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2f5597"/></marker>
+    <style>.t{font-family:Arial,sans-serif;fill:#17324d}.h{font-size:27px;font-weight:700}.s{font-size:18px}.b{stroke:#2f5597;stroke-width:2.5;rx:12}.a{stroke:#2f5597;stroke-width:4;fill:none;marker-end:url(#arr)}</style>
+  </defs>
+  <rect width="1100" height="540" fill="#f8fbff"/>
+  <text x="550" y="42" text-anchor="middle" class="t h">Big Data: Vom Rohdatum zur nutzbaren Information</text>
+  <g transform="translate(35 100)">
+    <rect width="180" height="300" class="b" fill="#e8f1fb"/>
+    <text x="90" y="38" text-anchor="middle" class="t" font-size="22" font-weight="700">Datenquellen</text>
+    <text x="25" y="85" class="t s">• Sensoren</text><text x="25" y="120" class="t s">• Apps/Webseiten</text><text x="25" y="155" class="t s">• Kassensysteme</text><text x="25" y="190" class="t s">• Maschinen</text><text x="25" y="225" class="t s">• Logdaten</text><text x="25" y="260" class="t s">• externe Daten</text>
+  </g>
+  <g transform="translate(285 135)"><rect width="180" height="230" class="b" fill="#fff1d6"/><text x="90" y="38" text-anchor="middle" class="t" font-size="22" font-weight="700">Aufbereitung</text><text x="22" y="85" class="t s">Erfassen</text><text x="22" y="120" class="t s">Bereinigen</text><text x="22" y="155" class="t s">Umformen</text><text x="22" y="190" class="t s">Zusammenführen</text></g>
+  <g transform="translate(535 135)"><rect width="180" height="230" class="b" fill="#e7f4e8"/><text x="90" y="38" text-anchor="middle" class="t" font-size="22" font-weight="700">Speichern</text><text x="22" y="92" class="t s">Data Warehouse</text><text x="22" y="127" class="t s">Data Lake</text><text x="22" y="162" class="t s">Datenbanken</text><text x="22" y="197" class="t s">verteilte Speicher</text></g>
+  <g transform="translate(785 135)"><rect width="180" height="230" class="b" fill="#eee8fb"/><text x="90" y="38" text-anchor="middle" class="t" font-size="22" font-weight="700">Analysieren</text><text x="22" y="92" class="t s">Filtern</text><text x="22" y="127" class="t s">Gruppieren</text><text x="22" y="162" class="t s">OLAP/Cubes</text><text x="22" y="197" class="t s">Muster erkennen</text></g>
+  <g transform="translate(820 425)"><rect width="245" height="75" class="b" fill="#d9eaf7"/><text x="122" y="31" text-anchor="middle" class="t" font-size="21" font-weight="700">Berichte &amp; Dashboards</text><text x="122" y="57" text-anchor="middle" class="t" font-size="17">Entscheidungen unterstützen</text></g>
+  <path class="a" d="M215 250 H277"/><path class="a" d="M465 250 H527"/><path class="a" d="M715 250 H777"/><path class="a" d="M875 365 V416"/>
+  <text x="550" y="515" text-anchor="middle" class="t s">Ziel: Aus sehr vielen Rohdaten verlässliche, verständliche und nutzbare Informationen gewinnen.</text>
+</svg>
