@@ -1,56 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="410" viewBox="0 0 900 410" role="img" aria-labelledby="title desc">
-<title id="title">Verzeichnisbaum</title>
-<desc id="desc">Ordner Schule enthält die Unterordner Informatik und Deutsch. Informatik enthält den Ordner Bilder und die Datei Notizen.txt. Bilder enthält die Datei eva.png. Deutsch enthält die Datei Aufsatz.odt.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+<title id="title">Beispiel eines Verzeichnisbaums mit Ordnern und Dateien</title>
+<desc id="desc">Der Ordner Schule enthält die Ordner Informatik und Deutsch. Informatik enthält den Ordner Bilder und die Datei Notizen.txt. Bilder enthält eva.png. Deutsch enthält Aufsatz.odt.</desc>
 <defs>
   <style>
-    .t{font:24px sans-serif;fill:#111}.s{font:19px sans-serif;fill:#222}.l{stroke:#555;stroke-width:2}
-    .folder{fill:#f7f7f7;stroke:#222;stroke-width:2}.file{fill:#fff;stroke:#222;stroke-width:2}
+    .title{font:700 28px sans-serif;fill:#1557a0}.label{font:700 20px sans-serif;fill:#1557a0}.filelabel{font:19px sans-serif;fill:#222}.line{stroke:#333;stroke-width:3;fill:none}
+    .folder{fill:#ffd45c;stroke:#9a6a00;stroke-width:2}.file{fill:#fff;stroke:#555;stroke-width:2}.fold{fill:#eaf2fb;stroke:#555;stroke-width:2}
+    .legend{font:18px sans-serif;fill:#333}.legendbox{fill:#f4f8fd;stroke:#8bb5e5;stroke-width:1.5}
   </style>
 </defs>
-<text x="450" y="35" text-anchor="middle" class="t">Ordner bilden eine Baumstruktur</text>
+<text x="500" y="42" text-anchor="middle" class="title">Beispiel eines Verzeichnisbaums mit Ordnern und Dateien</text>
 
-<!-- Schule -->
-<path class="folder" d="M370 67h58l14 13h88v50H370z"/>
-<text class="s" x="450" y="108" text-anchor="middle">Schule</text>
+<!-- Wurzelordner Schule -->
+<path class="folder" d="M430 75h58l14 14h98v62H430z"/>
+<text x="515" y="115" text-anchor="middle" class="label">Schule/</text>
 
-<!-- Verbindung zu Informatik / Deutsch -->
-<line class="l" x1="450" y1="130" x2="450" y2="155"/>
-<line class="l" x1="250" y1="155" x2="650" y2="155"/>
-<line class="l" x1="250" y1="155" x2="250" y2="180"/>
-<line class="l" x1="650" y1="155" x2="650" y2="180"/>
+<!-- Ebene 1 -->
+<path class="line" d="M515 151v34M260 185h510M260 185v34M770 185v34"/>
 
 <!-- Informatik -->
-<path class="folder" d="M155 187h70l14 13h106v50H155z"/>
-<text class="s" x="250" y="228" text-anchor="middle">Informatik</text>
+<path class="folder" d="M175 220h68l14 14h108v62H175z"/>
+<text x="270" y="260" text-anchor="middle" class="label">Informatik/</text>
 
 <!-- Deutsch -->
-<path class="folder" d="M570 187h58l14 13h88v50H570z"/>
-<text class="s" x="650" y="228" text-anchor="middle">Deutsch</text>
+<path class="folder" d="M690 220h58l14 14h98v62H690z"/>
+<text x="775" y="260" text-anchor="middle" class="label">Deutsch/</text>
 
 <!-- Informatik Kinder -->
-<line class="l" x1="250" y1="250" x2="250" y2="275"/>
-<line class="l" x1="160" y1="275" x2="340" y2="275"/>
-<line class="l" x1="160" y1="275" x2="160" y2="300"/>
-<line class="l" x1="340" y1="275" x2="340" y2="300"/>
+<path class="line" d="M270 296v36M155 332h230M155 332v34M385 332v34"/>
 
-<!-- Bilder Ordner -->
-<path class="folder" d="M85 307h50l12 12h88v48H85z"/>
-<text class="s" x="160" y="347" text-anchor="middle">Bilder</text>
+<!-- Bilder -->
+<path class="folder" d="M80 368h60l14 14h106v58H80z"/>
+<text x="170" y="406" text-anchor="middle" class="label">Bilder/</text>
 
 <!-- Notizen Datei -->
-<path class="file" d="M275 307h105l25 25v50H275z"/>
-<path class="file" d="M380 307v25h25" fill="none"/>
-<text class="s" x="340" y="359" text-anchor="middle">Notizen.txt</text>
+<path class="file" d="M325 365h105l28 28v70H325z"/>
+<path class="fold" d="M430 365v28h28z"/>
+<text x="391" y="431" text-anchor="middle" class="filelabel">Notizen.txt</text>
 
-<!-- eva Datei -->
-<line class="l" x1="160" y1="367" x2="160" y2="382"/>
-<path class="file" d="M105 382h90l20 20v0H105z" visibility="hidden"/>
-<rect class="file" x="100" y="380" width="120" height="26" rx="4"/>
-<text class="s" x="160" y="399" text-anchor="middle">eva.png</text>
+<!-- eva Datei unter Bilder -->
+<path class="line" d="M170 440v30"/>
+<path class="file" d="M110 468h100l24 24v20H110z"/>
+<path class="fold" d="M210 468v24h24z"/>
+<text x="172" y="503" text-anchor="middle" class="filelabel">eva.png</text>
 
-<!-- Deutsch Datei -->
-<line class="l" x1="650" y1="250" x2="650" y2="305"/>
-<path class="file" d="M585 305h105l25 25v52H585z"/>
-<path class="file" d="M690 305v25h25" fill="none"/>
-<text class="s" x="650" y="359" text-anchor="middle">Aufsatz.odt</text>
+<!-- Aufsatz Datei unter Deutsch -->
+<path class="line" d="M775 296v70"/>
+<path class="file" d="M710 365h105l28 28v70H710z"/>
+<path class="fold" d="M815 365v28h28z"/>
+<text x="777" y="431" text-anchor="middle" class="filelabel">Aufsatz.odt</text>
+
+<!-- Legende -->
+<rect class="legendbox" x="675" y="470" width="270" height="38" rx="8"/>
+<path class="folder" d="M695 480h25l7 7h38v17h-70z"/>
+<text x="775" y="499" class="legend">Ordner</text>
+<path class="file" d="M850 478h22l8 8v18h-30z"/>
+<path class="fold" d="M872 478v8h8z"/>
+<text x="890" y="499" class="legend">Datei</text>
 </svg>
