@@ -100,67 +100,83 @@ FÜR zeile VON 1 BIS 3
 
 Die innere Schleife läuft viermal für jede der drei Zeilen. Insgesamt wird `setze Punkt` also `3 · 4 = 12` Mal ausgeführt.
 
-## Bedingungen und Vergleichsoperatoren
+## Bedingungen, Zuweisungen und Vergleichsoperatoren
 
-Eine **Bedingung** ist ein Ausdruck, dessen Ergebnis **wahr** oder **falsch** ist. Um Werte zu vergleichen, werden **Vergleichsoperatoren** verwendet.
+Eine **Bedingung** ist ein Ausdruck, dessen Ergebnis **wahr** oder **falsch** ist. Um Werte zu vergleichen, werden **Vergleichsoperatoren** verwendet. Davon muss eine **Zuweisung** unterschieden werden: Bei einer Zuweisung wird ein Wert in einer Variablen gespeichert.
 
-Typische Schreibweisen sind:
+### Wichtige Schreibweisen
 
-| Bedeutung | häufige Schreibweise |
-|---|---|
-| gleich | `==` |
-| ungleich | `!=` |
-| kleiner als | `<` |
-| größer als | `>` |
-| kleiner oder gleich | `<=` |
-| größer oder gleich | `>=` |
+| Schreibweise | Bedeutung | Typischer Einsatz |
+|---|---|---|
+| `:=` | Zuweisung | Pseudocode: Eine Variable bekommt einen Wert. |
+| `=` | Zuweisung | in vielen Programmiersprachen, zum Beispiel Python und JavaScript |
+| `==` | Gleichheitsvergleich | prüft in vielen Programmiersprachen, ob zwei Werte gleich sind |
+| `===` | strenger Gleichheitsvergleich | JavaScript/TypeScript: Wert **und** Datentyp müssen passen |
+| `!=` | Ungleichheitsvergleich | prüft in vielen Programmiersprachen, ob Werte ungleich sind |
+| `!==` | strenger Ungleichheitsvergleich | JavaScript/TypeScript: Wert oder Datentyp unterscheiden sich |
+| `<` | kleiner als | zum Beispiel `temperatur < 0` |
+| `>` | größer als | zum Beispiel `punkte > 10` |
+| `<=` | kleiner oder gleich | zum Beispiel `alter <= 14` |
+| `>=` | größer oder gleich | zum Beispiel `punkte >= 10` |
 
 Beispiel:
 
 ```text
-WENN punkte == 10
+WENN punkte >= 10
     DANN zeige "Ziel erreicht"
 ```
 
-`punkte == 10` **vergleicht**, ob der gespeicherte Wert von `punkte` gleich 10 ist. Das Ergebnis des Vergleichs ist wahr oder falsch.
+`punkte >= 10` vergleicht den gespeicherten Wert von `punkte` mit 10. Das Ergebnis ist entweder **wahr** oder **falsch**.
 
-### `=`, `==` und `:=` sind nicht dasselbe
+### Zuweisung und Vergleich nicht verwechseln
 
-Diese Zeichen werden leicht verwechselt, können aber unterschiedliche Bedeutungen haben:
-
-| Schreibweise | typische Bedeutung |
-|---|---|
-| `:=` | Zuweisung in Pseudocode: „bekommt den Wert“ |
-| `=` | in vielen Programmiersprachen Zuweisung; in Mathematik Gleichheit |
-| `==` | in vielen Programmiersprachen Vergleich auf Gleichheit |
-
-Beispiel:
+In unserem Pseudocode schreiben wir eine Zuweisung so:
 
 ```text
 punkte := 10
 ```
 
-bedeutet in unserem Pseudocode: Speichere 10 in `punkte`.
+Das bedeutet: Speichere den Wert 10 in der Variablen `punkte`.
 
-```text
-punkte == 10
-```
-
-bedeutet: Prüfe, ob `punkte` den Wert 10 besitzt.
-
-In einer Sprache wie Python oder JavaScript wird eine Zuweisung dagegen häufig mit `=` geschrieben:
+In vielen Programmiersprachen wird für die Zuweisung dagegen `=` verwendet:
 
 ```text
 punkte = 10
 ```
 
-und der Vergleich mit:
+Ein Gleichheitsvergleich wird häufig mit `==` geschrieben:
 
 ```text
 punkte == 10
 ```
 
-> **Merke:** Ob `=`, `==` oder `:=` verwendet wird, hängt von der Sprache beziehungsweise Darstellungsform ab. Entscheidend ist, zwischen **einen Wert speichern** und **zwei Werte vergleichen** zu unterscheiden.
+Das bedeutet nicht „Speichere 10“, sondern „Prüfe, ob der Wert von `punkte` gleich 10 ist“.
+
+> **Merke:** Eine **Zuweisung** verändert einen gespeicherten Wert. Ein **Vergleich** prüft Werte und liefert als Ergebnis wahr oder falsch.
+
+### Besonderheit in JavaScript und TypeScript: `==` und `===`
+
+JavaScript besitzt neben `==` auch den **strengen Vergleich** `===`. TypeScript verwendet diese Operatoren ebenfalls, weil TypeScript auf JavaScript aufbaut.
+
+Beim Vergleich mit `==` kann JavaScript Werte unterschiedlicher Datentypen vor dem Vergleich automatisch umwandeln. Deshalb kann beispielsweise gelten:
+
+```javascript
+"5" == 5   // wahr
+```
+
+Links steht die Zeichenkette `"5"`, rechts die Zahl `5`. Beim Vergleich mit `==` kann JavaScript eine Typumwandlung durchführen.
+
+Beim strengen Vergleich `===` findet diese automatische Angleichung nicht statt:
+
+```javascript
+"5" === 5  // falsch
+```
+
+Obwohl beide Werte wie eine Fünf aussehen, besitzen sie unterschiedliche Datentypen: links **String**, rechts **Zahl**.
+
+Entsprechend gibt es `!=` für „ungleich“ und `!==` für „streng ungleich“.
+
+> **Merke:** In JavaScript und TypeScript werden normalerweise `===` und `!==` bevorzugt, weil dadurch unerwartete Ergebnisse durch automatische Typumwandlungen vermieden werden können. Wenn solche Operatoren in einem Angular-Projekt vorkommen, stammen sie aus **JavaScript/TypeScript** – nicht aus Angular selbst.
 
 ## Variablen
 
@@ -210,17 +226,136 @@ Variablennamen sollten erkennen lassen, was gespeichert wird, beispielsweise `pu
 
 > **Merke:** Eine Variable verbindet einen verständlichen Namen mit einem gespeicherten Wert. Ihr Datentyp beschreibt, welche Art von Daten dieser Wert darstellt.
 
-## Lambda-Ausdrücke – ein Ausblick
+## Lambda-Ausdrücke – ein kurzer Ausblick
 
-In manchen Programmiersprachen begegnet später auch das Zeichen **λ (Lambda)** beziehungsweise der Begriff **Lambda-Ausdruck**. Ein Lambda-Ausdruck beschreibt vereinfacht eine kleine Funktion, die häufig direkt dort notiert wird, wo sie benötigt wird, ohne ihr vorher einen eigenen Funktionsnamen zu geben.
+Ein **Lambda-Ausdruck** ist eine kurze, häufig namenlose Funktion. Er ist **kein Vergleichs- und kein Zuweisungsoperator**.
 
-Beispielsweise kann eine Sprache sinngemäß eine Funktion „verdopple eine Zahl“ als kurzen Ausdruck darstellen. Die konkrete Schreibweise unterscheidet sich stark zwischen Programmiersprachen.
+In Python kann eine kleine Funktion zum Verdoppeln einer Zahl beispielsweise so geschrieben werden:
 
-Lambda-Ausdrücke sind **nicht** dasselbe wie Zuweisungs- oder Vergleichsoperatoren und für die grundlegenden Algorithmen dieses Kapitels nicht erforderlich. Der Begriff ist hier nur als Ausblick genannt, damit das Zeichen beziehungsweise der Name später eingeordnet werden kann.
+```python
+lambda x: x * 2
+```
+
+Der Ausdruck beschreibt sinngemäß: „Nimm `x` und liefere das Doppelte von `x` zurück.“ Andere Programmiersprachen verwenden andere Schreibweisen.
+
+Für die Algorithmen in Klasse 8 musst du Lambda-Ausdrücke noch nicht genauer beherrschen. Der Begriff dient hier nur zur Einordnung; funktionale Programmierung wird später ausführlicher behandelt.
 
 ## Algorithmen darstellen
 
-Algorithmen können als Text, Pseudocode, Struktogramm, Ablaufdiagramm oder Programmcode dargestellt werden. Eine gute Darstellung macht Reihenfolge, Entscheidungen und Wiederholungen eindeutig erkennbar.
+Derselbe Algorithmus kann auf verschiedene Arten dargestellt werden. Welche Darstellung sinnvoll ist, hängt davon ab, ob ein Ablauf zunächst erklärt, geplant, grafisch untersucht oder bereits als ausführbares Programm formuliert werden soll.
+
+Als gemeinsames Beispiel verwenden wir diesen Ablauf:
+
+**Temperatur einlesen. Wenn die Temperatur unter 0 °C liegt, „Frostwarnung“ ausgeben, sonst „kein Frost“ ausgeben.**
+
+### Natürliche Sprache
+
+Bei der Darstellung in **natürlicher Sprache** wird ein Algorithmus mit gewöhnlichen Sätzen beschrieben, zum Beispiel auf Deutsch.
+
+**Typische Elemente:** nummerierte Schritte, kurze eindeutige Sätze und Signalwörter wie „wenn“, „sonst“, „solange“ oder „wiederhole“.
+
+**Beispiel:**
+
+1. Lies die Temperatur ein.
+2. Wenn die Temperatur unter 0 °C liegt, gib „Frostwarnung“ aus.
+3. Sonst gib „kein Frost“ aus.
+
+Natürliche Sprache eignet sich gut, um einen Ablauf verständlich einzuführen oder anderen Menschen zu erklären. Sie benötigt keine besondere Notation.
+
+**Vorteil:** leicht lesbar und schnell zu formulieren.  
+**Nachteil:** Formulierungen können mehrdeutig oder unterschiedlich ausführlich sein.
+
+### Pseudocode
+
+**Pseudocode** ähnelt Programmcode, ist aber nicht an eine bestimmte Programmiersprache gebunden. Er verwendet vereinbarte Schlüsselwörter und eine übersichtliche Einrückung.
+
+**Typische Elemente:** Anweisungen, Variablen, Zuweisungen, Bedingungen, `WENN`/`SONST`, Schleifen und Ein-/Ausgaben.
+
+**Beispiel:**
+
+```text
+temperatur := EINGABE
+WENN temperatur < 0
+    DANN AUSGABE "Frostwarnung"
+SONST
+    AUSGABE "kein Frost"
+```
+
+Pseudocode eignet sich besonders zum **Planen von Algorithmen**, bevor eine konkrete Programmiersprache gewählt wird.
+
+**Vorteil:** Kontrollstrukturen sind deutlich sichtbar, ohne sich mit sprachspezifischen Einzelheiten beschäftigen zu müssen.  
+**Nachteil:** Pseudocode kann nicht direkt vom Computer ausgeführt werden; außerdem gibt es keine weltweit einheitliche Schreibweise.
+
+### Struktogramm / Nassi-Shneiderman-Diagramm
+
+Ein **Struktogramm**, auch **Nassi-Shneiderman-Diagramm** genannt, stellt einen Algorithmus als rechteckige, ineinander verschachtelte Blöcke dar. Sequenzen, Auswahlen und Wiederholungen erhalten dabei jeweils eine erkennbare Blockstruktur.
+
+![Struktogramm für die Frostwarnung](grafiken/struktogramm_frostwarnung.svg)
+
+Bei einer Auswahl wird die Bedingung in einem Entscheidungsblock notiert. Darunter stehen die Bereiche für die möglichen Fälle. Verschachtelte Kontrollstrukturen werden als **verschachtelte Blöcke** dargestellt. Anders als beim Ablaufdiagramm werden normalerweise **keine Ablaufpfeile** benötigt: Die Lage der Blöcke zeigt die Struktur.
+
+**Typische Elemente:** Anweisungsblöcke, Auswahlblöcke mit Bedingungen, Schleifenblöcke und ineinander liegende Kontrollstrukturen.
+
+Struktogramme eignen sich besonders, um die **Struktur eines Algorithmus** zu erkennen und zu prüfen, wie Sequenz, Auswahl und Wiederholung zusammengesetzt sind.
+
+**Vorteil:** Die Kontrollstrukturen und ihre Verschachtelung sind sehr übersichtlich.  
+**Nachteil:** Bei sehr großen Algorithmen können Struktogramme umfangreich werden; für freie Sprünge oder stark verzweigte Abläufe sind sie weniger geeignet.
+
+### Ablaufdiagramm / Flussdiagramm
+
+Ein **Ablaufdiagramm** oder **Flussdiagramm** zeigt die einzelnen Schritte eines Algorithmus als Symbole, die durch Pfeile miteinander verbunden werden. Die Pfeile geben die Ablaufrichtung an.
+
+![Ablaufdiagramm für die Frostwarnung](grafiken/ablaufdiagramm_frostwarnung.svg)
+
+Häufig verwendete Symbole sind:
+
+| Symbol | Bedeutung | Typischer Inhalt |
+|---|---|---|
+| abgerundetes Rechteck / Oval | Start oder Ende | `Start`, `Ende` |
+| Rechteck | Verarbeitung | Berechnung oder Zuweisung |
+| Parallelogramm | Ein- oder Ausgabe | Wert einlesen oder Text ausgeben |
+| Raute | Entscheidung | Bedingung mit Abzweigungen, zum Beispiel Ja/Nein |
+| Pfeil | Ablaufrichtung | verbindet die Schritte |
+
+Im Beispiel führt die Raute mit der Bedingung `Temperatur < 0 °C?` zu zwei Wegen. Der **Ja-Zweig** gibt „Frostwarnung“ aus, der **Nein-Zweig** „kein Frost“. Danach werden beide Wege wieder zum Ende geführt.
+
+Ablaufdiagramme eignen sich gut, um **Reihenfolge und Verzweigungen sichtbar zu machen** und einen Ablauf gemeinsam zu besprechen.
+
+**Vorteil:** Der Weg durch einen Algorithmus lässt sich anschaulich verfolgen.  
+**Nachteil:** Große oder stark verschachtelte Algorithmen können durch viele Pfeile unübersichtlich werden.
+
+### Programmcode
+
+**Programmcode** formuliert den Algorithmus nach den genauen Regeln einer Programmiersprache. Erst diese Darstellung kann – mit einer passenden Laufzeitumgebung oder nach einer Übersetzung – tatsächlich vom Computer ausgeführt werden.
+
+**Typische Elemente:** Schlüsselwörter und Syntax der gewählten Sprache, Variablen, Operatoren, Ein-/Ausgabe, Bedingungen, Schleifen und Funktionen.
+
+Dasselbe Beispiel könnte in Python so aussehen:
+
+```python
+temperatur = float(input("Temperatur in °C: "))
+if temperatur < 0:
+    print("Frostwarnung")
+else:
+    print("kein Frost")
+```
+
+Programmcode eignet sich, wenn aus einem geplanten Algorithmus ein **ausführbares Programm** werden soll.
+
+**Vorteil:** eindeutig nach den Regeln der Programmiersprache und ausführbar.  
+**Nachteil:** Man muss die genaue Syntax kennen; sprachspezifische Details können vom eigentlichen Lösungsverfahren ablenken.
+
+### Vergleich der Darstellungsformen
+
+| Darstellungsform | Darstellung | Besonders geeignet für | Stärke | Grenze |
+|---|---|---|---|---|
+| natürliche Sprache | Sätze und Schritte | erstes Erklären und Beschreiben | leicht verständlich | kann mehrdeutig sein |
+| Pseudocode | vereinfachte codeähnliche Notation | Planen eines Algorithmus | unabhängig von einer konkreten Programmiersprache | nicht direkt ausführbar |
+| Struktogramm | verschachtelte Blöcke | Kontrollstrukturen und Verschachtelungen | Struktur sehr gut erkennbar | bei großen Algorithmen umfangreich |
+| Ablaufdiagramm | Symbole und Pfeile | Abläufe und Verzweigungen | Ablaufweg anschaulich | viele Pfeile können unübersichtlich werden |
+| Programmcode | Syntax einer Programmiersprache | Umsetzung auf dem Computer | ausführbar und präzise | sprachabhängig |
+
+> **Merke:** Die Darstellungsform ändert nicht den Algorithmus selbst. Sie zeigt denselben Lösungsweg nur auf unterschiedliche Weise.
 
 ## Testen
 
@@ -229,6 +364,8 @@ Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders
 > **Merke:** Programmieren bedeutet nicht nur Befehle zu schreiben. Zuerst muss klar sein, welches Verfahren das Problem löst.
 
 ## Begriffe zum Nachschlagen
+
+**Ablaufdiagramm/Flussdiagramm:** grafische Darstellung eines Ablaufs mit genormten beziehungsweise vereinbarten Symbolen und Pfeilen.
 
 **Algorithmus:** eindeutige Handlungsvorschrift zur Lösung einer Aufgabe.
 
@@ -242,7 +379,11 @@ Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders
 
 **Initialisierung:** erstmalige Vergabe eines Wertes an eine Variable.
 
-**Lambda-Ausdruck:** kurze, häufig namenlose Funktionsbeschreibung in Programmiersprachen; die genaue Schreibweise ist sprachabhängig.
+**Lambda-Ausdruck:** kurze, häufig namenlose Funktion; kein Vergleichs- oder Zuweisungsoperator.
+
+**Pseudocode:** vereinfachte, programmiersprachenunabhängige Schreibweise zur Darstellung eines Algorithmus.
+
+**Struktogramm/Nassi-Shneiderman-Diagramm:** grafische Darstellung eines Algorithmus durch verschachtelte Blöcke für Kontrollstrukturen.
 
 **Variable:** benannter Speicherplatz für einen Wert.
 
