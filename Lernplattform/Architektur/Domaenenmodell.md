@@ -21,6 +21,24 @@ School
 
 Individuelle Schülerdaten hängen an Zuweisungen und persönlichen Arbeitsständen, nicht direkt an den Markdown-Quelldateien.
 
+## Datenschutzgrundsatz für Schülerkonten
+
+Für Schüler sollen **keine echten Namen erforderlich sein**.
+
+Ein Schülerkonto benötigt technisch nur:
+
+- Schule,
+- Benutzername,
+- Passwort beziehungsweise Passwort-Hash,
+- Rollen und organisatorische Zuordnungen,
+- optional einen frei gewählten Anzeigenamen.
+
+Der optionale Anzeigename darf ausdrücklich ein **Fantasiename/Pseudonym** sein. Die Plattform fordert keinen Vor- oder Nachnamen des Schülers an.
+
+Dadurch kennt die Lernplattform im Normalbetrieb nicht zwingend die reale Identität eines Schülers. Die Zuordnung zwischen realer Person und Benutzerkonto kann – falls die Schule sie organisatorisch benötigt – außerhalb der Lernplattform geführt werden.
+
+> **Grundsatz:** So wenig personenbezogene Daten wie möglich speichern. Für das Lernen ist die reale Identität des Schülers in der Plattform nicht notwendig.
+
 ## School
 
 Zentrale Mandanteneinheit.
@@ -38,13 +56,14 @@ deleted_by
 
 ## User
 
+Gemeinsame technische Benutzeridentität.
+
 ```text
 id
 school_id
 username
+display_name
 password_hash
-first_name
-last_name
 status
 must_change_password
 last_login_at
@@ -54,11 +73,34 @@ deleted_at
 deleted_by
 ```
 
+`display_name` ist für Schüler optional und darf ein Fantasiename sein.
+
+Für Schüler werden **keine Pflichtfelder `first_name` oder `last_name`** vorgesehen.
+
 Eindeutigkeit:
 
 ```text
 UNIQUE(school_id, username)
 ```
+
+Der Benutzername ist ein technischer Loginname und muss nicht dem echten Namen entsprechen.
+
+## Lehrerprofil
+
+Für Lehrkräfte können zusätzliche Angaben erforderlich sein, damit Schüler und Kollegen eine Lehrkraft eindeutig erkennen können. Diese Angaben werden getrennt vom allgemeinen Benutzerkonto modelliert.
+
+Beispiel:
+
+```text
+TeacherProfile
+--------------
+user_id
+first_name
+last_name
+display_name
+```
+
+Damit werden reale Namen nur dort gespeichert, wo sie fachlich beziehungsweise organisatorisch tatsächlich benötigt werden.
 
 ## UserRole
 
