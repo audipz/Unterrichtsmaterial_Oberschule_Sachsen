@@ -10,19 +10,9 @@ Die objektorientierte Modellierung beschreibt einen Anwendungsbereich mit **Obje
 
 Ein **Objekt** ist ein konkretes Element, beispielsweise ein bestimmtes Fahrrad oder eine bestimmte Spielfigur. Eine **Klasse** beschreibt gemeinsame Merkmale gleichartiger Objekte.
 
-```text
-Klasse: Fahrrad
-├── Attribute
-│   ├── farbe
-│   ├── gang
-│   └── geschwindigkeit
-└── Methoden
-    ├── schalten()
-    ├── bremsen()
-    └── beschleunigen()
-```
+![Klasse Fahrrad mit Attributen und Methoden sowie das konkrete Objekt fahrrad1](grafiken/objekt_klasse.svg)
 
-Ein konkretes Objekt könnte `fahrrad1` heißen. Seine Attribute besitzen konkrete Werte.
+Die Klasse `Fahrrad` legt fest, welche Attribute und Methoden Fahrräder im Modell besitzen. Ein konkretes Objekt wie `fahrrad1` übernimmt diese Struktur und besitzt eigene Attributwerte.
 
 | Attribut | Wert |
 |---|---|
