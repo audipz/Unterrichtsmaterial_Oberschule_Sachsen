@@ -4,6 +4,7 @@ import de.schule.informatik.lernplattform.domain.displayname.DisplayNameConflict
 import de.schule.informatik.lernplattform.domain.displayname.DisplayNameConflictPort;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -32,20 +33,42 @@ public final class ClassAdministrationService {
         var user = port.requireActiveUser(studentId);
         requireSameSchool(schoolId, user.schoolId());
         requireRole(user.roles(), "STUDENT");
-        ensureDisplayNameAvailable(user, classId);
+        ensureDisplayNameAvailable(user, classId, Set.of());
         port.addStudent(schoolId, classId, studentId, validFrom, actorId);
+    }
+
+    public void moveStudent(UUID schoolId,
+                            UUID studentId,
+                            UUID sourceClassId,
+                            UUID targetClassId,
+                            LocalDate effectiveDate,
+                            UUID actorId) {
+        if (sourceClassId.equals(targetClassId)) {
+            throw new IllegalArgumentException("sourceClassId and targetClassId must differ");
+        }
+        var user = port.requireActiveUser(studentId);
+        requireSameSchool(schoolId, user.schoolId());
+        requireRole(user.roles(), "STUDENT");
+
+        Set<UUID> excludedClasses = Set.of(sourceClassId);
+        ensureDisplayNameAvailable(user, targetClassId, excludedClasses);
+        port.moveStudent(schoolId, studentId, sourceClassId, targetClassId,
+                effectiveDate == null ? LocalDate.now() : effectiveDate, actorId);
     }
 
     public void addTeacher(UUID schoolId, UUID classId, UUID teacherId, UUID actorId) {
         var user = port.requireActiveUser(teacherId);
         requireSameSchool(schoolId, user.schoolId());
         requireRole(user.roles(), "TEACHER");
-        ensureDisplayNameAvailable(user, classId);
+        ensureDisplayNameAvailable(user, classId, Set.of());
         port.addTeacher(schoolId, classId, teacherId, actorId);
     }
 
-    private void ensureDisplayNameAvailable(ClassAdministrationPort.UserContext user, UUID targetClassId) {
-        Set<UUID> affectedClasses = new java.util.HashSet<>(port.activeClassIdsForUser(user.userId()));
+    private void ensureDisplayNameAvailable(ClassAdministrationPort.UserContext user,
+                                            UUID targetClassId,
+                                            Set<UUID> excludedClasses) {
+        Set<UUID> affectedClasses = new HashSet<>(port.activeClassIdsForUser(user.userId()));
+        affectedClasses.removeAll(excludedClasses);
         affectedClasses.add(targetClassId);
         port.lockClasses(affectedClasses);
         if (displayNameConflictPort.conflictsInClasses(user.userId(), user.displayNameNormalized(), affectedClasses)) {
