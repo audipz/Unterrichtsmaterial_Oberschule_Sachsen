@@ -6,6 +6,8 @@ Computer speichern Buchstaben nicht als kleine Bilder eines Buchstabens. Jedem Z
 
 Vereinfacht entsteht folgende Kette:
 
+![Vom Zeichen über den Codewert zur Bitfolge](grafiken/zeichen_code_bits.svg)
+
 ```text
 Zeichen → Codewert → Binärdarstellung → Speicherung
 ```
