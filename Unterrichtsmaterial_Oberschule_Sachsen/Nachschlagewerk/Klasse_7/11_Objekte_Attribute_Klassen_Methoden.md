@@ -33,6 +33,8 @@ Ein **Attribut** beschreibt eine Eigenschaft eines Objekts. Der **Attributwert**
 
 Objekte mit gemeinsamen Merkmalen können zu einer **Klasse** zusammengefasst werden. Die Klasse beschreibt, welche Attribute und möglichen Verhaltensweisen ihre Objekte besitzen.
 
+![Zusammenhang von Klasse, Attributen, Methoden und einem konkreten Objekt](grafiken/objekt_klasse_attribute_methoden.svg)
+
 ```text
 Klasse: Fahrrad
   Attribute:
