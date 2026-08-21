@@ -4,6 +4,26 @@
 
 Digitale Inhalte können schnell kopiert, verändert und veröffentlicht werden. Deshalb reicht es nicht, nur zu fragen, was technisch möglich ist. Ebenso wichtig ist, was erlaubt, fair und verantwortungsvoll ist.
 
+### Was einmal veröffentlicht wurde, lässt sich oft nicht vollständig zurückholen
+
+Der bekannte Satz **„Das Internet vergisst nie“** ist eine Vereinfachung, beschreibt aber ein wichtiges Risiko: Auch wenn ein Beitrag später gelöscht wird, können bereits Kopien entstanden sein.
+
+Zum Beispiel können andere Personen Inhalte:
+
+- herunterladen,
+- weiterleiten,
+- als Screenshot speichern,
+- in anderen Diensten erneut veröffentlichen,
+- in Sicherungen oder Archiven aufbewahren.
+
+Deshalb bedeutet **„löschen“ nicht automatisch, dass jede Kopie verschwunden ist**.
+
+Das ist besonders bei Fotos, persönlichen Aussagen, Standortdaten oder anderen privaten Informationen wichtig. Vor einer Veröffentlichung sollte man sich fragen, ob man damit auch noch später einverstanden wäre.
+
+Auch bei **KI-Diensten** sollte man vorsichtig mit persönlichen oder vertraulichen Daten umgehen. Je nach Dienst können eingegebene Texte, Bilder oder Dateien verarbeitet, gespeichert oder zur Verbesserung des Dienstes verwendet werden. Deshalb gehören beispielsweise private Nachrichten, Passwörter, persönliche Dokumente oder vertrauliche Daten anderer Personen nicht ungeprüft in einen KI-Dienst.
+
+> **Merke:** Was einmal digital weitergegeben wurde, kann sich der eigenen Kontrolle entziehen. Veröffentliche und übermittle persönliche Daten deshalb nur, wenn es wirklich notwendig und vertretbar ist.
+
 ## Personenbezogene Daten
 
 **Personenbezogene Daten** sind Informationen, die sich auf eine bestimmte oder bestimmbare Person beziehen. Beispiele können Name, Anschrift, Telefonnummer, Foto, Standortdaten oder eine persönliche Kennung sein.
@@ -18,6 +38,7 @@ Man sollte nur Daten erheben, weitergeben oder veröffentlichen, die für einen 
 - Ist die betroffene Person einverstanden?
 - Kann der Inhalt später problematisch werden?
 - Enthält das Bild oder Dokument weitere persönliche Informationen?
+- Würde ich diese Information auch dann noch teilen, wenn sie kopiert oder weitergeleitet werden könnte?
 
 ## Persönlichkeitsrechte und respektvolle Veröffentlichung
 
@@ -47,11 +68,15 @@ Persönliche Konten sollten geschützt werden. Wichtige Grundregeln sind:
 
 Beim Nutzen digitaler Dienste entstehen Daten. Dazu können Suchanfragen, Geräteinformationen, Zeitpunkte, Standortinformationen oder Nutzungsverhalten gehören. Welche Daten gespeichert werden, hängt vom Dienst und seinen Einstellungen ab.
 
+Solche Informationen können zusammen ein **digitales Profil** ergeben. Auch scheinbar harmlose Einzelinformationen können in Kombination viel über Gewohnheiten, Interessen oder Aufenthaltsorte einer Person verraten.
+
 > **Merke:** Vor dem Teilen gilt: erst prüfen, dann veröffentlichen. Rechte und Interessen anderer Menschen zählen genauso wie die eigenen.
 
 ## Begriffe zum Nachschlagen
 
 **Datenschutz:** Schutz personenbezogener Daten und Regeln für deren Verarbeitung.
+
+**digitale Spur:** Daten, die bei der Nutzung digitaler Systeme entstehen oder hinterlassen werden.
 
 **Lizenz:** Bedingungen, unter denen ein Werk oder eine Software genutzt werden darf.
 
@@ -61,4 +86,4 @@ Beim Nutzen digitaler Dienste entstehen Daten. Dazu können Suchanfragen, Gerät
 
 **Urheberrecht:** rechtlicher Schutz persönlicher geistiger Schöpfungen.
 
-→ Siehe auch **Kapitel 1: Informatik und Computer** sowie die Hinweise zur Quellenangabe in diesem Nachschlagewerk.
+→ Siehe auch **Kapitel 1: Informatik und Computer**, **Kapitel 14: Künstliche Intelligenz** sowie die Hinweise zur Quellenangabe in diesem Nachschlagewerk.
