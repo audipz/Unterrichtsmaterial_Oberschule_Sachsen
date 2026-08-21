@@ -145,6 +145,33 @@ GET /api/v1/materials?kind=WORKBOOK
 GET /api/v1/materials?kind=EXERCISE_SET
 ```
 
+## Materialkatalog für Schüler
+
+Der Materialkatalog enthält alle für den angemeldeten Schüler grundsätzlich zugänglichen Lernmaterialien. Eine Lehrerzuweisung ist dafür nicht erforderlich.
+
+```text
+GET /api/v1/my/catalog
+GET /api/v1/my/catalog?gradeLevel=7
+GET /api/v1/my/catalog?kind=WORKBOOK
+GET /api/v1/my/catalog?learningUnit=k7-binaersystem
+```
+
+Ein Katalogeintrag kann beispielsweise enthalten:
+
+```json
+{
+  "materialReleaseId": "...",
+  "kind": "WORKBOOK",
+  "title": "Binärsystem – Arbeitsblatt",
+  "gradeLevel": 7,
+  "learningUnitId": "k7-binaersystem",
+  "started": false,
+  "assignedByTeacher": false
+}
+```
+
+Die serverseitige Sichtbarkeitslogik entscheidet, welche Materialien für Klassenstufe beziehungsweise Schule angeboten werden.
+
 ## Lernbereiche
 
 ```text
@@ -164,12 +191,46 @@ Beispiel:
 }
 ```
 
+## Arbeitsmaterial selbstständig starten – Schüler
+
+Ein Schüler kann ein sichtbares Arbeitsheft oder Arbeitsblatt direkt aus dem Materialkatalog starten.
+
+```text
+POST /api/v1/my/workbooks
+```
+
+Beispielrequest:
+
+```json
+{
+  "materialReleaseId": "..."
+}
+```
+
+Der Endpoint ist idempotent im fachlichen Sinn: Existiert für denselben Schüler und dieselbe Materialfassung bereits eine aktive persönliche Instanz, wird keine zweite unbeabsichtigte Kopie angelegt.
+
+Mögliche Antwort:
+
+```json
+{
+  "workbookId": "...",
+  "origin": "SELF_STARTED",
+  "status": "IN_PROGRESS"
+}
+```
+
 ## Arbeitsheft zuweisen – Lehrer
+
+Eine Lehrerzuweisung ist weiterhin möglich, beispielsweise damit Material in einem Kurs hervorgehoben wird.
 
 ```text
 POST /api/v1/courses/{courseId}/workbook-assignments
 GET  /api/v1/courses/{courseId}/workbook-assignments
 ```
+
+Die Zuweisung ist keine technische Voraussetzung für die Bearbeitung eines grundsätzlich sichtbaren Materials.
+
+Wenn ein Schüler dasselbe Material zuvor bereits selbst gestartet hat, soll die bestehende persönliche Instanz nach Möglichkeit weiterverwendet und mit der Zuweisung verknüpft werden, statt die bisherigen Antworten zu duplizieren.
 
 ## Arbeitsheft – Schüler
 
@@ -178,6 +239,8 @@ GET /api/v1/my/workbooks
 GET /api/v1/my/workbooks/{workbookId}
 PUT /api/v1/my/workbooks/{workbookId}/answers/{exerciseId}
 ```
+
+`GET /api/v1/my/workbooks` enthält sowohl selbst gestartete als auch zugewiesene Arbeitsmaterialien.
 
 Autosave verwendet optimistische Versionierung. Eine veraltete `clientRevision` führt zu `409 Conflict`, statt neuere Daten still zu überschreiben.
 
@@ -188,6 +251,33 @@ GET  /api/v1/my/workbooks/{workbookId}/answers/{exerciseId}/revisions
 POST /api/v1/my/workbooks/{workbookId}/answers/{exerciseId}/restore/{revisionId}
 ```
 
+## Übungen selbstständig starten – Schüler
+
+Sichtbare Übungssammlungen können ohne Lehrerzuweisung gestartet werden:
+
+```text
+POST /api/v1/my/exercises
+```
+
+Beispielrequest:
+
+```json
+{
+  "materialReleaseId": "..."
+}
+```
+
+Mögliche Antwort:
+
+```json
+{
+  "exerciseSessionId": "...",
+  "origin": "SELF_STARTED"
+}
+```
+
+Die persönliche Übungsinstanz speichert den Lernstand. Ein Schüler kann sie verlassen und später fortsetzen.
+
 ## Übungen zuweisen – Lehrer
 
 ```text
@@ -195,15 +285,15 @@ POST /api/v1/courses/{courseId}/exercise-assignments
 GET  /api/v1/courses/{courseId}/exercise-assignments
 ```
 
-Übungen haben keinen Prüfungsmodus, kein Zeitlimit und keine benotete Abgabe.
+Lehrerzuweisungen können Materialien hervorheben oder in den Unterricht einordnen. Übungen haben keinen Prüfungsmodus, kein Zeitlimit und keine benotete Abgabe.
 
 ## Übungen – Schüler
 
 ```text
 GET /api/v1/my/exercises
-GET /api/v1/my/exercises/{assignmentId}
-PUT /api/v1/my/exercises/{assignmentId}/answers/{exerciseId}
-POST /api/v1/my/exercises/{assignmentId}/answers/{exerciseId}/check
+GET /api/v1/my/exercises/{exerciseSessionId}
+PUT /api/v1/my/exercises/{exerciseSessionId}/answers/{exerciseId}
+POST /api/v1/my/exercises/{exerciseSessionId}/answers/{exerciseId}/check
 ```
 
 `check` liefert ausschließlich eine Lernrückmeldung für dafür geeignete Aufgaben. Es erzeugt keine Note oder formale Bewertung.
@@ -220,6 +310,23 @@ Mögliche Antwort:
   }
 }
 ```
+
+## Meine Materialien
+
+Für die Startseite beziehungsweise das Schülerdashboard kann ein zusammengefasster Endpoint angeboten werden:
+
+```text
+GET /api/v1/my/learning-materials
+```
+
+Er liefert beispielsweise:
+
+- selbst gestartete Arbeitsblätter,
+- selbst gestartete Übungen,
+- durch Lehrer zugewiesene Materialien,
+- zuletzt bearbeitete Materialien,
+- Bearbeitungsstand,
+- Herkunft `SELF_STARTED` oder `TEACHER_ASSIGNED`.
 
 ## Lernfortschritt
 
