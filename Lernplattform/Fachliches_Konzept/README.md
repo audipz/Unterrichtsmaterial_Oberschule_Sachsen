@@ -24,6 +24,37 @@ Rückmeldung und gezieltes Nacharbeiten
 
 Die Plattform ist eine **reine Lernplattform**. Lernkontrollen, Prüfungen, Benotung und formale Leistungsbewertung gehören nicht zum Funktionsumfang.
 
+## Datenschutzgrundsatz für Schüler
+
+Für Schüler sollen so wenig personenbezogene Daten wie möglich gespeichert werden.
+
+Ein Schülerkonto benötigt innerhalb der Lernplattform nur:
+
+- Schule,
+- Benutzername,
+- Passwort,
+- organisatorische Zuordnungen wie Klasse oder Kurs,
+- optional einen selbst gewählten Anzeigenamen.
+
+Der Anzeigename darf ausdrücklich ein **Fantasiename beziehungsweise Pseudonym** sein.
+
+Echte Vor- und Nachnamen sind für Schüler **keine Pflichtangaben** und sollen von der Plattform nicht verlangt werden.
+
+Der technische Benutzername muss ebenfalls keinen Rückschluss auf den echten Namen zulassen. Er kann beispielsweise von der Schule erzeugt werden.
+
+Beispiel:
+
+```text
+Schule:       OS-Musterstadt
+Benutzername: s7a-0184
+Anzeigename:  PixelFuchs
+Passwort:     ************
+```
+
+Die Schule kann außerhalb der Lernplattform organisatorisch wissen, welchem Schüler ein Konto zugeordnet wurde. Diese reale Zuordnung muss nicht zusätzlich in der Lernplattform gespeichert werden.
+
+> **Grundsatz:** Die Lernplattform muss einen Schüler zum Speichern seines Lernstands technisch wiedererkennen können, aber dafür nicht zwingend seine reale Identität kennen.
+
 ## Schulen
 
 Eine Schule bildet die organisatorische Grenze der Plattform.
@@ -36,15 +67,29 @@ Lehrer gehören einer Schule an und können Schüler fachlich betreuen.
 
 Einzelne Lehrer können zusätzlich als `SCHOOL_ADMIN` eingetragen werden. Nur Schul-Administratoren dürfen kritische organisatorische Aktionen wie das Löschen und Reaktivieren von Konten oder Klassen durchführen.
 
+Für Lehrkräfte können reale Namen erforderlich sein, damit Schüler und Kollegen Ansprechpartner eindeutig erkennen können. Diese Daten werden getrennt von der minimalen technischen Benutzeridentität betrachtet.
+
 ## Schüler anlegen
 
-Schülerkonten werden innerhalb einer Schule angelegt. Vorgesehen sind mindestens:
+Schülerkonten werden innerhalb einer Schule angelegt.
+
+Pflichtangaben sind grundsätzlich nur:
 
 - Benutzername,
 - Schule,
 - Passwort beziehungsweise initiales Startpasswort.
 
-Für größere Klassen soll eine Massenanlage, beispielsweise über CSV, vorgesehen werden.
+Optional kann der Schüler später einen Fantasienamen als Anzeigenamen festlegen.
+
+Nicht erforderlich sind insbesondere:
+
+- echter Vorname,
+- echter Nachname,
+- private E-Mail-Adresse,
+- private Telefonnummer,
+- Wohnanschrift.
+
+Für größere Klassen soll eine Massenanlage, beispielsweise über CSV, vorgesehen werden. Dabei reichen technische Benutzernamen und gegebenenfalls eine Klassenzuordnung aus.
 
 Ein initial erzeugtes Passwort soll bei der ersten Anmeldung geändert werden können beziehungsweise müssen.
 
@@ -162,6 +207,8 @@ Lehrer sollen für ihre betreuten Klassen beziehungsweise Kurse beispielsweise s
 - Antworten, soweit dies fachlich vorgesehen ist,
 - eigenes Lehrerfeedback.
 
+In Lehreransichten wird für Schüler primär Benutzername beziehungsweise gewählter Anzeigename verwendet. Die Lernplattform soll nicht unnötig reale Schülernamen speichern oder anzeigen.
+
 Die Plattform soll nicht unnötig jede einzelne Schüleraktion überwachen, sondern lern- und unterrichtsrelevante Informationen darstellen.
 
 ## Materialversionen
@@ -174,9 +221,12 @@ Eine Zuweisung muss deshalb nachvollziehbar auf eine veröffentlichte Materialfa
 
 Bereits im fachlichen Entwurf gelten:
 
-- nur notwendige personenbezogene Daten speichern,
+- Datenminimierung und Pseudonymisierung für Schülerkonten,
+- keine Pflicht zur Speicherung echter Schülernamen,
+- keine privaten Kontaktdaten von Schülern ohne fachliche Notwendigkeit,
 - Schuldaten strikt voneinander trennen,
 - Rechte serverseitig prüfen,
+- Passwörter nur als geeignete Passwort-Hashes speichern,
 - kritische Aktionen auf berechtigte Administratoren begrenzen,
 - gelöschte Konten sofort sperren,
 - Wiederherstellung während der Soft-Delete-Frist ermöglichen,
