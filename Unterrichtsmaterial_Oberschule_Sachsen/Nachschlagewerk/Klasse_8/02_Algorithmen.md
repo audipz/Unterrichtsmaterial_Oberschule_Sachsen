@@ -178,6 +178,59 @@ Wenn `zahl` innerhalb der Schleife nie verändert wird, bleibt die Bedingung imm
 
 > **Merke:** Kopfgesteuert bedeutet „erst prüfen, dann ausführen“. Fußgesteuert bedeutet „erst ausführen, dann prüfen“. Eine Zählschleife ist sinnvoll, wenn die Anzahl der Wiederholungen feststeht.
 
+## Verschachtelungen
+
+Grundstrukturen können **ineinander verschachtelt** werden. Das bedeutet: Innerhalb einer Auswahl oder Schleife befindet sich eine weitere Auswahl oder Schleife.
+
+### Verschachtelte Bedingungen
+
+Eine Bedingung kann innerhalb einer anderen Bedingung stehen.
+
+```text
+WENN alter >= 18
+    DANN
+        WENN fuehrerscheinVorhanden
+            DANN zeige "Fahren erlaubt"
+        SONST
+            zeige "Kein Führerschein"
+SONST
+    zeige "Noch nicht volljährig"
+```
+
+Hier wird die zweite Bedingung nur geprüft, wenn die erste Bedingung wahr ist.
+
+### Bedingung innerhalb einer Schleife
+
+In einer Schleife kann bei jedem Durchlauf geprüft werden, ob eine bestimmte Situation eingetreten ist.
+
+```text
+FÜR i VON 1 BIS 10
+    WENN i ist gerade
+        DANN zeige i
+```
+
+Die Schleife läuft zehnmal. Die Ausgabe erfolgt aber nur bei geraden Zahlen.
+
+### Verschachtelte Schleifen
+
+Auch Schleifen können ineinander liegen. Bei jedem Durchlauf der äußeren Schleife wird die innere Schleife vollständig ausgeführt.
+
+```text
+FÜR zeile VON 1 BIS 3
+    FÜR spalte VON 1 BIS 4
+        setze Punkt
+```
+
+Die innere Schleife läuft viermal für jede der drei Zeilen. Insgesamt wird `setze Punkt` also `3 · 4 = 12` Mal ausgeführt.
+
+Verschachtelte Schleifen werden häufig bei Gittern, Tabellen, Bildern oder Spielfeldern verwendet.
+
+### Verschachtelungen übersichtlich halten
+
+Mit jeder weiteren Verschachtelung wird ein Algorithmus schwieriger zu lesen. Deshalb sollten Einrückungen konsequent verwendet und unnötig tiefe Verschachtelungen vermieden werden.
+
+> **Merke:** Bei verschachtelten Schleifen wird die innere Schleife für jeden Durchlauf der äußeren Schleife erneut vollständig ausgeführt.
+
 ## Bedingungen
 
 Eine Bedingung kann wahr oder falsch sein. Beispiele sind `zahl > 10`, `tuerOffen` oder `farbe == rot`. Bedingungen ermöglichen Entscheidungen und steuern Wiederholungen.
@@ -209,6 +262,7 @@ Bei Schleifen sollte zusätzlich geprüft werden:
 - Muss sie mindestens einmal durchlaufen werden?
 - Wird die Abbruchbedingung irgendwann erreicht?
 - Ist die Zahl der Wiederholungen sinnvoll begrenzt?
+- Wie oft wird eine innere Schleife insgesamt ausgeführt?
 
 > **Merke:** Programmieren bedeutet nicht nur Befehle zu schreiben. Zuerst muss klar sein, welches Verfahren das Problem löst.
 
@@ -231,6 +285,8 @@ Bei Schleifen sollte zusätzlich geprüft werden:
 **Sequenz:** aufeinanderfolgende Ausführung von Anweisungen.
 
 **Variable:** benannter Speicherplatz für einen veränderlichen Wert.
+
+**Verschachtelung:** Einbetten einer Kontrollstruktur in eine andere Kontrollstruktur.
 
 **Wiederholung/Schleife:** mehrfache Ausführung von Anweisungen.
 
