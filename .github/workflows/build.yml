@@ -46,6 +46,34 @@ jobs:
         run: |
           ./Build/build.sh
 
+      - name: Nachschlagewerk-Ausgaben prüfen
+        run: |
+          set -euo pipefail
+
+          source_root="Unterrichtsmaterial_Oberschule_Sachsen/Nachschlagewerk"
+          missing=0
+
+          while IFS= read -r -d '' manifest; do
+            class_dir="$(dirname "$manifest")"
+            class_name="$(basename "$class_dir")"
+            output_base="Ausgabe/$class_name/Nachschlagewerk/Nachschlagewerk_Informatik_$class_name"
+
+            for extension in pdf docx html; do
+              output_file="$output_base.$extension"
+              if [[ ! -s "$output_file" ]]; then
+                echo "::error file=$output_file::Nachschlagewerk-Ausgabe fehlt oder ist leer: $output_file"
+                missing=1
+              else
+                echo "OK: $output_file"
+              fi
+            done
+          done < <(find "$source_root" -mindepth 2 -maxdepth 2 -type f -name manifest.txt -print0 | sort -z)
+
+          if [[ "$missing" -ne 0 ]]; then
+            echo "Mindestens eine erwartete Nachschlagewerk-Ausgabe fehlt."
+            exit 1
+          fi
+
       - name: Veröffentlichungsartefakte zusammenstellen
         run: |
           ./Build/package_artifacts.sh
