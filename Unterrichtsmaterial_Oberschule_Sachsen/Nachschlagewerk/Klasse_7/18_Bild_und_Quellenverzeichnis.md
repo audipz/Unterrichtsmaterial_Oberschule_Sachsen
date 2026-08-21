@@ -6,19 +6,21 @@ Dieses Nachschlagewerk wird aus eigenen Unterrichtsmaterialien sowie fachlich ge
 
 ## Eigene Grafiken
 
-Erklärgrafiken, die speziell für dieses Nachschlagewerk erstellt werden, sollen bevorzugt als SVG im Repository gespeichert werden. Dazu gehören insbesondere:
+Die folgenden Erklärgrafiken wurden speziell für dieses Nachschlagewerk als SVG erstellt und liegen im Unterordner `grafiken/`:
 
-- Aufbau eines Informatiksystems,
-- EVA(S)-Schema,
-- Binär-Stellenwerttafel,
-- Zeichen → Code → Bits,
-- Pixel- und Auflösungsvergleich,
-- Digitalisierung eines Audiosignals,
-- Datei- und Verzeichnisbaum,
-- Objekt–Attribut–Klasse–Methode,
-- Raster- und Vektorgrafik im Vergleich.
+| Datei | Darstellung |
+|---|---|
+| `binaer_stellenwert.svg` | Binär-Stellenwerttafel am Beispiel `00101101₂ = 45₁₀` |
+| `zeichen_code_bits.svg` | Weg vom Zeichen über den Codewert zur Bitfolge |
+| `pixel_aufloesung.svg` | Vergleich unterschiedlicher Pixelauflösungen auf gleicher Fläche |
+| `audio_digitalisierung.svg` | schematische Abtastung eines analogen Audiosignals |
+| `evas_prinzip.svg` | Eingabe, Verarbeitung, Ausgabe und Speicherung |
+| `verzeichnisbaum.svg` | Datei- und Ordnerstruktur als Baum |
+| `objekt_klasse_attribute_methoden.svg` | Zusammenhang von Klasse, Objekt, Attributen und Methoden |
 
-Eigene Grafiken benötigen keine externe Bildquelle, sollen aber im Repository eindeutig als eigene Darstellungen erkennbar sein.
+Alle genannten Grafiken sind **eigene Darstellungen dieses Repositories**. Für sie ist keine externe Bildquelle erforderlich.
+
+Weitere eigene Grafiken können ergänzt werden, wenn sie gegenüber Text und Tabellen einen erkennbaren didaktischen Mehrwert bieten.
 
 ## Externe Abbildungen
 
