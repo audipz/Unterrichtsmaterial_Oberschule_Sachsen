@@ -23,13 +23,39 @@ Also:
 352 = 3 · 100 + 5 · 10 + 2 · 1
 ```
 
-Im Binärsystem funktioniert das genauso. Der Unterschied ist nur: Die Stellenwerte sind nicht `1, 10, 100, 1000, ...`, sondern `1, 2, 4, 8, 16, 32, ...`.
-
-Von rechts nach links verdoppelt sich also jeder Stellenwert:
+Jede Stelle links ist im Dezimalsystem zehnmal so viel wert wie die Stelle rechts daneben:
 
 ```text
-... 128   64   32   16   8   4   2   1
+1 → 10 → 100 → 1000 → ...
 ```
+
+Man kann diese Stellenwerte auch als Zehnerpotenzen schreiben:
+
+```text
+10⁰ = 1
+10¹ = 10
+10² = 100
+10³ = 1000
+```
+
+Im Binärsystem funktioniert dasselbe Stellenwertprinzip mit der Basis **2**. Jede Stelle links ist deshalb doppelt so viel wert wie die Stelle rechts daneben:
+
+```text
+1 → 2 → 4 → 8 → 16 → 32 → 64 → 128 → ...
+```
+
+Als Zweierpotenzen:
+
+```text
+2⁰ = 1
+2¹ = 2
+2² = 4
+2³ = 8
+2⁴ = 16
+2⁵ = 32
+```
+
+Die Potenzschreibweise musst du für die ersten Umrechnungen nicht unbedingt verwenden. Wichtig ist zunächst die Regel: **Von rechts nach links verdoppelt sich der Stellenwert.**
 
 ![Binär-Stellenwerttafel mit dem Beispiel 00101101₂ = 45₁₀](grafiken/binaer_stellenwert.svg)
 
@@ -139,54 +165,66 @@ Warum funktioniert das? Bei jeder Division durch 2 wird entschieden, ob die Zahl
 
 Binärzahlen können ähnlich wie Dezimalzahlen **schriftlich addiert** werden. Man schreibt die Zahlen stellenweise untereinander und beginnt ganz rechts.
 
-Der entscheidende Unterschied: Im Binärsystem gibt es nur `0` und `1`. Sobald beim Addieren der Wert **2** entsteht, kann er nicht als einzelne Binärziffer geschrieben werden. Deshalb entsteht ein **Übertrag** in die nächste Stelle.
+Der entscheidende Unterschied: Im Binärsystem gibt es nur `0` und `1`. Sobald beim Addieren der Wert **2** entsteht, kann er nicht als einzelne Binärziffer an derselben Stelle geschrieben werden. Zwei Einheiten eines Stellenwertes ergeben stattdessen eine Einheit des nächsthöheren Stellenwertes.
+
+### Was bedeutet ein Übertrag?
+
+Im Dezimalsystem kennst du den Übertrag beispielsweise von:
+
+```text
+  8
++ 7
+---
+ 15
+```
+
+Acht Einer plus sieben Einer ergeben 15 Einer. Davon bleiben fünf Einer an der Einerstelle und ein Zehner wird nach links übertragen.
+
+Im Binärsystem passiert dasselbe Prinzip bereits bei **zwei** Einheiten:
+
+```text
+1 Einer + 1 Einer = 2 Einer = 1 Zweier
+```
+
+Darum gilt:
+
+```text
+1₂ + 1₂ = 10₂
+```
+
+An der Einerstelle wird `0` geschrieben. Die `1` links davon steht für **einen Zweier** und ist der Übertrag.
+
+Dasselbe gilt an jeder weiteren Stelle:
+
+```text
+1 Zweier + 1 Zweier = 1 Vierer
+1 Vierer  + 1 Vierer  = 1 Achter
+1 Achter  + 1 Achter  = 1 Sechzehner
+```
+
+> **Merksatz:** Zwei gleiche Stellenwerte werden im Binärsystem zu einem Stellenwert der nächsten Stelle links.
 
 ### Die vier Grundfälle
 
 Diese vier Regeln reichen zunächst aus:
 
-| Rechnung | Ergebnis | Erklärung |
+| Rechnung | Ergebnis | Was geschieht? |
 |---|---|---|
-| `0 + 0` | `0` | nichts wird hinzugefügt |
-| `0 + 1` | `1` | ergibt eins |
-| `1 + 0` | `1` | ergibt eins |
-| `1 + 1` | `10` | zwei ist binär `10`: `0` schreiben, `1` übertragen |
+| `0 + 0` | `0` | `0` schreiben, kein Übertrag |
+| `0 + 1` | `1` | `1` schreiben, kein Übertrag |
+| `1 + 0` | `1` | `1` schreiben, kein Übertrag |
+| `1 + 1` | `10₂` | `0` schreiben, `1` übertragen |
 
-Die letzte Zeile ist besonders wichtig:
-
-```text
-1 + 1 = 10₂
-```
-
-Das bedeutet nicht „eins plus eins ist zehn“. `10₂` ist die Binärdarstellung der Dezimalzahl 2.
-
-Vergleiche:
+Die letzte Zeile ist besonders wichtig. `10₂` bedeutet hier nicht „zehn“:
 
 ```text
 10₁₀ = zehn
 10₂  = zwei
 ```
 
-> **Merke:** Bei `1 + 1` schreibst du `0` und nimmst `1` als Übertrag zur nächsten Stelle mit.
-
 ### Erstes Beispiel ohne Übertrag
 
-Wir addieren:
-
-```text
-  0101₂
-+ 0010₂
--------
-```
-
-Von rechts nach links:
-
-1. `1 + 0 = 1`
-2. `0 + 1 = 1`
-3. `1 + 0 = 1`
-4. `0 + 0 = 0`
-
-Damit:
+Wir berechnen:
 
 ```text
   0101₂
@@ -194,6 +232,17 @@ Damit:
 -------
   0111₂
 ```
+
+Jetzt betrachten wir die Rechnung **Spalte für Spalte von rechts nach links**:
+
+```text
+1. Spalte: 1 + 0 = 1       → 1 schreiben
+2. Spalte: 0 + 1 = 1       → 1 schreiben
+3. Spalte: 1 + 0 = 1       → 1 schreiben
+4. Spalte: 0 + 0 = 0       → 0 schreiben
+```
+
+Damit ergibt sich `0111₂`.
 
 Kontrolle im Dezimalsystem:
 
@@ -205,56 +254,45 @@ Kontrolle im Dezimalsystem:
 5 + 2 = 7
 ```
 
-### Beispiel mit einem Übertrag
+### Beispiel mit Überträgen – vollständig kommentiert
 
-Nun:
-
-```text
-  0101₂
-+ 0011₂
--------
-```
-
-Wir beginnen wieder rechts.
-
-**Erste Stelle:**
+Nun berechnen wir:
 
 ```text
-1 + 1 = 10₂
-```
-
-Wir schreiben unten eine `0` und übertragen eine `1` zur nächsten Stelle.
-
-**Zweite Stelle:** Dort stehen `0` und `1`; zusätzlich kommt der Übertrag `1` hinzu.
-
-```text
-0 + 1 + 1 = 10₂
-```
-
-Wieder schreiben wir `0` und übertragen `1`.
-
-**Dritte Stelle:**
-
-```text
-1 + 0 + 1 = 10₂
-```
-
-Wieder `0` schreiben und `1` übertragen.
-
-**Vierte Stelle:**
-
-```text
-0 + 0 + 1 = 1
-```
-
-Das Ergebnis lautet:
-
-```text
-    111   ← Überträge zur Erklärung
   0101₂
 + 0011₂
 -------
   1000₂
+```
+
+Die einzelnen Rechenschritte sind:
+
+```text
+1. Spalte von rechts:
+1 + 1 = 10₂
+→ 0 schreiben
+→ 1 zur nächsten Spalte übertragen
+
+2. Spalte von rechts:
+0 + 1 + 1 Übertrag = 10₂
+→ 0 schreiben
+→ 1 zur nächsten Spalte übertragen
+
+3. Spalte von rechts:
+1 + 0 + 1 Übertrag = 10₂
+→ 0 schreiben
+→ 1 zur nächsten Spalte übertragen
+
+4. Spalte von rechts:
+0 + 0 + 1 Übertrag = 1
+→ 1 schreiben
+→ kein weiterer Übertrag
+```
+
+So entsteht das Ergebnis Schritt für Schritt:
+
+```text
+0101₂ + 0011₂ = 1000₂
 ```
 
 Kontrolle:
@@ -266,6 +304,8 @@ Kontrolle:
 
 5 + 3 = 8
 ```
+
+> **Tipp:** Wenn die Überträge am Anfang verwirrend sind, schreibe nicht nur das Endergebnis hin. Kommentiere jede Spalte mit „hinschreiben“ und „übertragen“ wie im Beispiel.
 
 ### Was bedeutet `1 + 1 + 1`?
 
@@ -287,68 +327,59 @@ Deshalb gilt:
 1 + 1 + 1 = 11₂
 ```
 
-Man schreibt an der aktuellen Stelle die rechte `1` und überträgt die linke `1`.
+Dabei wird die **rechte** `1` an die aktuelle Stelle geschrieben und die **linke** `1` zur nächsten Stelle übertragen.
 
-Damit ergänzen wir die Regeln:
+Die vollständige Übersicht lautet damit:
 
-| Summe an einer Stelle | hinschreiben | Übertrag |
-|---|---:|---:|
-| `0` | `0` | `0` |
-| `1` | `1` | `0` |
-| `2 = 10₂` | `0` | `1` |
-| `3 = 11₂` | `1` | `1` |
+| Summe in einer Spalte | Binärdarstellung | hinschreiben | Übertrag |
+|---:|---:|---:|---:|
+| 0 | `0₂` | `0` | `0` |
+| 1 | `1₂` | `1` | `0` |
+| 2 | `10₂` | `0` | `1` |
+| 3 | `11₂` | `1` | `1` |
 
-### Ausführliches Beispiel mit mehreren Überträgen
+### Ausführliches Beispiel mit `1 + 1 + 1`
 
 Wir berechnen:
-
-```text
-1011₂ + 0111₂
-```
-
-Das entspricht zur späteren Kontrolle `11 + 7`.
-
-Von rechts nach links:
-
-**1. Stelle:**
-
-```text
-1 + 1 = 10₂
-```
-
-`0` schreiben, `1` übertragen.
-
-**2. Stelle:**
-
-```text
-1 + 1 + 1 Übertrag = 11₂
-```
-
-`1` schreiben, `1` übertragen.
-
-**3. Stelle:**
-
-```text
-0 + 1 + 1 Übertrag = 10₂
-```
-
-`0` schreiben, `1` übertragen.
-
-**4. Stelle:**
-
-```text
-1 + 0 + 1 Übertrag = 10₂
-```
-
-`0` schreiben. Der letzte Übertrag wird als neue Stelle links davor geschrieben.
-
-Ergebnis:
 
 ```text
   1011₂
 + 0111₂
 -------
  10010₂
+```
+
+Die Rechnung wird wieder vollständig kommentiert:
+
+```text
+1. Spalte von rechts:
+1 + 1 = 10₂
+→ 0 schreiben
+→ 1 übertragen
+
+2. Spalte von rechts:
+1 + 1 + 1 Übertrag = 11₂
+→ 1 schreiben
+→ 1 übertragen
+
+3. Spalte von rechts:
+0 + 1 + 1 Übertrag = 10₂
+→ 0 schreiben
+→ 1 übertragen
+
+4. Spalte von rechts:
+1 + 0 + 1 Übertrag = 10₂
+→ 0 schreiben
+→ 1 übertragen
+
+Es gibt links keine weitere vorhandene Spalte mehr:
+→ den letzten Übertrag 1 als neue Stelle links anschreiben
+```
+
+Damit entsteht:
+
+```text
+10010₂
 ```
 
 Kontrolle:
@@ -361,37 +392,18 @@ Kontrolle:
 11 + 7 = 18
 ```
 
-## Warum funktioniert der Übertrag?
+### Ein festes Schema für die schriftliche Binäraddition
 
-Im Dezimalsystem entsteht bei `8 + 7 = 15` ein Übertrag, weil zehn Einer zu einem Zehner zusammengefasst werden.
+Für jede Spalte kannst du immer dieselben vier Fragen verwenden:
 
-Im Binärsystem entsteht der Übertrag bereits bei zwei gleichen Stellenwerten:
+1. Welche beiden Ziffern stehen in dieser Spalte?
+2. Gibt es einen Übertrag aus der vorherigen Spalte?
+3. Welche Ziffer muss ich **hinschreiben**?
+4. Muss ich eine `1` **übertragen**?
 
-```text
-1 Einer + 1 Einer = 2 Einer = 1 Zweier
-```
+Dann gehst du eine Spalte nach links und wiederholst das Verfahren.
 
-Deshalb:
-
-```text
-1₂ + 1₂ = 10₂
-```
-
-Bei der Zweierstelle gilt genauso:
-
-```text
-1 Zweier + 1 Zweier = 2 Zweier = 1 Vierer
-```
-
-Bei der Viererstelle:
-
-```text
-1 Vierer + 1 Vierer = 2 Vierer = 1 Achter
-```
-
-Der Übertrag bedeutet also immer: **Zwei Einheiten eines Stellenwertes werden zu einer Einheit des nächsthöheren Stellenwertes.**
-
-> **Merksatz:** Binär addieren funktioniert wie schriftliches Addieren im Dezimalsystem – nur entsteht der Übertrag schon bei 2 statt erst bei 10.
+> **Merksatz:** Rechne von rechts nach links. Berücksichtige zuerst beide Ziffern und einen möglichen Übertrag. Schreibe dann die Ergebnisziffer hin und nimm einen neuen Übertrag mit, falls die Summe 2 oder 3 beträgt.
 
 ## Addition kontrollieren
 
@@ -403,6 +415,34 @@ Gerade am Anfang ist eine Kontrolle über das Dezimalsystem hilfreich:
 4. Prüfen, ob beide Ergebnisse gleich sind.
 
 So kann man sowohl die Binäraddition als auch die Umrechnung üben und Fehler leichter entdecken.
+
+## Häufige Fehler bei der Binäraddition
+
+### Übertrag vergessen
+
+Aus
+
+```text
+1 + 1 = 10₂
+```
+
+wird `0` geschrieben **und** `1` übertragen. Wird der Übertrag vergessen, sind die folgenden Stellen falsch.
+
+### Übertrag doppelt verwenden
+
+Ein Übertrag gehört genau zur **nächsten Spalte links**. Nachdem er dort mitgerechnet wurde, ist er verbraucht. Nur wenn in dieser neuen Spalte wieder eine Summe von 2 oder 3 entsteht, gibt es erneut einen Übertrag.
+
+### Von links anfangen
+
+Wie bei der schriftlichen Dezimaladdition beginnt man rechts bei der kleinsten Stelle.
+
+### `10₂` als Dezimalzahl zehn lesen
+
+Die tiefgestellte `2` erinnert daran, dass die Zahl im Binärsystem geschrieben ist:
+
+```text
+10₂ = 2₁₀
+```
 
 ## Feste Bitlängen und Überlauf – ein erster Hinweis
 
@@ -456,6 +496,8 @@ Binärzahlen sind nicht nur zum Rechnen da. Bitfolgen können je nach Codierung 
 
 ## Begriffe zum Nachschlagen
 
+**Basis:** Anzahl unterschiedlicher Ziffern eines Stellenwertsystems. Das Dezimalsystem hat die Basis 10, das Binärsystem die Basis 2.
+
 **Binäraddition:** schriftliche Addition von Binärzahlen nach Stellenwerten und mit Überträgen.
 
 **Binärsystem/Dualsystem:** Stellenwertsystem mit den Ziffern 0 und 1.
@@ -468,8 +510,6 @@ Binärzahlen sind nicht nur zum Rechnen da. Bitfolgen können je nach Codierung 
 
 **Übertrag:** Wert, der beim Addieren in die nächsthöhere Stelle übernommen wird.
 
-**Zweierpotenz:** Zahl der Form 1, 2, 4, 8, 16, 32, 64, …
+**Zweierpotenz:** Zahl der Form `2ⁿ`, beispielsweise 1, 2, 4, 8, 16, 32 oder 64.
 
-**Rest:** Wert, der bei einer Division übrig bleibt. Bei der Division durch 2 ist der Rest immer 0 oder 1.
-
-→ Siehe auch **Kapitel 2: Informationen und Daten** und **Kapitel 8: Speicher und Datenmengen**.
+→ Siehe auch **Kapitel 4: Zeichen, Codes und Bits** und **Kapitel 8: Speicher und Datenmengen**.
