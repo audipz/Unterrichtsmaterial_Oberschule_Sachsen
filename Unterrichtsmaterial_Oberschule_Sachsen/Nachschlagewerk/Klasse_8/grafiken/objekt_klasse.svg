@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-labelledby="title desc">
+<title id="title">Klasse Fahrrad und Objekt fahrrad1</title>
+<desc id="desc">Links eine Klasse Fahrrad mit Attributen farbe, gang und geschwindigkeit sowie Methoden schalten, bremsen und beschleunigen. Rechts das konkrete Objekt fahrrad1 mit den Werten blau, 3 und 12 km/h.</desc>
+<defs><style>.title{font:28px sans-serif;fill:#15395b;font-weight:700}.h{font:22px sans-serif;fill:#15395b;font-weight:700}.t{font:20px sans-serif;fill:#1f2937}.small{font:18px sans-serif;fill:#374151}.box{fill:#f8fbff;stroke:#2f6ea3;stroke-width:2.5}.head{fill:#dcecff;stroke:#2f6ea3;stroke-width:2.5}.obj{fill:#fff7dc;stroke:#b88519;stroke-width:2.5}.line{stroke:#64748b;stroke-width:2}.arrow{stroke:#2f6ea3;stroke-width:3;fill:none;marker-end:url(#a)}</style><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3L0 6Z" fill="#2f6ea3"/></marker></defs>
+<text x="500" y="38" text-anchor="middle" class="title">Klasse und Objekt</text>
+<rect class="box" x="70" y="80" width="390" height="340" rx="12"/>
+<rect class="head" x="70" y="80" width="390" height="65" rx="12"/>
+<text x="265" y="120" text-anchor="middle" class="h">Klasse: Fahrrad</text>
+<line class="line" x1="70" y1="145" x2="460" y2="145"/>
+<text x="100" y="182" class="h">Attribute</text>
+<text x="120" y="218" class="t">• farbe</text><text x="120" y="250" class="t">• gang</text><text x="120" y="282" class="t">• geschwindigkeit</text>
+<line class="line" x1="90" y1="305" x2="440" y2="305"/>
+<text x="100" y="340" class="h">Methoden</text>
+<text x="120" y="374" class="t">• schalten()</text><text x="260" y="374" class="t">• bremsen()</text><text x="120" y="406" class="t">• beschleunigen()</text>
+<rect class="obj" x="600" y="125" width="330" height="245" rx="12"/>
+<text x="765" y="165" text-anchor="middle" class="h">Objekt: fahrrad1</text>
+<line class="line" x1="620" y1="185" x2="910" y2="185"/>
+<text x="635" y="225" class="t">farbe</text><text x="805" y="225" class="t">blau</text>
+<text x="635" y="270" class="t">gang</text><text x="805" y="270" class="t">3</text>
+<text x="635" y="315" class="t">geschwindigkeit</text><text x="805" y="315" class="t">12 km/h</text>
+<path class="arrow" d="M470 245 C525 245 545 245 590 245"/>
+<text x="530" y="225" text-anchor="middle" class="small">konkrete Instanz</text>
+<text x="500" y="465" text-anchor="middle" class="small">Die Klasse beschreibt gemeinsame Merkmale; das Objekt besitzt konkrete Attributwerte.</text>
+</svg>
