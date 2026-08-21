@@ -1,1 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360" role="img" aria-labelledby="title desc"><title id="title">Verzeichnisbaum</title><desc id="desc">Ordner Schule enthält die Unterordner Informatik und Deutsch. Informatik enthält Bilder und Notizen.txt, Bilder enthält eva.png.</desc><defs><style>.t{font:24px sans-serif;fill:#111}.s{font:20px sans-serif;fill:#222}.l{stroke:#555;stroke-width:2}.box{fill:#f7f7f7;stroke:#222;stroke-width:2;rx:8}</style></defs><text x="450" y="35" text-anchor="middle" class="t">Ordner bilden eine Baumstruktur</text><rect class="box" x="370" y="60" width="160" height="48"/><text class="s" x="450" y="91" text-anchor="middle">Schule/</text><line class="l" x1="450" y1="108" x2="450" y2="140"/><line class="l" x1="250" y1="140" x2="650" y2="140"/><line class="l" x1="250" y1="140" x2="250" y2="170"/><line class="l" x1="650" y1="140" x2="650" y2="170"/><rect class="box" x="155" y="170" width="190" height="48"/><text class="s" x="250" y="201" text-anchor="middle">Informatik/</text><rect class="box" x="570" y="170" width="160" height="48"/><text class="s" x="650" y="201" text-anchor="middle">Deutsch/</text><line class="l" x1="250" y1="218" x2="250" y2="250"/><line class="l" x1="160" y1="250" x2="340" y2="250"/><line class="l" x1="160" y1="250" x2="160" y2="280"/><line class="l" x1="340" y1="250" x2="340" y2="280"/><rect class="box" x="85" y="280" width="150" height="48"/><text class="s" x="160" y="311" text-anchor="middle">Bilder/</text><rect class="box" x="265" y="280" width="150" height="48"/><text class="s" x="340" y="311" text-anchor="middle">Notizen.txt</text><line class="l" x1="160" y1="328" x2="160" y2="350"/><text class="s" x="160" y="357" text-anchor="middle">eva.png</text><line class="l" x1="650" y1="218" x2="650" y2="280"/><text class="s" x="650" y="311" text-anchor="middle">Aufsatz.odt</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="410" viewBox="0 0 900 410" role="img" aria-labelledby="title desc">
+<title id="title">Verzeichnisbaum</title>
+<desc id="desc">Ordner Schule enthält die Unterordner Informatik und Deutsch. Informatik enthält den Ordner Bilder und die Datei Notizen.txt. Bilder enthält die Datei eva.png. Deutsch enthält die Datei Aufsatz.odt.</desc>
+<defs>
+  <style>
+    .t{font:24px sans-serif;fill:#111}.s{font:19px sans-serif;fill:#222}.l{stroke:#555;stroke-width:2}
+    .folder{fill:#f7f7f7;stroke:#222;stroke-width:2}.file{fill:#fff;stroke:#222;stroke-width:2}
+  </style>
+</defs>
+<text x="450" y="35" text-anchor="middle" class="t">Ordner bilden eine Baumstruktur</text>
+
+<!-- Schule -->
+<path class="folder" d="M370 67h58l14 13h88v50H370z"/>
+<text class="s" x="450" y="108" text-anchor="middle">Schule</text>
+
+<!-- Verbindung zu Informatik / Deutsch -->
+<line class="l" x1="450" y1="130" x2="450" y2="155"/>
+<line class="l" x1="250" y1="155" x2="650" y2="155"/>
+<line class="l" x1="250" y1="155" x2="250" y2="180"/>
+<line class="l" x1="650" y1="155" x2="650" y2="180"/>
+
+<!-- Informatik -->
+<path class="folder" d="M155 187h70l14 13h106v50H155z"/>
+<text class="s" x="250" y="228" text-anchor="middle">Informatik</text>
+
+<!-- Deutsch -->
+<path class="folder" d="M570 187h58l14 13h88v50H570z"/>
+<text class="s" x="650" y="228" text-anchor="middle">Deutsch</text>
+
+<!-- Informatik Kinder -->
+<line class="l" x1="250" y1="250" x2="250" y2="275"/>
+<line class="l" x1="160" y1="275" x2="340" y2="275"/>
+<line class="l" x1="160" y1="275" x2="160" y2="300"/>
+<line class="l" x1="340" y1="275" x2="340" y2="300"/>
+
+<!-- Bilder Ordner -->
+<path class="folder" d="M85 307h50l12 12h88v48H85z"/>
+<text class="s" x="160" y="347" text-anchor="middle">Bilder</text>
+
+<!-- Notizen Datei -->
+<path class="file" d="M275 307h105l25 25v50H275z"/>
+<path class="file" d="M380 307v25h25" fill="none"/>
+<text class="s" x="340" y="359" text-anchor="middle">Notizen.txt</text>
+
+<!-- eva Datei -->
+<line class="l" x1="160" y1="367" x2="160" y2="382"/>
+<path class="file" d="M105 382h90l20 20v0H105z" visibility="hidden"/>
+<rect class="file" x="100" y="380" width="120" height="26" rx="4"/>
+<text class="s" x="160" y="399" text-anchor="middle">eva.png</text>
+
+<!-- Deutsch Datei -->
+<line class="l" x1="650" y1="250" x2="650" y2="305"/>
+<path class="file" d="M585 305h105l25 25v52H585z"/>
+<path class="file" d="M690 305v25h25" fill="none"/>
+<text class="s" x="650" y="359" text-anchor="middle">Aufsatz.odt</text>
+</svg>
