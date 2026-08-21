@@ -25,19 +25,42 @@ Individuelle Lerndaten hängen an Zuweisungen und persönlichen Arbeitsständen,
 
 Für **keinen Benutzer** sollen echte Vor- und Nachnamen erforderlich sein. Das gilt für Schüler, Lehrer und Schul-Administratoren gleichermaßen.
 
-Ein Benutzerkonto benötigt technisch nur:
-
-- Schule,
-- Benutzername,
-- Passwort beziehungsweise Passwort-Hash,
-- Rollen und organisatorische Zuordnungen,
-- optional einen frei gewählten Anzeigenamen.
-
-Der optionale Anzeigename darf ausdrücklich ein **Fantasiename/Pseudonym** sein.
-
-Dadurch kennt die Lernplattform im Normalbetrieb nicht zwingend die reale Identität eines Benutzers. Falls eine Schule organisatorisch eine Zuordnung zwischen realer Person und Benutzerkonto benötigt, soll diese Zuordnung außerhalb der Lernplattform geführt werden.
+Ein Benutzerkonto benötigt technisch nur Schule, Benutzername, Passwort beziehungsweise Passwort-Hash, Rollen und organisatorische Zuordnungen sowie einen Fantasienamen als Anzeigenamen.
 
 > **Grundsatz:** So wenig personenbezogene Daten wie möglich speichern. Für die Nutzung der Lernplattform sind Klarnamen nicht erforderlich.
+
+## Fantasiename / Anzeigename
+
+Beim initialen Anlegen eines Schüler- oder Lehrerkontos wird automatisch ein Fantasiename erzeugt und gespeichert. Der Fantasiename ist damit von Beginn an vorhanden und wird in der Lernoberfläche anstelle eines Klarnamens verwendet.
+
+Beispiele:
+
+```text
+PixelFuchs
+CodeOtter
+DatenFalke
+LogikPanda
+```
+
+Der Benutzer darf seinen Fantasienamen später beliebig ändern, sofern die Eindeutigkeitsregeln eingehalten werden.
+
+### Eindeutigkeit für Schüler
+
+Der Fantasiename eines Schülers muss innerhalb jeder aktuell zugeordneten Klasse eindeutig sein. Ein Schüler, der Mitglied der Klasse `7a` ist, darf also keinen Fantasienamen wählen, den bereits ein anderer aktiver Benutzer in `7a` verwendet.
+
+Die Eindeutigkeit wird case-insensitive und auf einer normalisierten Form geprüft. `PixelFuchs`, `pixelfuchs` und `PIXELFUCHS` gelten damit als derselbe Name.
+
+### Eindeutigkeit für Lehrer
+
+Der Fantasiename eines Lehrers muss in allen Klassen eindeutig sein, denen der Lehrer aktuell zugewiesen ist. Dadurch können Schüler innerhalb ihrer Klasse Lehrer eindeutig erkennen.
+
+Ist ein Lehrer beispielsweise den Klassen `7a`, `7b` und `8a` zugeordnet, darf sein Fantasiename in keiner dieser Klassen bereits von einem dort sichtbaren aktiven Benutzer verwendet werden.
+
+### Konflikt beim Klassenwechsel oder bei neuer Zuweisung
+
+Ein Klassenwechsel oder die Zuweisung eines Lehrers zu einer weiteren Klasse kann einen bereits bestehenden Namenskonflikt erzeugen. Die Operation darf dann nicht stillschweigend durchgeführt werden. Vor Abschluss der Zuordnung muss ein konfliktfreier Fantasiename gewählt beziehungsweise automatisch vorgeschlagen werden.
+
+Die Eindeutigkeit ist eine fachliche Regel über aktive Memberships und wird deshalb serverseitig in einem Domain-Service geprüft. Ein einfacher globaler `UNIQUE(display_name)`-Constraint wäre zu streng und ein `UNIQUE(class_id, display_name)` am Benutzer wäre wegen Mehrfachzuordnungen nicht ausreichend.
 
 ## School
 
@@ -63,6 +86,7 @@ id
 school_id
 username
 display_name
+display_name_normalized
 password_hash
 status
 must_change_password
@@ -73,11 +97,11 @@ deleted_at
 deleted_by
 ```
 
-`display_name` ist optional und frei wählbar. Er kann ein Fantasiename sein.
+`display_name` enthält den aktuellen Fantasienamen. `display_name_normalized` dient der robusten Eindeutigkeitsprüfung.
 
-Für Benutzer werden **keine Pflichtfelder `first_name` oder `last_name`** vorgesehen.
+Für Benutzer werden keine Pflichtfelder `first_name` oder `last_name` vorgesehen.
 
-Eindeutigkeit:
+Login-Eindeutigkeit:
 
 ```text
 UNIQUE(school_id, username)
@@ -379,7 +403,7 @@ created_at
 updated_at
 ```
 
-Auch hier ist kein Klarname der Lehrkraft erforderlich. Angezeigt werden kann der frei gewählte `display_name` oder – falls keiner gesetzt wurde – der Benutzername.
+In der Oberfläche wird der Fantasiename der Lehrkraft angezeigt.
 
 ## Attachment
 
