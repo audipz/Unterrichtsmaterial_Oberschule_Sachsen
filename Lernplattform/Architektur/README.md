@@ -18,7 +18,8 @@ Spring-Boot-Backend
   ├── Klassen und Kurse
   ├── Materialien
   ├── Arbeitshefte und Antworten
-  ├── Lernkontrollen
+  ├── Übungen und Lernfortschritt
+  ├── Feedback
   └── Dateien
   │
   ▼
@@ -26,6 +27,8 @@ PostgreSQL
 ```
 
 Die Anwendung soll auf Kubernetes/K3s betrieben werden.
+
+**Nicht Bestandteil der Zielarchitektur sind Lernkontrollen, Prüfungsmodi, Benotung oder formale Leistungsbewertung.**
 
 ## Frontend
 
@@ -40,8 +43,8 @@ Beispiele für Signal-Zustände:
 - geöffnetes Kapitel,
 - Antworten des Schülers,
 - Speicherstatus,
-- Lernfortschritt,
-- Ergebnis einer Lernkontrolle.
+- Übungsstatus,
+- Lernfortschritt.
 
 ## Backend
 
@@ -59,7 +62,8 @@ classes
 courses
 materials
 workbooks
-assessments
+exercises
+progress
 feedback
 files
 administration
@@ -97,15 +101,16 @@ Ein Benutzer kann mehrere Rollen besitzen. Ein Lehrer kann beispielsweise gleich
 - eigene Materialien lesen,
 - eigene Arbeitshefte bearbeiten,
 - eigene Antworten speichern,
-- freigegebene Übungen und Lernkontrollen bearbeiten,
+- freigegebene Übungen bearbeiten,
+- Hinweise und Lernrückmeldungen nutzen,
 - eigenen Fortschritt sehen.
 
 ### TEACHER
 
 - Klassen und Kurse fachlich betreuen,
 - Schüler Klassen/Kursen zuordnen,
-- Materialien und Lernkontrollen zuweisen,
-- Arbeitsstände und Ergebnisse der betreuten Schüler sehen,
+- Lernmaterialien zuweisen,
+- Arbeitsstände und Lernfortschritt der betreuten Schüler sehen,
 - Feedback geben.
 
 ### SCHOOL_ADMIN
@@ -190,7 +195,8 @@ PostgreSQL ist die zentrale Datenbank für operative Daten, beispielsweise:
 - Materialzuweisungen,
 - Arbeitsstände,
 - Antworten und Revisionen,
-- Lernkontrollversuche,
+- Übungsstände,
+- Lernfortschritt,
 - Feedback.
 
 Dateiuploads werden getrennt von großen Binärdaten in relationalen Tabellen behandelt; Metadaten und Berechtigungen bleiben in PostgreSQL.
