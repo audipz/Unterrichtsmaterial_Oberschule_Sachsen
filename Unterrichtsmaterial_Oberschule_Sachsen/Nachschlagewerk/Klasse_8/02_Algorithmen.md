@@ -35,15 +35,6 @@ WENN Bedingung
 
 Ist die Bedingung wahr, wird `Anweisung A` ausgeführt. Ist sie falsch, wird diese Anweisung übersprungen und der Algorithmus läuft danach weiter.
 
-Beispiel:
-
-```text
-WENN temperatur < 0
-    DANN zeige "Frostgefahr"
-```
-
-Es gibt hier keine besondere Aktion für Temperaturen ab 0 °C.
-
 Eine Auswahl kann auch **mit SONST-Zweig** formuliert werden:
 
 ```text
@@ -51,17 +42,6 @@ WENN Bedingung
     DANN Anweisung A
 SONST
     Anweisung B
-```
-
-Ist die Bedingung wahr, wird `Anweisung A` ausgeführt. Ist sie falsch, wird stattdessen `Anweisung B` ausgeführt.
-
-Beispiel:
-
-```text
-WENN alter >= 18
-    DANN zeige "volljährig"
-SONST
-    zeige "minderjährig"
 ```
 
 > **Merke:** Ein `SONST` ist nicht bei jeder Auswahl notwendig. Es wird gebraucht, wenn auch für den Fall „Bedingung ist falsch“ eine eigene Anweisung ausgeführt werden soll.
@@ -79,14 +59,7 @@ SOLANGE Bedingung gilt
     wiederhole Anweisung
 ```
 
-Ist die Bedingung bereits am Anfang falsch, wird die Schleife **kein einziges Mal** ausgeführt.
-
-Beispiel:
-
-```text
-SOLANGE akku > 20
-    sende Messwert
-```
+Ist die Bedingung bereits am Anfang falsch, wird die Schleife kein einziges Mal ausgeführt.
 
 #### Fußgesteuerte Schleife
 
@@ -98,75 +71,24 @@ WIEDERHOLE
 SOLANGE Bedingung gilt
 ```
 
-Beispiel:
-
-```text
-WIEDERHOLE
-    frage Passwort ab
-SOLANGE Passwort falsch ist
-```
-
-Die Abfrage findet mindestens einmal statt.
-
 #### Zählschleife
 
 Eine **Zählschleife** verwendet man, wenn die Anzahl der Wiederholungen vorher bekannt ist.
-
-```text
-WIEDERHOLE 5 MAL
-    Anweisung
-```
-
-oder in einer Programmiersprache sinngemäß:
 
 ```text
 FÜR i VON 1 BIS 5
     Anweisung
 ```
 
-Beispiel: Eine Spielfigur soll genau zehn Schritte vorwärtsgehen.
-
 #### Bedingte Wiederholung
 
 Bei einer **bedingten Wiederholung** ist die Anzahl der Durchläufe vorher nicht unbedingt bekannt. Die Schleife endet erst, wenn eine bestimmte Bedingung erfüllt oder nicht mehr erfüllt ist.
-
-Beispiele:
-
-```text
-SOLANGE feldFrei
-    geheVor()
-```
-
-oder
-
-```text
-WIEDERHOLE
-    würfle
-BIS eine 6 fällt
-```
 
 #### Endlosschleife
 
 Eine **Endlosschleife** besitzt keine wirksame Abbruchbedingung und läuft deshalb unbegrenzt weiter, solange das Programm nicht von außen beendet wird.
 
-```text
-WIEDERHOLE IMMER
-    prüfe Sensor
-```
-
-Endlosschleifen können **beabsichtigt** sein, zum Beispiel bei einem eingebetteten System, das dauerhaft auf Sensordaten reagieren soll. Sie können aber auch **unbeabsichtigt** entstehen, wenn sich eine Abbruchbedingung niemals ändert.
-
-Beispiel für einen Fehler:
-
-```text
-zahl = 1
-SOLANGE zahl < 10
-    zeige zahl
-```
-
-Wenn `zahl` innerhalb der Schleife nie verändert wird, bleibt die Bedingung immer wahr. Die Schleife endet nicht.
-
-#### Vergleich der Schleifenarten
+Endlosschleifen können beabsichtigt sein, zum Beispiel bei einem eingebetteten System, das dauerhaft auf Sensordaten reagieren soll. Sie können aber auch unbeabsichtigt entstehen, wenn sich eine Abbruchbedingung niemals ändert.
 
 | Schleifenart | Prüfung | Mindestens ein Durchlauf? | Typischer Einsatz |
 |---|---|---:|---|
@@ -176,32 +98,20 @@ Wenn `zahl` innerhalb der Schleife nie verändert wird, bleibt die Bedingung imm
 | bedingte Wiederholung | über Bedingung | abhängig von der Form | unbekannte Wiederholungszahl |
 | Endlosschleife | keine wirksame Beendigung | ja | dauerhafte Prozesse oder Programmfehler |
 
-> **Merke:** Kopfgesteuert bedeutet „erst prüfen, dann ausführen“. Fußgesteuert bedeutet „erst ausführen, dann prüfen“. Eine Zählschleife ist sinnvoll, wenn die Anzahl der Wiederholungen feststeht.
-
 ## Verschachtelungen
 
 Grundstrukturen können **ineinander verschachtelt** werden. Das bedeutet: Innerhalb einer Auswahl oder Schleife befindet sich eine weitere Auswahl oder Schleife.
 
 ### Verschachtelte Bedingungen
 
-Eine Bedingung kann innerhalb einer anderen Bedingung stehen.
-
 ```text
 WENN alter >= 18
     DANN
         WENN fuehrerscheinVorhanden
             DANN zeige "Fahren erlaubt"
-        SONST
-            zeige "Kein Führerschein"
-SONST
-    zeige "Noch nicht volljährig"
 ```
 
-Hier wird die zweite Bedingung nur geprüft, wenn die erste Bedingung wahr ist.
-
 ### Bedingung innerhalb einer Schleife
-
-In einer Schleife kann bei jedem Durchlauf geprüft werden, ob eine bestimmte Situation eingetreten ist.
 
 ```text
 FÜR i VON 1 BIS 10
@@ -209,11 +119,7 @@ FÜR i VON 1 BIS 10
         DANN zeige i
 ```
 
-Die Schleife läuft zehnmal. Die Ausgabe erfolgt aber nur bei geraden Zahlen.
-
 ### Verschachtelte Schleifen
-
-Auch Schleifen können ineinander liegen. Bei jedem Durchlauf der äußeren Schleife wird die innere Schleife vollständig ausgeführt.
 
 ```text
 FÜR zeile VON 1 BIS 3
@@ -223,30 +129,140 @@ FÜR zeile VON 1 BIS 3
 
 Die innere Schleife läuft viermal für jede der drei Zeilen. Insgesamt wird `setze Punkt` also `3 · 4 = 12` Mal ausgeführt.
 
-Verschachtelte Schleifen werden häufig bei Gittern, Tabellen, Bildern oder Spielfeldern verwendet.
-
-### Verschachtelungen übersichtlich halten
-
-Mit jeder weiteren Verschachtelung wird ein Algorithmus schwieriger zu lesen. Deshalb sollten Einrückungen konsequent verwendet und unnötig tiefe Verschachtelungen vermieden werden.
-
 > **Merke:** Bei verschachtelten Schleifen wird die innere Schleife für jeden Durchlauf der äußeren Schleife erneut vollständig ausgeführt.
 
 ## Bedingungen
 
-Eine Bedingung kann wahr oder falsch sein. Beispiele sind `zahl > 10`, `tuerOffen` oder `farbe == rot`. Bedingungen ermöglichen Entscheidungen und steuern Wiederholungen.
-
-Bei Schleifen ist besonders wichtig, dass sich die für die Bedingung verwendeten Werte sinnvoll verändern. Sonst kann eine unbeabsichtigte Endlosschleife entstehen.
+Eine **Bedingung** ist ein Ausdruck, dessen Ergebnis wahr oder falsch ist. Beispiele sind `zahl > 10`, `tuerOffen` oder `farbe == rot`. Bedingungen ermöglichen Entscheidungen und steuern Wiederholungen.
 
 ## Variablen
 
-Eine **Variable** besitzt einen Namen und speichert während der Ausführung einen Wert. Dieser Wert kann sich ändern.
+### Wozu braucht man Variablen?
+
+Eine **Variable** ist ein benannter Speicherplatz für einen Wert, den ein Algorithmus während seiner Ausführung benötigt. Der Name ermöglicht es, später wieder auf diesen Wert zuzugreifen.
+
+Variablen werden beispielsweise verwendet, um:
+
+- einen Zwischenwert einer Berechnung zu speichern,
+- Punkte oder Durchläufe zu zählen,
+- eine Eingabe zu merken,
+- einen Messwert aufzubewahren,
+- einen Zustand wie `tuerOffen` zu speichern,
+- Ergebnisse später erneut zu verwenden.
+
+Beispiel: Ein Spiel muss sich den aktuellen Punktestand merken. Statt an jeder Stelle des Algorithmus eine feste Zahl einzutragen, wird der Wert in der Variablen `punkte` gespeichert.
+
+### Zuweisung
+
+Mit einer **Zuweisung** erhält eine Variable einen Wert. In Pseudocode wird dafür häufig `:=` verwendet:
 
 ```text
-punkte = 0
-punkte = punkte + 1
+punkte := 0
 ```
 
-Variablen werden häufig als **Zähler** in Schleifen verwendet. Ein Zähler merkt sich beispielsweise, wie viele Durchläufe bereits ausgeführt wurden.
+Das bedeutet: **Der Variablen `punkte` wird der Wert 0 zugewiesen.**
+
+Eine Zuweisung ist nicht dasselbe wie ein mathematisches Gleichheitszeichen. Das wird besonders deutlich bei:
+
+```text
+punkte := punkte + 1
+```
+
+Der Computer liest zuerst den bisherigen Wert von `punkte`, addiert 1 und speichert das Ergebnis anschließend wieder in `punkte`.
+
+Angenommen, `punkte` besitzt vorher den Wert 4:
+
+```text
+punkte := punkte + 1
+          4      + 1
+punkte := 5
+```
+
+In der Mathematik wäre `punkte = punkte + 1` als Gleichung unmöglich. In einem Programm beschreibt die Anweisung dagegen eine **Änderung des gespeicherten Wertes**.
+
+Programmiersprachen verwenden für Zuweisungen unterschiedliche Schreibweisen. Häufig findet man beispielsweise `=`, während in Pseudocode und algorithmischen Darstellungen `:=` besonders deutlich zwischen Zuweisung und Vergleich unterscheidet.
+
+> **Merke:** `:=` bedeutet „bekommt den Wert“. Rechts wird zuerst berechnet, anschließend wird das Ergebnis links gespeichert.
+
+### Datentypen
+
+Variablen besitzen in vielen Programmiersprachen einen **Datentyp**. Der Datentyp beschreibt, welche Art von Wert gespeichert wird und welche Operationen damit sinnvoll oder erlaubt sind.
+
+Typische Datentypen sind:
+
+| Datentyp | Bedeutung | Beispiel |
+|---|---|---|
+| Ganzzahl | ganze Zahlen ohne Nachkommastellen | `alter := 14` |
+| Gleitkommazahl/Dezimalzahl | Zahlen mit Nachkommastellen | `temperatur := 21.5` |
+| Zeichen | einzelnes Zeichen | `taste := 'A'` |
+| Zeichenkette/Text | Folge von Zeichen | `name := "Mia"` |
+| Wahrheitswert/Boolean | wahr oder falsch | `tuerOffen := wahr` |
+
+Die genauen Namen der Datentypen unterscheiden sich zwischen Programmiersprachen, beispielsweise `int`, `float`, `string` oder `boolean`.
+
+### Warum sind Datentypen wichtig?
+
+Der Datentyp hilft dem Computer und dem Programmierer zu verstehen, **wie ein gespeicherter Wert behandelt werden soll**.
+
+Mit Zahlen kann beispielsweise gerechnet werden:
+
+```text
+alter := 14
+alter := alter + 1
+```
+
+Bei Text bedeutet ein `+` in manchen Programmiersprachen dagegen, Texte aneinanderzufügen:
+
+```text
+vorname := "Mia"
+nachname := "Schulze"
+```
+
+Ein Wahrheitswert kann direkt für eine Bedingung verwendet werden:
+
+```text
+tuerOffen := wahr
+
+WENN tuerOffen
+    DANN zeige "Tür schließen"
+```
+
+Datentypen helfen außerdem dabei, Fehler zu erkennen. Die Anweisung „addiere 5 zu einem Namen“ ergibt normalerweise keinen sinnvollen Zahlenwert.
+
+### Deklaration und Initialisierung
+
+In manchen Programmiersprachen muss eine Variable zuerst **deklariert** werden. Dabei werden ihr beispielsweise ein Name und ein Datentyp zugeordnet.
+
+Sinngemäß:
+
+```text
+Ganzzahl punkte
+```
+
+Erhält die Variable ihren ersten Wert, spricht man von **Initialisierung**:
+
+```text
+punkte := 0
+```
+
+Andere Programmiersprachen erkennen den Datentyp automatisch aus dem zugewiesenen Wert. Deshalb sieht die konkrete Schreibweise je nach Sprache unterschiedlich aus.
+
+### Gute Variablennamen
+
+Ein Variablenname sollte erkennen lassen, was gespeichert wird.
+
+Gut verständlich sind beispielsweise:
+
+```text
+punkte
+anzahlSchueler
+maxTemperatur
+tuerOffen
+```
+
+Namen wie `x`, `a1` oder `wert2` können bei kurzen mathematischen Beispielen sinnvoll sein, sind in größeren Algorithmen aber oft schwer verständlich.
+
+> **Merke:** Eine Variable verbindet einen verständlichen Namen mit einem gespeicherten Wert. Ihr Datentyp beschreibt, welche Art von Daten dieser Wert darstellt.
 
 ## Algorithmen darstellen
 
@@ -255,14 +271,6 @@ Algorithmen können als Text, Pseudocode, Struktogramm, Ablaufdiagramm oder Prog
 ## Testen
 
 Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders wichtig sind Grenzfälle und ungewöhnliche Situationen. Ein einzelnes erfolgreiches Beispiel beweist noch nicht, dass ein Algorithmus immer korrekt arbeitet.
-
-Bei Schleifen sollte zusätzlich geprüft werden:
-
-- Kann die Schleife auch nullmal durchlaufen werden?
-- Muss sie mindestens einmal durchlaufen werden?
-- Wird die Abbruchbedingung irgendwann erreicht?
-- Ist die Zahl der Wiederholungen sinnvoll begrenzt?
-- Wie oft wird eine innere Schleife insgesamt ausgeführt?
 
 > **Merke:** Programmieren bedeutet nicht nur Befehle zu schreiben. Zuerst muss klar sein, welches Verfahren das Problem löst.
 
@@ -274,17 +282,15 @@ Bei Schleifen sollte zusätzlich geprüft werden:
 
 **Bedingung:** Ausdruck mit dem Ergebnis wahr oder falsch.
 
-**bedingte Wiederholung:** Schleife, deren Laufzeit von einer Bedingung abhängt.
+**Datentyp:** Festlegung beziehungsweise Beschreibung der Art eines gespeicherten Wertes und der möglichen Operationen damit.
+
+**Deklaration:** Bekanntmachen einer Variablen, häufig mit Name und Datentyp.
 
 **Endlosschleife:** Schleife ohne wirksame Beendigung.
 
-**fußgesteuerte Schleife:** Schleife, deren Bedingung nach dem Schleifenrumpf geprüft wird.
+**Initialisierung:** erstmalige Vergabe eines Wertes an eine Variable.
 
-**kopfgesteuerte Schleife:** Schleife, deren Bedingung vor dem Schleifenrumpf geprüft wird.
-
-**Sequenz:** aufeinanderfolgende Ausführung von Anweisungen.
-
-**Variable:** benannter Speicherplatz für einen veränderlichen Wert.
+**Variable:** benannter Speicherplatz für einen Wert, auf den ein Algorithmus über den Variablennamen zugreifen kann.
 
 **Verschachtelung:** Einbetten einer Kontrollstruktur in eine andere Kontrollstruktur.
 
@@ -292,6 +298,6 @@ Bei Schleifen sollte zusätzlich geprüft werden:
 
 **Zählschleife:** Schleife für eine vorher bekannte Anzahl von Wiederholungen.
 
-**Zähler:** Variable, die beispielsweise die Anzahl von Schleifendurchläufen speichert.
+**Zuweisung:** Speichern eines Wertes in einer Variablen; in Pseudocode häufig mit `:=` dargestellt.
 
 → Siehe auch **Kapitel 3: Robot Karol**.
