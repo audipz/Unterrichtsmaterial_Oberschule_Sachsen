@@ -4,12 +4,14 @@ Dieses Verzeichnis enthält Konzept, Architektur und später die Implementierung
 
 ## Ziel
 
-Die vorhandenen Materialien sollen in einer einheitlichen Plattform genutzt werden können:
+Die vorhandenen Materialien sollen in einer einheitlichen Lernplattform genutzt werden können:
 
 - **Nachschlagewerk:** Wissen lesen und nachschlagen
 - **Arbeitsheft:** Aufgaben interaktiv bearbeiten, automatisch speichern und später fortsetzen
-- **Übungen:** Inhalte selbstständig trainieren und Rückmeldungen erhalten
-- **Lernkontrollen:** Lernstand nach einem Themenbereich überprüfen
+- **Übungen:** Inhalte selbstständig trainieren, Hinweise erhalten und Lernfortschritt sichtbar machen
+- **Feedback:** Lehrkräfte können Arbeitsstände einsehen und Rückmeldungen geben
+
+**Lernkontrollen, Prüfungen, Benotung und formale Leistungsbewertung gehören ausdrücklich nicht zum Umfang dieser Plattform.** Dafür bleiben die vorhandenen getrennten Unterrichts- und Leistungsbewertungsprozesse bestehen.
 
 Markdown und die vorhandenen Grafiken bleiben wichtige fachliche Quellen. Die individuellen Schülerdaten werden davon getrennt serverseitig gespeichert.
 
@@ -28,9 +30,7 @@ Markdown und die vorhandenen Grafiken bleiben wichtige fachliche Quellen. Die in
 Lernplattform/
 ├── README.md
 ├── Architektur/
-│   └── README.md
 └── Fachliches_Konzept/
-    └── README.md
 ```
 
 Weitere Unterverzeichnisse für Backend, Frontend, Deployment, Datenbankmigrationen und Tests werden erst angelegt, wenn die Architektur ausreichend festgelegt ist.
@@ -43,7 +43,8 @@ Weitere Unterverzeichnisse für Backend, Frontend, Deployment, Datenbankmigratio
 4. Kritische Verwaltungs- und Löschfunktionen sind Schul-Admins vorbehalten.
 5. Löschen erfolgt zunächst als Soft Delete.
 6. Soft-gelöschte Daten können innerhalb von drei Monaten durch Schul-Admins reaktiviert werden.
-7. Nach drei Monaten erfolgt ein kontrollierter automatischer Purge.
+7. Nach drei Kalendermonaten erfolgt ein kontrollierter automatischer Purge.
 8. Klassen, Kurse, Schülerkonten und Lernstände werden fachlich getrennt modelliert.
 9. Schülerantworten werden nicht in die Markdown-Quelldateien geschrieben.
-10. Nachschlagewerk, Arbeitsheft und Lernkontrolle sollen fachlich miteinander verknüpft werden.
+10. Nachschlagewerk, Arbeitsheft und Übungen werden fachlich miteinander verknüpft.
+11. Die Plattform unterstützt Lernen und Rückmeldung, aber keine Prüfungs- oder Benotungsprozesse.
