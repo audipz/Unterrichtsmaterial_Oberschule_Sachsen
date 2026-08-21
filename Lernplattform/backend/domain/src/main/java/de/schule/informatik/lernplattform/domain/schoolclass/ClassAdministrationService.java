@@ -37,6 +37,14 @@ public final class ClassAdministrationService {
         port.addStudent(schoolId, classId, studentId, validFrom, actorId);
     }
 
+    public void removeStudent(UUID schoolId, UUID classId, UUID studentId, LocalDate effectiveDate, UUID actorId) {
+        var user = port.requireActiveUser(studentId);
+        requireSameSchool(schoolId, user.schoolId());
+        requireRole(user.roles(), "STUDENT");
+        port.removeStudent(schoolId, classId, studentId,
+                effectiveDate == null ? LocalDate.now() : effectiveDate, actorId);
+    }
+
     public void moveStudent(UUID schoolId,
                             UUID studentId,
                             UUID sourceClassId,
@@ -62,6 +70,21 @@ public final class ClassAdministrationService {
         requireRole(user.roles(), "TEACHER");
         ensureDisplayNameAvailable(user, classId, Set.of());
         port.addTeacher(schoolId, classId, teacherId, actorId);
+    }
+
+    public void removeTeacher(UUID schoolId, UUID classId, UUID teacherId, UUID actorId) {
+        var user = port.requireActiveUser(teacherId);
+        requireSameSchool(schoolId, user.schoolId());
+        requireRole(user.roles(), "TEACHER");
+        port.removeTeacher(schoolId, classId, teacherId, actorId);
+    }
+
+    public void softDeleteClass(UUID schoolId, UUID classId, UUID actorId) {
+        port.softDeleteClass(schoolId, classId, actorId);
+    }
+
+    public void reactivateClass(UUID schoolId, UUID classId, UUID actorId) {
+        port.reactivateClass(schoolId, classId, actorId);
     }
 
     private void ensureDisplayNameAvailable(ClassAdministrationPort.UserContext user,
