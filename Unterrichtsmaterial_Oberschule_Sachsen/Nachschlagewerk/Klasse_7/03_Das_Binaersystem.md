@@ -10,6 +10,8 @@ Unser gewohntes **Dezimalsystem** besitzt zehn Ziffern von 0 bis 9. Beide System
 
 Im Dezimalsystem steigt der Stellenwert von rechts nach links jeweils um den Faktor 10. Im Binärsystem steigt er jeweils um den Faktor 2.
 
+![Binär-Stellenwerttafel mit dem Beispiel 00101101₂ = 45₁₀](grafiken/binaer_stellenwert.svg)
+
 | Binär-Stelle | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | Beispiel `00101101` | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 1 |
