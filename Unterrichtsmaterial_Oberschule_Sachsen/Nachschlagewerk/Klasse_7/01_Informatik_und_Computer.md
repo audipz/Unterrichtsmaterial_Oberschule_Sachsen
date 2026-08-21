@@ -75,16 +75,9 @@ Hardware und Software benötigen einander. Eine Textverarbeitung kann ohne geeig
 
 Viele Informatiksysteme lassen sich zunächst mit einem einfachen Blockbild beschreiben:
 
-```text
-             ┌───────────────┐
-Eingabe ───► │ Verarbeitung  │ ───► Ausgabe
-             └───────┬───────┘
-                     │
-                     ▼
-                  Speicher
-```
+![Vereinfachtes Modell mit Eingabe, Verarbeitung, Ausgabe und Speicherung](grafiken/einfaches_informatiksystem.svg)
 
-Eine Tastatur kann beispielsweise Eingaben liefern, ein Prozessor verarbeitet Daten, ein Bildschirm gibt Ergebnisse aus und eine SSD speichert Daten dauerhaft. Dieses Modell wird im Kapitel zum EVA(S)-Prinzip genauer erklärt.
+Eine Tastatur kann beispielsweise Eingaben liefern, ein Prozessor verarbeitet Daten, ein Bildschirm gibt Ergebnisse aus und eine SSD speichert Daten dauerhaft. Gespeicherte Daten können später wieder eingelesen und erneut verarbeitet werden. Dieses Modell wird im Kapitel zum EVA(S)-Prinzip genauer erklärt.
 
 ## Software und Lizenzen
 
@@ -122,12 +115,3 @@ Dabei gilt:
 **Software:** Programme und Daten eines Informatiksystems.
 
 **Vernetzung:** Verbindung von Informatiksystemen zum Austausch von Daten.
-
-## Bildideen für dieses Kapitel
-
-Für die endgültige Ausgabe sind zwei Abbildungen vorgesehen:
-
-1. eine **eigene schematische Grafik** „Vom Problem zum Informatiksystem“ beziehungsweise Hardware–Software–Daten–Mensch,
-2. ein **frei lizenziertes historisches Bild**, beispielsweise eines frühen Computers oder der Z3. Beim Build sollen Originalquelle, Urheber und Lizenz dokumentiert und die Grafik lokal zwischengespeichert werden.
-
-Externe Bilder werden erst aufgenommen, wenn Lizenz und Originalquelle eindeutig geprüft sind.
