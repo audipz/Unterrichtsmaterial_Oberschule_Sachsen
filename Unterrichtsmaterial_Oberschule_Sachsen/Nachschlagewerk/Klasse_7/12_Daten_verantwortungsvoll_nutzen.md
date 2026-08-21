@@ -64,6 +64,33 @@ Persönliche Konten sollten geschützt werden. Wichtige Grundregeln sind:
 - wenn möglich Mehrfaktor-Authentifizierung nutzen,
 - bei verdächtigen Nachrichten und Anmeldeseiten aufmerksam sein.
 
+### Was ist eine Passphrase?
+
+Eine **Passphrase** ist ein besonders langes Passwort, das aus mehreren Wörtern besteht. Die Wörter sollten so gewählt werden, dass die Kombination nicht leicht zu erraten ist.
+
+Ein kurzes Passwort wie
+
+```text
+Maus7!
+```
+
+ist zwar leicht zu merken, aber wegen seiner geringen Länge oft schwächer als eine lange Passphrase. Ein Beispiel für das Prinzip einer Passphrase wäre etwa:
+
+```text
+Tasse-Wolke-Fahrrad-Lampe-27
+```
+
+Eine gute Passphrase sollte:
+
+- möglichst lang sein,
+- nicht aus einem bekannten Sprichwort oder Liedtext bestehen,
+- keine leicht erratbaren persönlichen Angaben wie Name, Geburtstag oder Haustier enthalten,
+- für verschiedene wichtige Konten nicht wiederverwendet werden.
+
+Die genaue Mindestlänge und die erlaubten Zeichen hängen vom jeweiligen Dienst ab. Wenn ein Passwortmanager verwendet wird, kann dieser auch lange zufällige Passwörter erzeugen und speichern.
+
+> **Merke:** Bei Passwörtern zählt Länge besonders stark. Eine lange, einzigartige Passphrase ist oft leichter zu merken und gleichzeitig robuster als ein sehr kurzes, kompliziert wirkendes Passwort.
+
 ## Digitale Spuren
 
 Beim Nutzen digitaler Dienste entstehen Daten. Dazu können Suchanfragen, Geräteinformationen, Zeitpunkte, Standortinformationen oder Nutzungsverhalten gehören. Welche Daten gespeichert werden, hängt vom Dienst und seinen Einstellungen ab.
@@ -79,6 +106,8 @@ Solche Informationen können zusammen ein **digitales Profil** ergeben. Auch sch
 **digitale Spur:** Daten, die bei der Nutzung digitaler Systeme entstehen oder hinterlassen werden.
 
 **Lizenz:** Bedingungen, unter denen ein Werk oder eine Software genutzt werden darf.
+
+**Passphrase:** langes Passwort aus mehreren Wörtern oder Wortbestandteilen, das möglichst schwer zu erraten und nur für einen Dienst verwendet wird.
 
 **personenbezogene Daten:** Daten, die sich auf eine bestimmte oder bestimmbare Person beziehen.
 
