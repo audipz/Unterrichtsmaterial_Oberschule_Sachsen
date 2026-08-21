@@ -19,13 +19,13 @@ School
     └── ExerciseAssignment
 ```
 
-Individuelle Schülerdaten hängen an Zuweisungen und persönlichen Arbeitsständen, nicht direkt an den Markdown-Quelldateien.
+Individuelle Lerndaten hängen an Zuweisungen und persönlichen Arbeitsständen, nicht direkt an den Markdown-Quelldateien.
 
-## Datenschutzgrundsatz für Schülerkonten
+## Datenschutzgrundsatz für Benutzerkonten
 
-Für Schüler sollen **keine echten Namen erforderlich sein**.
+Für **keinen Benutzer** sollen echte Vor- und Nachnamen erforderlich sein. Das gilt für Schüler, Lehrer und Schul-Administratoren gleichermaßen.
 
-Ein Schülerkonto benötigt technisch nur:
+Ein Benutzerkonto benötigt technisch nur:
 
 - Schule,
 - Benutzername,
@@ -33,11 +33,11 @@ Ein Schülerkonto benötigt technisch nur:
 - Rollen und organisatorische Zuordnungen,
 - optional einen frei gewählten Anzeigenamen.
 
-Der optionale Anzeigename darf ausdrücklich ein **Fantasiename/Pseudonym** sein. Die Plattform fordert keinen Vor- oder Nachnamen des Schülers an.
+Der optionale Anzeigename darf ausdrücklich ein **Fantasiename/Pseudonym** sein.
 
-Dadurch kennt die Lernplattform im Normalbetrieb nicht zwingend die reale Identität eines Schülers. Die Zuordnung zwischen realer Person und Benutzerkonto kann – falls die Schule sie organisatorisch benötigt – außerhalb der Lernplattform geführt werden.
+Dadurch kennt die Lernplattform im Normalbetrieb nicht zwingend die reale Identität eines Benutzers. Falls eine Schule organisatorisch eine Zuordnung zwischen realer Person und Benutzerkonto benötigt, soll diese Zuordnung außerhalb der Lernplattform geführt werden.
 
-> **Grundsatz:** So wenig personenbezogene Daten wie möglich speichern. Für das Lernen ist die reale Identität des Schülers in der Plattform nicht notwendig.
+> **Grundsatz:** So wenig personenbezogene Daten wie möglich speichern. Für die Nutzung der Lernplattform sind Klarnamen nicht erforderlich.
 
 ## School
 
@@ -73,9 +73,9 @@ deleted_at
 deleted_by
 ```
 
-`display_name` ist für Schüler optional und darf ein Fantasiename sein.
+`display_name` ist optional und frei wählbar. Er kann ein Fantasiename sein.
 
-Für Schüler werden **keine Pflichtfelder `first_name` oder `last_name`** vorgesehen.
+Für Benutzer werden **keine Pflichtfelder `first_name` oder `last_name`** vorgesehen.
 
 Eindeutigkeit:
 
@@ -84,23 +84,6 @@ UNIQUE(school_id, username)
 ```
 
 Der Benutzername ist ein technischer Loginname und muss nicht dem echten Namen entsprechen.
-
-## Lehrerprofil
-
-Für Lehrkräfte können zusätzliche Angaben erforderlich sein, damit Schüler und Kollegen eine Lehrkraft eindeutig erkennen können. Diese Angaben werden getrennt vom allgemeinen Benutzerkonto modelliert.
-
-Beispiel:
-
-```text
-TeacherProfile
---------------
-user_id
-first_name
-last_name
-display_name
-```
-
-Damit werden reale Namen nur dort gespeichert, wo sie fachlich beziehungsweise organisatorisch tatsächlich benötigt werden.
 
 ## UserRole
 
@@ -120,6 +103,8 @@ TEACHER
 SCHOOL_ADMIN
 SYSTEM_ADMIN
 ```
+
+Ein Lehrer kann gleichzeitig `TEACHER` und `SCHOOL_ADMIN` sein.
 
 ## SchoolClass
 
@@ -394,6 +379,8 @@ created_at
 updated_at
 ```
 
+Auch hier ist kein Klarname der Lehrkraft erforderlich. Angezeigt werden kann der frei gewählte `display_name` oder – falls keiner gesetzt wurde – der Benutzername.
+
 ## Attachment
 
 Dateiuploads werden über Metadaten in PostgreSQL verwaltet.
@@ -426,6 +413,8 @@ updated_by
 deleted_at
 deleted_by
 ```
+
+Audit-Felder referenzieren technische Benutzer-IDs. Auch dafür sind keine Klarnamen erforderlich.
 
 ## Soft-Delete-Regeln
 
