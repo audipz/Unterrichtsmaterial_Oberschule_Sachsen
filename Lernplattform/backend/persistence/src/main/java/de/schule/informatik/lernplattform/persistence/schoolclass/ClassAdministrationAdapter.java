@@ -68,6 +68,47 @@ public class ClassAdministrationAdapter implements ClassAdministrationPort {
     }
 
     @Override
+    public void moveStudent(UUID schoolId,
+                            UUID studentId,
+                            UUID sourceClassId,
+                            UUID targetClassId,
+                            LocalDate effectiveDate,
+                            UUID actorId) {
+        requireActiveClassOfSchool(schoolId, sourceClassId);
+        requireActiveClassOfSchool(schoolId, targetClassId);
+
+        var params = new MapSqlParameterSource()
+                .addValue("studentId", studentId)
+                .addValue("sourceClassId", sourceClassId)
+                .addValue("targetClassId", targetClassId)
+                .addValue("effectiveDate", effectiveDate)
+                .addValue("actorId", actorId)
+                .addValue("newMembershipId", UUID.randomUUID());
+
+        int ended = jdbc.update("""
+                UPDATE school_class_membership
+                   SET status = 'ENDED',
+                       valid_until = :effectiveDate,
+                       updated_at = now(),
+                       updated_by = :actorId
+                 WHERE school_class_id = :sourceClassId
+                   AND student_id = :studentId
+                   AND status = 'ACTIVE'
+                   AND deleted_at IS NULL
+                """, params);
+        if (ended != 1) {
+            throw new IllegalArgumentException("active source class membership not found");
+        }
+
+        jdbc.update("""
+                INSERT INTO school_class_membership
+                    (id, school_class_id, student_id, valid_from, status, created_by, updated_by)
+                VALUES
+                    (:newMembershipId, :targetClassId, :studentId, :effectiveDate, 'ACTIVE', :actorId, :actorId)
+                """, params);
+    }
+
+    @Override
     public void addTeacher(UUID schoolId, UUID classId, UUID teacherId, UUID actorId) {
         requireActiveClassOfSchool(schoolId, classId);
         jdbc.update("""
