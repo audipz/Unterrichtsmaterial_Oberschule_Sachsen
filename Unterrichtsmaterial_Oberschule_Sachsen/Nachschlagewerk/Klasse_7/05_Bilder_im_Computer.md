@@ -8,6 +8,8 @@ Ein digitales Rasterbild besteht aus vielen kleinen Bildpunkten, den **Pixeln**.
 
 Die **Auflösung** beschreibt bei Rasterbildern häufig die Anzahl der Pixel in Breite und Höhe, beispielsweise `1920 × 1080` Pixel.
 
+![Vergleich einer groben und einer feineren Pixelauflösung auf gleicher Fläche](grafiken/pixel_aufloesung.svg)
+
 Bekannte Bezeichnungen sind unter anderem:
 
 | Bezeichnung | typische Auflösung |
