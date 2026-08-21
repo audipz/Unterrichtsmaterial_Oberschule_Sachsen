@@ -8,21 +8,77 @@ Beispiel: Die Zeichenfolge `21 °C` sind Daten. Im Zusammenhang mit einer Wetter
 
 > **Merke:** Daten sind eine Darstellung. Information entsteht, wenn Daten in einem Zusammenhang gedeutet werden.
 
-## Daten brauchen eine vereinbarte Darstellung
+## Daten brauchen Kontext
 
-Menschen und Informatiksysteme müssen wissen, wie Daten zu verstehen sind. Die Zeichen `10` können beispielsweise die Dezimalzahl zehn, die Binärzahl zwei, eine Hausnummer oder ein Teil eines Datums sein. Erst der Zusammenhang macht die Bedeutung eindeutig.
+Dieselben Daten können unterschiedliche Informationen bedeuten.
 
-Digitale Informatiksysteme stellen Daten intern mit unterscheidbaren Zuständen dar. Besonders geeignet sind zwei Zustände, die meist als **0** und **1** bezeichnet werden.
+Die Zeichenfolge `10` könnte zum Beispiel bedeuten:
+
+- die Dezimalzahl zehn,
+- die Binärzahl zwei,
+- eine Hausnummer,
+- den Tag eines Monats,
+- eine Trikotnummer.
+
+Damit Daten richtig verstanden werden, braucht man also zusätzlich **Kontext** und Regeln zur Interpretation.
+
+Ein weiteres Beispiel:
+
+```text
+17
+```
+
+Ohne Zusatzinformation wissen wir nicht, ob damit 17 Jahre, 17 °C, 17 Euro oder etwas ganz anderes gemeint ist.
+
+## Daten besitzen eine Struktur
+
+Daten werden häufig nicht ungeordnet gespeichert, sondern nach einer festgelegten Struktur.
+
+Beispiel Schülerdatensatz:
+
+| Feld | Wert |
+|---|---|
+| Vorname | Lena |
+| Klasse | 7a |
+| Alter | 13 |
+
+`Vorname`, `Klasse` und `Alter` beschreiben, **welche Bedeutung** die gespeicherten Werte besitzen.
+
+In späteren Klassen wird diese Idee bei Datenbanken wichtig.
+
+## Datenarten
+
+In Informatiksystemen begegnen viele Arten von Daten:
+
+- Zahlen,
+- Texte,
+- Wahrheitswerte wie wahr/falsch,
+- Bilder,
+- Audio,
+- Video,
+- Messwerte,
+- Standortdaten,
+- Zeitangaben.
+
+Auch wenn diese Daten für Menschen sehr unterschiedlich aussehen, werden sie in digitalen Systemen letztlich durch Bitfolgen dargestellt.
 
 ## Bit und Byte
 
-Ein **Bit** ist die kleinste digitale Informationseinheit und kann zwei Zustände annehmen: 0 oder 1. Acht Bit werden zu einem **Byte** zusammengefasst.
+Digitale Informatiksysteme arbeiten besonders gut mit zwei unterscheidbaren Zuständen. Diese werden meist als **0** und **1** dargestellt.
+
+Ein **Bit** kann genau zwei Zustände annehmen:
+
+```text
+0 oder 1
+```
+
+Acht Bit werden zu einem **Byte** zusammengefasst:
 
 ```text
 1 Byte = 8 Bit
 ```
 
-Mit mehreren Bits lassen sich viele Kombinationen bilden. Mit einem Bit sind 2 Zustände möglich, mit zwei Bits 4, mit drei Bits 8 und mit acht Bits bereits 256 verschiedene Kombinationen.
+Mit mehreren Bits lassen sich viele Kombinationen bilden.
 
 | Anzahl Bits | mögliche Kombinationen |
 |---:|---:|
@@ -32,17 +88,75 @@ Mit mehreren Bits lassen sich viele Kombinationen bilden. Mit einem Bit sind 2 Z
 | 4 | 16 |
 | 8 | 256 |
 
+Warum verdoppelt sich die Anzahl? Für jedes zusätzliche Bit gibt es wieder zwei Möglichkeiten.
+
+```text
+1 Bit:   0, 1
+2 Bit:   00, 01, 10, 11
+```
+
+Allgemein können mit `n` Bits `2^n` verschiedene Kombinationen dargestellt werden.
+
+> **Wichtig:** Ein Bit ist nicht automatisch eine bestimmte Information. Erst eine Codierung legt fest, was eine Bitfolge bedeutet.
+
 ## Codierung
 
-Eine **Codierung** legt fest, wie Informationen durch Daten dargestellt werden. Zeichen können beispielsweise Zahlen zugeordnet werden. Bilder können durch Pixel und Farbwerte beschrieben werden. Töne können durch regelmäßig gemessene Zahlenwerte dargestellt werden.
+Eine **Codierung** ist eine Vereinbarung darüber, wie Informationen durch Daten dargestellt werden.
 
-Damit Daten richtig gelesen werden können, muss die verwendete Codierung bekannt sein.
+Beispiele:
+
+- Zeichen werden Zahlenwerten zugeordnet,
+- Zahlen werden binär dargestellt,
+- Bilder werden durch Pixel und Farbwerte beschrieben,
+- Audiosignale werden durch Messwerte beschrieben.
+
+Die Bitfolge
+
+```text
+01000001
+```
+
+hat für sich allein noch keine eindeutige Bedeutung. Bei einer passenden Zeichencodierung kann sie beispielsweise für den Buchstaben `A` stehen. In einem anderen Zusammenhang könnte dieselbe Bitfolge als Zahl interpretiert werden.
+
+→ Zeichencodierung wird in **Kapitel 4: Texte im Computer** genauer erklärt.
 
 ## Analog und digital
 
-Ein **analoges** Signal kann innerhalb eines Bereichs sehr viele Zwischenwerte annehmen. Ein **digitales** System verwendet dagegen festgelegte unterscheidbare Werte.
+Ein **analoges Signal** kann innerhalb eines Bereiches kontinuierlich viele Zwischenwerte annehmen.
 
-Beim Digitalisieren wird ein Ausschnitt der Wirklichkeit in Daten überführt. Dabei muss entschieden werden, wie genau gemessen oder dargestellt wird. Eine höhere Genauigkeit benötigt häufig mehr Daten.
+Beispiele:
+
+- elektrische Spannung eines Mikrofons,
+- Temperatur,
+- Helligkeit.
+
+Ein digitales System verwendet dagegen festgelegte unterscheidbare Werte.
+
+Beim **Digitalisieren** wird ein Ausschnitt der Wirklichkeit in digitale Daten überführt.
+
+Beispiele:
+
+```text
+Schall → Mikrofon → Messwerte → Audiodaten
+Licht  → Kamera   → Pixelwerte → Bilddaten
+Temperatur → Sensor → Zahlenwert
+```
+
+Dabei muss entschieden werden, wie genau gemessen beziehungsweise dargestellt wird. Eine feinere Darstellung benötigt häufig mehr Daten.
+
+## Daten erfassen
+
+Daten können auf unterschiedliche Weise entstehen.
+
+**Eingabe durch Menschen:** Tastatur, Touchscreen oder Formular.
+
+**Messung durch Sensoren:** Temperatur, Helligkeit, Bewegung oder Schall.
+
+**Automatische Erzeugung:** Ein Programm berechnet neue Werte oder protokolliert Ereignisse.
+
+**Übertragung:** Ein Gerät erhält Daten von einem anderen System.
+
+Die Herkunft von Daten ist wichtig, weil Fehler bereits bei der Erfassung entstehen können.
 
 ## Daten verarbeiten
 
@@ -52,12 +166,114 @@ Typische Operationen mit Daten sind:
 - speichern,
 - suchen,
 - sortieren,
+- filtern,
 - vergleichen,
+- berechnen,
 - verändern,
 - übertragen,
+- kopieren,
 - löschen.
 
-Welche Verarbeitung sinnvoll ist, hängt von der Aufgabe und von der Bedeutung der Daten ab.
+Beispiel Wetterdaten:
+
+```text
+Messwerte erfassen
+→ speichern
+→ nach Datum sortieren
+→ Durchschnitt berechnen
+→ Diagramm erzeugen
+```
+
+Aus vorhandenen Daten können durch Verarbeitung neue Daten und für Menschen neue Informationen entstehen.
+
+## Datenqualität
+
+Nicht alle Daten sind automatisch richtig oder brauchbar.
+
+Wichtige Fragen sind beispielsweise:
+
+- Sind die Daten korrekt?
+- Sind sie vollständig?
+- Sind sie aktuell?
+- Sind sie für die Fragestellung geeignet?
+- Wurden Einheiten richtig angegeben?
+
+Beispiel:
+
+```text
+Temperatur: 20
+```
+
+Ohne Einheit ist der Wert unvollständig. `20 °C` und `20 °F` bedeuten sehr unterschiedliche Temperaturen.
+
+Ein falsch eingestellter Sensor kann zwar viele Messwerte liefern, aber trotzdem schlechte Daten erzeugen.
+
+> **Merke:** Viele Daten sind nicht automatisch gute Daten.
+
+## Daten und Metadaten
+
+**Metadaten** sind Daten, die andere Daten beschreiben.
+
+Bei einer Bilddatei können Metadaten beispielsweise enthalten:
+
+- Dateiname,
+- Dateigröße,
+- Aufnahmezeit,
+- Bildabmessungen,
+- verwendetes Gerät.
+
+Bei einer Textdatei gehören Dateiname, Änderungszeitpunkt oder Zeichencodierung ebenfalls zu beschreibenden Informationen.
+
+Metadaten helfen beim Ordnen, Suchen und Interpretieren von Dateien.
+
+## Daten übertragen
+
+Beim Übertragen müssen Sender und Empfänger sich darüber einig sein, wie die Daten aufgebaut und codiert sind.
+
+Vereinfacht:
+
+```text
+Information
+   ↓ codieren
+Daten
+   ↓ übertragen
+Daten
+   ↓ decodieren und deuten
+Information
+```
+
+Wenn Sender und Empfänger unterschiedliche Regeln verwenden, können Daten falsch interpretiert werden.
+
+## Daten kopieren und löschen
+
+Digitale Daten lassen sich sehr leicht kopieren. Eine Kopie kann inhaltlich identisch zum Original sein.
+
+Das hat Folgen:
+
+- Eine Datei kann gleichzeitig an mehreren Orten existieren.
+- Das Löschen einer Kopie löscht nicht automatisch alle anderen Kopien.
+- Synchronisierte Systeme können Löschungen weitergeben.
+- Sicherungskopien können ältere Daten weiterhin enthalten.
+
+Der verantwortungsvolle Umgang mit persönlichen Daten wird in **Kapitel 12** genauer behandelt.
+
+## Daten und Information an einem Beispiel
+
+Ein digitales Thermometer misst eine Temperatur.
+
+```text
+physikalische Temperatur
+        ↓ Sensor
+Messwert
+        ↓ Codierung
+Binär gespeicherte Daten
+        ↓ Programm
+Anzeige „21 °C“
+        ↓ Mensch deutet Anzeige
+Information: Im Raum sind 21 °C.
+```
+
+Dieses Beispiel verbindet Wirklichkeit, Messung, Daten, Verarbeitung und menschliche Interpretation.
 
 ## Begriffe zum Nachschlagen
 
@@ -69,8 +285,14 @@ Welche Verarbeitung sinnvoll ist, hängt von der Aufgabe und von der Bedeutung d
 
 **Daten:** Zeichen oder Werte, die gespeichert, verarbeitet oder übertragen werden können.
 
-**Digitalisierung:** Überführung von Informationen oder Signalen in eine digital verarbeitbare Darstellung.
+**Datenqualität:** beschreibt, wie gut Daten für einen bestimmten Zweck geeignet sind, beispielsweise hinsichtlich Richtigkeit, Vollständigkeit und Aktualität.
+
+**Digitalisierung:** Überführung von Informationen oder analogen Signalen in eine digital verarbeitbare Darstellung.
 
 **Information:** Bedeutung, die Menschen aus Daten in einem Zusammenhang gewinnen.
 
-→ Siehe auch **Kapitel 3: Das Binärsystem**, **Kapitel 4: Texte im Computer**, **Kapitel 5: Bilder im Computer** und **Kapitel 6: Audio im Computer**.
+**Kontext:** Zusammenhang, der hilft, Daten richtig zu deuten.
+
+**Metadaten:** Daten, die andere Daten beschreiben.
+
+→ Siehe auch **Kapitel 3: Das Binärsystem**, **Kapitel 4: Texte im Computer**, **Kapitel 5: Bilder im Computer**, **Kapitel 6: Audio im Computer**, **Kapitel 9: Dateien, Ordner und Pfade** und **Kapitel 12: Daten verantwortungsvoll nutzen**.
