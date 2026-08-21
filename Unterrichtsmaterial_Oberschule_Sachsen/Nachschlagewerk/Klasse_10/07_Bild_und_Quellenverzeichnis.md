@@ -1,23 +1,36 @@
 # 7 Bild- und Quellenverzeichnis
 
-## Eigene Darstellungen
+## Eigene didaktische Grafiken
 
-In dieser Fassung des Nachschlagewerks Klasse 10 werden die erklärenden Strukturen als Textgrafiken und Tabellen direkt in Markdown dargestellt. Sie sind eigene Darstellungen innerhalb des Projekts.
+Die im Nachschlagewerk Klasse 10 eingebetteten SVG-Grafiken wurden für dieses Projekt selbst erstellt. Sie dienen der fachlichen Veranschaulichung und vermeiden verschiebungsanfällige ASCII-Darstellungen in PDF und DOCX.
 
-Geplante SVG-Ergänzungen für die grafische Endfassung:
+| Datei | Kapitel | Inhalt |
+|---|---|---|
+| `grafiken/gantt_projektplanung.svg` | 2 Softwareentwicklung und Projektmanagement | Gantt-Diagramm mit Aufgaben, zeitlichen Abhängigkeiten, kritischem Pfad und den Folgen einer Verzögerung |
+| `grafiken/schutzziele_informationssicherheit.svg` | 3 Sicherheit in der Informationsverarbeitung | zentrale Schutzziele der Informationssicherheit und ihre Zusammenhänge |
+| `grafiken/3d_rendering_pipeline.svg` | 5 Computergrafik, Video, 3D und Streaming | vereinfachter Weg von der 3D-Szene über Verarbeitungsschritte zum gerenderten Bild |
 
-| Thema | geplante Grafik |
-|---|---|
-| Webbasierte Anwendungen | Client-Server-Kommunikation mit Anfrage und Antwort |
-| Sicherheit | Schutzziele Vertraulichkeit, Integrität, Verfügbarkeit |
-| Verschlüsselung | öffentlicher und privater Schlüssel |
-| Mobile Bezahldienste | vereinfachter Datenfluss beim Bezahlen |
-| Computergrafik | Zusammenhang von Auflösung, Farbtiefe, Bildrate und Datenmenge |
-| Projektarbeit | Projektkreislauf von Analyse bis Reflexion |
+Weitere Tabellen, Formeln, Pseudodarstellungen und vereinfachte Strukturskizzen innerhalb der Markdown-Kapitel sind ebenfalls eigene Darstellungen des Projekts.
+
+## Externe Bilder
+
+In der aktuellen Fassung von Klasse 10 werden **keine extern übernommenen Bilder** verwendet. Deshalb sind für die eingebetteten Grafiken keine externen Urheber- oder Lizenzangaben erforderlich.
+
+Werden später externe Medien ergänzt, müssen hier mindestens dokumentiert werden:
+
+- Titel beziehungsweise Beschreibung,
+- Originalquelle,
+- Urheber,
+- Lizenz,
+- Link zur Quelle,
+- möglichst das Abrufdatum,
+- gegebenenfalls vorgenommene Änderungen.
+
+Bevorzugt werden Public Domain, CC0, CC BY oder CC BY-SA.
 
 ## Verwendete Grundlagen im Repository
 
-Dieses Nachschlagewerk baut auf den vorhandenen Unterrichtsmaterialien des Repositorys auf, insbesondere auf den Materialien zu Klasse 10:
+Das Nachschlagewerk baut auf den vorhandenen Unterrichtsmaterialien des Repositorys auf, insbesondere auf:
 
 - `Klasse_10/README.md`
 - `Klasse_10/01_Webbasierte_Anwendungen/`
@@ -25,13 +38,20 @@ Dieses Nachschlagewerk baut auf den vorhandenen Unterrichtsmaterialien des Repos
 - `Klasse_10/03_Wahlbereich_Sicherheit/`
 - `Klasse_10/04_Wahlbereich_Mobile_Endgeraete/`
 - `Klasse_10/05_Wahlbereich_Computergrafik/`
+- den projektweiten Bereichen `Grundlagen/` und `Werkzeuge/`, soweit Begriffe oder technische Grundlagen benötigt werden.
 
-Außerdem werden Vorbegriffe aus den Nachschlagewerken der Klassen 7 bis 9 genutzt, vor allem zu Daten, Netzwerken, Modellierung, mobilen Endgeräten und Computergrafik.
+Zusätzlich wird bewusst auf Vorwissen aus den Nachschlagewerken der Klassen 7 bis 9 aufgebaut. Dazu gehören insbesondere Daten und Dateiverwaltung, Algorithmen und Programmierung, Netzwerke und Protokolle, Datenbanken, Modellierung, Sicherheit, mobile Systeme und Grundlagen der Computergrafik.
+
+## Fachliche Quellen und Standards
+
+Die Kapitel sind als schülergerechte Zusammenfassung formuliert und übernehmen keine längeren externen Textpassagen. Für technische Begriffe und allgemein etablierte Grundlagen werden insbesondere die jeweiligen offenen Standards und Hersteller- beziehungsweise Projektdokumentationen als fachlicher Hintergrund herangezogen, beispielsweise zu HTTP/HTTPS, TCP/IP, DNS, E-Mail-Protokollen, TLS, Git und Webtechniken.
+
+Wo im Nachschlagewerk konkrete externe Lern- oder Dokumentationsseiten verlinkt werden, ist die jeweilige Adresse direkt im betreffenden Kapitel angegeben. Solche Links dienen der Vertiefung; das Nachschlagewerk selbst soll auch ohne den Aufruf externer Webseiten verständlich bleiben.
 
 ## Lizenzhinweis
 
-Die Kapitel enthalten keine übernommenen externen Bilder. Werden später externe Medien ergänzt, müssen Quelle, Urheber, Lizenz, Link und Abrufdatum hier dokumentiert werden.
+Die selbst erstellten SVG-Grafiken sind Bestandteil dieses Repositorys und unterliegen dessen Lizenzbedingungen. Bei späteren Ergänzungen fremder Medien müssen deren abweichende Lizenzbedingungen ausdrücklich dokumentiert und eingehalten werden.
 
 ## Abruf- und Bearbeitungsstand
 
-Bearbeitungsstand: 20. August 2026.
+Bearbeitungsstand: 21. August 2026.
