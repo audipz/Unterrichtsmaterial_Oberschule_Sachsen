@@ -19,6 +19,7 @@ Die folgenden Erklärgrafiken wurden speziell für dieses Nachschlagewerk als SV
 
 | Datei | Darstellung |
 |---|---|
+| `einfaches_informatiksystem.svg` | vereinfachtes Modell mit Eingabe, Verarbeitung, Ausgabe und Speicherung |
 | `binaer_stellenwert.svg` | Binär-Stellenwerttafel am Beispiel `00101101₂ = 45₁₀` |
 | `zeichen_code_bits.svg` | Weg vom Zeichen über den Codewert zur Bitfolge |
 | `pixel_aufloesung.svg` | Vergleich einer gröberen und feineren Pixelauflösung auf gleicher Fläche |
