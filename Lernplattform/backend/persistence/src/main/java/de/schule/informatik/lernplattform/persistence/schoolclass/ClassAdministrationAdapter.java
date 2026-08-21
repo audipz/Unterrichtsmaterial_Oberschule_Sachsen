@@ -68,6 +68,23 @@ public class ClassAdministrationAdapter implements ClassAdministrationPort {
     }
 
     @Override
+    public void removeStudent(UUID schoolId, UUID classId, UUID studentId, LocalDate effectiveDate, UUID actorId) {
+        requireActiveClassOfSchool(schoolId, classId);
+        int updated = jdbc.update("""
+                UPDATE school_class_membership
+                   SET status = 'ENDED', valid_until = :effectiveDate,
+                       updated_at = now(), updated_by = :actorId
+                 WHERE school_class_id = :classId
+                   AND student_id = :studentId
+                   AND status = 'ACTIVE'
+                   AND deleted_at IS NULL
+                """, new MapSqlParameterSource()
+                .addValue("classId", classId).addValue("studentId", studentId)
+                .addValue("effectiveDate", effectiveDate).addValue("actorId", actorId));
+        if (updated != 1) throw new IllegalArgumentException("active class membership not found");
+    }
+
+    @Override
     public void moveStudent(UUID schoolId,
                             UUID studentId,
                             UUID sourceClassId,
@@ -96,9 +113,7 @@ public class ClassAdministrationAdapter implements ClassAdministrationPort {
                    AND status = 'ACTIVE'
                    AND deleted_at IS NULL
                 """, params);
-        if (ended != 1) {
-            throw new IllegalArgumentException("active source class membership not found");
-        }
+        if (ended != 1) throw new IllegalArgumentException("active source class membership not found");
 
         jdbc.update("""
                 INSERT INTO school_class_membership
@@ -119,13 +134,57 @@ public class ClassAdministrationAdapter implements ClassAdministrationPort {
     }
 
     @Override
+    public void removeTeacher(UUID schoolId, UUID classId, UUID teacherId, UUID actorId) {
+        requireActiveClassOfSchool(schoolId, classId);
+        int updated = jdbc.update("""
+                UPDATE class_teacher
+                   SET deleted_at = now(), deleted_by = :actorId
+                 WHERE school_class_id = :classId
+                   AND teacher_id = :teacherId
+                   AND deleted_at IS NULL
+                """, new MapSqlParameterSource()
+                .addValue("classId", classId).addValue("teacherId", teacherId).addValue("actorId", actorId));
+        if (updated != 1) throw new IllegalArgumentException("active teacher assignment not found");
+    }
+
+    @Override
+    public void softDeleteClass(UUID schoolId, UUID classId, UUID actorId) {
+        requireActiveClassOfSchool(schoolId, classId);
+        jdbc.update("""
+                UPDATE school_class
+                   SET status = 'SOFT_DELETED', deleted_at = now(), deleted_by = :actorId,
+                       updated_at = now(), updated_by = :actorId
+                 WHERE id = :classId AND school_id = :schoolId
+                """, new MapSqlParameterSource()
+                .addValue("classId", classId).addValue("schoolId", schoolId).addValue("actorId", actorId));
+    }
+
+    @Override
+    public void reactivateClass(UUID schoolId, UUID classId, UUID actorId) {
+        int updated = jdbc.update("""
+                UPDATE school_class
+                   SET status = 'ACTIVE', deleted_at = NULL, deleted_by = NULL,
+                       updated_at = now(), updated_by = :actorId
+                 WHERE id = :classId AND school_id = :schoolId AND status = 'SOFT_DELETED'
+                """, new MapSqlParameterSource()
+                .addValue("classId", classId).addValue("schoolId", schoolId).addValue("actorId", actorId));
+        if (updated != 1) throw new IllegalArgumentException("soft-deleted class not found in school");
+    }
+
+    @Override
     public Set<UUID> activeClassIdsForUser(UUID userId) {
         String sql = """
-                SELECT school_class_id FROM school_class_membership
-                 WHERE student_id = :userId AND status = 'ACTIVE' AND deleted_at IS NULL
+                SELECT scm.school_class_id
+                  FROM school_class_membership scm
+                  JOIN school_class sc ON sc.id = scm.school_class_id
+                 WHERE scm.student_id = :userId AND scm.status = 'ACTIVE' AND scm.deleted_at IS NULL
+                   AND sc.status = 'ACTIVE' AND sc.deleted_at IS NULL
                 UNION
-                SELECT school_class_id FROM class_teacher
-                 WHERE teacher_id = :userId AND deleted_at IS NULL
+                SELECT ct.school_class_id
+                  FROM class_teacher ct
+                  JOIN school_class sc ON sc.id = ct.school_class_id
+                 WHERE ct.teacher_id = :userId AND ct.deleted_at IS NULL
+                   AND sc.status = 'ACTIVE' AND sc.deleted_at IS NULL
                 """;
         return new HashSet<>(jdbc.query(sql, new MapSqlParameterSource("userId", userId),
                 (rs, rowNum) -> rs.getObject(1, UUID.class)));
