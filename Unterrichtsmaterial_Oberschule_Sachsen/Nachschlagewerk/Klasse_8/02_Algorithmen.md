@@ -24,7 +24,27 @@ Schritt C
 
 ### Auswahl
 
-Eine Bedingung entscheidet, welcher Weg ausgeführt wird.
+Bei einer **Auswahl** entscheidet eine Bedingung, ob eine Anweisung ausgeführt wird oder welcher von mehreren möglichen Wegen gewählt wird.
+
+Eine Auswahl kann **ohne SONST-Zweig** formuliert werden:
+
+```text
+WENN Bedingung
+    DANN Anweisung A
+```
+
+Ist die Bedingung wahr, wird `Anweisung A` ausgeführt. Ist sie falsch, wird diese Anweisung übersprungen und der Algorithmus läuft danach weiter.
+
+Beispiel:
+
+```text
+WENN temperatur < 0
+    DANN zeige "Frostgefahr"
+```
+
+Es gibt hier keine besondere Aktion für Temperaturen ab 0 °C.
+
+Eine Auswahl kann auch **mit SONST-Zweig** formuliert werden:
 
 ```text
 WENN Bedingung
@@ -32,6 +52,19 @@ WENN Bedingung
 SONST
     Anweisung B
 ```
+
+Ist die Bedingung wahr, wird `Anweisung A` ausgeführt. Ist sie falsch, wird stattdessen `Anweisung B` ausgeführt.
+
+Beispiel:
+
+```text
+WENN alter >= 18
+    DANN zeige "volljährig"
+SONST
+    zeige "minderjährig"
+```
+
+> **Merke:** Ein `SONST` ist nicht bei jeder Auswahl notwendig. Es wird gebraucht, wenn auch für den Fall „Bedingung ist falsch“ eine eigene Anweisung ausgeführt werden soll.
 
 ### Wiederholung
 
@@ -69,7 +102,7 @@ Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders
 
 **Algorithmus:** eindeutige Handlungsvorschrift zur Lösung einer Aufgabe.
 
-**Auswahl:** Entscheidung zwischen verschiedenen Abläufen.
+**Auswahl:** Entscheidung darüber, ob eine Anweisung ausgeführt wird oder welcher von mehreren Abläufen gewählt wird.
 
 **Bedingung:** Ausdruck mit dem Ergebnis wahr oder falsch.
 
