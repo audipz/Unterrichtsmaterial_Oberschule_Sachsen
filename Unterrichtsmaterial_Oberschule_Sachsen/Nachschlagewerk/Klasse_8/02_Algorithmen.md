@@ -33,8 +33,6 @@ WENN Bedingung
     DANN Anweisung A
 ```
 
-Ist die Bedingung wahr, wird `Anweisung A` ausgeführt. Ist sie falsch, wird diese Anweisung übersprungen und der Algorithmus läuft danach weiter.
-
 Eine Auswahl kann auch **mit SONST-Zweig** formuliert werden:
 
 ```text
@@ -44,26 +42,24 @@ SONST
     Anweisung B
 ```
 
-> **Merke:** Ein `SONST` ist nicht bei jeder Auswahl notwendig. Es wird gebraucht, wenn auch für den Fall „Bedingung ist falsch“ eine eigene Anweisung ausgeführt werden soll.
+> **Merke:** Ein `SONST` ist nicht bei jeder Auswahl notwendig.
 
 ### Wiederholung
 
-Eine **Wiederholung** oder **Schleife** führt eine oder mehrere Anweisungen mehrfach aus. Welche Schleifenart geeignet ist, hängt davon ab, wann geprüft wird und ob die Anzahl der Wiederholungen vorher bekannt ist.
+Eine **Wiederholung** oder **Schleife** führt eine oder mehrere Anweisungen mehrfach aus.
 
 #### Kopfgesteuerte Schleife
 
-Bei einer **kopfgesteuerten Schleife** wird die Bedingung **vor** jedem Schleifendurchlauf geprüft.
+Die Bedingung wird vor jedem Durchlauf geprüft. Die Schleife kann deshalb auch kein einziges Mal ausgeführt werden.
 
 ```text
 SOLANGE Bedingung gilt
     wiederhole Anweisung
 ```
 
-Ist die Bedingung bereits am Anfang falsch, wird die Schleife kein einziges Mal ausgeführt.
-
 #### Fußgesteuerte Schleife
 
-Bei einer **fußgesteuerten Schleife** wird die Bedingung **nach** dem Schleifendurchlauf geprüft. Deshalb wird der Schleifenrumpf mindestens einmal ausgeführt.
+Die Bedingung wird nach dem Schleifendurchlauf geprüft. Der Schleifenrumpf wird deshalb mindestens einmal ausgeführt.
 
 ```text
 WIEDERHOLE
@@ -73,22 +69,16 @@ SOLANGE Bedingung gilt
 
 #### Zählschleife
 
-Eine **Zählschleife** verwendet man, wenn die Anzahl der Wiederholungen vorher bekannt ist.
+Eine Zählschleife eignet sich, wenn die Anzahl der Wiederholungen vorher bekannt ist.
 
 ```text
 FÜR i VON 1 BIS 5
     Anweisung
 ```
 
-#### Bedingte Wiederholung
+#### Bedingte Wiederholung und Endlosschleife
 
-Bei einer **bedingten Wiederholung** ist die Anzahl der Durchläufe vorher nicht unbedingt bekannt. Die Schleife endet erst, wenn eine bestimmte Bedingung erfüllt oder nicht mehr erfüllt ist.
-
-#### Endlosschleife
-
-Eine **Endlosschleife** besitzt keine wirksame Abbruchbedingung und läuft deshalb unbegrenzt weiter, solange das Programm nicht von außen beendet wird.
-
-Endlosschleifen können beabsichtigt sein, zum Beispiel bei einem eingebetteten System, das dauerhaft auf Sensordaten reagieren soll. Sie können aber auch unbeabsichtigt entstehen, wenn sich eine Abbruchbedingung niemals ändert.
+Bei einer bedingten Wiederholung hängt das Ende von einer Bedingung ab. Eine Endlosschleife besitzt keine wirksame Abbruchbedingung und läuft weiter, bis das Programm von außen beendet wird.
 
 | Schleifenart | Prüfung | Mindestens ein Durchlauf? | Typischer Einsatz |
 |---|---|---:|---|
@@ -100,26 +90,7 @@ Endlosschleifen können beabsichtigt sein, zum Beispiel bei einem eingebetteten 
 
 ## Verschachtelungen
 
-Grundstrukturen können **ineinander verschachtelt** werden. Das bedeutet: Innerhalb einer Auswahl oder Schleife befindet sich eine weitere Auswahl oder Schleife.
-
-### Verschachtelte Bedingungen
-
-```text
-WENN alter >= 18
-    DANN
-        WENN fuehrerscheinVorhanden
-            DANN zeige "Fahren erlaubt"
-```
-
-### Bedingung innerhalb einer Schleife
-
-```text
-FÜR i VON 1 BIS 10
-    WENN i ist gerade
-        DANN zeige i
-```
-
-### Verschachtelte Schleifen
+Grundstrukturen können **ineinander verschachtelt** werden.
 
 ```text
 FÜR zeile VON 1 BIS 3
@@ -129,32 +100,77 @@ FÜR zeile VON 1 BIS 3
 
 Die innere Schleife läuft viermal für jede der drei Zeilen. Insgesamt wird `setze Punkt` also `3 · 4 = 12` Mal ausgeführt.
 
-> **Merke:** Bei verschachtelten Schleifen wird die innere Schleife für jeden Durchlauf der äußeren Schleife erneut vollständig ausgeführt.
+## Bedingungen und Vergleichsoperatoren
 
-## Bedingungen
+Eine **Bedingung** ist ein Ausdruck, dessen Ergebnis **wahr** oder **falsch** ist. Um Werte zu vergleichen, werden **Vergleichsoperatoren** verwendet.
 
-Eine **Bedingung** ist ein Ausdruck, dessen Ergebnis wahr oder falsch ist. Beispiele sind `zahl > 10`, `tuerOffen` oder `farbe == rot`. Bedingungen ermöglichen Entscheidungen und steuern Wiederholungen.
+Typische Schreibweisen sind:
+
+| Bedeutung | häufige Schreibweise |
+|---|---|
+| gleich | `==` |
+| ungleich | `!=` |
+| kleiner als | `<` |
+| größer als | `>` |
+| kleiner oder gleich | `<=` |
+| größer oder gleich | `>=` |
+
+Beispiel:
+
+```text
+WENN punkte == 10
+    DANN zeige "Ziel erreicht"
+```
+
+`punkte == 10` **vergleicht**, ob der gespeicherte Wert von `punkte` gleich 10 ist. Das Ergebnis des Vergleichs ist wahr oder falsch.
+
+### `=`, `==` und `:=` sind nicht dasselbe
+
+Diese Zeichen werden leicht verwechselt, können aber unterschiedliche Bedeutungen haben:
+
+| Schreibweise | typische Bedeutung |
+|---|---|
+| `:=` | Zuweisung in Pseudocode: „bekommt den Wert“ |
+| `=` | in vielen Programmiersprachen Zuweisung; in Mathematik Gleichheit |
+| `==` | in vielen Programmiersprachen Vergleich auf Gleichheit |
+
+Beispiel:
+
+```text
+punkte := 10
+```
+
+bedeutet in unserem Pseudocode: Speichere 10 in `punkte`.
+
+```text
+punkte == 10
+```
+
+bedeutet: Prüfe, ob `punkte` den Wert 10 besitzt.
+
+In einer Sprache wie Python oder JavaScript wird eine Zuweisung dagegen häufig mit `=` geschrieben:
+
+```text
+punkte = 10
+```
+
+und der Vergleich mit:
+
+```text
+punkte == 10
+```
+
+> **Merke:** Ob `=`, `==` oder `:=` verwendet wird, hängt von der Sprache beziehungsweise Darstellungsform ab. Entscheidend ist, zwischen **einen Wert speichern** und **zwei Werte vergleichen** zu unterscheiden.
 
 ## Variablen
 
 ### Wozu braucht man Variablen?
 
-Eine **Variable** ist ein benannter Speicherplatz für einen Wert, den ein Algorithmus während seiner Ausführung benötigt. Der Name ermöglicht es, später wieder auf diesen Wert zuzugreifen.
-
-Variablen werden beispielsweise verwendet, um:
-
-- einen Zwischenwert einer Berechnung zu speichern,
-- Punkte oder Durchläufe zu zählen,
-- eine Eingabe zu merken,
-- einen Messwert aufzubewahren,
-- einen Zustand wie `tuerOffen` zu speichern,
-- Ergebnisse später erneut zu verwenden.
-
-Beispiel: Ein Spiel muss sich den aktuellen Punktestand merken. Statt an jeder Stelle des Algorithmus eine feste Zahl einzutragen, wird der Wert in der Variablen `punkte` gespeichert.
+Eine **Variable** ist ein benannter Speicherplatz für einen Wert, den ein Algorithmus während seiner Ausführung benötigt. Variablen speichern beispielsweise Zwischenwerte, Eingaben, Messwerte, Zähler oder Zustände.
 
 ### Zuweisung
 
-Mit einer **Zuweisung** erhält eine Variable einen Wert. In Pseudocode wird dafür häufig `:=` verwendet:
+Mit einer **Zuweisung** erhält eine Variable einen Wert. In diesem Nachschlagewerk verwenden wir im Pseudocode dafür `:=`:
 
 ```text
 punkte := 0
@@ -162,107 +178,45 @@ punkte := 0
 
 Das bedeutet: **Der Variablen `punkte` wird der Wert 0 zugewiesen.**
 
-Eine Zuweisung ist nicht dasselbe wie ein mathematisches Gleichheitszeichen. Das wird besonders deutlich bei:
+Besonders deutlich wird die Bedeutung bei:
 
 ```text
 punkte := punkte + 1
 ```
 
-Der Computer liest zuerst den bisherigen Wert von `punkte`, addiert 1 und speichert das Ergebnis anschließend wieder in `punkte`.
-
-Angenommen, `punkte` besitzt vorher den Wert 4:
-
-```text
-punkte := punkte + 1
-          4      + 1
-punkte := 5
-```
-
-In der Mathematik wäre `punkte = punkte + 1` als Gleichung unmöglich. In einem Programm beschreibt die Anweisung dagegen eine **Änderung des gespeicherten Wertes**.
-
-Programmiersprachen verwenden für Zuweisungen unterschiedliche Schreibweisen. Häufig findet man beispielsweise `=`, während in Pseudocode und algorithmischen Darstellungen `:=` besonders deutlich zwischen Zuweisung und Vergleich unterscheidet.
-
-> **Merke:** `:=` bedeutet „bekommt den Wert“. Rechts wird zuerst berechnet, anschließend wird das Ergebnis links gespeichert.
+Rechts wird zuerst gerechnet. Anschließend wird das Ergebnis links gespeichert. Hat `punkte` vorher den Wert 4, besitzt die Variable danach den Wert 5.
 
 ### Datentypen
 
-Variablen besitzen in vielen Programmiersprachen einen **Datentyp**. Der Datentyp beschreibt, welche Art von Wert gespeichert wird und welche Operationen damit sinnvoll oder erlaubt sind.
-
-Typische Datentypen sind:
+Variablen besitzen in vielen Programmiersprachen einen **Datentyp**. Er beschreibt, welche Art von Wert gespeichert wird und welche Operationen damit sinnvoll oder erlaubt sind.
 
 | Datentyp | Bedeutung | Beispiel |
 |---|---|---|
-| Ganzzahl | ganze Zahlen ohne Nachkommastellen | `alter := 14` |
+| Ganzzahl | ganze Zahlen | `alter := 14` |
 | Gleitkommazahl/Dezimalzahl | Zahlen mit Nachkommastellen | `temperatur := 21.5` |
 | Zeichen | einzelnes Zeichen | `taste := 'A'` |
 | Zeichenkette/Text | Folge von Zeichen | `name := "Mia"` |
 | Wahrheitswert/Boolean | wahr oder falsch | `tuerOffen := wahr` |
 
-Die genauen Namen der Datentypen unterscheiden sich zwischen Programmiersprachen, beispielsweise `int`, `float`, `string` oder `boolean`.
-
-### Warum sind Datentypen wichtig?
-
-Der Datentyp hilft dem Computer und dem Programmierer zu verstehen, **wie ein gespeicherter Wert behandelt werden soll**.
-
-Mit Zahlen kann beispielsweise gerechnet werden:
-
-```text
-alter := 14
-alter := alter + 1
-```
-
-Bei Text bedeutet ein `+` in manchen Programmiersprachen dagegen, Texte aneinanderzufügen:
-
-```text
-vorname := "Mia"
-nachname := "Schulze"
-```
-
-Ein Wahrheitswert kann direkt für eine Bedingung verwendet werden:
-
-```text
-tuerOffen := wahr
-
-WENN tuerOffen
-    DANN zeige "Tür schließen"
-```
-
-Datentypen helfen außerdem dabei, Fehler zu erkennen. Die Anweisung „addiere 5 zu einem Namen“ ergibt normalerweise keinen sinnvollen Zahlenwert.
+Datentypen helfen dabei, Werte richtig zu verarbeiten und ungeeignete Operationen zu erkennen.
 
 ### Deklaration und Initialisierung
 
-In manchen Programmiersprachen muss eine Variable zuerst **deklariert** werden. Dabei werden ihr beispielsweise ein Name und ein Datentyp zugeordnet.
-
-Sinngemäß:
-
-```text
-Ganzzahl punkte
-```
-
-Erhält die Variable ihren ersten Wert, spricht man von **Initialisierung**:
-
-```text
-punkte := 0
-```
-
-Andere Programmiersprachen erkennen den Datentyp automatisch aus dem zugewiesenen Wert. Deshalb sieht die konkrete Schreibweise je nach Sprache unterschiedlich aus.
+In manchen Programmiersprachen muss eine Variable zunächst **deklariert** werden. Dabei werden beispielsweise Name und Datentyp festgelegt. Die erstmalige Vergabe eines Wertes heißt **Initialisierung**.
 
 ### Gute Variablennamen
 
-Ein Variablenname sollte erkennen lassen, was gespeichert wird.
-
-Gut verständlich sind beispielsweise:
-
-```text
-punkte
-anzahlSchueler
-maxTemperatur
-tuerOffen
-```
-
-Namen wie `x`, `a1` oder `wert2` können bei kurzen mathematischen Beispielen sinnvoll sein, sind in größeren Algorithmen aber oft schwer verständlich.
+Variablennamen sollten erkennen lassen, was gespeichert wird, beispielsweise `punkte`, `anzahlSchueler`, `maxTemperatur` oder `tuerOffen`.
 
 > **Merke:** Eine Variable verbindet einen verständlichen Namen mit einem gespeicherten Wert. Ihr Datentyp beschreibt, welche Art von Daten dieser Wert darstellt.
+
+## Lambda-Ausdrücke – ein Ausblick
+
+In manchen Programmiersprachen begegnet später auch das Zeichen **λ (Lambda)** beziehungsweise der Begriff **Lambda-Ausdruck**. Ein Lambda-Ausdruck beschreibt vereinfacht eine kleine Funktion, die häufig direkt dort notiert wird, wo sie benötigt wird, ohne ihr vorher einen eigenen Funktionsnamen zu geben.
+
+Beispielsweise kann eine Sprache sinngemäß eine Funktion „verdopple eine Zahl“ als kurzen Ausdruck darstellen. Die konkrete Schreibweise unterscheidet sich stark zwischen Programmiersprachen.
+
+Lambda-Ausdrücke sind **nicht** dasselbe wie Zuweisungs- oder Vergleichsoperatoren und für die grundlegenden Algorithmen dieses Kapitels nicht erforderlich. Der Begriff ist hier nur als Ausblick genannt, damit das Zeichen beziehungsweise der Name später eingeordnet werden kann.
 
 ## Algorithmen darstellen
 
@@ -270,7 +224,7 @@ Algorithmen können als Text, Pseudocode, Struktogramm, Ablaufdiagramm oder Prog
 
 ## Testen
 
-Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders wichtig sind Grenzfälle und ungewöhnliche Situationen. Ein einzelnes erfolgreiches Beispiel beweist noch nicht, dass ein Algorithmus immer korrekt arbeitet.
+Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders wichtig sind Grenzfälle und ungewöhnliche Situationen.
 
 > **Merke:** Programmieren bedeutet nicht nur Befehle zu schreiben. Zuerst muss klar sein, welches Verfahren das Problem löst.
 
@@ -282,22 +236,22 @@ Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders
 
 **Bedingung:** Ausdruck mit dem Ergebnis wahr oder falsch.
 
-**Datentyp:** Festlegung beziehungsweise Beschreibung der Art eines gespeicherten Wertes und der möglichen Operationen damit.
+**Datentyp:** Beschreibung der Art eines gespeicherten Wertes und der möglichen Operationen damit.
 
 **Deklaration:** Bekanntmachen einer Variablen, häufig mit Name und Datentyp.
 
-**Endlosschleife:** Schleife ohne wirksame Beendigung.
-
 **Initialisierung:** erstmalige Vergabe eines Wertes an eine Variable.
 
-**Variable:** benannter Speicherplatz für einen Wert, auf den ein Algorithmus über den Variablennamen zugreifen kann.
+**Lambda-Ausdruck:** kurze, häufig namenlose Funktionsbeschreibung in Programmiersprachen; die genaue Schreibweise ist sprachabhängig.
+
+**Variable:** benannter Speicherplatz für einen Wert.
+
+**Vergleichsoperator:** Operator zum Vergleichen von Werten; das Ergebnis ist typischerweise wahr oder falsch.
 
 **Verschachtelung:** Einbetten einer Kontrollstruktur in eine andere Kontrollstruktur.
 
 **Wiederholung/Schleife:** mehrfache Ausführung von Anweisungen.
 
-**Zählschleife:** Schleife für eine vorher bekannte Anzahl von Wiederholungen.
-
-**Zuweisung:** Speichern eines Wertes in einer Variablen; in Pseudocode häufig mit `:=` dargestellt.
+**Zuweisung:** Speichern eines Wertes in einer Variablen; im Pseudocode dieses Nachschlagewerks mit `:=` dargestellt.
 
 → Siehe auch **Kapitel 3: Robot Karol**.
