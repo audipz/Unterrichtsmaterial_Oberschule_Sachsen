@@ -1,5 +1,13 @@
 # 1 Objektorientierte Modellierung
 
+## Vorwissen aus Klasse 7
+
+In Klasse 7 wurden bereits **Objekte, Attribute, Klassen und Methoden** eingeführt. Dort ging es vor allem darum, diese Begriffe kennenzulernen und einfache Modelle zu verstehen.
+
+In Klasse 8 wird dieses Vorwissen weitergeführt: Modelle werden genauer betrachtet, Objekte und Klassen systematischer beschrieben und Beziehungen sowie Abstraktion stärker berücksichtigt.
+
+→ Zum Wiederholen siehe **Nachschlagewerk Klasse 7, Kapitel 11: Objekte, Attribute, Klassen und Methoden**.
+
 ## Modelle helfen beim Verstehen
 
 Informatiksysteme bilden häufig Ausschnitte der Wirklichkeit ab. Dabei werden nur die Merkmale berücksichtigt, die für eine Aufgabe wichtig sind. Ein solches vereinfachtes Abbild nennt man **Modell**.
