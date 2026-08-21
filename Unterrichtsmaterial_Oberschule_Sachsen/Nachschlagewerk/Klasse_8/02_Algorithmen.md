@@ -68,16 +68,121 @@ SONST
 
 ### Wiederholung
 
-Anweisungen werden mehrfach ausgeführt.
+Eine **Wiederholung** oder **Schleife** führt eine oder mehrere Anweisungen mehrfach aus. Welche Schleifenart geeignet ist, hängt davon ab, wann geprüft wird und ob die Anzahl der Wiederholungen vorher bekannt ist.
+
+#### Kopfgesteuerte Schleife
+
+Bei einer **kopfgesteuerten Schleife** wird die Bedingung **vor** jedem Schleifendurchlauf geprüft.
 
 ```text
 SOLANGE Bedingung gilt
     wiederhole Anweisung
 ```
 
+Ist die Bedingung bereits am Anfang falsch, wird die Schleife **kein einziges Mal** ausgeführt.
+
+Beispiel:
+
+```text
+SOLANGE akku > 20
+    sende Messwert
+```
+
+#### Fußgesteuerte Schleife
+
+Bei einer **fußgesteuerten Schleife** wird die Bedingung **nach** dem Schleifendurchlauf geprüft. Deshalb wird der Schleifenrumpf mindestens einmal ausgeführt.
+
+```text
+WIEDERHOLE
+    Anweisung
+SOLANGE Bedingung gilt
+```
+
+Beispiel:
+
+```text
+WIEDERHOLE
+    frage Passwort ab
+SOLANGE Passwort falsch ist
+```
+
+Die Abfrage findet mindestens einmal statt.
+
+#### Zählschleife
+
+Eine **Zählschleife** verwendet man, wenn die Anzahl der Wiederholungen vorher bekannt ist.
+
+```text
+WIEDERHOLE 5 MAL
+    Anweisung
+```
+
+oder in einer Programmiersprache sinngemäß:
+
+```text
+FÜR i VON 1 BIS 5
+    Anweisung
+```
+
+Beispiel: Eine Spielfigur soll genau zehn Schritte vorwärtsgehen.
+
+#### Bedingte Wiederholung
+
+Bei einer **bedingten Wiederholung** ist die Anzahl der Durchläufe vorher nicht unbedingt bekannt. Die Schleife endet erst, wenn eine bestimmte Bedingung erfüllt oder nicht mehr erfüllt ist.
+
+Beispiele:
+
+```text
+SOLANGE feldFrei
+    geheVor()
+```
+
+oder
+
+```text
+WIEDERHOLE
+    würfle
+BIS eine 6 fällt
+```
+
+#### Endlosschleife
+
+Eine **Endlosschleife** besitzt keine wirksame Abbruchbedingung und läuft deshalb unbegrenzt weiter, solange das Programm nicht von außen beendet wird.
+
+```text
+WIEDERHOLE IMMER
+    prüfe Sensor
+```
+
+Endlosschleifen können **beabsichtigt** sein, zum Beispiel bei einem eingebetteten System, das dauerhaft auf Sensordaten reagieren soll. Sie können aber auch **unbeabsichtigt** entstehen, wenn sich eine Abbruchbedingung niemals ändert.
+
+Beispiel für einen Fehler:
+
+```text
+zahl = 1
+SOLANGE zahl < 10
+    zeige zahl
+```
+
+Wenn `zahl` innerhalb der Schleife nie verändert wird, bleibt die Bedingung immer wahr. Die Schleife endet nicht.
+
+#### Vergleich der Schleifenarten
+
+| Schleifenart | Prüfung | Mindestens ein Durchlauf? | Typischer Einsatz |
+|---|---|---:|---|
+| kopfgesteuert | vor dem Durchlauf | nein | solange eine Bedingung gilt |
+| fußgesteuert | nach dem Durchlauf | ja | etwas mindestens einmal ausführen |
+| Zählschleife | über Zähler/Anzahl | abhängig von der Anzahl | bekannte Wiederholungszahl |
+| bedingte Wiederholung | über Bedingung | abhängig von der Form | unbekannte Wiederholungszahl |
+| Endlosschleife | keine wirksame Beendigung | ja | dauerhafte Prozesse oder Programmfehler |
+
+> **Merke:** Kopfgesteuert bedeutet „erst prüfen, dann ausführen“. Fußgesteuert bedeutet „erst ausführen, dann prüfen“. Eine Zählschleife ist sinnvoll, wenn die Anzahl der Wiederholungen feststeht.
+
 ## Bedingungen
 
 Eine Bedingung kann wahr oder falsch sein. Beispiele sind `zahl > 10`, `tuerOffen` oder `farbe == rot`. Bedingungen ermöglichen Entscheidungen und steuern Wiederholungen.
+
+Bei Schleifen ist besonders wichtig, dass sich die für die Bedingung verwendeten Werte sinnvoll verändern. Sonst kann eine unbeabsichtigte Endlosschleife entstehen.
 
 ## Variablen
 
@@ -88,6 +193,8 @@ punkte = 0
 punkte = punkte + 1
 ```
 
+Variablen werden häufig als **Zähler** in Schleifen verwendet. Ein Zähler merkt sich beispielsweise, wie viele Durchläufe bereits ausgeführt wurden.
+
 ## Algorithmen darstellen
 
 Algorithmen können als Text, Pseudocode, Struktogramm, Ablaufdiagramm oder Programmcode dargestellt werden. Eine gute Darstellung macht Reihenfolge, Entscheidungen und Wiederholungen eindeutig erkennbar.
@@ -95,6 +202,13 @@ Algorithmen können als Text, Pseudocode, Struktogramm, Ablaufdiagramm oder Prog
 ## Testen
 
 Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders wichtig sind Grenzfälle und ungewöhnliche Situationen. Ein einzelnes erfolgreiches Beispiel beweist noch nicht, dass ein Algorithmus immer korrekt arbeitet.
+
+Bei Schleifen sollte zusätzlich geprüft werden:
+
+- Kann die Schleife auch nullmal durchlaufen werden?
+- Muss sie mindestens einmal durchlaufen werden?
+- Wird die Abbruchbedingung irgendwann erreicht?
+- Ist die Zahl der Wiederholungen sinnvoll begrenzt?
 
 > **Merke:** Programmieren bedeutet nicht nur Befehle zu schreiben. Zuerst muss klar sein, welches Verfahren das Problem löst.
 
@@ -106,10 +220,22 @@ Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders
 
 **Bedingung:** Ausdruck mit dem Ergebnis wahr oder falsch.
 
+**bedingte Wiederholung:** Schleife, deren Laufzeit von einer Bedingung abhängt.
+
+**Endlosschleife:** Schleife ohne wirksame Beendigung.
+
+**fußgesteuerte Schleife:** Schleife, deren Bedingung nach dem Schleifenrumpf geprüft wird.
+
+**kopfgesteuerte Schleife:** Schleife, deren Bedingung vor dem Schleifenrumpf geprüft wird.
+
 **Sequenz:** aufeinanderfolgende Ausführung von Anweisungen.
 
 **Variable:** benannter Speicherplatz für einen veränderlichen Wert.
 
 **Wiederholung/Schleife:** mehrfache Ausführung von Anweisungen.
+
+**Zählschleife:** Schleife für eine vorher bekannte Anzahl von Wiederholungen.
+
+**Zähler:** Variable, die beispielsweise die Anzahl von Schleifendurchläufen speichert.
 
 → Siehe auch **Kapitel 3: Robot Karol**.
