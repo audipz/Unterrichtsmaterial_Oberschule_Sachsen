@@ -6,6 +6,8 @@ Technische Systeme reagieren häufig auf Eingaben oder Messwerte. Dabei untersch
 
 Beim **Steuern** beeinflusst eine Eingabe einen Ablauf, ohne dass das Ergebnis ständig zurückgemessen werden muss. Beim **Regeln** wird ein Istwert gemessen und mit einem Sollwert verglichen. Das System passt sein Verhalten so an, dass die Abweichung kleiner wird.
 
+![Steuerung ohne Rückkopplung und Regelung mit Sensor-Rückkopplung](grafiken/steuerung_regelung.svg)
+
 ## Steuerung
 
 Beispiel Ampelprogramm:
