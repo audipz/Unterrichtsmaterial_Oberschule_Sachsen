@@ -42,16 +42,42 @@ Ein gut lesbarer Dateiname kann zum Beispiel so aussehen:
 
 Der Name enthält das Datum, das Thema und die Dateiendung. Dadurch lässt sich die Datei auch später noch leicht zuordnen.
 
-### Leerzeichen
+### Leerzeichen – erlaubt, aber manchmal unpraktisch
 
-Leerzeichen sind in modernen Betriebssystemen meist erlaubt. Sie können aber in Befehlszeilen, Internetadressen, Programmen oder beim Austausch zwischen verschiedenen Systemen zusätzliche Schwierigkeiten verursachen.
+Leerzeichen sind in modernen Betriebssystemen normalerweise erlaubt. Das Problem entsteht häufig erst dann, wenn ein Dateiname **Teil eines Pfades oder Befehls** wird.
 
-Für Dateien, die auf unterschiedlichen Geräten oder in verschiedenen Programmen verwendet werden sollen, sind **Unterstriche `_`** oder **Bindestriche `-`** oft robuster:
+Viele Kommandozeilenprogramme verwenden Leerzeichen, um einzelne Bestandteile eines Befehls voneinander zu trennen. Angenommen, eine Datei heißt:
 
 ```text
-Referat_Binaersystem.odt
-Referat-Binaersystem.odt
+Mein Referat.odt
 ```
+
+und liegt im Ordner `Schule`. Dann lautet ein möglicher Pfad:
+
+```text
+Schule/Mein Referat.odt
+```
+
+Ein Programm könnte das Leerzeichen fälschlich als Trennung zwischen `Schule/Mein` und `Referat.odt` auffassen. Der eigentlich zusammengehörige Pfad wird dann in zwei Teile zerlegt.
+
+Deshalb muss ein Pfad mit Leerzeichen in vielen Befehlszeilen in Anführungszeichen gesetzt werden:
+
+```text
+"Schule/Mein Referat.odt"
+```
+
+Je nach Betriebssystem, Kommandozeile oder Programmiersprache können Leerzeichen auch durch besondere Zeichenfolgen **maskiert (escaped)** werden. Wie das genau geschieht, ist vom jeweiligen System abhängig.
+
+Auch beim Erstellen von Internetadressen, Skripten, Programmen oder automatischen Verarbeitungen können Leerzeichen zusätzliche Behandlung erfordern. Ein Dateiname ohne Leerzeichen ist deshalb häufig einfacher zu übertragen und zu verarbeiten.
+
+Robuste Alternativen sind **Unterstriche `_`** oder **Bindestriche `-`**:
+
+```text
+Mein_Referat.odt
+Mein-Referat.odt
+```
+
+> **Merke:** Ein Leerzeichen im Dateinamen ist nicht grundsätzlich falsch. Es kann aber dazu führen, dass ein Pfad in Befehlen als mehrere getrennte Angaben verstanden wird. Anführungszeichen oder eine besondere Maskierung verhindern das.
 
 ### Sonderzeichen
 
@@ -147,6 +173,8 @@ Ein Dateiformat beschreibt, wie Daten innerhalb einer Datei organisiert sind. Pr
 **Dateiendung:** Teil des Dateinamens, der häufig auf das Format hinweist.
 
 **Dateiformat:** festgelegte Struktur zur Speicherung bestimmter Daten.
+
+**Maskieren/Escapen:** Kennzeichnen eines Zeichens, damit es nicht in seiner besonderen technischen Bedeutung interpretiert wird.
 
 **Ordner/Verzeichnis:** Struktur zum Gruppieren von Dateien und weiteren Verzeichnissen.
 
