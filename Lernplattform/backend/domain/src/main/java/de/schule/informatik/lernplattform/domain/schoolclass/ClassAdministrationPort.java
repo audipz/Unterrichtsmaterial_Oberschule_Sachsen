@@ -14,6 +14,13 @@ public interface ClassAdministrationPort {
 
     void addStudent(UUID schoolId, UUID classId, UUID studentId, LocalDate validFrom, UUID actorId);
 
+    void moveStudent(UUID schoolId,
+                     UUID studentId,
+                     UUID sourceClassId,
+                     UUID targetClassId,
+                     LocalDate effectiveDate,
+                     UUID actorId);
+
     void addTeacher(UUID schoolId, UUID classId, UUID teacherId, UUID actorId);
 
     Set<UUID> activeClassIdsForUser(UUID userId);
