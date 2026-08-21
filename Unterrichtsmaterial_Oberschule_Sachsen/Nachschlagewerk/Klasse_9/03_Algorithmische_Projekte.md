@@ -50,9 +50,7 @@ Beispiele:
 - Eine gespeicherte Aufgabe soll wieder geladen werden können.
 - Ein Benutzer soll nach einem Titel suchen können.
 
-Sie beantworten vor allem die Frage:
-
-**Was soll das System tun?**
+Sie beantworten vor allem die Frage: **Was soll das System tun?**
 
 ### Nichtfunktionale Anforderungen
 
@@ -65,13 +63,9 @@ Beispiele:
 - Daten sollen nach einem Neustart erhalten bleiben.
 - Personenbezogene Daten sollen nur für berechtigte Benutzer sichtbar sein.
 
-Sie beantworten eher Fragen wie:
-
-**Wie gut, wie sicher oder unter welchen Bedingungen soll das System arbeiten?**
+Sie beantworten eher Fragen wie: **Wie gut, wie sicher oder unter welchen Bedingungen soll das System arbeiten?**
 
 ### Muss-, Soll- und Kann-Anforderungen
-
-Bei größeren Projekten hilft eine Priorisierung:
 
 | Priorität | Bedeutung | Beispiel |
 |---|---|---|
@@ -83,8 +77,6 @@ Bei größeren Projekten hilft eine Priorisierung:
 
 Zu einer guten Anforderung gehört möglichst ein **Abnahmekriterium**: eine überprüfbare Bedingung, die zeigt, ob die Anforderung erfüllt ist.
 
-Beispiel:
-
 ```text
 Anforderung:
 Das Programm soll die größte von drei eingegebenen Zahlen ausgeben.
@@ -92,8 +84,6 @@ Das Programm soll die größte von drei eingegebenen Zahlen ausgeben.
 Abnahmekriterium:
 Für die Eingaben 4, 9 und 2 wird 9 ausgegeben.
 ```
-
-Ein einzelnes Beispiel ersetzt noch keinen vollständigen Test, macht die Anforderung aber überprüfbarer.
 
 ## Anforderungen verstehen: die Fachdomäne
 
@@ -112,8 +102,6 @@ Bei einer Bibliothek könnten beispielsweise `Buch`, `Exemplar`, `Ausleihe`, `Le
 ### Domain-Driven Design – ein kurzer Ausblick
 
 **Domain-Driven Design (DDD)** ist ein Ansatz für größere Softwaresysteme, bei dem die Fachdomäne und ihre Begriffe besonders wichtig genommen werden. Entwickler und Fachleute versuchen dabei, eine gemeinsame, möglichst eindeutige Sprache für das Problemgebiet zu verwenden.
-
-Für Klasse 9 genügt die Grundidee:
 
 > **Merke:** Bevor man Software sinnvoll zerlegt, sollte man die **fachliche Welt** verstehen, die die Software abbildet.
 
@@ -135,11 +123,7 @@ Mögliche Teilprobleme sind:
 6. Status ändern,
 7. Daten dauerhaft sichern.
 
-Jedes Teilproblem ist leichter zu verstehen und zu testen als das gesamte System auf einmal.
-
 ### Nach Funktionen zerlegen
-
-Eine Möglichkeit ist die Zerlegung nach Tätigkeiten:
 
 ```text
 Aufgabe erfassen
@@ -151,8 +135,6 @@ Aufgabe ändern
 
 ### Nach Daten und Fachobjekten zerlegen
 
-Man kann außerdem untersuchen, welche fachlichen Objekte vorkommen:
-
 ```text
 Aufgabe
 Benutzer
@@ -160,24 +142,11 @@ Kategorie
 Status
 ```
 
-Dadurch erkennt man häufig, welche Daten zusammengehören und welche Programmteile dafür verantwortlich sein sollten.
-
-### Gute Teilprobleme
-
-Ein gutes Teilproblem sollte möglichst:
-
-- eine klar erkennbare Aufgabe besitzen,
-- nicht unnötig viele andere Teilprobleme kennen müssen,
-- verständliche Ein- und Ausgaben besitzen,
-- getrennt testbar sein.
-
-Das führt später zu Funktionen, Prozeduren, Klassen oder Modulen mit klarer Verantwortung.
+Ein gutes Teilproblem sollte möglichst eine klar erkennbare Aufgabe, verständliche Ein- und Ausgaben und wenig unnötige Abhängigkeiten besitzen sowie getrennt testbar sein.
 
 ## Schnittstellen zwischen Teilproblemen
 
 Wer ein Problem zerlegt, muss auch festlegen, **wie die Teile zusammenarbeiten**.
-
-Beispiel:
 
 ```text
 Eingabe prüfen
@@ -185,31 +154,13 @@ Eingabe prüfen
     Ausgabe: gültige Zahl oder Fehlermeldung
 ```
 
-Eine solche Beschreibung ist bereits eine einfache **Schnittstelle**.
-
-Sie beantwortet Fragen wie:
-
-- Welche Daten erhält ein Teil?
-- Welche Daten liefert er zurück?
-- Welche Fehler können auftreten?
-- Welche Voraussetzungen gelten?
-
-Klare Schnittstellen helfen besonders bei Teamarbeit, weil verschiedene Personen an unterschiedlichen Teilen arbeiten können.
+Eine solche Beschreibung ist bereits eine einfache **Schnittstelle**. Sie legt unter anderem fest, welche Daten ein Teil erhält und zurückliefert und welche Fehler auftreten können.
 
 ## Algorithmischer Entwurf
 
 Beim **algorithmischen Entwurf** wird aus der fachlichen Aufgabe ein genauer Lösungsweg.
 
-Dazu gehören mehrere Schritte.
-
 ### 1. Eingaben und Ausgaben bestimmen
-
-Zuerst wird geklärt:
-
-- Welche Daten erhält der Algorithmus?
-- Welche Ergebnisse soll er liefern?
-
-Beispiel:
 
 ```text
 Eingabe: drei Zahlen a, b, c
@@ -218,20 +169,9 @@ Ausgabe: größte Zahl
 
 ### 2. Sonderfälle und Bedingungen erkennen
 
-Anschließend werden unterschiedliche Fälle betrachtet.
-
-Beim größten Wert muss beispielsweise bedacht werden:
-
-- alle Werte sind verschieden,
-- zwei Werte sind gleich,
-- alle drei Werte sind gleich,
-- Werte können negativ sein.
+Beim größten Wert muss beispielsweise bedacht werden, dass Werte verschieden oder gleich sowie positiv, null oder negativ sein können.
 
 ### 3. Verarbeitungsschritte festlegen
-
-Nun wird überlegt, welche Schritte notwendig sind und in welcher Reihenfolge sie stattfinden.
-
-Ein möglicher Entwurf lautet:
 
 ```text
 maximum := a
@@ -247,34 +187,13 @@ AUSGABE maximum
 
 ### 4. Kontrollstrukturen auswählen
 
-Dabei werden die aus Klasse 8 bekannten Grundstrukturen verwendet:
-
-- Sequenz,
-- Auswahl,
-- Wiederholung,
-- Variablen,
-- Bedingungen,
-- Funktionen beziehungsweise Prozeduren.
+Dazu gehören Sequenz, Auswahl, Wiederholung, Variablen, Bedingungen und Funktionen beziehungsweise Prozeduren.
 
 ### 5. Datenstrukturen auswählen
 
-Nicht nur die Anweisungen sind wichtig. Auch die Frage, **wie Daten gespeichert werden**, gehört zum Entwurf.
-
-Beispiele:
-
-- einzelne Variable,
-- Liste beziehungsweise Array,
-- Tabelle,
-- Datensatz/Objekt,
-- Datenbank.
-
-Für drei feste Zahlen genügen einzelne Variablen. Für tausend Messwerte wäre eine Liste deutlich geeigneter.
+Je nach Aufgabe eignen sich einzelne Variablen, Listen/Arrays, Tabellen, Datensätze/Objekte oder Datenbanken.
 
 ### 6. Teilalgorithmen bilden
-
-Komplexe Lösungen werden häufig in Funktionen oder Prozeduren zerlegt.
-
-Beispiel:
 
 ```text
 liesEingabe()
@@ -283,35 +202,17 @@ berechneMaximum()
 zeigeErgebnis()
 ```
 
-Jeder Teil erhält eine klarere Verantwortung und kann gezielter getestet werden.
-
 ### 7. Entwurf darstellen
 
-Ein Algorithmus kann vor der Implementierung beispielsweise dargestellt werden als:
-
-- natürliche Sprache,
-- Pseudocode,
-- Struktogramm,
-- Ablaufdiagramm.
+Mögliche Darstellungen sind natürliche Sprache, Pseudocode, Struktogramm und Ablaufdiagramm.
 
 → Siehe Nachschlagewerk Klasse 8, **Algorithmen darstellen**.
 
-> **Merke:** Ein algorithmischer Entwurf beschreibt nicht nur „welchen Code man schreiben will“. Er legt Eingaben, Ausgaben, Fälle, Datenstrukturen, Kontrollstrukturen und Teilalgorithmen fest.
+> **Merke:** Ein algorithmischer Entwurf legt Eingaben, Ausgaben, Fälle, Datenstrukturen, Kontrollstrukturen und Teilalgorithmen fest.
 
 ## Vom Entwurf zum Programmcode
 
-Bei der **Implementierung** wird der Entwurf in eine konkrete Programmiersprache übertragen.
-
-Dabei entstehen zusätzliche Entscheidungen, zum Beispiel:
-
-- konkrete Variablennamen,
-- Datentypen,
-- Funktionen und Parameter,
-- Bibliotheken,
-- Datenstrukturen,
-- Fehlerbehandlung.
-
-Die Programmiersprache verändert die Syntax, aber die Grundidee des Algorithmus bleibt erhalten.
+Bei der **Implementierung** wird der Entwurf in eine konkrete Programmiersprache übertragen. Dabei entstehen zusätzliche Entscheidungen, etwa zu Variablennamen, Datentypen, Funktionen, Parametern, Bibliotheken und Fehlerbehandlung.
 
 ## Iterativ und inkrementell arbeiten
 
@@ -321,44 +222,11 @@ Die Begriffe **iterativ** und **inkrementell** beschreiben zwei verschiedene Ide
 
 ### Iterativ: einen Stand wiederholt verbessern
 
-Bei **iterativem Arbeiten** wird eine vorhandene Lösung mehrfach überarbeitet.
-
-Ein Zyklus kann beispielsweise lauten:
-
-```text
-entwerfen → umsetzen → testen → verbessern
-```
-
-Danach beginnt eine neue Iteration.
-
-Beispiel:
-
-- Version 1 erkennt nur gültige Zahleneingaben.
-- Im Test fällt auf, dass Fehlermeldungen unverständlich sind.
-- In der nächsten Iteration werden die Meldungen verbessert.
-
-Das Produkt erhält nicht unbedingt eine völlig neue Funktion. Ein vorhandener Teil wird besser.
+Bei **iterativem Arbeiten** wird eine vorhandene Lösung mehrfach überarbeitet. Ein typischer Zyklus lautet `entwerfen → umsetzen → testen → verbessern`.
 
 ### Inkrementell: die Lösung schrittweise erweitern
 
-Bei **inkrementellem Arbeiten** wächst die Lösung um weitere funktionsfähige Teile, die **Inkremente**.
-
-Beispiel einer Aufgabenverwaltung:
-
-1. Inkrement: Aufgaben können eingegeben und angezeigt werden.
-2. Inkrement: Aufgaben können als erledigt markiert werden.
-3. Inkrement: Aufgaben werden gespeichert.
-4. Inkrement: Aufgaben können nach Status gefiltert werden.
-
-Nach jedem Inkrement existiert ein nutzbarer Zwischenstand.
-
-### Beides zusammen
-
-In der Praxis werden beide Vorgehensweisen oft kombiniert:
-
-- Ein neues Inkrement wird umgesetzt.
-- Dieses Inkrement wird in mehreren Iterationen getestet und verbessert.
-- Danach folgt das nächste Inkrement.
+Bei **inkrementellem Arbeiten** wächst die Lösung um weitere funktionsfähige Teile. Bei einer Aufgabenverwaltung könnte zunächst das Erfassen, dann das Erledigen, anschließend das Speichern und schließlich das Filtern hinzukommen.
 
 | Begriff | Kernidee | typische Frage |
 |---|---|---|
@@ -369,52 +237,21 @@ In der Praxis werden beide Vorgehensweisen oft kombiniert:
 
 ## Prototypen
 
-Ein **Prototyp** ist ein früher, vereinfachter Lösungsstand. Er dient dazu, Ideen auszuprobieren und Unsicherheiten zu verringern.
-
-Ein Prototyp kann beispielsweise nur:
-
-- eine Benutzereingabe simulieren,
-- einen wichtigen Algorithmus ausprobieren,
-- die Bedienoberfläche zeigen,
-- eine technische Verbindung testen.
-
-Ein Prototyp muss noch kein vollständiges oder fertiges Produkt sein.
+Ein **Prototyp** ist ein früher, vereinfachter Lösungsstand. Er dient dazu, Ideen auszuprobieren und Unsicherheiten zu verringern. Er muss noch kein vollständiges Produkt sein.
 
 ## Testen in algorithmischen Projekten
 
 Testen ist kein letzter Schritt nach dem Programmieren. Tests begleiten ein Projekt von den Anforderungen bis zur fertigen Lösung.
 
-Ein **Testfall** enthält mindestens:
-
-- Ausgangssituation beziehungsweise Eingabe,
-- erwartetes Ergebnis,
-- tatsächliches Ergebnis,
-- Bewertung: bestanden oder nicht bestanden.
+Ein **Testfall** enthält mindestens Ausgangssituation beziehungsweise Eingabe, erwartetes Ergebnis, tatsächliches Ergebnis und die Bewertung bestanden/nicht bestanden.
 
 ### Warum wird getestet?
 
-Tests sollen beispielsweise zeigen:
-
-- ob Anforderungen erfüllt werden,
-- ob normale Eingaben richtig verarbeitet werden,
-- ob Grenzfälle funktionieren,
-- ob ungültige Eingaben behandelt werden,
-- ob unterschiedliche Programmzweige ausgeführt werden,
-- ob Änderungen ältere Funktionen beschädigt haben.
+Tests sollen zeigen, ob Anforderungen erfüllt werden, normale und ungewöhnliche Eingaben funktionieren, Grenzfälle korrekt behandelt werden, Programmzweige durchlaufen werden und Änderungen ältere Funktionen nicht beschädigen.
 
 > **Merke:** Ein Programm, das ohne Fehlermeldung läuft, ist nicht automatisch korrekt.
 
 ## Tests aus Anforderungen ableiten
-
-Angenommen, die Anforderung lautet:
-
-```text
-Das Programm soll die größte von drei ganzen Zahlen ausgeben.
-```
-
-Dann reicht ein Test wie `3, 8, 5 → 8` nicht aus.
-
-Sinnvolle Testfälle sind beispielsweise:
 
 | Fall | Eingabe | Erwartung | Zweck |
 |---|---|---:|---|
@@ -424,238 +261,279 @@ Sinnvolle Testfälle sind beispielsweise:
 | gleiche Maximalwerte | 8, 8, 2 | 8 | Gleichheit prüfen |
 | alle gleich | 4, 4, 4 | 4 | Sonderfall |
 | negative Werte | −2, −7, −1 | −1 | Vorzeichen prüfen |
-| Nullwerte | 0, −2, −3 | 0 | Null korrekt behandeln |
 
 ## Grenzwerte und Grenzwertanalyse
 
-Fehler treten häufig an Grenzen auf.
-
-Ein **Grenzwert** ist ein Wert, an dem sich das Verhalten des Programms ändert oder ein erlaubter Bereich beginnt beziehungsweise endet.
-
-Beispiel:
-
-```text
-Alter muss zwischen 12 und 16 einschließlich liegen.
-```
-
-Dann sind besonders interessant:
-
-| Testwert | Bedeutung |
-|---:|---|
-| 11 | knapp unter unterer Grenze |
-| 12 | genau untere Grenze |
-| 13 | knapp über unterer Grenze |
-| 15 | knapp unter oberer Grenze |
-| 16 | genau obere Grenze |
-| 17 | knapp über oberer Grenze |
-
-Dadurch entdeckt man beispielsweise Fehler wie `<` statt `<=`.
+Ein **Grenzwert** ist ein Wert, an dem sich das Verhalten des Programms ändert oder ein erlaubter Bereich beginnt beziehungsweise endet. Bei einem zulässigen Alter von 12 bis 16 Jahren sind beispielsweise `11, 12, 13` sowie `15, 16, 17` besonders wichtige Testwerte.
 
 > **Merke:** Bei Grenzen möglichst **knapp darunter, genau darauf und knapp darüber** testen.
 
 ## Gültige und ungültige Eingaben
 
-Eine robuste Software muss nicht nur mit erwarteten Eingaben umgehen können.
-
-Beispiel: Ein Programm erwartet eine ganze Zahl von 1 bis 100.
-
-Zu testen wären etwa:
-
-- `42` – gültig,
-- `1` und `100` – Grenzwerte,
-- `0` und `101` – außerhalb des Bereichs,
-- `-5` – negativer Wert,
-- `3.5` – falscher Zahlentyp,
-- `Hallo` – keine Zahl,
-- leere Eingabe – kein Wert.
-
-Wie das Programm reagieren soll, muss bereits in den Anforderungen beziehungsweise Fehlerregeln festgelegt sein.
+Erwartet ein Programm eine ganze Zahl von 1 bis 100, sind neben normalen Werten auch `1`, `100`, `0`, `101`, negative Zahlen, Dezimalzahlen, Text und leere Eingaben interessante Tests.
 
 ## Blackbox- und Whitebox-Tests
 
-### Blackbox-Test
-
-Beim **Blackbox-Test** wird das Programm von außen betrachtet. Die innere Implementierung ist für die Auswahl der Testfälle nicht entscheidend.
-
-Man prüft:
-
-```text
-Eingabe → System → Ausgabe
-```
-
-Testfälle entstehen vor allem aus Anforderungen, zulässigen Bereichen und erwarteten Ergebnissen.
-
-### Whitebox-Test
-
-Beim **Whitebox-Test** ist die innere Programmstruktur bekannt. Testfälle werden so gewählt, dass bestimmte Anweisungen, Bedingungen und Zweige durchlaufen werden.
-
-Beispiel:
-
-```text
-WENN punkte >= 50
-    bestanden
-SONST
-    nicht bestanden
-```
-
-Mindestens ein Test sollte den `DANN`-Zweig und einer den `SONST`-Zweig ausführen.
-
-Blackbox- und Whitebox-Tests ergänzen sich: Der erste prüft stärker **was** das Programm leistet, der zweite stärker **welche internen Wege** tatsächlich untersucht wurden.
+Beim **Blackbox-Test** wird das Programm von außen anhand von Eingaben und erwarteten Ausgaben geprüft. Beim **Whitebox-Test** ist die interne Programmstruktur bekannt; Tests werden gezielt für Anweisungen, Bedingungen und Zweige gewählt.
 
 ## Testabdeckung
 
-### Anweisungsabdeckung
-
-Wurde jede wichtige Anweisung mindestens einmal ausgeführt?
-
-### Zweigabdeckung
-
-Wurde bei jeder Entscheidung jeder Zweig mindestens einmal ausgeführt?
-
-### Pfadabdeckung
-
-Wurden die betrachteten möglichen Wege durch das Programm ausgeführt?
-
-Bei verschachtelten Bedingungen und Schleifen können sehr viele mögliche Pfade entstehen. Vollständige Pfadabdeckung ist deshalb bei größeren Programmen oft nicht praktisch erreichbar.
-
-Eine hohe Abdeckung ist hilfreich, beweist aber nicht automatisch Fehlerfreiheit.
+**Anweisungsabdeckung** fragt, ob relevante Anweisungen ausgeführt wurden. **Zweigabdeckung** betrachtet die Alternativen von Entscheidungen. **Pfadabdeckung** betrachtet mögliche Ausführungswege. Vollständige Pfadabdeckung kann bei komplexen Programmen sehr aufwendig oder praktisch unmöglich sein.
 
 ## Schleifen testen
 
-Bei Schleifen sind typische Testfälle:
-
-- kein Durchlauf, falls möglich,
-- genau ein Durchlauf,
-- mehrere Durchläufe,
-- Wert direkt an der Abbruchgrenze,
-- sehr viele Durchläufe.
-
-Dadurch lassen sich **Off-by-one-Fehler** erkennen, bei denen eine Schleife einmal zu oft oder zu wenig ausgeführt wird.
+Bei Schleifen sind kein Durchlauf, genau ein Durchlauf, mehrere Durchläufe und Werte direkt an der Abbruchgrenze wichtige Fälle. So findet man beispielsweise **Off-by-one-Fehler**.
 
 ## Unit-, Integrations- und Systemtests
 
-In größeren Projekten werden unterschiedliche Ebenen getestet.
-
-### Unit-Test
-
-Ein **Unit-Test** prüft einen kleinen, möglichst abgegrenzten Programmteil, zum Beispiel eine Funktion.
-
-Beispiel:
-
-```text
-maximum(3, 8, 5) → 8
-```
-
-### Integrationstest
-
-Ein **Integrationstest** prüft, ob mehrere Teile korrekt zusammenarbeiten.
-
-Beispiel:
-
-```text
-Eingabe einlesen
-→ Eingabe prüfen
-→ Maximum berechnen
-→ Ergebnis anzeigen
-```
-
-### Systemtest
-
-Ein **Systemtest** betrachtet das gesamte System aus Sicht der Anforderungen.
-
-Damit kann überprüft werden, ob das komplette Programm die gewünschte Aufgabe erfüllt.
+Ein **Unit-Test** prüft einen kleinen Programmteil, ein **Integrationstest** das Zusammenspiel mehrerer Teile und ein **Systemtest** das vollständige System gegenüber seinen Anforderungen.
 
 ## Regressionstest
 
-Ein bereits bestandener Test sollte nach Änderungen erneut ausgeführt werden.
-
-Ein **Regressionstest** prüft, ob eine Änderung versehentlich eine bereits funktionierende Eigenschaft beschädigt hat.
-
-Beispiel:
-
-- Eingabeprüfung wird verbessert.
-- Danach werden die alten Berechnungstests erneut ausgeführt.
-- So wird geprüft, ob die Änderung unerwartete Nebenwirkungen hatte.
+Ein **Regressionstest** wiederholt bereits bestandene Tests nach einer Änderung. Dadurch wird geprüft, ob die Änderung versehentlich vorhandene Funktionen beschädigt hat.
 
 ## Fehler systematisch untersuchen
 
-Wenn ein Test fehlschlägt, hilft ein geordnetes Vorgehen:
-
-1. Eingabe und Ausgangssituation notieren.
-2. Erwartetes Ergebnis festhalten.
-3. Tatsächliches Ergebnis beobachten.
-4. Stelle suchen, an der der Ablauf erstmals abweicht.
-5. Ursache bestimmen.
-6. Fehler korrigieren.
-7. ursprünglichen Test erneut ausführen.
-8. bestehende Regressionstests erneut ausführen.
-
-Das bloße Ändern von Code „bis es irgendwie funktioniert“ erschwert die Fehlersuche.
-
-## Tests und Anforderungen gehören zusammen
-
-Zwischen Anforderungen und Tests besteht eine direkte Beziehung.
-
-| Anforderung | möglicher Test |
-|---|---|
-| drei Zahlen einlesen | drei gültige Eingaben werden akzeptiert |
-| größte Zahl bestimmen | verschiedene Reihenfolgen und Gleichstände prüfen |
-| nur ganze Zahlen zulassen | Dezimalzahl und Text werden abgewiesen |
-| Fehlermeldung verständlich | ungültige Eingabe erzeugt festgelegte Meldung |
-
-Wenn für eine Anforderung kein überprüfbarer Test denkbar ist, ist die Anforderung möglicherweise noch zu ungenau formuliert.
+Bei einem fehlgeschlagenen Test werden Eingabe, erwartetes und tatsächliches Ergebnis festgehalten, die erste Abweichung im Ablauf gesucht, die Ursache korrigiert und anschließend ursprüngliche sowie bestehende Regressionstests erneut ausgeführt.
 
 ## Zusammenarbeit im Projekt
 
-In einem Team müssen Aufgaben, Zuständigkeiten und Zwischenstände sichtbar sein.
+Softwareprojekte entstehen häufig im Team. Zusammenarbeit bedeutet dabei mehr als „mehrere Personen programmieren gleichzeitig“. Ein Team muss Informationen austauschen, Entscheidungen treffen, Arbeit verteilen, Änderungen nachvollziehen und Ergebnisse zusammenführen.
 
-Hilfreich sind beispielsweise:
+### Zusammenarbeit vor Ort
 
-- Aufgabenlisten,
-- Kanban-Boards,
-- Meilensteine,
-- Versionsverwaltung,
-- kurze Abstimmungen,
-- dokumentierte Entscheidungen.
+Bei der **Zusammenarbeit vor Ort** befinden sich Teammitglieder am selben Ort. Fragen können direkt besprochen, Skizzen gemeinsam betrachtet und Probleme schnell geklärt werden.
 
-### Aufgaben sinnvoll schneiden
+Typische Formen sind:
 
-Eine Aufgabe wie
+- gemeinsames Planungsgespräch,
+- Arbeit in Kleingruppen,
+- **Pair Programming**, bei dem zwei Personen gemeinsam an einem Programmteil arbeiten,
+- kurze tägliche Abstimmungen,
+- gemeinsames Testen oder eine Code-Durchsicht.
+
+Vorteilhaft ist die direkte Kommunikation. Gleichzeitig müssen wichtige Entscheidungen trotzdem dokumentiert werden: Eine mündliche Absprache ist später möglicherweise vergessen oder für abwesende Personen nicht nachvollziehbar.
+
+### Online und verteilt zusammenarbeiten
+
+Bei **verteilter Zusammenarbeit** arbeiten Teammitglieder an unterschiedlichen Orten. Kommunikation kann **synchron** oder **asynchron** erfolgen.
+
+**Synchron** bedeutet gleichzeitig, beispielsweise durch Videokonferenz, Chat oder gemeinsames Bearbeiten eines Dokuments. **Asynchron** bedeutet zeitversetzt, beispielsweise über Tickets, Kommentare, E-Mail, Wiki-Seiten oder Code-Reviews.
+
+Asynchrone Zusammenarbeit ist in Softwareprojekten besonders wichtig, weil nicht alle Beteiligten ständig gleichzeitig verfügbar sind. Informationen müssen deshalb so dokumentiert werden, dass andere sie später verstehen können.
+
+### Hybrid arbeiten
+
+Viele Teams arbeiten **hybrid**: Ein Teil der Zusammenarbeit findet vor Ort statt, ein anderer online. Die technischen Werkzeuge ändern dabei nicht die Grundaufgaben. Das Team muss weiterhin klären:
+
+- Wer arbeitet woran?
+- Was ist bereits erledigt?
+- Welche Entscheidung wurde getroffen und warum?
+- Wo befindet sich die aktuelle Version?
+- Welche Probleme oder offenen Fragen gibt es?
+- Wie werden Änderungen geprüft und zusammengeführt?
+
+### Aufgaben und Tickets
+
+Arbeit wird in professionellen Projekten häufig über **Tickets** beziehungsweise **Issues** beschrieben. Ein Ticket sollte möglichst eine überschaubare Aufgabe, einen Fehler oder eine gewünschte Änderung enthalten.
+
+Statt
 
 ```text
 Programm fertigstellen
 ```
 
-ist zu groß und unklar.
-
-Besser wären kleinere Aufgaben:
+ist beispielsweise besser:
 
 ```text
-Eingabeprüfung implementieren
-Testfälle für Grenzwerte ergänzen
-Speicherfunktion erstellen
-Fehlermeldungen überarbeiten
+Titel: Eingabeprüfung für Altersfeld ergänzen
+
+Beschreibung:
+Nur ganze Zahlen von 12 bis 16 akzeptieren.
+Bei ungültiger Eingabe verständliche Fehlermeldung anzeigen.
+
+Abnahmekriterien:
+- 12 und 16 werden akzeptiert.
+- 11 und 17 werden abgewiesen.
+- Texteingaben führen zu einer Fehlermeldung.
 ```
 
-Dadurch wird Fortschritt sichtbar und Arbeit lässt sich besser verteilen.
+Tickets können einen Status wie **offen**, **in Arbeit**, **Review** und **erledigt** besitzen. Auf einem **Kanban-Board** werden solche Aufgaben häufig als Karten in entsprechenden Spalten dargestellt.
 
-## Dokumentation
+> **Merke:** Ein gutes Ticket beantwortet möglichst: **Was soll geändert werden? Warum? Woran erkennt man, dass es fertig ist?**
 
-Eine gute Projektdokumentation erklärt mindestens:
+### Versionsverwaltung und Zusammenarbeit am Code
 
-- Problem und Ziel,
-- funktionale und nichtfunktionale Anforderungen,
-- Fachbegriffe und wichtige Regeln der Domäne,
-- Zerlegung in Teilprobleme,
-- algorithmischen Entwurf,
-- Datenstrukturen und Schnittstellen,
-- wichtige Entscheidungen,
-- Tests und Ergebnisse,
-- bekannte Grenzen,
-- Arbeitsteilung,
-- Änderungen und Verbesserungen.
+Bei Softwareprojekten muss auch der Quellcode gemeinsam verwaltet werden. Eine **Versionsverwaltung** wie Git speichert nachvollziehbare Entwicklungsstände.
 
-Dokumentation soll nicht lediglich beschreiben, **dass** etwas gemacht wurde. Sie soll wichtige Entscheidungen nachvollziehbar machen.
+Wichtige Begriffe sind beispielsweise:
+
+- **Repository** – verwalteter Bestand des Projekts,
+- **Commit** – gespeicherter Änderungsstand mit Beschreibung,
+- **Branch** – Entwicklungszweig für zusammengehörige Änderungen,
+- **Merge** – Zusammenführen von Änderungen,
+- **Pull Request/Merge Request** – vorgeschlagene Änderung, die vor dem Zusammenführen besprochen und geprüft werden kann,
+- **Code Review** – Durchsicht einer Änderung durch andere Teammitglieder.
+
+Gute Commit-Beschreibungen wie `Grenzwertprüfung für Alter ergänzen` sind hilfreicher als Meldungen wie `Änderungen` oder `fertig`.
+
+### Konflikte und Entscheidungen
+
+Zusammenarbeit bedeutet auch, unterschiedliche Vorschläge zu bewerten. Technische Entscheidungen sollten nach nachvollziehbaren Kriterien getroffen werden, beispielsweise Verständlichkeit, Wartbarkeit, Sicherheit, Aufwand oder Erfüllung der Anforderungen.
+
+Wichtige Entscheidungen können in einem Ticket, einer Wiki-Seite oder einer kurzen **Entscheidungsdokumentation** festgehalten werden. Dadurch ist später nicht nur sichtbar, **was** entschieden wurde, sondern auch **warum**.
+
+## Dokumentation: Wissen für andere verständlich festhalten
+
+Dokumentation ist nicht ein einzelnes Dokument am Projektende. In einem Softwareprojekt entstehen unterschiedliche Dokumentationsarten für unterschiedliche Zwecke und Zielgruppen.
+
+### Projektdokumentation und Textdokumente
+
+Ein klassisches Projektdokument kann Problem und Ziel, Anforderungen, Entwurf, Datenstrukturen, Schnittstellen, Tests, Ergebnisse und bekannte Grenzen zusammenfassen. Solche Dokumente eignen sich besonders für einen abgeschlossenen Überblick oder eine Abgabe.
+
+Wichtig ist, dass Dokumentation zum aktuellen Projektstand passt. Veraltete Dokumentation kann irreführender sein als fehlende Dokumentation.
+
+### Wiki und Wissensplattformen
+
+Für Wissen, das während eines Projekts wächst und von vielen Personen gepflegt wird, eignen sich **Wikis** oder Wissensplattformen. Ein bekanntes Beispiel ist **Confluence**.
+
+Dort können beispielsweise dokumentiert werden:
+
+- Projektüberblick und Ziele,
+- Fachbegriffe der Domäne,
+- Architektur und Komponenten,
+- Schnittstellen,
+- Installations- und Startanleitungen,
+- Entwicklungsregeln,
+- Entscheidungen,
+- häufige Fehler und Lösungen.
+
+Wiki-Seiten lassen sich verlinken und schrittweise aktualisieren. Entscheidend ist nicht das konkrete Werkzeug, sondern dass Wissen auffindbar, verständlich und aktuell bleibt.
+
+### Tickets dokumentieren Arbeit und Änderungen
+
+Tickets sind nicht nur Aufgabenlisten. Ein gut gepflegtes Ticket dokumentiert auch einen Teil der Projektgeschichte: Problem, Anforderungen, Diskussionen, Entscheidungen, Umsetzung und gegebenenfalls Testnachweise.
+
+Beispielsweise kann ein Fehler-Ticket enthalten:
+
+```text
+Fehler:
+Alter 16 wird fälschlich abgewiesen.
+
+Ursache:
+Bedingung verwendet alter < 16 statt alter <= 16.
+
+Korrektur:
+Vergleich angepasst.
+
+Test:
+15, 16 und 17 erneut geprüft.
+```
+
+### Dokumentation direkt im Quellcode
+
+Auch Quellcode kann und sollte dokumentiert werden. Dabei sind zwei Dinge zu unterscheiden:
+
+1. **verständlicher Code**, der durch gute Namen und klare Struktur möglichst viel selbst erklärt,
+2. **Kommentare und Dokumentationskommentare**, die zusätzliche Informationen liefern.
+
+Ein Kommentar sollte nicht nur wiederholen, was der Code ohnehin sichtbar tut.
+
+Wenig hilfreich:
+
+```java
+// Erhöhe i um 1
+i++;
+```
+
+Hilfreicher kann ein Kommentar sein, der den Grund einer ungewöhnlichen Entscheidung erklärt:
+
+```java
+// Der Grenzwert gehört zum gültigen Bereich und muss deshalb mit <= geprüft werden.
+if (alter <= 16) {
+    // ...
+}
+```
+
+### Dokumentationskommentare für Funktionen, Klassen und Schnittstellen
+
+Viele Programmiersprachen und Werkzeuge kennen besondere **Dokumentationskommentare**. Aus ihnen kann teilweise automatisch eine API-Dokumentation erzeugt werden.
+
+Bei Java ist **Javadoc** verbreitet:
+
+```java
+/**
+ * Bestimmt den größeren von zwei Werten.
+ *
+ * @param a erster Wert
+ * @param b zweiter Wert
+ * @return der größere Wert
+ */
+public static int maximum(int a, int b) {
+    return a > b ? a : b;
+}
+```
+
+Für TypeScript wird häufig **TSDoc** beziehungsweise eine ähnliche JSDoc-Schreibweise verwendet:
+
+```typescript
+/**
+ * Bestimmt den größeren von zwei Werten.
+ *
+ * @param a - Erster Wert.
+ * @param b - Zweiter Wert.
+ * @returns Der größere Wert.
+ */
+function maximum(a: number, b: number): number {
+    return a > b ? a : b;
+}
+```
+
+Solche Kommentare sind besonders nützlich an **öffentlichen Schnittstellen**: Welche Aufgabe hat eine Funktion? Welche Parameter erwartet sie? Was liefert sie zurück? Welche Voraussetzungen oder Besonderheiten gelten?
+
+> **Merke:** Kommentare erklären vor allem **Absicht, Vertrag oder Besonderheiten**. Gute Bezeichner und klare Programmstruktur ersetzen sie nicht, sondern ergänzen sie.
+
+### README-Datei
+
+Viele Softwareprojekte besitzen eine Datei namens `README.md`. Sie ist häufig der erste Einstieg in ein Repository und kann beispielsweise enthalten:
+
+- Zweck des Projekts,
+- Voraussetzungen,
+- Installation beziehungsweise Start,
+- grundlegende Bedienung,
+- Projektstruktur,
+- Hinweise für Mitwirkende,
+- Verweise auf ausführlichere Dokumentation.
+
+### Technische Dokumentation und Benutzerdokumentation
+
+Nicht jede Dokumentation richtet sich an dieselbe Zielgruppe.
+
+| Dokumentation | typische Zielgruppe | typische Inhalte |
+|---|---|---|
+| Benutzerdokumentation | Anwender | Bedienung, Beispiele, Fehlermeldungen |
+| Entwicklungsdokumentation | Entwickler | Aufbau, Schnittstellen, Entwicklungsregeln |
+| API-Dokumentation | Entwickler/Nutzer einer Schnittstelle | Funktionen, Parameter, Rückgabewerte |
+| Betriebsdokumentation | Betrieb/Administration | Installation, Konfiguration, Sicherung, Überwachung |
+| Projektdokumentation | Projektbeteiligte/Auftraggeber | Ziele, Anforderungen, Entscheidungen, Tests, Ergebnisse |
+
+### Diagramme als Dokumentation
+
+Nicht alles lässt sich am besten als Fließtext erklären. Je nach Inhalt können Diagramme verständlicher sein, beispielsweise:
+
+- Ablaufdiagramm oder Struktogramm für Algorithmen,
+- ER-Diagramm für Datenmodelle,
+- Klassendiagramm für Klassen und Beziehungen,
+- Architekturdiagramm für Komponenten und Schnittstellen,
+- Sequenzdiagramm für den zeitlichen Nachrichtenaustausch zwischen Komponenten.
+
+Eine gute Dokumentation kombiniert Text, Tabellen, Codebeispiele und Grafiken passend zum Inhalt.
+
+### Dokumentation gehört zum Entwicklungsprozess
+
+Dokumentation sollte möglichst **mit der Software geändert werden**. Wird eine Schnittstelle verändert, müssen beispielsweise Beschreibung, Beispiele und gegebenenfalls Tests angepasst werden. Versionsverwaltung hilft dabei, Code und zugehörige Dokumentation gemeinsam nachvollziehbar zu ändern.
+
+> **Merke:** Gute Dokumentation beantwortet nicht nur **was vorhanden ist**, sondern je nach Zielgruppe auch **wie es benutzt wird, warum eine Entscheidung getroffen wurde und welche Grenzen gelten**.
 
 ## Begriffe zum Nachschlagen
 
@@ -663,11 +541,19 @@ Dokumentation soll nicht lediglich beschreiben, **dass** etwas gemacht wurde. Si
 
 **Anforderung:** überprüfbare Beschreibung einer gewünschten Funktion, Eigenschaft oder Rahmenbedingung eines Systems.
 
-**Anweisungsabdeckung:** Maß dafür, ob relevante Anweisungen durch Tests ausgeführt wurden.
+**Asynchrone Zusammenarbeit:** Zusammenarbeit, bei der Beteiligte Informationen zeitversetzt austauschen.
 
 **Blackbox-Test:** Test anhand von Eingaben und erwarteten Ergebnissen, ohne die interne Implementierung für die Testauswahl zu betrachten.
 
+**Branch:** Entwicklungszweig in einer Versionsverwaltung.
+
+**Code Review:** systematische Durchsicht einer Codeänderung durch andere Personen.
+
+**Commit:** gespeicherter und beschriebener Änderungsstand in einer Versionsverwaltung.
+
 **Dekomposition:** Zerlegung eines großen Problems in kleinere Teilprobleme.
+
+**Dokumentationskommentar:** besonders formatierter Kommentar zur Beschreibung von Funktionen, Klassen oder Schnittstellen, aus dem Werkzeuge teilweise Dokumentation erzeugen können.
 
 **Domäne:** Fachbereich beziehungsweise Problemgebiet, das eine Software abbildet oder unterstützt.
 
@@ -685,28 +571,36 @@ Dokumentation soll nicht lediglich beschreiben, **dass** etwas gemacht wurde. Si
 
 **Iterativ:** Vorgehen, bei dem ein vorhandener Stand wiederholt überarbeitet und verbessert wird.
 
+**Javadoc:** Dokumentationssystem für Java, das besonders formatierte Kommentare auswerten und daraus Dokumentation erzeugen kann.
+
+**Kanban-Board:** Darstellung von Aufgaben als Karten in Spalten, die verschiedene Bearbeitungszustände zeigen.
+
 **Meilenstein:** wichtiger überprüfbarer Zwischenstand eines Projekts.
 
-**Nichtfunktionale Anforderung:** Anforderung an Qualität oder Rahmenbedingungen, beispielsweise Sicherheit, Verständlichkeit oder Geschwindigkeit.
+**Pull Request/Merge Request:** Vorschlag, Änderungen aus einem Entwicklungszweig zu prüfen und zusammenzuführen.
 
-**Off-by-one-Fehler:** Fehler, bei dem ein Grenzwert oder eine Wiederholungsanzahl um eins falsch behandelt wird.
-
-**Pfadabdeckung:** Maß dafür, welche möglichen Ausführungspfade durch Tests durchlaufen wurden.
-
-**Prototyp:** früher vereinfachter Lösungsstand zum Prüfen einer Idee oder technischen Möglichkeit.
+**README:** meist zentrale Einstiegsdatei eines Softwareprojekts mit Überblick und Nutzungshinweisen.
 
 **Regressionstest:** erneuter Test bereits funktionierender Eigenschaften nach einer Änderung.
 
+**Repository:** durch eine Versionsverwaltung verwalteter Projektbestand.
+
 **Schnittstelle:** festgelegte Art, wie Programmteile Daten austauschen oder Dienste anbieten.
+
+**Synchrone Zusammenarbeit:** Zusammenarbeit, bei der Beteiligte gleichzeitig miteinander kommunizieren oder arbeiten.
 
 **Systemtest:** Test des vollständigen Systems gegenüber seinen Anforderungen.
 
 **Testfall:** festgelegte Ausgangssituation beziehungsweise Eingabe mit erwartetem Ergebnis.
 
+**Ticket/Issue:** dokumentierte Aufgabe, Anforderung, Änderung oder Fehler in einem Projektverwaltungssystem.
+
+**TSDoc:** Konvention für Dokumentationskommentare in TypeScript-Projekten.
+
 **Unit-Test:** Test eines kleinen abgegrenzten Programmteils, beispielsweise einer Funktion.
 
-**Whitebox-Test:** Test, bei dem die interne Struktur des Programms für die Auswahl von Testfällen berücksichtigt wird.
+**Versionsverwaltung:** System zum Speichern, Vergleichen und Zusammenführen nachvollziehbarer Entwicklungsstände.
 
-**Zweigabdeckung:** Maß dafür, ob die möglichen Zweige von Entscheidungen durch Tests ausgeführt wurden.
+**Whitebox-Test:** Test, bei dem die interne Struktur des Programms für die Auswahl von Testfällen berücksichtigt wird.
 
 → Vorwissen: Nachschlagewerk Klasse 8, **Algorithmen** und **Algorithmen und Programme testen**.
