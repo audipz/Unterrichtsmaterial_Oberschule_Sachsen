@@ -357,11 +357,182 @@ Programmcode eignet sich, wenn aus einem geplanten Algorithmus ein **ausführbar
 
 > **Merke:** Die Darstellungsform ändert nicht den Algorithmus selbst. Sie zeigt denselben Lösungsweg nur auf unterschiedliche Weise.
 
-## Testen
+## Algorithmen und Programme testen
 
-Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders wichtig sind Grenzfälle und ungewöhnliche Situationen.
+Ein Programm kann ohne Fehlermeldung laufen und trotzdem ein **falsches Ergebnis** liefern. Deshalb gehört das **Testen** zur Programmentwicklung. Beim Testen wird systematisch geprüft, ob sich ein Algorithmus oder Programm für ausgewählte Eingaben so verhält, wie es erwartet wird.
 
-> **Merke:** Programmieren bedeutet nicht nur Befehle zu schreiben. Zuerst muss klar sein, welches Verfahren das Problem löst.
+### Warum testet man?
+
+Tests sollen Fehler sichtbar machen, bevor sie im praktischen Einsatz Probleme verursachen. Dabei kann beispielsweise geprüft werden:
+
+- Liefert das Programm für normale Eingaben das richtige Ergebnis?
+- Funktionieren Entscheidungen an ihren Grenzen richtig?
+- Werden ungewöhnliche oder ungültige Eingaben sinnvoll behandelt?
+- Können Schleifen versehentlich endlos laufen?
+- Werden alle wichtigen Zweige eines Algorithmus tatsächlich ausgeführt?
+
+Ein bestandener Test beweist allerdings nicht, dass ein Programm **für alle denkbaren Fälle fehlerfrei** ist. Bei sehr vielen möglichen Eingaben kann man meist nicht jede einzelne ausprobieren. Deshalb wählt man Testfälle gezielt aus.
+
+> **Merke:** Testen bedeutet nicht, wahllos einige Werte einzugeben. Gute Tests werden so ausgewählt, dass sie unterschiedliche und besonders fehleranfällige Situationen untersuchen.
+
+### Ein Testfall
+
+Ein **Testfall** besteht mindestens aus einer Eingabe und dem **erwarteten Ergebnis**. Danach wird das tatsächliche Ergebnis des Programms mit dem erwarteten Ergebnis verglichen.
+
+Für unser Frostwarnungs-Beispiel könnte eine Testtabelle so aussehen:
+
+| Testfall | Eingabe Temperatur | erwartete Ausgabe | tatsächliche Ausgabe | Ergebnis |
+|---|---:|---|---|---|
+| 1 | −5 °C | Frostwarnung | Frostwarnung | bestanden |
+| 2 | 8 °C | kein Frost | kein Frost | bestanden |
+| 3 | 0 °C | kein Frost | kein Frost | bestanden |
+
+Wichtig ist, das erwartete Ergebnis **vorher** festzulegen. Sonst besteht die Gefahr, ein überraschendes Ergebnis nachträglich einfach für richtig zu halten.
+
+### Normale, ungewöhnliche und ungültige Eingaben
+
+Beim Testen betrachtet man verschiedene Arten von Eingaben.
+
+**Normale Eingaben** sind typische Werte, zum Beispiel `12 °C` für eine Temperatur.
+
+**Ungewöhnliche, aber gültige Eingaben** sind seltene Werte, die trotzdem erlaubt sind, beispielsweise `−40 °C`.
+
+**Ungültige Eingaben** entsprechen nicht den Vorgaben. Erwartet ein Programm eine Zahl, könnte beispielsweise `kalt` eine ungültige Eingabe sein. Dann muss geklärt werden, wie das Programm reagieren soll: Fehlermeldung, erneute Eingabe oder eine andere festgelegte Behandlung.
+
+### Grenzwerte und Grenzwerttests
+
+Fehler treten besonders häufig **an Grenzen** auf. Ein **Grenzwert** ist ein Wert, an dem sich das Verhalten eines Algorithmus ändert oder an dem ein erlaubter Bereich beginnt beziehungsweise endet.
+
+Beim Frostprogramm liegt ein wichtiger Grenzwert bei `0 °C`, denn die Bedingung lautet:
+
+```text
+temperatur < 0
+```
+
+Deshalb sind Werte **direkt unter, genau auf und direkt über der Grenze** besonders interessante Testfälle:
+
+| Eingabe | Erwartung | Warum wichtig? |
+|---:|---|---|
+| −1 °C | Frostwarnung | direkt unter der Grenze |
+| 0 °C | kein Frost | genau auf der Grenze |
+| 1 °C | kein Frost | direkt über der Grenze |
+
+Damit kann man beispielsweise entdecken, dass versehentlich `<= 0` statt `< 0` programmiert wurde.
+
+Bei einem erlaubten Alter von 12 bis 16 Jahren wären entsprechend Werte wie `11`, `12`, `13`, `15`, `16` und `17` interessant. Besonders wichtig sind die Grenzen `12` und `16` sowie Werte unmittelbar daneben.
+
+> **Merke:** Bei einer Grenze teste möglichst **knapp darunter, genau darauf und knapp darüber**.
+
+### Blackbox-Test
+
+Beim **Blackbox-Test** betrachtet man das Programm wie einen schwarzen Kasten. Man kennt beziehungsweise untersucht den inneren Programmcode nicht. Entscheidend ist nur:
+
+**Eingabe → Programm → Ausgabe**
+
+Man wählt Eingaben anhand der Anforderungen und prüft, ob die erwarteten Ausgaben entstehen.
+
+Beim Frostprogramm könnte man beispielsweise `−5`, `0` und `10` eingeben und die Ausgaben vergleichen, ohne nachzusehen, wie die Entscheidung im Programmcode geschrieben wurde.
+
+Blackbox-Tests eignen sich besonders, um zu prüfen, ob ein Programm **von außen betrachtet die geforderte Funktion erfüllt**.
+
+**Vorteil:** Der Test orientiert sich an den Anforderungen und nicht daran, wie das Programm intern gebaut wurde.  
+**Grenze:** Fehler in Programmteilen, die durch die gewählten Eingaben nie ausgeführt werden, können unentdeckt bleiben.
+
+### Whitebox-Test
+
+Beim **Whitebox-Test** kennt und betrachtet man den inneren Aufbau des Algorithmus oder Programmcodes. Die Testfälle werden gezielt so ausgewählt, dass bestimmte Anweisungen, Bedingungen, Zweige oder Wege durchlaufen werden.
+
+Beim Frostprogramm sieht man im Code die Bedingung:
+
+```text
+temperatur < 0
+```
+
+Nun wählt man mindestens einen Wert, für den die Bedingung **wahr** ist, und einen Wert, für den sie **falsch** ist. Dadurch werden beide Zweige der Auswahl untersucht.
+
+Whitebox-Tests helfen also bei der Frage: **Welche Teile meines Programms wurden durch meine Tests tatsächlich ausgeführt?**
+
+**Vorteil:** Die innere Struktur kann gezielt untersucht werden.  
+**Grenze:** Auch wenn alle vorhandenen Programmteile getestet wurden, kann eine Anforderung fehlen, die überhaupt nicht programmiert wurde.
+
+### Blackbox und Whitebox ergänzen sich
+
+Blackbox- und Whitebox-Tests beantworten unterschiedliche Fragen:
+
+| Testart | Blickrichtung | Testfälle entstehen vor allem aus | typische Frage |
+|---|---|---|---|
+| Blackbox | von außen | Anforderungen, erlaubten Eingaben und erwarteten Ausgaben | „Tut das Programm das Richtige?“ |
+| Whitebox | von innen | Programmstruktur, Bedingungen, Zweigen und Schleifen | „Haben wir die wichtigen Programmwege geprüft?“ |
+
+In der Praxis werden deshalb häufig beide Sichtweisen kombiniert.
+
+### Pfade durch einen Algorithmus
+
+Durch Auswahlen und Schleifen können unterschiedliche **Ausführungspfade** entstehen. Ein Pfad ist eine mögliche Folge von Anweisungen, die bei einer bestimmten Eingabe tatsächlich ausgeführt wird.
+
+Betrachte beispielsweise:
+
+```text
+WENN temperatur < 0
+    AUSGABE "Frostwarnung"
+SONST
+    WENN temperatur > 30
+        AUSGABE "Hitzewarnung"
+    SONST
+        AUSGABE "normale Temperatur"
+```
+
+Hier gibt es drei wichtige Wege:
+
+1. `temperatur < 0` ist wahr → Frostwarnung.
+2. `temperatur < 0` ist falsch und `temperatur > 30` ist wahr → Hitzewarnung.
+3. Beide Bedingungen sind falsch → normale Temperatur.
+
+Mit den Testwerten `−5`, `35` und `20` kann jeweils einer dieser Wege durchlaufen werden.
+
+### Pfadabdeckung
+
+Die **Pfadabdeckung** beschreibt, welche möglichen Ausführungspfade durch die gewählten Tests durchlaufen wurden. Ziel ist es, nicht immer nur denselben Weg zu testen.
+
+Beim Beispiel mit Frost-, Hitze- und Normalbereich decken die drei Testfälle `−5`, `35` und `20` die drei beschriebenen Wege ab.
+
+Bei Programmen mit Schleifen und vielen verschachtelten Entscheidungen kann die Zahl möglicher Pfade allerdings sehr groß werden. Eine Schleife kann beispielsweise keinmal, einmal oder viele Male durchlaufen werden. Deshalb ist eine vollständige Pfadabdeckung bei größeren Programmen oft nicht praktisch erreichbar.
+
+In solchen Fällen verwendet man auch einfachere Maße, zum Beispiel:
+
+- **Anweisungsabdeckung:** Wurde jede Anweisung mindestens einmal ausgeführt?
+- **Zweigabdeckung:** Wurde bei jeder Entscheidung jeder mögliche Zweig mindestens einmal ausgeführt?
+- **Pfadabdeckung:** Wurden die betrachteten möglichen Wege durch den Algorithmus ausgeführt?
+
+Eine hohe Abdeckung bedeutet, dass viele Teile beziehungsweise Wege untersucht wurden. Sie beweist aber nicht automatisch, dass das Programm fehlerfrei ist.
+
+### Schleifen testen
+
+Schleifen verdienen besondere Aufmerksamkeit. Je nach Schleifenart sind beispielsweise folgende Fälle interessant:
+
+- **kein Durchlauf**, falls die Schleife das zulässt,
+- **genau ein Durchlauf**,
+- **mehrere Durchläufe**,
+- ein Wert an der **Abbruchgrenze**,
+- ungewöhnlich viele Durchläufe.
+
+So kann man Fehler entdecken, bei denen eine Schleife einmal zu oft oder einmal zu wenig läuft. Solche Fehler werden häufig als **Off-by-one-Fehler** bezeichnet.
+
+### Fehler finden und verbessern
+
+Wenn ein Test fehlschlägt, beginnt die Fehlersuche. Dabei sollte man möglichst genau feststellen:
+
+1. Welche Eingabe wurde verwendet?
+2. Welches Ergebnis wurde erwartet?
+3. Welches Ergebnis trat tatsächlich auf?
+4. An welcher Stelle weicht der Ablauf erstmals von der Erwartung ab?
+5. Welche Ursache hat die Abweichung?
+6. Nach der Korrektur: Besteht der ursprüngliche Test jetzt?
+7. Funktionieren auch die anderen bisherigen Testfälle weiterhin?
+
+Das erneute Ausführen bereits vorhandener Tests ist wichtig, weil eine Korrektur an einer Stelle unbeabsichtigt einen Fehler an einer anderen Stelle verursachen kann.
+
+> **Merke:** Ein guter Test beschreibt **Eingabe, erwartetes Ergebnis und tatsächliches Ergebnis**. Grenzwerte sowie unterschiedliche Zweige und Pfade sind besonders wichtige Testfälle.
 
 ## Begriffe zum Nachschlagen
 
@@ -369,7 +540,11 @@ Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders
 
 **Algorithmus:** eindeutige Handlungsvorschrift zur Lösung einer Aufgabe.
 
+**Anweisungsabdeckung:** Maß dafür, ob jede betrachtete Anweisung eines Programms mindestens einmal durch Tests ausgeführt wurde.
+
 **Auswahl:** Entscheidung darüber, ob eine Anweisung ausgeführt wird oder welcher von mehreren Abläufen gewählt wird.
+
+**Blackbox-Test:** Test eines Programms anhand von Eingaben und erwarteten Ausgaben, ohne für die Auswahl der Testfälle den inneren Programmaufbau zu betrachten.
 
 **Bedingung:** Ausdruck mit dem Ergebnis wahr oder falsch.
 
@@ -377,13 +552,21 @@ Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders
 
 **Deklaration:** Bekanntmachen einer Variablen, häufig mit Name und Datentyp.
 
+**Grenzwert:** Wert an einer Grenze, an der sich das Programmverhalten ändert oder ein erlaubter Bereich beginnt beziehungsweise endet.
+
 **Initialisierung:** erstmalige Vergabe eines Wertes an eine Variable.
 
 **Lambda-Ausdruck:** kurze, häufig namenlose Funktion; kein Vergleichs- oder Zuweisungsoperator.
 
+**Pfad:** mögliche Folge ausgeführter Anweisungen durch einen Algorithmus oder ein Programm.
+
+**Pfadabdeckung:** Maß dafür, welche möglichen Ausführungspfade durch Testfälle durchlaufen wurden.
+
 **Pseudocode:** vereinfachte, programmiersprachenunabhängige Schreibweise zur Darstellung eines Algorithmus.
 
 **Struktogramm/Nassi-Shneiderman-Diagramm:** grafische Darstellung eines Algorithmus durch verschachtelte Blöcke für Kontrollstrukturen.
+
+**Testfall:** festgelegte Eingabe beziehungsweise Ausgangssituation mit einem erwarteten Ergebnis, die zur Prüfung eines Algorithmus oder Programms verwendet wird.
 
 **Variable:** benannter Speicherplatz für einen Wert.
 
@@ -391,7 +574,11 @@ Ein Algorithmus sollte mit unterschiedlichen Eingaben getestet werden. Besonders
 
 **Verschachtelung:** Einbetten einer Kontrollstruktur in eine andere Kontrollstruktur.
 
+**Whitebox-Test:** Test, bei dem die innere Struktur des Algorithmus oder Programmcodes bekannt ist und bei der Auswahl der Testfälle berücksichtigt wird.
+
 **Wiederholung/Schleife:** mehrfache Ausführung von Anweisungen.
+
+**Zweigabdeckung:** Maß dafür, ob die möglichen Zweige von Entscheidungen durch Tests ausgeführt wurden.
 
 **Zuweisung:** Speichern eines Wertes in einer Variablen; im Pseudocode dieses Nachschlagewerks mit `:=` dargestellt.
 
