@@ -10,6 +10,8 @@ Alltagsanleitungen können ähnlich aufgebaut sein, aber Informatikalgorithmen m
 
 Viele Algorithmen lassen sich aus drei grundlegenden Strukturen zusammensetzen.
 
+![Sequenz, Auswahl und Wiederholung als Grundstrukturen von Algorithmen](grafiken/algorithmus_strukturen.svg)
+
 ### Sequenz
 
 Anweisungen werden nacheinander ausgeführt.
