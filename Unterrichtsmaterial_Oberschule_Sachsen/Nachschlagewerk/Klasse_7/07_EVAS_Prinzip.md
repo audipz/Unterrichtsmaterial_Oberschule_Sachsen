@@ -10,13 +10,7 @@ Eingabe → Verarbeitung → Ausgabe
 
 Wird die Speicherung ausdrücklich einbezogen, spricht man häufig vom **EVA(S)-Prinzip**.
 
-```text
-             ┌───────────────┐
-Eingabe ───► │ Verarbeitung  │ ───► Ausgabe
-             └───────┬───────┘
-                     ↕
-                  Speicher
-```
+![EVA(S)-Prinzip mit Eingabe, Verarbeitung, Ausgabe und Speicherung](grafiken/evas_prinzip.svg)
 
 ## Eingabe
 
