@@ -4,13 +4,19 @@
 
 Eine **Information** hat für einen Menschen eine Bedeutung. **Daten** sind Zeichen, Zahlen, Bilder oder andere Darstellungen, mit denen Informationen gespeichert, verarbeitet oder übertragen werden können.
 
-Beispiel: Die Zeichenfolge `21 °C` sind Daten. Im Zusammenhang mit einer Wetteranzeige erhalten sie die Bedeutung: Die gemessene Temperatur beträgt 21 Grad Celsius.
+Beispiel: Die Zeichenfolge `21 °C` sind Daten. Erst der Zusammenhang macht daraus eine konkrete Information:
+
+- `21 °C` als **Lufttemperatur in einem Klassenzimmer** kann bedeuten: Der Raum ist angenehm warm.
+- `21 °C` als **Temperatur einer Suppe oder eines warmen Essens** kann bedeuten: Das Essen ist kalt geworden.
+- `21 °C` als **Wassertemperatur in einem Freibad** kann je nach Person als kühl oder angenehm empfunden werden.
+
+Die Daten `21 °C` sind in allen Fällen gleich. Die daraus gewonnene Information hängt davon ab, **was gemessen wurde, in welcher Situation der Wert vorkommt und welche Frage beantwortet werden soll**.
 
 > **Merke:** Daten sind eine Darstellung. Information entsteht, wenn Daten in einem Zusammenhang gedeutet werden.
 
 ## Daten brauchen Kontext
 
-Dieselben Daten können unterschiedliche Informationen bedeuten.
+Dieselben Daten können unterschiedliche Informationen bedeuten. **Kontext** beschreibt den Zusammenhang, der zur richtigen Deutung benötigt wird.
 
 Die Zeichenfolge `10` könnte zum Beispiel bedeuten:
 
@@ -20,7 +26,7 @@ Die Zeichenfolge `10` könnte zum Beispiel bedeuten:
 - den Tag eines Monats,
 - eine Trikotnummer.
 
-Damit Daten richtig verstanden werden, braucht man also zusätzlich **Kontext** und Regeln zur Interpretation.
+Damit Daten richtig verstanden werden, braucht man also zusätzlich Kontext und Regeln zur Interpretation.
 
 Ein weiteres Beispiel:
 
@@ -29,6 +35,8 @@ Ein weiteres Beispiel:
 ```
 
 Ohne Zusatzinformation wissen wir nicht, ob damit 17 Jahre, 17 °C, 17 Euro oder etwas ganz anderes gemeint ist.
+
+Selbst eine Einheit reicht nicht immer vollständig aus. Auch bei `21 °C` müssen wir noch wissen, **wessen oder welche Temperatur** gemeint ist. Erst dann lässt sich der Wert sinnvoll beurteilen.
 
 ## Daten besitzen eine Struktur
 
@@ -206,6 +214,8 @@ Temperatur: 20
 
 Ohne Einheit ist der Wert unvollständig. `20 °C` und `20 °F` bedeuten sehr unterschiedliche Temperaturen.
 
+Aber auch `20 °C` kann ohne weiteren Kontext noch unvollständig sein: Handelt es sich um die Lufttemperatur, die Wassertemperatur oder die Temperatur eines Lebensmittels?
+
 Ein falsch eingestellter Sensor kann zwar viele Messwerte liefern, aber trotzdem schlechte Daten erzeugen.
 
 > **Merke:** Viele Daten sind nicht automatisch gute Daten.
@@ -269,11 +279,13 @@ Messwert
 Binär gespeicherte Daten
         ↓ Programm
 Anzeige „21 °C“
-        ↓ Mensch deutet Anzeige
-Information: Im Raum sind 21 °C.
+        ↓ Mensch deutet Anzeige im Kontext
+Information: z. B. „Der Klassenraum ist angenehm warm.“
 ```
 
-Dieses Beispiel verbindet Wirklichkeit, Messung, Daten, Verarbeitung und menschliche Interpretation.
+Wird derselbe Messwert bei einer warm erwarteten Suppe angezeigt, entsteht dagegen die Information: **„Die Suppe ist kalt.“**
+
+Dieses Beispiel verbindet Wirklichkeit, Messung, Daten, Verarbeitung, Kontext und menschliche Interpretation.
 
 ## Begriffe zum Nachschlagen
 
@@ -291,7 +303,7 @@ Dieses Beispiel verbindet Wirklichkeit, Messung, Daten, Verarbeitung und menschl
 
 **Information:** Bedeutung, die Menschen aus Daten in einem Zusammenhang gewinnen.
 
-**Kontext:** Zusammenhang, der hilft, Daten richtig zu deuten.
+**Kontext:** Zusammenhang, der benötigt wird, um Daten sinnvoll und richtig zu deuten.
 
 **Metadaten:** Daten, die andere Daten beschreiben.
 
