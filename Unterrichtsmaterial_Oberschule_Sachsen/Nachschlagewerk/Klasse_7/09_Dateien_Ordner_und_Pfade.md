@@ -12,6 +12,8 @@ Dateien besitzen einen Namen. Häufig endet der Name mit einer **Dateiendung** w
 
 **Ordner** beziehungsweise **Verzeichnisse** helfen, Dateien und weitere Ordner zu strukturieren. Dadurch entsteht eine Baumstruktur.
 
+![Beispiel eines Verzeichnisbaums mit Ordnern und Dateien](grafiken/verzeichnisbaum.svg)
+
 ```text
 Schule/
 ├── Informatik/
