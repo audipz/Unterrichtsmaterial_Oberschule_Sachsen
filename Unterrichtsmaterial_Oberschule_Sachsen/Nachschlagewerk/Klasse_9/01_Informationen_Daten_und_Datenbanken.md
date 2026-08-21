@@ -203,7 +203,84 @@ Das verringert unter anderem die Gefahr von:
 - unnötigen Mehrfachspeicherungen,
 - aufwendigen Änderungen.
 
-Dieses strukturierte Zerlegen von Tabellen wird in höheren Stufen genauer als **Normalisierung** behandelt.
+## Normalisierung: Daten sinnvoll strukturieren
+
+**Normalisierung** bedeutet, relationale Daten so auf Tabellen zu verteilen, dass Informationen möglichst **nicht unnötig mehrfach gespeichert** werden und Abhängigkeiten sinnvoll dargestellt sind.
+
+Das Ziel ist nicht, möglichst viele Tabellen zu erzeugen. Die Struktur soll vielmehr so gewählt werden, dass Daten **eindeutig, konsistent und gut änderbar** bleiben.
+
+### Warum normalisiert man?
+
+Betrachte diese ungünstige Tabelle:
+
+| AusleiheID | Schülername | Klasse | BuchID | Buchtitel |
+|---:|---|---|---:|---|
+| 9001 | Mia Berger | 9a | 102 | Daten verstehen |
+| 9002 | Mia Berger | 9a | 103 | Netze und Dienste |
+| 9003 | Leon Wolf | 9b | 102 | Daten verstehen |
+
+Hier werden `Mia Berger`, `9a` und `Daten verstehen` mehrfach gespeichert. Dadurch entstehen typische Probleme.
+
+**Änderungsanomalie:** Wechselt Mia von Klasse 9a in 9b, müssten mehrere Zeilen geändert werden. Wird eine Zeile vergessen, widersprechen sich die Daten.
+
+**Einfügeanomalie:** Ein neues Buch könnte vielleicht erst gespeichert werden, wenn es bereits ausgeliehen wurde, obwohl Buch und Ausleihe eigentlich verschiedene Sachverhalte sind.
+
+**Löschanomalie:** Wird die einzige Ausleihe eines Buches gelöscht, könnte dabei versehentlich auch die einzige gespeicherte Information über dieses Buch verschwinden.
+
+Normalisiert könnte man die Informationen beispielsweise aufteilen in:
+
+```text
+Schueler(SchuelerID, Name, Klasse)
+Buch(BuchID, Titel)
+Ausleihe(AusleiheID, SchuelerID, BuchID)
+```
+
+Nun stehen Name und Klasse nur in `Schueler`, der Buchtitel nur in `Buch`, und `Ausleihe` verbindet die Datensätze über Fremdschlüssel.
+
+> **Merke:** Normalisierung hilft, Redundanz sowie Änderungs-, Einfüge- und Löschprobleme zu verringern.
+
+### Normalformen – nur als Einordnung
+
+In der Datenbanktheorie gibt es mehrere **Normalformen**, zum Beispiel die erste, zweite und dritte Normalform. Sie beschreiben schrittweise Regeln für eine günstige Tabellenstruktur.
+
+Für Klasse 9 ist vor allem die Grundidee wichtig:
+
+- in einem Feld möglichst **ein einzelner Wert**,
+- unterschiedliche Sachverhalte sinnvoll trennen,
+- wiederholte Informationen vermeiden,
+- Beziehungen über Schlüssel herstellen.
+
+Eine vollständige formale Prüfung der Normalformen ist an dieser Stelle nicht erforderlich.
+
+## Denormalisierung: bewusst wieder zusammenfassen
+
+**Denormalisierung** bedeutet, eine zuvor stark aufgeteilte Struktur bewusst wieder zu vereinfachen oder bestimmte Informationen zusätzlich mehrfach zu speichern.
+
+Das klingt zunächst widersprüchlich, kann aber in bestimmten Systemen sinnvoll sein. Eine sehr stark normalisierte Datenbank benötigt für manche Auswertungen viele Tabellenverknüpfungen (`JOIN`). Bei sehr großen Datenmengen oder besonders häufigen Lesezugriffen kann das aufwendig sein.
+
+Beispielsweise könnte ein System einen häufig benötigten Gesamtwert zusätzlich speichern, obwohl er grundsätzlich aus mehreren Datensätzen berechnet werden könnte.
+
+Denormalisierung kann Vorteile bringen:
+
+- bestimmte Abfragen werden einfacher,
+- manche Lesezugriffe können schneller werden,
+- vorberechnete Werte stehen direkt zur Verfügung.
+
+Sie hat aber auch Nachteile:
+
+- Daten werden mehrfach gespeichert,
+- Änderungen müssen an mehreren Stellen korrekt nachgeführt werden,
+- widersprüchliche Daten werden wahrscheinlicher,
+- zusätzlicher Speicherplatz wird benötigt.
+
+| Normalisierung | Denormalisierung |
+|---|---|
+| Redundanz möglichst verringern | Redundanz teilweise bewusst zulassen |
+| Daten auf passende Tabellen verteilen | Daten teilweise zusammenführen oder zusätzlich speichern |
+| Konsistenz und Änderbarkeit stehen im Vordergrund | schnelle oder einfache Lesezugriffe können im Vordergrund stehen |
+| häufig mehr `JOIN`s nötig | manche Abfragen benötigen weniger Verknüpfungen |
+
+> **Merke:** Normalisierung ist normalerweise die Grundlage für einen sauberen relationalen Datenbankentwurf. Denormalisierung ist eine **bewusste Abwägung**, keine Reparatur für einen schlechten Entwurf.
 
 ## Integrität und Konsistenz
 
@@ -555,7 +632,15 @@ So lässt sich die natürliche Fragestellung Schritt für Schritt in eine Datenb
 
 **Kardinalität:** beschreibt, wie viele Datensätze zweier Entitäten miteinander in Beziehung stehen können, beispielsweise 1:n oder n:m.
 
-**Normalisierung:** systematisches Strukturieren relationaler Tabellen, um ungünstige Redundanzen und Abhängigkeiten zu verringern.
+**Denormalisierung:** bewusstes Zusammenführen oder zusätzliches Speichern von Daten, häufig um bestimmte Lesezugriffe zu vereinfachen oder zu beschleunigen; dabei entsteht wieder mehr Redundanz.
+
+**Einfügeanomalie:** Problem einer ungünstigen Tabellenstruktur, bei dem neue Informationen nicht sinnvoll unabhängig von anderen Daten gespeichert werden können.
+
+**Löschanomalie:** Problem einer ungünstigen Tabellenstruktur, bei dem durch das Löschen eines Datensatzes unbeabsichtigt weitere wichtige Informationen verloren gehen können.
+
+**Normalisierung:** systematisches Strukturieren relationaler Tabellen, um ungünstige Redundanzen und Abhängigkeiten sowie Änderungs-, Einfüge- und Löschanomalien zu verringern.
+
+**Änderungsanomalie:** Problem einer ungünstigen Tabellenstruktur, bei dem dieselbe Information an mehreren Stellen geändert werden muss und dadurch widersprüchlich werden kann.
 
 **Primärschlüssel (Primary Key):** Attribut oder Attributkombination, die einen Datensatz eindeutig identifiziert.
 
