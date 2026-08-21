@@ -4,14 +4,69 @@
 
 Die Plattform unterstützt einen kontinuierlichen Lernprozess. Sie ist kein Prüfungs- oder Benotungssystem.
 
+Ein zentrales Prinzip ist das **selbstständige Lernen**: Schüler sollen Arbeitsblätter, Arbeitsheftabschnitte und Übungen auch dann bearbeiten können, wenn keine Lehrkraft sie vorher einzeln zugewiesen oder freigeschaltet hat.
+
 Ein Lernbereich kann aus drei aufeinander bezogenen Teilen bestehen:
 
 ```text
 Lernbereich
 ├── Nachschlagewerk
-├── Arbeitsheft
+├── Arbeitsheft / Arbeitsblätter
 └── Übungen
 ```
+
+## Zwei Nutzungswege
+
+Die Plattform unterstützt zwei gleichwertige Wege.
+
+### Selbstständiger Lernweg
+
+Ein Schüler kann aus den für seine Klassenstufe beziehungsweise Schule verfügbaren Materialien selbst auswählen:
+
+```text
+Material öffnen
+    ↓
+Arbeitsblatt oder Übung starten
+    ↓
+Bearbeiten
+    ↓
+Autosave
+    ↓
+später fortsetzen
+```
+
+Dafür ist **keine Lehrerzuweisung erforderlich**.
+
+### Begleiteter Lernweg
+
+Eine Lehrkraft kann zusätzlich Materialien für einen Kurs hervorheben oder zuweisen. Dadurch erscheinen sie beispielsweise in einem Bereich „Für meinen Kurs“.
+
+Die Zuweisung erleichtert Organisation und Unterrichtsbegleitung, ist aber **keine technische Voraussetzung zum Bearbeiten** eines grundsätzlich verfügbaren Materials.
+
+> **Grundsatz:** Lehrerzuweisungen ergänzen den Selbstlernmodus, sie ersetzen ihn nicht.
+
+## Materialkatalog
+
+Schüler erhalten einen für sie zugänglichen Materialkatalog.
+
+Mögliche Struktur:
+
+```text
+Klasse 7
+├── Informatik und Computer
+│   ├── Nachschlagewerk
+│   ├── Arbeitsblatt
+│   └── Übungen
+├── Binärsystem
+│   ├── Nachschlagewerk
+│   ├── Arbeitsblatt
+│   └── Übungen
+└── ...
+```
+
+Ein Schüler kann aus diesem Katalog selbst ein Arbeitsblatt oder eine Übung starten.
+
+Die Plattform legt beim ersten Bearbeiten automatisch eine persönliche Instanz beziehungsweise einen persönlichen Arbeitsstand an.
 
 ## Beispiel Klasse 7: Binärsystem
 
@@ -23,7 +78,7 @@ Binärsystem
 │   ├── Dezimal → Binär
 │   └── Binäraddition
 │
-├── Arbeitsheft
+├── Arbeitsheft / Arbeitsblätter
 │   ├── Stellenwerte anwenden
 │   ├── Umrechnungen
 │   └── Binäraddition
@@ -51,7 +106,7 @@ Mögliche Eigenschaften:
 
 ## Bearbeitungszustand
 
-Für einen Schüler kann ein Lernbereich beispielsweise folgende Bearbeitungszustände besitzen:
+Für einen Schüler kann ein Lernbereich beziehungsweise ein selbst gestartetes Material folgende Bearbeitungszustände besitzen:
 
 ```text
 NOT_STARTED
@@ -61,7 +116,7 @@ COMPLETED
 
 Diese Zustände sind keine Leistungsbewertung.
 
-Ein Bereich kann als `COMPLETED` gelten, wenn alle als Pflichtaufgaben markierten Arbeitsheftaufgaben bearbeitet wurden.
+Ein Arbeitsheftbereich kann als `COMPLETED` gelten, wenn alle als Pflichtaufgaben markierten Aufgaben bearbeitet wurden.
 
 Bei Freitext bedeutet „bearbeitet“ nicht automatisch „fachlich richtig“.
 
@@ -77,9 +132,11 @@ Die Plattform kann speichern:
 
 Ein Schüler muss ein Nachschlagekapitel nicht formal „abschließen“.
 
-## Arbeitsheft
+## Arbeitsheft und Arbeitsblätter
 
-Das Arbeitsheft ist der persönliche Bearbeitungsbereich.
+Arbeitsheftabschnitte und einzelne Arbeitsblätter sind persönliche Bearbeitungsbereiche.
+
+Ein Schüler kann sie selbstständig starten. Beim ersten Öffnen beziehungsweise ersten Bearbeiten wird automatisch ein eigener Arbeitsstand angelegt.
 
 Für jede Aufgabe werden gespeichert:
 
@@ -90,6 +147,19 @@ Für jede Aufgabe werden gespeichert:
 - gegebenenfalls Lehrerfeedback.
 
 Die Plattform speichert automatisch. Ein Schüler kann auf einem Gerät beginnen und nach erneuter Anmeldung auf einem anderen Gerät weiterarbeiten.
+
+### Meine Materialien
+
+Selbst gestartete und von Lehrern zugewiesene Materialien erscheinen gemeinsam in einem persönlichen Bereich, beispielsweise:
+
+```text
+Meine Materialien
+├── Binärsystem – Arbeitsblatt        in Bearbeitung
+├── Dateien und Ordner – Übungen      begonnen
+└── EVA(S) – Arbeitsheft              abgeschlossen
+```
+
+Dabei kann sichtbar gekennzeichnet werden, ob ein Material selbst gestartet oder von einer Lehrkraft empfohlen beziehungsweise zugewiesen wurde.
 
 ## Autosave
 
@@ -108,6 +178,8 @@ Eine veraltete Revision darf keine neuere Serverversion still überschreiben.
 ## Übungen
 
 Übungen dienen der Selbstkontrolle und dem Vertiefen.
+
+Sie müssen grundsätzlich **selbstständig startbar** sein, sofern sie für den Schüler im Materialkatalog sichtbar sind.
 
 Mögliche Eigenschaften:
 
@@ -154,7 +226,7 @@ Die Plattform unterscheidet mindestens:
 Beispielsweise:
 
 ```text
-Arbeitsheft: 8 von 10 Pflichtaufgaben bearbeitet
+Arbeitsblatt: 8 von 10 Aufgaben bearbeitet
 ```
 
 ### Übungsfortschritt
@@ -172,7 +244,7 @@ Eine spätere fachliche Einschätzung muss nachvollziehbar bleiben und darf nich
 
 ## Rückverweise
 
-Arbeitsheft und Übungen kennen ihren Lernbereich und gegebenenfalls ein Lernziel.
+Arbeitsblätter und Übungen kennen ihren Lernbereich und gegebenenfalls ein Lernziel.
 
 Dadurch können direkte Verweise angeboten werden:
 
@@ -185,7 +257,7 @@ Nach dem Nachlesen kehrt der Schüler zur vorherigen Aufgabe zurück.
 
 ## Lehrerfeedback
 
-Eine Lehrkraft kann ausgewählten Antworten eine Rückmeldung hinzufügen.
+Eine Lehrkraft kann ausgewählten Antworten eine Rückmeldung hinzufügen, wenn das Material zu einem von ihr betreuten Kurs beziehungsweise Schüler gehört und die entsprechenden Rechte vorliegen.
 
 Beispiele:
 
@@ -200,11 +272,13 @@ Feedback und Schülerantwort bleiben getrennte Datensätze.
 
 Eine Lehreransicht kann beispielsweise zeigen:
 
-| Schüler | Arbeitsheft | Übungen | Letzte Aktivität |
+| Schüler | Arbeitsmaterial | Übungen | Letzte Aktivität |
 |---|---:|---|---|
 | Anna | 100 % | Binäraddition geübt | heute |
 | Ben | 80 % | Umrechnung begonnen | gestern |
 | Clara | 100 % | alle Bereiche bearbeitet | heute |
+
+Dabei muss unterscheidbar bleiben, was von der Lehrkraft zugewiesen und was vom Schüler selbstständig begonnen wurde.
 
 Die Übersicht dient der Unterrichtsbegleitung und nicht der automatischen Benotung.
 
@@ -219,4 +293,4 @@ Die Lernplattform besitzt ausdrücklich keinen Prüfungsmodus. Nicht vorgesehen 
 - Prüfungssperren,
 - Anti-Cheating-Mechanismen.
 
-Der Fokus bleibt auf selbstständigem Lernen, dauerhaft gespeicherten Arbeitsständen und gezielter Unterstützung.
+Der Fokus bleibt auf **selbstständigem Lernen**, dauerhaft gespeicherten Arbeitsständen und gezielter Unterstützung.
