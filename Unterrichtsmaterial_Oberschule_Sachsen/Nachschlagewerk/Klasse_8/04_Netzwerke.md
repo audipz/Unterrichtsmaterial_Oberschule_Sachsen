@@ -14,6 +14,8 @@ Typische Komponenten sind:
 - **Server**, die Dienste oder Daten bereitstellen,
 - **Access Points**, die WLAN-Verbindungen ermöglichen.
 
+![Einfaches Netzwerkmodell mit Endgeräten, Switch, Access Point, Router, Internet und Server](grafiken/netzwerkmodell.svg)
+
 ## Client und Server
 
 Ein **Client** fordert einen Dienst an. Ein **Server** stellt einen Dienst bereit. Beim Aufruf einer Webseite sendet der Browser als Client eine Anfrage an einen Webserver, der eine Antwort zurückliefert.
