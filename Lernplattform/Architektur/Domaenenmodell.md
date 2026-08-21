@@ -13,19 +13,17 @@ School
 ├── Course
 │   ├── CourseTeacher
 │   └── CourseStudent
-└── Lernbereich
+└── LearningUnit
     ├── MaterialRelease
     ├── WorkbookAssignment
-    └── AssessmentAssignment
+    └── ExerciseAssignment
 ```
 
-Individuelle Schülerdaten hängen an Zuweisungen und Versuchen, nicht direkt an den Markdown-Quelldateien.
+Individuelle Schülerdaten hängen an Zuweisungen und persönlichen Arbeitsständen, nicht direkt an den Markdown-Quelldateien.
 
 ## School
 
 Zentrale Mandanteneinheit.
-
-Wichtige Felder:
 
 ```text
 id
@@ -39,10 +37,6 @@ deleted_by
 ```
 
 ## User
-
-Ein Benutzer gehört mindestens einer Schule an. Für die erste Ausbaustufe wird eine primäre Schulzugehörigkeit vorgesehen.
-
-Wichtige Felder:
 
 ```text
 id
@@ -68,7 +62,7 @@ UNIQUE(school_id, username)
 
 ## UserRole
 
-Mehrfachrollen sind ausdrücklich erlaubt.
+Mehrfachrollen sind erlaubt.
 
 ```text
 user_id
@@ -76,7 +70,7 @@ school_id
 role
 ```
 
-Mögliche Rollen:
+Rollen:
 
 ```text
 STUDENT
@@ -104,7 +98,7 @@ deleted_by
 
 ## SchoolClassMembership
 
-Die Klassenzugehörigkeit wird historisiert und nicht direkt als `class_id` am Schüler gespeichert.
+Historisierte Klassenzugehörigkeit.
 
 ```text
 id
@@ -119,11 +113,9 @@ deleted_at
 deleted_by
 ```
 
-Dadurch kann ein Schüler die Klasse wechseln, ohne dass frühere Zuordnungen überschrieben werden.
-
 ## Course
 
-Ein konkreter Unterrichtskurs, zum Beispiel `Informatik 7a – 2026/27`.
+Konkreter Unterrichtskurs, zum Beispiel `Informatik 7a – 2026/27`.
 
 ```text
 id
@@ -146,8 +138,6 @@ teacher_id
 role
 ```
 
-Damit können mehrere Lehrer einen Kurs betreuen.
-
 ## CourseStudent
 
 ```text
@@ -157,8 +147,6 @@ status
 joined_at
 left_at
 ```
-
-Ein Kurs ist damit von der organisatorischen Klasse getrennt.
 
 ## Material
 
@@ -179,13 +167,6 @@ subject
 REFERENCE
 WORKBOOK
 EXERCISE_SET
-ASSESSMENT
-```
-
-`stable_key` bleibt über Materialversionen hinweg stabil, zum Beispiel:
-
-```text
-informatik-k7-binaersystem
 ```
 
 ## MaterialRelease
@@ -202,7 +183,7 @@ status
 content_manifest
 ```
 
-Dadurch kann eine Schülerzuweisung auf einer bekannten Materialfassung bleiben, auch wenn das Repository später weiterentwickelt wird.
+Eine laufende Schülerzuweisung bleibt dadurch auf einer bekannten Materialfassung, auch wenn das Repository weiterentwickelt wird.
 
 ## LearningUnit
 
@@ -217,11 +198,11 @@ sort_order
 parent_id
 ```
 
-Eine LearningUnit kann Nachschlagewerk, Arbeitsheft, Übungen und Lernkontrollen bündeln.
+Eine LearningUnit kann Nachschlagewerk, Arbeitsheft und Übungen bündeln.
 
 ## Exercise
 
-Einzelne Aufgabe.
+Einzelne Lern- oder Arbeitsaufgabe.
 
 ```text
 id
@@ -230,9 +211,8 @@ learning_unit_id
 type
 title
 prompt
-max_points
 difficulty
-auto_gradable
+self_checkable
 metadata
 ```
 
@@ -253,6 +233,8 @@ FILE_UPLOAD
 DRAWING
 ```
 
+`self_checkable` bedeutet ausschließlich, dass eine Übung eine unmittelbare Lernrückmeldung geben kann. Es handelt sich nicht um Benotung.
+
 ## WorkbookAssignment
 
 Zuweisung eines Arbeitshefts beziehungsweise Lernbereichs an einen Kurs oder Schüler.
@@ -262,7 +244,6 @@ id
 course_id
 material_release_id
 available_from
-due_at
 status
 created_by
 ```
@@ -291,11 +272,12 @@ student_workbook_id
 exercise_id
 answer_data
 status
+revision
 created_at
 updated_at
 ```
 
-`answer_data` kann als `jsonb` gespeichert werden, damit unterschiedliche Aufgabentypen ohne eine Vielzahl leerer Spalten unterstützt werden können.
+`answer_data` kann als `jsonb` gespeichert werden, damit unterschiedliche Aufgabentypen unterstützt werden können.
 
 ## AnswerRevision
 
@@ -310,72 +292,55 @@ created_at
 created_by
 ```
 
-Die aktuelle Antwort bleibt in `Answer`, historische Stände in `AnswerRevision`.
+## ExerciseAssignment
 
-## Assessment
-
-Definition einer Lernkontrolle.
+Optionale Zuweisung eines Übungssets an einen Kurs oder Schüler.
 
 ```text
 id
-material_release_id
-learning_unit_id
-title
-attempt_limit
-time_limit_seconds
-result_visibility
-solution_visibility
-```
-
-## AssessmentAssignment
-
-Freigabe einer Lernkontrolle für einen Kurs oder einzelne Schüler.
-
-```text
-id
-assessment_id
 course_id
+material_release_id
 available_from
-available_until
-attempt_limit_override
-time_limit_override
+status
 created_by
 ```
 
-## AssessmentAttempt
+## StudentExerciseProgress
 
-Ein konkreter Versuch eines Schülers.
+Persönlicher Lernstand innerhalb einer Übung.
 
 ```text
 id
 assignment_id
 student_id
-attempt_no
+exercise_id
 status
-started_at
-submitted_at
-expires_at
-score
-max_score
+attempt_count
+last_answer_data
+last_feedback
+last_activity_at
 ```
 
-## AssessmentAnswer
+Übungsversuche dienen ausschließlich dem Lernen. Sie bilden keine Prüfungsversuche oder Noten ab.
+
+## LearningProgress
+
+Zusammengefasster Bearbeitungs- und Lernfortschritt pro Schüler und Lernbereich.
 
 ```text
 id
-attempt_id
-exercise_id
-answer_data
-auto_score
-teacher_score
-feedback
+student_id
+learning_unit_id
+workbook_status
+exercise_status
+last_activity_at
 ```
 
-Automatische und manuelle Bewertung bleiben getrennt.
+Fortschritt ist eine Lernhilfe und keine automatische Leistungsbewertung.
 
 ## TeacherFeedback
 
-Feedback kann unabhängig von der eigentlichen Schülerantwort gespeichert werden.
+Feedback wird getrennt von der Schülerantwort gespeichert.
 
 ```text
 id
@@ -420,13 +385,9 @@ deleted_at
 deleted_by
 ```
 
-Nicht jede fachliche Schüleraktion benötigt ein vollständiges Administrations-Audit. Kritische Verwaltungsaktionen dagegen schon.
-
 ## Soft-Delete-Regeln
 
 ### Benutzer
-
-Soft Delete bedeutet:
 
 - Login sofort sperren,
 - normales Listing ausschließen,
@@ -435,16 +396,12 @@ Soft Delete bedeutet:
 
 ### Klasse
 
-Soft Delete einer Klasse:
-
 - Klasse aus normalen Ansichten entfernen,
 - Mitgliedschaften erhalten,
 - Schülerkonten nicht löschen,
 - Reaktivierung inklusive noch vorhandener Memberships ermöglichen.
 
 ### Schüler verlässt Schule
-
-Dies ist ein eigener fachlicher Vorgang:
 
 - aktive Klassenmitgliedschaften beenden,
 - aktive Kursmitgliedschaften beenden,
@@ -456,10 +413,8 @@ Dies ist ein eigener fachlicher Vorgang:
 
 Der Purge arbeitet regelmäßig und idempotent.
 
-Grundbedingung:
-
 ```text
 deleted_at + 3 Kalendermonate <= now
 ```
 
-Vor dem physischen Löschen wird geprüft, welche abhängigen Daten physisch gelöscht, anonymisiert oder aus fachlichen Gründen bereits zuvor entkoppelt werden müssen.
+Vor dem physischen Löschen wird geprüft, welche abhängigen personenbezogenen Daten physisch gelöscht oder entkoppelt werden müssen.
