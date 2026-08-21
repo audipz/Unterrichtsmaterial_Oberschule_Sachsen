@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="920" viewBox="0 0 1000 920" role="img" aria-labelledby="title desc">
+  <title id="title">Ablaufdiagramm zur Frostwarnung</title>
+  <desc id="desc">Flussdiagramm mit Start, Temperatureingabe, Entscheidung unter null Grad, den Ausgaben Frostwarnung oder kein Frost und Ende.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#2f5597"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="920" fill="#f8fbff"/>
+  <text x="500" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#17365d">Ablaufdiagramm: Frostwarnung</text>
+
+  <g stroke="#2f5597" stroke-width="3" font-family="Arial, sans-serif" font-size="24" fill="#ffffff">
+    <rect x="385" y="80" width="230" height="70" rx="35" fill="#d9eaf7"/>
+    <polygon points="350,210 650,210 610,300 310,300" fill="#e8f1fb"/>
+    <polygon points="500,360 690,470 500,580 310,470" fill="#fff1d6"/>
+    <polygon points="90,650 390,650 350,740 50,740" fill="#e7f4e8"/>
+    <polygon points="650,650 950,650 910,740 610,740" fill="#fff1d6"/>
+    <rect x="385" y="820" width="230" height="70" rx="35" fill="#d9eaf7"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#17365d" text-anchor="middle">
+    <text x="500" y="124" font-size="25" font-weight="700">Start</text>
+    <text x="480" y="265" font-size="24">Temperatur eingeben</text>
+    <text x="500" y="462" font-size="24" font-weight="700">Temperatur</text>
+    <text x="500" y="494" font-size="24" font-weight="700">&lt; 0 °C?</text>
+    <text x="220" y="705" font-size="23">„Frostwarnung“ ausgeben</text>
+    <text x="780" y="705" font-size="23">„kein Frost“ ausgeben</text>
+    <text x="500" y="864" font-size="25" font-weight="700">Ende</text>
+  </g>
+
+  <g stroke="#2f5597" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <line x1="500" y1="150" x2="500" y2="205"/>
+    <line x1="500" y1="300" x2="500" y2="352"/>
+    <path d="M310 470 H220 V642"/>
+    <path d="M690 470 H780 V642"/>
+    <path d="M220 740 V780 H500 V812"/>
+    <path d="M780 740 V780 H500"/>
+  </g>
+
+  <text x="270" y="448" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#2e7d32">JA</text>
+  <text x="730" y="448" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#b06a00">NEIN</text>
+</svg>

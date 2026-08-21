@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+  <rect width="1000" height="520" fill="#ffffff"/>
+  <text x="500" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#17365d">Rastergrafik und Vektorgrafik</text>
+  <rect x="40" y="75" width="440" height="390" rx="18" fill="#eef5fb" stroke="#4f81bd" stroke-width="3"/>
+  <rect x="520" y="75" width="440" height="390" rx="18" fill="#f4f8ef" stroke="#70ad47" stroke-width="3"/>
+  <text x="260" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#17365d">Rastergrafik</text>
+  <text x="740" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#385723">Vektorgrafik</text>
+  <g stroke="#9fbad0" stroke-width="1">
+    <path d="M110 145V345 M135 145V345 M160 145V345 M185 145V345 M210 145V345 M235 145V345 M260 145V345 M285 145V345 M310 145V345 M335 145V345 M360 145V345 M385 145V345 M410 145V345"/>
+    <path d="M110 145H410 M110 170H410 M110 195H410 M110 220H410 M110 245H410 M110 270H410 M110 295H410 M110 320H410 M110 345H410"/>
+  </g>
+  <g fill="#4f81bd">
+    <rect x="185" y="195" width="25" height="25"/><rect x="210" y="170" width="25" height="25"/><rect x="235" y="170" width="25" height="25"/><rect x="260" y="170" width="25" height="25"/><rect x="285" y="170" width="25" height="25"/><rect x="310" y="195" width="25" height="25"/>
+    <rect x="160" y="220" width="25" height="25"/><rect x="185" y="220" width="25" height="25"/><rect x="310" y="220" width="25" height="25"/><rect x="335" y="220" width="25" height="25"/>
+    <rect x="160" y="245" width="25" height="25"/><rect x="335" y="245" width="25" height="25"/><rect x="160" y="270" width="25" height="25"/><rect x="335" y="270" width="25" height="25"/>
+    <rect x="185" y="295" width="25" height="25"/><rect x="210" y="320" width="25" height="25"/><rect x="235" y="320" width="25" height="25"/><rect x="260" y="320" width="25" height="25"/><rect x="285" y="320" width="25" height="25"/><rect x="310" y="295" width="25" height="25"/>
+  </g>
+  <circle cx="740" cy="245" r="92" fill="#d9ead3" stroke="#70ad47" stroke-width="7"/>
+  <circle cx="705" cy="220" r="11" fill="#17365d"/><circle cx="775" cy="220" r="11" fill="#17365d"/>
+  <path d="M690 270 Q740 315 790 270" fill="none" stroke="#17365d" stroke-width="7" stroke-linecap="round"/>
+  <g fill="#c55a11"><circle cx="648" cy="245" r="7"/><circle cx="832" cy="245" r="7"/><circle cx="740" cy="153" r="7"/><circle cx="740" cy="337" r="7"/></g>
+  <text x="260" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">Bild besteht aus einzelnen Pixeln.</text>
+  <text x="260" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">Starke Vergrößerung macht das Raster sichtbar.</text>
+  <text x="740" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">Formen werden durch geometrische Daten beschrieben.</text>
+  <text x="740" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">Sie lassen sich ohne Pixelraster skalieren.</text>
+  <text x="500" y="497" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#555">Beide Darstellungen sind sinnvoll – entscheidend sind Bildinhalt und Verwendungszweck.</text>
+</svg>

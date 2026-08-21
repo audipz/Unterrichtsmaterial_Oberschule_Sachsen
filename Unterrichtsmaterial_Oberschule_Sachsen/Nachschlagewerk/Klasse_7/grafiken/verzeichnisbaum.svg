@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+<title id="title">Beispiel eines Verzeichnisbaums mit Ordnern und Dateien</title>
+<desc id="desc">Der Ordner Schule enthält die Ordner Informatik und Deutsch. Informatik enthält den Ordner Bilder und die Datei Notizen.txt. Bilder enthält eva.png. Deutsch enthält Aufsatz.odt.</desc>
+<defs>
+  <style>
+    .title{font:700 28px sans-serif;fill:#1557a0}.label{font:700 20px sans-serif;fill:#1557a0}.filelabel{font:19px sans-serif;fill:#222}.line{stroke:#333;stroke-width:3;fill:none}
+    .folder{fill:#ffd45c;stroke:#9a6a00;stroke-width:2}.file{fill:#fff;stroke:#555;stroke-width:2}.fold{fill:#eaf2fb;stroke:#555;stroke-width:2}
+    .legend{font:18px sans-serif;fill:#333}.legendbox{fill:#f4f8fd;stroke:#8bb5e5;stroke-width:1.5}
+  </style>
+</defs>
+<text x="500" y="42" text-anchor="middle" class="title">Beispiel eines Verzeichnisbaums mit Ordnern und Dateien</text>
+
+<!-- Wurzelordner Schule -->
+<path class="folder" d="M430 75h58l14 14h98v62H430z"/>
+<text x="515" y="115" text-anchor="middle" class="label">Schule/</text>
+
+<!-- Ebene 1 -->
+<path class="line" d="M515 151v34M260 185h510M260 185v34M770 185v34"/>
+
+<!-- Informatik -->
+<path class="folder" d="M175 220h68l14 14h108v62H175z"/>
+<text x="270" y="260" text-anchor="middle" class="label">Informatik/</text>
+
+<!-- Deutsch -->
+<path class="folder" d="M690 220h58l14 14h98v62H690z"/>
+<text x="775" y="260" text-anchor="middle" class="label">Deutsch/</text>
+
+<!-- Informatik Kinder -->
+<path class="line" d="M270 296v36M155 332h230M155 332v34M385 332v34"/>
+
+<!-- Bilder -->
+<path class="folder" d="M80 368h60l14 14h106v58H80z"/>
+<text x="170" y="406" text-anchor="middle" class="label">Bilder/</text>
+
+<!-- Notizen Datei -->
+<path class="file" d="M325 365h105l28 28v70H325z"/>
+<path class="fold" d="M430 365v28h28z"/>
+<text x="391" y="431" text-anchor="middle" class="filelabel">Notizen.txt</text>
+
+<!-- eva Datei unter Bilder -->
+<path class="line" d="M170 440v30"/>
+<path class="file" d="M110 468h100l24 24v20H110z"/>
+<path class="fold" d="M210 468v24h24z"/>
+<text x="172" y="503" text-anchor="middle" class="filelabel">eva.png</text>
+
+<!-- Aufsatz Datei unter Deutsch -->
+<path class="line" d="M775 296v70"/>
+<path class="file" d="M710 365h105l28 28v70H710z"/>
+<path class="fold" d="M815 365v28h28z"/>
+<text x="777" y="431" text-anchor="middle" class="filelabel">Aufsatz.odt</text>
+
+<!-- Legende -->
+<rect class="legendbox" x="675" y="470" width="270" height="38" rx="8"/>
+<path class="folder" d="M695 480h25l7 7h38v17h-70z"/>
+<text x="775" y="499" class="legend">Ordner</text>
+<path class="file" d="M850 478h22l8 8v18h-30z"/>
+<path class="fold" d="M872 478v8h8z"/>
+<text x="890" y="499" class="legend">Datei</text>
+</svg>

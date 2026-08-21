@@ -34,6 +34,7 @@ jobs:
             texlive-xetex \
             texlive-latex-recommended \
             fonts-dejavu-core \
+            librsvg2-bin \
             python3-docx \
             zip
 

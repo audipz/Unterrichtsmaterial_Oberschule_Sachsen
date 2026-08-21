@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+  <title id="title">OLAP-Cube mit den Dimensionen Zeit, Produkt und Region</title>
+  <desc id="desc">Ein dreidimensionaler Würfel zeigt die Dimensionen Zeit, Produkt und Region. In den Zellen liegen Kennzahlen wie Umsatz oder Anzahl Verkäufe. Daneben werden Slice, Dice, Drill-down und Roll-up erklärt.</desc>
+  <defs><style>.t{font-family:Arial,sans-serif;fill:#17324d}.h{font-size:28px;font-weight:700}.s{font-size:18px}.cube{stroke:#2f5597;stroke-width:3}.grid{stroke:#7da4c8;stroke-width:1.5}.lab{font-size:21px;font-weight:700}</style></defs>
+  <rect width="1000" height="620" fill="#f8fbff"/>
+  <text x="500" y="42" text-anchor="middle" class="t h">OLAP-Cube: Daten aus mehreren Blickrichtungen betrachten</text>
+  <g transform="translate(120 150)">
+    <polygon points="80,80 360,80 470,10 190,10" fill="#dbeafe" class="cube"/>
+    <polygon points="360,80 470,10 470,290 360,360" fill="#e7f4e8" class="cube"/>
+    <rect x="80" y="80" width="280" height="280" fill="#fff1d6" class="cube"/>
+    <g class="grid">
+      <line x1="173" y1="80" x2="173" y2="360"/><line x1="266" y1="80" x2="266" y2="360"/>
+      <line x1="80" y1="173" x2="360" y2="173"/><line x1="80" y1="266" x2="360" y2="266"/>
+      <line x1="173" y1="80" x2="283" y2="10"/><line x1="266" y1="80" x2="376" y2="10"/>
+      <line x1="120" y1="53" x2="400" y2="53"/>
+      <line x1="360" y1="173" x2="470" y2="103"/><line x1="360" y1="266" x2="470" y2="196"/>
+      <line x1="397" y1="57" x2="397" y2="337"/><line x1="433" y1="33" x2="433" y2="313"/>
+    </g>
+    <rect x="173" y="173" width="93" height="93" fill="#ffd36a" opacity="0.85" stroke="#b06a00" stroke-width="2"/>
+    <text x="220" y="218" text-anchor="middle" class="t" font-size="16" font-weight="700">Kennzahl</text><text x="220" y="242" text-anchor="middle" class="t" font-size="15">z. B. Umsatz</text>
+    <text x="220" y="400" text-anchor="middle" class="t lab">Zeit</text>
+    <text x="515" y="180" class="t lab">Region</text>
+    <text x="240" y="-20" text-anchor="middle" class="t lab">Produkt</text>
+  </g>
+  <g transform="translate(650 115)">
+    <text x="0" y="0" class="t" font-size="23" font-weight="700">Typische Operationen</text>
+    <text x="0" y="52" class="t s"><tspan font-weight="700">Slice:</tspan> eine Scheibe auswählen,</text><text x="0" y="78" class="t s">z. B. nur das Jahr 2026.</text>
+    <text x="0" y="126" class="t s"><tspan font-weight="700">Dice:</tspan> einen Teilwürfel auswählen,</text><text x="0" y="152" class="t s">z. B. 2 Regionen und 3 Produkte.</text>
+    <text x="0" y="200" class="t s"><tspan font-weight="700">Drill-down:</tspan> genauer werden,</text><text x="0" y="226" class="t s">z. B. Jahr → Quartal → Monat.</text>
+    <text x="0" y="274" class="t s"><tspan font-weight="700">Roll-up:</tspan> zusammenfassen,</text><text x="0" y="300" class="t s">z. B. Monate → Jahr.</text>
+    <text x="0" y="348" class="t s"><tspan font-weight="700">Pivot:</tspan> Blickrichtung wechseln,</text><text x="0" y="374" class="t s">z. B. Region statt Produkt vergleichen.</text>
+  </g>
+  <text x="500" y="585" text-anchor="middle" class="t s">Ein „Cube“ muss nicht wirklich dreidimensional gespeichert sein – er ist vor allem ein Denkmodell für mehrdimensionale Auswertungen.</text>
+</svg>
