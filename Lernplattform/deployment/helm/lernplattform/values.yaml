@@ -1,0 +1,47 @@
+backend:
+  image:
+    repository: lernplattform-backend
+    tag: dev
+    pullPolicy: IfNotPresent
+  replicaCount: 1
+  service:
+    port: 8080
+
+frontend:
+  image:
+    repository: lernplattform-frontend
+    tag: dev
+    pullPolicy: IfNotPresent
+  replicaCount: 1
+  service:
+    port: 80
+
+ingress:
+  enabled: true
+  className: traefik
+  host: lernplattform.local
+  tls:
+    enabled: false
+    secretName: ""
+
+database:
+  existingSecret: lernplattform-database
+  hostKey: host
+  portKey: port
+  databaseKey: database
+  usernameKey: username
+  passwordKey: password
+
+backup:
+  enabled: true
+  schedule: "0 2 * * *"
+  existingSecret: lernplattform-backup
+  retention:
+    daily: 7
+    weekly: 4
+    monthly: 12
+
+storage:
+  existingSecret: lernplattform-storage
+
+resources: {}
