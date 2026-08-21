@@ -6,6 +6,8 @@ Schall entsteht durch Schwingungen. Ein Mikrofon wandelt Schall zunächst in ein
 
 Dazu wird das Signal in sehr kurzen Zeitabständen gemessen. Jeder Messung wird ein Zahlenwert zugeordnet.
 
+![Abtastung eines analogen Audiosignals in regelmäßigen Zeitabständen](grafiken/audio_digitalisierung.svg)
+
 ```text
 Schall → Mikrofon → Messwerte → digitale Audiodaten
 ```
