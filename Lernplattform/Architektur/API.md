@@ -23,17 +23,6 @@ Basis:
 GET /api/v1/me
 ```
 
-liefert unter anderem:
-
-```json
-{
-  "id": "...",
-  "schoolId": "...",
-  "username": "max.mustermann",
-  "roles": ["STUDENT"]
-}
-```
-
 ## Schulen – SYSTEM_ADMIN
 
 ```text
@@ -49,10 +38,10 @@ Das normale Löschen ist Soft Delete.
 ## Benutzerverwaltung – SCHOOL_ADMIN
 
 ```text
-GET  /api/v1/admin/users
-POST /api/v1/admin/users/students
-POST /api/v1/admin/users/teachers
-GET  /api/v1/admin/users/{userId}
+GET   /api/v1/admin/users
+POST  /api/v1/admin/users/students
+POST  /api/v1/admin/users/teachers
+GET   /api/v1/admin/users/{userId}
 PATCH /api/v1/admin/users/{userId}
 ```
 
@@ -63,22 +52,16 @@ PUT    /api/v1/admin/users/{userId}/roles/{role}
 DELETE /api/v1/admin/users/{userId}/roles/{role}
 ```
 
-Nur zulässige Rollen der eigenen Schule dürfen geändert werden. `SYSTEM_ADMIN` ist hiervon ausgenommen und wird nicht durch Schul-Admins vergeben.
+`SYSTEM_ADMIN` kann nicht durch einen Schul-Admin vergeben werden.
 
-## Schüler löschen und reaktivieren
-
-```text
-DELETE /api/v1/admin/students/{studentId}
-POST   /api/v1/admin/students/{studentId}/restore
-```
-
-Optional fachlich deutlicher:
+## Schüler verlässt Schule / Reaktivierung
 
 ```text
 POST /api/v1/admin/students/{studentId}/leave-school
+POST /api/v1/admin/students/{studentId}/restore
 ```
 
-Diese Aktion beendet aktive Mitgliedschaften und startet den Soft-Delete-Lebenszyklus.
+`leave-school` beendet aktive Mitgliedschaften, sperrt den Login und startet den Soft-Delete-Lebenszyklus.
 
 ## Papierkorb
 
@@ -103,8 +86,6 @@ conflict
 
 ## Klassen
 
-Lesen und fachliche Zuordnung können Lehrer erhalten, kritisches Löschen/Reaktivieren nur Schul-Admins.
-
 ```text
 GET    /api/v1/classes
 POST   /api/v1/classes
@@ -122,22 +103,10 @@ POST   /api/v1/classes/{classId}/students/{studentId}
 DELETE /api/v1/classes/{classId}/students/{studentId}
 ```
 
-Das Entfernen aus der Klasse löscht nicht den Benutzer.
-
-Klassenwechsel kann als atomarer fachlicher Endpoint angeboten werden:
+Klassenwechsel:
 
 ```text
 POST /api/v1/students/{studentId}/move-class
-```
-
-Request:
-
-```json
-{
-  "fromClassId": "...",
-  "toClassId": "...",
-  "effectiveDate": "2026-08-21"
-}
 ```
 
 ## Kurse
@@ -150,16 +119,11 @@ PATCH  /api/v1/courses/{courseId}
 POST   /api/v1/courses/{courseId}/archive
 ```
 
-Lehrerzuordnung:
+Lehrer und Schüler:
 
 ```text
 POST   /api/v1/courses/{courseId}/teachers/{teacherId}
 DELETE /api/v1/courses/{courseId}/teachers/{teacherId}
-```
-
-Schülerzuordnung:
-
-```text
 POST   /api/v1/courses/{courseId}/students/{studentId}
 DELETE /api/v1/courses/{courseId}/students/{studentId}
 ```
@@ -173,12 +137,12 @@ GET /api/v1/materials/{materialId}/releases
 GET /api/v1/material-releases/{releaseId}
 ```
 
-Materialien können nach Typ gefiltert werden:
+Filter:
 
 ```text
 GET /api/v1/materials?kind=REFERENCE
 GET /api/v1/materials?kind=WORKBOOK
-GET /api/v1/materials?kind=ASSESSMENT
+GET /api/v1/materials?kind=EXERCISE_SET
 ```
 
 ## Lernbereiche
@@ -188,16 +152,15 @@ GET /api/v1/learning-units
 GET /api/v1/learning-units/{unitId}
 ```
 
-Eine Lernbereichsantwort kann die zusammengehörigen Ressourcen verknüpfen:
+Beispiel:
 
 ```json
 {
   "id": "...",
   "title": "Binärsystem",
-  "referenceMaterial": {...},
-  "workbookMaterial": {...},
-  "exerciseSet": {...},
-  "assessment": {...}
+  "referenceMaterial": {},
+  "workbookMaterial": {},
+  "exerciseSet": {}
 }
 ```
 
@@ -208,57 +171,15 @@ POST /api/v1/courses/{courseId}/workbook-assignments
 GET  /api/v1/courses/{courseId}/workbook-assignments
 ```
 
-Beispielrequest:
-
-```json
-{
-  "materialReleaseId": "...",
-  "availableFrom": "2026-09-01T06:00:00Z",
-  "dueAt": null
-}
-```
-
 ## Arbeitsheft – Schüler
 
 ```text
 GET /api/v1/my/workbooks
 GET /api/v1/my/workbooks/{workbookId}
-```
-
-Antwort speichern:
-
-```text
 PUT /api/v1/my/workbooks/{workbookId}/answers/{exerciseId}
 ```
 
-Beispiel:
-
-```json
-{
-  "answerData": {
-    "text": "Daten erhalten durch ihren Kontext eine Bedeutung."
-  },
-  "clientRevision": 7
-}
-```
-
-Der Server liefert eine neue Versionsnummer zurück. Dadurch können gleichzeitige beziehungsweise veraltete Änderungen erkannt werden.
-
-## Autosave und Konflikte
-
-Für Antworten wird optimistische Versionierung vorgesehen.
-
-Beispielantwort:
-
-```json
-{
-  "answerId": "...",
-  "revision": 8,
-  "savedAt": "2026-08-21T21:10:13Z"
-}
-```
-
-Sendet ein Client eine veraltete Revision, kann der Server `409 Conflict` liefern, statt stillschweigend neuere Daten zu überschreiben.
+Autosave verwendet optimistische Versionierung. Eine veraltete `clientRevision` führt zu `409 Conflict`, statt neuere Daten still zu überschreiben.
 
 ## Antwortrevisionen
 
@@ -267,64 +188,67 @@ GET  /api/v1/my/workbooks/{workbookId}/answers/{exerciseId}/revisions
 POST /api/v1/my/workbooks/{workbookId}/answers/{exerciseId}/restore/{revisionId}
 ```
 
-Eine spätere Version kann Restore möglicherweise auf Lehrer/Admin begrenzen; das fachliche Verhalten wird noch festgelegt.
+## Übungen zuweisen – Lehrer
 
-## Lehreransicht auf Arbeitsstände
+```text
+POST /api/v1/courses/{courseId}/exercise-assignments
+GET  /api/v1/courses/{courseId}/exercise-assignments
+```
+
+Übungen haben keinen Prüfungsmodus, kein Zeitlimit und keine benotete Abgabe.
+
+## Übungen – Schüler
+
+```text
+GET /api/v1/my/exercises
+GET /api/v1/my/exercises/{assignmentId}
+PUT /api/v1/my/exercises/{assignmentId}/answers/{exerciseId}
+POST /api/v1/my/exercises/{assignmentId}/answers/{exerciseId}/check
+```
+
+`check` liefert ausschließlich eine Lernrückmeldung für dafür geeignete Aufgaben. Es erzeugt keine Note oder formale Bewertung.
+
+Mögliche Antwort:
+
+```json
+{
+  "correct": false,
+  "feedback": "Prüfe noch einmal den Stellenwert der zweiten Ziffer.",
+  "reference": {
+    "learningUnit": "k7-binaersystem",
+    "anchor": "binaerzahlen-in-dezimalzahlen-umwandeln"
+  }
+}
+```
+
+## Lernfortschritt
+
+Schüler:
+
+```text
+GET /api/v1/my/progress
+GET /api/v1/my/progress/{learningUnitId}
+```
+
+Lehrer:
 
 ```text
 GET /api/v1/courses/{courseId}/progress
+GET /api/v1/courses/{courseId}/students/{studentId}/progress
 GET /api/v1/courses/{courseId}/students/{studentId}/workbooks
-GET /api/v1/courses/{courseId}/students/{studentId}/workbooks/{workbookId}
 ```
+
+Fortschritt beschreibt Bearbeitung und Lernaktivität, nicht eine Zeugnis- oder Prüfungsleistung.
 
 ## Feedback
 
 ```text
-POST  /api/v1/teacher-feedback
-PATCH /api/v1/teacher-feedback/{feedbackId}
+POST   /api/v1/teacher-feedback
+PATCH  /api/v1/teacher-feedback/{feedbackId}
 DELETE /api/v1/teacher-feedback/{feedbackId}
 ```
 
 Feedback ist getrennt von der Schülerantwort.
-
-## Lernkontrollen – Lehrer
-
-```text
-POST /api/v1/courses/{courseId}/assessment-assignments
-GET  /api/v1/courses/{courseId}/assessment-assignments
-```
-
-Konfiguration beispielsweise:
-
-```json
-{
-  "assessmentId": "...",
-  "availableFrom": "2026-10-12T06:00:00Z",
-  "availableUntil": "2026-10-19T16:00:00Z",
-  "attemptLimit": 1,
-  "timeLimitSeconds": 1200,
-  "showResult": "AFTER_TEACHER_RELEASE",
-  "showSolutions": "AFTER_TEACHER_RELEASE"
-}
-```
-
-## Lernkontrollen – Schüler
-
-```text
-GET  /api/v1/my/assessments
-POST /api/v1/my/assessments/{assignmentId}/attempts
-GET  /api/v1/my/assessment-attempts/{attemptId}
-PUT  /api/v1/my/assessment-attempts/{attemptId}/answers/{exerciseId}
-POST /api/v1/my/assessment-attempts/{attemptId}/submit
-```
-
-`submit` muss serverseitig prüfen:
-
-- Versuch gehört zum angemeldeten Schüler,
-- Versuch ist noch offen,
-- Freigabezeitraum ist gültig,
-- Zeitlimit ist nicht abgelaufen,
-- Versuchslimit wurde eingehalten.
 
 ## Dateien
 
@@ -334,21 +258,22 @@ GET    /api/v1/files/{fileId}
 DELETE /api/v1/files/{fileId}
 ```
 
-Upload-Berechtigung und Download-Berechtigung werden anhand von Schule, Besitzer und fachlichem Bezug geprüft.
+Upload- und Download-Berechtigungen werden anhand von Schule, Besitzer und fachlichem Bezug geprüft.
 
 ## Fehlerformat
 
-Ein konsistentes Fehlerformat wird vorgesehen, beispielsweise orientiert an Problem Details:
+Ein konsistentes Fehlerformat wird vorgesehen, beispielsweise orientiert an Problem Details.
 
-```json
-{
-  "type": "https://.../problems/username-conflict",
-  "title": "Benutzername bereits vergeben",
-  "status": 409,
-  "detail": "Der Benutzername ist innerhalb der Schule bereits vergeben.",
-  "instance": "/api/v1/admin/users/students"
-}
-```
+## Nicht Bestandteil der API
+
+Ausdrücklich nicht vorgesehen sind Endpunkte für:
+
+- Lernkontrollen,
+- Prüfungsversuche,
+- Zeitlimits für Prüfungen,
+- Punkte/Noten,
+- benotete Abgaben,
+- Prüfungsaufsicht.
 
 ## Noch offene API-Entscheidungen
 
