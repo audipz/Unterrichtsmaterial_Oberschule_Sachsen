@@ -10,19 +10,11 @@ Dateien besitzen einen Namen. Häufig endet der Name mit einer **Dateiendung** w
 
 ## Ordner schaffen Struktur
 
-**Ordner** beziehungsweise **Verzeichnisse** helfen, Dateien und weitere Ordner zu strukturieren. Dadurch entsteht eine Baumstruktur.
+**Ordner** beziehungsweise **Verzeichnisse** helfen, Dateien und weitere Ordner zu strukturieren. Dadurch entsteht eine Baumstruktur. Ein übergeordneter Ordner kann mehrere Unterordner und Dateien enthalten. Dateien stehen am Ende eines solchen Pfades.
 
 ![Beispiel eines Verzeichnisbaums mit Ordnern und Dateien](grafiken/verzeichnisbaum.svg)
 
-```text
-Schule/
-├── Informatik/
-│   ├── Bilder/
-│   │   └── eva.png
-│   └── Notizen.txt
-└── Deutsch/
-    └── Aufsatz.odt
-```
+Im Beispiel ist `Schule` der oberste Ordner. Darin liegen die Ordner `Informatik` und `Deutsch`. Im Ordner `Informatik` befinden sich wiederum der Unterordner `Bilder` und die Datei `Notizen.txt`. Die Datei `eva.png` liegt im Unterordner `Bilder`.
 
 ## Pfade
 
