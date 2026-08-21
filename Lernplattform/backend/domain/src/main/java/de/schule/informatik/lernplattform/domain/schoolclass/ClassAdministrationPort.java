@@ -14,6 +14,8 @@ public interface ClassAdministrationPort {
 
     void addStudent(UUID schoolId, UUID classId, UUID studentId, LocalDate validFrom, UUID actorId);
 
+    void removeStudent(UUID schoolId, UUID classId, UUID studentId, LocalDate effectiveDate, UUID actorId);
+
     void moveStudent(UUID schoolId,
                      UUID studentId,
                      UUID sourceClassId,
@@ -22,6 +24,12 @@ public interface ClassAdministrationPort {
                      UUID actorId);
 
     void addTeacher(UUID schoolId, UUID classId, UUID teacherId, UUID actorId);
+
+    void removeTeacher(UUID schoolId, UUID classId, UUID teacherId, UUID actorId);
+
+    void softDeleteClass(UUID schoolId, UUID classId, UUID actorId);
+
+    void reactivateClass(UUID schoolId, UUID classId, UUID actorId);
 
     Set<UUID> activeClassIdsForUser(UUID userId);
 
