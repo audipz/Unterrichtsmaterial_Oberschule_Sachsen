@@ -2,15 +2,13 @@
 
 ## Grundidee
 
-Die Plattform verbindet drei bisher beziehungsweise künftig vorhandene Lernformen:
+Die Plattform verbindet drei Lernformen:
 
 1. **Nachschlagewerk** – Wissen verstehen und nachschlagen
 2. **Arbeitsheft** – Wissen anwenden und eigene Ergebnisse festhalten
-3. **Lernkontrolle** – Lernstand nach einem Themenbereich überprüfen
+3. **Übungen** – Inhalte selbstständig trainieren und Rückmeldungen erhalten
 
-Ergänzend können interaktive **Übungen** angeboten werden.
-
-Ein typischer Lernweg kann damit so aussehen:
+Ein typischer Lernweg kann so aussehen:
 
 ```text
 Themenbereich
@@ -21,12 +19,10 @@ Arbeitsheft
     ↓
 Üben
     ↓
-Lernkontrolle
-    ↓
-Feedback / weiterer Lernbedarf
+Rückmeldung und gezieltes Nacharbeiten
 ```
 
-Die Reihenfolge kann durch die Lehrkraft gesteuert werden. Eine Lernkontrolle muss nicht zwingend automatisch gesperrt bleiben, bis alle vorherigen Schritte abgeschlossen sind.
+Die Plattform ist eine **reine Lernplattform**. Lernkontrollen, Prüfungen, Benotung und formale Leistungsbewertung gehören nicht zum Funktionsumfang.
 
 ## Schulen
 
@@ -40,8 +36,6 @@ Lehrer gehören einer Schule an und können Schüler fachlich betreuen.
 
 Einzelne Lehrer können zusätzlich als `SCHOOL_ADMIN` eingetragen werden. Nur Schul-Administratoren dürfen kritische organisatorische Aktionen wie das Löschen und Reaktivieren von Konten oder Klassen durchführen.
 
-Ein normaler Lehrer soll keine Schülerkonten endgültig aus der Schulorganisation entfernen können.
-
 ## Schüler anlegen
 
 Schülerkonten werden innerhalb einer Schule angelegt. Vorgesehen sind mindestens:
@@ -50,99 +44,54 @@ Schülerkonten werden innerhalb einer Schule angelegt. Vorgesehen sind mindesten
 - Schule,
 - Passwort beziehungsweise initiales Startpasswort.
 
-Zusätzliche schulorganisatorische Angaben können ergänzt werden, soweit sie für den Betrieb tatsächlich benötigt werden.
-
 Für größere Klassen soll eine Massenanlage, beispielsweise über CSV, vorgesehen werden.
 
 Ein initial erzeugtes Passwort soll bei der ersten Anmeldung geändert werden können beziehungsweise müssen.
 
 ## Klassen
 
-Eine Klasse ist eine organisatorische Gruppierung von Schülern, beispielsweise:
+Eine Klasse ist eine organisatorische Gruppierung von Schülern, beispielsweise `7a`, `7b` oder `8a`.
 
-```text
-7a
-7b
-8a
-```
-
-Schülerkonten und Klassen werden getrennt betrachtet.
-
-Das Löschen einer Klasse löscht daher **nicht** automatisch die darin enthaltenen Schülerkonten.
+Schülerkonten und Klassen werden getrennt betrachtet. Das Löschen einer Klasse löscht daher nicht automatisch die darin enthaltenen Schülerkonten.
 
 Ein Schüler kann aus einer Klasse entfernt und einer anderen Klasse zugeordnet werden, ohne dass sein Konto oder seine Lernstände verloren gehen.
 
 ## Kurse
 
-Ein Kurs beschreibt den konkreten Unterricht in einem Zeitraum beziehungsweise Schuljahr, beispielsweise:
+Ein Kurs beschreibt den konkreten Unterricht in einem Zeitraum beziehungsweise Schuljahr, beispielsweise `Informatik 7a – Schuljahr 2026/27`.
 
-```text
-Informatik 7a – Schuljahr 2026/27
-```
-
-Dadurch können organisatorische Klasse und tatsächlicher Unterricht voneinander getrennt werden. Das ermöglicht später auch klassenübergreifende Kurse oder mehrere unterrichtende Lehrer.
+Dadurch können organisatorische Klasse und tatsächlicher Unterricht voneinander getrennt werden.
 
 ## Schüler verlässt die Schule
 
-Für diesen Fall gibt es eine eigene administrative Aktion.
-
-Sie bewirkt insbesondere:
+Diese administrative Aktion bewirkt insbesondere:
 
 - Anmeldung sofort sperren,
 - aktive organisatorische Mitgliedschaften beenden,
 - Schülerkonto soft-löschen,
 - dreimonatige Wiederherstellungsfrist starten.
 
-Während der Frist kann ein `SCHOOL_ADMIN` das Konto reaktivieren.
-
-Nach Ablauf der drei Monate werden die personenbezogenen Daten kontrolliert endgültig bereinigt.
+Während der Frist kann ein `SCHOOL_ADMIN` das Konto reaktivieren. Nach Ablauf der drei Kalendermonate werden personenbezogene Daten kontrolliert endgültig bereinigt.
 
 ## Klasse löschen
 
 Nur ein `SCHOOL_ADMIN` darf eine Klasse löschen.
 
-Die Klasse wird zunächst soft-gelöscht und kann innerhalb von drei Monaten reaktiviert werden.
-
-Die Schülerkonten bleiben grundsätzlich bestehen.
-
-Vor einer Löschung muss die Oberfläche die Auswirkungen verständlich anzeigen.
+Die Klasse wird zunächst soft-gelöscht und kann innerhalb von drei Monaten reaktiviert werden. Die Schülerkonten bleiben grundsätzlich bestehen.
 
 ## Papierkorb / gelöschte Elemente
 
-Schul-Administratoren erhalten eine Ansicht für soft-gelöschte Elemente, beispielsweise:
+Schul-Administratoren erhalten eine Ansicht für soft-gelöschte Schüler, Lehrer, Klassen und gegebenenfalls Kurse.
 
-- Schüler,
-- Lehrer,
-- Klassen,
-- gegebenenfalls Kurse.
-
-Angezeigt werden mindestens:
-
-- Objekt,
-- Löschdatum,
-- löschender Administrator,
-- geplantes endgültiges Löschdatum.
-
-Innerhalb der Frist kann ein berechtigtes Objekt reaktiviert werden.
-
-Bei Konflikten, beispielsweise einem inzwischen erneut vergebenen Benutzernamen, darf eine Reaktivierung nicht stillschweigend fehlschlagen oder Daten überschreiben.
+Angezeigt werden mindestens Objekt, Löschdatum, löschender Administrator und geplantes endgültiges Löschdatum.
 
 ## Nachschlagewerk
 
-Das Nachschlagewerk ist der Wissensbereich der Plattform.
-
-Es soll:
-
-- ausführliche Erklärungen enthalten,
-- Beispiele und Grafiken darstellen,
-- Begriffe nachschlagbar machen,
-- Querverweise zwischen Themen ermöglichen.
-
-Der Inhalt ist für Schüler grundsätzlich nicht direkt veränderbar.
+Das Nachschlagewerk ist der Wissensbereich der Plattform. Es enthält ausführliche Erklärungen, Beispiele, Grafiken, Nachschlagebegriffe und Querverweise. Der Inhalt ist für Schüler grundsätzlich nicht direkt veränderbar.
 
 ## Arbeitsheft
 
-Das Arbeitsheft wird interaktiv bearbeitet.
+Das Arbeitsheft ist der persönliche Bearbeitungsbereich des Schülers.
 
 Schüler sollen:
 
@@ -152,11 +101,11 @@ Schüler sollen:
 - später am gespeicherten Stand weiterarbeiten,
 - gegebenenfalls Dateien oder Bilder ergänzen können.
 
-Die Antworten gehören zum Schüler beziehungsweise zu seiner Arbeitsheftinstanz und nicht zur Markdown-Quelldatei.
+Die Antworten gehören zur individuellen Schülerinstanz und nicht zur Markdown-Quelldatei.
 
 ## Aufgabentypen
 
-Die Plattform soll unterschiedliche Aufgabentypen unterstützen. Geplant sind unter anderem:
+Geplant sind unter anderem:
 
 - Kurzantwort,
 - mehrzeiliger Freitext,
@@ -175,74 +124,22 @@ Nicht jeder Aufgabentyp muss in der ersten Version umgesetzt werden.
 
 ## Übungen
 
-Übungen dienen dem Lernen und dürfen sich von Lernkontrollen unterscheiden.
+Übungen dienen ausschließlich dem Lernen und der Selbstkontrolle.
 
-Bei Übungen können beispielsweise möglich sein:
+Möglich sind beispielsweise:
 
-- mehrere Versuche,
-- Hinweise,
+- beliebig viele Versuche,
 - unmittelbare Rückmeldung,
+- fachliche Hinweise,
 - erneutes Bearbeiten nach einem Fehler,
-- Verweis auf den passenden Abschnitt des Nachschlagewerks.
+- Verweis auf den passenden Abschnitt des Nachschlagewerks,
+- optionales Anzeigen einer Lösung nach mehreren Versuchen.
 
-## Lernkontrollen
-
-Nach einem fachlichen Bereich kann eine Lernkontrolle angeboten werden.
-
-Beispiel:
-
-```text
-Binärsystem
-├── Nachschlagewerk
-├── Arbeitsheft
-├── Üben
-└── Lernkontrolle
-```
-
-Eine Lernkontrolle kann durch die Lehrkraft konfiguriert werden, beispielsweise mit:
-
-- Freigabezeitpunkt,
-- Endzeitpunkt,
-- erlaubter Anzahl von Versuchen,
-- optionalem Zeitlimit,
-- Entscheidung, wann Ergebnisse sichtbar werden,
-- Entscheidung, wann Lösungen sichtbar werden.
-
-## Automatische und manuelle Auswertung
-
-Geeignete strukturierte Aufgaben können automatisch ausgewertet werden, beispielsweise:
-
-- Auswahlfragen,
-- Zahlenwerte,
-- eindeutige Kurzantworten,
-- Zuordnungen.
-
-Freitext, komplexe Erklärungen, Zeichnungen oder größere Programmierlösungen können eine Bewertung beziehungsweise Rückmeldung durch die Lehrkraft erfordern.
-
-Automatische Bewertung und fachliches Lehrerfeedback sind daher getrennte Konzepte.
-
-## Aufgabenpool
-
-Langfristig soll eine Lernkontrolle Aufgaben aus einem Aufgabenpool beziehen können.
-
-Aufgaben können Metadaten besitzen, beispielsweise:
-
-- Themenbereich,
-- Kompetenz/Lernziel,
-- Klassenstufe,
-- Schwierigkeit,
-- Aufgabentyp,
-- erreichbare Punkte.
-
-Damit können später unterschiedliche, aber fachlich vergleichbare Varianten einer Lernkontrolle erzeugt werden.
-
-Für die erste Version ist dafür kein RDF/SHACL-System erforderlich. Die Informationen können relational beziehungsweise in strukturierten Materialmetadaten modelliert werden.
+Aus Übungsdaten entstehen keine Noten und keine formalen Prüfungsleistungen.
 
 ## Lernfortschritt
 
-Die Plattform soll nicht nur eine Gesamtpunktzahl anzeigen.
-
-Sinnvoll sind fachliche Bereiche, beispielsweise:
+Die Plattform kann Fortschritt nach fachlichen Bereichen darstellen, beispielsweise:
 
 ```text
 Binärsystem
@@ -252,7 +149,7 @@ Binärsystem
 - Binäraddition
 ```
 
-Dadurch kann später sichtbar werden, in welchen Teilbereichen ein Schüler sicher ist und wo noch Lernbedarf besteht.
+Dabei muss zwischen **Bearbeitungsfortschritt** und fachlicher Rückmeldung unterschieden werden. Eine ausgefüllte Freitextaufgabe ist beispielsweise bearbeitet, aber nicht automatisch fachlich richtig.
 
 ## Lehreransicht
 
@@ -261,18 +158,17 @@ Lehrer sollen für ihre betreuten Klassen beziehungsweise Kurse beispielsweise s
 - Bearbeitungsfortschritt,
 - offene Bereiche,
 - abgeschlossene Arbeitsheftteile,
-- Lernkontrollstatus,
-- Ergebnisse,
-- Antworten, soweit dies für die Aufgabe vorgesehen ist,
+- Übungsaktivität und erkennbare Lernschwierigkeiten,
+- Antworten, soweit dies fachlich vorgesehen ist,
 - eigenes Lehrerfeedback.
 
-Die Plattform soll dabei nicht unnötig jede einzelne Schüleraktion überwachen, sondern lern- und unterrichtsrelevante Informationen darstellen.
+Die Plattform soll nicht unnötig jede einzelne Schüleraktion überwachen, sondern lern- und unterrichtsrelevante Informationen darstellen.
 
 ## Materialversionen
 
 Fachliche Materialien können sich weiterentwickeln. Schülerantworten dürfen dadurch nicht unkontrolliert verändert oder unbrauchbar werden.
 
-Eine Zuweisung muss deshalb nachvollziehbar auf eine Materialversion beziehungsweise veröffentlichte Fassung Bezug nehmen können.
+Eine Zuweisung muss deshalb nachvollziehbar auf eine veröffentlichte Materialfassung Bezug nehmen können.
 
 ## Datenschutzprinzipien
 
