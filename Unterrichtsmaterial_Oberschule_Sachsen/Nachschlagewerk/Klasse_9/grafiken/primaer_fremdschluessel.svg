@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">Primärschlüssel und Fremdschlüssel in einer Bibliotheksdatenbank</title>
+  <desc id="desc">Die Tabellen Schüler, Ausleihe und Buch zeigen Primärschlüssel und Fremdschlüssel. Pfeile verbinden die Fremdschlüssel der Tabelle Ausleihe mit den Primärschlüsseln der Tabellen Schüler und Buch.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563a6"/>
+    </marker>
+    <style>
+      .box{fill:#fff;stroke:#315b7d;stroke-width:2}.head{fill:#dbeafe}.pk{fill:#dff3e4}.fk{fill:#fff1c9}.txt{font-family:Arial,sans-serif;fill:#172b3a;font-size:19px}.small{font-family:Arial,sans-serif;fill:#334155;font-size:16px}.title{font-family:Arial,sans-serif;fill:#17324d;font-size:24px;font-weight:bold}.bold{font-weight:bold}.line{stroke:#2563a6;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1000" height="520" fill="#f8fbfe"/>
+  <text x="500" y="38" text-anchor="middle" class="title">Primärschlüssel und Fremdschlüssel</text>
+
+  <g transform="translate(40 85)">
+    <rect class="box" width="250" height="210" rx="8"/>
+    <rect class="head" width="250" height="48" rx="8"/>
+    <text x="125" y="31" text-anchor="middle" class="txt bold">Schueler</text>
+    <rect class="pk" x="2" y="50" width="246" height="50"/>
+    <text x="16" y="81" class="txt bold">SchuelerID</text><text x="176" y="81" class="small">PK</text>
+    <text x="16" y="132" class="txt">Name</text>
+    <text x="16" y="181" class="txt">Klasse</text>
+  </g>
+
+  <g transform="translate(375 85)">
+    <rect class="box" width="250" height="260" rx="8"/>
+    <rect class="head" width="250" height="48" rx="8"/>
+    <text x="125" y="31" text-anchor="middle" class="txt bold">Ausleihe</text>
+    <rect class="pk" x="2" y="50" width="246" height="50"/>
+    <text x="16" y="81" class="txt bold">AusleiheID</text><text x="176" y="81" class="small">PK</text>
+    <rect class="fk" x="2" y="101" width="246" height="50"/>
+    <text x="16" y="132" class="txt bold">SchuelerID</text><text x="176" y="132" class="small">FK</text>
+    <rect class="fk" x="2" y="152" width="246" height="50"/>
+    <text x="16" y="183" class="txt bold">BuchID</text><text x="176" y="183" class="small">FK</text>
+    <text x="16" y="234" class="txt">Ausleihdatum</text>
+  </g>
+
+  <g transform="translate(710 85)">
+    <rect class="box" width="250" height="210" rx="8"/>
+    <rect class="head" width="250" height="48" rx="8"/>
+    <text x="125" y="31" text-anchor="middle" class="txt bold">Buch</text>
+    <rect class="pk" x="2" y="50" width="246" height="50"/>
+    <text x="16" y="81" class="txt bold">BuchID</text><text x="176" y="81" class="small">PK</text>
+    <text x="16" y="132" class="txt">Titel</text>
+    <text x="16" y="181" class="txt">Erscheinungsjahr</text>
+  </g>
+
+  <path class="line" d="M375 211 C340 211 340 160 290 160"/>
+  <path class="line" d="M625 262 C660 262 660 160 710 160"/>
+  <text x="332" y="193" text-anchor="middle" class="small">verweist auf</text>
+  <text x="668" y="222" text-anchor="middle" class="small">verweist auf</text>
+
+  <g transform="translate(120 390)">
+    <rect x="0" y="0" width="28" height="28" class="pk" stroke="#6b8f71"/>
+    <text x="40" y="21" class="small"><tspan class="bold">PK – Primärschlüssel:</tspan> identifiziert einen Datensatz eindeutig.</text>
+    <rect x="0" y="48" width="28" height="28" class="fk" stroke="#b58b2a"/>
+    <text x="40" y="69" class="small"><tspan class="bold">FK – Fremdschlüssel:</tspan> enthält den Schlüsselwert eines Datensatzes aus einer anderen Tabelle.</text>
+  </g>
+</svg>
