@@ -4,19 +4,42 @@
 
 Das **Binärsystem** oder **Dualsystem** verwendet nur die Ziffern 0 und 1. Computer können damit Daten darstellen, weil technische Bauteile zwei unterscheidbare Zustände besonders zuverlässig verarbeiten können.
 
-Unser gewohntes **Dezimalsystem** besitzt zehn Ziffern von 0 bis 9. Beide Systeme sind Stellenwertsysteme.
+Unser gewohntes **Dezimalsystem** verwendet die Ziffern 0 bis 9. Das Binärsystem verwendet nur 0 und 1. Trotzdem kann man mit beiden Systemen beliebig große ganze Zahlen darstellen.
 
-## Stellenwerte
+## Stellenwerte verstehen
 
-Im Dezimalsystem steigt der Stellenwert von rechts nach links jeweils um den Faktor 10. Im Binärsystem steigt er jeweils um den Faktor 2.
+Bei einer Zahl hängt der Wert einer Ziffer davon ab, **an welcher Stelle** sie steht.
+
+Im Dezimalsystem bedeutet die Zahl `352`:
+
+| Stelle | Hunderter | Zehner | Einer |
+|---|---:|---:|---:|
+| Stellenwert | 100 | 10 | 1 |
+| Ziffer | 3 | 5 | 2 |
+
+Also:
+
+```text
+352 = 3 · 100 + 5 · 10 + 2 · 1
+```
+
+Im Binärsystem funktioniert das genauso. Der Unterschied ist nur: Die Stellenwerte sind nicht `1, 10, 100, 1000, ...`, sondern `1, 2, 4, 8, 16, 32, ...`.
+
+Von rechts nach links verdoppelt sich also jeder Stellenwert:
+
+```text
+... 128   64   32   16   8   4   2   1
+```
 
 ![Binär-Stellenwerttafel mit dem Beispiel 00101101₂ = 45₁₀](grafiken/binaer_stellenwert.svg)
 
-| Binär-Stelle | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Beispiel `00101101` | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 1 |
+Für die Binärzahl `00101101₂` gilt:
 
-Für `00101101₂` werden die Stellenwerte mit einer 1 addiert:
+| Stellenwert | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Ziffer | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 1 |
+
+Nur die Stellen mit einer `1` zählen mit:
 
 ```text
 32 + 8 + 4 + 1 = 45
@@ -28,22 +51,107 @@ Damit gilt:
 00101101₂ = 45₁₀
 ```
 
-## Dezimalzahl in Binärzahl umwandeln
+> **Merke:** Eine `1` bedeutet: Dieser Stellenwert wird mitgezählt. Eine `0` bedeutet: Dieser Stellenwert wird nicht mitgezählt.
 
-Für kleine Zahlen kann man prüfen, welche Zweierpotenzen benötigt werden. Die Dezimalzahl 13 besteht beispielsweise aus:
+## Binärzahl in Dezimalzahl umwandeln
+
+Um eine Binärzahl in eine Dezimalzahl umzuwandeln, gehst du so vor:
+
+1. Schreibe die passenden Stellenwerte über die Binärzahl.
+2. Markiere alle Stellen, an denen eine `1` steht.
+3. Addiere genau diese Stellenwerte.
+
+Beispiel `1101₂`:
+
+| Stellenwert | 8 | 4 | 2 | 1 |
+|---|---:|---:|---:|---:|
+| Ziffer | 1 | 1 | 0 | 1 |
+
+Also:
+
+```text
+8 + 4 + 1 = 13
+```
+
+Damit gilt:
+
+```text
+1101₂ = 13₁₀
+```
+
+## Dezimalzahl in Binärzahl umwandeln – mit Stellenwerten
+
+Bei kleinen Zahlen kann man überlegen, aus welchen Zweierpotenzen die Zahl zusammengesetzt ist.
+
+Beispiel `13₁₀`:
 
 ```text
 13 = 8 + 4 + 1
 ```
 
-In der Stellenwerttafel stehen deshalb bei 8, 4 und 1 Einsen:
+Daraus folgt:
 
 ```text
 8  4  2  1
 1  1  0  1
 ```
 
-Also gilt `13₁₀ = 1101₂`.
+Also:
+
+```text
+13₁₀ = 1101₂
+```
+
+Diese Methode ist für kleine Zahlen sehr anschaulich. Für größere Zahlen gibt es ein systematisches Verfahren: die **fortgesetzte Division durch 2**.
+
+## Dezimalzahl in Binärzahl umwandeln – Division durch 2
+
+Teile die Dezimalzahl wiederholt durch 2. Notiere bei jeder Division den **Rest**. Da durch 2 geteilt wird, kann der Rest nur `0` oder `1` sein.
+
+Beispiel: `45₁₀` soll in eine Binärzahl umgewandelt werden.
+
+| Rechnung | Ergebnis | Rest |
+|---|---:|---:|
+| 45 : 2 | 22 | 1 |
+| 22 : 2 | 11 | 0 |
+| 11 : 2 | 5 | 1 |
+| 5 : 2 | 2 | 1 |
+| 2 : 2 | 1 | 0 |
+| 1 : 2 | 0 | 1 |
+
+Jetzt werden die Reste **von unten nach oben** gelesen:
+
+```text
+101101
+```
+
+Damit gilt:
+
+```text
+45₁₀ = 101101₂
+```
+
+Warum funktioniert das? Bei jeder Division durch 2 wird entschieden, ob die Zahl gerade oder ungerade ist. Der Rest zeigt deshalb jeweils die nächste Binärstelle von rechts nach links.
+
+> **Merke:** Bei der Division-durch-2-Methode werden die Reste von **unten nach oben** gelesen.
+
+## Kontrolle durch Rückumwandlung
+
+Eine Umrechnung kann leicht überprüft werden, indem man die erhaltene Binärzahl wieder in eine Dezimalzahl umwandelt.
+
+Für `101101₂`:
+
+| Stellenwert | 32 | 16 | 8 | 4 | 2 | 1 |
+|---|---:|---:|---:|---:|---:|---:|
+| Ziffer | 1 | 0 | 1 | 1 | 0 | 1 |
+
+Also:
+
+```text
+32 + 8 + 4 + 1 = 45
+```
+
+Die Umrechnung stimmt.
 
 ## Führende Nullen
 
@@ -53,7 +161,7 @@ Also gilt `13₁₀ = 1101₂`.
 
 Binärzahlen sind nicht nur zum Rechnen da. Bitfolgen können je nach Codierung Zahlen, Buchstaben, Farben, Töne oder andere Daten darstellen. Die gleiche Folge aus Nullen und Einsen kann deshalb unterschiedliche Bedeutungen haben, wenn eine andere Codierung verwendet wird.
 
-> **Merke:** Im Binärsystem besitzt jede Stelle von rechts nach links den doppelten Wert der vorherigen Stelle.
+> **Merke:** Im Binärsystem sind die Stellenwerte von rechts nach links `1, 2, 4, 8, 16, 32, ...`. Jede Stelle ist doppelt so viel wert wie die Stelle rechts daneben.
 
 ## Begriffe zum Nachschlagen
 
@@ -64,5 +172,7 @@ Binärzahlen sind nicht nur zum Rechnen da. Bitfolgen können je nach Codierung 
 **Stellenwert:** Wert, den eine Position innerhalb einer Zahl besitzt.
 
 **Zweierpotenz:** Zahl der Form 1, 2, 4, 8, 16, 32, 64, …
+
+**Rest:** Wert, der bei einer Division übrig bleibt. Bei der Division durch 2 ist der Rest immer 0 oder 1.
 
 → Siehe auch **Kapitel 2: Informationen und Daten** und **Kapitel 8: Speicher und Datenmengen**.
