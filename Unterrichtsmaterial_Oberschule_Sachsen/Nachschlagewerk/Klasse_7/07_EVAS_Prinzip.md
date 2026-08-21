@@ -2,15 +2,11 @@
 
 ## Ein Modell für Informationsverarbeitung
 
-Viele Informatiksysteme lassen sich mit dem **EVA-Prinzip** beschreiben:
-
-```text
-Eingabe → Verarbeitung → Ausgabe
-```
-
-Wird die Speicherung ausdrücklich einbezogen, spricht man häufig vom **EVA(S)-Prinzip**.
+Viele Informatiksysteme lassen sich mit dem **EVA-Prinzip** beschreiben. Die drei Grundschritte sind **Eingabe**, **Verarbeitung** und **Ausgabe**. Wird die **Speicherung** ausdrücklich einbezogen, spricht man häufig vom **EVA(S)-Prinzip**.
 
 ![EVA(S)-Prinzip mit Eingabe, Verarbeitung, Ausgabe und Speicherung](grafiken/evas_prinzip.svg)
+
+Die Grafik zeigt den typischen Ablauf: Daten gelangen in das System, werden verarbeitet und als Ergebnis ausgegeben. Zusätzlich können Daten gespeichert und später wieder für eine Verarbeitung genutzt werden.
 
 ## Eingabe
 
