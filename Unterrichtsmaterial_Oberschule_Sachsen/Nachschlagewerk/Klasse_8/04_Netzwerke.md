@@ -18,12 +18,97 @@ Typische Komponenten sind:
 
 ## Client und Server
 
-Ein **Client** fordert einen Dienst an. Ein **Server** stellt einen Dienst bereit. Beim Aufruf einer Webseite sendet der Browser als Client eine Anfrage an einen Webserver, der eine Antwort zurückliefert.
+Ein **Client** ist ein Programm oder System, das einen Dienst nutzt beziehungsweise anfordert. Ein **Server** stellt einen solchen Dienst für andere Teilnehmer bereit. Die Begriffe beschreiben damit vor allem **Rollen bei einer Kommunikation**.
+
+Ein Browser kann beispielsweise als Client einen Webserver ansprechen. Ein E-Mail-Programm ist Client gegenüber einem Mailserver. Auch zwei Programme auf demselben Computer können grundsätzlich in Client- und Serverrollen miteinander kommunizieren.
+
+> **Merke:** „Client“ und „Server“ bezeichnen nicht zwingend bestimmte Gerätearten. Entscheidend ist die jeweilige Rolle: Wer fordert beziehungsweise nutzt einen Dienst, und wer stellt ihn bereit?
+
+### Kommunikation braucht Regeln: Protokolle
+
+Dass Client und Server miteinander verbunden sind, reicht noch nicht aus. Beide Seiten müssen wissen, **wie Nachrichten aufgebaut sind, welche Bedeutung sie haben und in welcher Reihenfolge sie ausgetauscht werden**. Solche Regeln werden durch **Protokolle** festgelegt.
+
+Ein **Netzwerkprotokoll** ist eine Vereinbarung über die Kommunikation zwischen Systemen. Ein Protokoll kann beispielsweise festlegen:
+
+- welche Nachrichten es gibt,
+- wie eine Nachricht aufgebaut ist,
+- welche Angaben eine Nachricht enthalten muss,
+- wer eine Kommunikation beginnt,
+- welche Antworten möglich sind,
+- in welcher Reihenfolge Nachrichten ausgetauscht werden,
+- wie Fehler behandelt werden.
+
+Das lässt sich mit einem Gespräch vergleichen: Wenn zwei Personen dieselben Wörter hören, aber völlig unterschiedliche Regeln für deren Bedeutung verwenden, funktioniert die Verständigung nicht zuverlässig. Auch Computer benötigen gemeinsame Kommunikationsregeln.
+
+### Das verwendete Protokoll bestimmt die Kommunikation
+
+Die einfache Darstellung
 
 ```text
 Client ── Anfrage ──► Server
 Client ◄─ Antwort ─── Server
 ```
+
+ist nur ein **allgemeines Modell**. Wie die Anfrage und Antwort tatsächlich aussehen, hängt vom verwendeten Protokoll ab.
+
+Bei einem Webzugriff kann beispielsweise **HTTP** beziehungsweise **HTTPS** verwendet werden. Vereinfacht könnte der Austausch so aussehen:
+
+```text
+Browser (Client) ── HTTP-Anfrage ──► Webserver
+Browser (Client) ◄─ HTTP-Antwort ─── Webserver
+```
+
+Eine HTTP-Anfrage kann beispielsweise mitteilen, welche Ressource angefordert wird. Die Antwort enthält unter anderem einen Status und gegebenenfalls die angeforderten Daten.
+
+Bei E-Mail werden dagegen andere Protokolle verwendet. **SMTP** dient typischerweise zum Übertragen beziehungsweise Weiterleiten von E-Mails. Zum Abrufen oder Verwalten von Nachrichten auf einem Mailserver kann beispielsweise **IMAP** eingesetzt werden.
+
+DNS verwendet wiederum eigene Nachrichten und Regeln für die Namensauflösung.
+
+| Dienst/Aufgabe | Beispiel für ein Protokoll | vereinfacht gesagt |
+|---|---|---|
+| Webseiten übertragen | HTTP / HTTPS | Webressourcen anfordern und übertragen |
+| E-Mail versenden/weiterleiten | SMTP | E-Mails übertragen |
+| E-Mail auf Server verwalten | IMAP | Nachrichten auf einem Mailserver lesen und verwalten |
+| Namen auflösen | DNS | Informationen zu Domainnamen erfragen |
+| Dateien übertragen | FTP | Dateien zwischen Systemen übertragen |
+
+> **Merke:** Es gibt nicht „die“ Client-Server-Kommunikation. Der konkrete Nachrichtenaustausch richtet sich nach dem **verwendeten Protokoll** und dem angebotenen Dienst.
+
+### Mehrere Protokolle arbeiten zusammen
+
+Bei einer Internetkommunikation wird normalerweise nicht nur ein einziges Protokoll verwendet. Verschiedene Protokolle übernehmen unterschiedliche Aufgaben und arbeiten zusammen.
+
+Beim Aufruf einer Webseite kann man vereinfacht unterscheiden:
+
+1. **DNS** hilft dabei, zum Domainnamen eine passende IP-Adresse zu ermitteln.
+2. **IP** ermöglicht die Adressierung und Weiterleitung von Daten über Netzwerke.
+3. Ein Transportprotokoll wie **TCP** kann eine zuverlässige Verbindung zwischen Anwendungen bereitstellen. Manche moderne Verfahren verwenden stattdessen andere Transportmechanismen, beispielsweise auf Basis von UDP.
+4. **HTTP** legt fest, wie Browser und Webserver Webanfragen und Webantworten austauschen.
+5. Bei **HTTPS** wird HTTP durch zusätzliche Sicherheitsmechanismen, insbesondere TLS, geschützt.
+
+Damit wird deutlich: Ein Browser „spricht“ nicht einfach nur mit einem Server. Für die verschiedenen Aufgaben der Kommunikation greifen mehrere Regeln und Protokolle ineinander.
+
+### Ports: Welcher Dienst ist gemeint?
+
+Eine IP-Adresse hilft dabei, ein Zielsystem beziehungsweise dessen Netzwerkschnittstelle zu erreichen. Auf einem System können aber gleichzeitig viele Netzwerkdienste laufen. Deshalb werden bei TCP und UDP zusätzlich **Portnummern** verwendet. Sie helfen dem Betriebssystem dabei, Daten der passenden Anwendung beziehungsweise dem passenden Dienst zuzuordnen.
+
+Bekannte Standardports sind beispielsweise:
+
+| Dienst | typischer Port |
+|---|---:|
+| HTTP | 80 |
+| HTTPS | 443 |
+| DNS | 53 |
+
+Ein Server kann dadurch gleichzeitig beispielsweise einen Webdienst und weitere Netzwerkdienste anbieten.
+
+> **Merke:** Vereinfacht bestimmt die **IP-Adresse**, welches Ziel im IP-Netz erreicht werden soll. Eine **Portnummer** hilft bei TCP oder UDP dabei, die Kommunikation dem passenden Dienst beziehungsweise Prozess zuzuordnen. Das **Protokoll** bestimmt die Regeln, nach denen die Beteiligten miteinander kommunizieren.
+
+### Client und Server sind nicht immer nur ein Gerät
+
+Ein einzelner physischer Servercomputer kann mehrere Serverprogramme ausführen. Umgekehrt kann ein Dienst auf mehrere Computer verteilt sein. Ebenso kann ein Gerät gleichzeitig Client und Server sein – abhängig davon, welche Kommunikation gerade betrachtet wird.
+
+Beispiel: Ein Webserver kann selbst als Client einen Datenbank- oder anderen Netzwerkdienst anfragen. Die Rollen hängen also vom betrachteten Kommunikationsvorgang ab.
 
 ## Adressen im Netzwerk
 
@@ -273,7 +358,7 @@ Netzwerke müssen geschützt werden. Dazu gehören unter anderem:
 
 **Autoritativer Nameserver:** DNS-Server, der für einen bestimmten Namensbereich maßgebliche DNS-Informationen bereitstellt.
 
-**Client:** Gerät oder Programm, das einen Dienst anfordert.
+**Client:** Programm oder System, das in einer Kommunikation einen Dienst nutzt beziehungsweise anfordert.
 
 **DHCP:** Verfahren zur automatischen Vergabe von Netzwerkeinstellungen an Clients, beispielsweise IP-Adressen.
 
@@ -283,6 +368,10 @@ Netzwerke müssen geschützt werden. Dazu gehören unter anderem:
 
 **Domain:** hierarchisch organisierter Namensbereich im DNS.
 
+**HTTP:** Protokoll zum Austausch von Webanfragen und Webantworten.
+
+**HTTPS:** geschützte Nutzung von HTTP, üblicherweise mit TLS zur Verschlüsselung und Absicherung der Verbindung.
+
 **IP-Adresse:** Adresse eines Netzwerkanschlusses beziehungsweise einer Schnittstelle in einem IP-Netzwerk.
 
 **IPv4:** Version des Internet Protocol mit 32-Bit-Adressen.
@@ -291,11 +380,17 @@ Netzwerke müssen geschützt werden. Dazu gehören unter anderem:
 
 **Nameserver:** Server, der Informationen des Domain Name Systems bereitstellt.
 
+**Port:** Nummer, die bei Transportprotokollen wie TCP oder UDP zur Zuordnung einer Kommunikation zu einer Anwendung beziehungsweise einem Dienst verwendet wird.
+
+**Protokoll:** festgelegte Regeln für die Kommunikation zwischen Systemen, beispielsweise für Aufbau, Bedeutung und Reihenfolge von Nachrichten.
+
 **Router:** Gerät, das Daten zwischen verschiedenen Netzwerken weiterleitet.
 
-**Server:** System, das Dienste oder Daten für andere Systeme bereitstellt.
+**Server:** Programm oder System, das in einer Kommunikation einen Dienst für Clients bereitstellt.
 
 **Switch:** Gerät zur Verbindung von Teilnehmern in einem lokalen Netzwerk.
+
+**TCP:** Transportprotokoll, das unter anderem eine verbindungsorientierte und zuverlässige Übertragung zwischen Anwendungen ermöglicht.
 
 **TTL (Time to Live):** bei DNS unter anderem Angabe dafür, wie lange eine Information zwischengespeichert werden darf.
 
