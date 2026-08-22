@@ -7,75 +7,61 @@
       "title": "Informatik im Alltag",
       "subject": "INFORMATIK",
       "language": "de-DE",
-      "targets": {
-        "schoolTypes": ["OBERSCHULE"],
-        "federalStates": ["SACHSEN"],
-        "grades": [7]
-      },
-      "sources": [
-        {
-          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/01_Arbeitsheft",
-          "audience": "STUDENT",
-          "outputs": [
-            "Klasse_7/01_Informatik_im_Alltag/01_Arbeitsheft.pdf",
-            "Klasse_7/01_Informatik_im_Alltag/01_Arbeitsheft.docx"
-          ]
-        }
-      ],
-      "resources": [
-        {
-          "id": "teacher-guide",
-          "audience": "TEACHER",
-          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/02_Lehrerband",
-          "outputs": [
-            "Klasse_7/01_Informatik_im_Alltag/02_Lehrerband.pdf",
-            "Klasse_7/01_Informatik_im_Alltag/02_Lehrerband.docx"
-          ]
-        },
-        {
-          "id": "material",
-          "audience": "TEACHER",
-          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/03_Material",
-          "outputs": [
-            "Klasse_7/01_Informatik_im_Alltag/03_Material.pdf",
-            "Klasse_7/01_Informatik_im_Alltag/03_Material.docx"
-          ]
-        },
-        {
-          "id": "solutions",
-          "audience": "TEACHER",
-          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/04_Loesungen",
-          "outputs": [
-            "Klasse_7/01_Informatik_im_Alltag/04_Loesungen.pdf",
-            "Klasse_7/01_Informatik_im_Alltag/04_Loesungen.docx"
-          ]
-        },
-        {
-          "id": "presentations",
-          "audience": "TEACHER",
-          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/05_Praesentationen",
-          "outputs": [
-            "Klasse_7/01_Informatik_im_Alltag/05_Praesentationen/*.pptx"
-          ]
-        },
-        {
-          "id": "assessments",
-          "audience": "TEACHER",
-          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/09_Lernkontrollen",
-          "outputs": [
-            "Klasse_7/01_Informatik_im_Alltag/Lernkontrollen/*.pdf",
-            "Klasse_7/01_Informatik_im_Alltag/Lernkontrollen/*.docx"
-          ]
-        }
-      ]
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [7]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_7/01_Informatik_im_Alltag/01_Arbeitsheft.pdf", "Klasse_7/01_Informatik_im_Alltag/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag", "outputs": ["Klasse_7/01_Informatik_im_Alltag/02_Lehrerband.*", "Klasse_7/01_Informatik_im_Alltag/03_Material.*", "Klasse_7/01_Informatik_im_Alltag/04_Loesungen.*", "Klasse_7/01_Informatik_im_Alltag/05_Praesentationen/*.pptx", "Klasse_7/01_Informatik_im_Alltag/Lernkontrollen/*"]}]
+    },
+    {
+      "contentKey": "informatik.daten.repraesentation",
+      "type": "TOPIC",
+      "title": "Repräsentation von Daten",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [7]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/02_Repraesentation_von_Daten/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_7/02_Repraesentation_von_Daten/01_Arbeitsheft.pdf", "Klasse_7/02_Repraesentation_von_Daten/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/02_Repraesentation_von_Daten", "outputs": ["Klasse_7/02_Repraesentation_von_Daten/02_Lehrerband.*", "Klasse_7/02_Repraesentation_von_Daten/03_Material.*", "Klasse_7/02_Repraesentation_von_Daten/04_Loesungen.*", "Klasse_7/02_Repraesentation_von_Daten/05_Praesentationen/*.pptx", "Klasse_7/02_Repraesentation_von_Daten/Lernkontrollen/*"]}]
+    },
+    {
+      "contentKey": "informatik.ki.wahlbereich",
+      "type": "TOPIC",
+      "title": "Wahlbereich Künstliche Intelligenz",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [7]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/04_Wahlbereich_KI/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_7/04_Wahlbereich_KI/01_Arbeitsheft.pdf", "Klasse_7/04_Wahlbereich_KI/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/04_Wahlbereich_KI", "outputs": ["Klasse_7/04_Wahlbereich_KI/02_Lehrerband.*", "Klasse_7/04_Wahlbereich_KI/03_Material.*", "Klasse_7/04_Wahlbereich_KI/04_Loesungen.*", "Klasse_7/04_Wahlbereich_KI/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.mobile-endgeraete.wahlbereich",
+      "type": "TOPIC",
+      "title": "Wahlbereich Mobile Endgeräte",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [7]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/05_Wahlbereich_Mobile_Endgeraete/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_7/05_Wahlbereich_Mobile_Endgeraete/01_Arbeitsheft.pdf", "Klasse_7/05_Wahlbereich_Mobile_Endgeraete/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/05_Wahlbereich_Mobile_Endgeraete", "outputs": ["Klasse_7/05_Wahlbereich_Mobile_Endgeraete/02_Lehrerband.*", "Klasse_7/05_Wahlbereich_Mobile_Endgeraete/03_Material.*", "Klasse_7/05_Wahlbereich_Mobile_Endgeraete/04_Loesungen.*", "Klasse_7/05_Wahlbereich_Mobile_Endgeraete/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.computergrafik.wahlbereich",
+      "type": "TOPIC",
+      "title": "Wahlbereich Computergrafik",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [7]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/06_Wahlbereich_Computergrafik/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_7/06_Wahlbereich_Computergrafik/01_Arbeitsheft.pdf", "Klasse_7/06_Wahlbereich_Computergrafik/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/06_Wahlbereich_Computergrafik", "outputs": ["Klasse_7/06_Wahlbereich_Computergrafik/02_Lehrerband.*", "Klasse_7/06_Wahlbereich_Computergrafik/03_Material.*", "Klasse_7/06_Wahlbereich_Computergrafik/04_Loesungen.*", "Klasse_7/06_Wahlbereich_Computergrafik/05_Praesentationen/*.pptx"]}]
     },
     {
       "contentKey": "curriculum.oberschule.sachsen.informatik.klasse7.pilot",
       "type": "COLLECTION",
       "title": "Informatik Klasse 7 – Pilot",
-      "children": [
-        "informatik.alltag.grundlagen"
-      ]
+      "children": ["informatik.alltag.grundlagen"]
+    },
+    {
+      "contentKey": "curriculum.oberschule.sachsen.informatik.klasse7",
+      "type": "COLLECTION",
+      "title": "Informatik Klasse 7",
+      "children": ["informatik.alltag.grundlagen", "informatik.daten.repraesentation", "informatik.ki.wahlbereich", "informatik.mobile-endgeraete.wahlbereich", "informatik.computergrafik.wahlbereich"]
     }
   ]
 }
