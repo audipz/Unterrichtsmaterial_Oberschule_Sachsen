@@ -10,13 +10,15 @@ import sys
 import zipfile
 from pathlib import Path
 
+from content_pool import load_catalog, output_patterns_for, resolve_keys
+
 ALLOWED_AREAS = ["Klasse_7", "Klasse_8", "Klasse_9", "Klasse_10", "Grundlagen", "Werkzeuge"]
 ALLOWED_FORMATS = {"pdf", "docx", "pptx"}
 
 
 def load_manifest(path: Path) -> dict:
     data = json.loads(path.read_text(encoding="utf-8"))
-    required = ("schemaVersion", "id", "title", "areas", "formats", "include", "artifact")
+    required = ("schemaVersion", "id", "title", "areas", "formats", "artifact")
     missing = [key for key in required if key not in data]
     if missing:
         raise ValueError(f"Export-Manifest unvollständig: {', '.join(missing)}")
@@ -31,9 +33,27 @@ def load_manifest(path: Path) -> dict:
     unknown_formats = sorted(set(data["formats"]) - ALLOWED_FORMATS)
     if unknown_formats:
         raise ValueError(f"Unbekannte Formate: {', '.join(unknown_formats)}")
-    if not data["areas"] or not data["formats"] or not data["include"]:
-        raise ValueError("areas, formats und include dürfen nicht leer sein")
+    if not data["areas"] or not data["formats"]:
+        raise ValueError("areas und formats dürfen nicht leer sein")
+
+    has_include = bool(data.get("include"))
+    has_keys = bool(data.get("contentKeys"))
+    if has_include == has_keys:
+        raise ValueError("Export-Manifest muss genau eines von include oder contentKeys verwenden")
     return data
+
+
+def resolve_include(repo: Path, manifest: dict) -> list[str]:
+    if manifest.get("include"):
+        return manifest["include"]
+
+    catalog = load_catalog(repo / "ContentPool" / "catalog.json")
+    items = resolve_keys(catalog, manifest["contentKeys"])
+    audience = {str(value).upper() for value in manifest.get("audience", [])}
+    patterns = output_patterns_for(items, audience or None)
+    if not patterns:
+        raise ValueError(f"Export '{manifest['id']}' löst keine Ausgabemuster aus dem Content-Pool auf")
+    return patterns
 
 
 def run_build(repo: Path, areas: list[str]) -> None:
@@ -60,8 +80,8 @@ def matches(path: str, patterns: list[str]) -> bool:
     return any(fnmatch.fnmatchcase(path, pattern) for pattern in patterns)
 
 
-def select_files(output: Path, manifest: dict) -> list[Path]:
-    include = manifest["include"]
+def select_files(repo: Path, output: Path, manifest: dict) -> list[Path]:
+    include = resolve_include(repo, manifest)
     exclude = manifest.get("exclude", [])
     formats = set(manifest["formats"])
     selected: list[Path] = []
@@ -101,6 +121,7 @@ def package(repo: Path, manifest_path: Path, manifest: dict, files: list[Path]) 
         "audience": manifest.get("audience", []),
         "areas": manifest["areas"],
         "formats": manifest["formats"],
+        "contentKeys": manifest.get("contentKeys", []),
         "sourceManifest": manifest_path.relative_to(repo).as_posix(),
         "fileCount": len(files),
     }
@@ -134,7 +155,7 @@ def main() -> int:
     output = repo / "Ausgabe"
     if not output.is_dir():
         raise RuntimeError("Ausgabe/ fehlt. Dokumente zuerst bauen.")
-    files = select_files(output, manifest)
+    files = select_files(repo, output, manifest)
     package(repo, manifest_path, manifest, files)
     return 0
 
