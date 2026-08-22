@@ -73,7 +73,8 @@ public class SchoolMembershipLifecycleAdapter implements SchoolMembershipLifecyc
     public void markAccountPendingDeletion(UUID accountId, UUID actorId) {
         jdbc.update("""
                 update account
-                   set status = 'PENDING_DELETION', pending_deletion_at = now(),
+                   set status = 'PENDING_DELETION',
+                       pending_deletion_at = now() + interval '3 months',
                        updated_at = now(), updated_by = ?
                  where id = ? and status <> 'SOFT_DELETED'
                 """, actorId, accountId);
@@ -117,11 +118,8 @@ public class SchoolMembershipLifecycleAdapter implements SchoolMembershipLifecyc
         return new HashSet<>(jdbc.query("""
                 select ct.school_class_id
                   from class_teacher ct
-                  join school_class sc on sc.id = ct.school_class_id
                  where ct.teacher_school_membership_id = ?
                    and ct.deleted_at is null
-                   and sc.status = 'ACTIVE'
-                   and sc.deleted_at is null
                    and not exists (
                        select 1 from class_teacher other
                         where other.school_class_id = ct.school_class_id
@@ -136,12 +134,12 @@ public class SchoolMembershipLifecycleAdapter implements SchoolMembershipLifecyc
         Long count = jdbc.queryForObject("""
                 select count(*)
                   from school_membership sm
-                  join school_role r on r.school_membership_id = sm.id
                   join account a on a.id = sm.account_id
+                  join school_role r on r.school_membership_id = sm.id
                  where sm.school_id = ? and sm.id <> ?
                    and sm.status = 'ACTIVE' and sm.deleted_at is null
-                   and a.status = 'ACTIVE' and a.deleted_at is null
                    and a.account_type = 'TEACHER'
+                   and a.status = 'ACTIVE' and a.deleted_at is null
                    and r.role = 'SCHOOL_ADMIN'
                 """, Long.class, schoolId, excludedMembershipId);
         return count == null ? 0 : count;
