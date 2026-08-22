@@ -20,26 +20,27 @@ public class PublicRegistrationHandler {
     public ServerResponse submitSchoolRegistration(ServerRequest request) throws Exception {
         RegistrationPayload payload = request.body(RegistrationPayload.class);
         var id = service.submit(new SchoolRegistrationService.Command(
-                payload.schoolName(),
-                payload.schoolType(),
-                payload.federalState(),
-                payload.city(),
-                payload.contactEmail(),
-                payload.schoolWebsite(),
-                payload.website(),
+                payload.schoolName(), payload.schoolType(), payload.federalState(), payload.city(),
+                payload.contactEmail(), payload.schoolWebsite(), payload.website(),
                 request.headers().firstHeader("User-Agent")));
 
         return ServerResponse.status(HttpStatus.ACCEPTED)
                 .body(Map.of("requestId", id.toString(), "status", "EMAIL_VERIFICATION_PENDING"));
     }
 
+    public ServerResponse verifyEmail(ServerRequest request) throws Exception {
+        VerificationPayload payload = request.body(VerificationPayload.class);
+        if (!service.verifyEmail(payload.token())) {
+            return ServerResponse.status(HttpStatus.GONE).body(Map.of("verified", false));
+        }
+        return ServerResponse.ok().body(Map.of("verified", true, "status", "PENDING_REVIEW"));
+    }
+
     public record RegistrationPayload(
-            String schoolName,
-            String schoolType,
-            String federalState,
-            String city,
-            String contactEmail,
-            String schoolWebsite,
-            String website) {
+            String schoolName, String schoolType, String federalState, String city,
+            String contactEmail, String schoolWebsite, String website) {
+    }
+
+    public record VerificationPayload(String token) {
     }
 }
