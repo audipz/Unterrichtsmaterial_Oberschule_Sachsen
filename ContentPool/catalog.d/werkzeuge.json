@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "contentKey": "learning.informatik.werkzeuge.sqlite",
+      "type": "REFERENCE",
+      "title": "SQLite",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "sources": [
+        {
+          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Werkzeuge/SQLite",
+          "audience": "STUDENT",
+          "outputs": ["Werkzeuge/SQLite.pdf", "Werkzeuge/SQLite.docx"]
+        }
+      ]
+    },
+    {
+      "contentKey": "collection.informatik.werkzeuge",
+      "type": "COLLECTION",
+      "title": "Werkzeuge Informatik",
+      "children": ["learning.informatik.werkzeuge.sqlite"]
+    }
+  ]
+}
