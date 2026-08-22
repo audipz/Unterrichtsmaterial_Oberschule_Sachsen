@@ -1,7 +1,8 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { NavigationItem, PendingSchoolRegistration, SystemAdminApiService } from './system-admin-api.service';
+import { AppContextService, NavigationItem } from '../core/app-context.service';
+import { PendingSchoolRegistration, SystemAdminApiService } from './system-admin-api.service';
 
 @Component({
   selector: 'app-system-admin',
@@ -116,6 +117,7 @@ import { NavigationItem, PendingSchoolRegistration, SystemAdminApiService } from
 })
 export class SystemAdminComponent implements OnInit {
   private readonly api = inject(SystemAdminApiService);
+  private readonly appContext = inject(AppContextService);
   private readonly fb = inject(FormBuilder);
 
   readonly view = signal<'login' | 'password' | 'review'>('login');
@@ -237,13 +239,13 @@ export class SystemAdminComponent implements OnInit {
 
   private restoreSession(): void {
     this.loading.set(true);
-    this.api.me().subscribe({
-      next: (me) => {
-        this.navigation.set(me.navigation);
+    this.appContext.load().subscribe({
+      next: (context) => {
+        this.navigation.set(context.navigation);
         this.loading.set(false);
-        if (me.capabilities.includes('CHANGE_OWN_PASSWORD')) {
+        if (context.capabilities.includes('CHANGE_OWN_PASSWORD')) {
           this.view.set('password');
-        } else if (me.capabilities.includes('SCHOOL_REGISTRATION_REVIEW')) {
+        } else if (context.capabilities.includes('SCHOOL_REGISTRATION_REVIEW')) {
           this.view.set('review');
           this.loadRegistrations();
         }
@@ -256,16 +258,20 @@ export class SystemAdminComponent implements OnInit {
   }
 
   private loadIdentity(): void {
-    this.api.me().subscribe({
-      next: (me) => {
+    this.appContext.load().subscribe({
+      next: (context) => {
         this.busy.set(false);
-        this.navigation.set(me.navigation);
-        if (me.capabilities.includes('CHANGE_OWN_PASSWORD')) {
+        this.navigation.set(context.navigation);
+        if (context.capabilities.includes('CHANGE_OWN_PASSWORD')) {
           this.view.set('password');
           return;
         }
-        this.view.set('review');
-        this.loadRegistrations();
+        if (context.capabilities.includes('SCHOOL_REGISTRATION_REVIEW')) {
+          this.view.set('review');
+          this.loadRegistrations();
+          return;
+        }
+        this.message.set('Für diesen Zugang sind keine Verwaltungsfunktionen freigeschaltet.');
       },
       error: () => {
         this.busy.set(false);
