@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "teacher-klasse8",
+  "title": "Lehrermaterial Klasse 8",
+  "audience": ["TEACHER"],
+  "areas": ["Klasse_8"],
+  "formats": ["pdf", "docx", "pptx"],
+  "contentKeys": [
+    "curriculum.oberschule.sachsen.informatik.klasse8"
+  ],
+  "exclude": [],
+  "minimumFiles": 1,
+  "artifact": "Unterrichtsmaterial_Klasse8_Lehrer.zip"
+}
