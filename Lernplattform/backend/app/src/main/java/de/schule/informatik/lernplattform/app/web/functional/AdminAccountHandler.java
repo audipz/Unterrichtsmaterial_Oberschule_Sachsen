@@ -5,6 +5,7 @@ import de.schule.informatik.lernplattform.app.user.AccountProvisioningService;
 import de.schule.informatik.lernplattform.domain.school.SchoolLookupPort;
 import de.schule.informatik.lernplattform.domain.user.CreateStudentCommand;
 import de.schule.informatik.lernplattform.domain.user.CreateTeacherCommand;
+import de.schule.informatik.lernplattform.domain.user.SchoolMembershipLifecycleService;
 import de.schule.informatik.lernplattform.domain.user.TeacherSchoolMembershipService;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.function.ServerRequest;
 import org.springframework.web.servlet.function.ServerResponse;
 
+import java.time.LocalDate;
 import java.util.Set;
 import java.util.UUID;
 
@@ -22,17 +24,20 @@ import java.util.UUID;
 public final class AdminAccountHandler {
 
     private final AccountProvisioningService service;
+    private final SchoolMembershipLifecycleService studentMembershipService;
     private final TeacherSchoolMembershipService teacherMembershipService;
     private final SchoolLookupPort schoolLookupPort;
     private final CurrentActor currentActor;
     private final Validator validator;
 
     public AdminAccountHandler(AccountProvisioningService service,
+                               SchoolMembershipLifecycleService studentMembershipService,
                                TeacherSchoolMembershipService teacherMembershipService,
                                SchoolLookupPort schoolLookupPort,
                                CurrentActor currentActor,
                                Validator validator) {
         this.service = service;
+        this.studentMembershipService = studentMembershipService;
         this.teacherMembershipService = teacherMembershipService;
         this.schoolLookupPort = schoolLookupPort;
         this.currentActor = currentActor;
@@ -80,6 +85,21 @@ public final class AdminAccountHandler {
         UUID schoolId = schoolLookupPort.requireActiveSchoolId(request.pathVariable("schoolSlug"));
         UUID teacherId = UUID.fromString(request.pathVariable("teacherId"));
         teacherMembershipService.removeTeacherFromSchool(schoolId, teacherId, currentActor.id());
+        return ServerResponse.noContent().build();
+    }
+
+    public ServerResponse removeStudentFromSchool(ServerRequest request) {
+        UUID schoolId = schoolLookupPort.requireActiveSchoolId(request.pathVariable("schoolSlug"));
+        UUID studentId = UUID.fromString(request.pathVariable("studentId"));
+        LocalDate effectiveDate = request.param("effectiveDate").map(LocalDate::parse).orElse(null);
+        studentMembershipService.removeStudentFromSchool(schoolId, studentId, effectiveDate, currentActor.id());
+        return ServerResponse.noContent().build();
+    }
+
+    public ServerResponse restoreStudentToSchool(ServerRequest request) {
+        UUID schoolId = schoolLookupPort.requireActiveSchoolId(request.pathVariable("schoolSlug"));
+        UUID studentId = UUID.fromString(request.pathVariable("studentId"));
+        studentMembershipService.restoreStudentToSchool(schoolId, studentId, currentActor.id());
         return ServerResponse.noContent().build();
     }
 
