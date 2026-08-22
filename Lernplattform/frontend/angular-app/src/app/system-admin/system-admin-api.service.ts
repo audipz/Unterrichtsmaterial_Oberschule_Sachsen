@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, switchMap } from 'rxjs';
 
@@ -13,9 +13,20 @@ export interface NavigationItem {
   route: string;
 }
 
-export interface SystemAdminMe {
-  accountId: string;
-  accountType: 'SYSTEM';
+export interface SchoolContext {
+  schoolId: string;
+  schoolSlug: string;
+  schoolName: string;
+}
+
+export interface AuthenticatedAppContext {
+  account: {
+    id: string;
+    type: 'SYSTEM' | 'TEACHER' | 'STUDENT';
+    displayName: string;
+  };
+  context: SchoolContext | null;
+  availableContexts: SchoolContext[];
   capabilities: string[];
   navigation: NavigationItem[];
 }
@@ -48,8 +59,13 @@ export class SystemAdminApiService {
     });
   }
 
-  me(): Observable<SystemAdminMe> {
-    return this.http.get<SystemAdminMe>(`${this.base}/me`, { withCredentials: true });
+  me(schoolSlug?: string): Observable<AuthenticatedAppContext> {
+    let params = new HttpParams();
+    if (schoolSlug) params = params.set('school', schoolSlug);
+    return this.http.get<AuthenticatedAppContext>('/api/v1/me', {
+      params,
+      withCredentials: true
+    });
   }
 
   changePassword(currentPassword: string, newPassword: string): Observable<void> {
