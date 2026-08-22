@@ -6,6 +6,7 @@ export interface NavigationItem {
   id: string;
   label: string;
   route: string;
+  moduleId?: string;
 }
 
 export interface SchoolContext {
