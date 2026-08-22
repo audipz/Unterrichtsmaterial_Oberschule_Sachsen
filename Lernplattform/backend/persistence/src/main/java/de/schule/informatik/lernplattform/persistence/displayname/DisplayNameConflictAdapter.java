@@ -14,27 +14,36 @@ public class DisplayNameConflictAdapter implements DisplayNameConflictPort {
     private static final String SQL = """
         SELECT EXISTS (
             SELECT 1
-            FROM app_user u
-            WHERE u.deleted_at IS NULL
-              AND u.id <> :userId
-              AND u.display_name_normalized = :displayName
-              AND (
+              FROM account a
+             WHERE a.deleted_at IS NULL
+               AND a.status <> 'SOFT_DELETED'
+               AND a.id <> :accountId
+               AND a.display_name_normalized = :displayName
+               AND (
                     EXISTS (
                         SELECT 1
-                        FROM school_class_membership scm
-                        WHERE scm.student_id = u.id
-                          AND scm.school_class_id IN (:classIds)
-                          AND scm.status = 'ACTIVE'
-                          AND scm.deleted_at IS NULL
+                          FROM school_class_membership scm
+                          JOIN school_membership sm
+                            ON sm.id = scm.student_school_membership_id
+                         WHERE sm.account_id = a.id
+                           AND sm.status = 'ACTIVE'
+                           AND sm.deleted_at IS NULL
+                           AND scm.school_class_id IN (:classIds)
+                           AND scm.status = 'ACTIVE'
+                           AND scm.deleted_at IS NULL
                     )
                     OR EXISTS (
                         SELECT 1
-                        FROM class_teacher ct
-                        WHERE ct.teacher_id = u.id
-                          AND ct.school_class_id IN (:classIds)
-                          AND ct.deleted_at IS NULL
+                          FROM class_teacher ct
+                          JOIN school_membership sm
+                            ON sm.id = ct.teacher_school_membership_id
+                         WHERE sm.account_id = a.id
+                           AND sm.status = 'ACTIVE'
+                           AND sm.deleted_at IS NULL
+                           AND ct.school_class_id IN (:classIds)
+                           AND ct.deleted_at IS NULL
                     )
-              )
+               )
         )
         """;
 
@@ -45,13 +54,13 @@ public class DisplayNameConflictAdapter implements DisplayNameConflictPort {
     }
 
     @Override
-    public boolean conflictsInClasses(UUID userId, String normalizedDisplayName, Set<UUID> classIds) {
+    public boolean conflictsInClasses(UUID accountId, String normalizedDisplayName, Set<UUID> classIds) {
         if (classIds == null || classIds.isEmpty()) {
             return false;
         }
 
         var parameters = new MapSqlParameterSource()
-                .addValue("userId", userId)
+                .addValue("accountId", accountId)
                 .addValue("displayName", normalizedDisplayName)
                 .addValue("classIds", classIds);
 
