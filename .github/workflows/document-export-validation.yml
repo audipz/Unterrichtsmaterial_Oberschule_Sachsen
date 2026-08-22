@@ -1,0 +1,31 @@
+name: Export-Manifeste prüfen
+
+on:
+  push:
+    paths:
+      - "Build/run_export.py"
+      - "Build/validate_exports.py"
+      - "Build/export-manifests/**"
+      - ".github/workflows/document-export-validation.yml"
+  pull_request:
+    paths:
+      - "Build/run_export.py"
+      - "Build/validate_exports.py"
+      - "Build/export-manifests/**"
+      - ".github/workflows/document-export-validation.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v5
+
+      - name: Python-Syntax prüfen
+        run: python3 -m py_compile Build/run_export.py Build/validate_exports.py
+
+      - name: Export-Manifeste prüfen
+        run: python3 Build/validate_exports.py
