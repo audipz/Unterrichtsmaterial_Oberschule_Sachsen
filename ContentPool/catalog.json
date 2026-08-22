@@ -62,6 +62,92 @@
       "type": "COLLECTION",
       "title": "Informatik Klasse 7",
       "children": ["informatik.alltag.grundlagen", "informatik.daten.repraesentation", "informatik.ki.wahlbereich", "informatik.mobile-endgeraete.wahlbereich", "informatik.computergrafik.wahlbereich"]
+    },
+    {
+      "contentKey": "informatik.objektorientierung.modellierung",
+      "type": "TOPIC",
+      "title": "Objektorientierte Modellierung",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [8]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/01_Objektorientierte_Modellierung/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_8/01_Objektorientierte_Modellierung/01_Arbeitsheft.pdf", "Klasse_8/01_Objektorientierte_Modellierung/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/01_Objektorientierte_Modellierung", "outputs": ["Klasse_8/01_Objektorientierte_Modellierung/02_Lehrerband.*", "Klasse_8/01_Objektorientierte_Modellierung/03_Material.*", "Klasse_8/01_Objektorientierte_Modellierung/04_Loesungen.*", "Klasse_8/01_Objektorientierte_Modellierung/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.algorithmen.grundlagen",
+      "type": "TOPIC",
+      "title": "Algorithmen",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [8]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/02_Algorithmen/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_8/02_Algorithmen/01_Arbeitsheft.pdf", "Klasse_8/02_Algorithmen/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/02_Algorithmen", "outputs": ["Klasse_8/02_Algorithmen/02_Lehrerband.*", "Klasse_8/02_Algorithmen/03_Material.*", "Klasse_8/02_Algorithmen/04_Loesungen.*", "Klasse_8/02_Algorithmen/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.robot-karol.programmierung",
+      "type": "TOPIC",
+      "title": "Robot Karol",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [8]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/03_Robot_Karol/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_8/03_Robot_Karol/01_Arbeitsheft.pdf", "Klasse_8/03_Robot_Karol/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/03_Robot_Karol", "outputs": ["Klasse_8/03_Robot_Karol/02_Lehrerband.*", "Klasse_8/03_Robot_Karol/03_Material.*", "Klasse_8/03_Robot_Karol/04_Loesungen.*", "Klasse_8/03_Robot_Karol/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.netzwerke.grundlagen",
+      "type": "TOPIC",
+      "title": "Netzwerke in der Informatik",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [8]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/04_Netzwerke_in_der_Informatik/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_8/04_Netzwerke_in_der_Informatik/01_Arbeitsheft.pdf", "Klasse_8/04_Netzwerke_in_der_Informatik/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/04_Netzwerke_in_der_Informatik", "outputs": ["Klasse_8/04_Netzwerke_in_der_Informatik/02_Lehrerband.*", "Klasse_8/04_Netzwerke_in_der_Informatik/03_Material.*", "Klasse_8/04_Netzwerke_in_der_Informatik/04_Loesungen.*", "Klasse_8/04_Netzwerke_in_der_Informatik/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.steuern-regeln.wahlbereich",
+      "type": "TOPIC",
+      "title": "Wahlbereich Steuern und Regeln",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [8]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/06_Wahlbereich_Steuern_und_Regeln/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_8/06_Wahlbereich_Steuern_und_Regeln/01_Arbeitsheft.pdf", "Klasse_8/06_Wahlbereich_Steuern_und_Regeln/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/06_Wahlbereich_Steuern_und_Regeln", "outputs": ["Klasse_8/06_Wahlbereich_Steuern_und_Regeln/02_Lehrerband.*", "Klasse_8/06_Wahlbereich_Steuern_und_Regeln/03_Material.*", "Klasse_8/06_Wahlbereich_Steuern_und_Regeln/04_Loesungen.*", "Klasse_8/06_Wahlbereich_Steuern_und_Regeln/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.mobile-endgeraete.wahlbereich.klasse8",
+      "type": "TOPIC",
+      "title": "Wahlbereich Mobile Endgeräte",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [8]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/07_Wahlbereich_Mobile_Endgeraete/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_8/07_Wahlbereich_Mobile_Endgeraete/01_Arbeitsheft.pdf", "Klasse_8/07_Wahlbereich_Mobile_Endgeraete/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/07_Wahlbereich_Mobile_Endgeraete", "outputs": ["Klasse_8/07_Wahlbereich_Mobile_Endgeraete/02_Lehrerband.*", "Klasse_8/07_Wahlbereich_Mobile_Endgeraete/03_Material.*", "Klasse_8/07_Wahlbereich_Mobile_Endgeraete/04_Loesungen.*", "Klasse_8/07_Wahlbereich_Mobile_Endgeraete/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.computergrafik.wahlbereich.klasse8",
+      "type": "TOPIC",
+      "title": "Wahlbereich Computergrafik",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [8]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/08_Wahlbereich_Computergrafik/01_Arbeitsheft", "audience": "STUDENT", "outputs": ["Klasse_8/08_Wahlbereich_Computergrafik/01_Arbeitsheft.pdf", "Klasse_8/08_Wahlbereich_Computergrafik/01_Arbeitsheft.docx"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/08_Wahlbereich_Computergrafik", "outputs": ["Klasse_8/08_Wahlbereich_Computergrafik/02_Lehrerband.*", "Klasse_8/08_Wahlbereich_Computergrafik/03_Material.*", "Klasse_8/08_Wahlbereich_Computergrafik/04_Loesungen.*", "Klasse_8/08_Wahlbereich_Computergrafik/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.klasse8.leistungskontrollen",
+      "type": "RESOURCE",
+      "title": "Leistungskontrollen Klasse 8",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [8]},
+      "sources": [],
+      "resources": [{"id": "assessments", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_8/05_Leistungskontrollen", "outputs": ["Klasse_8/Lernkontrollen/*", "Klasse_8/05_Leistungskontrollen.*"]}]
+    },
+    {
+      "contentKey": "curriculum.oberschule.sachsen.informatik.klasse8",
+      "type": "COLLECTION",
+      "title": "Informatik Klasse 8",
+      "children": ["informatik.objektorientierung.modellierung", "informatik.algorithmen.grundlagen", "informatik.robot-karol.programmierung", "informatik.netzwerke.grundlagen", "informatik.steuern-regeln.wahlbereich", "informatik.mobile-endgeraete.wahlbereich.klasse8", "informatik.computergrafik.wahlbereich.klasse8", "informatik.klasse8.leistungskontrollen"]
     }
   ]
 }
