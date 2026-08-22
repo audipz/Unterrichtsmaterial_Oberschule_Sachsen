@@ -1,43 +1,44 @@
-# Informatik an der Oberschule Sachsen (OER)
+# Informatik-Unterrichtsmaterial Sachsen (OER)
 
 [**Aktuelle Unterrichtsmaterialien als ZIP herunterladen**](https://github.com/audipz/Unterrichtsmaterial_Oberschule_Sachsen/releases/download/unterrichtsmaterial-aktuell/Unterrichtsmaterial_Oberschule_Sachsen.zip)
 
-Ein freies, lehrplankonformes Unterrichtswerk für das Fach **Informatik an Oberschulen in Sachsen**.
+Dieses Repository enthält ein frei verfügbares, lehrplanorientiertes Unterrichtswerk für das Fach **Informatik**. Der aktuelle Schwerpunkt liegt auf der **Oberschule in Sachsen**. Die Architektur und die Inhalte werden jedoch so weiterentwickelt, dass künftig auch **Gymnasium**, weitere Schularten, weitere Bundesländer und mehrsprachige Varianten unterstützt werden können.
 
 Das Projekt entsteht als **Open Educational Resource (OER)** und kann frei genutzt, angepasst und weiterentwickelt werden.
 
 ---
 
-# Ziele des Projekts
+# Aktueller Stand
 
-Dieses Repository verfolgt das Ziel, ein vollständiges digitales Lehrwerk bereitzustellen.
+Die Materialien werden inzwischen für mehrere Klassenstufen aufgebaut und über eine gemeinsame Build-Infrastruktur erzeugt. Zum Projekt gehören insbesondere:
 
-Es enthält
-
-- Arbeitshefte
+- Nachschlagewerke
+- Arbeitshefte und Arbeitsblätter
 - Lehrerbände
 - Lösungen
 - Präsentationen
 - Beispieldateien
 - Lernkontrollen
-- Dokumentationen
+- Quellen und Abbildungen
+- technische und didaktische Dokumentation
 
-Alle Materialien orientieren sich am Lehrplan für Oberschulen in Sachsen.
+Neben den klassischen Unterrichtsmaterialien entsteht im Ordner `Lernplattform/` eine eigenständige Lernplattform. Sie soll Schülerinnen und Schülern ermöglichen, Übungen und Arbeitsmaterialien selbstständig zu bearbeiten, ihren Stand zu speichern und später weiterzuarbeiten.
+
+Die Lernplattform ist **keine Plattform zur Überwachung von Schülerantworten**. Lehrkräfte sollen den Bearbeitungsstand und die Vollständigkeit sehen können, nicht jedoch die konkreten Inhalte der Schülerantworten.
 
 ---
 
 # Didaktisches Konzept
 
-Das Unterrichtswerk folgt konsequent einem problemorientierten Ansatz.
-
-Die Schülerinnen und Schüler
+Das Unterrichtswerk folgt einem problemorientierten Ansatz. Die Schülerinnen und Schüler
 
 - entdecken Zusammenhänge,
 - entwickeln eigene Lösungsstrategien,
-- lernen informatische Begriffe aus konkreten Situationen heraus und
-- wenden ihr Wissen in realitätsnahen Projekten an.
+- lernen informatische Begriffe aus konkreten Situationen heraus,
+- wenden ihr Wissen in realitätsnahen Aufgaben und Projekten an und
+- können zentrale Inhalte in Nachschlagewerken erneut aufrufen.
 
-Die typische Lernstruktur lautet:
+Eine typische Lernstruktur ist:
 
 ```text
 Problem
@@ -57,78 +58,116 @@ Reflektieren
 Transfer
 ```
 
-Definitionen stehen nicht am Anfang, sondern entstehen aus den Erfahrungen der Lernenden.
+Definitionen sollen möglichst nicht isoliert am Anfang stehen, sondern aus nachvollziehbaren Situationen und Erfahrungen entstehen.
 
 ---
 
-# Aufbau des Repositories
+# Repository und Materialien
+
+Die Unterrichtsmaterialien sind nach Klassenstufen und Lernbereichen organisiert. Innerhalb eines Lernbereichs können beispielsweise folgende Bestandteile vorkommen:
 
 ```text
+Klasse_7/
+Klasse_8/
 Klasse_9/
-│
-├── 01_Informationen_und_Daten/
-│   ├── 01_Arbeitsheft/
-│   ├── 02_Lehrerband/
-│   ├── 03_Loesungen/
-│   ├── 04_Praesentationen/
-│   ├── 05_Dateien/
-│   ├── 06_Bilder/
-│   ├── 07_Quellen/
-│   └── 08_Lernkontrollen/
-│
-├── 02_Algorithmen/
-├── 03_Netzwerke/
-├── 04_Digitale_Systeme/
-└── ...
-│
+Klasse_10/
+    └── Lernbereich/
+        ├── Arbeitsheft/
+        ├── Lehrerband/
+        ├── Loesungen/
+        ├── Praesentationen/
+        ├── Dateien/
+        ├── Bilder/
+        ├── Quellen/
+        └── Lernkontrollen/
+
+Lernplattform/
+    ├── Architektur/
+    ├── Fachlich/
+    ├── backend/
+    └── ...
+
 Dokumentation/
+Build/
 ```
 
----
-
-# Inhalte
-
-Der erste Lernbereich behandelt unter anderem
-
-- Informationen und Daten
-- Tabellen
-- Datenbanken
-- Primär- und Fremdschlüssel
-- Beziehungen
-- Suchen
-- Filtern
-- Sortieren
-- Auswertungen
-- Diagramme
-- Big Data
-- Künstliche Intelligenz
-- Datenschutz
-
-Alle Inhalte sind in eine durchgehende Geschichte eingebettet.
-
-Im ersten Lernbereich begleitet die Planung eines **Schülerfestivals** die Schülerinnen und Schüler durch sämtliche Unterrichtseinheiten.
+Die konkrete Struktur einzelner Klassenstufen kann sich während der weiteren Vereinheitlichung noch verändern.
 
 ---
 
-# Zielgruppe
+# Build und Ausgaben
 
-Das Material richtet sich an
+Die Quellen werden automatisiert geprüft und in veröffentlichbare Unterrichtsmaterialien überführt. Dazu gehören unter anderem PDF-Ausgaben der verschiedenen Dokumenttypen und ein Release-Paket mit den erzeugten Materialien.
 
-- Informatiklehrkräfte an Oberschulen
-- Referendarinnen und Referendare
-- Lehramtsstudierende
-- Schulen
-- OER-Projekte
+Der Build soll sicherstellen, dass beispielsweise
+
+- benötigte Dateien vorhanden sind,
+- Dokumente reproduzierbar erzeugt werden,
+- Quellen und Lizenzen nachvollziehbar bleiben und
+- fehlerhafte Änderungen nicht ungeprüft veröffentlicht werden.
+
+Die erzeugten Dateien sind Ausgaben des Builds. Die fachlichen Quellen bleiben die maßgebliche Grundlage für Änderungen.
 
 ---
 
-# Verwendete Software
+# Geplante Content-Architektur
 
-Die Materialien sind möglichst unabhängig von bestimmten Programmen.
+Für die weitere Entwicklung sollen Unterrichtsinhalte stärker als **wiederverwendbare Themenbausteine** verstanden werden. Markdown-Dateien bilden dabei einen redaktionellen Themenpool. Manifest-Dateien sollen später festlegen, welche Bausteine für eine konkrete Kombination verwendet werden, beispielsweise:
 
-Wo sinnvoll, werden offene Dateiformate verwendet.
+```text
+Bundesland
++ Schulart
++ Fach
++ Klassenstufe
++ Sprache
+= konkreter Lernpfad / konkretes Unterrichtswerk
+```
 
-Beispiele
+Damit kann ein gemeinsamer Inhalt sowohl in der Oberschule als auch im Gymnasium verwendet werden, während schulartspezifische Vertiefungen gezielt ergänzt werden können. Eine spätere Mehrsprachigkeit ist dabei von Anfang an vorgesehen.
+
+Die Markdown-Quellen selbst sollen **nicht von der Lernplattform zur Laufzeit aus dem Git-Repository geladen werden**. Für die Lernplattform werden freigegebene Inhalte über einen Publishing-Prozess validiert und in die Datenbank übernommen. Repository-Pfade, interne Quellenstrukturen sowie Lösungen und interne Kontrollinformationen werden nicht an Schülerinnen und Schüler ausgeliefert.
+
+Details zur geplanten Architektur befinden sich unter `Lernplattform/Architektur/`.
+
+---
+
+# Lernplattform
+
+Die Lernplattform wird als eigenständige Webanwendung konzipiert. Der aktuelle technische Zielrahmen umfasst:
+
+- Java mit Spring Boot im Backend
+- Angular im Frontend
+- PostgreSQL
+- Maven
+- Containerbetrieb auf Kubernetes/K3s
+- Helm für das Deployment
+- OAuth2/OIDC-basierte Authentifizierung
+- regelmäßige Datenbank-Backups
+
+Schulen bilden getrennte fachliche Kontexte. Lehrkräfte können mehreren Schulen zugeordnet sein; Rechte wie `SCHOOL_ADMIN` gelten ausschließlich innerhalb der jeweiligen Schule. Klassen besitzen mindestens eine zugewiesene Lehrkraft, mehrere zugewiesene Lehrkräfte sind gleichberechtigt.
+
+Schülerkonten sind so ausgelegt, dass Klassenwechsel und perspektivisch auch Schulwechsel möglich sind, ohne persönliche Lernstände unnötig zu verlieren. Datenschutz und Datensparsamkeit sind zentrale Architekturziele.
+
+---
+
+# Zielgruppen
+
+Das Projekt richtet sich insbesondere an
+
+- Schülerinnen und Schüler,
+- Informatiklehrkräfte,
+- Referendarinnen und Referendare,
+- Lehramtsstudierende,
+- Schulen und
+- OER-Projekte.
+
+Aktuell steht die **Oberschule in Sachsen** im Mittelpunkt. Als nächster größerer Ausbau ist das **Gymnasium** vorgesehen. Die Struktur soll anschließend auch die Erweiterung auf weitere Bundesländer und Schularten ermöglichen.
+
+---
+
+# Verwendete Formate und Werkzeuge
+
+Die Materialien sollen möglichst unabhängig von einzelnen proprietären Programmen bleiben. Wo sinnvoll, werden offene oder gut dokumentierte Formate eingesetzt, unter anderem:
 
 - Markdown
 - CSV
@@ -136,57 +175,51 @@ Beispiele
 - PNG
 - PDF
 
+Weitere technische Details befinden sich in der Projektdokumentation und den jeweiligen Build-Dateien.
+
 ---
 
 # Mitarbeit
 
-Beiträge sind ausdrücklich willkommen.
-
-Mögliche Beiträge
+Beiträge sind willkommen. Besonders hilfreich sind beispielsweise:
 
 - Fehlerkorrekturen
-- neue Aufgaben
-- neue Beispiele
+- fachliche und didaktische Verbesserungen
+- neue Aufgaben und Beispiele
 - Präsentationen
 - Übersetzungen
-- Barrierefreiheit
+- Verbesserungen der Barrierefreiheit
 - Hinweise aus der Unterrichtspraxis
+- Beiträge zur technischen Lernplattform
 
-Bitte beachtet vor einem Beitrag die Dokumente im Ordner
-
-```text
-Dokumentation/
-```
+Vor größeren Änderungen sollten die Dokumente unter `Dokumentation/` sowie bei Arbeiten an der Lernplattform die Beschreibungen unter `Lernplattform/` berücksichtigt werden.
 
 ---
 
 # Lizenz
 
-Alle selbst erstellten Inhalte stehen unter der
+Alle selbst erstellten Inhalte stehen, sofern nicht anders angegeben, unter der
 
-**Creative Commons Namensnennung 4.0 International (CC BY 4.0)**
+**Creative Commons Namensnennung 4.0 International (CC BY 4.0)**.
 
-Sofern nicht anders angegeben.
-
-Materialien Dritter unterliegen den jeweiligen Lizenzen.
+Materialien Dritter unterliegen ihren jeweiligen Lizenzen. Quellen-, Urheber- und Lizenzangaben müssen bei der Verwendung externer Materialien erhalten bleiben.
 
 ---
 
-# Projektstand
+# Projektentwicklung
 
-Der Aufbau erfolgt schrittweise.
+Das Projekt wird schrittweise ausgebaut. Der derzeitige Schwerpunkt liegt auf
 
-Geplant sind vollständige Materialien für
-
-- Klasse 9
-- Klasse 10
-
-sowie ergänzende Materialien für den Unterricht.
+1. der fachlichen und didaktischen Qualität der Unterrichtsmaterialien,
+2. einer reproduzierbaren Build- und PDF-Erzeugung,
+3. der Vereinheitlichung über die Klassenstufen hinweg,
+4. dem Aufbau der Lernplattform und
+5. einer langfristig wiederverwendbaren Content-Struktur für unterschiedliche Schularten, Bundesländer und Sprachen.
 
 ---
 
 # Kontakt
 
-Fehler, Verbesserungsvorschläge oder Ideen können jederzeit über die GitHub-Issues eingebracht werden.
+Fehler, Verbesserungsvorschläge und Ideen können über die GitHub-Issues eingebracht werden.
 
-Gemeinsam entsteht ein freies Informatik-Lehrwerk für Sachsen.
+Ziel ist ein frei nutzbares, nachvollziehbar entwickeltes Informatik-Unterrichtswerk, das sich langfristig für unterschiedliche schulische Kontexte weiterentwickeln lässt.
