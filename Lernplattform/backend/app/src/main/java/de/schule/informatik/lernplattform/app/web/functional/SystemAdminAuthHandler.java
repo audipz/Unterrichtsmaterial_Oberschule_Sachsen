@@ -61,7 +61,7 @@ public class SystemAdminAuthHandler {
                     "navigation", List.of(Map.of(
                             "id", "password",
                             "label", "Passwort ändern",
-                            "route", "/system-admin/passwort"))));
+                            "route", "/system-admin"))));
         }
 
         return ServerResponse.ok().body(Map.of(
@@ -70,15 +70,10 @@ public class SystemAdminAuthHandler {
                 "capabilities", List.of(
                         "SCHOOL_REGISTRATION_REVIEW",
                         "SCHOOL_MANAGEMENT"),
-                "navigation", List.of(
-                        Map.of(
-                                "id", "registrations",
-                                "label", "Schulregistrierungen",
-                                "route", "/system-admin/schulregistrierungen"),
-                        Map.of(
-                                "id", "schools",
-                                "label", "Schulen",
-                                "route", "/system-admin/schulen"))));
+                "navigation", List.of(Map.of(
+                        "id", "registrations",
+                        "label", "Schulregistrierungen",
+                        "route", "/system-admin"))));
     }
 
     public ServerResponse csrf(ServerRequest request) {
