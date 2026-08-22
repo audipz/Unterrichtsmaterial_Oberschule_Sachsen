@@ -15,11 +15,10 @@ public class PublicRoutes {
 
     @Bean
     RouterFunction<ServerResponse> publicRegistrationRoutes(PublicRegistrationHandler handler) {
+        var json = accept(MediaType.APPLICATION_JSON).and(contentType(MediaType.APPLICATION_JSON));
         return route()
-                .POST(
-                        "/api/v1/public/school-registrations",
-                        accept(MediaType.APPLICATION_JSON).and(contentType(MediaType.APPLICATION_JSON)),
-                        handler::submitSchoolRegistration)
+                .POST("/api/v1/public/school-registrations", json, handler::submitSchoolRegistration)
+                .POST("/api/v1/public/school-registrations/verify", json, handler::verifyEmail)
                 .build();
     }
 }
