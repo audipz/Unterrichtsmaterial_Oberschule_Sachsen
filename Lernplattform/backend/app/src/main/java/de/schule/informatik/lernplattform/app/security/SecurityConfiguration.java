@@ -38,6 +38,7 @@ public class SecurityConfiguration {
                                 "/api/v1/public/school-registrations/verify",
                                 "/api/v1/system-admin/auth/login").permitAll()
                         .requestMatchers(
+                                "/api/v1/system-admin/me",
                                 "/api/v1/system-admin/auth/csrf",
                                 "/api/v1/system-admin/auth/change-password",
                                 "/api/v1/system-admin/auth/logout")
