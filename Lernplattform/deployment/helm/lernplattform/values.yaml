@@ -64,6 +64,16 @@ systemAdmin:
     usernameKey: username
     passwordKey: password
 
+registration:
+  publicBaseUrl: http://lernplattform.local
+  mail:
+    existingSecret: lernplattform-mail
+    hostKey: host
+    portKey: port
+    usernameKey: username
+    passwordKey: password
+    fromKey: from
+
 migration:
   enabled: true
   backoffLimit: 1
