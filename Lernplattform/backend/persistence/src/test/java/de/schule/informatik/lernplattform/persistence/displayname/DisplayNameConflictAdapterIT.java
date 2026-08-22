@@ -52,17 +52,20 @@ class DisplayNameConflictAdapterIT {
     void clearData() {
         jdbc.execute("DELETE FROM class_teacher");
         jdbc.execute("DELETE FROM school_class_membership");
-        jdbc.execute("DELETE FROM user_role");
+        jdbc.execute("DELETE FROM student_school_login");
+        jdbc.execute("DELETE FROM school_role");
+        jdbc.execute("DELETE FROM system_role");
         jdbc.execute("DELETE FROM school_class");
-        jdbc.execute("DELETE FROM app_user");
+        jdbc.execute("DELETE FROM school_membership");
+        jdbc.execute("DELETE FROM account");
         jdbc.execute("DELETE FROM school");
     }
 
     @Test
     void detectsActiveStudentWithSameDisplayNameInClass() {
         Fixture f = fixture();
-        UUID existingStudent = insertUser(f.schoolId(), "student-1", "PixelFuchs", "pixelfuchs", false);
-        insertStudentMembership(f.classId(), existingStudent, "ACTIVE");
+        AccountMembership student = insertAccountWithMembership(f.schoolId(), "STUDENT", "PixelFuchs", "pixelfuchs", false);
+        insertStudentClassMembership(f, student.membershipId(), "ACTIVE");
 
         boolean conflict = adapter.conflictsInClasses(
                 UUID.randomUUID(), "pixelfuchs", Set.of(f.classId()));
@@ -73,8 +76,8 @@ class DisplayNameConflictAdapterIT {
     @Test
     void ignoresEndedStudentMembership() {
         Fixture f = fixture();
-        UUID existingStudent = insertUser(f.schoolId(), "student-1", "PixelFuchs", "pixelfuchs", false);
-        insertStudentMembership(f.classId(), existingStudent, "ENDED");
+        AccountMembership student = insertAccountWithMembership(f.schoolId(), "STUDENT", "PixelFuchs", "pixelfuchs", false);
+        insertStudentClassMembership(f, student.membershipId(), "ENDED");
 
         boolean conflict = adapter.conflictsInClasses(
                 UUID.randomUUID(), "pixelfuchs", Set.of(f.classId()));
@@ -85,9 +88,11 @@ class DisplayNameConflictAdapterIT {
     @Test
     void detectsActiveTeacherWithSameDisplayNameInClass() {
         Fixture f = fixture();
-        UUID teacher = insertUser(f.schoolId(), "teacher-1", "CodeOtter", "codeotter", false);
-        jdbc.update("INSERT INTO class_teacher (school_class_id, teacher_id) VALUES (?, ?)",
-                f.classId(), teacher);
+        AccountMembership teacher = insertAccountWithMembership(f.schoolId(), "TEACHER", "CodeOtter", "codeotter", false);
+        jdbc.update("""
+                INSERT INTO class_teacher (school_class_id, school_id, teacher_school_membership_id)
+                VALUES (?, ?, ?)
+                """, f.classId(), f.schoolId(), teacher.membershipId());
 
         boolean conflict = adapter.conflictsInClasses(
                 UUID.randomUUID(), "codeotter", Set.of(f.classId()));
@@ -96,10 +101,10 @@ class DisplayNameConflictAdapterIT {
     }
 
     @Test
-    void ignoresSoftDeletedUsers() {
+    void ignoresSoftDeletedAccounts() {
         Fixture f = fixture();
-        UUID existingStudent = insertUser(f.schoolId(), "student-1", "PixelFuchs", "pixelfuchs", true);
-        insertStudentMembership(f.classId(), existingStudent, "ACTIVE");
+        AccountMembership student = insertAccountWithMembership(f.schoolId(), "STUDENT", "PixelFuchs", "pixelfuchs", true);
+        insertStudentClassMembership(f, student.membershipId(), "ACTIVE");
 
         boolean conflict = adapter.conflictsInClasses(
                 UUID.randomUUID(), "pixelfuchs", Set.of(f.classId()));
@@ -108,13 +113,13 @@ class DisplayNameConflictAdapterIT {
     }
 
     @Test
-    void ignoresCurrentUserWhenRenamingWithoutChangingName() {
+    void ignoresCurrentAccountWhenRenamingWithoutChangingName() {
         Fixture f = fixture();
-        UUID currentUser = insertUser(f.schoolId(), "student-1", "PixelFuchs", "pixelfuchs", false);
-        insertStudentMembership(f.classId(), currentUser, "ACTIVE");
+        AccountMembership student = insertAccountWithMembership(f.schoolId(), "STUDENT", "PixelFuchs", "pixelfuchs", false);
+        insertStudentClassMembership(f, student.membershipId(), "ACTIVE");
 
         boolean conflict = adapter.conflictsInClasses(
-                currentUser, "pixelfuchs", Set.of(f.classId()));
+                student.accountId(), "pixelfuchs", Set.of(f.classId()));
 
         assertThat(conflict).isFalse();
     }
@@ -123,54 +128,64 @@ class DisplayNameConflictAdapterIT {
         UUID schoolId = UUID.randomUUID();
         UUID classId = UUID.randomUUID();
 
-        jdbc.update("INSERT INTO school (id, name, short_name) VALUES (?, ?, ?)",
-                schoolId, "Testschule", "TS-" + schoolId.toString().substring(0, 8));
+        jdbc.update("INSERT INTO school (id, slug, name) VALUES (?, ?, ?)",
+                schoolId, "test-" + schoolId.toString().substring(0, 8), "Testschule");
         jdbc.update("""
                 INSERT INTO school_class (id, school_id, name, grade_level, school_year)
                 VALUES (?, ?, ?, ?, ?)
-                """,
-                classId, schoolId, "7a", 7, "2026/27");
+                """, classId, schoolId, "7a", 7, "2026/27");
 
         return new Fixture(schoolId, classId);
     }
 
-    private UUID insertUser(UUID schoolId,
-                            String username,
-                            String displayName,
-                            String normalizedDisplayName,
-                            boolean softDeleted) {
-        UUID userId = UUID.randomUUID();
+    private AccountMembership insertAccountWithMembership(UUID schoolId,
+                                                          String accountType,
+                                                          String displayName,
+                                                          String normalizedDisplayName,
+                                                          boolean softDeleted) {
+        UUID accountId = UUID.randomUUID();
+        UUID membershipId = UUID.randomUUID();
+        String teacherEmail = "TEACHER".equals(accountType)
+                ? "teacher-" + accountId + "@example.invalid"
+                : null;
 
         jdbc.update("""
-                INSERT INTO app_user (
-                    id, school_id, username, display_name, display_name_normalized,
-                    password_hash, status, deleted_at
+                INSERT INTO account (
+                    id, account_type, display_name, display_name_normalized,
+                    teacher_email, teacher_email_normalized, status, deleted_at
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, CASE WHEN ? THEN now() ELSE NULL END)
                 """,
-                userId,
-                schoolId,
-                username,
+                accountId,
+                accountType,
                 displayName,
                 normalizedDisplayName,
-                "$argon2id$test",
+                teacherEmail,
+                teacherEmail,
                 softDeleted ? "SOFT_DELETED" : "ACTIVE",
                 softDeleted);
 
-        return userId;
+        jdbc.update("""
+                INSERT INTO school_membership (id, account_id, school_id, status)
+                VALUES (?, ?, ?, 'ACTIVE')
+                """, membershipId, accountId, schoolId);
+
+        return new AccountMembership(accountId, membershipId);
     }
 
-    private void insertStudentMembership(UUID classId, UUID studentId, String status) {
+    private void insertStudentClassMembership(Fixture fixture, UUID studentMembershipId, String status) {
         LocalDate today = LocalDate.now();
         LocalDate validUntil = "ENDED".equals(status) ? today : null;
 
         jdbc.update("""
                 INSERT INTO school_class_membership (
-                    id, school_class_id, student_id, valid_from, valid_until, status
-                ) VALUES (?, ?, ?, ?, ?, ?)
+                    id, school_class_id, school_id, student_school_membership_id,
+                    valid_from, valid_until, status
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)
                 """,
-                UUID.randomUUID(), classId, studentId, today.minusDays(1), validUntil, status);
+                UUID.randomUUID(), fixture.classId(), fixture.schoolId(), studentMembershipId,
+                today.minusDays(1), validUntil, status);
     }
 
-    private record Fixture(UUID schoolId, UUID classId) {
-    }
+    private record Fixture(UUID schoolId, UUID classId) {}
+    private record AccountMembership(UUID accountId, UUID membershipId) {}
 }
