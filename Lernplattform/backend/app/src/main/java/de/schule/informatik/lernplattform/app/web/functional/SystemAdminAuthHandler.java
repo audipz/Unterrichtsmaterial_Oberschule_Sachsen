@@ -63,7 +63,7 @@ public class SystemAdminAuthHandler {
         return clearCookie(ServerResponse.noContent()).build();
     }
 
-    private ServerResponse.BodyBuilder clearCookie(ServerResponse.BodyBuilder builder) {
+    private ServerResponse.HeadersBuilder<?> clearCookie(ServerResponse.HeadersBuilder<?> builder) {
         ResponseCookie cookie = ResponseCookie.from(SystemAdminSessionFilter.COOKIE_NAME, "")
                 .httpOnly(true)
                 .secure(secureCookie)
