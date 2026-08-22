@@ -4,7 +4,7 @@
   "title": "Schülermaterialien",
   "audience": ["STUDENT"],
   "areas": ["Klasse_7", "Klasse_8", "Klasse_9", "Klasse_10", "Grundlagen", "Werkzeuge"],
-  "formats": ["pdf", "docx", "html"],
+  "formats": ["pdf", "docx"],
   "include": [
     "Klasse_*/**/01_Arbeitsheft.*",
     "Klasse_*/Nachschlagewerk/*",
