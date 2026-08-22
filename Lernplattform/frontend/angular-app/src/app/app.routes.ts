@@ -15,6 +15,10 @@ export const routes: Routes = [
       .then((m) => m.RegistrationVerificationComponent)
   },
   {
+    path: 'system-admin',
+    loadComponent: () => import('./system-admin/system-admin.component').then((m) => m.SystemAdminComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
