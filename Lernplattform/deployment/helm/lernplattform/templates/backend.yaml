@@ -42,6 +42,33 @@ spec:
                   key: {{ .Values.database.passwordKey }}
             - name: FLYWAY_ENABLED
               value: "false"
+            - name: LERNPLATTFORM_PUBLIC_BASE_URL
+              value: {{ .Values.registration.publicBaseUrl | quote }}
+            - name: SPRING_MAIL_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.registration.mail.existingSecret }}
+                  key: {{ .Values.registration.mail.hostKey }}
+            - name: SPRING_MAIL_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.registration.mail.existingSecret }}
+                  key: {{ .Values.registration.mail.portKey }}
+            - name: SPRING_MAIL_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.registration.mail.existingSecret }}
+                  key: {{ .Values.registration.mail.usernameKey }}
+            - name: SPRING_MAIL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.registration.mail.existingSecret }}
+                  key: {{ .Values.registration.mail.passwordKey }}
+            - name: LERNPLATTFORM_REGISTRATION_MAIL_FROM
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.registration.mail.existingSecret }}
+                  key: {{ .Values.registration.mail.fromKey }}
 {{- if .Values.scheduler.leaderElection.enabled }}
             - name: LERNPLATTFORM_SCHEDULER_LEADER_ELECTION_ENABLED
               value: "true"
