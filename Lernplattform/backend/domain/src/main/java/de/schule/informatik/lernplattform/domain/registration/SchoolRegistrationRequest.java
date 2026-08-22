@@ -14,6 +14,8 @@ public record SchoolRegistrationRequest(
         String schoolWebsite,
         String requestedSlug,
         String submissionNonce,
+        String verificationTokenHash,
+        Instant verificationExpiresAt,
         String createdIpHash,
         String userAgentHash,
         Instant submittedAt) {
