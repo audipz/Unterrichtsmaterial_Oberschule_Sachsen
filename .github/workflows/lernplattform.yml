@@ -69,6 +69,10 @@ jobs:
       - name: Angular Production Build
         run: npm run build
 
+      - name: Runtime-Module syntaktisch prüfen
+        working-directory: ${{ github.workspace }}
+        run: find Lernplattform/frontend/ui-artifacts -type f -name '*.js' -print0 | xargs -0 -r -n1 node --check
+
   helm:
     name: Helm lint / template
     runs-on: ubuntu-latest
