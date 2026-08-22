@@ -47,7 +47,9 @@ public class SystemAdminAuthHandler {
 
     public ServerResponse csrf(ServerRequest request) {
         CsrfToken token = (CsrfToken) request.servletRequest().getAttribute(CsrfToken.class.getName());
-        return ServerResponse.ok().body(Map.of("token", token.getToken()));
+        return ServerResponse.ok().body(Map.of(
+                "token", token.getToken(),
+                "headerName", token.getHeaderName()));
     }
 
     public ServerResponse changePassword(ServerRequest request) throws Exception {
