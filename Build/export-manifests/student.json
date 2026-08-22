@@ -5,19 +5,15 @@
   "audience": ["STUDENT"],
   "areas": ["Klasse_7", "Klasse_8", "Klasse_9", "Klasse_10", "Grundlagen", "Werkzeuge"],
   "formats": ["pdf", "docx"],
-  "include": [
-    "Klasse_*/**/01_Arbeitsheft.*",
-    "Klasse_*/Nachschlagewerk/*",
-    "Grundlagen/*",
-    "Grundlagen/**/*",
-    "Werkzeuge/*",
-    "Werkzeuge/**/*"
+  "contentKeys": [
+    "curriculum.oberschule.sachsen.informatik.klasse7",
+    "curriculum.oberschule.sachsen.informatik.klasse8",
+    "curriculum.oberschule.sachsen.informatik.klasse9",
+    "curriculum.oberschule.sachsen.informatik.klasse10",
+    "collection.informatik.grundlagen",
+    "collection.informatik.werkzeuge"
   ],
-  "exclude": [
-    "**/Lernkontrollen/*",
-    "**/*Loesung*",
-    "**/*Lehrer*"
-  ],
+  "exclude": [],
   "minimumFiles": 1,
   "artifact": "Unterrichtsmaterial_Schueler.zip"
 }
