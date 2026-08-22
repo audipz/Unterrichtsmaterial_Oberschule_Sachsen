@@ -57,8 +57,8 @@ public class AdminAccountProvisioningController {
                                          @Valid @RequestBody CreateTeacherRequest request) {
         UUID schoolId = schoolLookupPort.requireActiveSchoolId(schoolSlug);
         UUID accountId = service.createTeacher(new CreateTeacherCommand(
-                schoolId,
                 request.email(),
+                schoolId,
                 currentActor.id()
         ));
         return new AccountResponse(accountId);
