@@ -17,6 +17,7 @@ public class StudentAuthRoutes {
         var json = accept(MediaType.APPLICATION_JSON).and(contentType(MediaType.APPLICATION_JSON));
         return route()
                 .POST("/api/v1/schools/{school}/student-auth/login", json, handler::login)
+                .GET("/api/v1/student-auth/csrf", handler::csrf)
                 .POST("/api/v1/student-auth/change-password", json, handler::changePassword)
                 .POST("/api/v1/student-auth/logout", handler::logout)
                 .build();
