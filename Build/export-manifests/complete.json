@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "complete",
+  "title": "Vollständige Unterrichtsmaterialien",
+  "audience": ["STUDENT", "TEACHER"],
+  "areas": ["Klasse_7", "Klasse_8", "Klasse_9", "Klasse_10", "Grundlagen", "Werkzeuge"],
+  "formats": ["pdf", "docx", "html", "pptx"],
+  "include": ["**/*"],
+  "exclude": [],
+  "minimumFiles": 1,
+  "artifact": "Unterrichtsmaterial_komplett.zip"
+}
