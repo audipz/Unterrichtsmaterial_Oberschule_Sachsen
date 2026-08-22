@@ -38,6 +38,9 @@ def load_catalog(path: Path) -> dict:
 
         for source in sources:
             _validate_locator(key, source, "source")
+            audience = str(source.get("audience", "STUDENT")).upper()
+            if audience not in ALLOWED_AUDIENCES:
+                raise ValueError(f"Content-Pool {key}: ungültige source audience {audience}")
         for resource in resources:
             _validate_locator(key, resource, "resource")
             audience = str(resource.get("audience", "TEACHER")).upper()
@@ -97,7 +100,9 @@ def output_patterns_for(items: list[dict], audience: set[str] | None = None) -> 
     patterns: list[str] = []
     for item in items:
         for source in item.get("sources", []):
-            patterns.extend(source.get("outputs", []))
+            source_audience = str(source.get("audience", "STUDENT")).upper()
+            if audience is None or source_audience in audience:
+                patterns.extend(source.get("outputs", []))
         for resource in item.get("resources", []):
             resource_audience = str(resource.get("audience", "TEACHER")).upper()
             if audience is None or resource_audience in audience:
