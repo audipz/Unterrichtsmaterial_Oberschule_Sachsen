@@ -36,7 +36,7 @@ public class SystemAdminBootstrap implements ApplicationRunner {
     @Override
     @Transactional
     public void run(ApplicationArguments args) {
-        jdbc.queryForObject("select pg_advisory_xact_lock(?)", Long.class, BOOTSTRAP_LOCK_ID);
+        jdbc.execute("select pg_advisory_xact_lock(" + BOOTSTRAP_LOCK_ID + ")");
 
         Integer existingAdmins = jdbc.queryForObject(
                 "select count(*) from system_role where role = 'SYSTEM_ADMIN'",
