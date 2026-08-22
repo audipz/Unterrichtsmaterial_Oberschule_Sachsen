@@ -62,8 +62,6 @@ render_document() {
   pandoc "$input" --from markdown --to docx --standalone --toc --toc-depth=2 --reference-doc="$TEMPLATE_ROOT/reference.docx" --lua-filter="$FILTER_ROOT/pagebreak.lua" --metadata "title=$title" --metadata "subtitle=$subtitle" --metadata "toc-title=Inhaltsverzeichnis" --metadata "lang=de-DE" --resource-path="$resource_dir:$SOURCE_ROOT:$REPO_ROOT" --output "$out_dir/$out_name.docx"
   python3 "$REPO_ROOT/Build/set_docx_footer.py" "$out_dir/$out_name.docx" --text "$footer_text"
 
-  pandoc "$input" --from markdown --to html5 --standalone --toc --toc-depth=2 --lua-filter="$FILTER_ROOT/pagebreak.lua" --css="$TEMPLATE_ROOT/publishing.css" --embed-resources --metadata "title=$title" --metadata "subtitle=$subtitle" --metadata "toc-title=Inhaltsverzeichnis" --metadata "lang=de-DE" --resource-path="$resource_dir:$SOURCE_ROOT:$REPO_ROOT" --output "$out_dir/$out_name.html"
-
   if command -v xelatex >/dev/null 2>&1; then
     footer_tex="$WORK_ROOT/$safe-footer.tex"
     cat > "$footer_tex" <<EOF
