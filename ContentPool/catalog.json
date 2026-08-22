@@ -1,4 +1,81 @@
 {
   "schemaVersion": 1,
-  "items": []
+  "items": [
+    {
+      "contentKey": "informatik.alltag.grundlagen",
+      "type": "TOPIC",
+      "title": "Informatik im Alltag",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {
+        "schoolTypes": ["OBERSCHULE"],
+        "federalStates": ["SACHSEN"],
+        "grades": [7]
+      },
+      "sources": [
+        {
+          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/01_Arbeitsheft",
+          "audience": "STUDENT",
+          "outputs": [
+            "Klasse_7/01_Informatik_im_Alltag/01_Arbeitsheft.pdf",
+            "Klasse_7/01_Informatik_im_Alltag/01_Arbeitsheft.docx"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "id": "teacher-guide",
+          "audience": "TEACHER",
+          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/02_Lehrerband",
+          "outputs": [
+            "Klasse_7/01_Informatik_im_Alltag/02_Lehrerband.pdf",
+            "Klasse_7/01_Informatik_im_Alltag/02_Lehrerband.docx"
+          ]
+        },
+        {
+          "id": "material",
+          "audience": "TEACHER",
+          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/03_Material",
+          "outputs": [
+            "Klasse_7/01_Informatik_im_Alltag/03_Material.pdf",
+            "Klasse_7/01_Informatik_im_Alltag/03_Material.docx"
+          ]
+        },
+        {
+          "id": "solutions",
+          "audience": "TEACHER",
+          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/04_Loesungen",
+          "outputs": [
+            "Klasse_7/01_Informatik_im_Alltag/04_Loesungen.pdf",
+            "Klasse_7/01_Informatik_im_Alltag/04_Loesungen.docx"
+          ]
+        },
+        {
+          "id": "presentations",
+          "audience": "TEACHER",
+          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/05_Praesentationen",
+          "outputs": [
+            "Klasse_7/01_Informatik_im_Alltag/05_Praesentationen/*.pptx"
+          ]
+        },
+        {
+          "id": "assessments",
+          "audience": "TEACHER",
+          "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_7/01_Informatik_im_Alltag/09_Lernkontrollen",
+          "outputs": [
+            "Klasse_7/01_Informatik_im_Alltag/Lernkontrollen/*.pdf",
+            "Klasse_7/01_Informatik_im_Alltag/Lernkontrollen/*.docx"
+          ]
+        }
+      ]
+    },
+    {
+      "contentKey": "curriculum.oberschule.sachsen.informatik.klasse7.pilot",
+      "type": "COLLECTION",
+      "title": "Informatik Klasse 7 – Pilot",
+      "children": [
+        "informatik.alltag.grundlagen"
+      ]
+    }
+  ]
 }
