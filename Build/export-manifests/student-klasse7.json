@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "student-klasse7",
+  "title": "Schülermaterialien Klasse 7",
+  "audience": ["STUDENT"],
+  "areas": ["Klasse_7"],
+  "formats": ["pdf", "docx"],
+  "contentKeys": [
+    "curriculum.oberschule.sachsen.informatik.klasse7"
+  ],
+  "exclude": [],
+  "minimumFiles": 10,
+  "artifact": "Unterrichtsmaterial_Klasse7_Schueler.zip"
+}
