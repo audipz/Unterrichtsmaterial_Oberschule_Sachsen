@@ -4,8 +4,10 @@ on:
   push:
     branches:
       - "**"
-    paths-ignore:
-      - "Ausgabe/**"
+    paths:
+      - "Unterrichtsmaterial_Oberschule_Sachsen/**"
+      - "Build/**"
+      - ".github/workflows/build.yml"
   workflow_dispatch:
 
 permissions:
