@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "teacher-klasse9",
+  "title": "Lehrermaterial Klasse 9",
+  "audience": ["TEACHER"],
+  "areas": ["Klasse_9"],
+  "formats": ["pdf", "docx", "pptx"],
+  "contentKeys": ["curriculum.oberschule.sachsen.informatik.klasse9"],
+  "exclude": [],
+  "minimumFiles": 1,
+  "artifact": "Unterrichtsmaterial_Klasse9_Lehrer.zip"
+}
