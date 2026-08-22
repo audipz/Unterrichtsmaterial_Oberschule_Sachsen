@@ -1,0 +1,46 @@
+name: Lernplattform CI
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - "Lernplattform/**"
+      - ".github/workflows/lernplattform.yml"
+  pull_request:
+    paths:
+      - "Lernplattform/**"
+      - ".github/workflows/lernplattform.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lernplattform-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Java 25 / Maven verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Java 25 einrichten
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "25"
+          cache: maven
+          cache-dependency-path: Lernplattform/**/pom.xml
+
+      - name: Java- und Maven-Version anzeigen
+        run: |
+          java -version
+          mvn -version
+
+      - name: Lernplattform bauen und testen
+        run: mvn -B -f Lernplattform/pom.xml verify
