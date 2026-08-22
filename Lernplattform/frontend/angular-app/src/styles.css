@@ -30,11 +30,35 @@ h2 { margin-top: 0; }
 form { display: grid; gap: 1rem; margin-top: 2rem; }
 label { display: grid; gap: .4rem; font-weight: 650; }
 label span { font-weight: 400; color: #67738c; }
-input, select { width: 100%; padding: .8rem .9rem; border: 1px solid #bcc5d5; border-radius: .55rem; background: white; font: inherit; }
-input:focus, select:focus { outline: 3px solid rgb(64 86 161 / 20%); border-color: #4056a1; }
+input, select, textarea { width: 100%; padding: .8rem .9rem; border: 1px solid #bcc5d5; border-radius: .55rem; background: white; font: inherit; }
+input:focus, select:focus, textarea:focus { outline: 3px solid rgb(64 86 161 / 20%); border-color: #4056a1; }
+textarea { resize: vertical; }
 .trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .privacy-note { color: #657087; font-size: .92rem; }
 .message { padding: .8rem 1rem; border-radius: .5rem; }
 .message.success { background: #edf8f0; }
 .message.error { background: #fff0f0; }
 .back-link { display: inline-block; margin-bottom: 1.5rem; }
+
+.admin-shell { max-width: 1040px; }
+.admin-card.compact-card { max-width: 620px; margin: 0 auto; }
+.admin-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
+.admin-header h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+.registration-list { display: grid; gap: 1.25rem; }
+.registration-card { display: grid; gap: 1.4rem; }
+.registration-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; }
+.registration-heading h2 { margin-bottom: 0; }
+.status-badge { white-space: nowrap; border-radius: 999px; padding: .35rem .7rem; background: #edf8f0; font-size: .82rem; font-weight: 700; }
+.registration-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 0; }
+.registration-details div { min-width: 0; }
+.registration-details dt { color: #657087; font-size: .85rem; }
+.registration-details dd { margin: .2rem 0 0; font-weight: 650; overflow-wrap: anywhere; }
+.review-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+.reject-form { margin-top: 0; padding-top: 1rem; border-top: 1px solid #e0e5ee; }
+.empty-state { text-align: center; }
+
+@media (max-width: 640px) {
+  .page-shell { padding-top: 2.5rem; }
+  .admin-header, .registration-heading { flex-direction: column; }
+  .admin-header .button { width: 100%; }
+}
