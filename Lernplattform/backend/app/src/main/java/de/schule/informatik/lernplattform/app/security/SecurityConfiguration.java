@@ -1,28 +1,61 @@
 package de.schule.informatik.lernplattform.app.security;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.util.matcher.RequestMatcher;
+
+import java.util.Set;
 
 @Configuration
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
 public class SecurityConfiguration {
 
+    private static final Set<String> SAFE_METHODS = Set.of("GET", "HEAD", "TRACE", "OPTIONS");
+
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    SecurityFilterChain securityFilterChain(HttpSecurity http,
+                                            SystemAdminSessionFilter systemAdminSessionFilter) throws Exception {
+        CookieCsrfTokenRepository csrfRepository = CookieCsrfTokenRepository.withHttpOnlyFalse();
+        csrfRepository.setCookiePath("/");
+
+        RequestMatcher systemAdminCsrf = request -> requiresSystemAdminCsrf(request);
+
         return http
-                .csrf(csrf -> csrf.disable())
+                .csrf(csrf -> csrf
+                        .csrfTokenRepository(csrfRepository)
+                        .requireCsrfProtectionMatcher(systemAdminCsrf))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/actuator/health/**", "/actuator/info").permitAll()
                         .requestMatchers(
                                 "/api/v1/public/school-registrations",
-                                "/api/v1/public/school-registrations/verify").permitAll()
+                                "/api/v1/public/school-registrations/verify",
+                                "/api/v1/system-admin/auth/login").permitAll()
+                        .requestMatchers(
+                                "/api/v1/system-admin/auth/csrf",
+                                "/api/v1/system-admin/auth/change-password",
+                                "/api/v1/system-admin/auth/logout")
+                            .hasAnyAuthority("SYSTEM_ADMIN", "SYSTEM_ADMIN_PASSWORD_CHANGE_REQUIRED")
+                        .requestMatchers("/api/v1/system-admin/**").hasAuthority("SYSTEM_ADMIN")
                         .requestMatchers("/api/**").authenticated()
                         .anyRequest().denyAll())
+                .addFilterBefore(systemAdminSessionFilter, BearerTokenAuthenticationFilter.class)
                 .oauth2ResourceServer(resourceServer -> resourceServer.jwt(Customizer.withDefaults()))
                 .build();
+    }
+
+    private static boolean requiresSystemAdminCsrf(HttpServletRequest request) {
+        if (SAFE_METHODS.contains(request.getMethod())) {
+            return false;
+        }
+        String path = request.getRequestURI();
+        return path.startsWith("/api/v1/system-admin/")
+                && !path.equals("/api/v1/system-admin/auth/login");
     }
 }
