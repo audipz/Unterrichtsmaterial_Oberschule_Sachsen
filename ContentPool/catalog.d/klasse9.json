@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "contentKey": "informatik.informationen-daten.klasse9",
+      "type": "TOPIC",
+      "title": "Informationen und Daten",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [9]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_9/01_Informationen_und_Daten", "audience": "STUDENT", "outputs": ["Klasse_9/01_Informationen_und_Daten/01_Arbeitsheft.*"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_9/01_Informationen_und_Daten", "outputs": ["Klasse_9/01_Informationen_und_Daten/02_Lehrerband.*", "Klasse_9/01_Informationen_und_Daten/03_Material.*", "Klasse_9/01_Informationen_und_Daten/04_Loesungen.*", "Klasse_9/01_Informationen_und_Daten/05_Praesentationen/*.pptx", "Klasse_9/01_Informationen_und_Daten/Lernkontrollen/*"]}]
+    },
+    {
+      "contentKey": "informatik.algorithmierung.komplexaufgabe.klasse9",
+      "type": "TOPIC",
+      "title": "Komplexaufgabe zur Algorithmierung",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [9]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_9/02_Komplexaufgabe_zur_Algorithmierung", "audience": "STUDENT", "outputs": ["Klasse_9/02_Komplexaufgabe_zur_Algorithmierung/01_Arbeitsheft.*"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_9/02_Komplexaufgabe_zur_Algorithmierung", "outputs": ["Klasse_9/02_Komplexaufgabe_zur_Algorithmierung/02_Lehrerband.*", "Klasse_9/02_Komplexaufgabe_zur_Algorithmierung/03_Material.*", "Klasse_9/02_Komplexaufgabe_zur_Algorithmierung/04_Loesungen.*", "Klasse_9/02_Komplexaufgabe_zur_Algorithmierung/05_Praesentationen/*.pptx", "Klasse_9/02_Komplexaufgabe_zur_Algorithmierung/Lernkontrollen/*"]}]
+    },
+    {
+      "contentKey": "informatik.automatisierung.wahlbereich.klasse9",
+      "type": "TOPIC",
+      "title": "Wahlbereich Informatik und Automatisierung",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [9]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_9/03_Wahlbereich_Informatik_und_Automatisierung", "audience": "STUDENT", "outputs": ["Klasse_9/03_Wahlbereich_Informatik_und_Automatisierung/01_Arbeitsheft.*"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_9/03_Wahlbereich_Informatik_und_Automatisierung", "outputs": ["Klasse_9/03_Wahlbereich_Informatik_und_Automatisierung/02_Lehrerband.*", "Klasse_9/03_Wahlbereich_Informatik_und_Automatisierung/03_Material.*", "Klasse_9/03_Wahlbereich_Informatik_und_Automatisierung/04_Loesungen.*", "Klasse_9/03_Wahlbereich_Informatik_und_Automatisierung/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.mobile-endgeraete.wahlbereich.klasse9",
+      "type": "TOPIC",
+      "title": "Wahlbereich Mobile Endgeräte",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [9]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_9/04_Wahlbereich_Mobile_Endgeraete", "audience": "STUDENT", "outputs": ["Klasse_9/04_Wahlbereich_Mobile_Endgeraete/01_Arbeitsheft.*"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_9/04_Wahlbereich_Mobile_Endgeraete", "outputs": ["Klasse_9/04_Wahlbereich_Mobile_Endgeraete/02_Lehrerband.*", "Klasse_9/04_Wahlbereich_Mobile_Endgeraete/03_Material.*", "Klasse_9/04_Wahlbereich_Mobile_Endgeraete/04_Loesungen.*", "Klasse_9/04_Wahlbereich_Mobile_Endgeraete/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.computergrafik.wahlbereich.klasse9",
+      "type": "TOPIC",
+      "title": "Wahlbereich Computergrafik",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [9]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_9/05_Wahlbereich_Computergrafik", "audience": "STUDENT", "outputs": ["Klasse_9/05_Wahlbereich_Computergrafik/01_Arbeitsheft.*"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_9/05_Wahlbereich_Computergrafik", "outputs": ["Klasse_9/05_Wahlbereich_Computergrafik/02_Lehrerband.*", "Klasse_9/05_Wahlbereich_Computergrafik/03_Material.*", "Klasse_9/05_Wahlbereich_Computergrafik/04_Loesungen.*", "Klasse_9/05_Wahlbereich_Computergrafik/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "curriculum.oberschule.sachsen.informatik.klasse9",
+      "type": "COLLECTION",
+      "title": "Informatik Klasse 9",
+      "children": [
+        "informatik.informationen-daten.klasse9",
+        "informatik.algorithmierung.komplexaufgabe.klasse9",
+        "informatik.automatisierung.wahlbereich.klasse9",
+        "informatik.mobile-endgeraete.wahlbereich.klasse9",
+        "informatik.computergrafik.wahlbereich.klasse9"
+      ]
+    }
+  ]
+}
