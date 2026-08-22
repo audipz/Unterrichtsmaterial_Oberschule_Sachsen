@@ -19,7 +19,17 @@ public class AdminRoutes {
                 .path("/api/v1/schulen/{schoolSlug}/admin/accounts", builder -> builder
                         .POST("/students", accept(MediaType.APPLICATION_JSON).and(contentType(MediaType.APPLICATION_JSON)), handler::createStudent)
                         .POST("/teachers", accept(MediaType.APPLICATION_JSON).and(contentType(MediaType.APPLICATION_JSON)), handler::createTeacher)
-                        .POST("/teachers/{teacherId}/school-membership", handler::addExistingTeacher))
+                        .POST("/teachers/{teacherId}/school-membership", handler::addExistingTeacher)
+                        .DELETE("/teachers/{teacherId}/school-membership", handler::removeTeacherFromSchool))
+                .build();
+    }
+
+    @Bean
+    RouterFunction<ServerResponse> adminSchoolRoleRoutes(AdminSchoolRoleHandler handler) {
+        return route()
+                .path("/api/v1/schulen/{schoolSlug}/admin/teachers/{teacherId}/roles", builder -> builder
+                        .POST("/school-admin", handler::grantSchoolAdmin)
+                        .DELETE("/school-admin", handler::revokeSchoolAdmin))
                 .build();
     }
 
@@ -35,15 +45,6 @@ public class AdminRoutes {
                         .DELETE("/{classId}/teachers/{teacherAccountId}", handler::removeTeacher)
                         .DELETE("/{classId}", handler::deleteClass)
                         .POST("/{classId}/reactivate", handler::reactivateClass))
-                .build();
-    }
-
-    @Bean
-    RouterFunction<ServerResponse> adminSchoolRoleRoutes(AdminSchoolRoleHandler handler) {
-        return route()
-                .path("/api/v1/schulen/{schoolSlug}/admin/teachers/{teacherId}/roles", builder -> builder
-                        .POST("/school-admin", handler::grantSchoolAdmin)
-                        .DELETE("/school-admin", handler::revokeSchoolAdmin))
                 .build();
     }
 }
