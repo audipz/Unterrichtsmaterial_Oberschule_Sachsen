@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "student-klasse9",
+  "title": "Schülermaterial Klasse 9",
+  "audience": ["STUDENT"],
+  "areas": ["Klasse_9"],
+  "formats": ["pdf", "docx"],
+  "contentKeys": ["curriculum.oberschule.sachsen.informatik.klasse9"],
+  "exclude": [],
+  "minimumFiles": 1,
+  "artifact": "Unterrichtsmaterial_Klasse9_Schueler.zip"
+}
