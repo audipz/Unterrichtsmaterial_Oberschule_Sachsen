@@ -21,42 +21,45 @@ public class SecurityConfiguration {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http,
-                                            SystemAdminSessionFilter systemAdminSessionFilter) throws Exception {
+                                            SystemAdminSessionFilter systemAdminSessionFilter,
+                                            StudentSessionFilter studentSessionFilter) throws Exception {
         CookieCsrfTokenRepository csrfRepository = CookieCsrfTokenRepository.withHttpOnlyFalse();
         csrfRepository.setCookiePath("/");
 
-        RequestMatcher systemAdminCsrf = request -> requiresSystemAdminCsrf(request);
+        RequestMatcher cookieSessionCsrf = SecurityConfiguration::requiresCookieSessionCsrf;
 
         return http
                 .csrf(csrf -> csrf
                         .csrfTokenRepository(csrfRepository)
-                        .requireCsrfProtectionMatcher(systemAdminCsrf))
+                        .requireCsrfProtectionMatcher(cookieSessionCsrf))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/actuator/health/**", "/actuator/info").permitAll()
                         .requestMatchers(
                                 "/api/v1/public/school-registrations",
                                 "/api/v1/public/school-registrations/verify",
-                                "/api/v1/system-admin/auth/login").permitAll()
+                                "/api/v1/system-admin/auth/login",
+                                "/api/v1/schools/*/student-auth/login").permitAll()
                         .requestMatchers(
                                 "/api/v1/system-admin/me",
                                 "/api/v1/system-admin/auth/csrf",
                                 "/api/v1/system-admin/auth/change-password",
                                 "/api/v1/system-admin/auth/logout")
                             .hasAnyAuthority("SYSTEM_ADMIN", "SYSTEM_ADMIN_PASSWORD_CHANGE_REQUIRED")
+                        .requestMatchers("/api/v1/student-auth/change-password", "/api/v1/student-auth/logout", "/api/v1/me")
+                            .hasAnyAuthority("STUDENT", "STUDENT_PASSWORD_CHANGE_REQUIRED", "SYSTEM_ADMIN", "SYSTEM_ADMIN_PASSWORD_CHANGE_REQUIRED")
                         .requestMatchers("/api/v1/system-admin/**").hasAuthority("SYSTEM_ADMIN")
                         .requestMatchers("/api/**").authenticated()
                         .anyRequest().denyAll())
                 .addFilterBefore(systemAdminSessionFilter, BearerTokenAuthenticationFilter.class)
+                .addFilterBefore(studentSessionFilter, BearerTokenAuthenticationFilter.class)
                 .oauth2ResourceServer(resourceServer -> resourceServer.jwt(Customizer.withDefaults()))
                 .build();
     }
 
-    private static boolean requiresSystemAdminCsrf(HttpServletRequest request) {
-        if (SAFE_METHODS.contains(request.getMethod())) {
-            return false;
-        }
+    private static boolean requiresCookieSessionCsrf(HttpServletRequest request) {
+        if (SAFE_METHODS.contains(request.getMethod())) return false;
         String path = request.getRequestURI();
-        return path.startsWith("/api/v1/system-admin/")
-                && !path.equals("/api/v1/system-admin/auth/login");
+        if (path.equals("/api/v1/system-admin/auth/login") || path.matches("/api/v1/schools/[^/]+/student-auth/login")) return false;
+        return path.startsWith("/api/v1/system-admin/") || path.startsWith("/api/v1/student-auth/");
     }
 }
