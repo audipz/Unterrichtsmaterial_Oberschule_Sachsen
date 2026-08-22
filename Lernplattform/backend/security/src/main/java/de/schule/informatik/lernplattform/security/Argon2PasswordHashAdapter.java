@@ -16,4 +16,9 @@ public class Argon2PasswordHashAdapter implements PasswordHashPort {
         }
         return encoder.encode(rawPassword);
     }
+
+    @Override
+    public boolean matches(String rawPassword, String encodedPassword) {
+        return rawPassword != null && encodedPassword != null && encoder.matches(rawPassword, encodedPassword);
+    }
 }
