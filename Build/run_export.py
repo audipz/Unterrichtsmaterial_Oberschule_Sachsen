@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import fnmatch
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -12,6 +13,7 @@ from pathlib import Path
 
 ALLOWED_AREAS = ["Klasse_7", "Klasse_8", "Klasse_9", "Klasse_10", "Grundlagen", "Werkzeuge"]
 ALLOWED_FORMATS = {"pdf", "docx", "html", "pptx"}
+SAFE_ID = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
 
 
 def load_manifest(path: Path) -> dict:
@@ -22,8 +24,13 @@ def load_manifest(path: Path) -> dict:
         raise ValueError(f"Export-Manifest unvollständig: {', '.join(missing)}")
     if data["schemaVersion"] != 1:
         raise ValueError(f"Nicht unterstützte schemaVersion: {data['schemaVersion']}")
-    if not data["id"].strip() or not data["artifact"].strip():
-        raise ValueError("id und artifact dürfen nicht leer sein")
+
+    export_id = str(data["id"]).strip()
+    artifact = str(data["artifact"]).strip()
+    if not SAFE_ID.fullmatch(export_id):
+        raise ValueError("id darf nur Kleinbuchstaben, Ziffern, Punkt, Unterstrich und Bindestrich enthalten")
+    if Path(artifact).name != artifact or not artifact.endswith(".zip"):
+        raise ValueError("artifact muss ein einfacher ZIP-Dateiname ohne Pfad sein")
 
     unknown_areas = sorted(set(data["areas"]) - set(ALLOWED_AREAS))
     if unknown_areas:
