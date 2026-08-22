@@ -1,8 +1,8 @@
 package de.schule.informatik.lernplattform.domain.displayname;
 
-import de.schule.informatik.lernplattform.domain.user.User;
-import de.schule.informatik.lernplattform.domain.user.UserRole;
-import de.schule.informatik.lernplattform.domain.user.UserStatus;
+import de.schule.informatik.lernplattform.domain.user.Account;
+import de.schule.informatik.lernplattform.domain.user.AccountStatus;
+import de.schule.informatik.lernplattform.domain.user.AccountType;
 import org.junit.jupiter.api.Test;
 
 import java.util.Set;
@@ -15,35 +15,36 @@ class DisplayNameServiceTest {
 
     @Test
     void changesNameWhenNoConflictExists() {
-        User user = user("PixelFuchs");
-        DisplayNameConflictPort port = (userId, name, classes) -> false;
+        Account account = studentAccount("PixelFuchs");
+        DisplayNameConflictPort port = (accountId, name, classes) -> false;
         DisplayNameService service = new DisplayNameService(new DisplayNameNormalizer(), port);
 
-        service.changeDisplayName(user, "CodeOtter", Set.of(UUID.randomUUID()));
+        service.changeDisplayName(account, "CodeOtter", Set.of(UUID.randomUUID()));
 
-        assertEquals("CodeOtter", user.displayName());
-        assertEquals("codeotter", user.displayNameNormalized());
+        assertEquals("CodeOtter", account.displayName());
+        assertEquals("codeotter", account.displayNameNormalized());
     }
 
     @Test
     void rejectsNameWhenConflictExists() {
-        User user = user("PixelFuchs");
-        DisplayNameConflictPort port = (userId, name, classes) -> true;
+        Account account = studentAccount("PixelFuchs");
+        DisplayNameConflictPort port = (accountId, name, classes) -> true;
         DisplayNameService service = new DisplayNameService(new DisplayNameNormalizer(), port);
 
         assertThrows(DisplayNameConflictException.class,
-                () -> service.changeDisplayName(user, "CodeOtter", Set.of(UUID.randomUUID())));
+                () -> service.changeDisplayName(account, "CodeOtter", Set.of(UUID.randomUUID())));
     }
 
-    private static User user(String displayName) {
-        return new User(
+    private static Account studentAccount(String displayName) {
+        return new Account(
                 UUID.randomUUID(),
-                UUID.randomUUID(),
-                "u-001",
+                AccountType.STUDENT,
                 displayName,
                 displayName.toLowerCase(),
-                UserStatus.ACTIVE,
-                Set.of(UserRole.STUDENT)
+                null,
+                null,
+                AccountStatus.ACTIVE,
+                null
         );
     }
 }
