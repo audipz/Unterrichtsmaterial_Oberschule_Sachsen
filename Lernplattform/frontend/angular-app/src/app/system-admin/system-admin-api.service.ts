@@ -1,34 +1,10 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, switchMap } from 'rxjs';
 
 export interface SystemAdminLoginResponse {
   mustChangePassword: boolean;
   expiresAt: string;
-}
-
-export interface NavigationItem {
-  id: string;
-  label: string;
-  route: string;
-}
-
-export interface SchoolContext {
-  schoolId: string;
-  schoolSlug: string;
-  schoolName: string;
-}
-
-export interface AuthenticatedAppContext {
-  account: {
-    id: string;
-    type: 'SYSTEM' | 'TEACHER' | 'STUDENT';
-    displayName: string;
-  };
-  context: SchoolContext | null;
-  availableContexts: SchoolContext[];
-  capabilities: string[];
-  navigation: NavigationItem[];
 }
 
 export interface PendingSchoolRegistration {
@@ -55,15 +31,6 @@ export class SystemAdminApiService {
 
   login(username: string, password: string): Observable<SystemAdminLoginResponse> {
     return this.http.post<SystemAdminLoginResponse>(`${this.base}/auth/login`, { username, password }, {
-      withCredentials: true
-    });
-  }
-
-  me(schoolSlug?: string): Observable<AuthenticatedAppContext> {
-    let params = new HttpParams();
-    if (schoolSlug) params = params.set('school', schoolSlug);
-    return this.http.get<AuthenticatedAppContext>('/api/v1/me', {
-      params,
       withCredentials: true
     });
   }
