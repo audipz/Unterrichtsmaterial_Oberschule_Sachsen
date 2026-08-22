@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "teacher-klasse7",
+  "title": "Lehrermaterialien Klasse 7",
+  "audience": ["TEACHER"],
+  "areas": ["Klasse_7"],
+  "formats": ["pdf", "docx", "pptx"],
+  "contentKeys": [
+    "curriculum.oberschule.sachsen.informatik.klasse7"
+  ],
+  "exclude": [],
+  "minimumFiles": 10,
+  "artifact": "Unterrichtsmaterial_Klasse7_Lehrer.zip"
+}
