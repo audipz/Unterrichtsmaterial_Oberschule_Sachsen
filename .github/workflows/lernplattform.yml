@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Repository auschecken
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Java 25 einrichten
         uses: actions/setup-java@v5
@@ -44,3 +44,38 @@ jobs:
 
       - name: Lernplattform bauen und testen
         run: mvn -B -f Lernplattform/pom.xml verify
+
+  helm:
+    name: Helm lint / template
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v5
+
+      - name: Helm einrichten
+        uses: azure/setup-helm@v4
+        with:
+          version: v4.2.3
+
+      - name: Helm-Version anzeigen
+        run: helm version
+
+      - name: Helm-Chart linten
+        run: helm lint Lernplattform/deployment/helm/lernplattform
+
+      - name: Standard-Chart mit HPA rendern
+        run: |
+          helm template lernplattform Lernplattform/deployment/helm/lernplattform \
+            --namespace lernplattform \
+            > /tmp/lernplattform-hpa.yaml
+          test -s /tmp/lernplattform-hpa.yaml
+
+      - name: Chart ohne HPA rendern
+        run: |
+          helm template lernplattform Lernplattform/deployment/helm/lernplattform \
+            --namespace lernplattform \
+            --set backend.autoscaling.enabled=false \
+            --set backend.replicaCount=1 \
+            > /tmp/lernplattform-static.yaml
+          test -s /tmp/lernplattform-static.yaml
