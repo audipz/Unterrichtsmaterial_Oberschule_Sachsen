@@ -6,6 +6,22 @@ backend:
   replicaCount: 1
   service:
     port: 8080
+  probes:
+    startup:
+      failureThreshold: 30
+      periodSeconds: 2
+    readiness:
+      initialDelaySeconds: 0
+      periodSeconds: 5
+    liveness:
+      initialDelaySeconds: 0
+      periodSeconds: 10
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+    limits:
+      memory: 512Mi
 
 frontend:
   image:
@@ -26,9 +42,7 @@ ingress:
 
 database:
   existingSecret: lernplattform-database
-  hostKey: host
-  portKey: port
-  databaseKey: database
+  urlKey: url
   usernameKey: username
   passwordKey: password
 
