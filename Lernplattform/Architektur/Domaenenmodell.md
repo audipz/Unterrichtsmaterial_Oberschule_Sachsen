@@ -1,75 +1,39 @@
 # Domänenmodell
 
-## Überblick
+> **Aktueller Stand:** Lehreridentität und Schulzugehörigkeit sind getrennt. Ein Lehrer kann mehreren Schulen angehören; schulbezogene Rollen gelten ausschließlich innerhalb der jeweiligen Schule. Details siehe `Identitaet_Mandanten_und_Lehrer.md`.
 
-Das Domänenmodell trennt Organisation, Identität, Lernmaterial und individuelle Schülerarbeit.
+## Überblick
 
 ```text
 School
-├── User
-│   └── UserRole
+├── schoolSlug
 ├── SchoolClass
-│   └── SchoolClassMembership
-├── Course
-│   ├── CourseTeacher
-│   └── CourseStudent
-└── LearningUnit
-    ├── MaterialRelease
-    ├── WorkbookAssignment
-    └── ExerciseAssignment
+│   ├── StudentClassMembership
+│   └── ClassTeacherAssignment
+└── TeacherSchoolMembership
+    └── TeacherSchoolRole
+
+Identity
+├── StudentAccount
+│   └── genau eine aktive School-Zuordnung
+└── TeacherAccount
+    └── eine oder mehrere TeacherSchoolMemberships
 ```
 
-Individuelle Lerndaten hängen an Zuweisungen und persönlichen Arbeitsständen, nicht direkt an den Markdown-Quelldateien.
+Lernmaterial und individuelle Lernstände bleiben davon getrennt.
 
-## Datenschutzgrundsatz für Benutzerkonten
+## Datenschutzgrundsatz
 
-Für **keinen Benutzer** sollen echte Vor- und Nachnamen erforderlich sein. Das gilt für Schüler, Lehrer und Schul-Administratoren gleichermaßen.
+Klarnamen sind weder für Schüler noch Lehrer erforderlich.
 
-Ein Benutzerkonto benötigt technisch nur Schule, Benutzername, Passwort beziehungsweise Passwort-Hash, Rollen und organisatorische Zuordnungen sowie einen Fantasienamen als Anzeigenamen.
-
-> **Grundsatz:** So wenig personenbezogene Daten wie möglich speichern. Für die Nutzung der Lernplattform sind Klarnamen nicht erforderlich.
-
-## Fantasiename / Anzeigename
-
-Beim initialen Anlegen eines Schüler- oder Lehrerkontos wird automatisch ein Fantasiename erzeugt und gespeichert. Der Fantasiename ist damit von Beginn an vorhanden und wird in der Lernoberfläche anstelle eines Klarnamens verwendet.
-
-Beispiele:
-
-```text
-PixelFuchs
-CodeOtter
-DatenFalke
-LogikPanda
-```
-
-Der Benutzer darf seinen Fantasienamen später beliebig ändern, sofern die Eindeutigkeitsregeln eingehalten werden.
-
-### Eindeutigkeit für Schüler
-
-Der Fantasiename eines Schülers muss innerhalb jeder aktuell zugeordneten Klasse eindeutig sein. Ein Schüler, der Mitglied der Klasse `7a` ist, darf also keinen Fantasienamen wählen, den bereits ein anderer aktiver Benutzer in `7a` verwendet.
-
-Die Eindeutigkeit wird case-insensitive und auf einer normalisierten Form geprüft. `PixelFuchs`, `pixelfuchs` und `PIXELFUCHS` gelten damit als derselbe Name.
-
-### Eindeutigkeit für Lehrer
-
-Der Fantasiename eines Lehrers muss in allen Klassen eindeutig sein, denen der Lehrer aktuell zugewiesen ist. Dadurch können Schüler innerhalb ihrer Klasse Lehrer eindeutig erkennen.
-
-Ist ein Lehrer beispielsweise den Klassen `7a`, `7b` und `8a` zugeordnet, darf sein Fantasiename in keiner dieser Klassen bereits von einem dort sichtbaren aktiven Benutzer verwendet werden.
-
-### Konflikt beim Klassenwechsel oder bei neuer Zuweisung
-
-Ein Klassenwechsel oder die Zuweisung eines Lehrers zu einer weiteren Klasse kann einen bereits bestehenden Namenskonflikt erzeugen. Die Operation darf dann nicht stillschweigend durchgeführt werden. Vor Abschluss der Zuordnung muss ein konfliktfreier Fantasiename gewählt beziehungsweise automatisch vorgeschlagen werden.
-
-Die Eindeutigkeit ist eine fachliche Regel über aktive Memberships und wird deshalb serverseitig in einem Domain-Service geprüft. Ein einfacher globaler `UNIQUE(display_name)`-Constraint wäre zu streng und ein `UNIQUE(class_id, display_name)` am Benutzer wäre wegen Mehrfachzuordnungen nicht ausreichend.
+Alle Benutzer erhalten einen Fantasienamen/Anzeigenamen. Bei Lehrern ist zusätzlich eine E-Mail-Adresse erforderlich, weil sie als globale Login-Identität und für Account-Recovery dient. Die E-Mail wird Schülern nicht als sichtbarer Name angezeigt.
 
 ## School
-
-Zentrale Mandanteneinheit.
 
 ```text
 id
 name
-short_name
+school_slug
 status
 created_at
 updated_at
@@ -77,9 +41,22 @@ deleted_at
 deleted_by
 ```
 
-## User
+`school_slug` ist systemweit eindeutig und stabil:
 
-Gemeinsame technische Benutzeridentität.
+```text
+UNIQUE(school_slug)
+```
+
+Beispiel:
+
+```text
+name        = Oberschule Musterstadt
+school_slug = oberschule-musterstadt
+```
+
+## StudentAccount
+
+Schüler bleiben schulbezogene Identitäten ohne verpflichtende E-Mail-Adresse.
 
 ```text
 id
@@ -97,42 +74,101 @@ deleted_at
 deleted_by
 ```
 
-`display_name` enthält den aktuellen Fantasienamen. `display_name_normalized` dient der robusten Eindeutigkeitsprüfung.
-
-Für Benutzer werden keine Pflichtfelder `first_name` oder `last_name` vorgesehen.
-
 Login-Eindeutigkeit:
 
 ```text
 UNIQUE(school_id, username)
 ```
 
-Der Benutzername ist ein technischer Loginname und muss nicht dem echten Namen entsprechen.
-
-## UserRole
-
-Mehrfachrollen sind erlaubt.
+Login erfolgt im Kontext des Schulpfads über:
 
 ```text
-user_id
+schoolSlug + username + password
+```
+
+## TeacherAccount
+
+Ein Lehrer ist eine schulübergreifende Identität.
+
+```text
+id
+email
+email_normalized
+email_verified_at
+display_name
+display_name_normalized
+status
+last_login_at
+created_at
+updated_at
+deleted_at
+deleted_by
+```
+
+E-Mail-Eindeutigkeit:
+
+```text
+UNIQUE(email_normalized)
+```
+
+Ein Lehreraccount besitzt **keine direkte `school_id`**.
+
+## TeacherSchoolMembership
+
+Ordnet einen Lehrer einer Schule zu.
+
+```text
+id
+teacher_id
 school_id
+status
+joined_at
+left_at
+created_at
+created_by
+updated_at
+updated_by
+deleted_at
+deleted_by
+```
+
+Aktive Doppelzuordnungen desselben Lehrers zur selben Schule sind nicht erlaubt.
+
+## TeacherSchoolRole
+
+Schulbezogene Rollen eines Lehrers:
+
+```text
+teacher_school_membership_id
 role
 ```
 
 Rollen:
 
 ```text
-STUDENT
 TEACHER
 SCHOOL_ADMIN
-SYSTEM_ADMIN
 ```
 
-Ein Lehrer kann gleichzeitig `TEACHER` und `SCHOOL_ADMIN` sein.
+`SCHOOL_ADMIN` gilt immer nur für die Schule dieser Membership.
+
+`SYSTEM_ADMIN` wird als systemweite Rolle getrennt modelliert.
+
+## Fantasiename / Anzeigename
+
+Beim initialen Anlegen wird ein Fantasiename erzeugt. Er kann später geändert werden.
+
+### Schüler
+
+Der Fantasiename muss innerhalb der aktuell zugeordneten Klasse eindeutig sein.
+
+### Lehrer
+
+Der Fantasiename muss in allen Klassen eindeutig sein, in denen der Lehrer innerhalb der jeweiligen Schule sichtbar beziehungsweise zugeordnet ist.
+
+Bei einem Lehrer mit mehreren Schulen wird die Eindeutigkeit je Schul-/Klassenkontext geprüft, nicht global über alle Schulen.
 
 ## SchoolClass
-
-Organisatorische Klasse, zum Beispiel `7a`.
 
 ```text
 id
@@ -147,9 +183,11 @@ deleted_at
 deleted_by
 ```
 
-## SchoolClassMembership
+Eine aktive Klasse muss jederzeit mindestens einen aktiven zuständigen Lehrer besitzen.
 
-Historisierte Klassenzugehörigkeit.
+## StudentClassMembership
+
+Historisierte Klassenzugehörigkeit eines Schülers:
 
 ```text
 id
@@ -164,44 +202,61 @@ deleted_at
 deleted_by
 ```
 
-## Course
+Klassenwechsel erzeugen Historie und verändern nicht das Schülerkonto oder seine Lernstände.
 
-Konkreter Unterrichtskurs, zum Beispiel `Informatik 7a – 2026/27`.
+## ClassTeacherAssignment
+
+Zuordnung von Lehrern zu einer Klasse:
 
 ```text
 id
-school_id
-name
-subject
-school_year
+school_class_id
+teacher_school_membership_id
+responsibility
 status
 created_at
+created_by
 updated_at
+updated_by
 deleted_at
 deleted_by
 ```
 
-## CourseTeacher
+`responsibility`:
 
 ```text
-course_id
-teacher_id
-role
+RESPONSIBLE
+ADDITIONAL
 ```
 
-## CourseStudent
+Fachregel:
+
+> Jede aktive Klasse besitzt mindestens einen aktiven `RESPONSIBLE`-Lehrer.
+
+Alle aktiven Lehrer einer Schule dürfen fachlich alle Klassen der Schule bearbeiten. Die explizite Klassen-Zuordnung dient deshalb primär der Zuständigkeit und Benachrichtigung, nicht als allgemeine Zugriffssperre.
+
+## Lehrer aus Schule entfernen
+
+Eine Entfernung beendet die `TeacherSchoolMembership`, nicht sofort den globalen Lehreraccount.
+
+Sie ist nur zulässig, wenn:
+
+- der Lehrer in keiner Klasse der einzige zuständige Lehrer ist,
+- nach Entfernung jede aktive Klasse weiterhin mindestens einen zuständigen Lehrer besitzt,
+- bei `SCHOOL_ADMIN` mindestens ein anderer aktiver Schuladmin verbleibt.
+
+Ein globaler Lehreraccount kann erst soft-gelöscht werden, wenn keine aktive Schulmitgliedschaft mehr existiert.
+
+## Benachrichtigung bei Klassenbearbeitung
+
+Bearbeitet ein Lehrer eine Klasse, für die er nicht selbst zuständig ist, wird ein fachliches Ereignis erzeugt. Mindestens die zuständigen Lehrer der Klasse können daraus eine interne Benachrichtigung erhalten.
 
 ```text
-course_id
-student_id
-status
-joined_at
-left_at
+ClassActivity
+  → ResponsibleTeacherNotification
 ```
 
 ## Material
-
-Logische Einheit eines Lernmaterials.
 
 ```text
 id
@@ -212,7 +267,7 @@ grade_level
 subject
 ```
 
-`kind` kann sein:
+`kind`:
 
 ```text
 REFERENCE
@@ -221,8 +276,6 @@ EXERCISE_SET
 ```
 
 ## MaterialRelease
-
-Konkrete veröffentlichte Fassung eines Materials.
 
 ```text
 id
@@ -234,11 +287,7 @@ status
 content_manifest
 ```
 
-Eine laufende Schülerzuweisung bleibt dadurch auf einer bekannten Materialfassung, auch wenn das Repository weiterentwickelt wird.
-
 ## LearningUnit
-
-Fachlicher Themenbereich, zum Beispiel `Binärsystem`.
 
 ```text
 id
@@ -249,11 +298,7 @@ sort_order
 parent_id
 ```
 
-Eine LearningUnit kann Nachschlagewerk, Arbeitsheft und Übungen bündeln.
-
 ## Exercise
-
-Einzelne Lern- oder Arbeitsaufgabe.
 
 ```text
 id
@@ -284,29 +329,13 @@ FILE_UPLOAD
 DRAWING
 ```
 
-`self_checkable` bedeutet ausschließlich, dass eine Übung eine unmittelbare Lernrückmeldung geben kann. Es handelt sich nicht um Benotung.
-
-## WorkbookAssignment
-
-Zuweisung eines Arbeitshefts beziehungsweise Lernbereichs an einen Kurs oder Schüler.
-
-```text
-id
-course_id
-material_release_id
-available_from
-status
-created_by
-```
-
 ## StudentWorkbook
 
-Individuelle Instanz eines Schülers.
-
 ```text
 id
-assignment_id
 student_id
+material_release_id
+origin
 status
 started_at
 last_activity_at
@@ -314,8 +343,6 @@ completed_at
 ```
 
 ## Answer
-
-Aktuelle Antwort eines Schülers auf eine Aufgabe.
 
 ```text
 id
@@ -328,11 +355,7 @@ created_at
 updated_at
 ```
 
-`answer_data` kann als `jsonb` gespeichert werden, damit unterschiedliche Aufgabentypen unterstützt werden können.
-
 ## AnswerRevision
-
-Historie wichtiger Antwortstände.
 
 ```text
 id
@@ -343,26 +366,10 @@ created_at
 created_by
 ```
 
-## ExerciseAssignment
-
-Optionale Zuweisung eines Übungssets an einen Kurs oder Schüler.
-
-```text
-id
-course_id
-material_release_id
-available_from
-status
-created_by
-```
-
 ## StudentExerciseProgress
 
-Persönlicher Lernstand innerhalb einer Übung.
-
 ```text
 id
-assignment_id
 student_id
 exercise_id
 status
@@ -372,11 +379,7 @@ last_feedback
 last_activity_at
 ```
 
-Übungsversuche dienen ausschließlich dem Lernen. Sie bilden keine Prüfungsversuche oder Noten ab.
-
 ## LearningProgress
-
-Zusammengefasster Bearbeitungs- und Lernfortschritt pro Schüler und Lernbereich.
 
 ```text
 id
@@ -387,15 +390,14 @@ exercise_status
 last_activity_at
 ```
 
-Fortschritt ist eine Lernhilfe und keine automatische Leistungsbewertung.
+Fortschritt dient ausschließlich dem Lernen und ist keine formale Leistungsbewertung.
 
 ## TeacherFeedback
-
-Feedback wird getrennt von der Schülerantwort gespeichert.
 
 ```text
 id
 teacher_id
+school_id
 target_type
 target_id
 text
@@ -403,11 +405,9 @@ created_at
 updated_at
 ```
 
-In der Oberfläche wird der Fantasiename der Lehrkraft angezeigt.
+`school_id` dokumentiert den Schulkontext, in dem der Lehrer das Feedback erstellt hat.
 
 ## Attachment
-
-Dateiuploads werden über Metadaten in PostgreSQL verwaltet.
 
 ```text
 id
@@ -423,53 +423,33 @@ created_at
 deleted_at
 ```
 
-Die Binärdaten liegen außerhalb der relationalen Tabellen in einem geeigneten Storage.
+## Soft Delete
 
-## Audit-Felder
+### Schüler
 
-Für administrative Entitäten werden mindestens vorgesehen:
+- Login sperren,
+- aktive Klassenmitgliedschaften beenden,
+- Lernstände für Wiederherstellungsfrist erhalten,
+- nach drei Monaten kontrollierter Purge.
 
-```text
-created_at
-created_by
-updated_at
-updated_by
-deleted_at
-deleted_by
-```
+### Lehrer-Schulzuordnung
 
-Audit-Felder referenzieren technische Benutzer-IDs. Auch dafür sind keine Klarnamen erforderlich.
+- Membership beenden beziehungsweise soft-löschen,
+- globalen Lehreraccount nicht löschen, solange andere aktive Schulen bestehen.
 
-## Soft-Delete-Regeln
+### Lehreraccount
 
-### Benutzer
-
-- Login sofort sperren,
-- normales Listing ausschließen,
-- Lernstände für drei Monate erhalten,
-- Reaktivierung durch `SCHOOL_ADMIN` ermöglichen.
+- erst soft-löschbar, wenn keine aktive `TeacherSchoolMembership` mehr existiert.
 
 ### Klasse
 
-- Klasse aus normalen Ansichten entfernen,
-- Mitgliedschaften erhalten,
-- Schülerkonten nicht löschen,
-- Reaktivierung inklusive noch vorhandener Memberships ermöglichen.
-
-### Schüler verlässt Schule
-
-- aktive Klassenmitgliedschaften beenden,
-- aktive Kursmitgliedschaften beenden,
-- Schülerkonto soft-löschen,
-- Login sperren,
-- Purge-Frist starten.
+- nur löschbar, wenn fachliche Regeln eingehalten werden,
+- Schülerkonten bleiben erhalten.
 
 ## Purge
-
-Der Purge arbeitet regelmäßig und idempotent.
 
 ```text
 deleted_at + 3 Kalendermonate <= now
 ```
 
-Vor dem physischen Löschen wird geprüft, welche abhängigen personenbezogenen Daten physisch gelöscht oder entkoppelt werden müssen.
+Vor physischem Löschen werden Abhängigkeiten und noch bestehende Schulzuordnungen geprüft.
