@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "teacher",
+  "title": "Lehrer-Zusatzmaterialien",
+  "audience": ["TEACHER"],
+  "areas": ["Klasse_7", "Klasse_8", "Klasse_9", "Klasse_10"],
+  "formats": ["pdf", "docx", "pptx"],
+  "include": [
+    "Klasse_*/**/02_Lehrerband.*",
+    "Klasse_*/**/03_Material.*",
+    "Klasse_*/**/04_Loesungen.*",
+    "Klasse_*/**/05_Praesentationen/*",
+    "Klasse_*/**/Lernkontrollen/*",
+    "Klasse_*/**/04_Leistungskontrollen/*",
+    "Klasse_*/**/05_Leistungskontrollen/*"
+  ],
+  "exclude": [],
+  "minimumFiles": 1,
+  "artifact": "Unterrichtsmaterial_Lehrer.zip"
+}
