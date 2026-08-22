@@ -4,14 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       export_profile:
-        description: "Welcher Export soll erzeugt werden?"
+        description: "Name unter Build/export-manifests, z. B. complete, teacher oder student"
         required: true
-        type: choice
+        type: string
         default: complete
-        options:
-          - complete
-          - teacher
-          - student
       publish_release:
         description: "Auf main das Release aktualisieren"
         required: true
@@ -35,6 +31,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Exportprofil validieren
+        env:
+          EXPORT_PROFILE: ${{ inputs.export_profile }}
+        run: |
+          set -euo pipefail
+          [[ "$EXPORT_PROFILE" =~ ^[a-z0-9][a-z0-9._-]*$ ]] || { echo "Ungültiger Profilname." >&2; exit 1; }
+          [[ -f "Build/export-manifests/${EXPORT_PROFILE}.json" ]] || { echo "Exportprofil nicht gefunden: $EXPORT_PROFILE" >&2; exit 1; }
+          python3 Build/validate_exports.py
+
       - name: Build-Werkzeuge installieren
         run: |
           sudo apt-get update
@@ -49,9 +54,10 @@ jobs:
       - name: Skripte ausführbar machen
         run: chmod +x Build/*.sh Build/*.py
 
-      - name: Export-Manifest prüfen und Dokumente erzeugen
-        run: |
-          python3 Build/run_export.py "Build/export-manifests/${{ inputs.export_profile }}.json"
+      - name: Dokumente erzeugen und Export paketieren
+        env:
+          EXPORT_PROFILE: ${{ inputs.export_profile }}
+        run: python3 Build/run_export.py "Build/export-manifests/${EXPORT_PROFILE}.json"
 
       - name: Export als Actions-Artefakt bereitstellen
         uses: actions/upload-artifact@v4
