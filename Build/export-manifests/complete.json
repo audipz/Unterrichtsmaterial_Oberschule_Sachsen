@@ -4,7 +4,7 @@
   "title": "Vollständige Unterrichtsmaterialien",
   "audience": ["STUDENT", "TEACHER"],
   "areas": ["Klasse_7", "Klasse_8", "Klasse_9", "Klasse_10", "Grundlagen", "Werkzeuge"],
-  "formats": ["pdf", "docx", "html", "pptx"],
+  "formats": ["pdf", "docx", "pptx"],
   "include": ["**/*"],
   "exclude": [],
   "minimumFiles": 1,
