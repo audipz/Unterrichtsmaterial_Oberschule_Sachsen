@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "teacher-klasse10",
+  "title": "Lehrermaterial Klasse 10",
+  "audience": ["TEACHER"],
+  "areas": ["Klasse_10"],
+  "formats": ["pdf", "docx", "pptx"],
+  "contentKeys": ["curriculum.oberschule.sachsen.informatik.klasse10"],
+  "exclude": [],
+  "minimumFiles": 1,
+  "artifact": "Unterrichtsmaterial_Klasse10_Lehrer.zip"
+}
