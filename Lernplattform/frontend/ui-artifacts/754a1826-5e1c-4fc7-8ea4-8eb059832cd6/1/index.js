@@ -10,17 +10,21 @@ window.__LP_UI_MODULES__[moduleId] = {
     }
     host.innerHTML = `<section class="info-card"><p class="eyebrow">${escapeHtml(school.schoolName)}</p><h2>Schüler</h2><p>Schüler werden geladen …</p></section>`;
     try {
-      const [students, classes] = await Promise.all([
-        api(`/api/v1/schools/${encodeURIComponent(school.schoolSlug)}/students`),
-        api(`/api/v1/schools/${encodeURIComponent(school.schoolSlug)}/classes`)
-      ]);
-      render(host, school, students, classes);
+      await reload(host, school);
     } catch {
       host.innerHTML = message('Die Schüler konnten nicht geladen werden.');
     }
   },
   unmount(host) { host.replaceChildren(); }
 };
+
+async function reload(host, school) {
+  const [students, classes] = await Promise.all([
+    api(`/api/v1/schools/${encodeURIComponent(school.schoolSlug)}/students`),
+    api(`/api/v1/schools/${encodeURIComponent(school.schoolSlug)}/classes`)
+  ]);
+  render(host, school, students, classes);
+}
 
 function render(host, school, students, classes) {
   host.innerHTML = `<section class="runtime-feature">
@@ -43,14 +47,57 @@ function render(host, school, students, classes) {
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify({ targetClassId })
         });
-        const [freshStudents, freshClasses] = await Promise.all([
-          api(`/api/v1/schools/${encodeURIComponent(school.schoolSlug)}/students`),
-          api(`/api/v1/schools/${encodeURIComponent(school.schoolSlug)}/classes`)
-        ]);
-        render(host, school, freshStudents, freshClasses);
+        await reload(host, school);
       } catch {
         button.disabled = false;
         showCardMessage(card, 'Der Klassenwechsel konnte nicht durchgeführt werden.');
+      }
+    });
+  });
+
+  host.querySelectorAll('[data-create-login]').forEach(button => {
+    button.addEventListener('click', async () => {
+      const card = button.closest('[data-student-card]');
+      const input = card?.querySelector('[data-login-username]');
+      const username = input?.value?.trim();
+      if (!username) {
+        showCardMessage(card, 'Bitte einen Benutzernamen eingeben.');
+        return;
+      }
+      button.disabled = true;
+      clearCardMessage(card);
+      try {
+        const credentials = await api(`/api/v1/schools/${encodeURIComponent(school.schoolSlug)}/students/${encodeURIComponent(button.dataset.createLogin)}/credentials`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ username })
+        });
+        showTemporaryCredentials(card, credentials);
+        button.remove();
+        input.disabled = true;
+      } catch (error) {
+        button.disabled = false;
+        showCardMessage(card, error.status === 409
+          ? 'Der Benutzername ist bereits vergeben oder der Schüler hat bereits einen Zugang.'
+          : 'Der Zugang konnte nicht angelegt werden.');
+      }
+    });
+  });
+
+  host.querySelectorAll('[data-reset-login]').forEach(button => {
+    button.addEventListener('click', async () => {
+      const card = button.closest('[data-student-card]');
+      button.disabled = true;
+      clearCardMessage(card);
+      try {
+        const credentials = await api(`/api/v1/schools/${encodeURIComponent(school.schoolSlug)}/students/${encodeURIComponent(button.dataset.resetLogin)}/credentials/reset-password`, {
+          method: 'POST'
+        });
+        showTemporaryCredentials(card, credentials);
+      } catch {
+        showCardMessage(card, 'Das Passwort konnte nicht zurückgesetzt werden.');
+      } finally {
+        button.disabled = false;
       }
     });
   });
@@ -58,9 +105,26 @@ function render(host, school, students, classes) {
 
 function renderStudent(student, classes) {
   const current = student.className ? `${student.className}${student.gradeLevel ? ` · Jahrgang ${student.gradeLevel}` : ''}` : 'Keine aktive Klasse';
+  const login = student.hasLogin
+    ? `<div class="runtime-credentials">
+        <p><strong>Benutzername:</strong> <code>${escapeHtml(student.username)}</code></p>
+        ${student.mustChangePassword ? '<p class="privacy-note">Passwortwechsel beim nächsten Login erforderlich.</p>' : ''}
+        <button class="button" type="button" data-reset-login="${escapeHtml(student.id)}">Passwort zurücksetzen</button>
+      </div>`
+    : `<div class="runtime-credentials">
+        <label>Benutzername
+          <input data-login-username maxlength="40" pattern="[A-Za-z0-9._-]{3,40}" autocomplete="off" placeholder="z. B. max.muster">
+        </label>
+        <button class="button" type="button" data-create-login="${escapeHtml(student.id)}">Zugang anlegen</button>
+      </div>`;
+
   return `<article class="info-card runtime-card" data-student-card>
     <p class="eyebrow">${escapeHtml(current)}</p>
     <h3>${escapeHtml(student.displayName)}</h3>
+    <h4>Zugang</h4>
+    ${login}
+    <div data-temporary-credentials></div>
+    <hr class="runtime-separator">
     <label>Zielklasse
       <select data-target-class>
         <option value="">Klasse auswählen</option>
@@ -75,9 +139,24 @@ function renderStudent(student, classes) {
   </article>`;
 }
 
+function showTemporaryCredentials(card, credentials) {
+  const target = card?.querySelector('[data-temporary-credentials]');
+  if (!target) return;
+  target.innerHTML = `<div class="message success runtime-secret" role="status">
+    <strong>Temporäre Zugangsdaten – nur jetzt sichtbar</strong>
+    <p>Benutzername: <code>${escapeHtml(credentials.username)}</code></p>
+    <p>Temporäres Passwort: <code>${escapeHtml(credentials.temporaryPassword)}</code></p>
+    <p>Das Passwort muss beim nächsten Login geändert werden.</p>
+  </div>`;
+}
+
 async function api(url, options = {}) {
   const response = await fetch(url, { credentials: 'include', ...options, headers: { Accept: 'application/json', ...(options.headers || {}) } });
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  if (!response.ok) {
+    const error = new Error(`HTTP ${response.status}`);
+    error.status = response.status;
+    throw error;
+  }
   if (response.status === 204) return null;
   return response.json();
 }
