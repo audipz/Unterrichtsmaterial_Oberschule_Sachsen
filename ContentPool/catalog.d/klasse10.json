@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "contentKey": "informatik.webanwendungen.klasse10",
+      "type": "TOPIC",
+      "title": "Webbasierte Anwendungen",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [10]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_10/01_Webbasierte_Anwendungen", "audience": "STUDENT", "outputs": ["Klasse_10/01_Webbasierte_Anwendungen/01_Arbeitsheft.*"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_10/01_Webbasierte_Anwendungen", "outputs": ["Klasse_10/01_Webbasierte_Anwendungen/02_Lehrerband.*", "Klasse_10/01_Webbasierte_Anwendungen/03_Material.*", "Klasse_10/01_Webbasierte_Anwendungen/04_Loesungen.*", "Klasse_10/01_Webbasierte_Anwendungen/05_Praesentationen/*.pptx", "Klasse_10/01_Webbasierte_Anwendungen/Lernkontrollen/*"]}]
+    },
+    {
+      "contentKey": "informatik.komplexprojekt.klasse10",
+      "type": "TOPIC",
+      "title": "Komplexes Informatikprojekt",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [10]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_10/02_Komplexes_Informatikprojekt", "audience": "STUDENT", "outputs": ["Klasse_10/02_Komplexes_Informatikprojekt/01_Arbeitsheft.*"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_10/02_Komplexes_Informatikprojekt", "outputs": ["Klasse_10/02_Komplexes_Informatikprojekt/02_Lehrerband.*", "Klasse_10/02_Komplexes_Informatikprojekt/03_Material.*", "Klasse_10/02_Komplexes_Informatikprojekt/04_Loesungen.*", "Klasse_10/02_Komplexes_Informatikprojekt/05_Praesentationen/*.pptx", "Klasse_10/02_Komplexes_Informatikprojekt/Lernkontrollen/*"]}]
+    },
+    {
+      "contentKey": "informatik.sicherheit.wahlbereich.klasse10",
+      "type": "TOPIC",
+      "title": "Wahlbereich Sicherheit",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [10]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_10/03_Wahlbereich_Sicherheit", "audience": "STUDENT", "outputs": ["Klasse_10/03_Wahlbereich_Sicherheit/01_Arbeitsheft.*"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_10/03_Wahlbereich_Sicherheit", "outputs": ["Klasse_10/03_Wahlbereich_Sicherheit/02_Lehrerband.*", "Klasse_10/03_Wahlbereich_Sicherheit/03_Material.*", "Klasse_10/03_Wahlbereich_Sicherheit/04_Loesungen.*", "Klasse_10/03_Wahlbereich_Sicherheit/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.mobile-endgeraete.wahlbereich.klasse10",
+      "type": "TOPIC",
+      "title": "Wahlbereich Mobile Endgeräte",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [10]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_10/04_Wahlbereich_Mobile_Endgeraete", "audience": "STUDENT", "outputs": ["Klasse_10/04_Wahlbereich_Mobile_Endgeraete/01_Arbeitsheft.*"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_10/04_Wahlbereich_Mobile_Endgeraete", "outputs": ["Klasse_10/04_Wahlbereich_Mobile_Endgeraete/02_Lehrerband.*", "Klasse_10/04_Wahlbereich_Mobile_Endgeraete/03_Material.*", "Klasse_10/04_Wahlbereich_Mobile_Endgeraete/04_Loesungen.*", "Klasse_10/04_Wahlbereich_Mobile_Endgeraete/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "informatik.computergrafik.wahlbereich.klasse10",
+      "type": "TOPIC",
+      "title": "Wahlbereich Computergrafik",
+      "subject": "INFORMATIK",
+      "language": "de-DE",
+      "targets": {"schoolTypes": ["OBERSCHULE"], "federalStates": ["SACHSEN"], "grades": [10]},
+      "sources": [{"path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_10/05_Wahlbereich_Computergrafik", "audience": "STUDENT", "outputs": ["Klasse_10/05_Wahlbereich_Computergrafik/01_Arbeitsheft.*"]}],
+      "resources": [{"id": "teacher-materials", "audience": "TEACHER", "path": "Unterrichtsmaterial_Oberschule_Sachsen/Klasse_10/05_Wahlbereich_Computergrafik", "outputs": ["Klasse_10/05_Wahlbereich_Computergrafik/02_Lehrerband.*", "Klasse_10/05_Wahlbereich_Computergrafik/03_Material.*", "Klasse_10/05_Wahlbereich_Computergrafik/04_Loesungen.*", "Klasse_10/05_Wahlbereich_Computergrafik/05_Praesentationen/*.pptx"]}]
+    },
+    {
+      "contentKey": "curriculum.oberschule.sachsen.informatik.klasse10",
+      "type": "COLLECTION",
+      "title": "Informatik Klasse 10",
+      "children": [
+        "informatik.webanwendungen.klasse10",
+        "informatik.komplexprojekt.klasse10",
+        "informatik.sicherheit.wahlbereich.klasse10",
+        "informatik.mobile-endgeraete.wahlbereich.klasse10",
+        "informatik.computergrafik.wahlbereich.klasse10"
+      ]
+    }
+  ]
+}
