@@ -1,30 +1,37 @@
-name: Build Unterrichtsmaterialien
+name: Dokumentexport
 
 on:
-  push:
-    branches:
-      - "**"
-    paths:
-      - "Unterrichtsmaterial_Oberschule_Sachsen/**"
-      - "Build/**"
-      - ".github/workflows/build.yml"
   workflow_dispatch:
+    inputs:
+      export_profile:
+        description: "Welcher Export soll erzeugt werden?"
+        required: true
+        type: choice
+        default: complete
+        options:
+          - complete
+          - teacher
+          - student
+      publish_release:
+        description: "Auf main das Release aktualisieren"
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: write
 
 concurrency:
-  group: build-${{ github.ref }}
+  group: document-export-${{ github.ref }}-${{ inputs.export_profile }}
   cancel-in-progress: true
 
 jobs:
-  build:
-    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+  export:
     runs-on: ubuntu-latest
 
     steps:
       - name: Repository auschecken
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -37,68 +44,36 @@ jobs:
             texlive-latex-recommended \
             fonts-dejavu-core \
             librsvg2-bin \
-            python3-docx \
-            zip
+            python3-docx
 
       - name: Skripte ausführbar machen
+        run: chmod +x Build/*.sh Build/*.py
+
+      - name: Export-Manifest prüfen und Dokumente erzeugen
         run: |
-          chmod +x Build/*.sh
+          python3 Build/run_export.py "Build/export-manifests/${{ inputs.export_profile }}.json"
 
-      - name: Dokumente bauen
-        run: |
-          ./Build/build.sh
-
-      - name: Nachschlagewerk-Ausgaben prüfen
-        run: |
-          set -euo pipefail
-
-          source_root="Unterrichtsmaterial_Oberschule_Sachsen/Nachschlagewerk"
-          missing=0
-
-          while IFS= read -r -d '' manifest; do
-            class_dir="$(dirname "$manifest")"
-            class_name="$(basename "$class_dir")"
-            output_base="Ausgabe/$class_name/Nachschlagewerk/Nachschlagewerk_Informatik_$class_name"
-
-            for extension in pdf docx html; do
-              output_file="$output_base.$extension"
-              if [[ ! -s "$output_file" ]]; then
-                echo "::error file=$output_file::Nachschlagewerk-Ausgabe fehlt oder ist leer: $output_file"
-                missing=1
-              else
-                echo "OK: $output_file"
-              fi
-            done
-          done < <(find "$source_root" -mindepth 2 -maxdepth 2 -type f -name manifest.txt -print0 | sort -z)
-
-          if [[ "$missing" -ne 0 ]]; then
-            echo "Mindestens eine erwartete Nachschlagewerk-Ausgabe fehlt."
-            exit 1
-          fi
-
-      - name: Veröffentlichungsartefakte zusammenstellen
-        run: |
-          ./Build/package_artifacts.sh
-
-      - name: Vollständige Ausgabe als Actions-Artefakt bereitstellen
+      - name: Export als Actions-Artefakt bereitstellen
         uses: actions/upload-artifact@v4
         with:
-          name: Unterrichtsmaterial_Oberschule_Sachsen
-          path: .publish/Unterrichtsmaterial_Oberschule_Sachsen.zip
+          name: document-export-${{ inputs.export_profile }}
+          path: .publish/*.zip
           if-no-files-found: error
           compression-level: 0
 
-      - name: Öffentliches ZIP-Release aktualisieren
-        if: ${{ github.ref_name == 'main' }}
+      - name: Release aktualisieren
+        if: ${{ inputs.publish_release && github.ref_name == 'main' }}
         env:
           GH_TOKEN: ${{ github.token }}
+          EXPORT_PROFILE: ${{ inputs.export_profile }}
         run: |
           set -euo pipefail
+          ZIP="$(find .publish -maxdepth 1 -type f -name '*.zip' -print -quit)"
+          [[ -n "$ZIP" && -s "$ZIP" ]] || { echo "Kein Export-ZIP gefunden." >&2; exit 1; }
 
-          TAG="unterrichtsmaterial-aktuell"
-          ZIP=".publish/Unterrichtsmaterial_Oberschule_Sachsen.zip"
-          TITLE="Aktuelle Unterrichtsmaterialien"
-          NOTES="Automatisch erzeugte Gesamtausgabe aus main. Build-Commit: ${GITHUB_SHA}"
+          TAG="unterrichtsmaterial-${EXPORT_PROFILE}-aktuell"
+          TITLE="Unterrichtsmaterialien – ${EXPORT_PROFILE}"
+          NOTES="Manifestgesteuerter Dokumentexport aus main. Build-Commit: ${GITHUB_SHA}"
 
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" "$ZIP" --clobber
@@ -107,34 +82,11 @@ jobs:
             gh release create "$TAG" "$ZIP" \
               --title "$TITLE" \
               --notes "$NOTES" \
-              --target "$GITHUB_SHA" \
-              --latest
+              --target "$GITHUB_SHA"
           fi
 
-          echo "Öffentlicher Download: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/download/${TAG}/Unterrichtsmaterial_Oberschule_Sachsen.zip"
-
-      - name: Build-Ausgabe nicht versionieren
-        if: ${{ github.ref_name != 'main' }}
+      - name: Zusammenfassung
         run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Bereits versionierte Build-Ausgabe einmalig aus Git entfernen.
-          # Die Dateien bleiben lokal für Packaging/Prüfung erhalten.
-          if git ls-files --error-unmatch Ausgabe >/dev/null 2>&1 || git ls-files Ausgabe | grep -q .; then
-            git rm -r --cached Ausgabe/
-            git commit -m "Generierte Build-Ausgabe aus Git entfernen [skip ci]"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
-          else
-            echo "Ausgabe/ ist nicht mehr versioniert."
-          fi
-
-      - name: Build abgeschlossen
-        run: |
-          echo "Build erfolgreich. Ausgabe/ wird nicht in Git eingecheckt."
-          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
-            echo "Das öffentliche Release-ZIP wurde aktualisiert."
-          else
-            echo "In Feature-Branches steht das ZIP als Actions-Artefakt zur Build-Prüfung bereit."
-          fi
+          echo "Exportprofil: ${{ inputs.export_profile }}"
+          echo "Dokumente werden nicht in Git eingecheckt."
+          echo "Normale Pushes starten keinen Dokumentexport mehr."
