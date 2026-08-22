@@ -4,6 +4,7 @@ import de.schule.informatik.lernplattform.app.security.CurrentActor;
 import de.schule.informatik.lernplattform.app.security.StudentSessionFilter;
 import de.schule.informatik.lernplattform.app.security.StudentSessionService;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.function.ServerRequest;
 import org.springframework.web.servlet.function.ServerResponse;
@@ -29,6 +30,18 @@ public class StudentAuthHandler {
         return ServerResponse.ok()
                 .header("Set-Cookie", cookie(result.token(), maxAge))
                 .body(Map.of("mustChangePassword", result.mustChangePassword(), "expiresAt", result.expiresAt().toString()));
+    }
+
+    public ServerResponse csrf(ServerRequest request) {
+        Object value = request.servletRequest().getAttribute(CsrfToken.class.getName());
+        if (!(value instanceof CsrfToken token)) {
+            value = request.servletRequest().getAttribute("_csrf");
+        }
+        if (!(value instanceof CsrfToken token)) {
+            throw new IllegalStateException("CSRF token unavailable");
+        }
+        token.getToken();
+        return ServerResponse.ok().body(Map.of("token", token.getToken(), "headerName", token.getHeaderName()));
     }
 
     public ServerResponse changePassword(ServerRequest request) throws Exception {
