@@ -18,6 +18,8 @@ public class AdminRoutes {
         return route()
                 .path("/api/v1/schulen/{schoolSlug}/admin/accounts", builder -> builder
                         .POST("/students", accept(MediaType.APPLICATION_JSON).and(contentType(MediaType.APPLICATION_JSON)), handler::createStudent)
+                        .DELETE("/students/{studentId}/school-membership", handler::removeStudentFromSchool)
+                        .POST("/students/{studentId}/school-membership/reactivate", handler::restoreStudentToSchool)
                         .POST("/teachers", accept(MediaType.APPLICATION_JSON).and(contentType(MediaType.APPLICATION_JSON)), handler::createTeacher)
                         .POST("/teachers/{teacherId}/school-membership", handler::addExistingTeacher)
                         .DELETE("/teachers/{teacherId}/school-membership", handler::removeTeacherFromSchool))
