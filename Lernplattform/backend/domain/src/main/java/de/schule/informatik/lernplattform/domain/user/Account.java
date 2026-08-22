@@ -12,7 +12,7 @@ public final class Account {
     private String displayNameNormalized;
     private String teacherEmail;
     private String teacherEmailNormalized;
-    private UserStatus status;
+    private AccountStatus status;
     private Instant pendingDeletionAt;
 
     public Account(UUID id,
@@ -21,7 +21,7 @@ public final class Account {
                    String displayNameNormalized,
                    String teacherEmail,
                    String teacherEmailNormalized,
-                   UserStatus status,
+                   AccountStatus status,
                    Instant pendingDeletionAt) {
         this.id = Objects.requireNonNull(id);
         this.type = Objects.requireNonNull(type);
@@ -33,10 +33,8 @@ public final class Account {
         if (type == AccountType.TEACHER) {
             this.teacherEmail = requireText(teacherEmail, "teacherEmail");
             this.teacherEmailNormalized = requireText(teacherEmailNormalized, "teacherEmailNormalized");
-        } else {
-            if (teacherEmail != null || teacherEmailNormalized != null) {
-                throw new IllegalArgumentException("student accounts must not contain a teacher email");
-            }
+        } else if (teacherEmail != null || teacherEmailNormalized != null) {
+            throw new IllegalArgumentException("student accounts must not contain a teacher email");
         }
     }
 
@@ -46,7 +44,7 @@ public final class Account {
     public String displayNameNormalized() { return displayNameNormalized; }
     public String teacherEmail() { return teacherEmail; }
     public String teacherEmailNormalized() { return teacherEmailNormalized; }
-    public UserStatus status() { return status; }
+    public AccountStatus status() { return status; }
     public Instant pendingDeletionAt() { return pendingDeletionAt; }
 
     public void rename(String displayName, String normalized) {
@@ -55,17 +53,17 @@ public final class Account {
     }
 
     public void scheduleDeletion(Instant purgeAt) {
-        this.status = UserStatus.PENDING_DELETION;
+        this.status = AccountStatus.PENDING_DELETION;
         this.pendingDeletionAt = Objects.requireNonNull(purgeAt);
     }
 
     public void cancelPendingDeletion() {
-        this.status = UserStatus.ACTIVE;
+        this.status = AccountStatus.ACTIVE;
         this.pendingDeletionAt = null;
     }
 
     public void softDelete() {
-        this.status = UserStatus.SOFT_DELETED;
+        this.status = AccountStatus.SOFT_DELETED;
     }
 
     private static String requireText(String value, String field) {
