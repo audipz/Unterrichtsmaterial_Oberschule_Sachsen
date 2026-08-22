@@ -51,7 +51,8 @@ CREATE TABLE school_membership (
     deleted_at TIMESTAMPTZ,
     deleted_by UUID REFERENCES account(id),
     CONSTRAINT ck_school_membership_status CHECK (status IN ('ACTIVE', 'ENDED', 'SOFT_DELETED')),
-    CONSTRAINT ck_school_membership_dates CHECK (left_at IS NULL OR left_at >= joined_at)
+    CONSTRAINT ck_school_membership_dates CHECK (left_at IS NULL OR left_at >= joined_at),
+    CONSTRAINT uq_school_membership_id_school UNIQUE (id, school_id)
 );
 
 CREATE UNIQUE INDEX uq_school_membership_active
@@ -63,21 +64,23 @@ CREATE INDEX ix_school_membership_school
     WHERE status = 'ACTIVE' AND deleted_at IS NULL;
 
 CREATE TABLE student_school_login (
-    school_membership_id UUID PRIMARY KEY REFERENCES school_membership(id) ON DELETE CASCADE,
+    school_membership_id UUID PRIMARY KEY,
+    school_id UUID NOT NULL,
     username VARCHAR(120) NOT NULL,
     username_normalized VARCHAR(120) NOT NULL,
     password_hash VARCHAR(500) NOT NULL,
     must_change_password BOOLEAN NOT NULL DEFAULT TRUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    CONSTRAINT fk_student_login_membership_school
+        FOREIGN KEY (school_membership_id, school_id)
+        REFERENCES school_membership(id, school_id)
+        ON DELETE CASCADE,
     CONSTRAINT ck_student_school_login_username_not_blank CHECK (btrim(username) <> '')
 );
 
 CREATE UNIQUE INDEX uq_student_school_username
-    ON student_school_login (username_normalized);
-
--- Die globale Eindeutigkeit des obigen Index wird in V003 durch einen schulbezogenen
--- Eindeutigkeitsindex ersetzt, sobald school_id über die Membership sicher eingebunden ist.
+    ON student_school_login (school_id, username_normalized);
 
 CREATE TABLE school_role (
     school_membership_id UUID NOT NULL REFERENCES school_membership(id) ON DELETE CASCADE,
