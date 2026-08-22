@@ -8,13 +8,22 @@ ALLOWED_AUDIENCES = {"STUDENT", "TEACHER", "INTERNAL"}
 ALLOWED_TYPES = {"TOPIC", "SECTION", "EXERCISE", "WORKSHEET", "REFERENCE", "RESOURCE", "COLLECTION"}
 
 
-def load_catalog(path: Path) -> dict:
+def _read_catalog_file(path: Path) -> list[dict]:
     data = json.loads(path.read_text(encoding="utf-8"))
     if data.get("schemaVersion") != 1:
-        raise ValueError("Content-Pool: schemaVersion muss 1 sein")
+        raise ValueError(f"Content-Pool {path}: schemaVersion muss 1 sein")
     items = data.get("items")
     if not isinstance(items, list):
-        raise ValueError("Content-Pool: items muss eine Liste sein")
+        raise ValueError(f"Content-Pool {path}: items muss eine Liste sein")
+    return items
+
+
+def load_catalog(path: Path) -> dict:
+    items = list(_read_catalog_file(path))
+    fragment_dir = path.parent / "catalog.d"
+    if fragment_dir.is_dir():
+        for fragment in sorted(fragment_dir.glob("*.json")):
+            items.extend(_read_catalog_file(fragment))
 
     seen: set[str] = set()
     for item in items:
@@ -54,7 +63,7 @@ def load_catalog(path: Path) -> dict:
     unknown_children = sorted({child for item in items for child in item.get("children", []) if child not in seen})
     if unknown_children:
         raise ValueError("Content-Pool: unbekannte children: " + ", ".join(unknown_children))
-    return data
+    return {"schemaVersion": 1, "items": items}
 
 
 def _validate_locator(key: str, value: dict, kind: str) -> None:
