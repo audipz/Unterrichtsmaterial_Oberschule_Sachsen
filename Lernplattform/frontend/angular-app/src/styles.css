@@ -41,9 +41,9 @@ textarea { resize: vertical; }
 .back-link { display: inline-block; margin-bottom: 1.5rem; }
 
 .admin-shell { max-width: 1040px; }
-.admin-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 2rem; padding: .6rem; background: white; border: 1px solid #e0e5ee; border-radius: .8rem; }
-.admin-nav-link { padding: .65rem .9rem; border-radius: .55rem; text-decoration: none; font-weight: 700; }
-.admin-nav-link:hover, .admin-nav-link:focus-visible { background: #eef2fa; outline: none; }
+.admin-nav, .app-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 2rem; padding: .6rem; background: white; border: 1px solid #e0e5ee; border-radius: .8rem; }
+.admin-nav-link { padding: .65rem .9rem; border: 0; border-radius: .55rem; background: transparent; color: inherit; font: inherit; text-decoration: none; font-weight: 700; cursor: pointer; }
+.admin-nav-link:hover, .admin-nav-link:focus-visible, .admin-nav-link.active { background: #eef2fa; outline: none; }
 .admin-card.compact-card { max-width: 620px; margin: 0 auto; }
 .admin-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
 .admin-header h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
@@ -60,8 +60,14 @@ textarea { resize: vertical; }
 .reject-form { margin-top: 0; padding-top: 1rem; border-top: 1px solid #e0e5ee; }
 .empty-state { text-align: center; }
 
+.app-shell { max-width: 1040px; }
+.app-shell-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
+.app-shell-header h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 0; }
+.context-select { min-width: min(100%, 280px); }
+.runtime-module-host { min-height: 8rem; }
+
 @media (max-width: 640px) {
   .page-shell { padding-top: 2.5rem; }
-  .admin-header, .registration-heading { flex-direction: column; }
-  .admin-header .button { width: 100%; }
+  .admin-header, .registration-heading, .app-shell-header { flex-direction: column; }
+  .admin-header .button, .context-select { width: 100%; }
 }
