@@ -74,6 +74,11 @@ textarea { resize: vertical; }
 .runtime-list li { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem .8rem; border: 1px solid #e0e5ee; border-radius: .6rem; }
 .runtime-list li span { color: #657087; }
 .runtime-inline-form { display: grid; grid-template-columns: 1fr auto; gap: .65rem; margin-top: 1rem; }
+.runtime-credentials { display: grid; gap: .7rem; }
+.runtime-credentials p { margin: 0; }
+.runtime-secret { overflow-wrap: anywhere; }
+.runtime-secret code, .runtime-credentials code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.runtime-separator { width: 100%; margin: .25rem 0; border: 0; border-top: 1px solid #e0e5ee; }
 
 @media (max-width: 640px) {
   .page-shell { padding-top: 2.5rem; }
