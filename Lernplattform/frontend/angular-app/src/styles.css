@@ -74,11 +74,28 @@ textarea { resize: vertical; }
 .runtime-list li { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem .8rem; border: 1px solid #e0e5ee; border-radius: .6rem; }
 .runtime-list li span { color: #657087; }
 .runtime-inline-form { display: grid; grid-template-columns: 1fr auto; gap: .65rem; margin-top: 1rem; }
-.runtime-credentials { display: grid; gap: .7rem; }
-.runtime-credentials p { margin: 0; }
-.runtime-secret { overflow-wrap: anywhere; }
-.runtime-secret code, .runtime-credentials code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-.runtime-separator { width: 100%; margin: .25rem 0; border: 0; border-top: 1px solid #e0e5ee; }
+
+.learning-feature { display: grid; gap: 1rem; }
+.learning-header h2 { margin-bottom: .35rem; }
+.learning-layout { display: grid; grid-template-columns: minmax(220px, 280px) minmax(0, 1fr); gap: 1rem; align-items: start; }
+.learning-toc { position: sticky; top: 1rem; padding: 1.25rem; }
+.learning-toc h3 { margin-top: 0; }
+.learning-tree { list-style: none; padding-left: 0; margin: 0; display: grid; gap: .35rem; }
+.learning-tree .learning-tree { padding-left: .8rem; margin-top: .3rem; border-left: 1px solid #e0e5ee; }
+.learning-tree button { width: 100%; border: 0; border-radius: .5rem; background: transparent; padding: .55rem .65rem; text-align: left; font: inherit; cursor: pointer; }
+.learning-tree button:hover, .learning-tree button:focus-visible, .learning-tree button.active { background: #eef2fa; outline: none; }
+.learning-content { min-width: 0; }
+.learning-article h3 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-top: .35rem; }
+.markdown-body { overflow-wrap: anywhere; }
+.markdown-body h3, .markdown-body h4, .markdown-body h5 { margin-top: 1.7em; }
+.markdown-body pre { overflow-x: auto; padding: 1rem; border-radius: .65rem; background: #f1f3f7; }
+.markdown-body code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.markdown-body p code, .markdown-body li code { padding: .1rem .3rem; border-radius: .3rem; background: #f1f3f7; }
+
+@media (max-width: 760px) {
+  .learning-layout { grid-template-columns: 1fr; }
+  .learning-toc { position: static; }
+}
 
 @media (max-width: 640px) {
   .page-shell { padding-top: 2.5rem; }
