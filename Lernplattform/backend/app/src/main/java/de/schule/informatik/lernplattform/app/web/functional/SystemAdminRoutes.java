@@ -14,6 +14,17 @@ import static org.springframework.web.servlet.function.RouterFunctions.route;
 public class SystemAdminRoutes {
 
     @Bean
+    RouterFunction<ServerResponse> systemAdminAuthRoutes(SystemAdminAuthHandler handler) {
+        var json = accept(MediaType.APPLICATION_JSON).and(contentType(MediaType.APPLICATION_JSON));
+        return route()
+                .POST("/api/v1/system-admin/auth/login", json, handler::login)
+                .GET("/api/v1/system-admin/auth/csrf", handler::csrf)
+                .POST("/api/v1/system-admin/auth/change-password", json, handler::changePassword)
+                .POST("/api/v1/system-admin/auth/logout", handler::logout)
+                .build();
+    }
+
+    @Bean
     RouterFunction<ServerResponse> systemAdminRegistrationRoutes(SystemAdminRegistrationHandler handler) {
         var json = accept(MediaType.APPLICATION_JSON).and(contentType(MediaType.APPLICATION_JSON));
         return route()
