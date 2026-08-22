@@ -5,12 +5,8 @@ spring:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/lernplattform}
     username: ${DB_USERNAME:lernplattform}
     password: ${DB_PASSWORD:lernplattform}
-  jpa:
-    open-in-view: false
-    hibernate:
-      ddl-auto: validate
   flyway:
-    enabled: true
+    enabled: ${FLYWAY_ENABLED:false}
     locations: classpath:db/migration
   security:
     oauth2:
@@ -27,3 +23,8 @@ management:
     health:
       probes:
         enabled: true
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
