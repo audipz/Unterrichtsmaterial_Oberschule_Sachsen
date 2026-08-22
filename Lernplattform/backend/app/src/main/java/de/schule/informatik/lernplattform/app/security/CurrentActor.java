@@ -17,14 +17,16 @@ public class CurrentActor {
         }
 
         Object principal = authentication.getPrincipal();
-        if (!(principal instanceof Jwt jwt)) {
-            throw new SecurityException("Ungültige Authentifizierungsidentität.");
+        if (principal instanceof UUID id) {
+            return id;
         }
-
-        try {
-            return UUID.fromString(jwt.getSubject());
-        } catch (RuntimeException ex) {
-            throw new SecurityException("Ungültige Benutzer-ID im Authentifizierungstoken.");
+        if (principal instanceof Jwt jwt) {
+            try {
+                return UUID.fromString(jwt.getSubject());
+            } catch (RuntimeException ex) {
+                throw new SecurityException("Ungültige Benutzer-ID im Authentifizierungstoken.");
+            }
         }
+        throw new SecurityException("Ungültige Authentifizierungsidentität.");
     }
 }
