@@ -19,6 +19,10 @@ export const routes: Routes = [
     loadComponent: () => import('./system-admin/system-admin.component').then((m) => m.SystemAdminComponent)
   },
   {
+    path: ':school/:view',
+    loadComponent: () => import('./shell/app-shell.component').then((m) => m.AppShellComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
