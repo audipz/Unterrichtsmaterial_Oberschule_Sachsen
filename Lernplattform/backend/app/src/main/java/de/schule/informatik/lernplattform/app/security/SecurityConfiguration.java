@@ -25,7 +25,6 @@ public class SecurityConfiguration {
                                             StudentSessionFilter studentSessionFilter) throws Exception {
         CookieCsrfTokenRepository csrfRepository = CookieCsrfTokenRepository.withHttpOnlyFalse();
         csrfRepository.setCookiePath("/");
-
         RequestMatcher cookieSessionCsrf = SecurityConfiguration::requiresCookieSessionCsrf;
 
         return http
@@ -45,8 +44,8 @@ public class SecurityConfiguration {
                                 "/api/v1/system-admin/auth/change-password",
                                 "/api/v1/system-admin/auth/logout")
                             .hasAnyAuthority("SYSTEM_ADMIN", "SYSTEM_ADMIN_PASSWORD_CHANGE_REQUIRED")
-                        .requestMatchers("/api/v1/student-auth/change-password", "/api/v1/student-auth/logout", "/api/v1/me")
-                            .hasAnyAuthority("STUDENT", "STUDENT_PASSWORD_CHANGE_REQUIRED", "SYSTEM_ADMIN", "SYSTEM_ADMIN_PASSWORD_CHANGE_REQUIRED")
+                        .requestMatchers("/api/v1/student-auth/csrf", "/api/v1/student-auth/change-password", "/api/v1/student-auth/logout")
+                            .hasAnyAuthority("STUDENT", "STUDENT_PASSWORD_CHANGE_REQUIRED")
                         .requestMatchers("/api/v1/system-admin/**").hasAuthority("SYSTEM_ADMIN")
                         .requestMatchers("/api/**").authenticated()
                         .anyRequest().denyAll())
