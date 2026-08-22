@@ -8,7 +8,9 @@
   "include": [
     "Klasse_*/**/01_Arbeitsheft.*",
     "Klasse_*/Nachschlagewerk/*",
+    "Grundlagen/*",
     "Grundlagen/**/*",
+    "Werkzeuge/*",
     "Werkzeuge/**/*"
   ],
   "exclude": [
