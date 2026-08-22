@@ -6,13 +6,14 @@ CREATE TABLE school_class (
     school_year VARCHAR(20) NOT NULL,
     status VARCHAR(30) NOT NULL DEFAULT 'ACTIVE',
     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-    created_by UUID REFERENCES app_user(id),
+    created_by UUID REFERENCES account(id),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-    updated_by UUID REFERENCES app_user(id),
+    updated_by UUID REFERENCES account(id),
     deleted_at TIMESTAMPTZ,
-    deleted_by UUID REFERENCES app_user(id),
+    deleted_by UUID REFERENCES account(id),
     CONSTRAINT ck_school_class_grade_level CHECK (grade_level BETWEEN 1 AND 13),
-    CONSTRAINT ck_school_class_status CHECK (status IN ('ACTIVE', 'SOFT_DELETED'))
+    CONSTRAINT ck_school_class_status CHECK (status IN ('ACTIVE', 'ARCHIVED', 'SOFT_DELETED')),
+    CONSTRAINT uq_school_class_id_school UNIQUE (id, school_id)
 );
 
 CREATE UNIQUE INDEX uq_school_class_name_year_active
@@ -25,27 +26,34 @@ CREATE INDEX ix_school_class_deleted_at ON school_class (deleted_at)
 
 CREATE TABLE school_class_membership (
     id UUID PRIMARY KEY,
-    school_class_id UUID NOT NULL REFERENCES school_class(id),
-    student_id UUID NOT NULL REFERENCES app_user(id),
+    school_class_id UUID NOT NULL,
+    school_id UUID NOT NULL,
+    student_school_membership_id UUID NOT NULL,
     valid_from DATE NOT NULL,
     valid_until DATE,
     status VARCHAR(30) NOT NULL DEFAULT 'ACTIVE',
     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-    created_by UUID REFERENCES app_user(id),
+    created_by UUID REFERENCES account(id),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-    updated_by UUID REFERENCES app_user(id),
+    updated_by UUID REFERENCES account(id),
     deleted_at TIMESTAMPTZ,
-    deleted_by UUID REFERENCES app_user(id),
+    deleted_by UUID REFERENCES account(id),
+    CONSTRAINT fk_class_membership_class_school
+        FOREIGN KEY (school_class_id, school_id)
+        REFERENCES school_class(id, school_id),
+    CONSTRAINT fk_class_membership_student_school
+        FOREIGN KEY (student_school_membership_id, school_id)
+        REFERENCES school_membership(id, school_id),
     CONSTRAINT ck_school_class_membership_dates CHECK (valid_until IS NULL OR valid_until >= valid_from),
     CONSTRAINT ck_school_class_membership_status CHECK (status IN ('ACTIVE', 'ENDED', 'SOFT_DELETED'))
 );
 
 CREATE UNIQUE INDEX uq_school_class_membership_active
-    ON school_class_membership (school_class_id, student_id)
+    ON school_class_membership (school_class_id, student_school_membership_id)
     WHERE status = 'ACTIVE' AND deleted_at IS NULL;
 
 CREATE INDEX ix_school_class_membership_student
-    ON school_class_membership (student_id)
+    ON school_class_membership (student_school_membership_id)
     WHERE deleted_at IS NULL;
 
 CREATE INDEX ix_school_class_membership_class
@@ -53,15 +61,26 @@ CREATE INDEX ix_school_class_membership_class
     WHERE deleted_at IS NULL;
 
 CREATE TABLE class_teacher (
-    school_class_id UUID NOT NULL REFERENCES school_class(id),
-    teacher_id UUID NOT NULL REFERENCES app_user(id),
+    school_class_id UUID NOT NULL,
+    school_id UUID NOT NULL,
+    teacher_school_membership_id UUID NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-    created_by UUID REFERENCES app_user(id),
+    created_by UUID REFERENCES account(id),
     deleted_at TIMESTAMPTZ,
-    deleted_by UUID REFERENCES app_user(id),
-    PRIMARY KEY (school_class_id, teacher_id)
+    deleted_by UUID REFERENCES account(id),
+    PRIMARY KEY (school_class_id, teacher_school_membership_id),
+    CONSTRAINT fk_class_teacher_class_school
+        FOREIGN KEY (school_class_id, school_id)
+        REFERENCES school_class(id, school_id),
+    CONSTRAINT fk_class_teacher_membership_school
+        FOREIGN KEY (teacher_school_membership_id, school_id)
+        REFERENCES school_membership(id, school_id)
 );
 
 CREATE INDEX ix_class_teacher_teacher
-    ON class_teacher (teacher_id)
+    ON class_teacher (teacher_school_membership_id)
     WHERE deleted_at IS NULL;
+
+-- Fachregel (im transaktionalen Domain-Service zu erzwingen):
+-- Eine ACTIVE-Klasse muss jederzeit mindestens einen aktiven class_teacher besitzen.
+-- Alle class_teacher einer Klasse sind gleichberechtigt verantwortlich.
