@@ -6,15 +6,11 @@ import de.schule.informatik.lernplattform.app.security.SystemAdminSessionService
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.function.ServerRequest;
 import org.springframework.web.servlet.function.ServerResponse;
 
-import java.util.List;
 import java.util.Map;
 
 @Component
@@ -39,7 +35,7 @@ public class SystemAdminAuthHandler {
                 .httpOnly(true)
                 .secure(secureCookie)
                 .sameSite("Strict")
-                .path("/api/v1/system-admin")
+                .path("/")
                 .maxAge(sessions.sessionLifetime())
                 .build();
         return ServerResponse.ok()
@@ -47,33 +43,6 @@ public class SystemAdminAuthHandler {
                 .body(Map.of(
                         "mustChangePassword", result.mustChangePassword(),
                         "expiresAt", result.expiresAt().toString()));
-    }
-
-    public ServerResponse me(ServerRequest request) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        boolean passwordChangeRequired = hasAuthority(authentication, "SYSTEM_ADMIN_PASSWORD_CHANGE_REQUIRED");
-
-        if (passwordChangeRequired) {
-            return ServerResponse.ok().body(Map.of(
-                    "accountId", currentActor.id().toString(),
-                    "accountType", "SYSTEM",
-                    "capabilities", List.of("CHANGE_OWN_PASSWORD"),
-                    "navigation", List.of(Map.of(
-                            "id", "password",
-                            "label", "Passwort ändern",
-                            "route", "/system-admin"))));
-        }
-
-        return ServerResponse.ok().body(Map.of(
-                "accountId", currentActor.id().toString(),
-                "accountType", "SYSTEM",
-                "capabilities", List.of(
-                        "SCHOOL_REGISTRATION_REVIEW",
-                        "SCHOOL_MANAGEMENT"),
-                "navigation", List.of(Map.of(
-                        "id", "registrations",
-                        "label", "Schulregistrierungen",
-                        "route", "/system-admin"))));
     }
 
     public ServerResponse csrf(ServerRequest request) {
@@ -94,21 +63,12 @@ public class SystemAdminAuthHandler {
         return clearCookie(ServerResponse.noContent()).build();
     }
 
-    private static boolean hasAuthority(Authentication authentication, String authority) {
-        if (authentication == null) {
-            return false;
-        }
-        return authentication.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority)
-                .anyMatch(authority::equals);
-    }
-
     private ServerResponse.BodyBuilder clearCookie(ServerResponse.BodyBuilder builder) {
         ResponseCookie cookie = ResponseCookie.from(SystemAdminSessionFilter.COOKIE_NAME, "")
                 .httpOnly(true)
                 .secure(secureCookie)
                 .sameSite("Strict")
-                .path("/api/v1/system-admin")
+                .path("/")
                 .maxAge(0)
                 .build();
         return builder.header(HttpHeaders.SET_COOKIE, cookie.toString());
