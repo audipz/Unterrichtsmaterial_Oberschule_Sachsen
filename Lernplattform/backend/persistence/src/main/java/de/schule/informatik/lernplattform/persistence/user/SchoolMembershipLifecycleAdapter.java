@@ -93,7 +93,7 @@ public class SchoolMembershipLifecycleAdapter implements SchoolMembershipLifecyc
     public TeacherMembershipContext requireTeacherMembership(UUID teacherId, UUID schoolId) {
         return jdbc.query("""
                 select sm.id, sm.account_id, sm.school_id, sm.status,
-                       exists(select 1 from school_membership_role r
+                       exists(select 1 from school_role r
                                where r.school_membership_id = sm.id and r.role = 'SCHOOL_ADMIN') as school_admin
                   from school_membership sm
                   join account a on a.id = sm.account_id and a.account_type = 'TEACHER'
@@ -117,13 +117,16 @@ public class SchoolMembershipLifecycleAdapter implements SchoolMembershipLifecyc
         return new HashSet<>(jdbc.query("""
                 select ct.school_class_id
                   from class_teacher ct
+                  join school_class sc on sc.id = ct.school_class_id
                  where ct.teacher_school_membership_id = ?
-                   and ct.status = 'ACTIVE' and ct.deleted_at is null
+                   and ct.deleted_at is null
+                   and sc.status = 'ACTIVE'
+                   and sc.deleted_at is null
                    and not exists (
                        select 1 from class_teacher other
                         where other.school_class_id = ct.school_class_id
                           and other.teacher_school_membership_id <> ct.teacher_school_membership_id
-                          and other.status = 'ACTIVE' and other.deleted_at is null
+                          and other.deleted_at is null
                    )
                 """, (rs, rowNum) -> rs.getObject(1, UUID.class), membershipId));
     }
@@ -133,9 +136,12 @@ public class SchoolMembershipLifecycleAdapter implements SchoolMembershipLifecyc
         Long count = jdbc.queryForObject("""
                 select count(*)
                   from school_membership sm
-                  join school_membership_role r on r.school_membership_id = sm.id
+                  join school_role r on r.school_membership_id = sm.id
+                  join account a on a.id = sm.account_id
                  where sm.school_id = ? and sm.id <> ?
                    and sm.status = 'ACTIVE' and sm.deleted_at is null
+                   and a.status = 'ACTIVE' and a.deleted_at is null
+                   and a.account_type = 'TEACHER'
                    and r.role = 'SCHOOL_ADMIN'
                 """, Long.class, schoolId, excludedMembershipId);
         return count == null ? 0 : count;
