@@ -52,6 +52,13 @@ database:
   usernameKey: username
   passwordKey: password
 
+systemAdmin:
+  bootstrap:
+    enabled: true
+    existingSecret: lernplattform-system-admin
+    usernameKey: username
+    passwordKey: password
+
 migration:
   enabled: true
   backoffLimit: 1
