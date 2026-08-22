@@ -1,6 +1,6 @@
 package de.schule.informatik.lernplattform.domain.displayname;
 
-import de.schule.informatik.lernplattform.domain.user.User;
+import de.schule.informatik.lernplattform.domain.user.Account;
 
 import java.util.Set;
 import java.util.UUID;
@@ -16,15 +16,15 @@ public final class DisplayNameService {
         this.conflictPort = conflictPort;
     }
 
-    public void changeDisplayName(User user,
+    public void changeDisplayName(Account account,
                                   String requestedDisplayName,
                                   Set<UUID> visibleClassIds) {
         String normalized = normalizer.normalize(requestedDisplayName);
 
-        if (conflictPort.conflictsInClasses(user.id(), normalized, visibleClassIds)) {
+        if (conflictPort.conflictsInClasses(account.id(), normalized, visibleClassIds)) {
             throw new DisplayNameConflictException(requestedDisplayName);
         }
 
-        user.rename(requestedDisplayName.trim(), normalized);
+        account.rename(requestedDisplayName.trim(), normalized);
     }
 }
