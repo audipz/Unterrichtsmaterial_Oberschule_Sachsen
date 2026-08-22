@@ -15,6 +15,7 @@ public class MeRoutes {
         return route()
                 .GET("/api/v1/me", meHandler::me)
                 .GET("/api/v1/ui-modules/{moduleId}", moduleHandler::resolve)
+                .GET("/api/v1/ui-modules/{moduleId}/artifact", moduleHandler::artifact)
                 .build();
     }
 }
