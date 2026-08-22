@@ -34,7 +34,7 @@ public final class Account {
             this.teacherEmail = requireText(teacherEmail, "teacherEmail");
             this.teacherEmailNormalized = requireText(teacherEmailNormalized, "teacherEmailNormalized");
         } else if (teacherEmail != null || teacherEmailNormalized != null) {
-            throw new IllegalArgumentException("student accounts must not contain a teacher email");
+            throw new IllegalArgumentException("only teacher accounts may contain a teacher email");
         }
     }
 
