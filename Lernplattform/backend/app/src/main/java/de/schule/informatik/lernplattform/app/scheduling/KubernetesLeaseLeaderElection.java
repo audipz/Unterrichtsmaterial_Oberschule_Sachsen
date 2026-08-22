@@ -30,7 +30,6 @@ public class KubernetesLeaseLeaderElection {
     private static final int LEASE_DURATION_SECONDS = 90;
 
     private final ObjectMapper objectMapper;
-    private final HttpClient httpClient;
     private final String namespace;
     private final String holderIdentity;
     private final String leaseName;
@@ -47,10 +46,6 @@ public class KubernetesLeaseLeaderElection {
         this.namespace = namespace;
         this.holderIdentity = holderIdentity;
         this.leaseName = leaseName;
-        this.httpClient = HttpClient.newBuilder()
-                .connectTimeout(Duration.ofSeconds(5))
-                .sslContext(kubernetesSslContext())
-                .build();
     }
 
     public boolean isLeader() {
@@ -118,6 +113,11 @@ public class KubernetesLeaseLeaderElection {
 
     private HttpResponse<String> send(String method, URI uri, String token, String body, String contentType)
             throws IOException, InterruptedException {
+        HttpClient httpClient = HttpClient.newBuilder()
+                .connectTimeout(Duration.ofSeconds(5))
+                .sslContext(kubernetesSslContext())
+                .build();
+
         HttpRequest.Builder builder = HttpRequest.newBuilder(uri)
                 .timeout(Duration.ofSeconds(10))
                 .header("Authorization", "Bearer " + token)
@@ -157,13 +157,6 @@ public class KubernetesLeaseLeaderElection {
             context.init(null, trustManagerFactory.getTrustManagers(), null);
             return context;
         } catch (Exception e) {
-            if (!Files.exists(CA_PATH)) {
-                try {
-                    return SSLContext.getDefault();
-                } catch (Exception fallbackException) {
-                    throw new IllegalStateException("Cannot initialize SSL context", fallbackException);
-                }
-            }
             throw new IllegalStateException("Cannot initialize Kubernetes SSL context", e);
         }
     }
