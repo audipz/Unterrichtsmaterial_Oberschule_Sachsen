@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "student-klasse10",
+  "title": "Schülermaterial Klasse 10",
+  "audience": ["STUDENT"],
+  "areas": ["Klasse_10"],
+  "formats": ["pdf", "docx"],
+  "contentKeys": ["curriculum.oberschule.sachsen.informatik.klasse10"],
+  "exclude": [],
+  "minimumFiles": 1,
+  "artifact": "Unterrichtsmaterial_Klasse10_Schueler.zip"
+}
