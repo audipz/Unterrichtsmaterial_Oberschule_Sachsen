@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { PendingSchoolRegistration, SystemAdminApiService } from './system-admin-api.service';
+import { NavigationItem, PendingSchoolRegistration, SystemAdminApiService } from './system-admin-api.service';
 
 @Component({
   selector: 'app-system-admin',
@@ -10,6 +10,14 @@ import { PendingSchoolRegistration, SystemAdminApiService } from './system-admin
   template: `
     <main class="page-shell admin-shell">
       <a class="back-link" routerLink="/">← Zur Startseite</a>
+
+      @if (view() !== 'login' && navigation().length > 0) {
+        <nav class="admin-nav" aria-label="Systemverwaltung">
+          @for (item of navigation(); track item.id) {
+            <a class="admin-nav-link" [routerLink]="item.route">{{ item.label }}</a>
+          }
+        </nav>
+      }
 
       @if (view() === 'login') {
         <section class="form-card admin-card compact-card">
@@ -115,6 +123,7 @@ export class SystemAdminComponent implements OnInit {
   readonly loading = signal(false);
   readonly message = signal('');
   readonly registrations = signal<PendingSchoolRegistration[]>([]);
+  readonly navigation = signal<NavigationItem[]>([]);
   readonly rejectingId = signal<string | null>(null);
 
   readonly loginForm = this.fb.nonNullable.group({
@@ -133,7 +142,7 @@ export class SystemAdminComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.tryLoadReview();
+    this.restoreSession();
   }
 
   login(): void {
@@ -142,16 +151,10 @@ export class SystemAdminComponent implements OnInit {
     this.message.set('');
     const { username, password } = this.loginForm.getRawValue();
     this.api.login(username, password).subscribe({
-      next: (result) => {
-        this.busy.set(false);
-        if (result.mustChangePassword) {
-          this.view.set('password');
-          this.passwordForm.controls.currentPassword.setValue(password);
-        } else {
-          this.view.set('review');
-          this.loadRegistrations();
-        }
+      next: () => {
         this.loginForm.controls.password.reset();
+        this.passwordForm.controls.currentPassword.setValue(password);
+        this.loadIdentity();
       },
       error: () => {
         this.busy.set(false);
@@ -171,10 +174,8 @@ export class SystemAdminComponent implements OnInit {
     this.message.set('');
     this.api.changePassword(currentPassword, newPassword).subscribe({
       next: () => {
-        this.busy.set(false);
         this.passwordForm.reset();
-        this.view.set('login');
-        this.message.set('');
+        this.resetToLogin();
       },
       error: () => {
         this.busy.set(false);
@@ -234,17 +235,41 @@ export class SystemAdminComponent implements OnInit {
     return new Intl.DateTimeFormat('de-DE', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(value));
   }
 
-  private tryLoadReview(): void {
+  private restoreSession(): void {
     this.loading.set(true);
-    this.api.pendingRegistrations().subscribe({
-      next: (items) => {
-        this.registrations.set(items);
+    this.api.me().subscribe({
+      next: (me) => {
+        this.navigation.set(me.navigation);
         this.loading.set(false);
-        this.view.set('review');
+        if (me.capabilities.includes('CHANGE_OWN_PASSWORD')) {
+          this.view.set('password');
+        } else if (me.capabilities.includes('SCHOOL_REGISTRATION_REVIEW')) {
+          this.view.set('review');
+          this.loadRegistrations();
+        }
       },
       error: () => {
         this.loading.set(false);
         this.view.set('login');
+      }
+    });
+  }
+
+  private loadIdentity(): void {
+    this.api.me().subscribe({
+      next: (me) => {
+        this.busy.set(false);
+        this.navigation.set(me.navigation);
+        if (me.capabilities.includes('CHANGE_OWN_PASSWORD')) {
+          this.view.set('password');
+          return;
+        }
+        this.view.set('review');
+        this.loadRegistrations();
+      },
+      error: () => {
+        this.busy.set(false);
+        this.message.set('Die Berechtigungen konnten nicht geladen werden.');
       }
     });
   }
@@ -267,6 +292,7 @@ export class SystemAdminComponent implements OnInit {
     this.busy.set(false);
     this.loading.set(false);
     this.registrations.set([]);
+    this.navigation.set([]);
     this.view.set('login');
     this.message.set('');
   }
