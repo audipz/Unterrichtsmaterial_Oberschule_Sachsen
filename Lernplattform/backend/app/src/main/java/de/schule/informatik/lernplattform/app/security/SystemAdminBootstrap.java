@@ -1,10 +1,10 @@
 package de.schule.informatik.lernplattform.app.security;
 
 import de.schule.informatik.lernplattform.domain.user.PasswordHashPort;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +15,8 @@ import java.util.UUID;
 @Component
 @ConditionalOnProperty(name = "lernplattform.bootstrap.system-admin.enabled", havingValue = "true")
 public class SystemAdminBootstrap implements ApplicationRunner {
+
+    private static final long BOOTSTRAP_LOCK_ID = 7349021001L;
 
     private final JdbcTemplate jdbc;
     private final PasswordHashPort passwordHashPort;
@@ -34,6 +36,8 @@ public class SystemAdminBootstrap implements ApplicationRunner {
     @Override
     @Transactional
     public void run(ApplicationArguments args) {
+        jdbc.queryForObject("select pg_advisory_xact_lock(?)", Long.class, BOOTSTRAP_LOCK_ID);
+
         Integer existingAdmins = jdbc.queryForObject(
                 "select count(*) from system_role where role = 'SYSTEM_ADMIN'",
                 Integer.class);
