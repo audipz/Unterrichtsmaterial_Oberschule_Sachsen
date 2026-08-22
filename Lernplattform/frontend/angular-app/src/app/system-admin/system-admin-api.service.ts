@@ -7,6 +7,19 @@ export interface SystemAdminLoginResponse {
   expiresAt: string;
 }
 
+export interface NavigationItem {
+  id: string;
+  label: string;
+  route: string;
+}
+
+export interface SystemAdminMe {
+  accountId: string;
+  accountType: 'SYSTEM';
+  capabilities: string[];
+  navigation: NavigationItem[];
+}
+
 export interface PendingSchoolRegistration {
   id: string;
   schoolName: string;
@@ -33,6 +46,10 @@ export class SystemAdminApiService {
     return this.http.post<SystemAdminLoginResponse>(`${this.base}/auth/login`, { username, password }, {
       withCredentials: true
     });
+  }
+
+  me(): Observable<SystemAdminMe> {
+    return this.http.get<SystemAdminMe>(`${this.base}/me`, { withCredentials: true });
   }
 
   changePassword(currentPassword: string, newPassword: string): Observable<void> {
