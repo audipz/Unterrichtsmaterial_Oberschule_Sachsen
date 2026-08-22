@@ -41,6 +41,9 @@ textarea { resize: vertical; }
 .back-link { display: inline-block; margin-bottom: 1.5rem; }
 
 .admin-shell { max-width: 1040px; }
+.admin-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0 0 2rem; padding: .6rem; background: white; border: 1px solid #e0e5ee; border-radius: .8rem; }
+.admin-nav-link { padding: .65rem .9rem; border-radius: .55rem; text-decoration: none; font-weight: 700; }
+.admin-nav-link:hover, .admin-nav-link:focus-visible { background: #eef2fa; outline: none; }
 .admin-card.compact-card { max-width: 620px; margin: 0 auto; }
 .admin-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
 .admin-header h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
