@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "student",
+  "title": "Schülermaterialien",
+  "audience": ["STUDENT"],
+  "areas": ["Klasse_7", "Klasse_8", "Klasse_9", "Klasse_10", "Grundlagen", "Werkzeuge"],
+  "formats": ["pdf", "docx", "html"],
+  "include": [
+    "Klasse_*/**/01_Arbeitsheft.*",
+    "Klasse_*/Nachschlagewerk/*",
+    "Grundlagen/**/*",
+    "Werkzeuge/**/*"
+  ],
+  "exclude": [
+    "**/Lernkontrollen/*",
+    "**/*Loesung*",
+    "**/*Lehrer*"
+  ],
+  "minimumFiles": 1,
+  "artifact": "Unterrichtsmaterial_Schueler.zip"
+}
