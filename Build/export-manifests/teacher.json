@@ -5,14 +5,11 @@
   "audience": ["TEACHER"],
   "areas": ["Klasse_7", "Klasse_8", "Klasse_9", "Klasse_10"],
   "formats": ["pdf", "docx", "pptx"],
-  "include": [
-    "Klasse_*/**/02_Lehrerband.*",
-    "Klasse_*/**/03_Material.*",
-    "Klasse_*/**/04_Loesungen.*",
-    "Klasse_*/**/05_Praesentationen/*",
-    "Klasse_*/**/Lernkontrollen/*",
-    "Klasse_*/**/04_Leistungskontrollen/*",
-    "Klasse_*/**/05_Leistungskontrollen/*"
+  "contentKeys": [
+    "curriculum.oberschule.sachsen.informatik.klasse7",
+    "curriculum.oberschule.sachsen.informatik.klasse8",
+    "curriculum.oberschule.sachsen.informatik.klasse9",
+    "curriculum.oberschule.sachsen.informatik.klasse10"
   ],
   "exclude": [],
   "minimumFiles": 1,
