@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "student-klasse7-pilot",
+  "title": "Schülermaterial Klasse 7 – Pilot",
+  "audience": ["STUDENT"],
+  "areas": ["Klasse_7"],
+  "formats": ["pdf", "docx"],
+  "contentKeys": [
+    "curriculum.oberschule.sachsen.informatik.klasse7.pilot"
+  ],
+  "exclude": [],
+  "minimumFiles": 2,
+  "artifact": "Unterrichtsmaterial_Klasse7_Pilot_Schueler.zip"
+}
