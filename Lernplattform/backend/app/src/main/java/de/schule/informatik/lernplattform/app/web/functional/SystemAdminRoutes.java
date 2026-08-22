@@ -18,6 +18,7 @@ public class SystemAdminRoutes {
         var json = accept(MediaType.APPLICATION_JSON).and(contentType(MediaType.APPLICATION_JSON));
         return route()
                 .POST("/api/v1/system-admin/auth/login", json, handler::login)
+                .GET("/api/v1/system-admin/me", handler::me)
                 .GET("/api/v1/system-admin/auth/csrf", handler::csrf)
                 .POST("/api/v1/system-admin/auth/change-password", json, handler::changePassword)
                 .POST("/api/v1/system-admin/auth/logout", handler::logout)
