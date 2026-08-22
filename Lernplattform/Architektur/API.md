@@ -1,20 +1,31 @@
 # REST-API – erster Entwurf
 
+> **Architekturhinweis:** Das Identitätsmodell wurde weiterentwickelt. Lehrer sind globale Identitäten mit E-Mail und können mehreren Schulen zugeordnet sein. Schulbezogene Rollen gelten nur innerhalb einer `TeacherSchoolMembership`. Details stehen in `Identitaet_Mandanten_und_Lehrer.md`.
+
 ## Grundsätze
 
 - JSON über HTTPS
 - OAuth 2 / OpenID Connect
 - Autorisierung serverseitig mit Spring Security
-- Mandant `School` wird aus der authentifizierten Identität abgeleitet
+- jede Schule besitzt einen systemweit eindeutigen, stabilen `schoolSlug`
+- schulbezogene Endpunkte tragen den `schoolSlug` sichtbar im Pfad
+- der `schoolSlug` ist kein Vertrauensanker; das Backend löst ihn zu `school_id` auf und prüft die Mitgliedschaft des angemeldeten Benutzers
+- Lehrerrollen wie `SCHOOL_ADMIN` gelten nur für die konkrete Schule
 - keine frei manipulierbare `schoolId` als Vertrauensanker
-- UUIDs als externe IDs
+- UUIDs als interne/externe Objekt-IDs, Slugs für lesbare Schulpfade
 - konsistente Fehlerobjekte
 - Schreiboperationen möglichst idempotent oder mit klarer Konfliktbehandlung
 
-Basis:
+Basis für schulbezogene API-Endpunkte:
 
 ```text
-/api/v1
+/api/v1/schulen/{schoolSlug}
+```
+
+Systemweite Endpunkte bleiben außerhalb dieses Pfads:
+
+```text
+/api/v1/system/...
 ```
 
 ## Authentifizierter Benutzer
@@ -23,353 +34,256 @@ Basis:
 GET /api/v1/me
 ```
 
+Die Antwort kann bei Lehrern mehrere Schulzuordnungen enthalten:
+
+```json
+{
+  "userType": "TEACHER",
+  "email": "teacher@example.org",
+  "displayName": "CodeOtter42",
+  "schools": [
+    {
+      "slug": "oberschule-musterstadt",
+      "roles": ["TEACHER", "SCHOOL_ADMIN"]
+    },
+    {
+      "slug": "oberschule-nord",
+      "roles": ["TEACHER"]
+    }
+  ]
+}
+```
+
 ## Schulen – SYSTEM_ADMIN
 
 ```text
-GET    /api/v1/admin/schools
-POST   /api/v1/admin/schools
-GET    /api/v1/admin/schools/{schoolId}
-PATCH  /api/v1/admin/schools/{schoolId}
-DELETE /api/v1/admin/schools/{schoolId}
+GET    /api/v1/system/schulen
+POST   /api/v1/system/schulen
+GET    /api/v1/system/schulen/{schoolSlug}
+PATCH  /api/v1/system/schulen/{schoolSlug}
+DELETE /api/v1/system/schulen/{schoolSlug}
 ```
 
-Das normale Löschen ist Soft Delete.
+Beim Anlegen einer Schule wird ein eindeutiger `schoolSlug` vergeben.
 
-## Benutzerverwaltung – SCHOOL_ADMIN
+## Lehrer – schulbezogene Mitgliedschaft
+
+Ein Lehrer ist eine globale Identität mit systemweit eindeutiger E-Mail-Adresse. Die Zugehörigkeit zu einer Schule wird getrennt verwaltet.
 
 ```text
-GET   /api/v1/admin/users
-POST  /api/v1/admin/users/students
-POST  /api/v1/admin/users/teachers
-GET   /api/v1/admin/users/{userId}
-PATCH /api/v1/admin/users/{userId}
+GET    /api/v1/schulen/{schoolSlug}/lehrer
+POST   /api/v1/schulen/{schoolSlug}/lehrer
+DELETE /api/v1/schulen/{schoolSlug}/lehrer/{teacherId}
 ```
 
-Rollenverwaltung:
+`POST` kann einen bereits existierenden Lehrer anhand seiner verifizierten E-Mail einer weiteren Schule zuordnen. Es wird kein zweiter Lehreraccount angelegt.
+
+Die Entfernung beendet nur die Schulzuordnung. Der globale Lehreraccount bleibt bestehen, solange mindestens eine andere aktive Schulzuordnung vorhanden ist.
+
+Vor `DELETE` wird geprüft:
+
+- Lehrer ist nicht alleiniger zuständiger Lehrer einer aktiven Klasse,
+- jede betroffene Klasse besitzt danach weiterhin mindestens einen zuständigen Lehrer,
+- falls der Lehrer `SCHOOL_ADMIN` ist, bleibt mindestens ein anderer aktiver Schuladmin.
+
+## Schulbezogene Rollen eines Lehrers
 
 ```text
-PUT    /api/v1/admin/users/{userId}/roles/{role}
-DELETE /api/v1/admin/users/{userId}/roles/{role}
+PUT    /api/v1/schulen/{schoolSlug}/lehrer/{teacherId}/rollen/SCHOOL_ADMIN
+DELETE /api/v1/schulen/{schoolSlug}/lehrer/{teacherId}/rollen/SCHOOL_ADMIN
 ```
 
-`SYSTEM_ADMIN` kann nicht durch einen Schul-Admin vergeben werden.
+Eine Rolle an einer Schule verändert niemals die Rechte desselben Lehrers an einer anderen Schule.
+
+## Schülerverwaltung – SCHOOL_ADMIN
+
+```text
+GET   /api/v1/schulen/{schoolSlug}/schueler
+POST  /api/v1/schulen/{schoolSlug}/schueler
+GET   /api/v1/schulen/{schoolSlug}/schueler/{studentId}
+PATCH /api/v1/schulen/{schoolSlug}/schueler/{studentId}
+```
+
+Schüler besitzen weiterhin keine verpflichtende E-Mail-Adresse. Ihr Login erfolgt im Kontext der Schule über Benutzername und Passwort.
 
 ## Schüler verlässt Schule / Reaktivierung
 
 ```text
-POST /api/v1/admin/students/{studentId}/leave-school
-POST /api/v1/admin/students/{studentId}/restore
+POST /api/v1/schulen/{schoolSlug}/schueler/{studentId}/schule-verlassen
+POST /api/v1/schulen/{schoolSlug}/schueler/{studentId}/reaktivieren
 ```
-
-`leave-school` beendet aktive Mitgliedschaften, sperrt den Login und startet den Soft-Delete-Lebenszyklus.
 
 ## Papierkorb
 
 ```text
-GET /api/v1/admin/trash
-GET /api/v1/admin/trash?type=STUDENT
-GET /api/v1/admin/trash?type=CLASS
-```
-
-Antwort enthält mindestens:
-
-```text
-id
-type
-displayName
-deletedAt
-deletedBy
-purgeAt
-restorable
-conflict
+GET /api/v1/schulen/{schoolSlug}/admin/papierkorb
+GET /api/v1/schulen/{schoolSlug}/admin/papierkorb?type=STUDENT
+GET /api/v1/schulen/{schoolSlug}/admin/papierkorb?type=CLASS
 ```
 
 ## Klassen
 
-```text
-GET    /api/v1/classes
-POST   /api/v1/classes
-GET    /api/v1/classes/{classId}
-PATCH  /api/v1/classes/{classId}
-DELETE /api/v1/classes/{classId}
-POST   /api/v1/classes/{classId}/restore
-```
-
-Mitgliedschaften:
+Alle aktiven Lehrer einer Schule dürfen Klassen fachlich bearbeiten. Organisatorische Änderungen wie Anlegen, Löschen oder Änderung von Mitgliedschaften bleiben Schuladmins vorbehalten.
 
 ```text
-GET    /api/v1/classes/{classId}/students
-POST   /api/v1/classes/{classId}/students/{studentId}
-DELETE /api/v1/classes/{classId}/students/{studentId}
+GET    /api/v1/schulen/{schoolSlug}/klassen
+POST   /api/v1/schulen/{schoolSlug}/klassen
+GET    /api/v1/schulen/{schoolSlug}/klassen/{classId}
+PATCH  /api/v1/schulen/{schoolSlug}/klassen/{classId}
+DELETE /api/v1/schulen/{schoolSlug}/klassen/{classId}
+POST   /api/v1/schulen/{schoolSlug}/klassen/{classId}/reaktivieren
 ```
 
-Klassenwechsel:
+### Schülerzuordnung
 
 ```text
-POST /api/v1/students/{studentId}/move-class
+GET    /api/v1/schulen/{schoolSlug}/klassen/{classId}/schueler
+POST   /api/v1/schulen/{schoolSlug}/klassen/{classId}/schueler/{studentId}
+DELETE /api/v1/schulen/{schoolSlug}/klassen/{classId}/schueler/{studentId}
+POST   /api/v1/schulen/{schoolSlug}/schueler/{studentId}/klasse-wechseln
 ```
 
-## Kurse
+### Zuständige Lehrer
+
+Jede aktive Klasse muss mindestens einen aktiven zuständigen Lehrer besitzen.
 
 ```text
-GET    /api/v1/courses
-POST   /api/v1/courses
-GET    /api/v1/courses/{courseId}
-PATCH  /api/v1/courses/{courseId}
-POST   /api/v1/courses/{courseId}/archive
+GET    /api/v1/schulen/{schoolSlug}/klassen/{classId}/lehrer
+POST   /api/v1/schulen/{schoolSlug}/klassen/{classId}/lehrer/{teacherId}
+PATCH  /api/v1/schulen/{schoolSlug}/klassen/{classId}/lehrer/{teacherId}
+DELETE /api/v1/schulen/{schoolSlug}/klassen/{classId}/lehrer/{teacherId}
 ```
 
-Lehrer und Schüler:
+Beispiel für die Rolle innerhalb der Klasse:
+
+```json
+{
+  "responsibility": "RESPONSIBLE"
+}
+```
+
+Das Entfernen des letzten `RESPONSIBLE`-Lehrers wird mit `409 Conflict` abgelehnt.
+
+## Benachrichtigungen an zuständige Lehrer
+
+Bearbeitet ein anderer Lehrer eine Klasse, kann daraus eine interne Benachrichtigung für die zuständigen Lehrer entstehen.
 
 ```text
-POST   /api/v1/courses/{courseId}/teachers/{teacherId}
-DELETE /api/v1/courses/{courseId}/teachers/{teacherId}
-POST   /api/v1/courses/{courseId}/students/{studentId}
-DELETE /api/v1/courses/{courseId}/students/{studentId}
+GET  /api/v1/me/benachrichtigungen
+POST /api/v1/me/benachrichtigungen/{notificationId}/gelesen
 ```
+
+Nicht jede Aktion muss eine E-Mail auslösen; E-Mail-Benachrichtigungen werden separat konfigurierbar gehalten.
+
+## Login-Pfade
+
+### Schüler
+
+```text
+/schule/{schoolSlug}/login
+```
+
+Anmeldung zunächst mit:
+
+```text
+Benutzername
+Passwort
+```
+
+### Lehrer
+
+Lehrer melden sich mit ihrer globalen E-Mail-Identität beim Identity Provider an. Nach dem Login wählen sie bei mehreren Schulzuordnungen den Schulkontext oder gelangen direkt über den Schulpfad in die entsprechende Schule.
+
+Passwort-Reset erfolgt über die verifizierte E-Mail-Adresse.
+
+Passkeys/WebAuthn werden als bevorzugte passwortlose Erweiterung vorgesehen.
 
 ## Materialien
 
 ```text
-GET /api/v1/materials
-GET /api/v1/materials/{materialId}
-GET /api/v1/materials/{materialId}/releases
-GET /api/v1/material-releases/{releaseId}
-```
-
-Filter:
-
-```text
-GET /api/v1/materials?kind=REFERENCE
-GET /api/v1/materials?kind=WORKBOOK
-GET /api/v1/materials?kind=EXERCISE_SET
+GET /api/v1/schulen/{schoolSlug}/materials
+GET /api/v1/schulen/{schoolSlug}/materials/{materialId}
+GET /api/v1/schulen/{schoolSlug}/materials/{materialId}/releases
+GET /api/v1/schulen/{schoolSlug}/material-releases/{releaseId}
 ```
 
 ## Materialkatalog für Schüler
 
-Der Materialkatalog enthält alle für den angemeldeten Schüler grundsätzlich zugänglichen Lernmaterialien. Eine Lehrerzuweisung ist dafür nicht erforderlich.
-
 ```text
-GET /api/v1/my/catalog
-GET /api/v1/my/catalog?gradeLevel=7
-GET /api/v1/my/catalog?kind=WORKBOOK
-GET /api/v1/my/catalog?learningUnit=k7-binaersystem
+GET /api/v1/schulen/{schoolSlug}/my/catalog
+GET /api/v1/schulen/{schoolSlug}/my/catalog?gradeLevel=7
+GET /api/v1/schulen/{schoolSlug}/my/catalog?kind=WORKBOOK
 ```
-
-Ein Katalogeintrag kann beispielsweise enthalten:
-
-```json
-{
-  "materialReleaseId": "...",
-  "kind": "WORKBOOK",
-  "title": "Binärsystem – Arbeitsblatt",
-  "gradeLevel": 7,
-  "learningUnitId": "k7-binaersystem",
-  "started": false,
-  "assignedByTeacher": false
-}
-```
-
-Die serverseitige Sichtbarkeitslogik entscheidet, welche Materialien für Klassenstufe beziehungsweise Schule angeboten werden.
 
 ## Lernbereiche
 
 ```text
-GET /api/v1/learning-units
-GET /api/v1/learning-units/{unitId}
-```
-
-Beispiel:
-
-```json
-{
-  "id": "...",
-  "title": "Binärsystem",
-  "referenceMaterial": {},
-  "workbookMaterial": {},
-  "exerciseSet": {}
-}
+GET /api/v1/schulen/{schoolSlug}/learning-units
+GET /api/v1/schulen/{schoolSlug}/learning-units/{unitId}
 ```
 
 ## Arbeitsmaterial selbstständig starten – Schüler
 
-Ein Schüler kann ein sichtbares Arbeitsheft oder Arbeitsblatt direkt aus dem Materialkatalog starten.
-
 ```text
-POST /api/v1/my/workbooks
+POST /api/v1/schulen/{schoolSlug}/my/workbooks
+GET  /api/v1/schulen/{schoolSlug}/my/workbooks
+GET  /api/v1/schulen/{schoolSlug}/my/workbooks/{workbookId}
+PUT  /api/v1/schulen/{schoolSlug}/my/workbooks/{workbookId}/answers/{exerciseId}
 ```
 
-Beispielrequest:
-
-```json
-{
-  "materialReleaseId": "..."
-}
-```
-
-Der Endpoint ist idempotent im fachlichen Sinn: Existiert für denselben Schüler und dieselbe Materialfassung bereits eine aktive persönliche Instanz, wird keine zweite unbeabsichtigte Kopie angelegt.
-
-Mögliche Antwort:
-
-```json
-{
-  "workbookId": "...",
-  "origin": "SELF_STARTED",
-  "status": "IN_PROGRESS"
-}
-```
-
-## Arbeitsheft zuweisen – Lehrer
-
-Eine Lehrerzuweisung ist weiterhin möglich, beispielsweise damit Material in einem Kurs hervorgehoben wird.
-
-```text
-POST /api/v1/courses/{courseId}/workbook-assignments
-GET  /api/v1/courses/{courseId}/workbook-assignments
-```
-
-Die Zuweisung ist keine technische Voraussetzung für die Bearbeitung eines grundsätzlich sichtbaren Materials.
-
-Wenn ein Schüler dasselbe Material zuvor bereits selbst gestartet hat, soll die bestehende persönliche Instanz nach Möglichkeit weiterverwendet und mit der Zuweisung verknüpft werden, statt die bisherigen Antworten zu duplizieren.
-
-## Arbeitsheft – Schüler
-
-```text
-GET /api/v1/my/workbooks
-GET /api/v1/my/workbooks/{workbookId}
-PUT /api/v1/my/workbooks/{workbookId}/answers/{exerciseId}
-```
-
-`GET /api/v1/my/workbooks` enthält sowohl selbst gestartete als auch zugewiesene Arbeitsmaterialien.
-
-Autosave verwendet optimistische Versionierung. Eine veraltete `clientRevision` führt zu `409 Conflict`, statt neuere Daten still zu überschreiben.
-
-## Antwortrevisionen
-
-```text
-GET  /api/v1/my/workbooks/{workbookId}/answers/{exerciseId}/revisions
-POST /api/v1/my/workbooks/{workbookId}/answers/{exerciseId}/restore/{revisionId}
-```
+Autosave verwendet optimistische Versionierung. Eine veraltete `clientRevision` führt zu `409 Conflict`.
 
 ## Übungen selbstständig starten – Schüler
 
-Sichtbare Übungssammlungen können ohne Lehrerzuweisung gestartet werden:
+```text
+POST /api/v1/schulen/{schoolSlug}/my/exercises
+GET  /api/v1/schulen/{schoolSlug}/my/exercises
+GET  /api/v1/schulen/{schoolSlug}/my/exercises/{exerciseSessionId}
+PUT  /api/v1/schulen/{schoolSlug}/my/exercises/{exerciseSessionId}/answers/{exerciseId}
+POST /api/v1/schulen/{schoolSlug}/my/exercises/{exerciseSessionId}/answers/{exerciseId}/check
+```
+
+## Lehrerzugriff auf Lernfortschritt
+
+Jeder aktive Lehrer einer Schule darf die Klassen der Schule fachlich bearbeiten. Die endgültige Sichtbarkeit einzelner Schülerdaten wird serverseitig über Schule und fachlichen Kontext geprüft.
 
 ```text
-POST /api/v1/my/exercises
+GET /api/v1/schulen/{schoolSlug}/klassen/{classId}/progress
+GET /api/v1/schulen/{schoolSlug}/klassen/{classId}/schueler/{studentId}/progress
 ```
-
-Beispielrequest:
-
-```json
-{
-  "materialReleaseId": "..."
-}
-```
-
-Mögliche Antwort:
-
-```json
-{
-  "exerciseSessionId": "...",
-  "origin": "SELF_STARTED"
-}
-```
-
-Die persönliche Übungsinstanz speichert den Lernstand. Ein Schüler kann sie verlassen und später fortsetzen.
-
-## Übungen zuweisen – Lehrer
-
-```text
-POST /api/v1/courses/{courseId}/exercise-assignments
-GET  /api/v1/courses/{courseId}/exercise-assignments
-```
-
-Lehrerzuweisungen können Materialien hervorheben oder in den Unterricht einordnen. Übungen haben keinen Prüfungsmodus, kein Zeitlimit und keine benotete Abgabe.
-
-## Übungen – Schüler
-
-```text
-GET /api/v1/my/exercises
-GET /api/v1/my/exercises/{exerciseSessionId}
-PUT /api/v1/my/exercises/{exerciseSessionId}/answers/{exerciseId}
-POST /api/v1/my/exercises/{exerciseSessionId}/answers/{exerciseId}/check
-```
-
-`check` liefert ausschließlich eine Lernrückmeldung für dafür geeignete Aufgaben. Es erzeugt keine Note oder formale Bewertung.
-
-Mögliche Antwort:
-
-```json
-{
-  "correct": false,
-  "feedback": "Prüfe noch einmal den Stellenwert der zweiten Ziffer.",
-  "reference": {
-    "learningUnit": "k7-binaersystem",
-    "anchor": "binaerzahlen-in-dezimalzahlen-umwandeln"
-  }
-}
-```
-
-## Meine Materialien
-
-Für die Startseite beziehungsweise das Schülerdashboard kann ein zusammengefasster Endpoint angeboten werden:
-
-```text
-GET /api/v1/my/learning-materials
-```
-
-Er liefert beispielsweise:
-
-- selbst gestartete Arbeitsblätter,
-- selbst gestartete Übungen,
-- durch Lehrer zugewiesene Materialien,
-- zuletzt bearbeitete Materialien,
-- Bearbeitungsstand,
-- Herkunft `SELF_STARTED` oder `TEACHER_ASSIGNED`.
-
-## Lernfortschritt
-
-Schüler:
-
-```text
-GET /api/v1/my/progress
-GET /api/v1/my/progress/{learningUnitId}
-```
-
-Lehrer:
-
-```text
-GET /api/v1/courses/{courseId}/progress
-GET /api/v1/courses/{courseId}/students/{studentId}/progress
-GET /api/v1/courses/{courseId}/students/{studentId}/workbooks
-```
-
-Fortschritt beschreibt Bearbeitung und Lernaktivität, nicht eine Zeugnis- oder Prüfungsleistung.
 
 ## Feedback
 
 ```text
-POST   /api/v1/teacher-feedback
-PATCH  /api/v1/teacher-feedback/{feedbackId}
-DELETE /api/v1/teacher-feedback/{feedbackId}
+POST   /api/v1/schulen/{schoolSlug}/teacher-feedback
+PATCH  /api/v1/schulen/{schoolSlug}/teacher-feedback/{feedbackId}
+DELETE /api/v1/schulen/{schoolSlug}/teacher-feedback/{feedbackId}
 ```
 
-Feedback ist getrennt von der Schülerantwort.
+Wenn der bearbeitende Lehrer nicht selbst zuständiger Lehrer der Klasse ist, wird ein fachliches Ereignis für die Benachrichtigung der zuständigen Lehrer erzeugt.
 
 ## Dateien
 
 ```text
-POST   /api/v1/files
-GET    /api/v1/files/{fileId}
-DELETE /api/v1/files/{fileId}
+POST   /api/v1/schulen/{schoolSlug}/files
+GET    /api/v1/schulen/{schoolSlug}/files/{fileId}
+DELETE /api/v1/schulen/{schoolSlug}/files/{fileId}
 ```
-
-Upload- und Download-Berechtigungen werden anhand von Schule, Besitzer und fachlichem Bezug geprüft.
 
 ## Fehlerformat
 
-Ein konsistentes Fehlerformat wird vorgesehen, beispielsweise orientiert an Problem Details.
+Ein konsistentes Fehlerformat wird vorgesehen, orientiert an Problem Details.
+
+Wichtige Konflikte:
+
+```text
+403 school-membership-required
+403 school-admin-required
+409 last-responsible-teacher
+409 last-school-admin
+409 display-name-conflict
+409 teacher-still-responsible-for-classes
+```
 
 ## Nicht Bestandteil der API
 
@@ -384,10 +298,9 @@ Ausdrücklich nicht vorgesehen sind Endpunkte für:
 
 ## Noch offene API-Entscheidungen
 
-- genauer OAuth/OIDC-Endpunktaufbau,
+- konkreter Identity Provider und dessen Login-/Recovery-Flows,
+- Passkey-Einführung für Lehrer und später optional Schüler,
 - Cursor- oder Seitenpagination,
-- Suche und Filterkonventionen,
 - Batch-Import von Schülern,
-- Batch-Zuweisung kompletter Klassen zu Kursen,
 - Offline-Synchronisation,
-- Streaming/Server-Sent Events nur falls später fachlich nötig.
+- Granularität und Kanal der Lehrerbenachrichtigungen.
