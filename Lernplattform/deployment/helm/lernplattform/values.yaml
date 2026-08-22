@@ -4,6 +4,12 @@ backend:
     tag: dev
     pullPolicy: IfNotPresent
   replicaCount: 1
+  autoscaling:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 4
+    targetCPUUtilizationPercentage: 70
+    targetMemoryUtilizationPercentage: 80
   service:
     port: 8080
   probes:
@@ -22,17 +28,6 @@ backend:
       memory: 128Mi
     limits:
       memory: 512Mi
-
-migration:
-  enabled: true
-  backoffLimit: 1
-  activeDeadlineSeconds: 300
-  resources:
-    requests:
-      cpu: 25m
-      memory: 96Mi
-    limits:
-      memory: 256Mi
 
 frontend:
   image:
@@ -56,6 +51,17 @@ database:
   urlKey: url
   usernameKey: username
   passwordKey: password
+
+migration:
+  enabled: true
+  backoffLimit: 1
+  activeDeadlineSeconds: 300
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+    limits:
+      memory: 512Mi
 
 backup:
   enabled: true
