@@ -7,18 +7,6 @@ export interface SystemAdminLoginResponse {
   expiresAt: string;
 }
 
-export interface PendingSchoolRegistration {
-  id: string;
-  schoolName: string;
-  schoolType: string;
-  federalState: string;
-  city: string;
-  contactEmail: string;
-  schoolWebsite?: string | null;
-  submittedAt: string;
-  emailVerifiedAt: string;
-}
-
 interface CsrfResponse {
   token: string;
   headerName: string;
@@ -47,22 +35,6 @@ export class SystemAdminApiService {
       headers,
       withCredentials: true
     }));
-  }
-
-  pendingRegistrations(): Observable<PendingSchoolRegistration[]> {
-    return this.http.get<PendingSchoolRegistration[]>(`${this.base}/school-registrations`, {
-      withCredentials: true
-    });
-  }
-
-  approve(requestId: string): Observable<{ schoolId: string; status: string }> {
-    return this.withCsrf((headers) => this.http.post<{ schoolId: string; status: string }>(
-      `${this.base}/school-registrations/${requestId}/approve`, {}, { headers, withCredentials: true }));
-  }
-
-  reject(requestId: string, reason: string): Observable<void> {
-    return this.withCsrf((headers) => this.http.post<void>(
-      `${this.base}/school-registrations/${requestId}/reject`, { reason }, { headers, withCredentials: true }));
   }
 
   private withCsrf<T>(request: (headers: HttpHeaders) => Observable<T>): Observable<T> {
