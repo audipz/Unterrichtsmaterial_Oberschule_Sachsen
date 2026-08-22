@@ -20,15 +20,18 @@ public class SchoolAuthorizationAdapter implements SchoolAuthorizationPort {
     public void requireSchoolAdmin(UUID actorId, UUID schoolId) {
         Integer count = jdbc.queryForObject("""
                 SELECT count(*)
-                  FROM app_user u
-                  JOIN user_role ur
-                    ON ur.user_id = u.id
-                   AND ur.school_id = u.school_id
-                 WHERE u.id = :actorId
-                   AND u.school_id = :schoolId
-                   AND u.status = 'ACTIVE'
-                   AND u.deleted_at IS NULL
-                   AND ur.role = 'SCHOOL_ADMIN'
+                  FROM account a
+                  JOIN school_membership sm
+                    ON sm.account_id = a.id
+                   AND sm.school_id = :schoolId
+                   AND sm.status = 'ACTIVE'
+                   AND sm.deleted_at IS NULL
+                  JOIN school_role sr
+                    ON sr.school_membership_id = sm.id
+                   AND sr.role = 'SCHOOL_ADMIN'
+                 WHERE a.id = :actorId
+                   AND a.status = 'ACTIVE'
+                   AND a.deleted_at IS NULL
                 """, new MapSqlParameterSource()
                 .addValue("actorId", actorId)
                 .addValue("schoolId", schoolId), Integer.class);
@@ -41,14 +44,15 @@ public class SchoolAuthorizationAdapter implements SchoolAuthorizationPort {
     public void requireSystemAdmin(UUID actorId) {
         Integer count = jdbc.queryForObject("""
                 SELECT count(*)
-                  FROM app_user u
-                  JOIN user_role ur ON ur.user_id = u.id
-                 WHERE u.id = :actorId
-                   AND u.status = 'ACTIVE'
-                   AND u.deleted_at IS NULL
-                   AND ur.role = 'SYSTEM_ADMIN'
+                  FROM account a
+                  JOIN system_role sr
+                    ON sr.account_id = a.id
+                   AND sr.role = 'SYSTEM_ADMIN'
+                 WHERE a.id = :actorId
+                   AND a.status = 'ACTIVE'
+                   AND a.deleted_at IS NULL
                 """, new MapSqlParameterSource("actorId", actorId), Integer.class);
-        if (count == null || count == 0) {
+        if (count == null || count != 1) {
             throw new SecurityException("SYSTEM_ADMIN role is required");
         }
     }
