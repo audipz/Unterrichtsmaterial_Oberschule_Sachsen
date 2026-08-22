@@ -1,27 +1,56 @@
-# Identität, Mandanten und Lehrermodell
+# Identität, Schulen, Lehrer und Klassenverantwortung
 
 ## Grundentscheidung
 
-Die Identität eines Benutzers und seine Zugehörigkeit zu einer Schule werden getrennt modelliert.
-
-Das ist insbesondere für Lehrer erforderlich, weil ein Lehrer mehreren Schulen gleichzeitig zugeordnet sein kann und seine Rechte je Schule unterschiedlich sein können.
+Technische Identität, Schulzugehörigkeit, Berechtigungen und Klassenverantwortung sind getrennte Konzepte.
 
 ```text
-Identity
-   │
-   ├── StudentAccount ── genau eine aktive Schule
-   │
-   └── TeacherAccount ── eine oder mehrere Schulen
-                              │
-                              ├── SchoolMembership A
-                              │      └── Rollen für Schule A
-                              └── SchoolMembership B
-                                     └── Rollen für Schule B
+Account
+├── type = STUDENT | TEACHER
+├── Fantasiename
+└── Status
+
+Account
+└── SchoolMembership
+    ├── Schule
+    ├── schulbezogene Login-/Organisationsdaten
+    └── SchoolRole(s)
+
+SchoolClass
+└── ClassTeacherAssignment(s)
 ```
+
+Diese Trennung erlaubt spätere zusätzliche Rechte, ohne Anwendertypen, Mandantenzugehörigkeit und Berechtigungen miteinander zu vermischen.
+
+## Anwendertypen
+
+`STUDENT` und `TEACHER` sind **Anwendertypen**, keine administrativen Rechte.
+
+Ein Account besitzt genau einen Anwendertyp:
+
+```text
+STUDENT
+TEACHER
+```
+
+Ein Benutzer wird nicht gleichzeitig als Schüler und Lehrer modelliert.
 
 ## Schule als eindeutiger Mandant
 
-Jede Schule besitzt neben ihrem Anzeigenamen einen systemweit eindeutigen, stabilen technischen Slug.
+Jede Schule besitzt:
+
+```text
+id
+name
+school_slug
+status
+```
+
+`school_slug` ist systemweit eindeutig und stabil:
+
+```text
+UNIQUE(lower(school_slug))
+```
 
 Beispiel:
 
@@ -30,310 +59,340 @@ name        = Oberschule Musterstadt
 school_slug = oberschule-musterstadt
 ```
 
-Der Slug wird für URLs verwendet und ist eindeutig:
+Der Anzeigename darf sich ändern. Der technische Slug bleibt nach Möglichkeit stabil.
 
-```text
-UNIQUE(school_slug)
-```
+## Schule im Pfad
 
-Der Anzeigename darf geändert werden, ohne dass sich bestehende URLs ändern müssen.
-
-## Schule im URL-Pfad
-
-Schulbezogene Bereiche tragen den Slug sichtbar im Pfad.
-
-Beispiele:
+Schulbezogene Bereiche verwenden den Schul-Slug im Pfad:
 
 ```text
 /schule/oberschule-musterstadt/
 /schule/oberschule-musterstadt/klassen
-/schule/oberschule-musterstadt/klassen/7a
 /schule/oberschule-musterstadt/materialien
-/schule/oberschule-musterstadt/admin/benutzer
+/schule/oberschule-musterstadt/admin
 ```
 
-Die API folgt demselben Grundsatz:
+API:
 
 ```text
 /api/v1/schulen/{schoolSlug}/...
 ```
 
-Der `schoolSlug` ist **kein Vertrauensanker**. Das Backend löst ihn zu einer `school_id` auf und prüft anschließend immer, ob die authentifizierte Identität für diese Schule berechtigt ist.
+Der Slug dient der Zuordnung und Navigation, ist aber **kein Vertrauensanker**. Das Backend löst ihn zu einer internen `school_id` auf und prüft anschließend immer die Berechtigung der authentifizierten Identität für genau diese Schule.
 
-Ein Benutzer darf durch Manipulation des URL-Pfads niemals Zugriff auf eine andere Schule erhalten.
+## Globaler Account
 
-## Schüleridentität
-
-Ein Schüler benötigt weiterhin keinen Klarnamen und keine E-Mail-Adresse.
-
-Vorgesehen sind:
+Ein Account ist nicht fest an eine einzelne Schule gebunden.
 
 ```text
+Account
+-------
 id
-username
-password_hash / Auth-Credentials
+account_type
 display_name
+display_name_normalized
 status
+pending_deletion_at
+created_at
+updated_at
 ```
 
-Die aktive Schulzugehörigkeit wird getrennt geführt.
+Der Fantasiename ist der sichtbare Name in der Lernplattform. Klarnamen werden nicht benötigt.
 
-Für den Login eines Schülers wird die Schule durch den Schulpfad beziehungsweise `schoolSlug` bestimmt:
+Wenn ein Account keine aktive Schulzuordnung mehr besitzt, wird er automatisch in einen Löschvormerkungsstatus versetzt. Wird innerhalb der Aufbewahrungsfrist erneut eine Schulzuordnung hergestellt, kann diese Vormerkung aufgehoben werden.
+
+## Schulzugehörigkeit
+
+Die Zugehörigkeit eines Accounts zu einer Schule wird historisiert:
 
 ```text
-/schule/oberschule-musterstadt/login
+SchoolMembership
+----------------
+id
+account_id
+school_id
+status
+valid_from
+valid_until
+created_at
+created_by
+ended_at
+ended_by
 ```
 
-Dort reichen beispielsweise:
+Ein Account kann über seine Lebenszeit mehreren Schulen zugeordnet sein. Für Lehrer können mehrere Schulzuordnungen gleichzeitig aktiv sein. Ein Schulwechsel eines Schülers wird als kontrollierter Transfer ausgeführt, damit während des Transfers kein herrenloser aktiver Account entsteht.
+
+## Schülerlogin
+
+Schüler benötigen keine E-Mail-Adresse.
+
+Der Loginname gehört zur Schulzuordnung und ist nur innerhalb einer Schule eindeutig:
 
 ```text
+StudentSchoolLogin
+------------------
+school_membership_id
+username
+password_hash / Auth-Referenz
+must_change_password
+```
+
+Eindeutigkeit:
+
+```text
+UNIQUE(school_id, lower(username))
+```
+
+Beim Schulwechsel kann derselbe Benutzername weiterverwendet werden, wenn er an der Zielschule frei ist. Andernfalls erhält die neue Schulzuordnung einen anderen Login-Namen. Die globale Account-ID und persönliche Lernhistorie bleiben erhalten.
+
+Schülerlogin:
+
+```text
+/schule/{schoolSlug}/login
+
 Benutzername
 Passwort
 ```
 
-Der Benutzername muss nur innerhalb der jeweiligen Schule eindeutig sein.
+## Lehrerlogin
 
-## Lehreridentität
-
-Ein Lehrer ist eine schulübergreifende Identität.
-
-Für Lehrer wird eine E-Mail-Adresse als Login-Identität vorgesehen:
+Lehrer besitzen eine globale Login-Identität über eine verifizierte E-Mail-Adresse:
 
 ```text
-id
+TeacherIdentity
+---------------
+account_id
 email
 email_normalized
 email_verified_at
-display_name
-status
 ```
 
-Die E-Mail-Adresse ist systemweit eindeutig:
+Eindeutigkeit:
 
 ```text
 UNIQUE(email_normalized)
 ```
 
-Klarnamen bleiben auch für Lehrer optional und werden nicht benötigt. Der in der Lernplattform sichtbare Name bleibt ein Fantasiename beziehungsweise Anzeigename.
+Die E-Mail-Adresse wird nicht gegenüber Schülern angezeigt. In der Plattform bleibt der Fantasiename sichtbar.
 
-Die E-Mail-Adresse wird insbesondere benötigt für:
+Die E-Mail-Adresse ermöglicht insbesondere Account-Recovery und Passwort-Reset.
 
-- Anmeldung,
-- E-Mail-Verifikation,
-- Passwort-Reset beziehungsweise Account-Recovery,
-- Sicherheitsbenachrichtigungen.
+## Passwortlose Anmeldung für Lehrer
 
-Die E-Mail-Adresse wird nicht als sichtbarer Lehrername für Schüler verwendet.
+Die Architektur soll passwortlose Anmeldung unterstützen. Bevorzugtes Ziel sind **Passkeys/WebAuthn**.
 
-## Lehrer an mehreren Schulen
-
-Ein Lehrer kann mehreren Schulen zugeordnet werden.
-
-Dafür wird eine eigene Entität vorgesehen:
+Mögliche Entwicklung:
 
 ```text
-TeacherSchoolMembership
------------------------
-id
-teacher_id
-school_id
-status
-joined_at
-left_at
-created_by
+Phase 1: E-Mail + Passwort + Passwort-Reset
+Phase 2: optional Passkey registrieren
+Phase 3: Passkey bevorzugt, Passwort als Recovery/Fallback
 ```
 
-Eine Lehreridentität wird daher nicht mehr direkt über `user.school_id` an genau eine Schule gebunden.
+E-Mail-Magic-Links können später geprüft werden, sind aber nicht das bevorzugte Primärverfahren.
 
-## Schulbezogene Rollen
+Für Schüler bleibt zunächst `schoolSlug + username + password` vorgesehen, da bewusst keine E-Mail-Adresse benötigt wird.
 
-Rollen eines Lehrers gelten immer innerhalb einer konkreten Schulzuordnung.
+## Schulbezogene Rechte
+
+Rechte gelten immer in einem Schulkontext.
 
 Beispiel:
 
 ```text
-Lehrer codeotter@example.org
-
-Schule A
-  TEACHER
-  SCHOOL_ADMIN
-
-Schule B
-  TEACHER
+Lehreraccount
+├── Schule A
+│   └── SCHOOL_ADMIN
+└── Schule B
+    └── keine Adminrechte
 ```
 
-`SCHOOL_ADMIN` an Schule A verleiht keinerlei Adminrechte an Schule B.
+`SCHOOL_ADMIN` ist ein **schulbezogenes Recht** und kein Anwendertyp.
 
-Geeignete Modellierung:
-
-```text
-TeacherSchoolRole
------------------
-teacher_school_membership_id
-role
-```
-
-Schulrollen:
+Mögliche spätere Rechte werden genauso kontextbezogen ergänzt, zum Beispiel:
 
 ```text
-TEACHER
 SCHOOL_ADMIN
+MATERIAL_ADMIN
+USER_ADMIN
 ```
 
-`SYSTEM_ADMIN` ist dagegen eine systemweite Rolle und gehört nicht zu einer Schulmitgliedschaft.
+Für die erste Version genügt `SCHOOL_ADMIN` als zusätzliches Schulrecht.
+
+`SYSTEM_ADMIN` ist systemweit und wird getrennt von Schulrollen modelliert.
 
 ## Rechte eines Lehrers innerhalb einer Schule
 
-Jeder aktive Lehrer einer Schule darf fachlich alle Klassen dieser Schule bearbeiten.
+Jeder aktive Lehrer mit aktiver Schulzuordnung darf grundsätzlich alle Klassen dieser Schule fachlich bearbeiten.
 
-Dazu gehören beispielsweise:
+Dazu gehören insbesondere:
 
-- Arbeitsmaterial ansehen,
-- Lernstände im zulässigen Umfang ansehen,
-- Feedback geben,
-- Material zuweisen,
-- Klassen fachlich bearbeiten.
+- Lernmaterialien zuordnen,
+- Bearbeitungsfortschritt sehen,
+- Klassen fachlich verwalten,
+- Unterrichtsmaterial für Schüler strukturieren.
 
-Organisatorische Verwaltungsfunktionen bleiben `SCHOOL_ADMIN` vorbehalten, zum Beispiel:
+Ein Lehrer sieht bei Schülern **keine Inhalte der Antworten**. Sichtbar sind nur Lern-/Bearbeitungsmetadaten, beispielsweise:
 
-- Lehrer einer Schule hinzufügen oder entfernen,
-- Schülerkonten verwalten,
-- Klassen organisatorisch anlegen/löschen,
-- Schuladminrolle vergeben oder entziehen.
+```text
+NOT_STARTED
+IN_PROGRESS
+COMPLETE
+```
+
+Optional zusätzlich:
+
+```text
+8 von 10 Aufgaben bearbeitet
+letzte Bearbeitung: Datum/Zeit
+```
+
+Nicht sichtbar sind Freitexte, Zeichnungen, Codeeingaben oder sonstige Schülerantworten.
 
 ## Zuständige Lehrer einer Klasse
 
-Obwohl alle Lehrer einer Schule fachlich alle Klassen bearbeiten dürfen, besitzt jede Klasse mindestens einen ausdrücklich zuständigen Lehrer.
-
-Dafür wird eine Zuordnung vorgesehen:
+Jede aktive Klasse besitzt mindestens einen explizit zugewiesenen Lehrer. Mehrere zugewiesene Lehrer sind **gleichberechtigt**.
 
 ```text
 ClassTeacherAssignment
 ----------------------
 class_id
 teacher_school_membership_id
-responsibility
 status
+assigned_at
+assigned_by
 ```
 
-`responsibility` kann zunächst sein:
-
-```text
-RESPONSIBLE
-ADDITIONAL
-```
+Es gibt zunächst keine Hierarchie wie Haupt-/Nebenlehrer.
 
 Fachregel:
 
-> Eine aktive Klasse darf niemals ohne mindestens einen aktiven `RESPONSIBLE`-Lehrer existieren.
+> Eine aktive Klasse darf zu keinem Zeitpunkt ohne mindestens einen aktiven, dieser Schule zugeordneten Lehrer existieren.
 
-Die Datenbank allein kann diese Regel nur begrenzt absichern; Änderungen an Lehrer-/Klassenzuordnungen laufen deshalb über einen transaktionalen Domain-Service.
+Eine Lehrerzuordnung ist primär Verantwortlichkeit und Benachrichtigung, kein exklusives Bearbeitungsrecht.
 
-## Benachrichtigung des zuständigen Lehrers
+## Lernstand einer Klassenstufe neu beginnen
 
-Bearbeitet ein anderer Lehrer eine Klasse, soll mindestens der zuständige Lehrer darüber informiert werden, sofern der Bearbeiter nicht selbst zu den zuständigen Lehrern gehört.
+Wenn ein Schüler eine Klassenstufe wiederholt oder aus pädagogisch-organisatorischen Gründen neu beginnen soll, darf **nur ein aktuell dieser Klasse zugewiesener Lehrer** den Lernstand für die betreffende Klassenstufe neu beginnen.
 
-Beispiele für relevante Aktionen:
+`SCHOOL_ADMIN` allein verleiht dieses Recht nicht.
 
-- Lehrerfeedback zu einem Schüler,
-- Änderung einer Materialzuweisung,
-- organisatorisch relevante Änderung an Lernmaterial einer Klasse.
-
-Dafür ist ein fachliches Ereignismodell sinnvoll:
+Es wird nichts physisch gelöscht. Stattdessen wird ein neuer Lernzyklus beziehungsweise eine neue Lernperiode erzeugt:
 
 ```text
-ClassActivity
-    ↓
-ResponsibleTeacherNotification
+LearningPeriod 2026/27 – Klasse 7 – ARCHIVED
+LearningPeriod 2027/28 – Klasse 7 – ACTIVE
 ```
 
-Die erste Umsetzung kann als interne Benachrichtigung in der Plattform erfolgen. E-Mail-Benachrichtigungen sollten separat konfigurierbar sein, damit nicht jede kleine Änderung E-Mail-Verkehr erzeugt.
+Der Vorgang wird protokolliert:
+
+```text
+student_id
+grade_level
+old_learning_period_id
+new_learning_period_id
+reset_by_teacher_id
+reset_at
+reason optional
+```
+
+## Benachrichtigung zuständiger Lehrer
+
+Bearbeitet ein Lehrer eine Klasse, der dieser Klasse nicht zugewiesen ist, werden die zugewiesenen Lehrer über relevante Änderungen informiert.
+
+Benachrichtigungswürdige Aktionen werden fachlich begrenzt, damit keine unnötige Ereignisflut entsteht.
+
+Beispiele:
+
+- Änderung einer Materialzuweisung,
+- Änderung einer Klassenstruktur,
+- pädagogisch relevante organisatorische Änderung.
+
+Die erste Umsetzung kann als interne Benachrichtigung erfolgen. E-Mail-Benachrichtigungen bleiben separat konfigurierbar.
 
 ## Lehrer aus einer Schule entfernen
 
-Ein Lehrer wird nicht unmittelbar als globale Identität gelöscht.
+Ein Lehreraccount wird beim Entfernen aus einer Schule nicht gelöscht. Stattdessen wird nur die betreffende `SchoolMembership` beendet.
 
-Stattdessen wird seine `TeacherSchoolMembership` beendet beziehungsweise soft-gelöscht.
+Vorher gelten harte Regeln:
 
-Vorher müssen folgende Bedingungen erfüllt sein:
+1. Jede aktive Klasse muss nach der Entfernung weiterhin mindestens einen zugewiesenen Lehrer besitzen.
+2. Ist der Lehrer der einzige zugewiesene Lehrer einer Klasse, muss zuerst ein weiterer Lehrer zugeordnet werden.
+3. Besitzt der Lehrer `SCHOOL_ADMIN`, muss mindestens ein anderer aktiver Schuladmin verbleiben.
 
-1. Der Lehrer ist für keine Klasse mehr der einzige zuständige Lehrer.
-2. Jede betroffene aktive Klasse besitzt nach der Entfernung weiterhin mindestens einen aktiven zuständigen Lehrer.
-3. Falls der Lehrer `SCHOOL_ADMIN` ist, bleibt mindestens ein anderer aktiver `SCHOOL_ADMIN` der Schule erhalten.
+Erst wenn keine aktive Schulzuordnung mehr vorhanden ist, wird der globale Account zur Löschung vorgemerkt.
 
-Sind diese Bedingungen nicht erfüllt, wird die Entfernung abgelehnt und die betroffenen Klassen werden angezeigt.
+## Verwaiste Accounts verhindern
 
-## Globale Löschung eines Lehrers
-
-Ein Lehreraccount kann erst gelöscht beziehungsweise soft-gelöscht werden, wenn keine aktive Schulzuordnung mehr existiert.
+Das Vergessen von Accounts wird technisch verhindert.
 
 ```text
-TeacherAccount
-   ├── Schule A beendet
-   ├── Schule B beendet
-   └── keine aktive Membership
-             ↓
-        Account löschbar
+letzte aktive SchoolMembership endet
+        ↓
+Account.status = PENDING_DELETION
+pending_deletion_at = now
+        ↓
+3 Monate ohne neue aktive Membership
+        ↓
+kontrollierter Purge
 ```
 
-Vor einer endgültigen Löschung gelten weiterhin Soft-Delete- und Aufbewahrungsregeln.
+Ein regelmäßiger Hintergrundjob prüft zusätzlich Accounts ohne aktive Schulzuordnung und korrigiert inkonsistente Zustände automatisch in Richtung `PENDING_DELETION`.
 
-## Passwort-Reset für Lehrer
+Das gilt für Schüler und Lehrer gleichermaßen.
 
-Da Lehrer eine verifizierte E-Mail-Adresse besitzen, kann ein sicherer Reset-Prozess angeboten werden.
+## Klassenwechsel
 
-Grundregeln:
-
-- niemals bestehende Passwörter per E-Mail versenden,
-- zeitlich begrenztes, einmal verwendbares Reset-Token,
-- Token nur gehasht beziehungsweise anderweitig sicher gespeichert,
-- nach erfolgreichem Reset Token sofort ungültig,
-- Rate Limiting,
-- Antwort bei unbekannter E-Mail darf keine Kontenexistenz verraten.
-
-## Passwortlose Anmeldung
-
-Eine Anmeldung ohne Passwort ist möglich und sollte als Erweiterung vorgesehen werden.
-
-### Passkeys / WebAuthn
-
-Passkeys sind für Lehrer besonders geeignet:
-
-- kein wiederverwendbares Passwort,
-- phishing-resistenter als klassische Passwörter,
-- Anmeldung über Geräte-PIN, Biometrie oder Hardware-Key,
-- technisch auf WebAuthn/FIDO2 basierend.
-
-Empfohlenes Zielbild für Lehrer:
+Ein Klassenwechsel innerhalb derselben Schule verändert nur die historisierte Klassenmitgliedschaft:
 
 ```text
-E-Mail + Passwort
-      oder
-Passkey
+alte ClassMembership → ENDED
+neue ClassMembership → ACTIVE
 ```
 
-Nach erfolgreicher Erstanmeldung kann ein Lehrer einen oder mehrere Passkeys registrieren. Mittelfristig kann der Passkey zum bevorzugten Login werden; Passwort beziehungsweise Recovery bleibt als Rückfallweg verfügbar.
+Account und Lernhistorie bleiben erhalten.
 
-### E-Mail-Magic-Link
+## Schulwechsel eines Schülers
 
-Für Lehrer wäre auch ein zeitlich begrenzter Login-Link per E-Mail möglich. Das ist benutzerfreundlich, macht die Sicherheit aber stark vom E-Mail-Konto abhängig und ist weniger phishing-resistent als ein Passkey.
+Ein Schulwechsel ist ein atomarer fachlicher Transfer:
 
-Daher wird ein Magic-Link nicht als bevorzugtes Primärverfahren vorgesehen, kann aber später als Recovery-/Login-Option geprüft werden.
+```text
+1. Zielschule akzeptiert Transfer
+2. neue SchoolMembership anlegen
+3. neuen schulbezogenen Login festlegen
+4. Zielklasse zuordnen
+5. alte SchoolMembership beenden
+```
 
-### Schüler
+Persönliche Lernhistorie bleibt am globalen Schüleraccount. Schulinterne Daten der bisherigen Schule werden nicht automatisch für die neue Schule sichtbar.
 
-Da Schüler bewusst keine E-Mail-Adresse benötigen, ist ein E-Mail-Magic-Link für Schüler nicht geeignet.
+## Datenschutzgrenze
 
-Passkeys wären grundsätzlich auch für Schüler möglich. Für gemeinsam genutzte Schulgeräte und bei Geräteverlust muss aber vorher ein praktikabler Recovery-Prozess definiert sein. Deshalb bleibt für Schüler zunächst `schoolSlug + username + password` der robuste Standard; Passkeys können später optional hinzukommen.
+Daten werden in drei Bereiche getrennt:
+
+```text
+Accountbezogen
+- Fantasiename
+- technische Identität
+- persönliche Lernhistorie
+
+Schulbezogen
+- Schulmitgliedschaft
+- Klasse
+- organisatorische Zuweisungen
+- schulinterne Auditdaten
+
+Inhaltlich privat
+- konkrete Schülerantworten
+- Freitexte
+- Zeichnungen
+- Codeeingaben
+```
+
+Lehrer und Schuladmins erhalten keinen generellen Zugriff auf den inhaltlich privaten Bereich. Sie sehen nur Bearbeitungs- und Vollständigkeitsstatus.
 
 ## OIDC / Identity Provider
 
-Die Anwendung bleibt OAuth2/OIDC-basiert. Die Authentifizierung sollte möglichst von einem dedizierten Identity Provider übernommen werden; das Spring-Boot-Backend bleibt Resource Server und fachliche Autorisierungsinstanz.
+Die Plattform bleibt OAuth2/OIDC-basiert. Ein dedizierter Identity Provider kann Passwort-Reset, E-Mail-Verifikation, Passkeys und Token-Lebenszyklen übernehmen.
 
-Ein Identity Provider kann dabei Passwörter, Passwort-Reset, E-Mail-Verifikation, Passkeys und Token-Lebenszyklen zentral verwalten.
-
-Die fachlichen Schulmitgliedschaften und schulbezogenen Rollen bleiben trotzdem in der Lernplattform maßgeblich. Token-Claims dürfen nicht dazu führen, dass eine Rolle automatisch für alle Schulen gilt.
-
-## Sicherheitsnotiz zu WebAuthn
-
-Bei direkter WebAuthn-Implementierung in Spring Security muss die jeweils eingesetzte Version vor Produktivbetrieb auf aktuelle Sicherheitsfixes geprüft werden. Im August 2026 wurde beispielsweise eine Schwachstelle für bestimmte Spring-Security-WebAuthn-Konfigurationen mit serialisierten Sessions veröffentlicht. Eine Authentifizierungskomponente wird deshalb nicht auf eine ungeprüfte Bibliotheksversion festgeschrieben.
+Die fachlichen Schulmitgliedschaften und schulbezogenen Rechte bleiben trotzdem in der Lernplattform maßgeblich. Ein Token darf niemals ein globales `SCHOOL_ADMIN`-Recht für alle Schulen implizieren.
