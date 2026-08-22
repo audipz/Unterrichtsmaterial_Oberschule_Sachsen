@@ -3,6 +3,7 @@ package de.schule.informatik.lernplattform.app.scheduling;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.net.ssl.SSLContext;
@@ -34,6 +35,7 @@ public class KubernetesLeaseLeaderElection {
     private final String holderIdentity;
     private final String leaseName;
     private final boolean enabled;
+    private volatile boolean leader;
 
     public KubernetesLeaseLeaderElection(
             ObjectMapper objectMapper,
@@ -46,12 +48,23 @@ public class KubernetesLeaseLeaderElection {
         this.namespace = namespace;
         this.holderIdentity = holderIdentity;
         this.leaseName = leaseName;
+        this.leader = !enabled;
+    }
+
+    @Scheduled(fixedDelayString = "${lernplattform.scheduler.leader-election.renew-delay:PT30S}")
+    public void renewLeadership() {
+        if (!enabled) {
+            leader = true;
+            return;
+        }
+        leader = tryAcquireOrRenew();
     }
 
     public boolean isLeader() {
-        if (!enabled) {
-            return true;
-        }
+        return leader;
+    }
+
+    private boolean tryAcquireOrRenew() {
         if (!Files.isReadable(TOKEN_PATH) || !Files.isReadable(CA_PATH)) {
             return false;
         }
