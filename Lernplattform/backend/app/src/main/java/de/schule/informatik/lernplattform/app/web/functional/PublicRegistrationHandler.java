@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.function.ServerRequest;
 import org.springframework.web.servlet.function.ServerResponse;
 
-import java.io.IOException;
 import java.util.Map;
 
 @Component
@@ -18,7 +17,7 @@ public class PublicRegistrationHandler {
         this.service = service;
     }
 
-    public ServerResponse submitSchoolRegistration(ServerRequest request) throws IOException {
+    public ServerResponse submitSchoolRegistration(ServerRequest request) throws Exception {
         RegistrationPayload payload = request.body(RegistrationPayload.class);
         var id = service.submit(new SchoolRegistrationService.Command(
                 payload.schoolName(),
