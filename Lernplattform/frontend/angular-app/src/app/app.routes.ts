@@ -10,6 +10,11 @@ export const routes: Routes = [
     loadComponent: () => import('./school-registration/school-registration.component').then((m) => m.SchoolRegistrationComponent)
   },
   {
+    path: 'registrierung-bestaetigen',
+    loadComponent: () => import('./school-registration/registration-verification.component')
+      .then((m) => m.RegistrationVerificationComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
