@@ -29,6 +29,11 @@ backend:
     limits:
       memory: 512Mi
 
+scheduler:
+  leaderElection:
+    enabled: true
+    leaseName: lernplattform-scheduler
+
 frontend:
   image:
     repository: lernplattform-frontend
