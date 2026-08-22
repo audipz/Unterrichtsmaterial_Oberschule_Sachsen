@@ -54,10 +54,11 @@ public class MeHandler {
                     "route", "/system-admin")));
         } else {
             response.put("capabilities", List.of("SCHOOL_REGISTRATION_REVIEW", "SCHOOL_MANAGEMENT"));
-            response.put("navigation", List.of(Map.of(
-                    "id", "registrations",
-                    "label", "Schulregistrierungen",
-                    "route", "/system-admin")));
+            response.put("navigation", List.of(nav(
+                    "registrations",
+                    "Schulregistrierungen",
+                    "/system-admin",
+                    moduleId("system.registration-review"))));
         }
         return response;
     }
@@ -89,21 +90,28 @@ public class MeHandler {
         } else {
             response.put("capabilities", List.of("LEARNING_CONTENT_READ", "OWN_PROGRESS_READ"));
             response.put("navigation", List.of(
-                    nav("learning", "Lernen", "/" + selected.slug() + "/lernen"),
-                    nav("progress", "Mein Lernstand", "/" + selected.slug() + "/lernstand")));
+                    nav("learning", "Lernen", "/" + selected.slug() + "/lernen", moduleId("student.learning")),
+                    nav("progress", "Mein Lernstand", "/" + selected.slug() + "/lernstand", moduleId("student.progress"))));
         }
         return response;
     }
 
-    private List<Map<String, String>> teacherNavigation(SchoolContext school, boolean schoolAdmin) {
-        List<Map<String, String>> navigation = new ArrayList<>();
-        navigation.add(nav("classes", "Klassen", "/" + school.slug() + "/klassen"));
-        navigation.add(nav("students", "Schüler", "/" + school.slug() + "/schueler"));
-        navigation.add(nav("progress", "Lernstände", "/" + school.slug() + "/lernstaende"));
+    private List<Map<String, Object>> teacherNavigation(SchoolContext school, boolean schoolAdmin) {
+        List<Map<String, Object>> navigation = new ArrayList<>();
+        navigation.add(nav("classes", "Klassen", "/" + school.slug() + "/klassen", moduleId("teacher.classes")));
+        navigation.add(nav("students", "Schüler", "/" + school.slug() + "/schueler", moduleId("teacher.students")));
+        navigation.add(nav("progress", "Lernstände", "/" + school.slug() + "/lernstaende", moduleId("teacher.progress")));
         if (schoolAdmin) {
-            navigation.add(nav("school-admin", "Schulverwaltung", "/" + school.slug() + "/verwaltung"));
+            navigation.add(nav("school-admin", "Schulverwaltung", "/" + school.slug() + "/verwaltung", moduleId("school.administration")));
         }
         return navigation;
+    }
+
+    private UUID moduleId(String internalKey) {
+        return jdbc.queryForObject("""
+                select id from ui_module
+                where internal_key = ? and status = 'ACTIVE'
+                """, UUID.class, internalKey);
     }
 
     private Account loadAccount(UUID accountId) {
@@ -174,8 +182,12 @@ public class MeHandler {
                 "schoolName", school.name());
     }
 
-    private static Map<String, String> nav(String id, String label, String route) {
-        return Map.of("id", id, "label", label, "route", route);
+    private static Map<String, Object> nav(String id, String label, String route, UUID moduleId) {
+        return Map.of(
+                "id", id,
+                "label", label,
+                "route", route,
+                "moduleId", moduleId.toString());
     }
 
     private static boolean hasAuthority(Authentication authentication, String authority) {
