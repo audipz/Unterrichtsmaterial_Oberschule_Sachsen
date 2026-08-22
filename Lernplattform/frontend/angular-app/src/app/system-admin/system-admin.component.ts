@@ -2,12 +2,13 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { AppContextService, NavigationItem } from '../core/app-context.service';
-import { PendingSchoolRegistration, SystemAdminApiService } from './system-admin-api.service';
+import { UiModuleHostComponent } from '../core/ui-module-host.component';
+import { SystemAdminApiService } from './system-admin-api.service';
 
 @Component({
   selector: 'app-system-admin',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, UiModuleHostComponent],
   template: `
     <main class="page-shell admin-shell">
       <a class="back-link" routerLink="/">← Zur Startseite</a>
@@ -15,7 +16,7 @@ import { PendingSchoolRegistration, SystemAdminApiService } from './system-admin
       @if (view() !== 'login' && navigation().length > 0) {
         <nav class="admin-nav" aria-label="Systemverwaltung">
           @for (item of navigation(); track item.id) {
-            <a class="admin-nav-link" [routerLink]="item.route">{{ item.label }}</a>
+            <button class="admin-nav-link" type="button" (click)="activate(item)">{{ item.label }}</button>
           }
         </nav>
       }
@@ -52,65 +53,21 @@ import { PendingSchoolRegistration, SystemAdminApiService } from './system-admin
         </section>
       }
 
-      @if (view() === 'review') {
+      @if (view() === 'module') {
         <section class="admin-header">
           <div>
             <p class="eyebrow">Systemverwaltung</p>
-            <h1>Schulregistrierungen</h1>
-            <p class="lead">Hier erscheinen nur Anträge mit bestätigter Kontakt-E-Mail.</p>
+            <h1>{{ activeNavigation()?.label ?? 'Verwaltung' }}</h1>
           </div>
           <button class="button" type="button" (click)="logout()" [disabled]="busy()">Abmelden</button>
         </section>
 
         @if (message()) { <p class="message error" role="alert">{{ message() }}</p> }
-        @if (loading()) { <p class="lead">Anträge werden geladen …</p> }
-
-        @if (!loading() && registrations().length === 0) {
-          <section class="info-card empty-state">
-            <h2>Keine offenen Anträge</h2>
-            <p>Aktuell gibt es keine bestätigten Schulregistrierungen zur Prüfung.</p>
-          </section>
+        @if (activeNavigation()?.moduleId; as moduleId) {
+          <app-ui-module-host
+            [moduleId]="moduleId"
+            [context]="runtimeContext()" />
         }
-
-        <section class="registration-list">
-          @for (registration of registrations(); track registration.id) {
-            <article class="info-card registration-card">
-              <div class="registration-heading">
-                <div>
-                  <p class="eyebrow">{{ registration.schoolType }} · {{ registration.federalState }}</p>
-                  <h2>{{ registration.schoolName }}</h2>
-                </div>
-                <span class="status-badge">E-Mail bestätigt</span>
-              </div>
-
-              <dl class="registration-details">
-                <div><dt>Ort</dt><dd>{{ registration.city }}</dd></div>
-                <div><dt>Kontakt</dt><dd>{{ registration.contactEmail }}</dd></div>
-                <div><dt>Eingereicht</dt><dd>{{ formatDate(registration.submittedAt) }}</dd></div>
-                <div><dt>Bestätigt</dt><dd>{{ formatDate(registration.emailVerifiedAt) }}</dd></div>
-              </dl>
-
-              @if (registration.schoolWebsite) {
-                <p><a [href]="registration.schoolWebsite" target="_blank" rel="noopener noreferrer">Schulwebseite öffnen</a></p>
-              }
-
-              <div class="review-actions">
-                <button class="button primary" type="button" (click)="approve(registration)" [disabled]="busy()">Freigeben</button>
-                <button class="button" type="button" (click)="toggleReject(registration.id)" [disabled]="busy()">Ablehnen</button>
-              </div>
-
-              @if (rejectingId() === registration.id) {
-                <form class="reject-form" [formGroup]="rejectForm" (ngSubmit)="reject(registration)">
-                  <label>Ablehnungsgrund<textarea formControlName="reason" rows="4" maxlength="1000"></textarea></label>
-                  <div class="review-actions">
-                    <button class="button" type="button" (click)="rejectingId.set(null)">Abbrechen</button>
-                    <button class="button primary" type="submit" [disabled]="rejectForm.invalid || busy()">Ablehnung bestätigen</button>
-                  </div>
-                </form>
-              }
-            </article>
-          }
-        </section>
       }
     </main>
   `
@@ -120,13 +77,12 @@ export class SystemAdminComponent implements OnInit {
   private readonly appContext = inject(AppContextService);
   private readonly fb = inject(FormBuilder);
 
-  readonly view = signal<'login' | 'password' | 'review'>('login');
+  readonly view = signal<'login' | 'password' | 'module'>('login');
   readonly busy = signal(false);
-  readonly loading = signal(false);
   readonly message = signal('');
-  readonly registrations = signal<PendingSchoolRegistration[]>([]);
   readonly navigation = signal<NavigationItem[]>([]);
-  readonly rejectingId = signal<string | null>(null);
+  readonly activeNavigation = signal<NavigationItem | null>(null);
+  readonly runtimeContext = signal<unknown>(null);
 
   readonly loginForm = this.fb.nonNullable.group({
     username: ['', Validators.required],
@@ -137,10 +93,6 @@ export class SystemAdminComponent implements OnInit {
     currentPassword: ['', Validators.required],
     newPassword: ['', [Validators.required, Validators.minLength(16)]],
     repeatPassword: ['', [Validators.required, Validators.minLength(16)]]
-  });
-
-  readonly rejectForm = this.fb.nonNullable.group({
-    reason: ['', [Validators.required, Validators.maxLength(1000)]]
   });
 
   ngOnInit(): void {
@@ -186,42 +138,10 @@ export class SystemAdminComponent implements OnInit {
     });
   }
 
-  approve(registration: PendingSchoolRegistration): void {
-    if (this.busy()) return;
-    this.busy.set(true);
-    this.message.set('');
-    this.api.approve(registration.id).subscribe({
-      next: () => {
-        this.busy.set(false);
-        this.registrations.update((items) => items.filter((item) => item.id !== registration.id));
-      },
-      error: () => {
-        this.busy.set(false);
-        this.message.set(`„${registration.schoolName}“ konnte nicht freigegeben werden.`);
-      }
-    });
-  }
-
-  toggleReject(id: string): void {
-    this.rejectForm.reset();
-    this.rejectingId.set(this.rejectingId() === id ? null : id);
-  }
-
-  reject(registration: PendingSchoolRegistration): void {
-    if (this.rejectForm.invalid || this.busy()) return;
-    this.busy.set(true);
-    this.message.set('');
-    this.api.reject(registration.id, this.rejectForm.getRawValue().reason).subscribe({
-      next: () => {
-        this.busy.set(false);
-        this.rejectingId.set(null);
-        this.registrations.update((items) => items.filter((item) => item.id !== registration.id));
-      },
-      error: () => {
-        this.busy.set(false);
-        this.message.set(`„${registration.schoolName}“ konnte nicht abgelehnt werden.`);
-      }
-    });
+  activate(item: NavigationItem): void {
+    if (!item.moduleId) return;
+    this.activeNavigation.set(item);
+    this.view.set('module');
   }
 
   logout(): void {
@@ -233,27 +153,10 @@ export class SystemAdminComponent implements OnInit {
     });
   }
 
-  formatDate(value: string): string {
-    return new Intl.DateTimeFormat('de-DE', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(value));
-  }
-
   private restoreSession(): void {
-    this.loading.set(true);
     this.appContext.load().subscribe({
-      next: (context) => {
-        this.navigation.set(context.navigation);
-        this.loading.set(false);
-        if (context.capabilities.includes('CHANGE_OWN_PASSWORD')) {
-          this.view.set('password');
-        } else if (context.capabilities.includes('SCHOOL_REGISTRATION_REVIEW')) {
-          this.view.set('review');
-          this.loadRegistrations();
-        }
-      },
-      error: () => {
-        this.loading.set(false);
-        this.view.set('login');
-      }
+      next: (context) => this.applyContext(context),
+      error: () => this.resetToLogin()
     });
   }
 
@@ -261,17 +164,7 @@ export class SystemAdminComponent implements OnInit {
     this.appContext.load().subscribe({
       next: (context) => {
         this.busy.set(false);
-        this.navigation.set(context.navigation);
-        if (context.capabilities.includes('CHANGE_OWN_PASSWORD')) {
-          this.view.set('password');
-          return;
-        }
-        if (context.capabilities.includes('SCHOOL_REGISTRATION_REVIEW')) {
-          this.view.set('review');
-          this.loadRegistrations();
-          return;
-        }
-        this.message.set('Für diesen Zugang sind keine Verwaltungsfunktionen freigeschaltet.');
+        this.applyContext(context);
       },
       error: () => {
         this.busy.set(false);
@@ -280,25 +173,28 @@ export class SystemAdminComponent implements OnInit {
     });
   }
 
-  private loadRegistrations(): void {
-    this.loading.set(true);
-    this.api.pendingRegistrations().subscribe({
-      next: (items) => {
-        this.registrations.set(items);
-        this.loading.set(false);
-      },
-      error: () => {
-        this.loading.set(false);
-        this.message.set('Die Registrierungsanträge konnten nicht geladen werden.');
-      }
-    });
+  private applyContext(context: Awaited<ReturnType<AppContextService['load']>> extends never ? never : any): void {
+    this.navigation.set(context.navigation);
+    this.runtimeContext.set(context);
+    if (context.capabilities.includes('CHANGE_OWN_PASSWORD')) {
+      this.activeNavigation.set(null);
+      this.view.set('password');
+      return;
+    }
+    const firstModule = context.navigation.find((item: NavigationItem) => !!item.moduleId) ?? null;
+    if (firstModule) {
+      this.activeNavigation.set(firstModule);
+      this.view.set('module');
+      return;
+    }
+    this.message.set('Für diesen Zugang sind keine Verwaltungsfunktionen freigeschaltet.');
   }
 
   private resetToLogin(): void {
     this.busy.set(false);
-    this.loading.set(false);
-    this.registrations.set([]);
     this.navigation.set([]);
+    this.activeNavigation.set(null);
+    this.runtimeContext.set(null);
     this.view.set('login');
     this.message.set('');
   }
