@@ -39,6 +39,20 @@ spec:
                   key: {{ .Values.database.passwordKey }}
             - name: FLYWAY_ENABLED
               value: "false"
+{{- if .Values.systemAdmin.bootstrap.enabled }}
+            - name: LERNPLATTFORM_BOOTSTRAP_SYSTEM_ADMIN_ENABLED
+              value: "true"
+            - name: LERNPLATTFORM_BOOTSTRAP_SYSTEM_ADMIN_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.systemAdmin.bootstrap.existingSecret }}
+                  key: {{ .Values.systemAdmin.bootstrap.usernameKey }}
+            - name: LERNPLATTFORM_BOOTSTRAP_SYSTEM_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.systemAdmin.bootstrap.existingSecret }}
+                  key: {{ .Values.systemAdmin.bootstrap.passwordKey }}
+{{- end }}
           startupProbe:
             httpGet:
               path: /actuator/health/liveness
