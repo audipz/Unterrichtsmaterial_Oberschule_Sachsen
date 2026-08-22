@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "student-klasse8",
+  "title": "Schülermaterial Klasse 8",
+  "audience": ["STUDENT"],
+  "areas": ["Klasse_8"],
+  "formats": ["pdf", "docx"],
+  "contentKeys": [
+    "curriculum.oberschule.sachsen.informatik.klasse8"
+  ],
+  "exclude": [],
+  "minimumFiles": 2,
+  "artifact": "Unterrichtsmaterial_Klasse8_Schueler.zip"
+}
