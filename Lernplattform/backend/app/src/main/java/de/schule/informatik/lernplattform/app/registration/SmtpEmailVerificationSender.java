@@ -17,8 +17,8 @@ public class SmtpEmailVerificationSender implements EmailVerificationSender {
 
     public SmtpEmailVerificationSender(
             JavaMailSender mailSender,
-            @Value("${lernplattform.registration.mail.from}") String from,
-            @Value("${lernplattform.public-base-url}") String publicBaseUrl) {
+            @Value("${lernplattform.registration.mail.from:no-reply@localhost}") String from,
+            @Value("${lernplattform.public-base-url:http://localhost:4200}") String publicBaseUrl) {
         this.mailSender = mailSender;
         this.from = from;
         this.publicBaseUrl = publicBaseUrl;
