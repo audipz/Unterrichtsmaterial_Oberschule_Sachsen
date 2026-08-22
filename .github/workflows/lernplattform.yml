@@ -45,6 +45,30 @@ jobs:
       - name: Lernplattform bauen und testen
         run: mvn -B -f Lernplattform/pom.xml verify
 
+  frontend:
+    name: Angular 22 / production build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Lernplattform/frontend/angular-app
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v5
+
+      - name: Node.js 24 einrichten
+        uses: actions/setup-node@v5
+        with:
+          node-version: "24.15.0"
+          cache: npm
+          cache-dependency-path: Lernplattform/frontend/angular-app/package.json
+
+      - name: Abhängigkeiten installieren
+        run: npm install --no-audit --no-fund
+
+      - name: Angular Production Build
+        run: npm run build
+
   helm:
     name: Helm lint / template
     runs-on: ubuntu-latest
