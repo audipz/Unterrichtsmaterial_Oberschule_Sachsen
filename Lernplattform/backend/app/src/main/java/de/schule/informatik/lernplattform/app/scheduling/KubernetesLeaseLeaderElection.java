@@ -6,13 +6,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManagerFactory;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.KeyStore;
+import java.security.cert.CertificateFactory;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Map;
@@ -20,7 +24,9 @@ import java.util.Map;
 @Component
 public class KubernetesLeaseLeaderElection {
 
-    private static final Path TOKEN_PATH = Path.of("/var/run/secrets/kubernetes.io/serviceaccount/token");
+    private static final Path SERVICE_ACCOUNT_DIR = Path.of("/var/run/secrets/kubernetes.io/serviceaccount");
+    private static final Path TOKEN_PATH = SERVICE_ACCOUNT_DIR.resolve("token");
+    private static final Path CA_PATH = SERVICE_ACCOUNT_DIR.resolve("ca.crt");
     private static final int LEASE_DURATION_SECONDS = 90;
 
     private final ObjectMapper objectMapper;
@@ -43,7 +49,7 @@ public class KubernetesLeaseLeaderElection {
         this.leaseName = leaseName;
         this.httpClient = HttpClient.newBuilder()
                 .connectTimeout(Duration.ofSeconds(5))
-                .sslContext(defaultSslContext())
+                .sslContext(kubernetesSslContext())
                 .build();
     }
 
@@ -51,14 +57,13 @@ public class KubernetesLeaseLeaderElection {
         if (!enabled) {
             return true;
         }
-        if (!Files.isReadable(TOKEN_PATH)) {
+        if (!Files.isReadable(TOKEN_PATH) || !Files.isReadable(CA_PATH)) {
             return false;
         }
 
         try {
             String token = Files.readString(TOKEN_PATH).trim();
-            URI leaseUri = leaseUri();
-            HttpResponse<String> response = send("GET", leaseUri, token, null, null);
+            HttpResponse<String> response = send("GET", leaseUri(), token, null, null);
             if (response.statusCode() == 404) {
                 return createLease(token);
             }
@@ -101,13 +106,12 @@ public class KubernetesLeaseLeaderElection {
     }
 
     private boolean updateLease(String token, String resourceVersion) throws IOException, InterruptedException {
-        String now = Instant.now().toString();
         String body = objectMapper.writeValueAsString(Map.of(
                 "metadata", Map.of("resourceVersion", resourceVersion),
                 "spec", Map.of(
                         "holderIdentity", holderIdentity,
                         "leaseDurationSeconds", LEASE_DURATION_SECONDS,
-                        "renewTime", now)));
+                        "renewTime", Instant.now().toString())));
         HttpResponse<String> response = send("PATCH", leaseUri(), token, body, "application/merge-patch+json");
         return response.statusCode() == 200;
     }
@@ -121,11 +125,9 @@ public class KubernetesLeaseLeaderElection {
         if (contentType != null) {
             builder.header("Content-Type", contentType);
         }
-        if (body == null) {
-            builder.method(method, HttpRequest.BodyPublishers.noBody());
-        } else {
-            builder.method(method, HttpRequest.BodyPublishers.ofString(body));
-        }
+        builder.method(method, body == null
+                ? HttpRequest.BodyPublishers.noBody()
+                : HttpRequest.BodyPublishers.ofString(body));
         return httpClient.send(builder.build(), HttpResponse.BodyHandlers.ofString());
     }
 
@@ -143,11 +145,26 @@ public class KubernetesLeaseLeaderElection {
         return value == null || value.isBlank() ? null : Instant.parse(value);
     }
 
-    private static SSLContext defaultSslContext() {
-        try {
-            return SSLContext.getDefault();
+    private static SSLContext kubernetesSslContext() {
+        try (InputStream caInput = Files.newInputStream(CA_PATH)) {
+            var certificate = CertificateFactory.getInstance("X.509").generateCertificate(caInput);
+            KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
+            trustStore.load(null, null);
+            trustStore.setCertificateEntry("kubernetes-ca", certificate);
+            TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+            trustManagerFactory.init(trustStore);
+            SSLContext context = SSLContext.getInstance("TLS");
+            context.init(null, trustManagerFactory.getTrustManagers(), null);
+            return context;
         } catch (Exception e) {
-            throw new IllegalStateException("Cannot initialize SSL context", e);
+            if (!Files.exists(CA_PATH)) {
+                try {
+                    return SSLContext.getDefault();
+                } catch (Exception fallbackException) {
+                    throw new IllegalStateException("Cannot initialize SSL context", fallbackException);
+                }
+            }
+            throw new IllegalStateException("Cannot initialize Kubernetes SSL context", e);
         }
     }
 }
