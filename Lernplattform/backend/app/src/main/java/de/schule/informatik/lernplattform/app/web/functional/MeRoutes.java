@@ -11,9 +11,10 @@ import static org.springframework.web.servlet.function.RouterFunctions.route;
 public class MeRoutes {
 
     @Bean
-    RouterFunction<ServerResponse> meRoutes(MeHandler handler) {
+    RouterFunction<ServerResponse> meRoutes(MeHandler meHandler, UiModuleHandler moduleHandler) {
         return route()
-                .GET("/api/v1/me", handler::me)
+                .GET("/api/v1/me", meHandler::me)
+                .GET("/api/v1/ui-modules/{moduleId}", moduleHandler::resolve)
                 .build();
     }
 }
