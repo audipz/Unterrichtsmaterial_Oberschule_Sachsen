@@ -7,7 +7,10 @@ import org.springframework.stereotype.Service;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.time.Duration;
 import java.time.Instant;
+import java.util.Base64;
 import java.util.HexFormat;
 import java.util.Locale;
 import java.util.UUID;
@@ -15,10 +18,16 @@ import java.util.UUID;
 @Service
 public class SchoolRegistrationService {
 
-    private final SchoolRegistrationRequestPort port;
+    private static final Duration VERIFICATION_WINDOW = Duration.ofHours(24);
+    private static final SecureRandom SECURE_RANDOM = new SecureRandom();
 
-    public SchoolRegistrationService(SchoolRegistrationRequestPort port) {
+    private final SchoolRegistrationRequestPort port;
+    private final EmailVerificationSender verificationSender;
+
+    public SchoolRegistrationService(SchoolRegistrationRequestPort port,
+                                     EmailVerificationSender verificationSender) {
         this.port = port;
+        this.verificationSender = verificationSender;
     }
 
     public UUID submit(Command command) {
@@ -35,54 +44,59 @@ public class SchoolRegistrationService {
             throw new IllegalArgumentException("contactEmail is invalid");
         }
 
+        Instant submittedAt = Instant.now();
+        Instant expiresAt = submittedAt.plus(VERIFICATION_WINDOW);
         UUID id = UUID.randomUUID();
+        String rawToken = newToken();
+        String tokenHash = sha256(rawToken);
         String nonce = UUID.randomUUID().toString();
+
         SchoolRegistrationRequest request = new SchoolRegistrationRequest(
-                id,
-                schoolName,
-                schoolType,
-                federalState,
-                city,
-                contactEmail,
-                contactEmail,
-                schoolWebsite,
-                null,
-                nonce,
-                null,
-                sha256(command.userAgent()),
-                Instant.now());
+                id, schoolName, schoolType, federalState, city,
+                contactEmail, contactEmail, schoolWebsite, null, nonce,
+                tokenHash, expiresAt, null, sha256(command.userAgent()), submittedAt);
         port.save(request);
+
+        try {
+            verificationSender.sendVerification(contactEmail, schoolName, rawToken);
+        } catch (RuntimeException ex) {
+            port.delete(id);
+            throw ex;
+        }
         return id;
     }
 
+    public boolean verifyEmail(String rawToken) {
+        if (rawToken == null || rawToken.isBlank() || rawToken.length() > 200) {
+            return false;
+        }
+        return port.verifyEmail(sha256(rawToken), Instant.now());
+    }
+
+    private static String newToken() {
+        byte[] bytes = new byte[32];
+        SECURE_RANDOM.nextBytes(bytes);
+        return Base64.getUrlEncoder().withoutPadding().encodeToString(bytes);
+    }
+
     private static String requireText(String value, int maxLength, String field) {
-        if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException(field + " must not be blank");
-        }
+        if (value == null || value.isBlank()) throw new IllegalArgumentException(field + " must not be blank");
         String trimmed = value.trim();
-        if (trimmed.length() > maxLength) {
-            throw new IllegalArgumentException(field + " is too long");
-        }
+        if (trimmed.length() > maxLength) throw new IllegalArgumentException(field + " is too long");
         return trimmed;
     }
 
     private static String optionalText(String value, int maxLength, String field) {
-        if (value == null || value.isBlank()) {
-            return null;
-        }
+        if (value == null || value.isBlank()) return null;
         return requireText(value, maxLength, field);
     }
 
     private static void requireBlank(String value, String field) {
-        if (value != null && !value.isBlank()) {
-            throw new IllegalArgumentException(field + " rejected");
-        }
+        if (value != null && !value.isBlank()) throw new IllegalArgumentException(field + " rejected");
     }
 
     private static String sha256(String value) {
-        if (value == null || value.isBlank()) {
-            return null;
-        }
+        if (value == null || value.isBlank()) return null;
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             return HexFormat.of().formatHex(digest.digest(value.getBytes(StandardCharsets.UTF_8)));
@@ -92,13 +106,7 @@ public class SchoolRegistrationService {
     }
 
     public record Command(
-            String schoolName,
-            String schoolType,
-            String federalState,
-            String city,
-            String contactEmail,
-            String schoolWebsite,
-            String website,
-            String userAgent) {
+            String schoolName, String schoolType, String federalState, String city,
+            String contactEmail, String schoolWebsite, String website, String userAgent) {
     }
 }
